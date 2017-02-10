@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Blockly Demo: Fixed Blockly</title>
+  <script src="lib/blockly_compressed.js"></script>
+  <script src="lib/blocks_compressed.js"></script>
+  <script src="lib/pt-br.js"></script>
+  <style>
+    body {
+      background-color: #fff;
+      font-family: sans-serif;
+    }
+    h1 {
+      font-weight: normal;
+      font-size: 140%;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="blocklyDiv" style="height: 480px; width: 100%;"></div>
+  <xml id="toolbox" style="display: none">
+    <category name="entidades">
+      <block type="media"></block>
+      <block type="input"></block>
+      <block type="user"></block>
+    </category>
+    <category name="conteudo de mídia">
+      <block type="video"></block>
+      <block type="image"></block>
+      <block type="ssml"></block>
+    </category>
+    <category name="conteudo de input">
+      <block type="srgs"></block>
+    </category>
+    <category name="condições e ações">cfeclipse-light-syntax
+      <block type="behavior"></block>
+      <block type="simplecondition"></block>
+      <block type="compoundcondition"></block>
+      <block type="simpleaction"></block>
+    </category>
+  </xml>
+  <script src="ncl-blocks.js"></script>
+  <script src="library_additional.js"></script>
+  <script>
+    Blockly.BlockSvg.START_HAT = true;
+    var workspace = Blockly.inject('blocklyDiv', {
+      media: 'media/',
+      toolbox: document.getElementById('toolbox')
+    });
+
+    function onChange(event) {
+      if (event.type == Blockly.Events.CREATE) {
+        // myEvent = event;
+        // Blockly.Variables.createVariable(workspace)
+        // var text = Blockly.Variables.promptName(Blockly.MSG_NEW_VARIABLE_TITLE, '');
+        // Blockly.Variables.renameVariable("item", text);
+        // alert("field = ".concat(event.block.getField('NAME')) )
+        // alert(event.xml.innerText)
+      }
+      // if (event.type == Blockly.Events.CREATE && event.element == 'input') {
+      //   alert('Congratulations on creating your first input!')
+      // }
+    }
+    function alertAllBlock() {
+      alert(workspace.getTopBlocks)
+    }
+    workspace.addChangeListener(onChange);
+  </script>
+</body>
+
+</html>
