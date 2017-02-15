@@ -12,6 +12,7 @@
       background-color: #fff;
       font-family: sans-serif;
     }
+
     h1 {
       font-weight: normal;
       font-size: 140%;
@@ -43,31 +44,31 @@
     </category>
   </xml>
   <script src="ncl-blocks.js"></script>
-  <script src="library_additional.js"></script>
   <script>
     Blockly.BlockSvg.START_HAT = true;
+    var blocklyDiv = document.getElementById('blocklyDiv');
     var workspace = Blockly.inject('blocklyDiv', {
       media: 'media/',
       toolbox: document.getElementById('toolbox')
     });
-
-    function onChange(event) {
-      if (event.type == Blockly.Events.CREATE) {
-        // myEvent = event;
-        // Blockly.Variables.createVariable(workspace)
-        // var text = Blockly.Variables.promptName(Blockly.MSG_NEW_VARIABLE_TITLE, '');
-        // Blockly.Variables.renameVariable("item", text);
-        // alert("field = ".concat(event.block.getField('NAME')) )
-        // alert(event.xml.innerText)
-      }
-      // if (event.type == Blockly.Events.CREATE && event.element == 'input') {
-      //   alert('Congratulations on creating your first input!')
-      // }
-    }
-    function alertAllBlock() {
-      alert(workspace.getTopBlocks)
-    }
-    workspace.addChangeListener(onChange);
+    var onresize = function (e) {
+      var element = blocklyArea;
+      var x = 0;
+      var y = 0;
+      do {
+        x += element.offsetLeft;
+        y += element.offsetTop;
+        element = element.offsetParent;
+      } while (element);
+      // Position blocklyDiv over blocklyArea.
+      blocklyDiv.style.left = x + 'px';
+      blocklyDiv.style.top = y + 'px';
+      blocklyDiv.style.width = blocklyArea.offsetWidth + 'px';
+      blocklyDiv.style.height = blocklyArea.offsetHeight + 'px';
+    };
+    window.addEventListener('resize', onresize, false);
+    onresize();
+    Blockly.svgResize(workspace);
   </script>
 </body>
 
