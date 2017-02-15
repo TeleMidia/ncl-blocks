@@ -113,7 +113,6 @@ Blockly.Blocks['srgs'] = {
     this.updateShape_();
   },
   saveConnections: function (containerBlock) {},
-
   updateShape_: function () {
     if (this.itemCount_ && this.getInput('EMPTY')) {
       this.removeInput('EMPTY');
@@ -181,7 +180,6 @@ Blockly.Blocks['ssml'] = {
     this.updateShape_();
   },
   saveConnections: function (containerBlock) {},
-
   updateShape_: function () {
     if (this.itemCount_ && this.getInput('EMPTY')) {
       this.removeInput('EMPTY');
@@ -249,7 +247,6 @@ Blockly.Blocks['video'] = {
     this.updateShape_();
   },
   saveConnections: function (containerBlock) {},
-
   updateShape_: function () {
     if (this.itemCount_ && this.getInput('EMPTY')) {
       this.removeInput('EMPTY');
@@ -338,11 +335,11 @@ Blockly.Blocks['compoundcondition'] = {
     this.appendDummyInput()
       .appendField(
         new Blockly.FieldDropdown([
-          ["todos", "and"],
-          ["todos em sequencia", "seq"],
-          ["qualquer um", "or"]
+          ["em sequencia", "seq"],
+          ["todos entre", "and"],
+          ["qualquer entre", "or"]
         ]),
-        "operator").appendField('acontecerem')
+        "operator")
     this.setColour(260);
     this.itemCount_ = 2;
     this.updateShape_();
