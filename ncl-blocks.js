@@ -1,6 +1,7 @@
 goog.require('Blockly.Blocks');
 
 // entities
+
 Blockly.Blocks['media'] = {
   init: function () {
     this.appendDummyInput()
@@ -70,6 +71,7 @@ Blockly.Blocks['link'] = {
 };
 
 // contents
+
 Blockly.Blocks['image'] = {
   init: function () {
     this.appendDummyInput()
@@ -87,7 +89,7 @@ Blockly.Blocks['srgs'] = {
     this.setColour(120);
     this.itemCount_ = 1;
     this.updateShape_();
-    this.setOutput(true, 'simplecondition');
+    this.setOutput(true, 'input_content');
     this.setMutator(new Blockly.Mutator(['lists_create_with_item']));
   },
   mutationToDom: function () {
@@ -153,7 +155,7 @@ Blockly.Blocks['ssml'] = {
     this.setColour(120);
     this.itemCount_ = 1;
     this.updateShape_();
-    this.setOutput(true, 'simplecondition');
+    this.setOutput(true, 'media_content');
     this.setMutator(new Blockly.Mutator(['lists_create_with_item']));
   },
   mutationToDom: function () {
@@ -219,7 +221,7 @@ Blockly.Blocks['video'] = {
     this.setColour(120);
     this.itemCount_ = 1;
     this.updateShape_();
-    this.setOutput(true, 'simplecondition');
+    this.setOutput(true, 'media_content');
     this.setMutator(new Blockly.Mutator(['lists_create_with_item']));
   },
   mutationToDom: function () {
@@ -453,6 +455,7 @@ Blockly.Blocks['compoundcondition'] = {
 };
 
 // action
+
 Blockly.Blocks['start'] = {
   init: function () {
     this.appendDummyInput()
@@ -488,7 +491,7 @@ Blockly.Blocks['pause'] = {
   init: function () {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage("media/icon-bind-pause.png", 15, 15, "*"))
-      .appendField("inicie")
+      .appendField("pause")
       .appendField(new Blockly.FieldDropdown([
         ["", "OPTIONNAME"]
       ]), "NAME");
@@ -504,7 +507,7 @@ Blockly.Blocks['resume'] = {
   init: function () {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage("media/icon-bind-resume.png", 15, 15, "*"))
-      .appendField("resume")
+      .appendField("resuma")
       .appendField(new Blockly.FieldDropdown([
         ["", "OPTIONNAME"]
       ]), "NAME");
@@ -523,7 +526,9 @@ Blockly.Blocks['set'] = {
       .appendField("atribua")
       .appendField(new Blockly.FieldDropdown([
         ["", "OPTIONNAME"]
-      ]), "NAME");
+      ]), "NAME")
+      .appendField("=")
+      .appendField(new Blockly.FieldTextInput(""), "value")
     this.setInputsInline(false);
     this.setPreviousStatement(true, "simpleaction");
     this.setNextStatement(true, "simpleaction");
