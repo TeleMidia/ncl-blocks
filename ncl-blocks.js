@@ -36,7 +36,6 @@ Blockly.Blocks['input'] = {
     this.setHelpUrl('');
   }
 };
-
 Blockly.Blocks['user'] = {
   init: function () {
     this.appendDummyInput()
@@ -126,7 +125,6 @@ Blockly.Blocks['user'] = {
     }
   }
 };
-
 Blockly.Blocks['link'] = {
   init: function () {
     this.appendDummyInput()
@@ -145,7 +143,30 @@ Blockly.Blocks['link'] = {
   }
 };
 
-// contents
+// user contents
+
+Blockly.Blocks['headset'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("media/headset.png", 50, 50, "*"));
+    this.setOutput(true, "media_content");
+    this.setColour(20);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  }
+};
+Blockly.Blocks['finger-pointer'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("media/leap.png", 50, 50, "*"));
+    this.setOutput(true, "media_content");
+    this.setColour(20);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  }
+};
+
+// media contents
 
 Blockly.Blocks['image'] = {
   init: function () {
@@ -155,72 +176,6 @@ Blockly.Blocks['image'] = {
     this.setColour(120);
     this.setTooltip('');
     this.setHelpUrl('');
-  }
-};
-Blockly.Blocks['srgs'] = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldImage("media/srgs.png", 50, 50, "*"));
-    this.setColour(120);
-    this.itemCount_ = 1;
-    this.updateShape_();
-    this.setOutput(true, 'input_content');
-    this.setMutator(new Blockly.Mutator(['lists_create_with_item']));
-  },
-  mutationToDom: function () {
-    var container = document.createElement('mutation');
-    container.setAttribute('items', this.itemCount_);
-    return container;
-  },
-  domToMutation: function (xmlElement) {
-    this.itemCount_ = parseInt(xmlElement.getAttribute('items'), 10);
-    this.updateShape_();
-  },
-  decompose: function (workspace) {
-    var containerBlock = workspace.newBlock('lists_create_with_container');
-    containerBlock.initSvg();
-    var connection = containerBlock.getInput('STACK').connection;
-
-    for (var i = 0; i < this.itemCount_; i++) {
-      var itemBlock = workspace.newBlock('lists_create_with_item');
-      itemBlock.initSvg();
-      connection.connect(itemBlock.previousConnection);
-      connection = itemBlock.nextConnection;
-    }
-    return containerBlock;
-  },
-  compose: function (containerBlock) {
-    var itemBlock = containerBlock.getInputTargetBlock('STACK');
-    var connections = [];
-
-    while (itemBlock) {
-      connections.push(itemBlock.valueConnection_);
-      itemBlock = itemBlock.nextConnection &&
-        itemBlock.nextConnection.targetBlock();
-    }
-    this.itemCount_ = connections.length;
-    this.updateShape_();
-  },
-  saveConnections: function (containerBlock) {},
-  updateShape_: function () {
-    if (this.itemCount_ && this.getInput('EMPTY')) {
-      this.removeInput('EMPTY');
-    } else if (!this.itemCount_ && !this.getInput('EMPTY')) {
-      this.appendDummyInput('EMPTY')
-    }
-    for (var i = 0; i < this.itemCount_; i++) {
-      if (!this.getInput('ADD' + i)) {
-        this.appendDummyInput('ADD' + i)
-          .appendField("ancora id")
-          .appendField(new Blockly.FieldTextInput(""), "id")
-          .appendField("reconhecer ")
-          .appendField(new Blockly.FieldTextInput('repetir o video'), "")
-      }
-    }
-    while (this.getInput('ADD' + i)) {
-      this.removeInput('ADD' + i);
-      i++;
-    }
   }
 };
 Blockly.Blocks['ssml'] = {
@@ -350,6 +305,75 @@ Blockly.Blocks['video'] = {
           .appendField("e termina em")
           .appendField(new Blockly.FieldNumber(0, 0), "end")
           .appendField("s");
+      }
+    }
+    while (this.getInput('ADD' + i)) {
+      this.removeInput('ADD' + i);
+      i++;
+    }
+  }
+};
+
+// input contents
+
+Blockly.Blocks['srgs'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("media/srgs.png", 50, 50, "*"));
+    this.setColour(120);
+    this.itemCount_ = 1;
+    this.updateShape_();
+    this.setOutput(true, 'input_content');
+    this.setMutator(new Blockly.Mutator(['lists_create_with_item']));
+  },
+  mutationToDom: function () {
+    var container = document.createElement('mutation');
+    container.setAttribute('items', this.itemCount_);
+    return container;
+  },
+  domToMutation: function (xmlElement) {
+    this.itemCount_ = parseInt(xmlElement.getAttribute('items'), 10);
+    this.updateShape_();
+  },
+  decompose: function (workspace) {
+    var containerBlock = workspace.newBlock('lists_create_with_container');
+    containerBlock.initSvg();
+    var connection = containerBlock.getInput('STACK').connection;
+
+    for (var i = 0; i < this.itemCount_; i++) {
+      var itemBlock = workspace.newBlock('lists_create_with_item');
+      itemBlock.initSvg();
+      connection.connect(itemBlock.previousConnection);
+      connection = itemBlock.nextConnection;
+    }
+    return containerBlock;
+  },
+  compose: function (containerBlock) {
+    var itemBlock = containerBlock.getInputTargetBlock('STACK');
+    var connections = [];
+
+    while (itemBlock) {
+      connections.push(itemBlock.valueConnection_);
+      itemBlock = itemBlock.nextConnection &&
+        itemBlock.nextConnection.targetBlock();
+    }
+    this.itemCount_ = connections.length;
+    this.updateShape_();
+  },
+  saveConnections: function (containerBlock) {},
+  updateShape_: function () {
+    if (this.itemCount_ && this.getInput('EMPTY')) {
+      this.removeInput('EMPTY');
+    } else if (!this.itemCount_ && !this.getInput('EMPTY')) {
+      this.appendDummyInput('EMPTY')
+    }
+    for (var i = 0; i < this.itemCount_; i++) {
+      if (!this.getInput('ADD' + i)) {
+        this.appendDummyInput('ADD' + i)
+          .appendField("ancora id")
+          .appendField(new Blockly.FieldTextInput(""), "id")
+          .appendField("reconhecer ")
+          .appendField(new Blockly.FieldTextInput('repetir o video'), "")
       }
     }
     while (this.getInput('ADD' + i)) {
