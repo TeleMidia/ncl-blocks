@@ -1,7 +1,6 @@
 goog.require('Blockly.Blocks');
 
 // entities
-
 Blockly.Blocks['media'] = {
   init: function () {
     this.appendDummyInput()
@@ -19,7 +18,6 @@ Blockly.Blocks['media'] = {
     this.setHelpUrl('');
   }
 };
-
 Blockly.Blocks['input'] = {
   init: function () {
     this.appendDummyInput()
@@ -37,7 +35,6 @@ Blockly.Blocks['input'] = {
     this.setHelpUrl('');
   }
 };
-
 Blockly.Blocks['user'] = {
   init: function () {
     this.appendDummyInput()
@@ -54,9 +51,25 @@ Blockly.Blocks['user'] = {
     this.setHelpUrl('');
   }
 };
+Blockly.Blocks['link'] = {
+  init: function () {
+    this.appendDummyInput()
+      .setAlign(Blockly.ALIGN_CENTRE)
+      .appendField("--comportamento--");
+    this.appendValueInput("conditions")
+      .setCheck(["compoundcondition", "simplecondition"])
+      .appendField("quando");
+    this.appendStatementInput("actions")
+      .setCheck("simpleaction")
+      .appendField("faça");
+    this.setInputsInline(false);
+    this.setColour(260);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  }
+};
 
 // contents
-
 Blockly.Blocks['image'] = {
   init: function () {
     this.appendDummyInput()
@@ -67,7 +80,6 @@ Blockly.Blocks['image'] = {
     this.setHelpUrl('');
   }
 };
-
 Blockly.Blocks['srgs'] = {
   init: function () {
     this.appendDummyInput().appendField(
@@ -134,7 +146,6 @@ Blockly.Blocks['srgs'] = {
     }
   }
 };
-
 Blockly.Blocks['ssml'] = {
   init: function () {
     this.appendDummyInput().appendField(
@@ -201,7 +212,6 @@ Blockly.Blocks['ssml'] = {
     }
   }
 };
-
 Blockly.Blocks['video'] = {
   init: function () {
     this.appendDummyInput().appendField(
@@ -272,18 +282,13 @@ Blockly.Blocks['video'] = {
   }
 };
 
-// behavior
+// conditions
 
-Blockly.Blocks['simplecondition'] = {
+Blockly.Blocks['onbegin'] = {
   init: function () {
     this.appendDummyInput()
-      .appendField(new Blockly.FieldDropdown([
-        ["iniciar", "onBegin"],
-        ["terminar", "onEnd"],
-        ["atribuir", "onEndAttribution"],
-        ["reconhecer", "onRecognize"]
-      ]), "role")
-      .appendField("a")
+      .appendField(new Blockly.FieldImage("media/icon-bind-onbegin.png", 15, 15, "*"))
+      .appendField("inciar")
       .appendField(new Blockly.FieldDropdown([
         ["", "OPTIONNAME"]
       ]), "NAME");
@@ -294,42 +299,66 @@ Blockly.Blocks['simplecondition'] = {
     this.setHelpUrl('');
   }
 };
-
-Blockly.Blocks['behavior'] = {
+Blockly.Blocks['onend'] = {
   init: function () {
-    this.appendValueInput("conditions")
-      .setCheck(["compoundcondition", "simplecondition"])
-      .appendField("quando");
-    this.appendStatementInput("actions")
-      .setCheck("simpleaction")
-      .appendField("faça");
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("media/icon-bind-onend.png", 15, 15, "*"))
+      .appendField("terminar")
+      .appendField(new Blockly.FieldDropdown([
+        ["", "OPTIONNAME"]
+      ]), "NAME");
     this.setInputsInline(false);
+    this.setOutput(true, "simplecondition");
     this.setColour(260);
     this.setTooltip('');
     this.setHelpUrl('');
   }
 };
-
-Blockly.Blocks['simpleaction'] = {
+Blockly.Blocks['onpause'] = {
   init: function () {
     this.appendDummyInput()
-      .appendField(new Blockly.FieldDropdown([
-        ["inicie", "start"],
-        ["pare", "stop"],
-        ["continue", "resume"]
-      ]), "action")
-      .appendField("a")
+      .appendField(new Blockly.FieldImage("media/icon-bind-onpause.png", 15, 15, "*"))
+      .appendField("pausar")
       .appendField(new Blockly.FieldDropdown([
         ["", "OPTIONNAME"]
       ]), "NAME");
-    this.setPreviousStatement(true, "simpleaction");
-    this.setNextStatement(true, "simpleaction");
-    this.setColour(230);
+    this.setInputsInline('pause');
+    this.setOutput(true, "simplecondition");
+    this.setColour(260);
     this.setTooltip('');
     this.setHelpUrl('');
   }
 };
-
+Blockly.Blocks['onresume'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("media/icon-bind-onresume.png", 15, 15, "*"))
+      .appendField("resumir")
+      .appendField(new Blockly.FieldDropdown([
+        ["", "OPTIONNAME"]
+      ]), "NAME");
+    this.setInputsInline(false);
+    this.setOutput(true, "simplecondition");
+    this.setColour(260);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  }
+};
+Blockly.Blocks['onselection'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("media/icon-bind-onselection.png", 15, 15, "*"))
+      .appendField("selecionar")
+      .appendField(new Blockly.FieldDropdown([
+        ["", "OPTIONNAME"]
+      ]), "NAME");
+    this.setInputsInline(false);
+    this.setOutput(true, "simplecondition");
+    this.setColour(260);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  }
+};
 Blockly.Blocks['compoundcondition'] = {
   init: function () {
     this.appendDummyInput()
@@ -420,5 +449,86 @@ Blockly.Blocks['compoundcondition'] = {
       this.removeInput('ADD' + i);
       i++;
     }
+  }
+};
+
+// action
+Blockly.Blocks['start'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("media/icon-bind-start.png", 15, 15, "*"))
+      .appendField("inicie")
+      .appendField(new Blockly.FieldDropdown([
+        ["", "OPTIONNAME"]
+      ]), "NAME");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, "simpleaction");
+    this.setNextStatement(true, "simpleaction");
+    this.setColour(230);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  }
+};
+Blockly.Blocks['stop'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("media/icon-bind-stop.png", 15, 15, "*"))
+      .appendField("pare")
+      .appendField(new Blockly.FieldDropdown([
+        ["", "OPTIONNAME"]
+      ]), "NAME");
+    this.setPreviousStatement(true, "simpleaction");
+    this.setNextStatement(true, "simpleaction");
+    this.setColour(230);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  }
+};
+Blockly.Blocks['pause'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("media/icon-bind-pause.png", 15, 15, "*"))
+      .appendField("inicie")
+      .appendField(new Blockly.FieldDropdown([
+        ["", "OPTIONNAME"]
+      ]), "NAME");
+    this.setInputsInline('pause');
+    this.setPreviousStatement(true, "simpleaction");
+    this.setNextStatement(true, "simpleaction");
+    this.setColour(230);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  }
+};
+Blockly.Blocks['resume'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("media/icon-bind-resume.png", 15, 15, "*"))
+      .appendField("resume")
+      .appendField(new Blockly.FieldDropdown([
+        ["", "OPTIONNAME"]
+      ]), "NAME");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, "simpleaction");
+    this.setNextStatement(true, "simpleaction");
+    this.setColour(230);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  }
+};
+Blockly.Blocks['set'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("media/icon-bind-set.png", 15, 15, "*"))
+      .appendField("atribua")
+      .appendField(new Blockly.FieldDropdown([
+        ["", "OPTIONNAME"]
+      ]), "NAME");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, "simpleaction");
+    this.setNextStatement(true, "simpleaction");
+    this.setColour(230);
+    this.setTooltip('');
+    this.setHelpUrl('');
   }
 };
