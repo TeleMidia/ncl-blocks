@@ -36,6 +36,7 @@ Blockly.Blocks['input'] = {
     this.setHelpUrl('');
   }
 };
+
 Blockly.Blocks['user'] = {
   init: function () {
     this.appendDummyInput()
@@ -44,14 +45,88 @@ Blockly.Blocks['user'] = {
     this.appendDummyInput()
       .appendField("id")
       .appendField(new Blockly.FieldTextInput(""), "id");
-    this.appendValueInput("NAME")
-      .setCheck("user_content")
-      .appendField("src");
+    this.appendDummyInput("NAME")
+      .appendField("características");
     this.setColour(20);
-    this.setTooltip('');
-    this.setHelpUrl('');
+    this.itemCount_ = 2;
+    this.updateShape_();
+    this.setMutator(new Blockly.Mutator(['lists_create_with_item']));
+  },
+  mutationToDom: function () {
+    var container = document.createElement('mutation');
+    container.setAttribute('items', this.itemCount_);
+    return container;
+  },
+  domToMutation: function (xmlElement) {
+    this.itemCount_ = parseInt(xmlElement.getAttribute('items'), 10);
+    this.updateShape_();
+  },
+  decompose: function (workspace) {
+    var containerBlock = workspace.newBlock('lists_create_with_container');
+    containerBlock.initSvg();
+    var connection = containerBlock.getInput('STACK').connection;
+    for (var i = 0; i < this.itemCount_; i++) {
+      var itemBlock = workspace.newBlock('lists_create_with_item');
+      itemBlock.initSvg();
+      connection.connect(itemBlock.previousConnection);
+      connection = itemBlock.nextConnection;
+    }
+    return containerBlock;
+  },
+  compose: function (containerBlock) {
+    var itemBlock = containerBlock.getInputTargetBlock('STACK');
+    // Count number of inputs.
+    var connections = [];
+    while (itemBlock) {
+      connections.push(itemBlock.valueConnection_);
+      itemBlock = itemBlock.nextConnection &&
+        itemBlock.nextConnection.targetBlock();
+    }
+    // Disconnect any children that don't belong.
+    for (var i = 0; i < this.itemCount_; i++) {
+      var connection = this.getInput('ADD' + i).connection.targetConnection;
+      if (connection && connections.indexOf(connection) == -1) {
+        connection.disconnect();
+      }
+    }
+    this.itemCount_ = connections.length;
+    this.updateShape_();
+    // Reconnect any child blocks.
+    for (var i = 0; i < this.itemCount_; i++) {
+      Blockly.Mutator.reconnect(connections[i], this, 'ADD' + i);
+    }
+  },
+  saveConnections: function (containerBlock) {
+    var itemBlock = containerBlock.getInputTargetBlock('STACK');
+    var i = 0;
+    while (itemBlock) {
+      var input = this.getInput('ADD' + i);
+      itemBlock.valueConnection_ = input && input.connection.targetConnection;
+      i++;
+      itemBlock = itemBlock.nextConnection &&
+        itemBlock.nextConnection.targetBlock();
+    }
+  },
+  updateShape_: function () {
+    if (this.itemCount_ && this.getInput('EMPTY')) {
+      this.removeInput('EMPTY');
+    } else if (!this.itemCount_ && !this.getInput('EMPTY')) {
+      this.appendDummyInput('EMPTY')
+    }
+    // Add new inputs.
+    for (var i = 0; i < this.itemCount_; i++) {
+      if (!this.getInput('ADD' + i)) {
+        var input = this.appendValueInput('ADD' + i);
+      }
+    }
+    // Remove deleted inputs.
+    while (this.getInput('ADD' + i)) {
+      this.removeInput('ADD' + i);
+      i++;
+    }
   }
 };
+
 Blockly.Blocks['link'] = {
   init: function () {
     this.appendDummyInput()
@@ -84,8 +159,8 @@ Blockly.Blocks['image'] = {
 };
 Blockly.Blocks['srgs'] = {
   init: function () {
-    this.appendDummyInput().appendField(
-      new Blockly.FieldImage("media/srgs.png", 50, 50, "*"));
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("media/srgs.png", 50, 50, "*"));
     this.setColour(120);
     this.itemCount_ = 1;
     this.updateShape_();
