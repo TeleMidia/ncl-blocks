@@ -26,10 +26,10 @@ Blockly.Blocks['media'] = {
   init: function () {
     this.appendDummyInput()
       .setAlign(Blockly.ALIGN_CENTRE)
-      .appendField("--media--");
+      .appendField("-- mídia --");
     this.appendDummyInput()
-      .appendField("id")
-      .appendField(new Blockly.FieldTextInput(""), "id");
+      .appendField("id=")
+      .appendField(new Blockly.FieldTextInput(""), "id=");
     this.appendValueInput("src")
       .setCheck("media_content")
       .appendField("conteúdo");
@@ -43,10 +43,10 @@ Blockly.Blocks['input'] = {
   init: function () {
     this.appendDummyInput()
       .setAlign(Blockly.ALIGN_CENTRE)
-      .appendField("--input-- ");
+      .appendField("--  reconhecedor -- ");
     this.appendDummyInput()
-      .appendField("id")
-      .appendField(new Blockly.FieldTextInput(""), "id");
+      .appendField("id=")
+      .appendField(new Blockly.FieldTextInput(""), "id=");
     this.appendValueInput("src")
       .setCheck("input_content")
       .appendField("conteúdo");
@@ -60,12 +60,12 @@ Blockly.Blocks['user'] = {
   init: function () {
     this.appendDummyInput()
       .setAlign(Blockly.ALIGN_CENTRE)
-      .appendField("--user--");
+      .appendField("-- usuário --");
     this.appendDummyInput()
-      .appendField("id")
-      .appendField(new Blockly.FieldTextInput(""), "id");
+      .appendField("id=")
+      .appendField(new Blockly.FieldTextInput(""), "id=");
     this.appendDummyInput("NAME")
-      .appendField("características");
+      .appendField("dispositivos");
     this.setColour(20);
     this.itemCount_ = 2;
     this.updateShape_();
@@ -168,7 +168,7 @@ Blockly.Blocks['link'] = {
 Blockly.Blocks['headset'] = {
   init: function () {
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage("media/headset.png", 50, 50, "*"));
+      .appendField(new Blockly.FieldImage("media/headset.png", 30, 30, "*"));
     this.setOutput(true, "media_content");
     this.setColour(20);
     this.setTooltip('');
@@ -178,7 +178,7 @@ Blockly.Blocks['headset'] = {
 Blockly.Blocks['finger-pointer'] = {
   init: function () {
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage("media/leap.png", 50, 50, "*"));
+      .appendField(new Blockly.FieldImage("media/leap.png", 30, 30, "*"));
     this.setOutput(true, "media_content");
     this.setColour(20);
     this.setTooltip('');
@@ -191,7 +191,8 @@ Blockly.Blocks['finger-pointer'] = {
 Blockly.Blocks['image'] = {
   init: function () {
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage("media/icon-image.png", 50, 50, "*"));
+      .appendField(new Blockly.FieldImage("media/icon-image.png", 30, 30, "*"))
+      .appendField("-- imagem --");
     this.setOutput(true, "media_content");
     this.setColour(120);
     this.setTooltip('');
@@ -200,8 +201,9 @@ Blockly.Blocks['image'] = {
 };
 Blockly.Blocks['ssml'] = {
   init: function () {
-    this.appendDummyInput().appendField(
-      new Blockly.FieldImage("media/ssml.png", 50, 50, "*"));
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("media/ssml.png", 30, 30, "*"))
+      .appendField("-- texto para sintetização --");
     this.setColour(120);
     this.itemCount_ = 1;
     this.updateShape_();
@@ -252,10 +254,10 @@ Blockly.Blocks['ssml'] = {
     for (var i = 0; i < this.itemCount_; i++) {
       if (!this.getInput('ADD' + i)) {
         this.appendDummyInput('ADD' + i)
-          .appendField("ancora id")
-          .appendField(new Blockly.FieldTextInput(""), "id")
-          .appendField("sintetizar")
-          .appendField(new Blockly.FieldTextInput('repetir o video'), "")
+          .appendField("trecho id=")
+          .appendField(new Blockly.FieldTextInput(""), "id=")
+          .appendField("sintetiza frase")
+          .appendField(new Blockly.FieldTextInput(''), "")
       }
     }
     while (this.getInput('ADD' + i)) {
@@ -266,8 +268,9 @@ Blockly.Blocks['ssml'] = {
 };
 Blockly.Blocks['video'] = {
   init: function () {
-    this.appendDummyInput().appendField(
-      new Blockly.FieldImage("media/icon-video.png", 50, 50, "*"));
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("media/icon-video.png", 30, 30, "*"))
+      .appendField("-- vídeo --");
     this.setColour(120);
     this.itemCount_ = 1;
     this.updateShape_();
@@ -318,8 +321,8 @@ Blockly.Blocks['video'] = {
     for (var i = 0; i < this.itemCount_; i++) {
       if (!this.getInput('ADD' + i)) {
         this.appendDummyInput('ADD' + i)
-          .appendField("ancora id")
-          .appendField(new Blockly.FieldTextInput(""), "id")
+          .appendField("trecho id=")
+          .appendField(new Blockly.FieldTextInput(""), "id=")
           .appendField("inicia em")
           .appendField(new Blockly.FieldNumber(0, 0), "begin")
           .appendField("e termina em")
@@ -339,7 +342,8 @@ Blockly.Blocks['video'] = {
 Blockly.Blocks['srgs'] = {
   init: function () {
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage("media/srgs.png", 50, 50, "*"));
+      .appendField(new Blockly.FieldImage("media/srgs.png", 30, 30, "*"))
+      .appendField("-- comandos de voz --");
     this.setColour(120);
     this.itemCount_ = 1;
     this.updateShape_();
@@ -390,10 +394,10 @@ Blockly.Blocks['srgs'] = {
     for (var i = 0; i < this.itemCount_; i++) {
       if (!this.getInput('ADD' + i)) {
         this.appendDummyInput('ADD' + i)
-          .appendField("ancora id")
-          .appendField(new Blockly.FieldTextInput(""), "id")
-          .appendField("reconhecer ")
-          .appendField(new Blockly.FieldTextInput('repetir o video'), "")
+          .appendField("trecho id=")
+          .appendField(new Blockly.FieldTextInput(""), "id=")
+          .appendField("reconhece frase")
+          .appendField(new Blockly.FieldTextInput(''), "")
       }
     }
     while (this.getInput('ADD' + i)) {
