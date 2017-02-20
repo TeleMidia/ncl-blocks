@@ -64,8 +64,6 @@ Blockly.Blocks['user'] = {
     this.appendDummyInput()
       .appendField("id=")
       .appendField(new Blockly.FieldTextInput(""), "id=");
-    this.appendDummyInput("NAME")
-      .appendField("dispositivos");
     this.setColour(20);
     this.itemCount_ = 2;
     this.updateShape_();
@@ -132,10 +130,16 @@ Blockly.Blocks['user'] = {
     } else if (!this.itemCount_ && !this.getInput('EMPTY')) {
       this.appendDummyInput('EMPTY')
     }
+    if(this.itemCount_ == 0)
+    this.appendDummyInput("NAME")
+      .appendField("dispositivos");
     // Add new inputs.
     for (var i = 0; i < this.itemCount_; i++) {
       if (!this.getInput('ADD' + i)) {
         var input = this.appendValueInput('ADD' + i);
+        input.setCheck('user_content');
+        if(i == 0)
+          input.appendField("dispositivos");
       }
     }
     // Remove deleted inputs.
@@ -169,7 +173,7 @@ Blockly.Blocks['headset'] = {
   init: function () {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage("media/headset.png", 30, 30, "*"));
-    this.setOutput(true, "media_content");
+    this.setOutput(true, "user_content");
     this.setColour(20);
     this.setTooltip('');
     this.setHelpUrl('');
@@ -179,7 +183,7 @@ Blockly.Blocks['finger-pointer'] = {
   init: function () {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage("media/leap.png", 30, 30, "*"));
-    this.setOutput(true, "media_content");
+    this.setOutput(true, "user_content");
     this.setColour(20);
     this.setTooltip('');
     this.setHelpUrl('');
