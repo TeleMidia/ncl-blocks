@@ -25,14 +25,12 @@ function input_interfaces_options() {
 Blockly.Blocks['media'] = {
   init: function () {
     this.appendDummyInput()
-      .setAlign(Blockly.ALIGN_CENTRE)
       .appendField("-- mídia --");
-    this.appendDummyInput()
-      .appendField("id=")
-      .appendField(new Blockly.FieldTextInput(""), "id=");
     this.appendValueInput("src")
+      .appendField("id=")
+      .appendField(new Blockly.FieldTextInput(""), "id=")
       .setCheck("media_content")
-      .appendField("conteúdo");
+      .appendField("e conteúdo=");
     this.setInputsInline(false);
     this.setColour(120);
     this.setTooltip('Modalidade de saida');
@@ -42,14 +40,12 @@ Blockly.Blocks['media'] = {
 Blockly.Blocks['input'] = {
   init: function () {
     this.appendDummyInput()
-      .setAlign(Blockly.ALIGN_CENTRE)
       .appendField("--  reconhecedor -- ");
-    this.appendDummyInput()
-      .appendField("id=")
-      .appendField(new Blockly.FieldTextInput(""), "id=");
     this.appendValueInput("src")
       .setCheck("input_content")
-      .appendField("conteúdo");
+      .appendField("id=")
+      .appendField(new Blockly.FieldTextInput(""), "id=")
+      .appendField("e conteúdo=");
     this.setInputsInline(false);
     this.setColour(120);
     this.setTooltip('Modalidade de entrada');
@@ -59,11 +55,12 @@ Blockly.Blocks['input'] = {
 Blockly.Blocks['user'] = {
   init: function () {
     this.appendDummyInput()
-      .setAlign(Blockly.ALIGN_CENTRE)
       .appendField("-- usuário --");
-    this.appendDummyInput()
+    this.appendValueInput('ADD0')
       .appendField("id=")
-      .appendField(new Blockly.FieldTextInput(""), "id=");
+      .appendField(new Blockly.FieldTextInput(""), "id")
+      .setCheck('user_content')
+      .appendField("e dispositivos=");
     this.setColour(20);
     this.itemCount_ = 2;
     this.updateShape_();
@@ -125,21 +122,16 @@ Blockly.Blocks['user'] = {
     }
   },
   updateShape_: function () {
-    if (this.itemCount_ && this.getInput('EMPTY')) {
-      this.removeInput('EMPTY');
-    } else if (!this.itemCount_ && !this.getInput('EMPTY')) {
-      this.appendDummyInput('EMPTY')
-    }
-    if(this.itemCount_ == 0)
-    this.appendDummyInput("NAME")
-      .appendField("dispositivos");
+    // if (this.itemCount_ && this.getInput('EMPTY')) {
+    //   this.removeInput('EMPTY');
+    // } else if (!this.itemCount_ && !this.getInput('EMPTY')) {
+    //   this.appendDummyInput('EMPTY')
+    // }
     // Add new inputs.
-    for (var i = 0; i < this.itemCount_; i++) {
+    for (var i = 1; i < this.itemCount_; i++) {
       if (!this.getInput('ADD' + i)) {
         var input = this.appendValueInput('ADD' + i);
         input.setCheck('user_content');
-        if(i == 0)
-          input.appendField("dispositivos");
       }
     }
     // Remove deleted inputs.
@@ -152,7 +144,6 @@ Blockly.Blocks['user'] = {
 Blockly.Blocks['link'] = {
   init: function () {
     this.appendDummyInput()
-      .setAlign(Blockly.ALIGN_CENTRE)
       .appendField("-- comportamento --");
     this.appendValueInput("conditions")
       .setCheck(["compoundcondition", "simplecondition"])
