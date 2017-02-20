@@ -35,6 +35,7 @@ Blockly.Blocks['media'] = {
     this.setColour(120);
     this.setTooltip('Modalidade de saida');
     this.setHelpUrl('');
+    this.contextMenu = false;
   }
 };
 Blockly.Blocks['input'] = {
@@ -50,6 +51,7 @@ Blockly.Blocks['input'] = {
     this.setColour(120);
     this.setTooltip('Modalidade de entrada');
     this.setHelpUrl('');
+    this.contextMenu = false;
   }
 };
 Blockly.Blocks['user'] = {
@@ -65,6 +67,7 @@ Blockly.Blocks['user'] = {
     this.itemCount_ = 2;
     this.updateShape_();
     this.setMutator(new Blockly.Mutator(['lists_create_with_item']));
+    this.contextMenu = false;
   },
   mutationToDom: function () {
     var container = document.createElement('mutation');
@@ -155,6 +158,7 @@ Blockly.Blocks['link'] = {
     this.setColour(260);
     this.setTooltip('');
     this.setHelpUrl('');
+    this.contextMenu = false;
   }
 };
 
@@ -169,6 +173,7 @@ Blockly.Blocks['headset'] = {
     this.setColour(20);
     this.setTooltip('');
     this.setHelpUrl('');
+    this.contextMenu = false;
   }
 };
 Blockly.Blocks['hand-gesture-sensor'] = {
@@ -180,6 +185,7 @@ Blockly.Blocks['hand-gesture-sensor'] = {
     this.setColour(20);
     this.setTooltip('');
     this.setHelpUrl('');
+    this.contextMenu = false;
   }
 };
 
@@ -194,6 +200,7 @@ Blockly.Blocks['image'] = {
     this.setColour(120);
     this.setTooltip('');
     this.setHelpUrl('');
+    this.contextMenu = false;
   }
 };
 Blockly.Blocks['ssml'] = {
@@ -206,6 +213,7 @@ Blockly.Blocks['ssml'] = {
     this.updateShape_();
     this.setOutput(true, 'media_content');
     this.setMutator(new Blockly.Mutator(['lists_create_with_item']));
+    this.contextMenu = false;
   },
   mutationToDom: function () {
     var container = document.createElement('mutation');
@@ -273,6 +281,7 @@ Blockly.Blocks['video'] = {
     this.updateShape_();
     this.setOutput(true, 'media_content');
     this.setMutator(new Blockly.Mutator(['lists_create_with_item']));
+    this.contextMenu = false;
   },
   mutationToDom: function () {
     var container = document.createElement('mutation');
@@ -346,6 +355,7 @@ Blockly.Blocks['srgs'] = {
     this.updateShape_();
     this.setOutput(true, 'input_content');
     this.setMutator(new Blockly.Mutator(['lists_create_with_item']));
+    this.contextMenu = false;
   },
   mutationToDom: function () {
     var container = document.createElement('mutation');
@@ -414,6 +424,7 @@ Blockly.Blocks['hand-gesture'] = {
     this.updateShape_();
     this.setOutput(true, 'input_content');
     this.setMutator(new Blockly.Mutator(['lists_create_with_item']));
+    this.contextMenu = false;
   },
   mutationToDom: function () {
     var container = document.createElement('mutation');
@@ -485,6 +496,7 @@ Blockly.Blocks['onbegin'] = {
     this.setColour(260);
     this.setTooltip('');
     this.setHelpUrl('');
+    this.contextMenu = false;
   }
 };
 Blockly.Blocks['onend'] = {
@@ -498,6 +510,7 @@ Blockly.Blocks['onend'] = {
     this.setColour(260);
     this.setTooltip('');
     this.setHelpUrl('');
+    this.contextMenu = false;
   }
 };
 Blockly.Blocks['onpause'] = {
@@ -511,6 +524,7 @@ Blockly.Blocks['onpause'] = {
     this.setColour(260);
     this.setTooltip('');
     this.setHelpUrl('');
+    this.contextMenu = false;
   }
 };
 Blockly.Blocks['onresume'] = {
@@ -524,6 +538,7 @@ Blockly.Blocks['onresume'] = {
     this.setColour(260);
     this.setTooltip('');
     this.setHelpUrl('');
+    this.contextMenu = false;
   }
 };
 Blockly.Blocks['onselection'] = {
@@ -537,6 +552,7 @@ Blockly.Blocks['onselection'] = {
     this.setColour(260);
     this.setTooltip('');
     this.setHelpUrl('');
+    this.contextMenu = false;
   }
 };
 Blockly.Blocks['onrecognize'] = {
@@ -550,6 +566,7 @@ Blockly.Blocks['onrecognize'] = {
     this.setColour(260);
     this.setTooltip('');
     this.setHelpUrl('');
+    this.contextMenu = false;
   }
 };
 Blockly.Blocks['compoundcondition'] = {
@@ -567,6 +584,7 @@ Blockly.Blocks['compoundcondition'] = {
     this.updateShape_();
     this.setOutput(true, 'simplecondition');
     this.setMutator(new Blockly.Mutator(['lists_create_with_item']));
+    this.contextMenu = false;
   },
   mutationToDom: function () {
     var container = document.createElement('mutation');
@@ -659,6 +677,7 @@ Blockly.Blocks['start'] = {
     this.setColour(230);
     this.setTooltip('');
     this.setHelpUrl('');
+    this.contextMenu = false;
   }
 };
 Blockly.Blocks['stop'] = {
@@ -672,6 +691,7 @@ Blockly.Blocks['stop'] = {
     this.setColour(230);
     this.setTooltip('');
     this.setHelpUrl('');
+    this.contextMenu = false;
   }
 };
 Blockly.Blocks['pause'] = {
@@ -686,6 +706,7 @@ Blockly.Blocks['pause'] = {
     this.setColour(230);
     this.setTooltip('');
     this.setHelpUrl('');
+    this.contextMenu = false;
   }
 };
 Blockly.Blocks['resume'] = {
@@ -700,6 +721,7 @@ Blockly.Blocks['resume'] = {
     this.setColour(230);
     this.setTooltip('');
     this.setHelpUrl('');
+    this.contextMenu = false;
   }
 };
 Blockly.Blocks['set'] = {
@@ -716,5 +738,6 @@ Blockly.Blocks['set'] = {
     this.setColour(230);
     this.setTooltip('');
     this.setHelpUrl('');
+    this.contextMenu = false;
   }
 };
