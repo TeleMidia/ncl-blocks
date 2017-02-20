@@ -7,7 +7,6 @@
   <script src="lib/blockly_compressed.js"></script>
   <script src="lib/blocks_compressed.js"></script>
   <script src="lib/pt-br.js"></script>
-  <script src="ncl-blocks.js"></script>
   <style>
     body {
       background-color: #fff;
@@ -32,17 +31,18 @@
     </category>
     <category name="caracteristicas de usuário">
       <block type="headset"></block>
-      <block type="finger-pointer"></block>
+      <block type="hand-gesture-sensor"></block>
     </category>
-    <category name="conteudo de mídia">
+    <category name="conteúdo de mídia">
       <block type="video"></block>
       <block type="image"></block>
       <block type="ssml"></block>
     </category>
-    <category name="conteudo de input">
+    <category name="conteúdo de reconhecedor">
       <block type="srgs"></block>
+      <block type="hand-gesture"></block>
     </category>
-    <category name="condições">
+    <category name="condições">cfeclipse-light-syntax
       <block type="onbegin"></block>
       <block type="onend"></block>
       <block type="onpause"></block>
@@ -51,7 +51,7 @@
       <block type="onrecognize"></block>
       <block type="compoundcondition"></block>
     </category>
-    <category name="ações">
+    <category name="ações">cfeclipse-light-syntax
       <block type="start"></block>
       <block type="stop"></block>
       <block type="pause"></block>
@@ -59,6 +59,7 @@
       <block type="set"></block>
     </category>
   </xml>
+  <script src="ncl-blocks.js"></script>
   <script>
     Blockly.BlockSvg.START_HAT = true;
     var blocklyDiv = document.getElementById('blocklyDiv');
@@ -67,9 +68,23 @@
       toolbox: document.getElementById('toolbox')
     });
     var onresize = function (e) {
-      Blockly.svgResize(workspace);
+      var element = blocklyArea;
+      var x = 0;
+      var y = 0;
+      do {
+        x += element.offsetLeft;
+        y += element.offsetTop;
+        element = element.offsetParent;
+      } while (element);
+      // Position blocklyDiv over blocklyArea.
+      blocklyDiv.style.left = x + 'px';
+      blocklyDiv.style.top = y + 'px';
+      blocklyDiv.style.width = blocklyArea.offsetWidth + 'px';
+      blocklyDiv.style.height = blocklyArea.offsetHeight + 'px';
     };
     window.addEventListener('resize', onresize, false);
+    onresize();
+    Blockly.svgResize(workspace);
   </script>
 </body>
 
