@@ -7,17 +7,7 @@
   <script src="lib/blockly_compressed.js"></script>
   <script src="lib/blocks_compressed.js"></script>
   <script src="lib/pt-br.js"></script>
-  <style>
-    body {
-      background-color: #fff;
-      font-family: sans-serif;
-    }
-
-    h1 {
-      font-weight: normal;
-      font-size: 140%;
-    }
-  </style>
+  <script src="ncl-blocks.js"></script>
 </head>
 
 <body>
@@ -59,7 +49,6 @@
       <block type="set"></block>
     </category>
   </xml>
-  <script src="ncl-blocks.js"></script>
   <script>
     Blockly.BlockSvg.START_HAT = true;
     var blocklyDiv = document.getElementById('blocklyDiv');
@@ -67,24 +56,6 @@
       media: 'media/',
       toolbox: document.getElementById('toolbox')
     });
-    var onresize = function (e) {
-      var element = blocklyArea;
-      var x = 0;
-      var y = 0;
-      do {
-        x += element.offsetLeft;
-        y += element.offsetTop;
-        element = element.offsetParent;
-      } while (element);
-      // Position blocklyDiv over blocklyArea.
-      blocklyDiv.style.left = x + 'px';
-      blocklyDiv.style.top = y + 'px';
-      blocklyDiv.style.width = blocklyArea.offsetWidth + 'px';
-      blocklyDiv.style.height = blocklyArea.offsetHeight + 'px';
-    };
-    window.addEventListener('resize', onresize, false);
-    onresize();
-    Blockly.svgResize(workspace);
   </script>
 </body>
 
