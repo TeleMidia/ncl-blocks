@@ -1,34 +1,63 @@
 goog.require('Blockly.Blocks');
 
 // media_interfaces
-var media_interfaces = ['media1', 'media2', 'anchor1'];
-var input_interfaces = ['input1', 'input2', 'anchor2'];
+var media_interfaces = [
+  ['-', '-']
+];
+var input_interfaces = [
+  ['-', '-']
+];
 
 function media_interfaces_options() {
-  var options = [];
-  for (var i = 0; i < media_interfaces.length; i++) {
-    options.push([String(media_interfaces[i]), 'media_interface' + i]);
-  }
-  return options;
+  return media_interfaces;
 }
 
 function input_interfaces_options() {
-  var options = [];
-  for (var i = 0; i < media_interfaces.length; i++) {
-    options.push([String(input_interfaces[i]), 'media_interface' + i]);
-  }
-  return options;
+  return input_interfaces;
 }
 
-// entities
+function media_interfaces_validate(text) {
+  if (text == '') return null;
+  for (var i in media_interfaces)
+    if (media_interfaces[i][0] == text)
+      return null;
+}
 
+function input_interfaces_validate(text) {
+  if (text == '') return null;
+  for (var i in input_interfaces)
+    if (input_interfaces[i][0] == text)
+      return null;
+}
+
+Blockly.NclMediaFieldText = function (text, opt_validator) {
+  Blockly.NclMediaFieldText.superClass_.constructor.call(this, text,
+    opt_validator);
+};
+goog.inherits(Blockly.NclMediaFieldText, Blockly.FieldTextInput);
+Blockly.NclMediaFieldText.prototype.onFinishEditing_ = function (text) {
+  media_interfaces.push([text, text]);
+  console.log("add media interface " + text);
+};
+
+Blockly.NclInputFieldText = function (text, opt_validator) {
+  Blockly.NclInputFieldText.superClass_.constructor.call(this, text,
+    opt_validator);
+};
+goog.inherits(Blockly.NclInputFieldText, Blockly.FieldTextInput);
+Blockly.NclInputFieldText.prototype.onFinishEditing_ = function (text) {
+  input_interfaces.push([text, text]);
+  console.log("add input interface = " + text);
+};
+
+// entities
 Blockly.Blocks['media'] = {
   init: function () {
     this.appendDummyInput()
       .appendField("-- mídia --");
     this.appendValueInput("src")
       .appendField("id=")
-      .appendField(new Blockly.FieldTextInput(""), "id=")
+      .appendField(new Blockly.NclMediaFieldText("", media_interfaces_validate))
       .setCheck("media_content")
       .appendField("e conteúdo=");
     this.setInputsInline(false);
@@ -38,6 +67,7 @@ Blockly.Blocks['media'] = {
     this.contextMenu = false;
   }
 };
+
 Blockly.Blocks['input'] = {
   init: function () {
     this.appendDummyInput()
@@ -45,7 +75,7 @@ Blockly.Blocks['input'] = {
     this.appendValueInput("src")
       .setCheck("input_content")
       .appendField("id=")
-      .appendField(new Blockly.FieldTextInput(""), "id=")
+      .appendField(new Blockly.NclInputFieldText("", input_interfaces_validate))
       .appendField("e conteúdo=");
     this.setInputsInline(false);
     this.setColour(120);
@@ -260,7 +290,7 @@ Blockly.Blocks['ssml'] = {
       if (!this.getInput('ADD' + i)) {
         this.appendDummyInput('ADD' + i)
           .appendField("id=")
-          .appendField(new Blockly.FieldTextInput(""), "id=")
+          .appendField(new Blockly.NclMediaFieldText("", media_interfaces_validate))
           .appendField("sintetiza frase")
           .appendField(new Blockly.FieldTextInput(''), "")
       }
@@ -328,7 +358,7 @@ Blockly.Blocks['video'] = {
       if (!this.getInput('ADD' + i)) {
         this.appendDummyInput('ADD' + i)
           .appendField("id=")
-          .appendField(new Blockly.FieldTextInput(""), "id=")
+          .appendField(new Blockly.NclMediaFieldText("", media_interfaces_validate))
           .appendField("define trecho de inicio")
           .appendField(new Blockly.FieldNumber(0, 0), "begin")
           .appendField("s e fim")
@@ -402,7 +432,7 @@ Blockly.Blocks['srgs'] = {
       if (!this.getInput('ADD' + i)) {
         this.appendDummyInput('ADD' + i)
           .appendField("id=")
-          .appendField(new Blockly.FieldTextInput(""), "id=")
+          .appendField(new Blockly.NclInputFieldText("", input_interfaces_validate))
           .appendField("reconhece frase")
           .appendField(new Blockly.FieldTextInput(''), "")
       }
