@@ -239,7 +239,7 @@ Blockly.Blocks['ssml'] = {
       .appendField(new Blockly.FieldImage("media/ssml.png", 30, 30, "*"))
       .appendField("-- texto para sintetização --");
     this.setColour(120);
-    this.itemCount_ = 1;
+    this.itemCount_ = 2;
     this.updateShape_();
     this.setOutput(true, 'media_content');
     this.setMutator(new Blockly.Mutator(['lists_create_with_item']));
@@ -307,7 +307,7 @@ Blockly.Blocks['video'] = {
       .appendField(new Blockly.FieldImage("media/icon-video.png", 30, 30, "*"))
       .appendField("-- vídeo --");
     this.setColour(120);
-    this.itemCount_ = 1;
+    this.itemCount_ = 2;
     this.updateShape_();
     this.setOutput(true, 'media_content');
     this.setMutator(new Blockly.Mutator(['lists_create_with_item']));
@@ -381,7 +381,7 @@ Blockly.Blocks['srgs'] = {
       .appendField(new Blockly.FieldImage("media/srgs.png", 30, 30, "*"))
       .appendField("-- comandos de voz --");
     this.setColour(120);
-    this.itemCount_ = 1;
+    this.itemCount_ = 2;
     this.updateShape_();
     this.setOutput(true, 'input_content');
     this.setMutator(new Blockly.Mutator(['lists_create_with_item']));
@@ -450,7 +450,7 @@ Blockly.Blocks['hand-gesture'] = {
       .appendField(new Blockly.FieldImage("media/hand-gesture.png", 30, 30, "*"))
       .appendField("-- gestures de mão --");
     this.setColour(120);
-    this.itemCount_ = 1;
+    this.itemCount_ = 2;
     this.updateShape_();
     this.setOutput(true, 'input_content');
     this.setMutator(new Blockly.Mutator(['lists_create_with_item']));
