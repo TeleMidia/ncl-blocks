@@ -16,6 +16,10 @@ function input_interfaces() {
   return input_interfaces;
 }
 
+function users_options() {
+  return media_interfaces;
+}
+
 function media_interfaces_validate(text) {
   if (text == '') return null;
   for (var i in media_interfaces)
@@ -606,6 +610,23 @@ Blockly.Blocks['onrecognize'] = {
         15, 15, "*"))
       .appendField("reconhecer")
       .appendField(new Blockly.FieldDropdown(input_interfaces), "NAME");
+    this.setInputsInline(false);
+    this.setOutput(true, "simplecondition");
+    this.setColour(260);
+    this.setTooltip('');
+    this.setHelpUrl('');
+    this.contextMenu = false;
+  }
+};
+Blockly.Blocks['onrecognizeuser'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("media/icon-bind-onselection.png",
+        15, 15, "*"))
+      .appendField("reconhecer")
+      .appendField(new Blockly.FieldDropdown(input_interfaces), "NAME")
+      .appendField(" do usuário")
+      .appendField(new Blockly.FieldDropdown(users_options), "NAME");
     this.setInputsInline(false);
     this.setOutput(true, "simplecondition");
     this.setColour(260);
