@@ -7,6 +7,9 @@ var media_interfaces = [
 var input_interfaces = [
   ['-', '-']
 ];
+var user_interfaces = [
+  ['-', '-']
+];
 
 function media_interfaces() {
   return media_interfaces;
@@ -16,8 +19,8 @@ function input_interfaces() {
   return input_interfaces;
 }
 
-function users_options() {
-  return media_interfaces;
+function user_options() {
+  return user_interfaces;
 }
 
 function media_interfaces_validate(text) {
@@ -31,6 +34,13 @@ function input_interfaces_validate(text) {
   if (text == '') return null;
   for (var i in input_interfaces)
     if (input_interfaces[i][0] == text)
+      return null;
+}
+
+function user_interfaces_validate(text) {
+  if (text == '') return null;
+  for (var i in user_interfaces)
+    if (user_interfaces[i][0] == text)
       return null;
 }
 
@@ -52,6 +62,16 @@ goog.inherits(Blockly.NclInputFieldText, Blockly.FieldTextInput);
 Blockly.NclInputFieldText.prototype.onFinishEditing_ = function (text) {
   input_interfaces.push([text, text]);
   console.log("add input interface = " + text);
+};
+
+Blockly.NclUserFieldText = function (text, opt_validator) {
+  Blockly.NclUserFieldText.superClass_.constructor.call(this, text,
+    opt_validator);
+};
+goog.inherits(Blockly.NclUserFieldText, Blockly.FieldTextInput);
+Blockly.NclUserFieldText.prototype.onFinishEditing_ = function (text) {
+  user_interfaces.push([text, text]);
+  console.log("add user interface = " + text);
 };
 
 // entities
@@ -96,7 +116,7 @@ Blockly.Blocks['user'] = {
       .appendField("-- usuário --");
     this.appendValueInput('ADD0')
       .appendField("id=")
-      .appendField(new Blockly.FieldTextInput(""), "id")
+      .appendField(new Blockly.NclUserFieldText("",user_interfaces_validate))
       .setCheck('user_content')
       .appendField("e dispositivos=");
     this.setColour(20);
@@ -626,7 +646,7 @@ Blockly.Blocks['onrecognizeuser'] = {
       .appendField("reconhecer")
       .appendField(new Blockly.FieldDropdown(input_interfaces), "NAME")
       .appendField(" do usuário")
-      .appendField(new Blockly.FieldDropdown(users_options), "NAME");
+      .appendField(new Blockly.FieldDropdown(user_interfaces), "NAME");
     this.setInputsInline(false);
     this.setOutput(true, "simplecondition");
     this.setColour(260);
