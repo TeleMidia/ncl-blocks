@@ -1,74 +1,77 @@
 goog.require('Blockly.Blocks');
 
-// mediaInterfaces
-var mediaInterfaces = [
-  ['-', '-']
-];
-var inputInterfaces = [
-  ['-', '-']
-];
-var userInterfaces = [
+// media ids
+var mediaIds = [
   ['-', '-']
 ];
 
-function getMediaInterfaces() {
-  return mediaInterfaces;
+function getMediaIds() {
+  return mediaIds;
 }
 
-function getInputInterfaces() {
-  return inputInterfaces;
-}
-
-function getUserInterfaces() {
-  return userInterfaces;
-}
-
-function mediaInterfacesValidate(text) {
+function validateMediaId(text) {
   if (text === '') return null;
-  for (var i in mediaInterfaces) {
-    if (mediaInterfaces[i][0] === text) {
+  for (var i in mediaIds) {
+    if (mediaIds[i][0] === text) {
       return null;
     }
   }
 }
-
-function inputInterfacesValidate(text) {
-  if (text === '') return null;
-  for (var i in inputInterfaces) {
-    if (inputInterfaces[i][0] === text) {
-      return null;
-    }
-  }
-}
-
-function userInterfacesValidate(text) {
-  if (text === '') return null;
-  for (var i in userInterfaces) {
-    if (userInterfaces[i][0] === text) {
-      return null;
-    }
-  }
-}
-
-Blockly.NclMediaFieldText = function (text, opt_validator) {
-  Blockly.NclMediaFieldText.superClass_.constructor.call(this, text,
+Blockly.MediaIdFieldText = function (text, opt_validator) {
+  Blockly.MediaIdFieldText.superClass_.constructor.call(this, text,
     opt_validator);
 };
-goog.inherits(Blockly.NclMediaFieldText, Blockly.FieldTextInput);
-Blockly.NclMediaFieldText.prototype.onFinishEditing_ = function (text) {
-  mediaInterfaces.push([text, text]);
+goog.inherits(Blockly.MediaIdFieldText, Blockly.FieldTextInput);
+Blockly.MediaIdFieldText.prototype.onFinishEditing_ = function (text) {
+  mediaIds.push([text, text]);
   console.log('add media interface ' + text);
 };
 
-Blockly.NclInputFieldText = function (text, opt_validator) {
-  Blockly.NclInputFieldText.superClass_.constructor.call(this, text,
+// input ids
+var inputIds = [
+  ['-', '-']
+];
+
+function getinputIds() {
+  return inputIds;
+}
+
+function validateInputId(text) {
+  if (text === '') return null;
+  for (var i in inputIds) {
+    if (inputIds[i][0] === text) {
+      return null;
+    }
+  }
+}
+
+Blockly.InputIdFieldText = function (text, opt_validator) {
+  Blockly.InputIdFieldText.superClass_.constructor.call(this, text,
     opt_validator);
 };
-goog.inherits(Blockly.NclInputFieldText, Blockly.FieldTextInput);
-Blockly.NclInputFieldText.prototype.onFinishEditing_ = function (text) {
-  inputInterfaces.push([text, text]);
+goog.inherits(Blockly.InputIdFieldText, Blockly.FieldTextInput);
+Blockly.InputIdFieldText.prototype.onFinishEditing_ = function (text) {
+  inputIds.push([text, text]);
   console.log('add input interface = ' + text);
 };
+
+// user ids
+var userIds = [
+  ['-', '-']
+];
+
+function getuserIds() {
+  return userIds;
+}
+
+function validateUserId(text) {
+  if (text === '') return null;
+  for (var i in userIds) {
+    if (userIds[i][0] === text) {
+      return null;
+    }
+  }
+}
 
 Blockly.NclUserFieldText = function (text, opt_validator) {
   Blockly.NclUserFieldText.superClass_.constructor.call(this, text,
@@ -76,7 +79,7 @@ Blockly.NclUserFieldText = function (text, opt_validator) {
 };
 goog.inherits(Blockly.NclUserFieldText, Blockly.FieldTextInput);
 Blockly.NclUserFieldText.prototype.onFinishEditing_ = function (text) {
-  userInterfaces.push([text, text]);
+  userIds.push([text, text]);
   console.log('add user interface = ' + text);
 };
 
@@ -87,8 +90,8 @@ Blockly.Blocks.media = {
       .appendField('-- mídia --');
     this.appendValueInput('src')
       .appendField('id=')
-      .appendField(new Blockly.NclMediaFieldText('',
-        mediaInterfacesValidate()))
+      .appendField(new Blockly.MediaIdFieldText('',
+        validateMediaId()))
       .setCheck('media_content')
       .appendField('e conteúdo=');
     this.setInputsInline(false);
@@ -106,8 +109,8 @@ Blockly.Blocks.input = {
     this.appendValueInput('src')
       .setCheck('input_content')
       .appendField('id=')
-      .appendField(new Blockly.NclInputFieldText('',
-        inputInterfacesValidate))
+      .appendField(new Blockly.InputIdFieldText('',
+        validateInputId))
       .appendField('e conteúdo=');
     this.setInputsInline(false);
     this.setColour(120);
@@ -123,7 +126,7 @@ Blockly.Blocks.user = {
     this.appendValueInput('ADD0')
       .appendField('id=')
       .appendField(new Blockly.NclUserFieldText('',
-        userInterfacesValidate))
+        validateUserId))
       .setCheck('user_content')
       .appendField('e dispositivos=');
     this.setColour(20);
@@ -325,8 +328,8 @@ Blockly.Blocks.ssml = {
       if (!this.getInput('ADD' + i)) {
         this.appendDummyInput('ADD' + i)
           .appendField('id=')
-          .appendField(new Blockly.NclMediaFieldText('',
-            mediaInterfacesValidate))
+          .appendField(new Blockly.MediaIdFieldText('',
+            validateMediaId))
           .appendField('sintetiza frase')
           .appendField(new Blockly.FieldTextInput(''), '');
       }
@@ -395,8 +398,8 @@ Blockly.Blocks.video = {
       if (!this.getInput('ADD' + i)) {
         this.appendDummyInput('ADD' + i)
           .appendField('id=')
-          .appendField(new Blockly.NclMediaFieldText('',
-            mediaInterfacesValidate))
+          .appendField(new Blockly.MediaIdFieldText('',
+            validateMediaId))
           .appendField('define trecho de inicio')
           .appendField(new Blockly.FieldNumber(0, 0), 'begin')
           .appendField('s e fim')
@@ -426,7 +429,7 @@ Blockly.Blocks.srgs = {
     this.contextMenu = false;
   },
   mutationToDom: function () {
-    var container = document.createElement('mutation')/
+    var container = document.createElement('mutation');
     container.setAttribute('items', this.itemCount_);
     return container;
   },
@@ -470,8 +473,8 @@ Blockly.Blocks.srgs = {
       if (!this.getInput('ADD' + i)) {
         this.appendDummyInput('ADD' + i)
           .appendField('id=')
-          .appendField(new Blockly.NclInputFieldText('',
-            inputInterfacesValidate))
+          .appendField(new Blockly.InputIdFieldText('',
+            validateInputId))
           .appendField('reconhece frase')
           .appendField(new Blockly.FieldTextInput(''), '');
       }
@@ -561,7 +564,7 @@ Blockly.Blocks.onbegin = {
       .appendField(new Blockly.FieldImage('media/icon-bind-onbegin.png', 15,
         15, '*'))
       .appendField('inciar')
-      .appendField(new Blockly.FieldDropdown(getMediaInterfaces), 'NAME');
+      .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
     this.setInputsInline(false);
     this.setOutput(true, 'simplecondition');
     this.setColour(260);
@@ -576,7 +579,7 @@ Blockly.Blocks.onend = {
       .appendField(new Blockly.FieldImage('media/icon-bind-onend.png', 15,
         15, '*'))
       .appendField('terminar')
-      .appendField(new Blockly.FieldDropdown(getMediaInterfaces), 'NAME');
+      .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
     this.setInputsInline(false);
     this.setOutput(true, 'simplecondition');
     this.setColour(260);
@@ -591,7 +594,7 @@ Blockly.Blocks.onpause = {
       .appendField(new Blockly.FieldImage('media/icon-bind-onpause.png', 15,
         15, '*'))
       .appendField('pausar')
-      .appendField(new Blockly.FieldDropdown(getMediaInterfaces), 'NAME');
+      .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
     this.setInputsInline('pause');
     this.setOutput(true, 'simplecondition');
     this.setColour(260);
@@ -606,7 +609,7 @@ Blockly.Blocks.onresume = {
       .appendField(new Blockly.FieldImage('media/icon-bind-onresume.png',
         15, 15, '*'))
       .appendField('resumir')
-      .appendField(new Blockly.FieldDropdown(getMediaInterfaces), 'NAME');
+      .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
     this.setInputsInline(false);
     this.setOutput(true, 'simplecondition');
     this.setColour(260);
@@ -621,7 +624,7 @@ Blockly.Blocks.onselection = {
       .appendField(new Blockly.FieldImage('media/icon-bind-onselection.png',
         15, 15, '*'))
       .appendField('selecionar')
-      .appendField(new Blockly.FieldDropdown(getMediaInterfaces), 'NAME');
+      .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
     this.setInputsInline(false);
     this.setOutput(true, 'simplecondition');
     this.setColour(260);
@@ -636,7 +639,7 @@ Blockly.Blocks.onrecognize = {
       .appendField(new Blockly.FieldImage('media/icon-bind-onselection.png',
         15, 15, '*'))
       .appendField('reconhecer')
-      .appendField(new Blockly.FieldDropdown(getInputInterfaces), 'NAME');
+      .appendField(new Blockly.FieldDropdown(getinputIds), 'NAME');
     this.setInputsInline(false);
     this.setOutput(true, 'simplecondition');
     this.setColour(260);
@@ -651,9 +654,9 @@ Blockly.Blocks.onrecognizeuser = {
       .appendField(new Blockly.FieldImage('media/icon-bind-onselection.png',
         15, 15, '*'))
       .appendField('reconhecer')
-      .appendField(new Blockly.FieldDropdown(getInputInterfaces), 'NAME')
+      .appendField(new Blockly.FieldDropdown(getinputIds), 'NAME')
       .appendField(' do usuário')
-      .appendField(new Blockly.FieldDropdown(getUserInterfaces), 'NAME');
+      .appendField(new Blockly.FieldDropdown(getuserIds), 'NAME');
     this.setInputsInline(false);
     this.setOutput(true, 'simplecondition');
     this.setColour(260);
@@ -756,7 +759,7 @@ Blockly.Blocks.compoundcondition = {
   }
 };
 
-// action
+// actions
 
 Blockly.Blocks.start = {
   init: function () {
@@ -764,7 +767,7 @@ Blockly.Blocks.start = {
       .appendField(new Blockly.FieldImage('media/icon-bind-start.png', 15,
         15, '*'))
       .appendField('inicie')
-      .appendField(new Blockly.FieldDropdown(getMediaInterfaces), 'NAME');
+      .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
     this.setInputsInline(false);
     this.setPreviousStatement(true, 'simpleaction');
     this.setNextStatement(true, 'simpleaction');
@@ -780,7 +783,7 @@ Blockly.Blocks.stop = {
       .appendField(new Blockly.FieldImage('media/icon-bind-stop.png', 15,
         15, '*'))
       .appendField('pare')
-      .appendField(new Blockly.FieldDropdown(getMediaInterfaces), 'NAME');
+      .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
     this.setPreviousStatement(true, 'simpleaction');
     this.setNextStatement(true, 'simpleaction');
     this.setColour(230);
@@ -789,14 +792,13 @@ Blockly.Blocks.stop = {
     this.contextMenu = false;
   }
 };
-Blockly.Block.pause = {
+Blockly.Blocks.pause = {
   init: function () {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage('media/icon-bind-pause.png', 15,
         15, '*'))
       .appendField('pause')
-      .appendField(new Blockly.FieldDropdown(getMediaInterfaces), 'NAME');
-    this.setInputsInline('pause');
+      .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
     this.setPreviousStatement(true, 'simpleaction');
     this.setNextStatement(true, 'simpleaction');
     this.setColour(230);
@@ -811,7 +813,7 @@ Blockly.Blocks.resume = {
       .appendField(new Blockly.FieldImage('media/icon-bind-resume.png', 15,
         15, '*'))
       .appendField('resuma')
-      .appendField(new Blockly.FieldDropdown(getMediaInterfaces), 'NAME');
+      .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
     this.setInputsInline(false);
     this.setPreviousStatement(true, 'simpleaction');
     this.setNextStatement(true, 'simpleaction');
@@ -827,7 +829,7 @@ Blockly.Blocks.set = {
       .appendField(new Blockly.FieldImage('media/icon-bind-set.png', 15, 15,
         '*'))
       .appendField('atribua')
-      .appendField(new Blockly.FieldDropdown(getMediaInterfaces), 'NAME')
+      .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME')
       .appendField('=')
       .appendField(new Blockly.FieldTextInput(''), 'value');
     this.setInputsInline(false);
