@@ -104,7 +104,6 @@ Blockly.Blocks.media = {
     this.setInputsInline(false);
     this.setColour(120);
     this.setTooltip('Modalidade de saida');
-    this.setHelpUrl('');
     this.contextMenu = false;
   }
 };
@@ -122,7 +121,6 @@ Blockly.Blocks.input = {
     this.setInputsInline(false);
     this.setColour(120);
     this.setTooltip('Modalidade de entrada');
-    this.setHelpUrl('');
     this.contextMenu = false;
   }
 };
@@ -231,8 +229,6 @@ Blockly.Blocks.link = {
       .appendField('faça');
     this.setInputsInline(false);
     this.setColour(260);
-    this.setTooltip('');
-    this.setHelpUrl('');
     this.contextMenu = false;
   }
 };
@@ -246,8 +242,6 @@ Blockly.Blocks.headset = {
       .appendField('--microfone--');
     this.setOutput(true, 'user_content');
     this.setColour(20);
-    this.setTooltip('');
-    this.setHelpUrl('');
     this.contextMenu = false;
   }
 };
@@ -260,8 +254,6 @@ Blockly.Blocks['hand-gesture-sensor'] = {
       .appendField('--sensor de gestos--');
     this.setOutput(true, 'user_content');
     this.setColour(20);
-    this.setTooltip('');
-    this.setHelpUrl('');
     this.contextMenu = false;
   }
 };
@@ -276,8 +268,6 @@ Blockly.Blocks.image = {
       .appendField('--imagem--');
     this.setOutput(true, 'media_content');
     this.setColour(120);
-    this.setTooltip('');
-    this.setHelpUrl('');
     this.contextMenu = false;
   }
 };
@@ -580,8 +570,6 @@ Blockly.Blocks.onbegin = {
     this.setInputsInline(false);
     this.setOutput(true, 'simplecondition');
     this.setColour(260);
-    this.setTooltip('');
-    this.setHelpUrl('');
     this.contextMenu = false;
   }
 };
@@ -596,8 +584,6 @@ Blockly.Blocks.onend = {
     this.setInputsInline(false);
     this.setOutput(true, 'simplecondition');
     this.setColour(260);
-    this.setTooltip('');
-    this.setHelpUrl('');
     this.contextMenu = false;
   }
 };
@@ -612,8 +598,6 @@ Blockly.Blocks.onpause = {
     this.setInputsInline('pause');
     this.setOutput(true, 'simplecondition');
     this.setColour(260);
-    this.setTooltip('');
-    this.setHelpUrl('');
     this.contextMenu = false;
   }
 };
@@ -628,8 +612,6 @@ Blockly.Blocks.onresume = {
     this.setInputsInline(false);
     this.setOutput(true, 'simplecondition');
     this.setColour(260);
-    this.setTooltip('');
-    this.setHelpUrl('');
     this.contextMenu = false;
   }
 };
@@ -644,8 +626,6 @@ Blockly.Blocks.onselection = {
     this.setInputsInline(false);
     this.setOutput(true, 'simplecondition');
     this.setColour(260);
-    this.setTooltip('');
-    this.setHelpUrl('');
     this.contextMenu = false;
   }
 };
@@ -660,8 +640,6 @@ Blockly.Blocks.onrecognize = {
     this.setInputsInline(false);
     this.setOutput(true, 'simplecondition');
     this.setColour(260);
-    this.setTooltip('');
-    this.setHelpUrl('');
     this.contextMenu = false;
   }
 };
@@ -678,8 +656,6 @@ Blockly.Blocks.onrecognizeuser = {
     this.setInputsInline(false);
     this.setOutput(true, 'simplecondition');
     this.setColour(260);
-    this.setTooltip('');
-    this.setHelpUrl('');
     this.contextMenu = false;
   }
 };
@@ -791,8 +767,6 @@ Blockly.Blocks.start = {
     this.setPreviousStatement(true, 'simpleaction');
     this.setNextStatement(true, 'simpleaction');
     this.setColour(230);
-    this.setTooltip('');
-    this.setHelpUrl('');
     this.contextMenu = false;
   }
 };
@@ -807,8 +781,6 @@ Blockly.Blocks.stop = {
     this.setPreviousStatement(true, 'simpleaction');
     this.setNextStatement(true, 'simpleaction');
     this.setColour(230);
-    this.setTooltip('');
-    this.setHelpUrl('');
     this.contextMenu = false;
   }
 };
@@ -823,8 +795,6 @@ Blockly.Blocks.pause = {
     this.setPreviousStatement(true, 'simpleaction');
     this.setNextStatement(true, 'simpleaction');
     this.setColour(230);
-    this.setTooltip('');
-    this.setHelpUrl('');
     this.contextMenu = false;
   }
 };
@@ -840,8 +810,6 @@ Blockly.Blocks.resume = {
     this.setPreviousStatement(true, 'simpleaction');
     this.setNextStatement(true, 'simpleaction');
     this.setColour(230);
-    this.setTooltip('');
-    this.setHelpUrl('');
     this.contextMenu = false;
   }
 };
@@ -859,8 +827,6 @@ Blockly.Blocks.set = {
     this.setPreviousStatement(true, 'simpleaction');
     this.setNextStatement(true, 'simpleaction');
     this.setColour(230);
-    this.setTooltip('');
-    this.setHelpUrl('');
     this.contextMenu = false;
   }
 };
