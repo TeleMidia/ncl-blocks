@@ -1,6 +1,7 @@
 goog.require('Blockly.Blocks');
 
 // media ids
+
 var mediaIds = [
   ['-', '-']
 ];
@@ -17,17 +18,20 @@ function validateMediaId(text) {
     }
   }
 }
+
 Blockly.MediaIdFieldText = function (text, opt_validator) {
   Blockly.MediaIdFieldText.superClass_.constructor.call(this, text,
     opt_validator);
 };
 goog.inherits(Blockly.MediaIdFieldText, Blockly.FieldTextInput);
+
 Blockly.MediaIdFieldText.prototype.onFinishEditing_ = function (text) {
   mediaIds.push([text, text]);
   console.log('add media interface ' + text);
 };
 
 // input ids
+
 var inputIds = [
   ['-', '-']
 ];
@@ -50,6 +54,7 @@ Blockly.InputIdFieldText = function (text, opt_validator) {
     opt_validator);
 };
 goog.inherits(Blockly.InputIdFieldText, Blockly.FieldTextInput);
+
 Blockly.InputIdFieldText.prototype.onFinishEditing_ = function (text) {
   inputIds.push([text, text]);
   console.log('add input interface = ' + text);
@@ -78,12 +83,14 @@ Blockly.NclUserFieldText = function (text, opt_validator) {
     opt_validator);
 };
 goog.inherits(Blockly.NclUserFieldText, Blockly.FieldTextInput);
+
 Blockly.NclUserFieldText.prototype.onFinishEditing_ = function (text) {
   userIds.push([text, text]);
   console.log('add user interface = ' + text);
 };
 
 // entities
+
 Blockly.Blocks.media = {
   init: function () {
     this.appendDummyInput()
@@ -91,7 +98,7 @@ Blockly.Blocks.media = {
     this.appendValueInput('src')
       .appendField('id=')
       .appendField(new Blockly.MediaIdFieldText('',
-        validateMediaId()))
+        validateMediaId))
       .setCheck('media_content')
       .appendField('e conteúdo=');
     this.setInputsInline(false);
@@ -119,6 +126,7 @@ Blockly.Blocks.input = {
     this.contextMenu = false;
   }
 };
+
 Blockly.Blocks.user = {
   init: function () {
     this.appendDummyInput()
@@ -210,6 +218,7 @@ Blockly.Blocks.user = {
     }
   }
 };
+
 Blockly.Blocks.link = {
   init: function () {
     this.appendDummyInput()
@@ -242,6 +251,7 @@ Blockly.Blocks.headset = {
     this.contextMenu = false;
   }
 };
+
 Blockly.Blocks['hand-gesture-sensor'] = {
   init: function () {
     this.appendDummyInput()
@@ -271,6 +281,7 @@ Blockly.Blocks.image = {
     this.contextMenu = false;
   }
 };
+
 Blockly.Blocks.ssml = {
   init: function () {
     this.appendDummyInput()
@@ -340,6 +351,7 @@ Blockly.Blocks.ssml = {
     }
   }
 };
+
 Blockly.Blocks.video = {
   init: function () {
     this.appendDummyInput()
@@ -573,6 +585,7 @@ Blockly.Blocks.onbegin = {
     this.contextMenu = false;
   }
 };
+
 Blockly.Blocks.onend = {
   init: function () {
     this.appendDummyInput()
@@ -588,6 +601,7 @@ Blockly.Blocks.onend = {
     this.contextMenu = false;
   }
 };
+
 Blockly.Blocks.onpause = {
   init: function () {
     this.appendDummyInput()
@@ -603,6 +617,7 @@ Blockly.Blocks.onpause = {
     this.contextMenu = false;
   }
 };
+
 Blockly.Blocks.onresume = {
   init: function () {
     this.appendDummyInput()
@@ -618,6 +633,7 @@ Blockly.Blocks.onresume = {
     this.contextMenu = false;
   }
 };
+
 Blockly.Blocks.onselection = {
   init: function () {
     this.appendDummyInput()
@@ -633,6 +649,7 @@ Blockly.Blocks.onselection = {
     this.contextMenu = false;
   }
 };
+
 Blockly.Blocks.onrecognize = {
   init: function () {
     this.appendDummyInput()
@@ -648,6 +665,7 @@ Blockly.Blocks.onrecognize = {
     this.contextMenu = false;
   }
 };
+
 Blockly.Blocks.onrecognizeuser = {
   init: function () {
     this.appendDummyInput()
@@ -665,6 +683,7 @@ Blockly.Blocks.onrecognizeuser = {
     this.contextMenu = false;
   }
 };
+
 Blockly.Blocks.compoundcondition = {
   init: function () {
     this.appendDummyInput()
@@ -777,6 +796,7 @@ Blockly.Blocks.start = {
     this.contextMenu = false;
   }
 };
+
 Blockly.Blocks.stop = {
   init: function () {
     this.appendDummyInput()
@@ -792,6 +812,7 @@ Blockly.Blocks.stop = {
     this.contextMenu = false;
   }
 };
+
 Blockly.Blocks.pause = {
   init: function () {
     this.appendDummyInput()
@@ -807,6 +828,7 @@ Blockly.Blocks.pause = {
     this.contextMenu = false;
   }
 };
+
 Blockly.Blocks.resume = {
   init: function () {
     this.appendDummyInput()
@@ -823,6 +845,7 @@ Blockly.Blocks.resume = {
     this.contextMenu = false;
   }
 };
+
 Blockly.Blocks.set = {
   init: function () {
     this.appendDummyInput()
