@@ -1,5 +1,167 @@
 goog.require('Blockly.Blocks');
 
+// body
+
+Blockly.Blocks.media_item = {
+  init: function () {
+    this.setColour(Blockly.Blocks.lists.HUE);
+    this.appendDummyInput()
+      .appendField("mídia");
+    this.setPreviousStatement(true, ['media_item']);
+    this.setNextStatement(true, ['media_item', 'input_item']);
+    this.contextMenu = false;
+  }
+};
+Blockly.Blocks.input_item = {
+  init: function () {
+    this.setColour(Blockly.Blocks.lists.HUE);
+    this.appendDummyInput()
+      .appendField("reconhecedor");
+    this.setPreviousStatement(true, ['media_item', 'input_item']);
+    this.setNextStatement(true, ['input_item', 'link_item']);
+    this.contextMenu = false;
+  }
+};
+Blockly.Blocks.link_item = {
+  init: function () {
+    this.setColour(Blockly.Blocks.lists.HUE);
+    this.appendDummyInput()
+      .appendField("comportamento");
+    this.setPreviousStatement(true, ['input_item', 'link_item']);
+    this.setNextStatement(true, ['link_item']);
+    this.contextMenu = false;
+  }
+};
+
+Blockly.Blocks.body = {
+  init: function () {
+    this.setColour(Blockly.Blocks.logic.HUE);
+    this.appendDummyInput().appendField('--Aplicação--');
+    this.appendValueInput('MEDIA0')
+      .setCheck('media')
+      .appendField('mídias:');
+    this.appendValueInput('INPUT0')
+      .setCheck('input')
+      .appendField('reconhecedores:');
+    this.appendValueInput('USER0')
+      .setCheck('user')
+      .appendField('usuário:');
+    this.appendValueInput('LINK0')
+      .setCheck('link')
+      .appendField('comportamentos:');
+    // this.appendStatementInput('PORTS')
+    //   .setCheck('start')
+    //   .appendField('faça no início');
+    this.setMutator(new Blockly.Mutator(['media_item',
+      'input_item', 'link_item'
+    ]));
+    this.mediaCount = 2;
+    this.inputCount = 2;
+    this.linkCount = 2;
+    this.contextMenu = false;
+    this.setDeletable(false);
+    this.updateShape_();
+  },
+
+  mutationToDom: function () {
+    var container = document.createElement('mutation');
+    container.setAttribute('mediaCount', this.mediaCount);
+    container.setAttribute('inputCount', this.inputCount);
+    container.setAttribute('linkCount', this.linkCount);
+    return container;
+  },
+
+  domToMutation: function (xmlElement) {
+    this.mediaCount = parseInt(xmlElement.getAttribute('mediaCount'), 10) || 1;
+    this.inputCount = parseInt(xmlElement.getAttribute('inputCount'), 10) || 1;
+    this.linkCount = parseInt(xmlElement.getAttribute('linkCount'), 10) || 1;
+    this.updateShape_();
+  },
+  /**
+   * Populate the mutator's dialog with this block's components.
+   */
+  decompose: function (workspace) {
+    var containerBlock = workspace.newBlock('lists_create_with_container');
+    containerBlock.initSvg();
+    var connection = containerBlock.getInput('STACK').connection;
+    for (var i = 0; i < this.mediaCount; i++) {
+      var itemBlock = workspace.newBlock('media_item');
+      if (i === 0) itemBlock.setMovable(false);
+      itemBlock.initSvg();
+      connection.connect(itemBlock.previousConnection);
+      connection = itemBlock.nextConnection;
+    }
+    for (var i = 0; i < this.inputCount; i++) {
+      var itemBlock = workspace.newBlock('input_item');
+      itemBlock.initSvg();
+      if (i === 0) itemBlock.setMovable(false);
+      connection.connect(itemBlock.previousConnection);
+      connection = itemBlock.nextConnection;
+    }
+    for (var i = 0; i < this.linkCount; i++) {
+      var itemBlock = workspace.newBlock('link_item');
+      itemBlock.initSvg();
+      if (i === 0) itemBlock.setMovable(false);
+      connection.connect(itemBlock.previousConnection);
+      connection = itemBlock.nextConnection;
+    }
+    return containerBlock;
+  },
+
+  /**
+   * Reconfigure this block based on the mutator dialog's components.
+   */
+  compose: function (containerBlock) {
+    var itemBlock = containerBlock.getInputTargetBlock('STACK');
+    var mediaAux = 0,
+      inputAux = 0,
+      linkAux = 0;
+    while (itemBlock) {
+      if (itemBlock.type == 'media_item') {
+        mediaAux++;
+      }
+      if (itemBlock.type == 'input_item') {
+        inputAux++;
+      }
+      if (itemBlock.type == 'link_item') {
+        linkAux++;
+      }
+      itemBlock = itemBlock.nextConnection &&
+        itemBlock.nextConnection.targetBlock();
+    }
+    this.mediaCount = mediaAux;
+    this.inputCount = inputAux;
+    this.linkCount = linkAux;
+    this.updateShape_();
+  },
+  /**
+   * Store pointers to any connected child blocks.
+   */
+  saveConnections: function (containerBlock) {},
+  updateShape_: function () {
+    for (var i = 1; i < this.mediaCount; i++) {
+      if (!this.getInput('MEDIA' + i)) {
+        this.appendValueInput('MEDIA' + i)
+          .setCheck(['media']);
+        this.moveInputBefore('MEDIA' + i, 'INPUT0');
+      }
+    }
+    for (var i = 1; i < this.inputCount; i++) {
+      if (!this.getInput('INPUT' + i)) {
+        this.appendValueInput('INPUT' + i)
+          .setCheck(['input']);
+        this.moveInputBefore('INPUT' + i, 'USER0');
+      }
+    }
+    for (var i = 1; i < this.linkCount; i++) {
+      if (!this.getInput('LINK' + i)) {
+        this.appendValueInput('LINK' + i)
+          .setCheck('link');
+      }
+    }
+  }
+};
+
 // media ids
 
 var mediaIds = [
@@ -96,14 +258,15 @@ Blockly.Blocks.media = {
     this.appendDummyInput()
       .appendField('--mídia--');
     this.appendValueInput('src')
+      .setCheck('media_content')
       .appendField('id=')
       .appendField(new Blockly.MediaIdFieldText('',
         validateMediaId))
-      .setCheck('media_content')
       .appendField('e conteúdo=');
     this.setInputsInline(false);
     this.setColour(120);
     this.setTooltip('Modalidade de saida');
+    this.setOutput('media_element');
     this.contextMenu = false;
   }
 };
@@ -121,6 +284,7 @@ Blockly.Blocks.input = {
     this.setInputsInline(false);
     this.setColour(120);
     this.setTooltip('Modalidade de entrada');
+    this.setOutput('input_element');
     this.contextMenu = false;
   }
 };
@@ -139,6 +303,7 @@ Blockly.Blocks.user = {
     this.itemCount_ = 2;
     this.updateShape_();
     this.setMutator(new Blockly.Mutator(['lists_create_with_item']));
+    this.setOutput('user');
     this.contextMenu = false;
   },
   mutationToDom: function () {
@@ -150,6 +315,9 @@ Blockly.Blocks.user = {
     this.itemCount_ = parseInt(xmlElement.getAttribute('items'), 10);
     this.updateShape_();
   },
+  /**
+   * Populate the mutator's dialog with this block's components.
+   */
   decompose: function (workspace) {
     var containerBlock = workspace.newBlock('lists_create_with_container');
     containerBlock.initSvg();
@@ -162,6 +330,9 @@ Blockly.Blocks.user = {
     }
     return containerBlock;
   },
+  /**
+   * Reconfigure this block based on the mutator dialog's components.
+   */
   compose: function (containerBlock) {
     var itemBlock = containerBlock.getInputTargetBlock('STACK');
     // Count number of inputs.
@@ -185,6 +356,9 @@ Blockly.Blocks.user = {
       Blockly.Mutator.reconnect(connections[j], this, 'ADD' + j);
     }
   },
+  /**
+   * Store pointers to any connected child blocks.
+   */
   saveConnections: function (containerBlock) {
     var itemBlock = containerBlock.getInputTargetBlock('STACK');
     var i = 0;
@@ -229,6 +403,7 @@ Blockly.Blocks.link = {
       .appendField('faça');
     this.setInputsInline(false);
     this.setColour(260);
+    this.setOutput('link_element');
     this.contextMenu = false;
   }
 };
@@ -242,6 +417,8 @@ Blockly.Blocks.headset = {
       .appendField('--microfone--');
     this.setOutput(true, 'user_content');
     this.setColour(20);
+    this.setTooltip('');
+    this.setHelpUrl('');
     this.contextMenu = false;
   }
 };
@@ -293,6 +470,9 @@ Blockly.Blocks.ssml = {
     this.itemCount_ = parseInt(xmlElement.getAttribute('items'), 10);
     this.updateShape_();
   },
+  /**
+   * Populate the mutator's dialog with this block's components.
+   */
   decompose: function (workspace) {
     var containerBlock = workspace.newBlock('lists_create_with_container');
     containerBlock.initSvg();
@@ -306,6 +486,9 @@ Blockly.Blocks.ssml = {
     }
     return containerBlock;
   },
+  /**
+   * Reconfigure this block based on the mutator dialog's components.
+   */
   compose: function (containerBlock) {
     var itemBlock = containerBlock.getInputTargetBlock('STACK');
     var connections = [];
@@ -318,6 +501,9 @@ Blockly.Blocks.ssml = {
     this.itemCount_ = connections.length;
     this.updateShape_();
   },
+  /**
+   * Store pointers to any connected child blocks.
+   */
   saveConnections: function (containerBlock) {},
   updateShape_: function () {
     if (this.itemCount_ && this.getInput('EMPTY')) {
@@ -364,6 +550,9 @@ Blockly.Blocks.video = {
     this.itemCount_ = parseInt(xmlElement.getAttribute('items'), 10);
     this.updateShape_();
   },
+  /**
+   * Populate the mutator's dialog with this block's components.
+   */
   decompose: function (workspace) {
     var containerBlock = workspace.newBlock('lists_create_with_container');
     containerBlock.initSvg();
@@ -377,6 +566,9 @@ Blockly.Blocks.video = {
     }
     return containerBlock;
   },
+  /**
+   * Reconfigure this block based on the mutator dialog's components.
+   */
   compose: function (containerBlock) {
     var itemBlock = containerBlock.getInputTargetBlock('STACK');
     var connections = [];
@@ -389,6 +581,9 @@ Blockly.Blocks.video = {
     this.itemCount_ = connections.length;
     this.updateShape_();
   },
+  /**
+   * Store pointers to any connected child blocks.
+   */
   saveConnections: function (containerBlock) {},
   updateShape_: function () {
     if (this.itemCount_ && this.getInput('EMPTY')) {
@@ -439,6 +634,9 @@ Blockly.Blocks.srgs = {
     this.itemCount_ = parseInt(xmlElement.getAttribute('items'), 10);
     this.updateShape_();
   },
+  /**
+   * Populate the mutator's dialog with this block's components.
+   */
   decompose: function (workspace) {
     var containerBlock = workspace.newBlock('lists_create_with_container');
     containerBlock.initSvg();
@@ -452,6 +650,9 @@ Blockly.Blocks.srgs = {
     }
     return containerBlock;
   },
+  /**
+   * Reconfigure this block based on the mutator dialog's components.
+   */
   compose: function (containerBlock) {
     var itemBlock = containerBlock.getInputTargetBlock('STACK');
     var connections = [];
@@ -464,6 +665,9 @@ Blockly.Blocks.srgs = {
     this.itemCount_ = connections.length;
     this.updateShape_();
   },
+  /**
+   * Store pointers to any connected child blocks.
+   */
   saveConnections: function (containerBlock) {},
   updateShape_: function () {
     if (this.itemCount_ && this.getInput('EMPTY')) {
@@ -510,6 +714,9 @@ Blockly.Blocks['hand-gesture'] = {
     this.itemCount_ = parseInt(xmlElement.getAttribute('items'), 10);
     this.updateShape_();
   },
+  /**
+   * Populate the mutator's dialog with this block's components.
+   */
   decompose: function (workspace) {
     var containerBlock = workspace.newBlock('lists_create_with_container');
     containerBlock.initSvg();
@@ -523,6 +730,9 @@ Blockly.Blocks['hand-gesture'] = {
     }
     return containerBlock;
   },
+  /**
+   * Reconfigure this block based on the mutator dialog's components.
+   */
   compose: function (containerBlock) {
     var itemBlock = containerBlock.getInputTargetBlock('STACK');
     var connections = [];
@@ -535,6 +745,9 @@ Blockly.Blocks['hand-gesture'] = {
     this.itemCount_ = connections.length;
     this.updateShape_();
   },
+  /**
+   * Store pointers to any connected child blocks.
+   */
   saveConnections: function (containerBlock) {},
   updateShape_: function () {
     if (this.itemCount_ && this.getInput('EMPTY')) {
@@ -686,6 +899,9 @@ Blockly.Blocks.compoundcondition = {
     this.itemCount_ = parseInt(xmlElement.getAttribute('items'), 10);
     this.updateShape_();
   },
+  /**
+   * Populate the mutator's dialog with this block's components.
+   */
   decompose: function (workspace) {
     var containerBlock = workspace.newBlock('lists_create_with_container');
     containerBlock.initSvg();
@@ -699,6 +915,9 @@ Blockly.Blocks.compoundcondition = {
     }
     return containerBlock;
   },
+  /**
+   * Reconfigure this block based on the mutator dialog's components.
+   */
   compose: function (containerBlock) {
     var itemBlock = containerBlock.getInputTargetBlock('STACK');
     var connections = [];
@@ -722,6 +941,9 @@ Blockly.Blocks.compoundcondition = {
       Blockly.Mutator.reconnect(connections[i], this, 'ADD' + i);
     }
   },
+  /**
+   * Store pointers to any connected child blocks.
+   */
   saveConnections: function (containerBlock) {
     var itemBlock = containerBlock.getInputTargetBlock('STACK');
     var i = 0;

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
   <meta charset="utf-8">
   <title>Blockly Demo: Fixed Blockly</title>
@@ -49,6 +50,10 @@
       <block type="set"></block>
     </category>
   </xml>
+  <xml id="startBlocks" style="display: none">
+    <block type="body" inline="false" x="20" y="20"></block>
+    <!-- <block type="controls_if" inline="false" x="20" y="20"></block> -->
+  </xml>
   <script>
     Blockly.BlockSvg.START_HAT = true;
     var blocklyDiv = document.getElementById('blocklyDiv');
@@ -56,6 +61,8 @@
       media: 'media/',
       toolbox: document.getElementById('toolbox')
     });
+    Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'),
+      workspace);
   </script>
 </body>
 
