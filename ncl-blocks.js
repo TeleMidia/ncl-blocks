@@ -12,6 +12,7 @@ Blockly.Blocks.media_item = {
     this.contextMenu = false;
   }
 };
+
 Blockly.Blocks.input_item = {
   init: function () {
     this.setColour(Blockly.Blocks.lists.HUE);
@@ -22,6 +23,7 @@ Blockly.Blocks.input_item = {
     this.contextMenu = false;
   }
 };
+
 Blockly.Blocks.link_item = {
   init: function () {
     this.setColour(Blockly.Blocks.lists.HUE);
@@ -142,14 +144,14 @@ Blockly.Blocks.body = {
     for (var i = 1; i < this.mediaCount; i++) {
       if (!this.getInput('MEDIA' + i)) {
         this.appendValueInput('MEDIA' + i)
-          .setCheck(['media']);
+          .setCheck('media');
         this.moveInputBefore('MEDIA' + i, 'INPUT0');
       }
     }
     for (var i = 1; i < this.inputCount; i++) {
       if (!this.getInput('INPUT' + i)) {
         this.appendValueInput('INPUT' + i)
-          .setCheck(['input']);
+          .setCheck('input');
         this.moveInputBefore('INPUT' + i, 'USER0');
       }
     }
@@ -251,7 +253,7 @@ Blockly.NclUserFieldText.prototype.onFinishEditing_ = function (text) {
   console.log('add user interface = ' + text);
 };
 
-// entities
+// media
 
 Blockly.Blocks.media = {
   init: function () {
@@ -266,10 +268,12 @@ Blockly.Blocks.media = {
     this.setInputsInline(false);
     this.setColour(120);
     this.setTooltip('Modalidade de saida');
-    this.setOutput('media_element');
+    this.setOutput(true, 'media');
     this.contextMenu = false;
   }
 };
+
+// input
 
 Blockly.Blocks.input = {
   init: function () {
@@ -284,7 +288,20 @@ Blockly.Blocks.input = {
     this.setInputsInline(false);
     this.setColour(120);
     this.setTooltip('Modalidade de entrada');
-    this.setOutput('input_element');
+    this.setOutput(true, 'input');
+    this.contextMenu = false;
+  }
+};
+
+// user
+
+Blockly.Blocks.device_item = {
+  init: function () {
+    this.setColour(Blockly.Blocks.lists.HUE);
+    this.appendDummyInput()
+      .appendField("dispositivo");
+    this.setPreviousStatement(true, ['device_item']);
+    this.setNextStatement(true, ['device_item']);
     this.contextMenu = false;
   }
 };
@@ -302,8 +319,8 @@ Blockly.Blocks.user = {
     this.setColour(20);
     this.itemCount_ = 2;
     this.updateShape_();
-    this.setMutator(new Blockly.Mutator(['lists_create_with_item']));
-    this.setOutput('user');
+    this.setMutator(new Blockly.Mutator(['device_item']));
+    this.setOutput(true, 'user');
     this.contextMenu = false;
   },
   mutationToDom: function () {
@@ -323,7 +340,8 @@ Blockly.Blocks.user = {
     containerBlock.initSvg();
     var connection = containerBlock.getInput('STACK').connection;
     for (var i = 0; i < this.itemCount_; i++) {
-      var itemBlock = workspace.newBlock('lists_create_with_item');
+      var itemBlock = workspace.newBlock('device_item');
+      if (i === 0) itemBlock.setMovable(false);
       itemBlock.initSvg();
       connection.connect(itemBlock.previousConnection);
       connection = itemBlock.nextConnection;
@@ -356,9 +374,6 @@ Blockly.Blocks.user = {
       Blockly.Mutator.reconnect(connections[j], this, 'ADD' + j);
     }
   },
-  /**
-   * Store pointers to any connected child blocks.
-   */
   saveConnections: function (containerBlock) {
     var itemBlock = containerBlock.getInputTargetBlock('STACK');
     var i = 0;
@@ -371,11 +386,6 @@ Blockly.Blocks.user = {
     }
   },
   updateShape_: function () {
-    // if (this.itemCount_ && this.getInput('EMPTY')) {
-    //   this.removeInput('EMPTY')
-    // } else if (!this.itemCount_ && !this.getInput('EMPTY')) {
-    //   this.appendDummyInput('EMPTY')
-    // }
     // Add new inputs.
     for (var i = 1; i < this.itemCount_; i++) {
       if (!this.getInput('ADD' + i)) {
@@ -403,7 +413,7 @@ Blockly.Blocks.link = {
       .appendField('faça');
     this.setInputsInline(false);
     this.setColour(260);
-    this.setOutput('link_element');
+    this.setOutput(true, 'link');
     this.contextMenu = false;
   }
 };
@@ -423,7 +433,7 @@ Blockly.Blocks.headset = {
   }
 };
 
-Blockly.Blocks['hand-gesture-sensor'] = {
+Blockly.Blocks.hand_gesture_sensor = {
   init: function () {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage('media/hand-gesture-sensor.png',
@@ -449,6 +459,17 @@ Blockly.Blocks.image = {
   }
 };
 
+Blockly.Blocks.sentence_item = {
+  init: function () {
+    this.setColour(Blockly.Blocks.lists.HUE);
+    this.appendDummyInput()
+      .appendField("frase para sintetizar");
+    this.setPreviousStatement(true, ['sentence_item']);
+    this.setNextStatement(true, ['sentence_item']);
+    this.contextMenu = false;
+  }
+};
+
 Blockly.Blocks.ssml = {
   init: function () {
     this.appendDummyInput()
@@ -458,7 +479,7 @@ Blockly.Blocks.ssml = {
     this.itemCount_ = 2;
     this.updateShape_();
     this.setOutput(true, 'media_content');
-    this.setMutator(new Blockly.Mutator(['lists_create_with_item']));
+    this.setMutator(new Blockly.Mutator(['sentence_item']));
     this.contextMenu = false;
   },
   mutationToDom: function () {
@@ -479,7 +500,8 @@ Blockly.Blocks.ssml = {
     var connection = containerBlock.getInput('STACK').connection;
 
     for (var i = 0; i < this.itemCount_; i++) {
-      var itemBlock = workspace.newBlock('lists_create_with_item');
+      var itemBlock = workspace.newBlock('sentence_item');
+      if (i === 0) itemBlock.setMovable(false);
       itemBlock.initSvg();
       connection.connect(itemBlock.previousConnection);
       connection = itemBlock.nextConnection;
@@ -528,6 +550,17 @@ Blockly.Blocks.ssml = {
   }
 };
 
+Blockly.Blocks.clip_item = {
+  init: function () {
+    this.setColour(Blockly.Blocks.lists.HUE);
+    this.appendDummyInput()
+      .appendField("trecho do vídeo");
+    this.setPreviousStatement(true, ['clip_item']);
+    this.setNextStatement(true, ['clip_item']);
+    this.contextMenu = false;
+  }
+};
+
 Blockly.Blocks.video = {
   init: function () {
     this.appendDummyInput()
@@ -538,7 +571,7 @@ Blockly.Blocks.video = {
     this.itemCount_ = 2;
     this.updateShape_();
     this.setOutput(true, 'media_content');
-    this.setMutator(new Blockly.Mutator(['lists_create_with_item']));
+    this.setMutator(new Blockly.Mutator(['clip_item']));
     this.contextMenu = false;
   },
   mutationToDom: function () {
@@ -557,9 +590,9 @@ Blockly.Blocks.video = {
     var containerBlock = workspace.newBlock('lists_create_with_container');
     containerBlock.initSvg();
     var connection = containerBlock.getInput('STACK').connection;
-
     for (var i = 0; i < this.itemCount_; i++) {
-      var itemBlock = workspace.newBlock('lists_create_with_item');
+      var itemBlock = workspace.newBlock('clip_item');
+      if (i === 0) itemBlock.setMovable(false);
       itemBlock.initSvg();
       connection.connect(itemBlock.previousConnection);
       connection = itemBlock.nextConnection;
@@ -613,6 +646,17 @@ Blockly.Blocks.video = {
 
 // input contents
 
+Blockly.Blocks.recognition_item = {
+  init: function () {
+    this.setColour(Blockly.Blocks.lists.HUE);
+    this.appendDummyInput()
+      .appendField("frase a reconhecer");
+    this.setPreviousStatement(true, ['input_item', 'link_item']);
+    this.setNextStatement(true, ['link_item']);
+    this.contextMenu = false;
+  }
+};
+
 Blockly.Blocks.srgs = {
   init: function () {
     this.appendDummyInput()
@@ -622,7 +666,7 @@ Blockly.Blocks.srgs = {
     this.itemCount_ = 2;
     this.updateShape_();
     this.setOutput(true, 'input_content');
-    this.setMutator(new Blockly.Mutator(['lists_create_with_item']));
+    this.setMutator(new Blockly.Mutator(['recognition_item']));
     this.contextMenu = false;
   },
   mutationToDom: function () {
@@ -641,9 +685,9 @@ Blockly.Blocks.srgs = {
     var containerBlock = workspace.newBlock('lists_create_with_container');
     containerBlock.initSvg();
     var connection = containerBlock.getInput('STACK').connection;
-
     for (var i = 0; i < this.itemCount_; i++) {
-      var itemBlock = workspace.newBlock('lists_create_with_item');
+      var itemBlock = workspace.newBlock('recognition_item');
+      if (i === 0) itemBlock.setMovable(false);
       itemBlock.initSvg();
       connection.connect(itemBlock.previousConnection);
       connection = itemBlock.nextConnection;
@@ -692,7 +736,18 @@ Blockly.Blocks.srgs = {
   }
 };
 
-Blockly.Blocks['hand-gesture'] = {
+Blockly.Blocks.hand_gesture_item = {
+  init: function () {
+    this.setColour(Blockly.Blocks.lists.HUE);
+    this.appendDummyInput()
+      .appendField("gesto a reconhecer");
+    this.setPreviousStatement(true, ['hand_gesture_item']);
+    this.setNextStatement(true, ['hand_gesture_item']);
+    this.contextMenu = false;
+  }
+};
+
+Blockly.Blocks.hand_gesture = {
   init: function () {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage('media/hand-gesture.png', 30, 30,
@@ -702,7 +757,7 @@ Blockly.Blocks['hand-gesture'] = {
     this.itemCount_ = 2;
     this.updateShape_();
     this.setOutput(true, 'input_content');
-    this.setMutator(new Blockly.Mutator(['lists_create_with_item']));
+    this.setMutator(new Blockly.Mutator(['hand_gesture_item']));
     this.contextMenu = false;
   },
   mutationToDom: function () {
@@ -721,9 +776,9 @@ Blockly.Blocks['hand-gesture'] = {
     var containerBlock = workspace.newBlock('lists_create_with_container');
     containerBlock.initSvg();
     var connection = containerBlock.getInput('STACK').connection;
-
     for (var i = 0; i < this.itemCount_; i++) {
-      var itemBlock = workspace.newBlock('lists_create_with_item');
+      var itemBlock = workspace.newBlock('hand_gesture_item');
+      if (i === 0) itemBlock.setMovable(false);
       itemBlock.initSvg();
       connection.connect(itemBlock.previousConnection);
       connection = itemBlock.nextConnection;
@@ -873,6 +928,17 @@ Blockly.Blocks.onrecognizeuser = {
   }
 };
 
+Blockly.Blocks.condition_item = {
+  init: function () {
+    this.setColour(Blockly.Blocks.lists.HUE);
+    this.appendDummyInput()
+      .appendField("condição");
+    this.setPreviousStatement(true, ['condition_item']);
+    this.setNextStatement(true, ['condition_item']);
+    this.contextMenu = false;
+  }
+};
+
 Blockly.Blocks.compoundcondition = {
   init: function () {
     this.appendDummyInput()
@@ -887,7 +953,7 @@ Blockly.Blocks.compoundcondition = {
     this.itemCount_ = 2;
     this.updateShape_();
     this.setOutput(true, 'simplecondition');
-    this.setMutator(new Blockly.Mutator(['lists_create_with_item']));
+    this.setMutator(new Blockly.Mutator(['condition_item']));
     this.contextMenu = false;
   },
   mutationToDom: function () {
@@ -906,9 +972,9 @@ Blockly.Blocks.compoundcondition = {
     var containerBlock = workspace.newBlock('lists_create_with_container');
     containerBlock.initSvg();
     var connection = containerBlock.getInput('STACK').connection;
-
     for (var i = 0; i < this.itemCount_; i++) {
-      var itemBlock = workspace.newBlock('lists_create_with_item');
+      var itemBlock = workspace.newBlock('condition_item');
+      if (i === 0) itemBlock.setMovable(false);
       itemBlock.initSvg();
       connection.connect(itemBlock.previousConnection);
       connection = itemBlock.nextConnection;
