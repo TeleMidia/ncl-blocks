@@ -4,10 +4,10 @@
 <head>
   <meta charset="utf-8">
   <title>Blockly Demo: Fixed Blockly</title>
-  <script src="lib/blockly_compressed.js"></script>
-  <script src="lib/blocks_compressed.js"></script>
-  <script src="lib/pt-br.js"></script>
-  <script src="ncl-blocks.js"></script>
+  <script src="nclblocks/blockly_compressed.js"></script>
+  <script src="nclblocks/blocks_compressed.js"></script>
+  <script src="nclblocks/pt-br.js"></script>
+  <script src="nclblocks/nclblocks.js"></script>
 </head>
 
 <body>
@@ -58,7 +58,7 @@
     Blockly.BlockSvg.START_HAT = true;
     var blocklyDiv = document.getElementById('blocklyDiv');
     var workspace = Blockly.inject('blocklyDiv', {
-      media: 'media/',
+      media: 'nclblocks/media/',
       toolbox: document.getElementById('toolbox')
     });
     Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'),
