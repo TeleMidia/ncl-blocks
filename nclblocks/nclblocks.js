@@ -668,82 +668,68 @@ Blockly.Blocks.hand_gesture_item = {
   }
 };
 
-Blockly.Blocks.hand_gesture = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldImage('nclblocks/media/hand-gesture.png', 30, 30,
-        '*'))
-      .appendField('--gestures de mão--');
-    this.setColour(120);
-    this.itemCount_ = 2;
-    this.updateShape_();
-    this.setOutput(true, 'input_content');
-    this.setMutator(new Blockly.Mutator(['hand_gesture_item']));
-    this.contextMenu = false;
-  },
-  mutationToDom: function () {
-    var container = document.createElement('mutation');
-    container.setAttribute('items', this.itemCount_);
-    return container;
-  },
-  domToMutation: function (xmlElement) {
-    this.itemCount_ = parseInt(xmlElement.getAttribute('items'), 10);
-    this.updateShape_();
-  },
-  /**
-   * Populate the mutator's dialog with this block's components.
-   */
-  decompose: function (workspace) {
-    var containerBlock = workspace.newBlock('lists_create_with_container');
-    containerBlock.initSvg();
-    var connection = containerBlock.getInput('STACK').connection;
-    for (var i = 0; i < this.itemCount_; i++) {
-      var itemBlock = workspace.newBlock('hand_gesture_item');
-      if (i === 0) itemBlock.setMovable(false);
-      itemBlock.initSvg();
-      connection.connect(itemBlock.previousConnection);
-      connection = itemBlock.nextConnection;
-    }
-    return containerBlock;
-  },
-  /**
-   * Reconfigure this block based on the mutator dialog's components.
-   */
-  compose: function (containerBlock) {
-    var itemBlock = containerBlock.getInputTargetBlock('STACK');
-    var connections = [];
+Blockly.Blocks.hand_gesture = Object.assign({}, Blockly.Blocks.lists_create_with);
 
-    while (itemBlock) {
-      connections.push(itemBlock.valueConnection_);
-      itemBlock = itemBlock.nextConnection &&
-        itemBlock.nextConnection.targetBlock();
+Blockly.Blocks.hand_gesture.init = function () {
+  this.appendDummyInput()
+    .appendField(new Blockly.FieldImage('nclblocks/media/hand-gesture.png', 30, 30,
+      '*'))
+    .appendField('--gestures de mão--');
+  this.setColour(120);
+  this.itemCount_ = 2;
+  this.updateShape_();
+  this.setOutput(true, 'input_content');
+  this.setMutator(new Blockly.Mutator(['hand_gesture_item']));
+  this.contextMenu = false;
+};
+
+Blockly.Blocks.hand_gesture.decompose = function (workspace) {
+  var containerBlock = workspace.newBlock('lists_create_with_container');
+  containerBlock.initSvg();
+  var connection = containerBlock.getInput('STACK').connection;
+  for (var i = 0; i < this.itemCount_; i++) {
+    var itemBlock = workspace.newBlock('hand_gesture_item');
+    if (i === 0) itemBlock.setMovable(false);
+    itemBlock.initSvg();
+    connection.connect(itemBlock.previousConnection);
+    connection = itemBlock.nextConnection;
+  }
+  return containerBlock;
+};
+
+Blockly.Blocks.hand_gesture.compose = function (containerBlock) {
+  var itemBlock = containerBlock.getInputTargetBlock('STACK');
+  var connections = [];
+
+  while (itemBlock) {
+    connections.push(itemBlock.valueConnection_);
+    itemBlock = itemBlock.nextConnection &&
+      itemBlock.nextConnection.targetBlock();
+  }
+  this.itemCount_ = connections.length;
+  this.updateShape_();
+};
+
+Blockly.Blocks.hand_gesture.saveConnections = function (containerBlock) {};
+
+Blockly.Blocks.hand_gesture.updateShape_ = function () {
+  if (this.itemCount_ && this.getInput('EMPTY')) {
+    this.removeInput('EMPTY');
+  } else if (!this.itemCount_ && !this.getInput('EMPTY')) {
+    this.appendDummyInput('EMPTY');
+  }
+  for (var i = 0; i < this.itemCount_; i++) {
+    if (!this.getInput('ADD' + i)) {
+      this.appendDummyInput('ADD' + i)
+        .appendField('id=')
+        .appendField(new Blockly.FieldTextInput(''), 'id=')
+        .appendField('reconhece gesto')
+        .appendField(new Blockly.FieldTextInput(''), '');
     }
-    this.itemCount_ = connections.length;
-    this.updateShape_();
-  },
-  /**
-   * Store pointers to any connected child blocks.
-   */
-  saveConnections: function (containerBlock) {},
-  updateShape_: function () {
-    if (this.itemCount_ && this.getInput('EMPTY')) {
-      this.removeInput('EMPTY');
-    } else if (!this.itemCount_ && !this.getInput('EMPTY')) {
-      this.appendDummyInput('EMPTY');
-    }
-    for (var i = 0; i < this.itemCount_; i++) {
-      if (!this.getInput('ADD' + i)) {
-        this.appendDummyInput('ADD' + i)
-          .appendField('id=')
-          .appendField(new Blockly.FieldTextInput(''), 'id=')
-          .appendField('reconhece gesto')
-          .appendField(new Blockly.FieldTextInput(''), '');
-      }
-    }
-    while (this.getInput('ADD' + i)) {
-      this.removeInput('ADD' + i);
-      i++;
-    }
+  }
+  while (this.getInput('ADD' + i)) {
+    this.removeInput('ADD' + i);
+    i++;
   }
 };
 
