@@ -835,6 +835,8 @@ Blockly.Blocks.onrecognizeuser = {
   }
 };
 
+// compound condition
+
 Blockly.Blocks.condition_item = {
   init: function () {
     this.setColour(Blockly.Blocks.lists.HUE);
@@ -846,108 +848,53 @@ Blockly.Blocks.condition_item = {
   }
 };
 
-// compound condition
+Blockly.Blocks.compoundcondition = Object.assign({}, Blockly.Blocks.lists_create_with);
 
-Blockly.Blocks.compoundcondition = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField(
-        new Blockly.FieldDropdown([
-          ['em sequencia', 'seq'],
-          ['todos entre', 'and'],
-          ['qualquer entre', 'or']
-        ]),
-        'operator');
-    this.setColour(260);
-    this.itemCount_ = 2;
-    this.updateShape_();
-    this.setOutput(true, 'simplecondition');
-    this.setMutator(new Blockly.Mutator(['condition_item']));
-    this.contextMenu = false;
-  },
-  mutationToDom: function () {
-    var container = document.createElement('mutation');
-    container.setAttribute('items', this.itemCount_);
-    return container;
-  },
-  domToMutation: function (xmlElement) {
-    this.itemCount_ = parseInt(xmlElement.getAttribute('items'), 10);
-    this.updateShape_();
-  },
-  /**
-   * Populate the mutator's dialog with this block's components.
-   */
-  decompose: function (workspace) {
-    var containerBlock = workspace.newBlock('lists_create_with_container');
-    containerBlock.initSvg();
-    var connection = containerBlock.getInput('STACK').connection;
-    for (var i = 0; i < this.itemCount_; i++) {
-      var itemBlock = workspace.newBlock('condition_item');
-      if (i === 0) itemBlock.setMovable(false);
-      itemBlock.initSvg();
-      connection.connect(itemBlock.previousConnection);
-      connection = itemBlock.nextConnection;
-    }
-    return containerBlock;
-  },
-  /**
-   * Reconfigure this block based on the mutator dialog's components.
-   */
-  compose: function (containerBlock) {
-    var itemBlock = containerBlock.getInputTargetBlock('STACK');
-    var connections = [];
+Blockly.Blocks.compoundcondition.init = function () {
+  this.appendDummyInput()
+    .appendField(
+      new Blockly.FieldDropdown([
+        ['em sequencia', 'seq'],
+        ['todos entre', 'and'],
+        ['qualquer entre', 'or']
+      ]),
+      'operator');
+  this.setColour(260);
+  this.itemCount_ = 2;
+  this.updateShape_();
+  this.setOutput(true, 'simplecondition');
+  this.setMutator(new Blockly.Mutator(['condition_item']));
+  this.contextMenu = false;
+};
 
-    while (itemBlock) {
-      connections.push(itemBlock.valueConnection_);
-      itemBlock = itemBlock.nextConnection &&
-        itemBlock.nextConnection.targetBlock();
-    }
-    // Disconnect any children that don't belong.
-    for (var i = 0; i < this.itemCount_; i++) {
-      var connection = this.getInput('ADD' + i).connection.targetConnection;
-      if (connection && connections.indexOf(connection) == -1) {
-        connection.disconnect();
-      }
-    }
-    this.itemCount_ = connections.length;
-    this.updateShape_();
-    // Reconnect any child blocks.
-    for (i = 0; i < this.itemCount_; i++) {
-      Blockly.Mutator.reconnect(connections[i], this, 'ADD' + i);
-    }
-  },
-  /**
-   * Store pointers to any connected child blocks.
-   */
-  saveConnections: function (containerBlock) {
-    var itemBlock = containerBlock.getInputTargetBlock('STACK');
-    var i = 0;
+Blockly.Blocks.compoundcondition.decompose = function (workspace) {
+  var containerBlock = workspace.newBlock('lists_create_with_container');
+  containerBlock.initSvg();
+  var connection = containerBlock.getInput('STACK').connection;
+  for (var i = 0; i < this.itemCount_; i++) {
+    var itemBlock = workspace.newBlock('condition_item');
+    if (i === 0) itemBlock.setMovable(false);
+    itemBlock.initSvg();
+    connection.connect(itemBlock.previousConnection);
+    connection = itemBlock.nextConnection;
+  }
+  return containerBlock;
+};
 
-    while (itemBlock) {
-      var input = this.getInput('ADD' + i);
-      itemBlock.valueConnection_ = input && input.connection.targetConnection;
-      i++;
-      itemBlock = itemBlock.nextConnection &&
-        itemBlock.nextConnection.targetBlock();
+Blockly.Blocks.compoundcondition.updateShape_ = function () {
+  if (this.itemCount_ && this.getInput('EMPTY')) {
+    this.removeInput('EMPTY');
+  } else if (!this.itemCount_ && !this.getInput('EMPTY')) {
+    this.appendDummyInput('EMPTY');
+  }
+  for (var i = 0; i < this.itemCount_; i++) {
+    if (!this.getInput('ADD' + i)) {
+      this.appendValueInput('ADD' + i);
     }
-  },
-  updateShape_: function () {
-    if (this.itemCount_ && this.getInput('EMPTY')) {
-      this.removeInput('EMPTY');
-    } else if (!this.itemCount_ && !this.getInput('EMPTY')) {
-      this.appendDummyInput('EMPTY');
-    }
-    // Add new inputs.
-    for (var i = 0; i < this.itemCount_; i++) {
-      if (!this.getInput('ADD' + i)) {
-        this.appendValueInput('ADD' + i);
-      }
-    }
-    // Remove deleted inputs.
-    while (this.getInput('ADD' + i)) {
-      this.removeInput('ADD' + i);
-      i++;
-    }
+  }
+  while (this.getInput('ADD' + i)) {
+    this.removeInput('ADD' + i);
+    i++;
   }
 };
 
