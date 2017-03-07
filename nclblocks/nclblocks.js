@@ -1,5 +1,7 @@
 goog.require('Blockly.Blocks');
 
+if (typeof NCLBLOCKS_USEBODY === "undefined") NCLBLOCKS_USEBODY=false;
+
 // body
 
 Blockly.Blocks.media_item = {
@@ -268,7 +270,7 @@ Blockly.Blocks.media = {
     this.setInputsInline(false);
     this.setColour(120);
     this.setTooltip('Modalidade de saida');
-    this.setOutput(true, 'media');
+    if(NCLBLOCKS_USEBODY !== false) this.setOutput(true, 'media');
     this.contextMenu = false;
   }
 };
@@ -288,7 +290,7 @@ Blockly.Blocks.input = {
     this.setInputsInline(false);
     this.setColour(120);
     this.setTooltip('Modalidade de entrada');
-    this.setOutput(true, 'input');
+    if(NCLBLOCKS_USEBODY !== false) this.setOutput(true, 'input');
     this.contextMenu = false;
   }
 };
@@ -321,7 +323,7 @@ Blockly.Blocks.user.init = function () {
   this.itemCount_ = 2;
   this.updateShape_();
   this.setMutator(new Blockly.Mutator(['device_item']));
-  this.setOutput(true, 'user');
+  if(NCLBLOCKS_USEBODY !== false) this.setOutput(true, 'user');
   this.contextMenu = false;
 };
 
@@ -368,7 +370,7 @@ Blockly.Blocks.link = {
       .appendField('faça');
     this.setInputsInline(false);
     this.setColour(260);
-    this.setOutput(true, 'link');
+    if(NCLBLOCKS_USEBODY !== false) this.setOutput(true, 'link');
     this.contextMenu = false;
   }
 };
