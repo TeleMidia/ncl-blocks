@@ -306,7 +306,7 @@ Blockly.Blocks.device_item = {
   }
 };
 
-Blockly.Blocks.user = Blockly.Blocks.lists_create_with;
+Blockly.Blocks.user = Object.assign({}, Blockly.Blocks.lists_create_with);
 
 Blockly.Blocks.user.init = function () {
   this.appendDummyInput()
@@ -423,83 +423,65 @@ Blockly.Blocks.sentence_item = {
   }
 };
 
-Blockly.Blocks.ssml = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldImage('nclblocks/media/ssml.png', 30, 30, '*'))
-      .appendField('--texto para sintetização--');
-    this.setColour(120);
-    this.itemCount_ = 2;
-    this.updateShape_();
-    this.setOutput(true, 'media_content');
-    this.setMutator(new Blockly.Mutator(['sentence_item']));
-    this.contextMenu = false;
-  },
-  mutationToDom: function () {
-    var container = document.createElement('mutation');
-    container.setAttribute('items', this.itemCount_);
-    return container;
-  },
-  domToMutation: function (xmlElement) {
-    this.itemCount_ = parseInt(xmlElement.getAttribute('items'), 10);
-    this.updateShape_();
-  },
-  /**
-   * Populate the mutator's dialog with this block's components.
-   */
-  decompose: function (workspace) {
-    var containerBlock = workspace.newBlock('lists_create_with_container');
-    containerBlock.initSvg();
-    var connection = containerBlock.getInput('STACK').connection;
+Blockly.Blocks.ssml = Object.assign({}, Blockly.Blocks.lists_create_with);
 
-    for (var i = 0; i < this.itemCount_; i++) {
-      var itemBlock = workspace.newBlock('sentence_item');
-      if (i === 0) itemBlock.setMovable(false);
-      itemBlock.initSvg();
-      connection.connect(itemBlock.previousConnection);
-      connection = itemBlock.nextConnection;
-    }
-    return containerBlock;
-  },
-  /**
-   * Reconfigure this block based on the mutator dialog's components.
-   */
-  compose: function (containerBlock) {
-    var itemBlock = containerBlock.getInputTargetBlock('STACK');
-    var connections = [];
+Blockly.Blocks.ssml.init = function () {
+  this.appendDummyInput()
+    .appendField(new Blockly.FieldImage('nclblocks/media/ssml.png', 30, 30, '*'))
+    .appendField('--texto para sintetização--');
+  this.setColour(120);
+  this.itemCount_ = 2;
+  this.updateShape_();
+  this.setOutput(true, 'media_content');
+  this.setMutator(new Blockly.Mutator(['sentence_item']));
+  this.contextMenu = false;
+};
+Blockly.Blocks.ssml.decompose = function (workspace) {
+  var containerBlock = workspace.newBlock('lists_create_with_container');
+  containerBlock.initSvg();
+  var connection = containerBlock.getInput('STACK').connection;
 
-    while (itemBlock) {
-      connections.push(itemBlock.valueConnection_);
-      itemBlock = itemBlock.nextConnection &&
-        itemBlock.nextConnection.targetBlock();
+  for (var i = 0; i < this.itemCount_; i++) {
+    var itemBlock = workspace.newBlock('sentence_item');
+    if (i === 0) itemBlock.setMovable(false);
+    itemBlock.initSvg();
+    connection.connect(itemBlock.previousConnection);
+    connection = itemBlock.nextConnection;
+  }
+  return containerBlock;
+};
+Blockly.Blocks.ssml.compose = function (containerBlock) {
+  var itemBlock = containerBlock.getInputTargetBlock('STACK');
+  var connections = [];
+
+  while (itemBlock) {
+    connections.push(itemBlock.valueConnection_);
+    itemBlock = itemBlock.nextConnection &&
+      itemBlock.nextConnection.targetBlock();
+  }
+  this.itemCount_ = connections.length;
+  this.updateShape_();
+};
+Blockly.Blocks.ssml.saveConnections = function (containerBlock) {};
+Blockly.Blocks.ssml.updateShape_ = function () {
+  if (this.itemCount_ && this.getInput('EMPTY')) {
+    this.removeInput('EMPTY');
+  } else if (!this.itemCount_ && !this.getInput('EMPTY')) {
+    this.appendDummyInput('EMPTY');
+  }
+  for (var i = 0; i < this.itemCount_; i++) {
+    if (!this.getInput('ADD' + i)) {
+      this.appendDummyInput('ADD' + i)
+        .appendField('id=')
+        .appendField(new Blockly.MediaIdFieldText('',
+          validateMediaId))
+        .appendField('sintetiza frase')
+        .appendField(new Blockly.FieldTextInput(''), '');
     }
-    this.itemCount_ = connections.length;
-    this.updateShape_();
-  },
-  /**
-   * Store pointers to any connected child blocks.
-   */
-  saveConnections: function (containerBlock) {},
-  updateShape_: function () {
-    if (this.itemCount_ && this.getInput('EMPTY')) {
-      this.removeInput('EMPTY');
-    } else if (!this.itemCount_ && !this.getInput('EMPTY')) {
-      this.appendDummyInput('EMPTY');
-    }
-    for (var i = 0; i < this.itemCount_; i++) {
-      if (!this.getInput('ADD' + i)) {
-        this.appendDummyInput('ADD' + i)
-          .appendField('id=')
-          .appendField(new Blockly.MediaIdFieldText('',
-            validateMediaId))
-          .appendField('sintetiza frase')
-          .appendField(new Blockly.FieldTextInput(''), '');
-      }
-    }
-    while (this.getInput('ADD' + i)) {
-      this.removeInput('ADD' + i);
-      i++;
-    }
+  }
+  while (this.getInput('ADD' + i)) {
+    this.removeInput('ADD' + i);
+    i++;
   }
 };
 
