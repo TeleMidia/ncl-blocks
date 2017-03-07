@@ -508,86 +508,72 @@ Blockly.Blocks.clip_item = {
   }
 };
 
-Blockly.Blocks.video = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldImage('nclblocks/media/icon-video.png', 30, 30,
-        '*'))
-      .appendField('--vídeo--');
-    this.setColour(120);
-    this.itemCount_ = 2;
-    this.updateShape_();
-    this.setOutput(true, 'media_content');
-    this.setMutator(new Blockly.Mutator(['clip_item']));
-    this.contextMenu = false;
-  },
-  mutationToDom: function () {
-    var container = document.createElement('mutation');
-    container.setAttribute('items', this.itemCount_);
-    return container;
-  },
-  domToMutation: function (xmlElement) {
-    this.itemCount_ = parseInt(xmlElement.getAttribute('items'), 10);
-    this.updateShape_();
-  },
-  /**
-   * Populate the mutator's dialog with this block's components.
-   */
-  decompose: function (workspace) {
-    var containerBlock = workspace.newBlock('lists_create_with_container');
-    containerBlock.initSvg();
-    var connection = containerBlock.getInput('STACK').connection;
-    for (var i = 0; i < this.itemCount_; i++) {
-      var itemBlock = workspace.newBlock('clip_item');
-      if (i === 0) itemBlock.setMovable(false);
-      itemBlock.initSvg();
-      connection.connect(itemBlock.previousConnection);
-      connection = itemBlock.nextConnection;
-    }
-    return containerBlock;
-  },
-  /**
-   * Reconfigure this block based on the mutator dialog's components.
-   */
-  compose: function (containerBlock) {
-    var itemBlock = containerBlock.getInputTargetBlock('STACK');
-    var connections = [];
+Blockly.Blocks.video = Object.assign({}, Blockly.Blocks.lists_create_with);
 
-    while (itemBlock) {
-      connections.push(itemBlock.valueConnection_);
-      itemBlock = itemBlock.nextConnection &&
-        itemBlock.nextConnection.targetBlock();
+Blockly.Blocks.video.init = function () {
+  this.appendDummyInput()
+    .appendField(new Blockly.FieldImage('nclblocks/media/icon-video.png', 30, 30,
+      '*'))
+    .appendField('--vídeo--');
+  this.setColour(120);
+  this.itemCount_ = 2;
+  this.updateShape_();
+  this.setOutput(true, 'media_content');
+  this.setMutator(new Blockly.Mutator(['clip_item']));
+  this.contextMenu = false;
+};
+
+Blockly.Blocks.video.decompose = function (workspace) {
+  var containerBlock = workspace.newBlock('lists_create_with_container');
+  containerBlock.initSvg();
+  var connection = containerBlock.getInput('STACK').connection;
+  for (var i = 0; i < this.itemCount_; i++) {
+    var itemBlock = workspace.newBlock('clip_item');
+    if (i === 0) itemBlock.setMovable(false);
+    itemBlock.initSvg();
+    connection.connect(itemBlock.previousConnection);
+    connection = itemBlock.nextConnection;
+  }
+  return containerBlock;
+};
+
+Blockly.Blocks.video.compose = function (containerBlock) {
+  var itemBlock = containerBlock.getInputTargetBlock('STACK');
+  var connections = [];
+
+  while (itemBlock) {
+    connections.push(itemBlock.valueConnection_);
+    itemBlock = itemBlock.nextConnection &&
+      itemBlock.nextConnection.targetBlock();
+  }
+  this.itemCount_ = connections.length;
+  this.updateShape_();
+};
+
+Blockly.Blocks.video.saveConnections = function (containerBlock) {};
+
+Blockly.Blocks.video.updateShape_ = function () {
+  if (this.itemCount_ && this.getInput('EMPTY')) {
+    this.removeInput('EMPTY');
+  } else if (!this.itemCount_ && !this.getInput('EMPTY')) {
+    this.appendDummyInput('EMPTY');
+  }
+  for (var i = 0; i < this.itemCount_; i++) {
+    if (!this.getInput('ADD' + i)) {
+      this.appendDummyInput('ADD' + i)
+        .appendField('id=')
+        .appendField(new Blockly.MediaIdFieldText('',
+          validateMediaId))
+        .appendField('define trecho de inicio')
+        .appendField(new Blockly.FieldNumber(0, 0), 'begin')
+        .appendField('s e fim')
+        .appendField(new Blockly.FieldNumber(0, 0), 'end')
+        .appendField('s');
     }
-    this.itemCount_ = connections.length;
-    this.updateShape_();
-  },
-  /**
-   * Store pointers to any connected child blocks.
-   */
-  saveConnections: function (containerBlock) {},
-  updateShape_: function () {
-    if (this.itemCount_ && this.getInput('EMPTY')) {
-      this.removeInput('EMPTY');
-    } else if (!this.itemCount_ && !this.getInput('EMPTY')) {
-      this.appendDummyInput('EMPTY');
-    }
-    for (var i = 0; i < this.itemCount_; i++) {
-      if (!this.getInput('ADD' + i)) {
-        this.appendDummyInput('ADD' + i)
-          .appendField('id=')
-          .appendField(new Blockly.MediaIdFieldText('',
-            validateMediaId))
-          .appendField('define trecho de inicio')
-          .appendField(new Blockly.FieldNumber(0, 0), 'begin')
-          .appendField('s e fim')
-          .appendField(new Blockly.FieldNumber(0, 0), 'end')
-          .appendField('s');
-      }
-    }
-    while (this.getInput('ADD' + i)) {
-      this.removeInput('ADD' + i);
-      i++;
-    }
+  }
+  while (this.getInput('ADD' + i)) {
+    this.removeInput('ADD' + i);
+    i++;
   }
 };
 
