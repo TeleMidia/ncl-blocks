@@ -306,98 +306,51 @@ Blockly.Blocks.device_item = {
   }
 };
 
-Blockly.Blocks.user = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField('--usuário--');
-    this.appendValueInput('ADD0')
-      .appendField('id=')
-      .appendField(new Blockly.NclUserFieldText('',
-        validateUserId))
-      .setCheck('user_content')
-      .appendField('e dispositivos=');
-    this.setColour(20);
-    this.itemCount_ = 2;
-    this.updateShape_();
-    this.setMutator(new Blockly.Mutator(['device_item']));
-    this.setOutput(true, 'user');
-    this.contextMenu = false;
-  },
-  mutationToDom: function () {
-    var container = document.createElement('mutation');
-    container.setAttribute('items', this.itemCount_);
-    return container;
-  },
-  domToMutation: function (xmlElement) {
-    this.itemCount_ = parseInt(xmlElement.getAttribute('items'), 10);
-    this.updateShape_();
-  },
-  /**
-   * Populate the mutator's dialog with this block's components.
-   */
-  decompose: function (workspace) {
-    var containerBlock = workspace.newBlock('lists_create_with_container');
-    containerBlock.initSvg();
-    var connection = containerBlock.getInput('STACK').connection;
-    for (var i = 0; i < this.itemCount_; i++) {
-      var itemBlock = workspace.newBlock('device_item');
-      if (i === 0) itemBlock.setMovable(false);
-      itemBlock.initSvg();
-      connection.connect(itemBlock.previousConnection);
-      connection = itemBlock.nextConnection;
+Blockly.Blocks.user = Blockly.Blocks.lists_create_with;
+
+Blockly.Blocks.user.init = function () {
+  this.appendDummyInput()
+    .appendField('--usuário--');
+  this.appendValueInput('ADD0')
+    .appendField('id=')
+    .appendField(new Blockly.NclUserFieldText('',
+      validateUserId))
+    .setCheck('user_content')
+    .appendField('e dispositivos=');
+  this.setColour(20);
+  this.itemCount_ = 2;
+  this.updateShape_();
+  this.setMutator(new Blockly.Mutator(['device_item']));
+  this.setOutput(true, 'user');
+  this.contextMenu = false;
+};
+
+Blockly.Blocks.user.decompose = function (workspace) {
+  var containerBlock = workspace.newBlock('lists_create_with_container');
+  containerBlock.initSvg();
+  var connection = containerBlock.getInput('STACK').connection;
+  for (var i = 0; i < this.itemCount_; i++) {
+    var itemBlock = workspace.newBlock('device_item');
+    if (i === 0) itemBlock.setMovable(false);
+    itemBlock.initSvg();
+    connection.connect(itemBlock.previousConnection);
+    connection = itemBlock.nextConnection;
+  }
+  return containerBlock;
+};
+
+Blockly.Blocks.user.updateShape_ = function () {
+  // Add new inputs.
+  for (var i = 1; i < this.itemCount_; i++) {
+    if (!this.getInput('ADD' + i)) {
+      var input = this.appendValueInput('ADD' + i);
+      input.setCheck('user_content');
     }
-    return containerBlock;
-  },
-  /**
-   * Reconfigure this block based on the mutator dialog's components.
-   */
-  compose: function (containerBlock) {
-    var itemBlock = containerBlock.getInputTargetBlock('STACK');
-    // Count number of inputs.
-    var connections = [];
-    while (itemBlock) {
-      connections.push(itemBlock.valueConnection_);
-      itemBlock = itemBlock.nextConnection &&
-        itemBlock.nextConnection.targetBlock();
-    }
-    // Disconnect any children that don't belong.
-    for (var i = 0; i < this.itemCount_; i++) {
-      var connection = this.getInput('ADD' + i).connection.targetConnection;
-      if (connection && connections.indexOf(connection) === -1) {
-        connection.disconnect();
-      }
-    }
-    this.itemCount_ = connections.length;
-    this.updateShape_();
-    // Reconnect any child blocks.
-    for (var j = 0; j < this.itemCount_; j++) {
-      Blockly.Mutator.reconnect(connections[j], this, 'ADD' + j);
-    }
-  },
-  saveConnections: function (containerBlock) {
-    var itemBlock = containerBlock.getInputTargetBlock('STACK');
-    var i = 0;
-    while (itemBlock) {
-      var input = this.getInput('ADD' + i);
-      itemBlock.valueConnection_ = input && input.connection.targetConnection;
-      i++;
-      itemBlock = itemBlock.nextConnection &&
-        itemBlock.nextConnection.targetBlock();
-    }
-  },
-  updateShape_: function () {
-    // Add new inputs.
-    for (var i = 1; i < this.itemCount_; i++) {
-      if (!this.getInput('ADD' + i)) {
-        var input = this.appendValueInput('ADD' + i);
-        input.setCheck('user_content');
-      }
-    }
-    // Remove deleted inputs.
-    while (this.getInput('ADD' + i)) {
-      this.removeInput('ADD' + i);
-      i++;
-    }
+  }
+  // Remove deleted inputs.
+  while (this.getInput('ADD' + i)) {
+    this.removeInput('ADD' + i);
+    i++;
   }
 };
 
