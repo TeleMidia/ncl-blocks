@@ -354,6 +354,8 @@ Blockly.Blocks.user.updateShape_ = function () {
   }
 };
 
+// link
+
 Blockly.Blocks.link = {
   init: function () {
     this.appendDummyInput()
@@ -371,7 +373,7 @@ Blockly.Blocks.link = {
   }
 };
 
-// user contents
+// user contents - headset
 
 Blockly.Blocks.headset = {
   init: function () {
@@ -386,6 +388,8 @@ Blockly.Blocks.headset = {
   }
 };
 
+// user contents - hand_gesture_sensor
+
 Blockly.Blocks.hand_gesture_sensor = {
   init: function () {
     this.appendDummyInput()
@@ -398,7 +402,7 @@ Blockly.Blocks.hand_gesture_sensor = {
   }
 };
 
-// media contents
+// media contents - image
 
 Blockly.Blocks.image = {
   init: function () {
@@ -411,6 +415,8 @@ Blockly.Blocks.image = {
     this.contextMenu = false;
   }
 };
+
+// media contents - ssml
 
 Blockly.Blocks.sentence_item = {
   init: function () {
@@ -436,6 +442,7 @@ Blockly.Blocks.ssml.init = function () {
   this.setMutator(new Blockly.Mutator(['sentence_item']));
   this.contextMenu = false;
 };
+
 Blockly.Blocks.ssml.decompose = function (workspace) {
   var containerBlock = workspace.newBlock('lists_create_with_container');
   containerBlock.initSvg();
@@ -450,6 +457,7 @@ Blockly.Blocks.ssml.decompose = function (workspace) {
   }
   return containerBlock;
 };
+
 Blockly.Blocks.ssml.compose = function (containerBlock) {
   var itemBlock = containerBlock.getInputTargetBlock('STACK');
   var connections = [];
@@ -462,7 +470,9 @@ Blockly.Blocks.ssml.compose = function (containerBlock) {
   this.itemCount_ = connections.length;
   this.updateShape_();
 };
+
 Blockly.Blocks.ssml.saveConnections = function (containerBlock) {};
+
 Blockly.Blocks.ssml.updateShape_ = function () {
   if (this.itemCount_ && this.getInput('EMPTY')) {
     this.removeInput('EMPTY');
@@ -484,6 +494,8 @@ Blockly.Blocks.ssml.updateShape_ = function () {
     i++;
   }
 };
+
+// media contents - video
 
 Blockly.Blocks.clip_item = {
   init: function () {
@@ -579,7 +591,7 @@ Blockly.Blocks.video = {
   }
 };
 
-// input contents
+// input contents - srgs
 
 Blockly.Blocks.recognition_item = {
   init: function () {
@@ -670,6 +682,8 @@ Blockly.Blocks.srgs = {
     }
   }
 };
+
+// input contents - gesture
 
 Blockly.Blocks.hand_gesture_item = {
   init: function () {
@@ -873,6 +887,8 @@ Blockly.Blocks.condition_item = {
     this.contextMenu = false;
   }
 };
+
+// compound condition
 
 Blockly.Blocks.compoundcondition = {
   init: function () {
