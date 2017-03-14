@@ -1,0 +1,15 @@
+{
+  "name": "thesis-evaluation-form",
+  "description": "thesis-evaluation-form",
+  "repository": "github.com:alanlivio/thesis-evaluation-form",
+  "version": "1.0.0",
+  "author": "Alan Livio",
+  "license": "MIT",
+  "devDependencies": {
+    "angular": "*",
+    "angular-route": "*",
+    "bootstrap": "*",
+    "font-awesome": "*",
+    "survey-angular": "*"
+  }
+}
