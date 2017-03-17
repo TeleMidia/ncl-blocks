@@ -8,83 +8,35 @@
   <script src="nclblocks/blocks_compressed.js"></script>
   <script src="nclblocks/pt-br.js"></script>
   <script src="nclblocks/nclblocks.js"></script>
-  <script src="https://surveyjs.azureedge.net/0.12.3/survey.angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+  </script>
+  <script src="https://surveyjs.azureedge.net/0.12.3/survey.angular.min.js">
+  </script>
+  <script src="https://surveyjs.azureedge.net/0.12.4/survey.jquery.min.js">
+  </script>
+
 </head>
 
 <body>
-  <ng-app></ng-app>
-
-  <script>
-    import {
-      Component
-    } from '@angular/core';
-
-    var surveyJSON = {
-      title: "Tell us, what technologies do you use?",
-      pages: [{
-          name: "page1",
-          questions: [{
-              type: "radiogroup",
-              choices: ["Yes", "No"],
-              isRequired: true,
-              name: "frameworkUsing",
-              title: "Do you use any front-end framework like Bootstrap?"
-            },
-            {
-              type: "checkbox",
-              choices: ["Bootstrap", "Foundation"],
-              hasOther: true,
-              isRequired: true,
-              name: "framework",
-              title: "What front-end framework do you use?",
-              visibleIf: "{frameworkUsing} = 'Yes'"
-            }
-          ]
-        },
-        {
-          name: "page2",
-          questions: [{
-              type: "radiogroup",
-              choices: ["Yes", "No"],
-              isRequired: true,
-              name: "mvvmUsing",
-              title: "Do you use any MVVM framework?"
-            },
-            {
-              type: "checkbox",
-              choices: ["AngularJS", "KnockoutJS", "React"],
-              hasOther: true,
-              isRequired: true,
-              name: "mvvm",
-              title: "What MVVM framework do you use?",
-              visibleIf: "{mvvmUsing} = 'Yes'"
-            }
-          ]
-        },
-        {
-          name: "page3",
-          questions: [{
-            type: "comment",
-            name: "about",
-            title: "Please tell us about your main requirements for Survey library"
-          }]
-        }
-      ]
+  <div id="surveyContainer"></div>
+  <script type="text/javascript">
+  var surveyJSON = { title: "Tell us, what technologies do you use?", pages: [
+    { name:"page1", questions: [
+        { type: "radiogroup", choices: [ "Yes", "No" ], isRequired: true, name: "frameworkUsing",title: "Do you use any front-end framework like Bootstrap?" },
+        { type: "checkbox", choices: ["Bootstrap","Foundation"], hasOther: true, isRequired: true, name: "framework", title: "What front-end framework do you use?", visibleIf: "{frameworkUsing} = 'Yes'" }
+     ]},
+    { name: "page2", questions: [
+      { type: "radiogroup", choices: ["Yes","No"],isRequired: true, name: "mvvmUsing", title: "Do you use any MVVM framework?" },
+      { type: "checkbox", choices: [ "AngularJS", "KnockoutJS", "React" ], hasOther: true, isRequired: true, name: "mvvm", title: "What MVVM framework do you use?", visibleIf: "{mvvmUsing} = 'Yes'" } ] },
+    { name: "page3",questions: [
+      { type: "comment", name: "about", title: "Please tell us about your main requirements for Survey library" } ] }
+    ]
     }
     Survey.Survey.cssType = "bootstrap";
-    @Component({
-      selector: 'ng-app',
-      template: `<div id='surveyElement'></div>`,
-    })
-    export class AppComponent {
-      ngOnInit() {
-        var survey = new Survey.Model(surveyJSON);
-        survey.onComplete.add(sendDataToServer);
-        Survey.SurveyNG.render("surveyElement", {
-          model: survey
-        });
-      }
-    }
+    var survey = new Survey.Model(surveyJSON);
+    $("#surveyContainer").Survey({
+      model: survey
+    });
   </script>
 </body>
 
