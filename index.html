@@ -8,35 +8,74 @@
   <script src="nclblocks/blocks_compressed.js"></script>
   <script src="nclblocks/pt-br.js"></script>
   <script src="nclblocks/nclblocks.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js">
-  </script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
   <script src="https://surveyjs.azureedge.net/0.12.3/survey.angular.min.js">
   </script>
-  <script src="https://surveyjs.azureedge.net/0.12.4/survey.jquery.min.js">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js">
   </script>
-
+  <script src="https://surveyjs.azureedge.net/0.12.4/survey.jquery.min.js"></script>
 </head>
 
 <body>
   <div id="surveyContainer"></div>
+  <!--d72526e70b814a3d8f918b60b94dafe4-->
   <script type="text/javascript">
-  var surveyJSON = { title: "Tell us, what technologies do you use?", pages: [
-    { name:"page1", questions: [
-        { type: "radiogroup", choices: [ "Yes", "No" ], isRequired: true, name: "frameworkUsing",title: "Do you use any front-end framework like Bootstrap?" },
-        { type: "checkbox", choices: ["Bootstrap","Foundation"], hasOther: true, isRequired: true, name: "framework", title: "What front-end framework do you use?", visibleIf: "{frameworkUsing} = 'Yes'" }
-     ]},
-    { name: "page2", questions: [
-      { type: "radiogroup", choices: ["Yes","No"],isRequired: true, name: "mvvmUsing", title: "Do you use any MVVM framework?" },
-      { type: "checkbox", choices: [ "AngularJS", "KnockoutJS", "React" ], hasOther: true, isRequired: true, name: "mvvm", title: "What MVVM framework do you use?", visibleIf: "{mvvmUsing} = 'Yes'" } ] },
-    { name: "page3",questions: [
-      { type: "comment", name: "about", title: "Please tell us about your main requirements for Survey library" } ] }
-    ]
+    var surveyJSON = {
+      title: "Tell us, what technologies do you use?",
+      pages: [{
+        name: "page1",
+        questions: [{
+            type: "radiogroup",
+            choices: ["Yes", "No"],
+            isRequired: true,
+            name: "frameworkUsing",
+            title: "Do you use any front-end framework like Bootstrap?"
+          },
+          {
+            type: "checkbox",
+            choices: ["Bootstrap", "Foundation"],
+            hasOther: true,
+            isRequired: true,
+            name: "framework",
+            title: "What front-end framework do you use?",
+            visibleIf: "{frameworkUsing} = 'Yes'"
+          },
+          {
+            type: "radiogroup",
+            choices: ["Yes", "No"],
+            isRequired: true,
+            name: "mvvmUsing",
+            title: "Do you use any MVVM framework?"
+          },
+          {
+            type: "checkbox",
+            choices: ["AngularJS", "KnockoutJS", "React"],
+            hasOther: true,
+            isRequired: true,
+            name: "mvvm",
+            title: "What MVVM framework do you use?",
+            visibleIf: "{mvvmUsing} = 'Yes'"
+          }, {
+            type: "comment",
+            name: "about",
+            title: "Please tell us about your main requirements for Survey library"
+          }
+        ]
+      }]
     }
+    Survey.defaultBootstrapCss.navigationButton = "btn btn-primary";
     Survey.Survey.cssType = "bootstrap";
     var survey = new Survey.Model(surveyJSON);
+
     $("#surveyContainer").Survey({
-      model: survey
+      model: survey,
+      onComplete: sendDataToServer
     });
+
+    function sendDataToServer(survey) {
+      var resultAsString = JSON.stringify(survey.data);
+      alert(resultAsString);
+    }
   </script>
 </body>
 
