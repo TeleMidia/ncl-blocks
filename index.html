@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html class="freebird">
 
 <head>
-  <meta charset="utf-8">
-  <title>Blockly Demo: Fixed Blockly</title>
+  <title>thesis-questionario</title>
   <script src="nclblocks/blockly_compressed.js"></script>
   <script src="nclblocks/blocks_compressed.js"></script>
   <script src="nclblocks/pt-br.js"></script>
   <script src="nclblocks/nclblocks.js"></script>
+  <link rel="stylesheet" href="gform.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
   <script src="https://surveyjs.azureedge.net/0.12.3/survey.angular.min.js">
   </script>
@@ -17,66 +17,51 @@
 </head>
 
 <body>
-  <div id="surveyContainer"></div>
-  <!--d72526e70b814a3d8f918b60b94dafe4-->
-  <script type="text/javascript">
-    var surveyJSON = {
-      title: "Tell us, what technologies do you use?",
-      pages: [{
-        name: "page1",
-        questions: [{
-            type: "radiogroup",
-            choices: ["Yes", "No"],
-            isRequired: true,
-            name: "frameworkUsing",
-            title: "Do you use any front-end framework like Bootstrap?"
-          },
-          {
-            type: "checkbox",
-            choices: ["Bootstrap", "Foundation"],
-            hasOther: true,
-            isRequired: true,
-            name: "framework",
-            title: "What front-end framework do you use?",
-            visibleIf: "{frameworkUsing} = 'Yes'"
-          },
-          {
-            type: "radiogroup",
-            choices: ["Yes", "No"],
-            isRequired: true,
-            name: "mvvmUsing",
-            title: "Do you use any MVVM framework?"
-          },
-          {
-            type: "checkbox",
-            choices: ["AngularJS", "KnockoutJS", "React"],
-            hasOther: true,
-            isRequired: true,
-            name: "mvvm",
-            title: "What MVVM framework do you use?",
-            visibleIf: "{mvvmUsing} = 'Yes'"
-          }, {
-            type: "comment",
-            name: "about",
-            title: "Please tell us about your main requirements for Survey library"
+  <div class="freebirdFormeditorViewEditingsurfaceCentered freebirdFormeditorViewPagePageCard">
+    <div id="surveyContainer"></div>
+    <script type="text/javascript">
+      Survey.Survey.cssType = "bootstrap";
+
+      var survey = new Survey.Model({
+        surveyId: '59bd2657-93ac-492c-8dd5-134a10ebd69a',
+        surveyPostId: '51d57b85-3813-4a08-801b-4b7e077c1660'
+      });
+      var surveySendResult = function (s, options) {
+        if (options.success) {
+          s.getResult('bf1df79f-73e6-4d6c-9cc9-9186eb7c65ea',
+            'langs');
+        }
+      };
+      var surveyGetResult = function (s, options) {
+        if (options.success) {
+          showChart(options.dataList);
+        }
+      };
+
+      function showChart(chartDataSource) {
+        document.getElementById("chartContainer").style.height = "500px";
+        $("#chartContainer").dxPieChart({
+          dataSource: chartDataSource,
+          series: {
+            argumentField: 'name',
+            valueField: 'value'
           }
-        ]
-      }]
-    }
-    Survey.defaultBootstrapCss.navigationButton = "btn btn-primary";
-    Survey.Survey.cssType = "bootstrap";
-    var survey = new Survey.Model(surveyJSON);
+        });
+      }
 
-    $("#surveyContainer").Survey({
-      model: survey,
-      onComplete: sendDataToServer
-    });
+      function showResult(survey) {
+        var resultAsString = JSON.stringify(survey.data);
+        alert(resultAsString);
+      }
+      $("#surveyContainer").Survey({
+        model: survey,
+        onSendResult: surveySendResult,
+        onGetResult: surveyGetResult,
+        onComplete: showResult
+      });
+    </script>
+  </div>
 
-    function sendDataToServer(survey) {
-      var resultAsString = JSON.stringify(survey.data);
-      alert(resultAsString);
-    }
-  </script>
 </body>
 
 </html>
