@@ -5,11 +5,15 @@
   "version": "1.0.0",
   "author": "Alan Livio",
   "license": "MIT",
-  "devDependencies": {
-    "angular": "*",
-    "angular-route": "*",
-    "bootstrap": "*",
-    "font-awesome": "*",
-    "survey-angular": "*"
+  "scripts": {
+    "lite": "lite-server –port10001",
+    "start": "npm run lite"
+  },
+  "dependencies": {
+    "@types/jquery": "^2.0.41",
+    "blockly": "^1.0.0",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1",
+    "survey-jquery": "^0.12.4"
   }
 }
