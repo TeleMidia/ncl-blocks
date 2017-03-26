@@ -4,10 +4,10 @@
 <head>
   <meta charset="utf-8">
   <title>Blockly Demo: Fixed Blockly</title>
-  <script src="nclblocks/blockly_compressed.js"></script>
-  <script src="nclblocks/blocks_compressed.js"></script>
-  <script src="nclblocks/pt-br.js"></script>
-  <script src="nclblocks/nclblocks.js"></script>
+  <script src="blockly_compressed.js"></script>
+  <script src="blocks_compressed.js"></script>
+  <script src="pt-br.js"></script>
+  <script src="nclblocks.js"></script>
 </head>
 
 <body>
@@ -59,7 +59,7 @@
     var blocklyDiv = document.getElementById('blocklyDiv');
     var NCLBLOCKS_USEBODY = true;
     var workspace = Blockly.inject('blocklyDiv', {
-      media: 'nclblocks/media/',
+      media: './media/',
       toolbox: document.getElementById('toolbox')
     });
     Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'),
