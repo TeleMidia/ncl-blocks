@@ -1,0 +1,8 @@
+{
+  "name": "thesis-evaluation-form",
+  "dependencies": {},
+  "globalDependencies": {
+    "jquery": "registry:dt/jquery#1.10.0+20170310222111",
+    "survey-knockout": "registry:dt/survey-knockout#0.9.7+20161005184000"
+  }
+}
