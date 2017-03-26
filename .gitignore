@@ -1,13 +1,6 @@
 
 # Created by https://www.gitignore.io/api/code,eclipse,executable,git,intellij,linux,notepadpp,osx,sublimetext,vim,windows,xcode
 
-### Code ###
-# Visual Studio Code - https://code.visualstudio.com/
-.settings/
-.vscode/
-tsconfig.json
-jsconfig.json
-
 ### Eclipse ###
 
 .metadata
