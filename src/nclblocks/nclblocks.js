@@ -374,7 +374,7 @@ Blockly.Blocks.link = {
 Blockly.Blocks.headset = {
   init: function() {
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage('media/headset.png', 30, 30, '*'))
+      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/headset.png', 30, 30, '*'))
       .appendField('--microfone--');
     this.setOutput(true, 'user_content');
     this.setColour(20);
@@ -389,7 +389,7 @@ Blockly.Blocks.headset = {
 Blockly.Blocks.hand_gesture_sensor = {
   init: function() {
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage('media/hand-gesture-sensor.png',
+      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/hand-gesture-sensor.png',
         30, 30, '*'))
       .appendField('--sensor de gestos--');
     this.setOutput(true, 'user_content');
@@ -403,7 +403,7 @@ Blockly.Blocks.hand_gesture_sensor = {
 Blockly.Blocks.image = {
   init: function() {
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage('media/icon-image.png', 30, 30,
+      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-image.png', 30, 30,
         '*'))
       .appendField('--imagem--');
     this.setOutput(true, 'media_content');
@@ -429,7 +429,7 @@ Blockly.Blocks.ssml = Object.assign({}, Blockly.Blocks.lists_create_with);
 
 Blockly.Blocks.ssml.init = function() {
   this.appendDummyInput()
-    .appendField(new Blockly.FieldImage('media/ssml.png', 30, 30, '*'))
+    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/ssml.png', 30, 30, '*'))
     .appendField('--texto para sintetização--');
   this.setColour(120);
   this.itemCount_ = 2;
@@ -508,7 +508,7 @@ Blockly.Blocks.video = Object.assign({}, Blockly.Blocks.lists_create_with);
 
 Blockly.Blocks.video.init = function() {
   this.appendDummyInput()
-    .appendField(new Blockly.FieldImage('media/icon-video.png', 30, 30,
+    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-video.png', 30, 30,
       '*'))
     .appendField('--vídeo--');
   this.setColour(120);
@@ -590,7 +590,7 @@ Blockly.Blocks.srgs = Object.assign({}, Blockly.Blocks.lists_create_with);
 
 Blockly.Blocks.srgs.init = function() {
   this.appendDummyInput()
-    .appendField(new Blockly.FieldImage('media/srgs.png', 30, 30, '*'))
+    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/srgs.png', 30, 30, '*'))
     .appendField('--comandos de voz--');
   this.setColour(120);
   this.itemCount_ = 2;
@@ -668,7 +668,7 @@ Blockly.Blocks.hand_gesture = Object.assign({}, Blockly.Blocks.lists_create_with
 
 Blockly.Blocks.hand_gesture.init = function() {
   this.appendDummyInput()
-    .appendField(new Blockly.FieldImage('media/hand-gesture.png', 30, 30,
+    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/hand-gesture.png', 30, 30,
       '*'))
     .appendField('--gestures de mão--');
   this.setColour(120);
@@ -734,7 +734,7 @@ Blockly.Blocks.hand_gesture.updateShape_ = function() {
 Blockly.Blocks.onbegin = {
   init: function() {
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage('media/icon-bind-onbegin.png', 15,
+      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-bind-onbegin.png', 15,
         15, '*'))
       .appendField('inciar')
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
@@ -748,7 +748,7 @@ Blockly.Blocks.onbegin = {
 Blockly.Blocks.onend = {
   init: function() {
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage('media/icon-bind-onend.png', 15,
+      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-bind-onend.png', 15,
         15, '*'))
       .appendField('terminar')
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
@@ -762,7 +762,7 @@ Blockly.Blocks.onend = {
 Blockly.Blocks.onpause = {
   init: function() {
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage('media/icon-bind-onpause.png', 15,
+      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-bind-onpause.png', 15,
         15, '*'))
       .appendField('pausar')
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
@@ -776,7 +776,7 @@ Blockly.Blocks.onpause = {
 Blockly.Blocks.onresume = {
   init: function() {
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage('media/icon-bind-onresume.png',
+      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-bind-onresume.png',
         15, 15, '*'))
       .appendField('resumir')
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
@@ -790,7 +790,7 @@ Blockly.Blocks.onresume = {
 Blockly.Blocks.onselection = {
   init: function() {
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage('media/icon-bind-onselection.png',
+      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-bind-onselection.png',
         15, 15, '*'))
       .appendField('selecionar')
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
@@ -804,7 +804,7 @@ Blockly.Blocks.onselection = {
 Blockly.Blocks.onrecognize = {
   init: function() {
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage('media/icon-bind-onselection.png',
+      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-bind-onselection.png',
         15, 15, '*'))
       .appendField('reconhecer')
       .appendField(new Blockly.FieldDropdown(getinputIds), 'NAME');
@@ -818,7 +818,7 @@ Blockly.Blocks.onrecognize = {
 Blockly.Blocks.onrecognizeuser = {
   init: function() {
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage('media/icon-bind-onselection.png',
+      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-bind-onselection.png',
         15, 15, '*'))
       .appendField('reconhecer')
       .appendField(new Blockly.FieldDropdown(getinputIds), 'NAME')
@@ -899,7 +899,7 @@ Blockly.Blocks.compoundcondition.updateShape_ = function() {
 Blockly.Blocks.start = {
   init: function() {
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage('media/icon-bind-start.png', 15,
+      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-bind-start.png', 15,
         15, '*'))
       .appendField('inicie')
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
@@ -914,7 +914,7 @@ Blockly.Blocks.start = {
 Blockly.Blocks.stop = {
   init: function() {
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage('media/icon-bind-stop.png', 15,
+      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-bind-stop.png', 15,
         15, '*'))
       .appendField('pare')
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
@@ -928,7 +928,7 @@ Blockly.Blocks.stop = {
 Blockly.Blocks.pause = {
   init: function() {
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage('media/icon-bind-pause.png', 15,
+      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-bind-pause.png', 15,
         15, '*'))
       .appendField('pause')
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
@@ -942,7 +942,7 @@ Blockly.Blocks.pause = {
 Blockly.Blocks.resume = {
   init: function() {
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage('media/icon-bind-resume.png', 15,
+      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-bind-resume.png', 15,
         15, '*'))
       .appendField('resuma')
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
@@ -957,7 +957,7 @@ Blockly.Blocks.resume = {
 Blockly.Blocks.set = {
   init: function() {
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage('media/icon-bind-set.png', 15, 15,
+      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-bind-set.png', 15, 15,
         '*'))
       .appendField('atribua')
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME')

@@ -56,17 +56,18 @@
     startBlocks += '<block type="body" inline="false" x="20" y="20"></block>';
     startBlocks += '</xml>';
 
+    Blockly.pathToBlockly = './'
     Blockly.BlockSvg.START_HAT = true;
     var NCLBLOCKS_USEBODY = true;
     var workspace = Blockly.inject('blocklyDiv', {
-      media: './media/',
+      media: Blockly.pathToBlockly + 'media/',
       toolbox: toolbox,
       scrollbars: true,
       sounds: true
     });
     Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(startBlocks), workspace);
   </script>
-  
+
 </body>
 
 </html>
