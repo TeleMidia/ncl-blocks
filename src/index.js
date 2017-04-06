@@ -230,9 +230,9 @@ var surveyJSON = {
   title: "Estudo sobre interações multimodais em linguagens multimídia"
 }
 
-function blockly_inject_conceitos_multimodais_task1(target_question) {
-  var question_div_name = "#" + target_question.question.idValue;
-  var inject_div_name = "blockly_" + target_question.question.idValue;
+function blockly_inject_conceitos_multimodais_task1(question_id) {
+  var question_div_name = "#" + question_id;
+  var inject_div_name = "blockly_" + question_id;
   $(question_div_name).append("<div id='" + inject_div_name + "' style='height: 600px; width: 100%;'></div>");
 
   var toolbox = '<xml id="toolbox" style="display: none">';
@@ -290,15 +290,33 @@ function blockly_inject_conceitos_multimodais_task1(target_question) {
   Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(startBlocks), workspace)
 }
 
-function blockly_inject_by_question(target_survey, target_question) {
-  // console.log(target_survey);
-  // console.log(target_question);
-  if (target_question.question.name == "conceitos-multimodais-task1") {
-    blockly_inject_conceitos_multimodais_task1(target_question);
-  } else
-    if (target_question.question.name == "ncl-multimodal-task2") {
+function onRenderQuestion(target_survey, question_and_html) {
+  // console.log(question_and_html);
+  switch (question_and_html.question.name) {
+    case "conceitos-multimodais-task1":
+      blockly_inject_conceitos_multimodais_task1(question_and_html.question.idValue);
+      break;
+    case "ncl-multimodal-task1":
+    case "ncl-multimodal-task2":
       hljs.initHighlighting();
-    }
+  }
+
+}
+
+function onRenderPage(target_survey, page_and_html) {
+  console.log(page_and_html);
+}
+
+function onRenderSurvey(target_survey, survey_and_html) {
+  console.log(survey_and_html);
+}
+
+function onRenderPanel(target_survey, panel_and_html) {
+  console.log(panel_and_html);
+}
+
+function onPageChanged(target_survey, old_and_new_page) {
+  console.log(old_and_new_page);
 }
 
 Survey.Survey.cssType = "bootstrap";
@@ -324,5 +342,9 @@ var survey_css = {
 $("#surveyContainer").Survey({
   model: survey,
   css: survey_css,
-  onAfterRenderQuestion: blockly_inject_by_question
+  onAfterRenderQuestion: onRenderQuestion,
+  // onAfterRenderPage: onRenderPage,
+  // onRenderPanel: onRenderPanel,
+  // onCurrentPageChanged: onPageChanged,
+  // onAfterRenderSurvey: onRenderSurvey
 });
