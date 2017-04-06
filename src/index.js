@@ -11,12 +11,21 @@ var surveyJSON = {
         {
           type: "html",
           name: "termo",
-          html: "O TeleMídia, Grupo de Pesquisa do Departamento de Informática da PUC-Rio, desenvolve pesquisa científica nas áreas de Sistemas Multimídia/Hipermídia e Comunicação de Dados Multimídia. Em particular, Sistemas de TV Digital, terrestre e IPTV, têm sido foco de pesquisa e inovação do laboratório nos últimos anos. \n<br><br>\n\nConvidamos a você a participar de um de nossos estudos. \nTrata-se da avaliação de uma pesquisa intitulada de \"novas interações de usuario em linguagens multimedia\".\n<br>\n<br>\n\nEla NÃO se destinar a avaliar seus conhecimentos e sim para avaliar o resultado de nossa pesquisa.\n<br>\n<br>\n\nPara prosseguirmos, pedimos seu consentimento para realizar a avaliação descrita acima, fornecendo a você algumas informações adicionais:\n<ul>\n<li>Os dados coletados destinam-se estritamente a atividades de pesquisa e desenvolvimento, e somente os pesquisadores do TeleMídia têm acesso à integra do material resultante da avaliação.</li>\n<br>\n<li>A divulgação dos resultados de nossa pesquisa em foros científicos e/ou pedagógicos pauta-se no respeito à privacidade, e o anonimato dos participantes é preservado em quaisquer materiais que elaboramos.</li>\n</ul>\n<br>\n<br>"
+          html: "O TeleMídia, Grupo de Pesquisa do Departamento de Informática da PUC-Rio, desenvolve pesquisa científica nas áreas de Sistemas Multimídia/Hipermídia e Comunicação de Dados Multimídia. Em particular, Sistemas de TV Digital, terrestre e IPTV, têm sido foco de pesquisa e inovação do laboratório nos últimos anos. \n<br><br>\n\nConvidamos a você a participar de um de nossos estudos. \nTrata-se da avaliação de uma pesquisa intitulada de \"novas interações de usuario em linguagens multimedia\". \n<br>\n<br>\n\nEla NÃO se destinar a avaliar seus conhecimentos e sim para avaliar o resultado de nossa pesquisa.\n<br>\n<br>\n\nPara prosseguirmos, pedimos seu consentimento para realizar a avaliação descrita acima, fornecendo a você algumas informações adicionais:\n<ul>\n<li>Os dados coletados destinam-se estritamente a atividades de pesquisa e desenvolvimento, e somente os pesquisadores do TeleMídia têm acesso à integra do material resultante da avaliação.</li>\n<br>\n<li>A divulgação dos resultados de nossa pesquisa em foros científicos e/ou pedagógicos pauta-se no respeito à privacidade, e o anonimato dos participantes é preservado em quaisquer materiais que elaboramos.</li>\n</ul>\n<br>\nCaso esteja de acordo, insira seu nome e e-mail a seguir e prossiga.\n<br>"
         },
         {
           type: "text",
-          name: "nome",
-          title: "Caso esteja de acordo, insira seu nome no campo a seguir e prossiga."
+          name: "nome"
+        },
+        {
+          type: "text",
+          inputType: "email",
+          name: "e-mail",
+          validators: [
+            {
+              type: "email"
+            }
+          ]
         }
       ],
       title: "Termo de concentimento"
@@ -182,7 +191,6 @@ var surveyJSON = {
   surveyPostId: "51d57b85-3813-4a08-801b-4b7e077c1660",
   title: "Estudo sobre interações multimodais em linguagens multimídia"
 }
-
 function blockly_inject_sq_100() {
 
   $("#sq_100").append("<div id='blockly_sq_100' style='height: 600px; width: 100%;'></div>");
@@ -261,6 +269,11 @@ var survey_css = {
   "pageTitle": "page-header text-center breadcrumb",
   "row": "panel panel-default",
   "question": { root: "panel-body", title: "breadcrumb panel-header" },
+  "error": {
+    "root": "",
+    "icon": "glyphicon glyphicon-exclamation-sign",
+    "item": "label label-danger"
+  },
   "navigationButton": "btn btn-primary"
 };
 
