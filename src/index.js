@@ -1,6 +1,7 @@
 var surveyJSON = {
   completeText: "Finalizar estudo",
   completedHtml: "<div class=\"alert alert-success\" role=\"alert\">\n  <h3>Muito bem!!!\n  Obrigado por sua participação em nosso estudo.</h3>\n<span class=\"glyphicon glyphicon-thumbs-up\" aria-hidden=\"true\"></span>\n</div>",
+  focusFirstQuestionAutomatic: false,
   locale: "en",
   pageNextText: "seguir",
   pagePrevText: "voltar",
