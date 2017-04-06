@@ -229,9 +229,10 @@ var surveyJSON = {
   title: "Estudo sobre interações multimodais em linguagens multimídia"
 }
 
-function blockly_inject_sq_100() {
-
-  $("#sq_100").append("<div id='blockly_sq_100' style='height: 600px; width: 100%;'></div>");
+function blockly_inject_conceitos_multimodais_task1(target_question) {
+  var question_div_name = "#" + target_question.question.idValue;
+  var inject_div_name = "blockly_" + target_question.question.idValue;
+  $(question_div_name).append("<div id='" + inject_div_name + "' style='height: 600px; width: 100%;'></div>");
 
   var toolbox = '<xml id="toolbox" style="display: none">';
   toolbox += '  <category name="entidades">';
@@ -279,7 +280,7 @@ function blockly_inject_sq_100() {
   Blockly.BlockSvg.START_HAT = true;
   var NCLBLOCKS_USEBODY = false;
 
-  var workspace = Blockly.inject('blockly_sq_100', {
+  var workspace = Blockly.inject(inject_div_name, {
     media: Blockly.pathToBlockly + 'media/',
     toolbox: toolbox,
     scrollbars: true,
@@ -291,8 +292,8 @@ function blockly_inject_sq_100() {
 function blockly_inject_by_question(target_survey, target_question) {
   // console.log(target_survey);
   // console.log(target_question);
-  if (target_question.question.idValue == "sq_100") {
-    blockly_inject_sq_100();
+  if (target_question.question.name == "conceitos-multimodais-task1") {
+    blockly_inject_conceitos_multimodais_task1(target_question);
   }
 }
 
