@@ -10,8 +10,8 @@ var surveyJSON = {
       questions: [
         {
           type: "html",
-          name: "termo",
-          html: "O TeleMídia, Grupo de Pesquisa do Departamento de Informática da PUC-Rio, desenvolve pesquisa científica nas áreas de Sistemas Multimídia/Hipermídia e Comunicação de Dados Multimídia. Em particular, Sistemas de TV Digital, terrestre e IPTV, têm sido foco de pesquisa e inovação do laboratório nos últimos anos. \n<br><br>\n\nConvidamos a você a participar de um de nossos estudos. \nTrata-se da avaliação de uma pesquisa intitulada de \"novas interações de usuario em linguagens multimedia\". \n<br>\n<br>\n\nEla NÃO se destinar a avaliar seus conhecimentos e sim para avaliar o resultado de nossa pesquisa.\n<br>\n<br>\n\nPara prosseguirmos, pedimos seu consentimento para realizar a avaliação descrita acima, fornecendo a você algumas informações adicionais:\n<ul>\n<li>Os dados coletados destinam-se estritamente a atividades de pesquisa e desenvolvimento, e somente os pesquisadores do TeleMídia têm acesso à integra do material resultante da avaliação.</li>\n<br>\n<li>A divulgação dos resultados de nossa pesquisa em foros científicos e/ou pedagógicos pauta-se no respeito à privacidade, e o anonimato dos participantes é preservado em quaisquer materiais que elaboramos.</li>\n</ul>\n<br>\nCaso esteja de acordo, insira seu nome e e-mail a seguir e prossiga.\n<br>"
+          html: "O TeleMídia, Grupo de Pesquisa do Departamento de Informática da PUC-Rio, desenvolve pesquisa científica nas áreas de Sistemas Multimídia/Hipermídia e Comunicação de Dados Multimídia. Em particular, Sistemas de TV Digital, terrestre e IPTV, têm sido foco de pesquisa e inovação do laboratório nos últimos anos. \n<br><br>\n\nConvidamos a você a participar de um de nossos estudos. \nTrata-se da avaliação de uma pesquisa intitulada de \"novas interações de usuario em linguagens multimedia\". \n<br>\n<br>\n\nEla NÃO se destinar a avaliar seus conhecimentos e sim para avaliar o resultado de nossa pesquisa.\n<br>\n<br>\n\nPara prosseguirmos, pedimos seu consentimento para realizar a avaliação descrita acima, fornecendo a você algumas informações adicionais:\n<ul>\n<li>Os dados coletados destinam-se estritamente a atividades de pesquisa e desenvolvimento, e somente os pesquisadores do TeleMídia têm acesso à integra do material resultante da avaliação.</li>\n<br>\n<li>A divulgação dos resultados de nossa pesquisa em foros científicos e/ou pedagógicos pauta-se no respeito à privacidade, e o anonimato dos participantes é preservado em quaisquer materiais que elaboramos.</li>\n</ul>\n<br>\nCaso esteja de acordo, insira seu nome e e-mail a seguir e prossiga.\n<br>",
+          name: "termo"
         },
         {
           type: "text",
@@ -147,26 +147,59 @@ var surveyJSON = {
       title: "Perfil"
     },
     {
-      name: "interações multimodais em autoria multimídia",
+      name: "conceitos-multimodais",
       questions: [
         {
           type: "html",
-          name: "question1"
+          name: "conceitos-multimodais-task1"
         }
       ],
-      title: "introdução a linguagens multimídia"
+      title: "introdução a conceitos multimodais"
     },
     {
-      name: "NCL com interações multimodais",
+      name: "aceitação-conceitos-multimodais",
       questions: [
         {
           type: "html",
-          name: "question2"
+          name: "question4"
+        }
+      ],
+      title: "Avaliação final"
+    },
+    {
+      name: "NCL-multimodal",
+      questions: [
+        {
+          type: "html",
+          html: "A linguagem NCL possui o foco de criar apresentações multimedia interativas.\nAnteriormente a NCL focava no uso de mídias audiovisuais ---como imagens, video e audios--- e interações por meio de mouse e tecla.\n<br>\n<br>\nO exemplo de código a seguir ilustra o uso de novas mídias e interação.\n<br>\n<br>\nUm exemplo de mídia NCL comum é o 'mainvideo' (linhas 12-14). \n<br>Essa media possui um trecho definido pela ancora 'credits'(linhas 13).\n<br>\n<br>\nPara adicionar interações multimodais sobre esse video, adicionamos os elementos 'menu' (linhas 15-17) e 'anwser' (linhas 19-21).\n<br>\nO primeiro define um audio sintetizado utilizando o arquivo SSML chamado question.ssml (linhas 2-4).\n<br>\nO segundo define um reconhecimento de vocês utilizando  o arquivo  SRGS chamado commads.srgs (linhas 7-9).\n<br>\n<br>\nEsse áudio sintetizado é definido pelo elo das linhas 23-27.\n<br>\nEnquanto que o reconhecimento é definido pelo elo das linhas 28-31.\n<br>",
+          name: "intro"
+        },
+        {
+          type: "html",
+          html: "O código a seguir correste a uma aplicação NCL sem interações multimodais.\n",
+          name: "ncl-multimodal-task1"
+        },
+        {
+          type: "text",
+          name: "question1",
+          title: " Qual o comportamento da aplicação?"
+        },
+        {
+          type: "html",
+          html: "O código a seguir foi adicionadas a aplicação NCL acima para permitir interações multimodais. ",
+          name: "ncl-multimodal-task2"
+        },
+        {
+          type: "text",
+          name: "Qual o novo comportamento da aplicação?"
         }
       ]
     },
     {
-      name: "HTML com interações multimodais",
+      name: "aceitação-NCL-multimodal"
+    },
+    {
+      name: "HTML-multimodal",
       questions: [
         {
           type: "html",
@@ -175,14 +208,18 @@ var surveyJSON = {
       ]
     },
     {
-      name: "aceitação",
+      name: "aceitação-HTML-multimodal"
+    },
+    {
+      name: "comentarios",
       questions: [
         {
-          type: "html",
-          name: "question4"
+          type: "comment",
+          name: "Se desejar, deixe comentários adicionais não questionados em nosso Estudo.",
+          rows: "9"
         }
       ],
-      title: "Avaliação final"
+      title: "Comentários adcionais"
     }
   ],
   requiredText: "",
@@ -191,6 +228,7 @@ var surveyJSON = {
   surveyPostId: "51d57b85-3813-4a08-801b-4b7e077c1660",
   title: "Estudo sobre interações multimodais em linguagens multimídia"
 }
+
 function blockly_inject_sq_100() {
 
   $("#sq_100").append("<div id='blockly_sq_100' style='height: 600px; width: 100%;'></div>");
@@ -251,6 +289,7 @@ function blockly_inject_sq_100() {
 }
 
 function blockly_inject_by_question(target_survey, target_question) {
+  // console.log(target_survey);
   // console.log(target_question);
   if (target_question.question.idValue == "sq_100") {
     blockly_inject_sq_100();
