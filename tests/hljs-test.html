@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>test</title>
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/vs.min.css">
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+
+</head>
+
+<body>
+  <div class="container">
+    <!--<pre><code class="javascript">
+    $(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });
+    </code></pre>-->
+    <pre><code class="xml">
+      &lt;?xml version="1.0" encoding="ISO-8859-1"?>
+      &lt;!-- repeat video multimodal -->
+      &lt;ncl>
+        &lt;media id="mainvideo" type="video/mp4" src="video.mp4">
+          &lt;area label="credits" begin="300s" end="360s" />
+        &lt;/media>
+        &lt;media id="menu" type="application/ssml+xml" src="question.ssml">
+          &lt;area label="question" />
+        &lt;/media>
+        &lt;input id="answer" type="application/srgs+xml" src="repeat.srgs">
+        &lt;area label="repeat" />
+        &lt;/input>
+        &lt;link xconnector="onBeginStart">
+        &lt;bind role="onRecognize" component="mainvideo" interface="credits" />
+        &lt;bind role="start" component="menu" />
+        &lt;bind role="start" component="answer" />
+        &lt;/link>
+        &lt;link xconnector="onRecognizeStart">
+        &lt;bind role="onRecognize" component="answer" interface="repeat" />
+        &lt;bind role="start" component="mainvideo" />
+        &lt;/link>
+      &lt;/ncl>
+    </code></pre>
+    <pre><code class="xml">
+      &lt;?xml version="1.0" encoding="ISO-8859-1"?>
+      &lt;!--### original sightseeing ###-->
+      &lt;ncl xmlns="http://www.ncl.org.br/NCL3.0/EDTVProfile">
+        &lt;body>
+          &lt;port component="intro" />
+          &lt;media id="intro" src="intro.mp4">
+            &lt;area label="choice_moment" begin="40s" />
+          &lt;/media>
+          &lt;media id="videoDowntown" src="downtown.mp4" />
+          &lt;media id="videoBeach" src="beach.mp4" />
+          &lt;media id="menu_choice" src="menu_downtown_or_beach.png" />
+          &lt;link xconnector="onBeginStart">
+          &lt;bind role="onBegin" component="intro" interface="choice_moment" />
+          &lt;bind role="start" component="menu_choice" />
+          &lt;/link>
+          &lt;link xconnector="SelectStart">
+          &lt;bind role="onKeySelection" component="choice">
+            &lt;bindParam name="keyCode" value="RED" />
+          &lt;/bind>
+          &lt;bind role="start" component="videoDowntown" />
+          &lt;/link>
+          &lt;link xconnector="onSelectStart">
+          &lt;bind role="onKeySelection" component="choice">
+            &lt;bindParam name="keyCode" value="GREEN" />
+          &lt;/bind>
+          &lt;bind role="start" component="videoBeach" />
+          &lt;/link>
+          ...
+        &lt;/body>
+      &lt;/ncl>
+    </code></pre>
+    <pre><code class="xml">
+      &lt;?xml version="1.0" encoding="ISO-8859-1"?>
+      &lt;!--### sightseeing with voice feedback ###-->
+      &lt;ncl xmlns="http://www.ncl.org.br/NCL3.0/EDTVProfile">
+
+        &lt;body>
+          ...
+          &lt;media id="audio_choice" src="audio_downtown_or_beach.ssml" />
+          &lt;link xconnector="onBeginStart">
+          &lt;bind role="onBegin" component="intro" interface="choice_moment" />
+          &lt;bind role="start" component="audio_choice" interface="downtown" />
+          &lt;/link>
+          ...
+        &lt;/body>
+      &lt;/ncl>
+    </code></pre>
+    <pre><code class="xml">
+      &lt;?xml version="1.0" encoding="ISO-8859-1"?>
+      &lt;!--### sightseeing with voice commands ###-->
+      &lt;ncl xmlns="http://www.ncl.org.br/NCL3.0/EDTVProfile">
+        &lt;body>
+          ...
+          &lt;input id="asr_places" type="application/srgs+xml" src="places.sgrs">
+          &lt;area label="downtown" />
+          &lt;area label="beach" />
+          &lt;/input>
+          &lt;link xconnector="onBeginOnUserCanSpeakStart">
+          &lt;bind role="onBegin" component="intro" interface="choice_moment" />
+          &lt;bind role="start" component="asr_places" interface="downtown" />
+          &lt;bind role="start" component="asr_places" interface="beach" />
+          &lt;/link>
+          &lt;link xconnector="onRecognizeStart">
+          &lt;bind role="onRecognize" component="asr_places" interface="beach" />
+          &lt;bind role="start" component="videoBeach" />
+          &lt;/link>
+          &lt;link xconnector="onRecognizeStart">
+          &lt;bind role="onRecognize" component="asr_places" interface="downtown" />
+          &lt;bind role="start" component="videoDowntown" />
+          &lt;/link>
+          ...
+        &lt;/body>
+      &lt;/ncl>
+    </code></pre>
+  </div>
+</body>
+
+</html>
