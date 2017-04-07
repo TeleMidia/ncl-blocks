@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>test</title>
+  <link type="text/css" rel="stylesheet" href="syntaxhighlighter/shCore.css">
+  <link type="text/css" rel="stylesheet" href="syntaxhighlighter/shThemeDefault.css">
+  <script type="text/javascript" src="syntaxhighlighter/shCore.js"></script>
+  <script type="text/javascript" src="syntaxhighlighter/shBrushXml.js"></script>
+</head>
+
+<body>
+  <script type="syntaxhighlighter" class="brush: xml">
+    <![CDATA[
+    <?xml version="1.0" encoding="ISO-8859-1"?>
+    <!-- repeat video key -->
+    <ncl>
+      <head>
+        <connectorBase>
+          <causalConnector id="onKeySelectionStart">
+            <connectorParam name="var" />
+            <connectorParam name="keyCode" />
+            <simpleCondition role="onSelection" key="$keyCode" />
+            <simpleAction role="start" max="unbounded" />
+          </causalConnector>
+        </connectorBase>
+      </head>
+
+      <body>
+        <port component="mainvideo" />
+        <media id="mainvideo" type="video/mp4" src="video.mp4">
+          <property name="width" value="100%" />
+          <property name="height" value="100%" />
+          <area label="credits" begin="300s" end="360s" />
+        </media>
+        <link xconnector="onKeySelectionStart">
+        <bind role="onSelection" component="mainvideo" interface="credits">
+          <bindParam name="keyCode" value="RED" />
+        </bind>
+        <bind role="start" component="mainvideo" />
+        </link>
+      </body>
+    </ncl>
+    ]]>
+  </script>
+  <script type="text/javascript">
+    SyntaxHighlighter.all()
+  </script>
+</body>
+
+</html>
