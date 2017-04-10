@@ -177,7 +177,7 @@ var surveyJSON = {
         },
         {
           type: "html",
-          html: "O código a seguir correste a uma aplicação NCL sem interações multimodais.\n<pre><code class=\"xml\">\n&lt;?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n&lt;!-- repeat video key -->\n&lt;ncl>\n  &lt;head>\n    &lt;connectorBase>\n      &lt;causalConnector id=\"onKeySelectionStart\">\n        &lt;connectorParam name=\"var\"/>\n        &lt;connectorParam name=\"keyCode\"/>\n        &lt;simpleCondition role=\"onSelection\" key=\"$keyCode\"/>\n        &lt;simpleAction role=\"start\" max=\"unbounded\"/>\n      &lt;/causalConnector>\n    &lt;/connectorBase>\n  &lt;/head>\n  &lt;body>\n    &lt;port component=\"mainvideo\"/>\n    &lt;media id=\"mainvideo\" type=\"video/mp4\" src=\"video.mp4\">\n      &lt;property name=\"width\" value=\"100%\"/>\n      &lt;property name=\"height\" value=\"100%\"/>\n      &lt;area label=\"credits\" begin=\"300s\" end=\"360s\" />\n    &lt;/media>\n    &lt;link xconnector=\"onKeySelectionStart\">\n      &lt;bind role=\"onSelection\" component=\"mainvideo\" interface=\"credits\">\n        &lt;bindParam name=\"keyCode\" value=\"RED\"/>\n      &lt;/bind>\n      &lt;bind role=\"start\" component=\"mainvideo\"/>\n    &lt;/link>\n  &lt;/body>\n&lt;/ncl>\n</code></pre>",
+          html: "O código a seguir correste a uma aplicação NCL sem interações multimodais.\n",
           name: "ncl-multimodal-task1"
         },
         {
@@ -187,7 +187,7 @@ var surveyJSON = {
         },
         {
           type: "html",
-          html: "O aplicação NCL acima foi modificada para permitir interações multimodais. Seu código segue:\n<pre><code class=\"xml\">\n&lt;?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n&lt;!-- repeat video multimodal -->\n&lt;ncl>\n  &lt;head>\n    &lt;connectorBase>\n      &lt;causalConnector id=\"onKeySelectionStart\">\n        &lt;connectorParam name=\"var\"/>\n        &lt;connectorParam name=\"keyCode\"/>\n        &lt;simpleCondition role=\"onSelection\" key=\"$keyCode\"/>\n        &lt;simpleAction role=\"start\" max=\"unbounded\"/>\n      &lt;/causalConnector>\n\n      &lt;!-- begin modification-->\n      &lt;causalConnector id=\"onRecognizeStart\">\n        &lt;simpleCondition role=\"onRecognize\" max=\"unbounded\"/>\n        &lt;simpleAction role=\"start\" max=\"unbounded\"/>\n      &lt;/causalConnector>\n      &lt;!-- end modification-->\n    &lt;/connectorBase>\n  &lt;/head>\n  &lt;body>\n    &lt;port component=\"mainvideo\"/>\n    &lt;media id=\"mainvideo\" type=\"video/mp4\" src=\"video.mp4\">\n      &lt;property name=\"width\" value=\"100%\"/>\n      &lt;property name=\"height\" value=\"100%\"/>\n      &lt;area label=\"credits\" begin=\"300s\" end=\"360s\" />\n    &lt;/media>\n    &lt;link xconnector=\"onKeySelectionStart\">\n      &lt;bind role=\"onSelection\" component=\"mainvideo\" interface=\"credits\">\n        &lt;bindParam name=\"keyCode\" value=\"RED\"/>\n      &lt;/bind>\n      &lt;bind role=\"start\" component=\"mainvideo\"/>\n    &lt;/link>\n\n    &lt;!-- begin modification-->\n    &lt;media id=\"tts\" type=\"application/ssml+xml\" src=\"question.ssml\">\n      &lt;area label=\"repeat_question\"/>\n    &lt;/media>\n    &lt;input id=\"asr\" type=\"application/srgs+xml\" src=\"repeat.srgs\">\n      &lt;area label=\"repeat_command\"/>\n    &lt;/input>\n    &lt;link xconnector=\"onBeginStart\">\n      &lt;bind role=\"onBegin\" component=\"mainvideo\" interface=\"credits\"/>\n      &lt;bind role=\"start\" component=\"tts\" interface=\"repeat_question\"/>\n      &lt;bind role=\"start\" component=\"answer\"/>\n    &lt;/link>\n    &lt;link xconnector=\"onRecognizeStart\">\n      &lt;bind role=\"onRecognize\" component=\"asr\" interface=\"repeat_command\"/>\n      &lt;bind role=\"start\" component=\"mainvideo\"/>\n    &lt;/link>\n    &lt;!-- end modification-->\n  &lt;/body>\n&lt;/ncl>\n</code></pre>",
+          html: "O aplicação NCL acima foi modificada para permitir interações multimodais. Seu código segue:\n",
           name: "ncl-multimodal-task2"
         },
         {
@@ -289,6 +289,17 @@ function blockly_inject_conceitos_multimodais_task1(question_id) {
   });
   Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(startBlocks), workspace)
 }
+function inject_code_ncl_multimodal_task1(question_id) {
+  var question_div_name = "#" + question_id;
+  $(question_div_name).append('  <script type=\"syntaxhighlighter\" class=\"brush: xml; toolbar: false;\">\n    <![CDATA[\n    <?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n    <!-- repeat video key -->\n    <ncl>\n      <head>\n        <connectorBase>\n          <causalConnector id=\"onKeySelectionStart\">\n            <connectorParam name=\"var\" />\n            <connectorParam name=\"keyCode\" />\n            <simpleCondition role=\"onSelection\" key=\"$keyCode\" />\n            <simpleAction role=\"start\" max=\"unbounded\" />\n          </causalConnector>\n        </connectorBase>\n      </head>\n\n      <body>\n        <port component=\"mainvideo\" />\n        <media id=\"mainvideo\" type=\"video/mp4\" src=\"video.mp4\">\n          <property name=\"width\" value=\"100%\" />\n          <property name=\"height\" value=\"100%\" />\n          <area label=\"credits\" begin=\"300s\" end=\"360s\" />\n        </media>\n        <link xconnector=\"onKeySelectionStart\">\n        <bind role=\"onSelection\" component=\"mainvideo\" interface=\"credits\">\n          <bindParam name=\"keyCode\" value=\"RED\" />\n        </bind>\n        <bind role=\"start\" component=\"mainvideo\" />\n        </link>\n      </body>\n    </ncl>\n    ]]>\n  </script>\n');
+  SyntaxHighlighter.highlight();
+}
+
+function inject_code_ncl_multimodal_task2(question_id) {
+  var question_div_name = "#" + question_id;
+  $(question_div_name).append('  <script type=\"syntaxhighlighter\" class=\"brush: xml; toolbar: false;\">\n    <![CDATA[\n    <?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n    <!-- repeat video key -->\n    <ncl>\n      <head>\n        <connectorBase>\n          <causalConnector id=\"onKeySelectionStart\">\n            <connectorParam name=\"var\" />\n            <connectorParam name=\"keyCode\" />\n            <simpleCondition role=\"onSelection\" key=\"$keyCode\" />\n            <simpleAction role=\"start\" max=\"unbounded\" />\n          </causalConnector>\n        </connectorBase>\n      </head>\n\n      <body>\n        <port component=\"mainvideo\" />\n        <media id=\"mainvideo\" type=\"video/mp4\" src=\"video.mp4\">\n          <property name=\"width\" value=\"100%\" />\n          <property name=\"height\" value=\"100%\" />\n          <area label=\"credits\" begin=\"300s\" end=\"360s\" />\n        </media>\n        <link xconnector=\"onKeySelectionStart\">\n        <bind role=\"onSelection\" component=\"mainvideo\" interface=\"credits\">\n          <bindParam name=\"keyCode\" value=\"RED\" />\n        </bind>\n        <bind role=\"start\" component=\"mainvideo\" />\n        </link>\n      </body>\n    </ncl>\n    ]]>\n  </script>\n');
+  SyntaxHighlighter.highlight();
+}
 
 function onRenderQuestion(target_survey, question_and_html) {
   // console.log(question_and_html);
@@ -297,8 +308,11 @@ function onRenderQuestion(target_survey, question_and_html) {
       blockly_inject_conceitos_multimodais_task1(question_and_html.question.idValue);
       break;
     case "ncl-multimodal-task1":
+      inject_code_ncl_multimodal_task1(question_and_html.question.idValue);
+      break;
     case "ncl-multimodal-task2":
-      hljs.initHighlighting();
+      inject_code_ncl_multimodal_task2(question_and_html.question.idValue);
+      break;
   }
 
 }
