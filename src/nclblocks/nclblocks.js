@@ -1,12 +1,19 @@
 goog.require('Blockly.Blocks');
 
 var NCLBLOCKS_USEBODY = false;
+var NCLBLOCKS_BODY_COLOR = 20;
+var NCLBLOCKS_MEDIA_COLOR = 120;
+var NCLBLOCKS_INPUT_COLOUR = 210;
+var NCLBLOCKS_USER_COLOUR = 40;
+var NCLBLOCKS_LINK_COLOUR = 260;
+var NCLBLOCKS_CONDITION_COLOUR = 260;
+var NCLBLOCKS_ACTION_COLOUR = 230;
 
 // body
 
 Blockly.Blocks.media_item = {
   init: function() {
-    this.setColour(Blockly.Blocks.lists.HUE);
+    this.setColour(NCLBLOCKS_MEDIA_COLOR);
     this.appendDummyInput()
       .appendField("mídia");
     this.setPreviousStatement(true, ['media_item']);
@@ -17,7 +24,7 @@ Blockly.Blocks.media_item = {
 
 Blockly.Blocks.input_item = {
   init: function() {
-    this.setColour(Blockly.Blocks.lists.HUE);
+    this.setColour(NCLBLOCKS_INPUT_COLOUR);
     this.appendDummyInput()
       .appendField("reconhecedor");
     this.setPreviousStatement(true, ['media_item', 'input_item']);
@@ -28,7 +35,7 @@ Blockly.Blocks.input_item = {
 
 Blockly.Blocks.link_item = {
   init: function() {
-    this.setColour(Blockly.Blocks.lists.HUE);
+    this.setColour(NCLBLOCKS_LINK_COLOUR);
     this.appendDummyInput()
       .appendField("comportamento");
     this.setPreviousStatement(true, ['input_item', 'link_item']);
@@ -39,7 +46,7 @@ Blockly.Blocks.link_item = {
 
 Blockly.Blocks.body = {
   init: function() {
-    this.setColour(Blockly.Blocks.logic.HUE);
+    this.setColour(NCLBLOCKS_BODY_COLOR);
     this.appendDummyInput().appendField('--Aplicação--');
     this.appendValueInput('MEDIA0')
       .setCheck('media')
@@ -84,6 +91,7 @@ Blockly.Blocks.body = {
   // Populate the mutator's dialog with this block's components.
   decompose: function(workspace) {
     var containerBlock = workspace.newBlock('lists_create_with_container');
+    containerBlock.setColour(NCLBLOCKS_BODY_COLOR);
     containerBlock.initSvg();
     var connection = containerBlock.getInput('STACK').connection;
     for (var i = 0; i < this.mediaCount; i++) {
@@ -262,7 +270,7 @@ Blockly.Blocks.media = {
         validateMediaId))
       .appendField('e conteúdo=');
     this.setInputsInline(false);
-    this.setColour(120);
+    this.setColour(NCLBLOCKS_MEDIA_COLOR);
     this.setTooltip('Modalidade de saida');
     if (NCLBLOCKS_USEBODY == true) this.setOutput(true, 'media');
     this.contextMenu = false;
@@ -282,7 +290,7 @@ Blockly.Blocks.input = {
         validateInputId))
       .appendField('e conteúdo=');
     this.setInputsInline(false);
-    this.setColour(120);
+    this.setColour(NCLBLOCKS_INPUT_COLOUR);
     this.setTooltip('Modalidade de entrada');
     if (NCLBLOCKS_USEBODY == true) this.setOutput(true, 'input');
     this.contextMenu = false;
@@ -293,7 +301,7 @@ Blockly.Blocks.input = {
 
 Blockly.Blocks.device_item = {
   init: function() {
-    this.setColour(Blockly.Blocks.lists.HUE);
+    this.setColour(NCLBLOCKS_USER_COLOUR);
     this.appendDummyInput()
       .appendField("dispositivo");
     this.setPreviousStatement(true, ['device_item']);
@@ -313,7 +321,7 @@ Blockly.Blocks.user.init = function() {
       validateUserId))
     .setCheck('user_content')
     .appendField('e dispositivos=');
-  this.setColour(20);
+  this.setColour(NCLBLOCKS_USER_COLOUR);
   this.itemCount_ = 2;
   this.updateShape_();
   this.setMutator(new Blockly.Mutator(['device_item']));
@@ -323,6 +331,7 @@ Blockly.Blocks.user.init = function() {
 
 Blockly.Blocks.user.decompose = function(workspace) {
   var containerBlock = workspace.newBlock('lists_create_with_container');
+  containerBlock.setColour(NCLBLOCKS_USER_COLOUR);
   containerBlock.initSvg();
   var connection = containerBlock.getInput('STACK').connection;
   for (var i = 0; i < this.itemCount_; i++) {
@@ -363,7 +372,7 @@ Blockly.Blocks.link = {
       .setCheck('simpleaction')
       .appendField('faça');
     this.setInputsInline(false);
-    this.setColour(260);
+    this.setColour(NCLBLOCKS_LINK_COLOUR);
     if (NCLBLOCKS_USEBODY == true) this.setOutput(true, 'link');
     this.contextMenu = false;
   }
@@ -377,7 +386,7 @@ Blockly.Blocks.headset = {
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/headset.png', 30, 30, '*'))
       .appendField('--microfone--');
     this.setOutput(true, 'user_content');
-    this.setColour(20);
+    this.setColour(NCLBLOCKS_USER_COLOUR);
     this.setTooltip('');
     this.setHelpUrl('');
     this.contextMenu = false;
@@ -393,7 +402,7 @@ Blockly.Blocks.hand_gesture_sensor = {
         30, 30, '*'))
       .appendField('--sensor de gestos--');
     this.setOutput(true, 'user_content');
-    this.setColour(20);
+    this.setColour(NCLBLOCKS_USER_COLOUR);
     this.contextMenu = false;
   }
 };
@@ -407,7 +416,7 @@ Blockly.Blocks.image = {
         '*'))
       .appendField('--imagem--');
     this.setOutput(true, 'media_content');
-    this.setColour(120);
+    this.setColour(NCLBLOCKS_MEDIA_COLOR);
     this.contextMenu = false;
   }
 };
@@ -416,7 +425,7 @@ Blockly.Blocks.image = {
 
 Blockly.Blocks.sentence_item = {
   init: function() {
-    this.setColour(Blockly.Blocks.lists.HUE);
+    this.setColour(NCLBLOCKS_MEDIA_COLOR);
     this.appendDummyInput()
       .appendField("frase para sintetizar");
     this.setPreviousStatement(true, ['sentence_item']);
@@ -431,7 +440,7 @@ Blockly.Blocks.ssml.init = function() {
   this.appendDummyInput()
     .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/ssml.png', 30, 30, '*'))
     .appendField('--texto para sintetização--');
-  this.setColour(120);
+  this.setColour(NCLBLOCKS_MEDIA_COLOR);
   this.itemCount_ = 2;
   this.updateShape_();
   this.setOutput(true, 'media_content');
@@ -441,6 +450,7 @@ Blockly.Blocks.ssml.init = function() {
 
 Blockly.Blocks.ssml.decompose = function(workspace) {
   var containerBlock = workspace.newBlock('lists_create_with_container');
+  containerBlock.setColour(NCLBLOCKS_MEDIA_COLOR);
   containerBlock.initSvg();
   var connection = containerBlock.getInput('STACK').connection;
 
@@ -495,7 +505,7 @@ Blockly.Blocks.ssml.updateShape_ = function() {
 
 Blockly.Blocks.clip_item = {
   init: function() {
-    this.setColour(Blockly.Blocks.lists.HUE);
+    this.setColour(NCLBLOCKS_MEDIA_COLOR);
     this.appendDummyInput()
       .appendField("trecho do vídeo");
     this.setPreviousStatement(true, ['clip_item']);
@@ -511,7 +521,7 @@ Blockly.Blocks.video.init = function() {
     .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-video.png', 30, 30,
       '*'))
     .appendField('--vídeo--');
-  this.setColour(120);
+  this.setColour(NCLBLOCKS_MEDIA_COLOR);
   this.itemCount_ = 2;
   this.updateShape_();
   this.setOutput(true, 'media_content');
@@ -521,6 +531,7 @@ Blockly.Blocks.video.init = function() {
 
 Blockly.Blocks.video.decompose = function(workspace) {
   var containerBlock = workspace.newBlock('lists_create_with_container');
+  containerBlock.setColour(NCLBLOCKS_MEDIA_COLOR);
   containerBlock.initSvg();
   var connection = containerBlock.getInput('STACK').connection;
   for (var i = 0; i < this.itemCount_; i++) {
@@ -577,7 +588,7 @@ Blockly.Blocks.video.updateShape_ = function() {
 
 Blockly.Blocks.recognition_item = {
   init: function() {
-    this.setColour(Blockly.Blocks.lists.HUE);
+    this.setColour(NCLBLOCKS_INPUT_COLOUR);
     this.appendDummyInput()
       .appendField("frase a reconhecer");
     this.setPreviousStatement(true, ['input_item', 'link_item']);
@@ -592,7 +603,7 @@ Blockly.Blocks.srgs.init = function() {
   this.appendDummyInput()
     .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/srgs.png', 30, 30, '*'))
     .appendField('--comandos de voz--');
-  this.setColour(120);
+  this.setColour(NCLBLOCKS_INPUT_COLOUR);
   this.itemCount_ = 2;
   this.updateShape_();
   this.setOutput(true, 'input_content');
@@ -602,6 +613,7 @@ Blockly.Blocks.srgs.init = function() {
 
 Blockly.Blocks.srgs.decompose = function(workspace) {
   var containerBlock = workspace.newBlock('lists_create_with_container');
+  containerBlock.setColour(NCLBLOCKS_INPUT_COLOR);
   containerBlock.initSvg();
   var connection = containerBlock.getInput('STACK').connection;
   for (var i = 0; i < this.itemCount_; i++) {
@@ -655,7 +667,7 @@ Blockly.Blocks.srgs.updateShape_ = function() {
 
 Blockly.Blocks.hand_gesture_item = {
   init: function() {
-    this.setColour(Blockly.Blocks.lists.HUE);
+    this.setColour(NCLBLOCKS_INPUT_COLOUR);
     this.appendDummyInput()
       .appendField("gesto a reconhecer");
     this.setPreviousStatement(true, ['hand_gesture_item']);
@@ -671,7 +683,7 @@ Blockly.Blocks.hand_gesture.init = function() {
     .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/hand-gesture.png', 30, 30,
       '*'))
     .appendField('--gestures de mão--');
-  this.setColour(120);
+  this.setColour(NCLBLOCKS_INPUT_COLOUR);
   this.itemCount_ = 2;
   this.updateShape_();
   this.setOutput(true, 'input_content');
@@ -681,6 +693,7 @@ Blockly.Blocks.hand_gesture.init = function() {
 
 Blockly.Blocks.hand_gesture.decompose = function(workspace) {
   var containerBlock = workspace.newBlock('lists_create_with_container');
+  containerBlock.setColour(NCLBLOCKS_INPUT_COLOR);
   containerBlock.initSvg();
   var connection = containerBlock.getInput('STACK').connection;
   for (var i = 0; i < this.itemCount_; i++) {
@@ -740,7 +753,7 @@ Blockly.Blocks.onbegin = {
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
     this.setInputsInline(false);
     this.setOutput(true, 'simplecondition');
-    this.setColour(260);
+    this.setColour(NCLBLOCKS_CONDITION_COLOUR);
     this.contextMenu = false;
   }
 };
@@ -754,7 +767,7 @@ Blockly.Blocks.onend = {
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
     this.setInputsInline(false);
     this.setOutput(true, 'simplecondition');
-    this.setColour(260);
+    this.setColour(NCLBLOCKS_CONDITION_COLOUR);
     this.contextMenu = false;
   }
 };
@@ -768,7 +781,7 @@ Blockly.Blocks.onpause = {
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
     this.setInputsInline('pause');
     this.setOutput(true, 'simplecondition');
-    this.setColour(260);
+    this.setColour(NCLBLOCKS_CONDITION_COLOUR);
     this.contextMenu = false;
   }
 };
@@ -782,7 +795,7 @@ Blockly.Blocks.onresume = {
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
     this.setInputsInline(false);
     this.setOutput(true, 'simplecondition');
-    this.setColour(260);
+    this.setColour(NCLBLOCKS_CONDITION_COLOUR);
     this.contextMenu = false;
   }
 };
@@ -796,7 +809,7 @@ Blockly.Blocks.onselection = {
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
     this.setInputsInline(false);
     this.setOutput(true, 'simplecondition');
-    this.setColour(260);
+    this.setColour(NCLBLOCKS_CONDITION_COLOUR);
     this.contextMenu = false;
   }
 };
@@ -810,7 +823,7 @@ Blockly.Blocks.onrecognize = {
       .appendField(new Blockly.FieldDropdown(getinputIds), 'NAME');
     this.setInputsInline(false);
     this.setOutput(true, 'simplecondition');
-    this.setColour(260);
+    this.setColour(NCLBLOCKS_CONDITION_COLOUR);
     this.contextMenu = false;
   }
 };
@@ -826,7 +839,7 @@ Blockly.Blocks.onrecognizeuser = {
       .appendField(new Blockly.FieldDropdown(getuserIds), 'NAME');
     this.setInputsInline(false);
     this.setOutput(true, 'simplecondition');
-    this.setColour(260);
+    this.setColour(NCLBLOCKS_CONDITION_COLOUR);
     this.contextMenu = false;
   }
 };
@@ -835,7 +848,7 @@ Blockly.Blocks.onrecognizeuser = {
 
 Blockly.Blocks.condition_item = {
   init: function() {
-    this.setColour(Blockly.Blocks.lists.HUE);
+    this.setColour(NCLBLOCKS_CONDITION_COLOUR);
     this.appendDummyInput()
       .appendField("condição");
     this.setPreviousStatement(true, ['condition_item']);
@@ -855,7 +868,7 @@ Blockly.Blocks.compoundcondition.init = function() {
         ['qualquer entre', 'or']
       ]),
       'operator');
-  this.setColour(260);
+  this.setColour(NCLBLOCKS_CONDITION_COLOUR);
   this.itemCount_ = 2;
   this.updateShape_();
   this.setOutput(true, 'simplecondition');
@@ -906,7 +919,7 @@ Blockly.Blocks.start = {
     this.setInputsInline(false);
     this.setPreviousStatement(true, 'simpleaction');
     this.setNextStatement(true, 'simpleaction');
-    this.setColour(230);
+    this.setColour(NCLBLOCKS_ACTION_COLOUR);
     this.contextMenu = false;
   }
 };
@@ -920,7 +933,7 @@ Blockly.Blocks.stop = {
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
     this.setPreviousStatement(true, 'simpleaction');
     this.setNextStatement(true, 'simpleaction');
-    this.setColour(230);
+    this.setColour(NCLBLOCKS_ACTION_COLOUR);
     this.contextMenu = false;
   }
 };
@@ -934,7 +947,7 @@ Blockly.Blocks.pause = {
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
     this.setPreviousStatement(true, 'simpleaction');
     this.setNextStatement(true, 'simpleaction');
-    this.setColour(230);
+    this.setColour(NCLBLOCKS_ACTION_COLOUR);
     this.contextMenu = false;
   }
 };
@@ -949,7 +962,7 @@ Blockly.Blocks.resume = {
     this.setInputsInline(false);
     this.setPreviousStatement(true, 'simpleaction');
     this.setNextStatement(true, 'simpleaction');
-    this.setColour(230);
+    this.setColour(NCLBLOCKS_ACTION_COLOUR);
     this.contextMenu = false;
   }
 };
@@ -966,7 +979,7 @@ Blockly.Blocks.set = {
     this.setInputsInline(false);
     this.setPreviousStatement(true, 'simpleaction');
     this.setNextStatement(true, 'simpleaction');
-    this.setColour(230);
+    this.setColour(NCLBLOCKS_ACTION_COLOUR);
     this.contextMenu = false;
   }
 };
