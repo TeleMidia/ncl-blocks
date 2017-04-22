@@ -13,13 +13,16 @@
 <body>
   <div id="blocklyDiv" style="height: 480px; width: 100%;"></div>
   <script>
-    var startBlocks = '<xml id="startBlocks" style="display: none">';
-    startBlocks += '<block type="body" inline="false" x="20" y="20"></block>';
-    startBlocks += '</xml>';
 
     Blockly.pathToBlockly = './'
     Blockly.BlockSvg.START_HAT = true;
-    var NCLBLOCKS_USEBODY = true;
+    NCLBLOCKS_USEBODY = false;
+    var startBlocks = "";
+    if(NCLBLOCKS_USEBODY){
+      var startBlocks = '<xml id="startBlocks" style="display: none">';
+      startBlocks += '<block type="body" inline="false" x="20" y="20"></block>';
+      startBlocks += '</xml>';
+    }
     var workspace = Blockly.inject('blocklyDiv', {
       media: Blockly.pathToBlockly + 'media/',
       toolbox: defaultNCLBlocksToolbox,

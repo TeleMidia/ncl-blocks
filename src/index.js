@@ -263,13 +263,15 @@ function inject_conceitos_multimodais_task1(question_id) {
   var inject_div_name = "blockly_" + question_id;
   $(question_div_name).append("<div id='" + inject_div_name + "' style='height: 600px; width: 100%;'></div>");
 
-  var startBlocks = '<xml id="startBlocks" style="display: none">';
-  startBlocks += '<block type="body" inline="false" x="20" y="20"></block>';
-  startBlocks += '</xml>';
-
+  NCLBLOCKS_USEBODY = false;
+  var startBlocks = "";
+  if (NCLBLOCKS_USEBODY) {
+    var startBlocks = '<xml id="startBlocks" style="display: none">';
+    startBlocks += '<block type="body" inline="false" x="20" y="20"></block>';
+    startBlocks += '</xml>';
+  }
   Blockly.pathToBlockly = 'nclblocks/'
   Blockly.BlockSvg.START_HAT = true;
-  var NCLBLOCKS_USEBODY = false;
 
   var workspace = Blockly.inject(inject_div_name, {
     media: Blockly.pathToBlockly + 'media/',
