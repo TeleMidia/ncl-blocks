@@ -970,3 +970,44 @@ Blockly.Blocks.set = {
     this.contextMenu = false;
   }
 };
+
+
+var defaultNCLBlocksToolbox = "";
+defaultNCLBlocksToolbox += '<xml id="toolbox" style="display: none">';
+defaultNCLBlocksToolbox += '  <category name="mídia">';
+defaultNCLBlocksToolbox += '    <block type="media"></block>';
+defaultNCLBlocksToolbox += '    <block type="image"></block>';
+defaultNCLBlocksToolbox += '    <block type="video"></block>';
+defaultNCLBlocksToolbox += '    <block type="ssml"></block>';
+defaultNCLBlocksToolbox += '  </category>';
+defaultNCLBlocksToolbox += '  <category name="reconhecedor">';
+defaultNCLBlocksToolbox += '    <block type="input"></block>';
+defaultNCLBlocksToolbox += '    <block type="srgs"></block>';
+defaultNCLBlocksToolbox += '    <block type="hand_gesture"></block>';
+defaultNCLBlocksToolbox += '  </category>';
+defaultNCLBlocksToolbox += '  <category name="usuário">';
+defaultNCLBlocksToolbox += '    <block type="user"></block>';
+defaultNCLBlocksToolbox += '    <block type="headset"></block>';
+defaultNCLBlocksToolbox += '    <block type="hand_gesture_sensor"></block>';
+defaultNCLBlocksToolbox += '  </category>';
+defaultNCLBlocksToolbox += '  <category name="sincronismo">';
+defaultNCLBlocksToolbox += '    <block type="link"></block>';
+defaultNCLBlocksToolbox += '  </category>';
+defaultNCLBlocksToolbox += '  <category name="condições">';
+defaultNCLBlocksToolbox += '    <block type="onbegin"></block>';
+defaultNCLBlocksToolbox += '    <block type="onend"></block>';
+defaultNCLBlocksToolbox += '    <block type="onpause"></block>';
+defaultNCLBlocksToolbox += '    <block type="onresume"></block>';
+defaultNCLBlocksToolbox += '    <block type="onselection"></block>';
+defaultNCLBlocksToolbox += '    <block type="onrecognize"></block>';
+defaultNCLBlocksToolbox += '    <block type="onrecognizeuser"></block>';
+defaultNCLBlocksToolbox += '    <block type="compoundcondition"></block>';
+defaultNCLBlocksToolbox += '  </category>';
+defaultNCLBlocksToolbox += '  <category name="ações">';
+defaultNCLBlocksToolbox += '    <block type="start"></block>';
+defaultNCLBlocksToolbox += '    <block type="stop"></block>';
+defaultNCLBlocksToolbox += '    <block type="pause"></block>';
+defaultNCLBlocksToolbox += '    <block type="resume"></block>';
+defaultNCLBlocksToolbox += '    <block type="set"></block>';
+defaultNCLBlocksToolbox += '  </category>';
+defaultNCLBlocksToolbox += '</xml>';

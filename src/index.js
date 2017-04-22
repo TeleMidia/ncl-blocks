@@ -263,44 +263,6 @@ function inject_conceitos_multimodais_task1(question_id) {
   var inject_div_name = "blockly_" + question_id;
   $(question_div_name).append("<div id='" + inject_div_name + "' style='height: 600px; width: 100%;'></div>");
 
-  var toolbox = '<xml id="toolbox" style="display: none">';
-  toolbox += '  <category name="mídia">';
-  toolbox += '    <block type="media"></block>';
-  toolbox += '    <block type="image"></block>';
-  toolbox += '    <block type="video"></block>';
-  toolbox += '    <block type="ssml"></block>';
-  toolbox += '  </category>';
-  toolbox += '  <category name="reconhecedor">';
-  toolbox += '    <block type="input"></block>';
-  toolbox += '    <block type="srgs"></block>';
-  toolbox += '    <block type="hand_gesture"></block>';
-  toolbox += '  </category>';
-  toolbox += '  <category name="usuário">';
-  toolbox += '    <block type="user"></block>';
-  toolbox += '    <block type="headset"></block>';
-  toolbox += '    <block type="hand_gesture_sensor"></block>';
-  toolbox += '  </category>';
-  toolbox += '  <category name="sincronismo">';
-  toolbox += '    <block type="link"></block>';
-  toolbox += '  </category>';
-  toolbox += '  <category name="condições">';
-  toolbox += '    <block type="onbegin"></block>';
-  toolbox += '    <block type="onend"></block>';
-  toolbox += '    <block type="onpause"></block>';
-  toolbox += '    <block type="onresume"></block>';
-  toolbox += '    <block type="onselection"></block>';
-  toolbox += '    <block type="onrecognize"></block>';
-  toolbox += '    <block type="onrecognizeuser"></block>';
-  toolbox += '    <block type="compoundcondition"></block>';
-  toolbox += '  </category>';
-  toolbox += '  <category name="ações">';
-  toolbox += '    <block type="start"></block>';
-  toolbox += '    <block type="stop"></block>';
-  toolbox += '    <block type="pause"></block>';
-  toolbox += '    <block type="resume"></block>';
-  toolbox += '    <block type="set"></block>';
-  toolbox += '  </category>';
-  toolbox += '</xml>';
   var startBlocks = '<xml id="startBlocks" style="display: none">';
   startBlocks += '<block type="body" inline="false" x="20" y="20"></block>';
   startBlocks += '</xml>';
@@ -311,7 +273,7 @@ function inject_conceitos_multimodais_task1(question_id) {
 
   var workspace = Blockly.inject(inject_div_name, {
     media: Blockly.pathToBlockly + 'media/',
-    toolbox: toolbox,
+    toolbox: defaultNCLBlocksToolbox,
     scrollbars: true,
     sounds: true
   });

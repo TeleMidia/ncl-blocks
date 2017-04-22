@@ -13,45 +13,6 @@
 <body>
   <div id="blocklyDiv" style="height: 480px; width: 100%;"></div>
   <script>
-    var toolbox = '<xml id="toolbox" style="display: none">';
-    toolbox += '  <category name="entidades">';
-    toolbox += '    <block type="media"></block>';
-    toolbox += '    <block type="input"></block>';
-    toolbox += '    <block type="user"></block>';
-    toolbox += '    <block type="link"></block>';
-    toolbox += '  </category>';
-    toolbox += '  <category name="caracteristicas de usuário">';
-    toolbox += '    <block type="headset"></block>';
-    toolbox += '    <block type="hand_gesture_sensor"></block>';
-    toolbox += '  </category>';
-    toolbox += '  <category name="conteúdo de mídia">';
-    toolbox += '    <block type="image"></block>';
-    toolbox += '    <block type="video"></block>';
-    toolbox += '    <block type="ssml"></block>';
-    toolbox += '  </category>';
-    toolbox += '  <category name="conteúdo de reconhecedor">';
-    toolbox += '    <block type="srgs"></block>';
-    toolbox += '    <block type="hand_gesture"></block>';
-    toolbox += '  </category>';
-    toolbox += '  <category name="condições">';
-    toolbox += '    <block type="onbegin"></block>';
-    toolbox += '    <block type="onend"></block>';
-    toolbox += '    <block type="onpause"></block>';
-    toolbox += '    <block type="onresume"></block>';
-    toolbox += '    <block type="onselection"></block>';
-    toolbox += '    <block type="onrecognize"></block>';
-    toolbox += '    <block type="onrecognizeuser"></block>';
-    toolbox += '    <block type="compoundcondition"></block>';
-    toolbox += '  </category>';
-    toolbox += '  <category name="ações">';
-    toolbox += '    <block type="start"></block>';
-    toolbox += '    <block type="stop"></block>';
-    toolbox += '    <block type="pause"></block>';
-    toolbox += '    <block type="resume"></block>';
-    toolbox += '    <block type="set"></block>';
-    toolbox += '  </category>';
-    toolbox += '</xml>';
-
     var startBlocks = '<xml id="startBlocks" style="display: none">';
     startBlocks += '<block type="body" inline="false" x="20" y="20"></block>';
     startBlocks += '</xml>';
@@ -61,7 +22,7 @@
     var NCLBLOCKS_USEBODY = true;
     var workspace = Blockly.inject('blocklyDiv', {
       media: Blockly.pathToBlockly + 'media/',
-      toolbox: toolbox,
+      toolbox: defaultNCLBlocksToolbox,
       scrollbars: true,
       sounds: true
     });
