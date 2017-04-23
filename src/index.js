@@ -417,15 +417,15 @@ function onPageChanged(target_survey, old_and_new_page) {
 Survey.Survey.cssType = "bootstrap";
 var survey = new Survey.Model(surveyJSON);
 var survey_css = {
-  // root of survey
+  // root
   "root": "panel panel-default",
-  "header": "panel-header text-center breadcrumb",
+  "header": "text-center breadcrumb",
   "body": "panel-body",
-  "footer": "panel-footer",
-  // page
-  "pageTitle": "page-header text-center breadcrumb",
+  "footer": "panel-footer text-center ",
+  "pageTitle": "text-center breadcrumb",
+  // row
   "row": "panel panel-default",
-  "question": { root: "panel-body", title: "breadcrumb panel-header" },
+  "question": { root: "panel-body", title: "breadcrumb panel-heading" },
   "error": {
     "root": "",
     "icon": "glyphicon glyphicon-exclamation-sign",
