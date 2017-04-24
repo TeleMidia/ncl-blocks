@@ -10,7 +10,7 @@ var surveyJSON = {
       elements: [
         {
           type: "html",
-          html: "O TeleMídia é um grupo de pesquisa do departamento de Informática da PUC-Rio que desenvolve pesquisas nas áreas de Sistemas Multimídia e Redes de Computadores. Em particular, Sistemas de TV Digital, terrestre e IPTV, têm sido foco de pesquisa e inovação do laboratório nos últimos anos. <br><br>Convidamos a você a participar de um de nossos estudos, intitulada de \"Interações multimodais em linguagens multimídia\". <br><br><b>Ressaltamos que esse estudo NÃO se destinar a avaliar seus conhecimentos acerca dos conceitos apresentados, mas sim capturar evidências de nossa pesquisa.</b><br><br>Para prosseguirmos, pedimos seu consentimento para realizar a avaliação descrita acima, fornecendo a você algumas informações adicionais:<ul><li>Os dados coletados destinam-se estritamente a atividades de pesquisa e desenvolvimento, e somente os pesquisadores do TeleMídia têm acesso à íntegra do material resultante da avaliação.</li><li>A divulgação dos resultados de nossa pesquisa em foros científicos e/ou pedagógicos pauta-se no respeito à privacidade, e o anonimato dos participantes é preservado em quaisquer materiais que elaboramos.</li></ul><br>Caso esteja de acordo, insira seu nome e email nos campos a seguir e prossiga.<br>",
+          html: "O TeleMídia é um grupo de pesquisa do departamento de Informática da PUC-Rio que desenvolve pesquisas nas áreas de Sistemas Multimídia e Redes de Computadores. Em particular, Sistemas de TV Digital, terrestre e IPTV, têm sido foco de pesquisa e inovação do laboratório nos últimos anos. <br><br>Convidamos a você a participar de um de nossos estudos, intitulada de \"Interações multimodais em linguagens multimídia\". <br><br><b>Ressaltamos que esse estudo NÃO se destinar a avaliar seus conhecimentos acerca dos conceitos apresentados, mas sim capturar evidências de nossa pesquisa.</b><br><br>Para prosseguirmos, pedimos seu consentimento para realizar a avaliação descrita acima, fornecendo a você algumas informações adicionais:<ul><li>Os dados coletados destinam-se estritamente a atividades de pesquisa e desenvolvimento, e somente os pesquisadores do TeleMídia têm acesso à integra do material resultante da avaliação.</li><li>A divulgação dos resultados de nossa pesquisa em foros científicos e/ou pedagógicos pauta-se no respeito à privacidade, e o anonimato dos participantes é preservado em quaisquer materiais que elaboramos.</li></ul><br>Caso esteja de acordo, insira seu nome e email nos campos a seguir e prossiga.<br>",
           name: "termo"
         },
         {
@@ -178,8 +178,13 @@ var surveyJSON = {
         },
         {
           type: "html",
-          name: "conceitos-multimodais-task1",
-        }
+          name: "conceitos-multimodais-blocks1",
+        },
+        {
+          type: "comment",
+          name: "conceitos-multimodais-blocks1-inserted",
+          visible: false
+        },
       ],
       name: "conceitos-multimodais",
       title: "Conceitos multimodais em linguagens multimídia"
@@ -411,7 +416,7 @@ function inject_ncl_multimodal_task2(question_id) {
 function onRenderQuestion(target_survey, question_and_html) {
   // console.log(question_and_html);
   switch (question_and_html.question.name) {
-    case "conceitos-multimodais-task1":
+    case "conceitos-multimodais-blocks1":
       inject_conceitos_multimodais_task1(question_and_html.question.idValue);
       break;
     case "ncl-multimodal-code1":
@@ -438,6 +443,9 @@ function onRenderPanel(target_survey, panel_and_html) {
 
 function onPageChanged(target_survey, old_and_new_page) {
   console.log(old_and_new_page);
+  if (old_and_new_page.oldCurrentPage.name == "conceitos-multimodais") {
+    console.log(survey);    
+  }
 }
 
 Survey.Survey.cssType = "bootstrap";
@@ -463,9 +471,9 @@ var survey_css = {
 $("#surveyContainer").Survey({
   model: survey,
   css: survey_css,
-  onAfterRenderQuestion: onRenderQuestion
+  onAfterRenderQuestion: onRenderQuestion,
   // onAfterRenderPage: onRenderPage,
   // onRenderPanel: onRenderPanel,
-  // onCurrentPageChanged: onPageChanged,
+  onCurrentPageChanged: onPageChanged
   // onAfterRenderSurvey: onRenderSurvey
 });
