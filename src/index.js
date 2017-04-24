@@ -204,21 +204,24 @@ var surveyJSON = {
         {
           type: "html",
           html: "O código a seguir correste a uma aplicação NCL sem interações multimodais.\n",
-          name: "ncl-multimodal-task1"
+          name: "ncl-multimodal-code1"
         },
         {
-          type: "text",
-          name: "question1",
-          title: " Qual o comportamento da aplicação?"
+          type: "comment",
+          name: "ncl-multimodal-question1",
+          rows: "9",
+          title: "Qual o comportamento da aplicação?"
         },
         {
           type: "html",
           html: "O aplicação NCL acima foi modificada para permitir interações multimodais. O novo código é apresentado a seguir com as modificações destacadas:\n",
-          name: "ncl-multimodal-task2"
+          name: "ncl-multimodal-code2"
         },
         {
-          type: "text",
-          name: "Qual o novo comportamento da aplicação?"
+          type: "comment",
+          name: "ncl-multimodal-question2",
+          rows: "9",
+          title: "Qual o novo comportamento da aplicação?"
         }
       ],
       name: "ncl-multimodal",
@@ -411,10 +414,10 @@ function onRenderQuestion(target_survey, question_and_html) {
     case "conceitos-multimodais-task1":
       inject_conceitos_multimodais_task1(question_and_html.question.idValue);
       break;
-    case "ncl-multimodal-task1":
+    case "ncl-multimodal-code1":
       inject_ncl_multimodal_task1(question_and_html.question.idValue);
       break;
-    case "ncl-multimodal-task2":
+    case "ncl-multimodal-code2":
       inject_ncl_multimodal_task2(question_and_html.question.idValue);
       break;
   }
