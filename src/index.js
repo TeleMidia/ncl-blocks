@@ -285,6 +285,7 @@ function inject_conceitos_multimodais_task1(question_id) {
     sounds: true
   });
   Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(startBlocks), workspace)
+  window.scrollTo(0, 0);
 }
 function inject_ncl_multimodal_task1(question_id) {
   var question_div_name = "#" + question_id;
