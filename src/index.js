@@ -34,14 +34,17 @@ var surveyJSON = {
     {
       elements: [
         {
-          type: "radiogroup",
+          type: "rating",
           name: "xp-ncl",
           title: "Qual sua experiencia com a linguagem NCL?",
-          choices: [
+          rateValues: [
             {
-              value: "1",
-              text: "1 (nenhuma)"
+              value: "0",
+              text: {
+                en: "0 (nenhuma)"
+              }
             },
+            "1",
             "2",
             "3",
             "4",
@@ -49,54 +52,65 @@ var surveyJSON = {
             "6",
             {
               value: "7",
-              text: "7 (expert)"
+              text: {
+                en: "7 (expert)"
+              }
             }
           ]
         },
         {
-          type: "radiogroup",
+          type: "rating",
           name: "n-app-ncl",
           title: "Quantas aplicações NCL você desenvolveu?",
-          choices: [
+          visibleIf: "{xp-ncl} > 0",
+          rateValues: [
             {
               value: "0",
-              text: "0"
+              text: {
+                en: "0"
+              }
             },
             {
-              value: "1",
-              text: "1-2"
+              value: "0",
+              text: {
+                en: "1-2"
+              }
+            }, {
+              value: "0",
+              text: {
+                en: "3-4"
+              }
+            }, {
+              value: "0",
+              text: {
+                en: "4-5"
+              }
+            }, {
+              value: "0",
+              text: {
+                en: "5-6"
+              }
             },
             {
-              value: "2",
-              text: "3-4"
-            },
-            {
-              value: "3",
-              text: "5-6"
-            },
-            {
-              value: "4",
-              text: "6-7"
-            },
-            {
-              value: "5",
-              text: "7-8"
-            },
-            {
-              value: "6",
-              text: "8 ou mais"
+              value: "7",
+              text: {
+                en: "7 ou mais"
+              }
             }
           ]
         },
         {
-          type: "radiogroup",
+          type: "rating",
           name: "xp-html",
           title: "Qual sua experiencia com a linguagem HTML/JavaScript?",
-          choices: [
+          rateValues: [
             {
-              value: "1",
-              text: "1 (nenhuma)"
+              value: "0",
+              text: {
+                en: "0 (nenhuma)"
+              }
             },
+            "1",
             "2",
             "3",
             "4",
@@ -104,42 +118,50 @@ var surveyJSON = {
             "6",
             {
               value: "7",
-              text: "7 (expert)"
+              text: {
+                en: "7 (expert)"
+              }
             }
           ]
         },
         {
-          type: "radiogroup",
+          type: "rating",
           name: "n-apps-html",
           title: "Quantas aplicações HTML/JavaScript você desenvolveu?",
-          choices: [
+          visibleIf: "{xp-html} > 0",
+          rateValues: [
             {
               value: "0",
-              text: "0"
+              text: {
+                en: "0"
+              }
             },
             {
-              value: "1",
-              text: "1-2"
+              value: "0",
+              text: {
+                en: "1-2"
+              }
+            }, {
+              value: "0",
+              text: {
+                en: "3-4"
+              }
+            }, {
+              value: "0",
+              text: {
+                en: "4-5"
+              }
+            }, {
+              value: "0",
+              text: {
+                en: "5-6"
+              }
             },
             {
-              value: "2",
-              text: "3-4"
-            },
-            {
-              value: "3",
-              text: "5-6"
-            },
-            {
-              value: "4",
-              text: "6-7"
-            },
-            {
-              value: "5",
-              text: "7-8"
-            },
-            {
-              value: "6",
-              text: "8 ou mais"
+              value: "7",
+              text: {
+                en: "7 ou mais"
+              }
             }
           ]
         }
