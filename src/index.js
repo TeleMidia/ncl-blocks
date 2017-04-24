@@ -152,7 +152,7 @@ var surveyJSON = {
         {
           type: "html",
           name: "conceitos-multimodais-intro-1",
-          html: "Criação de documentos multimedia é mostrado a seguir. <img class=\"center-block img-thumbnail\" src=\"assets/conceitos-multimodais-cycle-1.svg\"> Criação de documentos multimídia com interações multimodais é mostrado a seguir. \<img class=\"center-block img-thumbnail\" src=\"assets/conceitos-multimodais-cycle-2.svg\">"
+          html: "Criação de documentos multimedia é mostrado a seguir. <br><br> <img class='center-block img-thumbnail' width='80%' src='assets/conceitos-multimodais-cycle-1.svg'><br><br> Criação de documentos multimídia com interações multimodais é mostrado a seguir.<br><br> <img class='center-block img-thumbnail'  width='80%' src='assets/conceitos-multimodais-cycle-2.svg'>"
         },
         {
           type: "html",
