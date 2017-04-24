@@ -424,8 +424,8 @@ var survey_css = {
   "footer": "panel-footer text-center ",
   "pageTitle": "h3 text-center breadcrumb",
   // row
-  "row": "panel panel-default",
-  "question": { root: "h4 panel-body", title: "h4 breadcrumb panel-heading" },
+  "row": "",
+  "question": { root: "h4 panel-body panel panel-default", title: "h4 breadcrumb" },
   "error": {
     "root": "",
     "icon": "glyphicon glyphicon-exclamation-sign",
