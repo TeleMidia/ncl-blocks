@@ -418,20 +418,20 @@ Survey.Survey.cssType = "bootstrap";
 var survey = new Survey.Model(surveyJSON);
 var survey_css = {
   // root
-  "root": "panel panel-default",
-  "header": "text-center breadcrumb",
+  "root": "h4 panel panel-default",
+  "header": "h3 text-center breadcrumb",
   "body": "panel-body",
   "footer": "panel-footer text-center ",
-  "pageTitle": "text-center breadcrumb",
+  "pageTitle": "h3 text-center breadcrumb",
   // row
   "row": "panel panel-default",
-  "question": { root: "panel-body", title: "breadcrumb panel-heading" },
+  "question": { root: "h4 panel-body", title: "h4 breadcrumb panel-heading" },
   "error": {
     "root": "",
     "icon": "glyphicon glyphicon-exclamation-sign",
     "item": "label label-danger"
   },
-  "navigationButton": "btn btn-primary"
+  "navigationButton": "h4 btn btn-primary"
 };
 
 $("#surveyContainer").Survey({
