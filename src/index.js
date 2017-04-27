@@ -449,7 +449,7 @@ function onRenderPanel(target_survey, panel_and_html) {
 function onPageChanged(target_survey, old_and_new_page) {
   console.log(old_and_new_page);
   if (old_and_new_page.oldCurrentPage.name == "conceitos-multimodais") {
-    console.log(survey);    
+    console.log(survey);
   }
 }
 
@@ -472,6 +472,15 @@ var survey_css = {
   },
   "navigationButton": "h4 btn btn-primary"
 };
+
+if ($('#surveyPageNo').length) {
+  for (var i = 0; i < survey.pages.length; i++) {
+    $("<option />")
+      .attr("value", i)
+      .html(survey.pages[i].name)
+      .appendTo("#surveyPageNo");
+  }
+}
 
 $("#surveyContainer").Survey({
   model: survey,
