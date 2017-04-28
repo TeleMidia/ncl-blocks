@@ -2,8 +2,8 @@ goog.require('Blockly.Blocks');
 
 var NCLBLOCKS_USEBODY = false;
 var NCLBLOCKS_BODY_COLOR = 20;
-var NCLBLOCKS_MEDIA_COLOR = 120;
-var NCLBLOCKS_INPUT_COLOUR = 210;
+var NCLBLOCKS_MEDIA_COLOR = 100;
+var NCLBLOCKS_INPUT_COLOUR = 150;
 var NCLBLOCKS_USER_COLOUR = 40;
 var NCLBLOCKS_LINK_COLOUR = 260;
 var NCLBLOCKS_CONDITION_COLOUR = 260;
@@ -37,7 +37,7 @@ Blockly.Blocks.link_item = {
   init: function() {
     this.setColour(NCLBLOCKS_LINK_COLOUR);
     this.appendDummyInput()
-      .appendField("comportamento");
+      .appendField("sincronismo");
     this.setPreviousStatement(true, ['input_item', 'link_item']);
     this.setNextStatement(true, ['link_item']);
     this.contextMenu = false;
@@ -59,7 +59,7 @@ Blockly.Blocks.body = {
       .appendField('usuário:');
     this.appendValueInput('LINK0')
       .setCheck('link')
-      .appendField('comportamentos:');
+      .appendField('sincronismos:');
     // this.appendStatementInput('PORTS')
     //   .setCheck('start')
     //   .appendField('faça no início');
@@ -262,6 +262,7 @@ Blockly.NclUserFieldText.prototype.onFinishEditing_ = function(text) {
 Blockly.Blocks.media = {
   init: function() {
     this.appendDummyInput()
+      .setAlign(Blockly.ALIGN_CENTRE)
       .appendField('--mídia--');
     this.appendValueInput('src')
       .setCheck('media_content')
@@ -282,6 +283,7 @@ Blockly.Blocks.media = {
 Blockly.Blocks.input = {
   init: function() {
     this.appendDummyInput()
+      .setAlign(Blockly.ALIGN_CENTRE)
       .appendField('--reconhecedor--');
     this.appendValueInput('src')
       .setCheck('input_content')
@@ -314,7 +316,7 @@ Blockly.Blocks.user = Object.assign({}, Blockly.Blocks.lists_create_with);
 
 Blockly.Blocks.user.init = function() {
   this.appendDummyInput()
-    .appendField('--usuário--');
+    .appendField('--grupo de usuário--');
   this.appendValueInput('ADD0')
     .appendField('id=')
     .appendField(new Blockly.NclUserFieldText('',
@@ -364,7 +366,9 @@ Blockly.Blocks.user.updateShape_ = function() {
 Blockly.Blocks.link = {
   init: function() {
     this.appendDummyInput()
-      .appendField('--comportamento--');
+      .setAlign(Blockly.ALIGN_CENTRE)
+      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-link.png', 45, 45, '*'))
+      .appendField('--sincronismo--');
     this.appendValueInput('conditions')
       .setCheck(['compoundcondition', 'simplecondition'])
       .appendField('quando');
@@ -383,7 +387,8 @@ Blockly.Blocks.link = {
 Blockly.Blocks.headset = {
   init: function() {
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/headset.png', 30, 30, '*'))
+      .setAlign(Blockly.ALIGN_CENTRE)
+      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/headset.png', 45, 45, '*'))
       .appendField('--microfone--');
     this.setOutput(true, 'user_content');
     this.setColour(NCLBLOCKS_USER_COLOUR);
@@ -398,8 +403,9 @@ Blockly.Blocks.headset = {
 Blockly.Blocks.hand_gesture_sensor = {
   init: function() {
     this.appendDummyInput()
+      .setAlign(Blockly.ALIGN_CENTRE)
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/hand-gesture-sensor.png',
-        30, 30, '*'))
+        45, 45, '*'))
       .appendField('--sensor de gestos--');
     this.setOutput(true, 'user_content');
     this.setColour(NCLBLOCKS_USER_COLOUR);
@@ -412,7 +418,8 @@ Blockly.Blocks.hand_gesture_sensor = {
 Blockly.Blocks.image = {
   init: function() {
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-image.png', 30, 30,
+      .setAlign(Blockly.ALIGN_CENTRE)
+      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-image.png', 45, 45,
         '*'))
       .appendField('--imagem--');
     this.setOutput(true, 'media_content');
@@ -438,7 +445,8 @@ Blockly.Blocks.ssml = Object.assign({}, Blockly.Blocks.lists_create_with);
 
 Blockly.Blocks.ssml.init = function() {
   this.appendDummyInput()
-    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/ssml.png', 30, 30, '*'))
+    .setAlign(Blockly.ALIGN_CENTRE)
+    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/ssml.png', 45, 45, '*'))
     .appendField('--texto para sintetização--');
   this.setColour(NCLBLOCKS_MEDIA_COLOR);
   this.itemCount_ = 2;
@@ -518,9 +526,10 @@ Blockly.Blocks.video = Object.assign({}, Blockly.Blocks.lists_create_with);
 
 Blockly.Blocks.video.init = function() {
   this.appendDummyInput()
-    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-video.png', 30, 30,
+    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-video.png', 45, 45,
       '*'))
-    .appendField('--vídeo--');
+    .appendField('--vídeo--')
+    .setAlign(Blockly.ALIGN_CENTRE);
   this.setColour(NCLBLOCKS_MEDIA_COLOR);
   this.itemCount_ = 2;
   this.updateShape_();
@@ -601,8 +610,9 @@ Blockly.Blocks.srgs = Object.assign({}, Blockly.Blocks.lists_create_with);
 
 Blockly.Blocks.srgs.init = function() {
   this.appendDummyInput()
-    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/srgs.png', 30, 30, '*'))
-    .appendField('--comandos de voz--');
+    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/srgs.png', 45, 45, '*'))
+    .appendField('--comandos de voz--')
+    .setAlign(Blockly.ALIGN_CENTRE);
   this.setColour(NCLBLOCKS_INPUT_COLOUR);
   this.itemCount_ = 2;
   this.updateShape_();
@@ -680,9 +690,10 @@ Blockly.Blocks.hand_gesture = Object.assign({}, Blockly.Blocks.lists_create_with
 
 Blockly.Blocks.hand_gesture.init = function() {
   this.appendDummyInput()
-    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/hand-gesture.png', 30, 30,
+    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/hand-gesture.png', 45, 45,
       '*'))
-    .appendField('--gestures de mão--');
+    .appendField('--gestures de mão--')
+    .setAlign(Blockly.ALIGN_CENTRE);
   this.setColour(NCLBLOCKS_INPUT_COLOUR);
   this.itemCount_ = 2;
   this.updateShape_();
