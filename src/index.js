@@ -186,7 +186,7 @@ var surveyJSON = {
           name: "conceitos-multimodais-blocks1",
         },
         {
-          type: "comment",
+          type: "text",
           name: "conceitos-multimodais-blocks1-inserted",
           visible: false
         },
@@ -298,6 +298,7 @@ var surveyJSON = {
   title: "Estudo sobre interações multimodais em linguagens multimídia"
 }
 
+var workspace_conceitos_multimodais_task1
 function inject_conceitos_multimodais_task1(question_id) {
   var question_div_name = "#" + question_id;
   var inject_div_name = "blockly_" + question_id;
@@ -313,13 +314,13 @@ function inject_conceitos_multimodais_task1(question_id) {
   Blockly.pathToBlockly = 'nclblocks/'
   Blockly.BlockSvg.START_HAT = true;
 
-  var workspace = Blockly.inject(inject_div_name, {
+  workspace_conceitos_multimodais_task1 = Blockly.inject(inject_div_name, {
     media: Blockly.pathToBlockly + 'media/',
     toolbox: defaultNCLBlocksToolbox,
     scrollbars: true,
     sounds: true
   });
-  Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(startBlocks), workspace)
+  Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(startBlocks), workspace_conceitos_multimodais_task1)
   window.scrollTo(0, 0);
 }
 function inject_ncl_multimodal_task1(question_id) {
@@ -435,21 +436,27 @@ function onRenderQuestion(target_survey, question_and_html) {
 }
 
 function onRenderPage(target_survey, page_and_html) {
-  console.log(page_and_html);
+  // console.log(page_and_html);
 }
 
 function onRenderSurvey(target_survey, survey_and_html) {
-  console.log(survey_and_html);
+  // console.log(survey_and_html);
 }
 
 function onRenderPanel(target_survey, panel_and_html) {
-  console.log(panel_and_html);
+  // console.log(panel_and_html);
 }
 
 function onPageChanged(target_survey, old_and_new_page) {
-  console.log(old_and_new_page);
+  console.log(survey);
+  // console.log(old_and_new_page);
   if (old_and_new_page.oldCurrentPage.name == "conceitos-multimodais") {
-    console.log(survey);
+    var xml = Blockly.Xml.workspaceToDom(workspace_conceitos_multimodais_task1);
+    var xml_text = Blockly.Xml.domToText(xml);
+    // console.log(xml);
+    // console.log(xml_text);
+    // console.log(survey.getQuestionByName("conceitos-multimodais-blocks1-inserted"));
+    survey.getQuestionByName("conceitos-multimodais-blocks1-inserted").value = xml_text;
   }
 }
 
@@ -492,4 +499,4 @@ $("#surveyContainer").Survey({
   // onAfterRenderSurvey: onRenderSurvey
 });
 
-// survey.currentPageNo = 2;
+survey.currentPageNo = 2;
