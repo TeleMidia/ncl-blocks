@@ -623,7 +623,7 @@ Blockly.Blocks.srgs.init = function() {
 
 Blockly.Blocks.srgs.decompose = function(workspace) {
   var containerBlock = workspace.newBlock('lists_create_with_container');
-  containerBlock.setColour(NCLBLOCKS_INPUT_COLOR);
+  containerBlock.setColour(NCLBLOCKS_INPUT_COLOUR);
   containerBlock.initSvg();
   var connection = containerBlock.getInput('STACK').connection;
   for (var i = 0; i < this.itemCount_; i++) {
@@ -704,7 +704,7 @@ Blockly.Blocks.hand_gesture.init = function() {
 
 Blockly.Blocks.hand_gesture.decompose = function(workspace) {
   var containerBlock = workspace.newBlock('lists_create_with_container');
-  containerBlock.setColour(NCLBLOCKS_INPUT_COLOR);
+  containerBlock.setColour(NCLBLOCKS_INPUT_COLOUR);
   containerBlock.initSvg();
   var connection = containerBlock.getInput('STACK').connection;
   for (var i = 0; i < this.itemCount_; i++) {
