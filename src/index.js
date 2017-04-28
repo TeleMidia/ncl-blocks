@@ -187,9 +187,14 @@ var surveyJSON = {
         },
         {
           type: "text",
-          name: "conceitos-multimodais-blocks1-inserted",
+          name: "conceitos-multimodais-blocks1-changes",
           visible: false
         },
+        {
+          type: "text",
+          name: "conceitos-multimodais-blocks1-inserted",
+          visible: false
+        }
       ],
       name: "conceitos-multimodais",
       title: "Conceitos multimodais em linguagens multimídia"
@@ -298,7 +303,34 @@ var surveyJSON = {
   title: "Estudo sobre interações multimodais em linguagens multimídia"
 }
 
-var workspace_conceitos_multimodais_task1
+// ----------------------------------------------------------------------------
+// conceitos-multimodais page addtions
+// ----------------------------------------------------------------------------
+
+var workspace_conceitos_multimodais_task1;
+
+function changes_conceitos_multimodais_task1(primaryEvent) {
+  json_from_event = primaryEvent.toJson();
+  // console.log(json_from_event);
+  saved_json_str = survey.getQuestionByName("conceitos-multimodais-blocks1-changes").value;
+  if (saved_json_str == null) {
+    json_to_save = { "changes": [] };
+  } else {
+    // console.log("stored value=" + saved_json_str);
+    json_to_save = JSON.parse(saved_json_str);
+  }
+  // console.log(json_to_save);
+  json_to_save.changes.push(json_from_event);
+  survey.getQuestionByName("conceitos-multimodais-blocks1-changes").value = JSON.stringify(json_to_save);
+  // console.log(json_to_save);
+}
+
+function save_conceitos_multimodais_task1() {
+  var xml = Blockly.Xml.workspaceToDom(workspace_conceitos_multimodais_task1);
+  var xml_text = Blockly.Xml.domToText(xml);
+  survey.getQuestionByName("conceitos-multimodais-blocks1-inserted").value = xml_text;
+}
+
 function inject_conceitos_multimodais_task1(question_id) {
   var question_div_name = "#" + question_id;
   var inject_div_name = "blockly_" + question_id;
@@ -320,9 +352,15 @@ function inject_conceitos_multimodais_task1(question_id) {
     scrollbars: true,
     sounds: true
   });
-  Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(startBlocks), workspace_conceitos_multimodais_task1)
+  Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(startBlocks), workspace_conceitos_multimodais_task1);
+  workspace_conceitos_multimodais_task1.addChangeListener(changes_conceitos_multimodais_task1);
   window.scrollTo(0, 0);
 }
+
+// ----------------------------------------------------------------------------
+// ncl-multimodal page addtions
+// ----------------------------------------------------------------------------
+
 function inject_ncl_multimodal_task1(question_id) {
   var question_div_name = "#" + question_id;
   var code =
@@ -358,6 +396,11 @@ function inject_ncl_multimodal_task1(question_id) {
   $(question_div_name).append(code);
   SyntaxHighlighter.highlight();
 }
+
+// ----------------------------------------------------------------------------
+// html-multimodal page addtions
+// ----------------------------------------------------------------------------
+
 
 function inject_ncl_multimodal_task2(question_id) {
   var question_div_name = "#" + question_id;
@@ -419,6 +462,10 @@ function inject_ncl_multimodal_task2(question_id) {
   SyntaxHighlighter.highlight();
 }
 
+// ----------------------------------------------------------------------------
+// survey
+// ----------------------------------------------------------------------------
+
 function onRenderQuestion(target_survey, question_and_html) {
   // console.log(question_and_html);
   switch (question_and_html.question.name) {
@@ -448,15 +495,10 @@ function onRenderPanel(target_survey, panel_and_html) {
 }
 
 function onPageChanged(target_survey, old_and_new_page) {
-  console.log(survey);
   // console.log(old_and_new_page);
+  // console.log(survey);
   if (old_and_new_page.oldCurrentPage.name == "conceitos-multimodais") {
-    var xml = Blockly.Xml.workspaceToDom(workspace_conceitos_multimodais_task1);
-    var xml_text = Blockly.Xml.domToText(xml);
-    // console.log(xml);
-    // console.log(xml_text);
-    // console.log(survey.getQuestionByName("conceitos-multimodais-blocks1-inserted"));
-    survey.getQuestionByName("conceitos-multimodais-blocks1-inserted").value = xml_text;
+    save_conceitos_multimodais_task1();
   }
 }
 
