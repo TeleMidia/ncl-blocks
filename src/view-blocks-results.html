@@ -36,7 +36,7 @@
       // survey
       // ---------------------------------------- 
       var inject_div_name = "blockly";
-      $('#content').append("<div id='" + inject_div_name + "' style='height: 600px; width: 100%;'></div>");
+      $('#content').append("<div id='" + inject_div_name + "'style='height: 768px; width: 1024px;'></div>");
 
       NCLBLOCKS_USEBODY = false;
       var startBlocks = "";
@@ -100,6 +100,8 @@
         if (results_data == null) return;
         index = parseInt(($("#result_number option:selected").val()));
         workspace_conceitos_multimodais_task1.clear();
+        run_event_interval_index = 0;
+        clearInterval(run_event_interval);
         setInterval(run_event_interval, 200, index);
       });
     </script>
