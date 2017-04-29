@@ -25,16 +25,18 @@
 </head>
 
 <body>
-  <div class="center-block" style="width: 55%">
-    <select id="result_number" type="text" value="0">
+  <div id="content" class="center-block text-center" style="width: 55%">
+    resultId=<select id="result_number" type="text" value="0">
     </select>
+    <br><br>
     <button disabled="">show changes</button>
+    <br><br>
     <script>
       // ---------------------------------------- 
       // survey
       // ---------------------------------------- 
       var inject_div_name = "blockly";
-      $('body').append("<div id='" + inject_div_name + "' style='height: 600px; width: 100%;'></div>");
+      $('#content').append("<div id='" + inject_div_name + "' style='height: 600px; width: 100%;'></div>");
 
       NCLBLOCKS_USEBODY = false;
       var startBlocks = "";
