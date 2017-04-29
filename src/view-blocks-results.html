@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>thesis questionario view block result</title>
+  <meta charset="utf-8">
+  <!-- nclblocks-->
+  <script src="nclblocks/blockly_compressed.js"></script>
+  <script src="nclblocks/blocks_compressed.js"></script>
+  <script src="nclblocks/pt-br.js"></script>
+  <script src="nclblocks/nclblocks.js"></script>
+  <!-- bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- jquery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+
+  </script>
+  <!-- syntaxhighlighter_v3.js -->
+  <link type="text/css" rel="stylesheet" href="syntaxhighlighter_v3/shCore.css">
+  <link type="text/css" rel="stylesheet" href="syntaxhighlighter_v3/shThemeDefault.css">
+  <script type="text/javascript" src="syntaxhighlighter_v3/shCore.js"></script>
+  <script type="text/javascript" src="syntaxhighlighter_v3/shBrushXml.js"></script>
+  <!-- survey.js -->
+  <script src="https://surveyjs.azureedge.net/0.12.7/survey.jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="center-block" style="width: 55%">
+    <select id="result_number" type="text" value="0">
+    </select>
+    <button disabled="">show changes</button>
+    <script>
+      // ---------------------------------------- 
+      // survey
+      // ---------------------------------------- 
+      var inject_div_name = "blockly";
+      $('body').append("<div id='" + inject_div_name + "' style='height: 600px; width: 100%;'></div>");
+
+      NCLBLOCKS_USEBODY = false;
+      var startBlocks = "";
+      if (NCLBLOCKS_USEBODY) {
+        var startBlocks = '<xml id="startBlocks" style="display: none">';
+        startBlocks += '<block type="body" inline="false" x="20" y="20"></block>';
+        startBlocks += '</xml>';
+      }
+      Blockly.pathToBlockly = 'nclblocks/'
+      Blockly.BlockSvg.START_HAT = true;
+
+      workspace_conceitos_multimodais_task1 = Blockly.inject(inject_div_name, {
+        media: Blockly.pathToBlockly + 'media/',
+        toolbox: defaultNCLBlocksToolbox,
+        scrollbars: true,
+        sounds: true
+      });
+      Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(startBlocks), workspace_conceitos_multimodais_task1);
+
+      // ---------------------------------------- 
+      // request
+      // ---------------------------------------- 
+      // wget dxsurvey.com/api/MySurveys/getSurveyResults/59bd2657-93ac-492c-8dd5-134a10ebd69a?accessKey=d72526e70b814a3d8f918b60b94dafe4 -O result.json
+      var results_data
+      $.get("http://dxsurvey.com/api/MySurveys/getSurveyResults/59bd2657-93ac-492c-8dd5-134a10ebd69a?accessKey=d72526e70b814a3d8f918b60b94dafe4", function (data) {
+        results_data = data.Data;
+        // console.log(results_data);
+        for (var i = 0; i < results_data.length; i++) {
+          $("<option />").attr("value", i).html(i).appendTo("#result_number");
+        }
+        $('#result_number').val('0').change();
+      });
+      $("#result_number").change(function () {
+        select_value = parseInt($(this).val());
+        saved_workspace = results_data[select_value].conceitos_multimodais_blocks1_inserted;
+        // console.log(saved_workspace);
+        workspace_conceitos_multimodais_task1.clear();
+        Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(saved_workspace), workspace_conceitos_multimodais_task1);
+      });
+    </script>
+  </div>
+</body>
+
+</html>
