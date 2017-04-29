@@ -334,7 +334,7 @@ function save_conceitos_multimodais_task1() {
 function inject_conceitos_multimodais_task1(question_id) {
   var question_div_name = "#" + question_id;
   var inject_div_name = "blockly_" + question_id;
-  $(question_div_name).append("<div id='" + inject_div_name + "' style='height: 600px; width: 100%;'></div>");
+  $(question_div_name).append("<div id=" + inject_div_name + " class='center-block'  style='height: 600px; width: 1024px;'></div>");
 
   NCLBLOCKS_USEBODY = false;
   var startBlocks = "";
@@ -541,4 +541,4 @@ $("#surveyContainer").Survey({
   // onAfterRenderSurvey: onRenderSurvey
 });
 
-// survey.currentPageNo = 2;
+survey.currentPageNo = 2;
