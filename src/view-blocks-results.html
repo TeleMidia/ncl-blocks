@@ -29,7 +29,7 @@
     resultId=<select id="result_number" type="text" value="0">
     </select>
     <br><br>
-    <button disabled="">show changes</button>
+    <button id="changes">show changes</button>
     <br><br>
     <script>
       // ---------------------------------------- 
@@ -71,10 +71,36 @@
       });
       $("#result_number").change(function () {
         select_value = parseInt($(this).val());
+        // console.log(results_data);
         saved_workspace = results_data[select_value].conceitos_multimodais_blocks1_inserted;
-        // console.log(saved_workspace);
         workspace_conceitos_multimodais_task1.clear();
         Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(saved_workspace), workspace_conceitos_multimodais_task1);
+      });
+
+      // ---------------------------------------- 
+      // show changes button
+      // ---------------------------------------- 
+
+      var run_event_interval_index = 0;
+      var run_event_interval = function (index) {
+        result = JSON.parse(results_data[index].conceitos_multimodais_blocks1_changes);
+        if (run_event_interval_index >= result.changes.length) {
+          clearInterval(run_event_interval);
+          return;
+        }
+        json = result.changes[run_event_interval_index];
+        // console.log(json);
+        // console.log(run_event_interval_index);
+        event = Blockly.Events.fromJson(json, workspace_conceitos_multimodais_task1);
+        event.run(true);
+        run_event_interval_index++;
+      }
+
+      $("#changes").click(function () {
+        if (results_data == null) return;
+        index = parseInt(($("#result_number option:selected").val()));
+        workspace_conceitos_multimodais_task1.clear();
+        setInterval(run_event_interval, 200, index);
       });
     </script>
   </div>
