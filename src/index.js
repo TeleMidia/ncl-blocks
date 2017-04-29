@@ -35,7 +35,7 @@ var surveyJSON = {
       elements: [
         {
           type: "rating",
-          name: "xp-ncl",
+          name: "xp_ncl",
           title: "Qual sua experiencia com a linguagem NCL?",
           rateValues: [
             {
@@ -60,9 +60,9 @@ var surveyJSON = {
         },
         {
           type: "rating",
-          name: "n-app-ncl",
+          name: "n_app_ncl",
           title: "Quantas aplicações NCL você desenvolveu?",
-          visibleIf: "{xp-ncl} > 0",
+          visibleIf: "{xp_ncl} > 0",
           rateValues: [
             {
               value: "0",
@@ -101,7 +101,7 @@ var surveyJSON = {
         },
         {
           type: "rating",
-          name: "xp-html",
+          name: "xp_html",
           title: "Qual sua experiencia com a linguagem HTML/JavaScript?",
           rateValues: [
             {
@@ -126,9 +126,9 @@ var surveyJSON = {
         },
         {
           type: "rating",
-          name: "n-apps-html",
+          name: "n_apps_html",
           title: "Quantas aplicações HTML/JavaScript você desenvolveu?",
-          visibleIf: "{xp-html} > 0",
+          visibleIf: "{xp_html} > 0",
           rateValues: [
             {
               value: "0",
@@ -173,40 +173,40 @@ var surveyJSON = {
       elements: [
         {
           type: "html",
-          name: "conceitos-multimodais-intro-1",
-          html: "<div class='text-justify'> Primeiro devemos introduzir os conceitos de multimídia e documentos multimídia.<br><br> Steinmetz [1] caracteriza a multimídia como o uso conjunto de pelo menos uma mídia discreta e uma contínua. Mídias discretas são aquelas que não mudam com tempo ao serem exibidas e são também chamadas de mídias independente de tempo. Exemplos de mídias discretas são textos, imagens e gráficos. Mídias contínuas mudam com o tempo ao serem exibidas e também são chamdas de mídias dependentes de tempo.  Exemplos de mídias contínuas são áudios, vídeos e animações. <br><br> Um documento multimídia define como diferentes mídias (discretas e contínuas) são exibidas na forma de uma apresentação multimídia. Entres outros aspectos, um documento defini sincronismo das mídias, que consiste no comportamento das mídias ao longo do tempo da apresentação e dado interações de usuário. <br><br> A figura a seguir ilustra a criação e apresentação de um documento multimídia. Na criação, o autor do documento defini as mídias e o sincronismo. Em seguida, um sistema multimídia processa esse documento e apresenta ao usuario considerando o sincronismo definido pelo autor. Esse sistema utiliza de dispositivos audiovisuais para exibição de mídias e dispositivos de teclado e mouse para receber interações de usuário. <br><br> <img class='center-block img-thumbnail' style='height: 500px' src='assets/conceitos-multimodais-cycle-1.svg'><br><br>[1] R. Steinmetz and K. Nahrstedt. Multimedia: Computing, Communications and Applications. Prentice Hall, 1995. </div>"
+          name: "conceitos_multimodais_intro_1",
+          html: "<div class='text-justify'> Primeiro devemos introduzir os conceitos de multimídia e documentos multimídia.<br><br> Steinmetz [1] caracteriza a multimídia como o uso conjunto de pelo menos uma mídia discreta e uma contínua. Mídias discretas são aquelas que não mudam com tempo ao serem exibidas e são também chamadas de mídias independente de tempo. Exemplos de mídias discretas são textos, imagens e gráficos. Mídias contínuas mudam com o tempo ao serem exibidas e também são chamdas de mídias dependentes de tempo.  Exemplos de mídias contínuas são áudios, vídeos e animações. <br><br> Um documento multimídia define como diferentes mídias (discretas e contínuas) são exibidas na forma de uma apresentação multimídia. Entres outros aspectos, um documento defini sincronismo das mídias, que consiste no comportamento das mídias ao longo do tempo da apresentação e dado interações de usuário. <br><br> A figura a seguir ilustra a criação e apresentação de um documento multimídia. Na criação, o autor do documento defini as mídias e o sincronismo. Em seguida, um sistema multimídia processa esse documento e apresenta ao usuario considerando o sincronismo definido pelo autor. Esse sistema utiliza de dispositivos audiovisuais para exibição de mídias e dispositivos de teclado e mouse para receber interações de usuário. <br><br> <img class='center-block img-thumbnail' style='height: 500px' src='assets/multimodal-concepts-1.svg'><br><br>[1] R. Steinmetz and K. Nahrstedt. Multimedia: Computing, Communications and Applications. Prentice Hall, 1995. </div>"
         },
         {
           type: "html",
-          name: "conceitos-multimodais-intro-2",
-          html: "<div class='text-justify'> Agora, vamos introduzir o conceito de interações multimodais. <br><br> Oviatt [2] define  que interação multimodal visa o reconhecimento de interações baseadas em formas naturais de linguagem e comportamento humanos. <br><br> Esse tipo de interação foi apoiado pelos recentes avanços nas tecnologias e dispositivos multimodais, como o reconhecimento de fala, gestos de mão e corporais. Ilustrados a seguir, exemplos de dispositivos multimodais são o LeapMotion para gestos de mão e Microsoft Kinect para reconhecimento de gestos coporais. <br><br> <div class='text-center'> <img class='img-thumbnail' style='height: 200px' src='assets/leap.jpg'> <img class='img-thumbnail' style='height: 200px' src='assets/kinect.jpg'> </div> <br><br> A figura anterior sobre criação e apresentação de um documento multimídia foi atualizada para quando documento utiliza interações multimodais. Na criação, o autor do documento defini as mídias, o sincronismo e os reconhecimentos de interações multimodais. Em seguida, um sistema multimídia processa esse documento, apresenta as midias ao usuario e espera reconhecimentos de usuário. Esse sistema utiliza de dispositivos audiovisuais para exibição de mídias e dispositivos de interação multimodal. <br><br> <img class='center-block img-thumbnail' style='height: 500px' src='assets/conceitos-multimodais-cycle-2.svg'><br><br> [2] Oviatt S (2007) Multimodal Interfaces. Hum-Comput Interact Handb. CRC Press, 413–432 </div>"
+          name: "conceitos_multimodais_intro_2",
+          html: "<div class='text-justify'> Agora, vamos introduzir o conceito de interações multimodais. <br><br> Oviatt [2] define  que interação multimodal visa o reconhecimento de interações baseadas em formas naturais de linguagem e comportamento humanos. <br><br> Esse tipo de interação foi apoiado pelos recentes avanços nas tecnologias e dispositivos multimodais, como o reconhecimento de fala, gestos de mão e corporais. Ilustrados a seguir, exemplos de dispositivos multimodais são o LeapMotion para gestos de mão e Microsoft Kinect para reconhecimento de gestos coporais. <br><br> <div class='text-center'> <img class='img-thumbnail' style='height: 200px' src='assets/leap.jpg'> <img class='img-thumbnail' style='height: 200px' src='assets/kinect.jpg'> </div> <br><br> A figura anterior sobre criação e apresentação de um documento multimídia foi atualizada para quando documento utiliza interações multimodais. Na criação, o autor do documento defini as mídias, o sincronismo e os reconhecimentos de interações multimodais. Em seguida, um sistema multimídia processa esse documento, apresenta as midias ao usuario e espera reconhecimentos de usuário. Esse sistema utiliza de dispositivos audiovisuais para exibição de mídias e dispositivos de interação multimodal. <br><br> <img class='center-block img-thumbnail' style='height: 500px' src='assets/multimodal-concepts-2.svg'><br><br> [2] Oviatt S (2007) Multimodal Interfaces. Hum-Comput Interact Handb. CRC Press, 413–432 </div>"
         },
         {
           type: "html",
-          name: "conceitos-multimodais-blocks1",
+          name: "conceitos_multimodais_blocks1",
         },
         {
           type: "text",
-          name: "conceitos-multimodais-blocks1-changes",
+          name: "conceitos_multimodais_blocks1_changes",
           visible: false
         },
         {
           type: "text",
-          name: "conceitos-multimodais-blocks1-inserted",
+          name: "conceitos_multimodais_blocks1_inserted",
           visible: false
         }
       ],
-      name: "conceitos-multimodais",
+      name: "multimodal_concepts",
       title: "Conceitos multimodais em linguagens multimídia"
     },
     {
       elements: [
         {
           type: "text",
-          name: "feedback"
+          name: "multimodal_concepts_feedback_question_1"
         }
       ],
-      name: "conceitos-multimodais-feedback",
+      name: "multimodal_concepts_feedback",
       title: "Feedback dos conceitos multimodais em linguagens multimídia"
     },
     {
@@ -214,68 +214,68 @@ var surveyJSON = {
         {
           type: "html",
           html: "A linguagem NCL possui o foco de criar apresentações multimídia interativas.Anteriormente a NCL focava no uso de mídias audiovisuais (por exemplo imagens, vídeo e áudios) e interações por meio de apontador e tecla.<br><br>O exemplo de código a seguir ilustra o uso de novas mídias e interação.<br><br>Um exemplo de mídia NCL comum é o 'mainvideo' (linhas 12-14).<br>Essa media possui um trecho definido pela ancora 'credits'(linhas 13).<br><br>Para adicionar interações multimodais sobre esse video, adicionamos os elementos 'menu' (linhas 15-17) e 'answer' (linhas 19-21).<br>O primeiro define um áudio sintetizado utilizando o arquivo SSML chamado question.ssml (linhas 2-4).<br>O segundo define um reconhecimento de vocês utilizando  o arquivo  SRGS chamado commads.srgs (linhas 7-9).<br><br>Esse áudio sintetizado é definido pelo elo das linhas 23-27.<br>Enquanto que o reconhecimento é definido pelo elo das linhas 28-31.<br>",
-          name: "ncl-multimodal-intro"
+          name: "ncl_intro"
         },
         {
           type: "html",
           html: "O código a seguir consiste em uma aplicação NCL sem interações multimodais.",
-          name: "ncl-multimodal-code1"
+          name: "ncl_code_1"
         },
         {
           type: "comment",
-          name: "ncl-multimodal-question1",
+          name: "ncl_question_1",
           rows: "9",
           title: "Qual o comportamento da aplicação?"
         },
         {
           type: "html",
           html: "O aplicação NCL acima foi modificada para permitir interações multimodais. O novo código é apresentado a seguir com as modificações destacadas:",
-          name: "ncl-multimodal-code2"
+          name: "ncl_code_2"
         },
         {
           type: "comment",
-          name: "ncl-multimodal-question2",
+          name: "ncl_question_2",
           rows: "9",
           title: "Qual o novo comportamento da aplicação?"
         }
       ],
-      name: "ncl-multimodal",
+      name: "ncl",
       title: "Conceitos multimodais em NCL"
     },
     {
       elements: [
         {
           type: "text",
-          name: "aceitacao-ncl",
+          name: "ncl_feedback_question_1",
           title: {
             en: "Qual a sua aceitação de conceitos multimodais em NCL"
           }
         }
       ],
-      name: "ncl-multimodal-feedback",
+      name: "ncl_feedback",
       title: "Feedback dos conceitos multimodais em NCL"
     },
     {
       elements: [
         {
           type: "html",
-          name: "html-multimodal-intro"
+          name: "html_intro"
         }
       ],
-      name: "html-multimodal",
+      name: "html",
       title: "Conceitos multimodais em HTML"
     },
     {
       elements: [
         {
           type: "text",
-          name: "aceitacao-HTML",
+          name: "html_feedback_question_1",
           title: {
             en: "Qual a sua aceitação de conceitos multimodais em HTML"
           }
         }
       ],
-      name: "html-multimodal-feedback",
+      name: "html_feedback",
       title: {
         default: "Feedback dos conceitos multimodais em NCL",
         en: "Feedback dos conceitos multimodais em HTML"
@@ -285,14 +285,14 @@ var surveyJSON = {
       elements: [
         {
           type: "comment",
-          name: "comentarios",
+          name: "comments_question_1",
           rows: "9",
           title: {
             en: "Chegamos ao fim de nosso estudo. Se desejar, deixe comentários ou sugestões relacionados ao nosso estudo."
           }
         }
       ],
-      name: "comentarios",
+      name: "comments",
       title: "Comentários adicionais"
     }
   ],
@@ -304,7 +304,7 @@ var surveyJSON = {
 }
 
 // ----------------------------------------------------------------------------
-// conceitos-multimodais page addtions
+// multimodal_concepts page addtions
 // ----------------------------------------------------------------------------
 
 var workspace_conceitos_multimodais_task1;
@@ -312,7 +312,7 @@ var workspace_conceitos_multimodais_task1;
 function changes_conceitos_multimodais_task1(primaryEvent) {
   json_from_event = primaryEvent.toJson();
   // console.log(json_from_event);
-  saved_json_str = survey.getQuestionByName("conceitos-multimodais-blocks1-changes").value;
+  saved_json_str = survey.getQuestionByName("conceitos_multimodais_blocks1_changes").value;
   if (saved_json_str == null) {
     json_to_save = { "changes": [] };
   } else {
@@ -321,14 +321,14 @@ function changes_conceitos_multimodais_task1(primaryEvent) {
   }
   // console.log(json_to_save);
   json_to_save.changes.push(json_from_event);
-  survey.getQuestionByName("conceitos-multimodais-blocks1-changes").value = JSON.stringify(json_to_save);
+  survey.getQuestionByName("conceitos_multimodais_blocks1_changes").value = JSON.stringify(json_to_save);
   // console.log(json_to_save);
 }
 
 function save_conceitos_multimodais_task1() {
   var xml = Blockly.Xml.workspaceToDom(workspace_conceitos_multimodais_task1);
   var xml_text = Blockly.Xml.domToText(xml);
-  survey.getQuestionByName("conceitos-multimodais-blocks1-inserted").value = xml_text;
+  survey.getQuestionByName("conceitos_multimodais_blocks1_inserted").value = xml_text;
 }
 
 function inject_conceitos_multimodais_task1(question_id) {
@@ -358,10 +358,10 @@ function inject_conceitos_multimodais_task1(question_id) {
 }
 
 // ----------------------------------------------------------------------------
-// ncl-multimodal page addtions
+//  page addtions
 // ----------------------------------------------------------------------------
 
-function inject_ncl_multimodal_task1(question_id) {
+function inject_ncl_task1(question_id) {
   var question_div_name = "#" + question_id;
   var code =
     `<script type="syntaxhighlighter" class="brush: xml; toolbar: false;">
@@ -398,11 +398,11 @@ function inject_ncl_multimodal_task1(question_id) {
 }
 
 // ----------------------------------------------------------------------------
-// html-multimodal page addtions
+// html page addtions
 // ----------------------------------------------------------------------------
 
 
-function inject_ncl_multimodal_task2(question_id) {
+function inject_ncl_task2(question_id) {
   var question_div_name = "#" + question_id;
   var code =
     `<script type="syntaxhighlighter" class="brush: xml; toolbar: false; highlight: [11,12,13,14,15,16,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48]">
@@ -469,14 +469,14 @@ function inject_ncl_multimodal_task2(question_id) {
 function onRenderQuestion(target_survey, question_and_html) {
   // console.log(question_and_html);
   switch (question_and_html.question.name) {
-    case "conceitos-multimodais-blocks1":
+    case "conceitos_multimodais_blocks1":
       inject_conceitos_multimodais_task1(question_and_html.question.idValue);
       break;
-    case "ncl-multimodal-code1":
-      inject_ncl_multimodal_task1(question_and_html.question.idValue);
+    case "ncl_code_1":
+      inject_ncl_task1(question_and_html.question.idValue);
       break;
-    case "ncl-multimodal-code2":
-      inject_ncl_multimodal_task2(question_and_html.question.idValue);
+    case "ncl_code_2":
+      inject_ncl_task2(question_and_html.question.idValue);
       break;
   }
 
@@ -497,7 +497,7 @@ function onRenderPanel(target_survey, panel_and_html) {
 function onPageChanged(target_survey, old_and_new_page) {
   // console.log(old_and_new_page);
   // console.log(survey);
-  if (old_and_new_page.oldCurrentPage.name == "conceitos-multimodais") {
+  if (old_and_new_page.oldCurrentPage.name == "multimodal_concepts") {
     save_conceitos_multimodais_task1();
   }
 }
@@ -541,4 +541,4 @@ $("#surveyContainer").Survey({
   // onAfterRenderSurvey: onRenderSurvey
 });
 
-survey.currentPageNo = 2;
+// survey.currentPageNo = 2;
