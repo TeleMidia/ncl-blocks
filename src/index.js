@@ -310,9 +310,10 @@ var surveyJSON = {
 var workspace_conceitos_multimodais_task1;
 
 function changes_conceitos_multimodais_task1(primaryEvent) {
-  json_from_event = primaryEvent.toJson();
+  var json_from_event = primaryEvent.toJson();
   // console.log(json_from_event);
-  saved_json_str = survey.getQuestionByName("conceitos_multimodais_blocks1_changes").value;
+  var saved_json_str = survey.getQuestionByName("conceitos_multimodais_blocks1_changes").value;
+  var json_to_save;
   if (saved_json_str == null) {
     json_to_save = { "changes": [] };
   } else {
@@ -339,7 +340,7 @@ function inject_conceitos_multimodais_task1(question_id) {
   NCLBLOCKS_USEBODY = false;
   var startBlocks = "";
   if (NCLBLOCKS_USEBODY) {
-    var startBlocks = '<xml id="startBlocks" style="display: none">';
+    startBlocks = '<xml id="startBlocks" style="display: none">';
     startBlocks += '<block type="body" inline="false" x="20" y="20"></block>';
     startBlocks += '</xml>';
   }
