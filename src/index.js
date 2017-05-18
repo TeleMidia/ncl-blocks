@@ -483,17 +483,17 @@ function onRenderQuestion(target_survey, question_and_html) {
 
 }
 
-function onRenderPage(target_survey, page_and_html) {
-  // console.log(page_and_html);
-}
+// function onRenderPage(target_survey, page_and_html) {
+//   console.log(page_and_html);
+// }
 
-function onRenderSurvey(target_survey, survey_and_html) {
-  // console.log(survey_and_html);
-}
+// function onRenderSurvey(target_survey, survey_and_html) {
+//   console.log(survey_and_html);
+// }
 
-function onRenderPanel(target_survey, panel_and_html) {
-  // console.log(panel_and_html);
-}
+// function onRenderPanel(target_survey, panel_and_html) {
+//   console.log(panel_and_html);
+// }
 
 function onPageChanged(target_survey, old_and_new_page) {
   // console.log(old_and_new_page);
