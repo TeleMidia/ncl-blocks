@@ -337,9 +337,9 @@ function inject_conceitos_multimodais_task1(question_id) {
   var inject_div_name = "blockly_" + question_id;
   $(question_div_name).append("<div id=" + inject_div_name + " class='center-block'  style='height: 600px; width: 1024px;'></div>");
 
-  NCLBLOCKS_USEBODY = false;
+  NclBlocks.USEBODY = false;
   var startBlocks = "";
-  if (NCLBLOCKS_USEBODY) {
+  if (NclBlocks.USEBODY) {
     startBlocks = '<xml id="startBlocks" style="display: none">';
     startBlocks += '<block type="body" inline="false" x="20" y="20"></block>';
     startBlocks += '</xml>';
@@ -349,7 +349,7 @@ function inject_conceitos_multimodais_task1(question_id) {
 
   workspace_conceitos_multimodais_task1 = Blockly.inject(inject_div_name, {
     media: Blockly.pathToBlockly + 'media/',
-    toolbox: defaultNCLBlocksToolbox,
+    toolbox: NclBlocks.defaultToolbox,
     scrollbars: true,
     sounds: true
   });

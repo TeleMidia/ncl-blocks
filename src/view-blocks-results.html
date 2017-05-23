@@ -38,19 +38,20 @@
       var inject_div_name = "blockly";
       $('#content').append("<div id='" + inject_div_name + "'style='height: 768px; width: 1024px;'></div>");
 
-      NCLBLOCKS_USEBODY = false;
+      NclBlocks.USEBODY = false;
       var startBlocks = "";
-      if (NCLBLOCKS_USEBODY) {
-        var startBlocks = '<xml id="startBlocks" style="display: none">';
-        startBlocks += '<block type="body" inline="false" x="20" y="20"></block>';
-        startBlocks += '</xml>';
+      if (NclBlocks.USEBODY) {
+        var startBlocks =
+          `<xml id="startBlocks" style="display: none">
+          <block type="body" inline="false" x="20" y="20"></block>
+          </xml>`;
       }
       Blockly.pathToBlockly = 'nclblocks/'
       Blockly.BlockSvg.START_HAT = true;
 
       workspace_conceitos_multimodais_task1 = Blockly.inject(inject_div_name, {
         media: Blockly.pathToBlockly + 'media/',
-        toolbox: defaultNCLBlocksToolbox,
+        toolbox: NclBlocks.defaultToolbox,
         scrollbars: true,
         sounds: true
       });
