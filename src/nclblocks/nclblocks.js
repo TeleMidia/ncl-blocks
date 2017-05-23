@@ -9,6 +9,17 @@ NclBlocks.USER_COLOUR = 40;
 NclBlocks.LINK_COLOUR = 260;
 NclBlocks.CONDITION_COLOUR = 260;
 NclBlocks.ACTION_COLOUR = 230;
+NclBlocks.START_WORKSPACE = "";
+Blockly.BlockSvg.START_HAT = true;
+
+function useNclBlocksBody() {
+  Blockly.BlockSvg.START_HAT = true;
+  NclBlocks.USEBODY = true;
+  NclBlocks.START_WORKSPACE = 
+  `<xml id="startBlocks" style="display: none">
+  <block type="body" inline="false" x="20" y="20"></block>
+  </xml>`;
+}
 
 // body
 

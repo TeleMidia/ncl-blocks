@@ -4,31 +4,33 @@
 <head>
   <meta charset="utf-8">
   <title>Blockly Demo: Fixed Blockly</title>
+  <!-- nclblocks-->
   <script src="blockly_compressed.js"></script>
   <script src="blocks_compressed.js"></script>
   <script src="pt-br.js"></script>
   <script src="nclblocks.js"></script>
+  <!-- bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- jquery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 
 <body>
-  <div id="blocklyDiv" style="height: 480px; width: 100%;"></div>
+  <div id="content" class="center-block text-center" style="width: 55%">
+    <br><br><br><br>
+  </div>
   <script>
+    var inject_div_name = "blocklyDiv";
+    $('#content').append("<div id='" + inject_div_name + "'style='height: 768px; width: 1024px;'></div>");
+
     Blockly.pathToBlockly = './'
-    Blockly.BlockSvg.START_HAT = true;
-    NclBlocks.USEBODY = false;
-    var startBlocks = "";
-    if (NclBlocks.USEBODY) {
-      var startBlocks = `<xml id="startBlocks" style="display: none">
-      <block type="body" inline="false" x="20" y="20"></block>
-      </xml>`;
-    }
-    var workspace = Blockly.inject('blocklyDiv', {
+    workspace = Blockly.inject(inject_div_name, {
       media: Blockly.pathToBlockly + 'media/',
       toolbox: NclBlocks.defaultToolbox,
       scrollbars: true,
       sounds: true
     });
-    Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(startBlocks), workspace);
+    Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(NclBlocks.START_WORKSPACE), workspace);
   </script>
 
 </body>

@@ -337,23 +337,14 @@ function inject_conceitos_multimodais_task1(question_id) {
   var inject_div_name = "blockly_" + question_id;
   $(question_div_name).append("<div id=" + inject_div_name + " class='center-block'  style='height: 600px; width: 1024px;'></div>");
 
-  NclBlocks.USEBODY = false;
-  var startBlocks = "";
-  if (NclBlocks.USEBODY) {
-    startBlocks = '<xml id="startBlocks" style="display: none">';
-    startBlocks += '<block type="body" inline="false" x="20" y="20"></block>';
-    startBlocks += '</xml>';
-  }
   Blockly.pathToBlockly = 'nclblocks/'
-  Blockly.BlockSvg.START_HAT = true;
-
   workspace_conceitos_multimodais_task1 = Blockly.inject(inject_div_name, {
     media: Blockly.pathToBlockly + 'media/',
     toolbox: NclBlocks.defaultToolbox,
     scrollbars: true,
     sounds: true
   });
-  Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(startBlocks), workspace_conceitos_multimodais_task1);
+  Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(NclBlocks.START_WORKSPACE), workspace_conceitos_multimodais_task1);
   workspace_conceitos_multimodais_task1.addChangeListener(changes_conceitos_multimodais_task1);
   window.scrollTo(0, 0);
 }
