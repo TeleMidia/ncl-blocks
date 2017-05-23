@@ -1,6 +1,7 @@
 goog.require('Blockly.Blocks');
 
 NclBlocks = {};
+
 NclBlocks.USEBODY = false;
 NclBlocks.BODY_COLOR = 20;
 NclBlocks.MEDIA_COLOR = 100;
@@ -254,7 +255,6 @@ goog.inherits(Blockly.MediaIdFieldText, Blockly.FieldTextInput);
 
 Blockly.MediaIdFieldText.prototype.onFinishEditing_ = function (text) {
   mediaIds.push([text, text]);
-  console.log('add media interface ' + text);
 };
 
 // input ids
@@ -284,7 +284,6 @@ goog.inherits(Blockly.InputIdFieldText, Blockly.FieldTextInput);
 
 Blockly.InputIdFieldText.prototype.onFinishEditing_ = function (text) {
   inputIds.push([text, text]);
-  console.log('add input interface = ' + text);
 };
 
 // user ids
@@ -313,7 +312,6 @@ goog.inherits(Blockly.NclUserFieldText, Blockly.FieldTextInput);
 
 Blockly.NclUserFieldText.prototype.onFinishEditing_ = function (text) {
   userIds.push([text, text]);
-  console.log('add user interface = ' + text);
 };
 
 // media
@@ -331,7 +329,6 @@ Blockly.Blocks.media = {
       .appendField(', ' + NclBlocks.SRC_STR + '=');
     this.setInputsInline(false);
     this.setColour(NclBlocks.MEDIA_COLOR);
-    this.setTooltip('Modalidade de saida');
     if (NclBlocks.USEBODY == true) this.setOutput(true, 'media');
     this.contextMenu = false;
   }
@@ -352,7 +349,6 @@ Blockly.Blocks.input = {
       .appendField(', ' + NclBlocks.SRC_STR + '=');
     this.setInputsInline(false);
     this.setColour(NclBlocks.INPUT_COLOUR);
-    this.setTooltip('Modalidade de entrada');
     if (NclBlocks.USEBODY == true) this.setOutput(true, 'input');
     this.contextMenu = false;
   }
@@ -451,8 +447,6 @@ Blockly.Blocks.headset = {
       .appendField('--' + NclBlocks.MICROFONE_STR + '--');
     this.setOutput(true, 'user_content');
     this.setColour(NclBlocks.USER_COLOUR);
-    this.setTooltip('');
-    this.setHelpUrl('');
     this.contextMenu = false;
   }
 };
