@@ -10,15 +10,65 @@ NclBlocks.LINK_COLOUR = 260;
 NclBlocks.CONDITION_COLOUR = 260;
 NclBlocks.ACTION_COLOUR = 230;
 NclBlocks.START_WORKSPACE = "";
+
+NclBlocks.MEDIA_STR = "mídia";
+NclBlocks.SRC_STR = "conteúdo";
+NclBlocks.MEDIAS_STR = "mídias";
+NclBlocks.INPUT_STR = "reconhecedor";
+NclBlocks.INPUTS_STR = "reconhecedores";
+NclBlocks.VIDEO_STR = "vídeo";
+NclBlocks.VIDEO_ANCHOR_STR = "define trecho inicio, fim=";
+NclBlocks.VIDEO_ITEM_STR = "trecho do vídeo";
+NclBlocks.IMAGE_STR = "imagem";
+NclBlocks.SSML_STR = "texto para sintetização";
+NclBlocks.SSML_ANCHOR_STR = "sintetiza frase=";
+NclBlocks.SSML_ITEM_STR = "frase a sintetizar";
+NclBlocks.SRGS_STR = "comandos de voz";
+NclBlocks.SRGS_ANCHOR_STR = "reconhece frase=";
+NclBlocks.SRGS_ITEM_STR = "frase a reconhecer";
+NclBlocks.HAND_GESTURE_STR = "gestos de mão";
+NclBlocks.HAND_GESTURE_ANCHOR_STR = "reconhece gesto=";
+NclBlocks.HAND_GESTURE_ITEM_STR = "gesto a reconhecer";
+NclBlocks.LINK_STR = "sincronismo";
+NclBlocks.LINKS_STR = "sincronismos";
+NclBlocks.WHEN_STR = "quando=";
+NclBlocks.DO_STR = "faça=";
+NclBlocks.USER_STR = "usuário";
+NclBlocks.USERS_STR = "usuário";
+NclBlocks.DEVICE_STR = "dispositivo";
+NclBlocks.DEVICES_STR = "dispositivos";
+NclBlocks.LEAP_STR = "sensor de gestos de mão";
+NclBlocks.MICROFONE_STR = "microfone";
+NclBlocks.BODY_STR = "aplicação";
+NclBlocks.CONDITION_STR = "condição";
+NclBlocks.CONDITIONS_STR = "condições";
+NclBlocks.ONRECOGNIZE_STR = 'reconhecer';
+NclBlocks.ONRECOGNIZE_FROM_USER_STR = 'do usuário';
+NclBlocks.ONBEGIN_STR = "iniciar"
+NclBlocks.ONEND_STR = "terminar"
+NclBlocks.ONPAUSE_STR = "pausar"
+NclBlocks.ONRESUME_STR = "resumir"
+NclBlocks.ONSELECTION_STR = "selecionar"
+NclBlocks.SEQ_STR = 'sequencia';
+NclBlocks.AND_STR = 'todos entre';
+NclBlocks.OR_STR = 'qualquer entre';
+NclBlocks.ACTION_STR = "ação";
+NclBlocks.ACTIONS_STR = "ações";
+NclBlocks.START_STR = "inicie"
+NclBlocks.STOP_STR = "termine"
+NclBlocks.PAUSE_STR = "pause"
+NclBlocks.RESUME_STR = "resuma"
+NclBlocks.SET_STR = "atribua"
+
 Blockly.BlockSvg.START_HAT = true;
 
 function useNclBlocksBody() {
   Blockly.BlockSvg.START_HAT = true;
   NclBlocks.USEBODY = true;
-  NclBlocks.START_WORKSPACE = 
-  `<xml id="startBlocks" style="display: none">
-  <block type="body" inline="false" x="20" y="20"></block>
-  </xml>`;
+  NclBlocks.START_WORKSPACE =
+    `<xml id="startBlocks" style="display: none">
+    <block type="body" inline="false" x="20" y="20"></block>
+    </xml>`;
 }
 
 // body
@@ -27,7 +77,7 @@ Blockly.Blocks.media_item = {
   init: function () {
     this.setColour(NclBlocks.MEDIA_COLOR);
     this.appendDummyInput()
-      .appendField("mídia");
+      .appendField(NclBlocks.MEDIA_STR);
     this.setPreviousStatement(true, ['media_item']);
     this.setNextStatement(true, ['media_item', 'input_item']);
     this.contextMenu = false;
@@ -38,7 +88,7 @@ Blockly.Blocks.input_item = {
   init: function () {
     this.setColour(NclBlocks.INPUT_COLOUR);
     this.appendDummyInput()
-      .appendField("reconhecedor");
+      .appendField(NclBlocks.INPUT_STR);
     this.setPreviousStatement(true, ['media_item', 'input_item']);
     this.setNextStatement(true, ['input_item', 'link_item']);
     this.contextMenu = false;
@@ -49,7 +99,7 @@ Blockly.Blocks.link_item = {
   init: function () {
     this.setColour(NclBlocks.LINK_COLOUR);
     this.appendDummyInput()
-      .appendField("sincronismo");
+      .appendField(NclBlocks.LINK_STR);
     this.setPreviousStatement(true, ['input_item', 'link_item']);
     this.setNextStatement(true, ['link_item']);
     this.contextMenu = false;
@@ -59,22 +109,19 @@ Blockly.Blocks.link_item = {
 Blockly.Blocks.body = {
   init: function () {
     this.setColour(NclBlocks.BODY_COLOR);
-    this.appendDummyInput().appendField('--Aplicação--');
+    this.appendDummyInput().appendField('--' + NclBlocks.BODY_STR + '--');
     this.appendValueInput('MEDIA0')
       .setCheck('media')
-      .appendField('mídias:');
+      .appendField(NclBlocks.MEDIAS_STR + ':');
     this.appendValueInput('INPUT0')
       .setCheck('input')
-      .appendField('reconhecedores:');
+      .appendField(NclBlocks.INPUTS_STR + ':');
     this.appendValueInput('USER0')
       .setCheck('user')
-      .appendField('usuário:');
+      .appendField(NclBlocks.USERS_STR + ':');
     this.appendValueInput('LINK0')
       .setCheck('link')
-      .appendField('sincronismos:');
-    // this.appendStatementInput('PORTS')
-    //   .setCheck('start')
-    //   .appendField('faça no início');
+      .appendField(NclBlocks.LINKS_STR + ':');
     this.setMutator(new Blockly.Mutator(['media_item',
       'input_item', 'link_item'
     ]));
@@ -275,13 +322,13 @@ Blockly.Blocks.media = {
   init: function () {
     this.appendDummyInput()
       .setAlign(Blockly.ALIGN_CENTRE)
-      .appendField('--mídia--');
+      .appendField('--' + NclBlocks.MEDIA_STR + '--');
     this.appendValueInput('src')
       .setCheck('media_content')
       .appendField('id=')
       .appendField(new Blockly.MediaIdFieldText('',
         validateMediaId))
-      .appendField('e conteúdo=');
+      .appendField(', ' + NclBlocks.SRC_STR + '=');
     this.setInputsInline(false);
     this.setColour(NclBlocks.MEDIA_COLOR);
     this.setTooltip('Modalidade de saida');
@@ -296,13 +343,13 @@ Blockly.Blocks.input = {
   init: function () {
     this.appendDummyInput()
       .setAlign(Blockly.ALIGN_CENTRE)
-      .appendField('--reconhecedor--');
+      .appendField('--' + NclBlocks.INPUT_STR + '--');
     this.appendValueInput('src')
       .setCheck('input_content')
       .appendField('id=')
       .appendField(new Blockly.InputIdFieldText('',
         validateInputId))
-      .appendField('e conteúdo=');
+      .appendField(', ' + NclBlocks.SRC_STR + '=');
     this.setInputsInline(false);
     this.setColour(NclBlocks.INPUT_COLOUR);
     this.setTooltip('Modalidade de entrada');
@@ -317,7 +364,7 @@ Blockly.Blocks.device_item = {
   init: function () {
     this.setColour(NclBlocks.USER_COLOUR);
     this.appendDummyInput()
-      .appendField("dispositivo");
+      .appendField(NclBlocks.DEVICE_STR);
     this.setPreviousStatement(true, ['device_item']);
     this.setNextStatement(true, ['device_item']);
     this.contextMenu = false;
@@ -328,13 +375,13 @@ Blockly.Blocks.user = Object.assign({}, Blockly.Blocks.lists_create_with);
 
 Blockly.Blocks.user.init = function () {
   this.appendDummyInput()
-    .appendField('--grupo de usuário--');
+    .appendField('--' + NclBlocks.USERS_STR + '--');
   this.appendValueInput('ADD0')
     .appendField('id=')
     .appendField(new Blockly.NclUserFieldText('',
       validateUserId))
     .setCheck('user_content')
-    .appendField('e dispositivos=');
+    .appendField(', ' + NclBlocks.DEVICES_STR + '=');
   this.setColour(NclBlocks.USER_COLOUR);
   this.itemCount_ = 2;
   this.updateShape_();
@@ -380,13 +427,13 @@ Blockly.Blocks.link = {
     this.appendDummyInput()
       .setAlign(Blockly.ALIGN_CENTRE)
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-link.png', 45, 45, '*'))
-      .appendField('--sincronismo--');
+      .appendField('--' + NclBlocks.LINK_STR + '--');
     this.appendValueInput('conditions')
       .setCheck(['compoundcondition', 'simplecondition'])
-      .appendField('quando');
+      .appendField(NclBlocks.WHEN_STR);
     this.appendStatementInput('actions')
       .setCheck('simpleaction')
-      .appendField('faça');
+      .appendField(NclBlocks.DO_STR);
     this.setInputsInline(false);
     this.setColour(NclBlocks.LINK_COLOUR);
     if (NclBlocks.USEBODY == true) this.setOutput(true, 'link');
@@ -401,7 +448,7 @@ Blockly.Blocks.headset = {
     this.appendDummyInput()
       .setAlign(Blockly.ALIGN_CENTRE)
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/headset.png', 45, 45, '*'))
-      .appendField('--microfone--');
+      .appendField('--' + NclBlocks.MICROFONE_STR + '--');
     this.setOutput(true, 'user_content');
     this.setColour(NclBlocks.USER_COLOUR);
     this.setTooltip('');
@@ -418,7 +465,7 @@ Blockly.Blocks.hand_gesture_sensor = {
       .setAlign(Blockly.ALIGN_CENTRE)
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/hand-gesture-sensor.png',
         45, 45, '*'))
-      .appendField('--sensor de gestos--');
+      .appendField('--' + NclBlocks.LEAP_STR + '--');
     this.setOutput(true, 'user_content');
     this.setColour(NclBlocks.USER_COLOUR);
     this.contextMenu = false;
@@ -433,7 +480,7 @@ Blockly.Blocks.image = {
       .setAlign(Blockly.ALIGN_CENTRE)
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-image.png', 45, 45,
         '*'))
-      .appendField('--imagem--');
+      .appendField('--' + NclBlocks.IMAGE_STR + '--');
     this.setOutput(true, 'media_content');
     this.setColour(NclBlocks.MEDIA_COLOR);
     this.contextMenu = false;
@@ -446,7 +493,7 @@ Blockly.Blocks.sentence_item = {
   init: function () {
     this.setColour(NclBlocks.MEDIA_COLOR);
     this.appendDummyInput()
-      .appendField("frase para sintetizar");
+      .appendField(NclBlocks.SSML_ITEM_STR);
     this.setPreviousStatement(true, ['sentence_item']);
     this.setNextStatement(true, ['sentence_item']);
     this.contextMenu = false;
@@ -459,7 +506,7 @@ Blockly.Blocks.ssml.init = function () {
   this.appendDummyInput()
     .setAlign(Blockly.ALIGN_CENTRE)
     .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/ssml.png', 45, 45, '*'))
-    .appendField('--texto para sintetização--');
+    .appendField('--' + NclBlocks.SSML_STR + '--');
   this.setColour(NclBlocks.MEDIA_COLOR);
   this.itemCount_ = 2;
   this.updateShape_();
@@ -511,7 +558,7 @@ Blockly.Blocks.ssml.updateShape_ = function () {
         .appendField('id=')
         .appendField(new Blockly.MediaIdFieldText('',
           validateMediaId))
-        .appendField('sintetiza frase')
+        .appendField(NclBlocks.SSML_ANCHOR_STR)
         .appendField(new Blockly.FieldTextInput(''), '');
     }
   }
@@ -527,7 +574,7 @@ Blockly.Blocks.clip_item = {
   init: function () {
     this.setColour(NclBlocks.MEDIA_COLOR);
     this.appendDummyInput()
-      .appendField("trecho do vídeo");
+      .appendField(NclBlocks.VIDEO_ITEM_STR);
     this.setPreviousStatement(true, ['clip_item']);
     this.setNextStatement(true, ['clip_item']);
     this.contextMenu = false;
@@ -540,7 +587,7 @@ Blockly.Blocks.video.init = function () {
   this.appendDummyInput()
     .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-video.png', 45, 45,
       '*'))
-    .appendField('--vídeo--')
+    .appendField('--' + NclBlocks.VIDEO_STR + '--')
     .setAlign(Blockly.ALIGN_CENTRE);
   this.setColour(NclBlocks.MEDIA_COLOR);
   this.itemCount_ = 2;
@@ -592,11 +639,10 @@ Blockly.Blocks.video.updateShape_ = function () {
         .appendField('id=')
         .appendField(new Blockly.MediaIdFieldText('',
           validateMediaId))
-        .appendField('define trecho de inicio')
+        .appendField(NclBlocks.VIDEO_ANCHOR_STR)
         .appendField(new Blockly.FieldNumber(0, 0), 'begin')
-        .appendField('s e fim')
-        .appendField(new Blockly.FieldNumber(0, 0), 'end')
-        .appendField('s');
+        .appendField(',')
+        .appendField(new Blockly.FieldNumber(0, 0), 'end');
     }
   }
   while (this.getInput('ADD' + i)) {
@@ -611,7 +657,7 @@ Blockly.Blocks.recognition_item = {
   init: function () {
     this.setColour(NclBlocks.INPUT_COLOUR);
     this.appendDummyInput()
-      .appendField("frase a reconhecer");
+      .appendField(NclBlocks.SRGS_ITEM_STR);
     this.setPreviousStatement(true, ['input_item', 'link_item']);
     this.setNextStatement(true, ['link_item']);
     this.contextMenu = false;
@@ -623,7 +669,7 @@ Blockly.Blocks.srgs = Object.assign({}, Blockly.Blocks.lists_create_with);
 Blockly.Blocks.srgs.init = function () {
   this.appendDummyInput()
     .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/srgs.png', 45, 45, '*'))
-    .appendField('--comandos de voz--')
+    .appendField('--' + NclBlocks.SRGS_STR + '--')
     .setAlign(Blockly.ALIGN_CENTRE);
   this.setColour(NclBlocks.INPUT_COLOUR);
   this.itemCount_ = 2;
@@ -675,7 +721,7 @@ Blockly.Blocks.srgs.updateShape_ = function () {
         .appendField('id=')
         .appendField(new Blockly.InputIdFieldText('',
           validateInputId))
-        .appendField('reconhece frase')
+        .appendField(NclBlocks.SRGS_ANCHOR_STR)
         .appendField(new Blockly.FieldTextInput(''), '');
     }
   }
@@ -691,7 +737,7 @@ Blockly.Blocks.hand_gesture_item = {
   init: function () {
     this.setColour(NclBlocks.INPUT_COLOUR);
     this.appendDummyInput()
-      .appendField("gesto a reconhecer");
+      .appendField(NclBlocks.HAND_GESTURE_ITEM_STR);
     this.setPreviousStatement(true, ['hand_gesture_item']);
     this.setNextStatement(true, ['hand_gesture_item']);
     this.contextMenu = false;
@@ -704,7 +750,7 @@ Blockly.Blocks.hand_gesture.init = function () {
   this.appendDummyInput()
     .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/hand-gesture.png', 45, 45,
       '*'))
-    .appendField('--gestures de mão--')
+    .appendField('--' + NclBlocks.HAND_GESTURE_STR + '--')
     .setAlign(Blockly.ALIGN_CENTRE);
   this.setColour(NclBlocks.INPUT_COLOUR);
   this.itemCount_ = 2;
@@ -755,7 +801,7 @@ Blockly.Blocks.hand_gesture.updateShape_ = function () {
       this.appendDummyInput('ADD' + i)
         .appendField('id=')
         .appendField(new Blockly.FieldTextInput(''), 'id=')
-        .appendField('reconhece gesto')
+        .appendField(NclBlocks.HAND_GESTURE_ANCHOR_STR)
         .appendField(new Blockly.FieldTextInput(''), '');
     }
   }
@@ -772,7 +818,7 @@ Blockly.Blocks.onbegin = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-bind-onbegin.png', 15,
         15, '*'))
-      .appendField('inciar')
+      .appendField(NclBlocks.ONBEGIN_STR)
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
     this.setInputsInline(false);
     this.setOutput(true, 'simplecondition');
@@ -786,7 +832,7 @@ Blockly.Blocks.onend = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-bind-onend.png', 15,
         15, '*'))
-      .appendField('terminar')
+      .appendField(NclBlocks.ONEND_STR)
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
     this.setInputsInline(false);
     this.setOutput(true, 'simplecondition');
@@ -800,7 +846,7 @@ Blockly.Blocks.onpause = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-bind-onpause.png', 15,
         15, '*'))
-      .appendField('pausar')
+      .appendField(NclBlocks.ONPAUSE_STR)
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
     this.setInputsInline('pause');
     this.setOutput(true, 'simplecondition');
@@ -814,7 +860,7 @@ Blockly.Blocks.onresume = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-bind-onresume.png',
         15, 15, '*'))
-      .appendField('resumir')
+      .appendField(NclBlocks.ONRESUME_STR)
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
     this.setInputsInline(false);
     this.setOutput(true, 'simplecondition');
@@ -828,7 +874,7 @@ Blockly.Blocks.onselection = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-bind-onselection.png',
         15, 15, '*'))
-      .appendField('selecionar')
+      .appendField(NclBlocks.ONSELECTION_STR)
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
     this.setInputsInline(false);
     this.setOutput(true, 'simplecondition');
@@ -842,7 +888,7 @@ Blockly.Blocks.onrecognize = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-bind-onselection.png',
         15, 15, '*'))
-      .appendField('reconhecer')
+      .appendField(NclBlocks.ONRECOGNIZE_STR)
       .appendField(new Blockly.FieldDropdown(getinputIds), 'NAME');
     this.setInputsInline(false);
     this.setOutput(true, 'simplecondition');
@@ -856,9 +902,9 @@ Blockly.Blocks.onrecognizeuser = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-bind-onselection.png',
         15, 15, '*'))
-      .appendField('reconhecer')
+      .appendField(NclBlocks.ONRECOGNIZE_STR)
       .appendField(new Blockly.FieldDropdown(getinputIds), 'NAME')
-      .appendField(' do usuário')
+      .appendField(NclBlocks.ONRECOGNIZE_FROM_USER_STR)
       .appendField(new Blockly.FieldDropdown(getuserIds), 'NAME');
     this.setInputsInline(false);
     this.setOutput(true, 'simplecondition');
@@ -873,7 +919,7 @@ Blockly.Blocks.condition_item = {
   init: function () {
     this.setColour(NclBlocks.CONDITION_COLOUR);
     this.appendDummyInput()
-      .appendField("condição");
+      .appendField(NclBlocks.CONDITION_STR);
     this.setPreviousStatement(true, ['condition_item']);
     this.setNextStatement(true, ['condition_item']);
     this.contextMenu = false;
@@ -886,9 +932,9 @@ Blockly.Blocks.compoundcondition.init = function () {
   this.appendDummyInput()
     .appendField(
     new Blockly.FieldDropdown([
-      ['em sequencia', 'seq'],
-      ['todos entre', 'and'],
-      ['qualquer entre', 'or']
+      [NclBlocks.SEQ_STR, 'seq'],
+      [NclBlocks.AND_STR, 'and'],
+      [NclBlocks.OR_STR, 'or']
     ]),
     'operator');
   this.setColour(NclBlocks.CONDITION_COLOUR);
@@ -937,7 +983,7 @@ Blockly.Blocks.start = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-bind-start.png', 15,
         15, '*'))
-      .appendField('inicie')
+      .appendField(NclBlocks.START_STR)
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
     this.setInputsInline(false);
     this.setPreviousStatement(true, 'simpleaction');
@@ -952,7 +998,7 @@ Blockly.Blocks.stop = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-bind-stop.png', 15,
         15, '*'))
-      .appendField('pare')
+      .appendField(NclBlocks.STOP_STR)
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
     this.setPreviousStatement(true, 'simpleaction');
     this.setNextStatement(true, 'simpleaction');
@@ -966,7 +1012,7 @@ Blockly.Blocks.pause = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-bind-pause.png', 15,
         15, '*'))
-      .appendField('pause')
+      .appendField(NclBlocks.PAUSE_STR)
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
     this.setPreviousStatement(true, 'simpleaction');
     this.setNextStatement(true, 'simpleaction');
@@ -980,7 +1026,7 @@ Blockly.Blocks.resume = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-bind-resume.png', 15,
         15, '*'))
-      .appendField('resuma')
+      .appendField(NclBlocks.RESUME_STR)
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
     this.setInputsInline(false);
     this.setPreviousStatement(true, 'simpleaction');
@@ -995,7 +1041,7 @@ Blockly.Blocks.set = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-bind-set.png', 15, 15,
         '*'))
-      .appendField('atribua')
+      .appendField(NclBlocks.SET_STR)
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME')
       .appendField('=')
       .appendField(new Blockly.FieldTextInput(''), 'value');
@@ -1010,26 +1056,26 @@ Blockly.Blocks.set = {
 
 NclBlocks.defaultToolbox =
   `<xml id="toolbox" style="display: none">
-  <category name="mídia">
+  <category name="`+ NclBlocks.MEDIA_STR + `">
     <block type="media"></block>
     <block type="image"></block>
     <block type="video"></block>
     <block type="ssml"></block>
   </category>
-  <category name="reconhecedor">
+  <category name="`+ NclBlocks.INPUT_STR + `">
     <block type="input"></block>
     <block type="srgs"></block>
     <block type="hand_gesture"></block>
   </category>
-  <category name="usuário">
+  <category name="`+ NclBlocks.USER_STR + `">
     <block type="user"></block>
     <block type="headset"></block>
     <block type="hand_gesture_sensor"></block>
   </category>
-  <category name="sincronismo">
+  <category name="`+ NclBlocks.LINK_STR + `">
     <block type="link"></block>
   </category>
-  <category name="condições">
+  <category name="`+ NclBlocks.CONDITIONS_STR + `">
     <block type="onbegin"></block>
     <block type="onend"></block>
     <block type="onpause"></block>
@@ -1039,7 +1085,7 @@ NclBlocks.defaultToolbox =
     <block type="onrecognizeuser"></block>
     <block type="compoundcondition"></block>
   </category>
-  <category name="ações">
+  <category name="`+ NclBlocks.ACTIONS_STR + `">
     <block type="start"></block>
     <block type="stop"></block>
     <block type="pause"></block>
