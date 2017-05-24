@@ -96,7 +96,6 @@ NclBlocks.PORT_COLOUR = 260;
 NclBlocks.CONDITION_COLOUR = 280;
 NclBlocks.ACTION_COLOUR = 230;
 NclBlocks.START_WORKSPACE = "";
-NclBlocks.pathToBlockly = "./";
 
 NclBlocks.defaultToolbox =
   `<xml id="toolbox" style="display: none">

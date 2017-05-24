@@ -38,9 +38,9 @@
     $('#content').append("<div id='" + inject_div_name + "'style='height: 768px; width: 1024px;'></div>");
 
     Blockly.pathToBlockly = 'nclblocks/'
-    workspace = Blockly.inject(inject_div_name, {
+    var workspace = Blockly.inject(inject_div_name, {
       media: Blockly.pathToBlockly + 'media/',
-      toolbox: NclBlocks.defaultToolbox,
+      toolbox: "",
       scrollbars: true,
       sounds: true
     });
@@ -60,11 +60,16 @@
       $('#result_number').val('0').change();
     });
     $("#result_number").change(function () {
-      select_value = parseInt($(this).val());
+      var select_value = parseInt($(this).val());
       // console.log(results_data);
-      saved_workspace = results_data[select_value].conceitos_multimodais_blocks1_inserted;
+      var saved_workspace = results_data[select_value].conceitos_multimodais_blocks1_inserted;
       workspace.clear();
       Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(saved_workspace), workspace);
+      var blocks = workspace.getAllBlocks();
+      for (var i = 0; i < blocks.length; i++) {
+        blocks[i].setEditable(false);
+        blocks[i].setMovable(false);
+      }
     });
 
     // ---------------------------------------- 
@@ -73,22 +78,27 @@
 
     var run_event_interval_index = 0;
     var run_event_interval = function (index) {
-      result = JSON.parse(results_data[index].conceitos_multimodais_blocks1_changes);
+      var result = JSON.parse(results_data[index].conceitos_multimodais_blocks1_changes);
       if (run_event_interval_index >= result.changes.length) {
         clearInterval(run_event_interval);
         return;
       }
-      json = result.changes[run_event_interval_index];
+      var json = result.changes[run_event_interval_index];
       // console.log(json);
       // console.log(run_event_interval_index);
-      event = Blockly.Events.fromJson(json, workspace);
+      var event = Blockly.Events.fromJson(json, workspace);
       event.run(true);
+      var blocks = workspace.getAllBlocks();
+      for (var i = 0; i < blocks.length; i++) {
+        blocks[i].setEditable(false);
+        blocks[i].setMovable(false);
+      }
       run_event_interval_index++;
     }
 
     $("#changes").click(function () {
       if (results_data == null) return;
-      index = parseInt(($("#result_number option:selected").val()));
+      var index = parseInt(($("#result_number option:selected").val()));
       workspace.clear();
       run_event_interval_index = 0;
       clearInterval(run_event_interval);
@@ -96,5 +106,3 @@
     });
   </script>
 </body>
-
-</html>
