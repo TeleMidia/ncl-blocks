@@ -36,24 +36,47 @@ var surveyJSON = {
         {
           type: "rating",
           name: "xp_ncl",
-          title: "Qual sua experiencia com a linguagem NCL?",
+          title: "Qual seu conhecimento no uso da linguagem NCL?",
           rateValues: [
             {
               value: "0",
               text: {
-                en: "0 (nenhuma)"
+                en: "nenhum"
               }
             },
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
             {
-              value: "7",
+              value: "1",
               text: {
-                en: "7 (expert)"
+                en: "muito pouco"
+              }
+            }, {
+              value: "2",
+              text: {
+                en: "pouco"
+              }
+            },
+            {
+              value: "3",
+              text: {
+                en: "razoável"
+              }
+            },
+            {
+              value: "4",
+              text: {
+                en: "alto"
+              }
+            },
+            {
+              value: "5",
+              text: {
+                en: "muito alto"
+              }
+            },
+            {
+              value: "6",
+              text: {
+                en: "expert"
               }
             }
           ]
@@ -69,32 +92,35 @@ var surveyJSON = {
               text: {
                 en: "0"
               }
-            },
-            {
-              value: "0",
+            }, {
+              value: "1",
               text: {
                 en: "1-2"
               }
             }, {
-              value: "0",
+              value: "2",
               text: {
                 en: "3-4"
               }
             }, {
-              value: "0",
+              value: "3",
               text: {
                 en: "4-5"
               }
             }, {
-              value: "0",
+              value: "4",
               text: {
                 en: "5-6"
               }
-            },
-            {
-              value: "7",
+            }, {
+              value: "5",
               text: {
-                en: "7 ou mais"
+                en: "7-8"
+              }
+            }, {
+              value: "6",
+              text: {
+                en: "8 ou mais"
               }
             }
           ]
@@ -102,24 +128,47 @@ var surveyJSON = {
         {
           type: "rating",
           name: "xp_html",
-          title: "Qual sua experiencia com a linguagem HTML/JavaScript?",
+          title: "Qual seu conhecimento no uso de HTML/JavaScript?",
           rateValues: [
             {
               value: "0",
               text: {
-                en: "0 (nenhuma)"
+                en: "nenhum"
               }
             },
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
             {
-              value: "7",
+              value: "1",
               text: {
-                en: "7 (expert)"
+                en: "muito pouco"
+              }
+            }, {
+              value: "2",
+              text: {
+                en: "pouco"
+              }
+            },
+            {
+              value: "3",
+              text: {
+                en: "razoável"
+              }
+            },
+            {
+              value: "4",
+              text: {
+                en: "alto"
+              }
+            },
+            {
+              value: "5",
+              text: {
+                en: "muito alto"
+              }
+            },
+            {
+              value: "6",
+              text: {
+                en: "expert"
               }
             }
           ]
@@ -135,32 +184,35 @@ var surveyJSON = {
               text: {
                 en: "0"
               }
-            },
-            {
-              value: "0",
+            }, {
+              value: "1",
               text: {
                 en: "1-2"
               }
             }, {
-              value: "0",
+              value: "2",
               text: {
                 en: "3-4"
               }
             }, {
-              value: "0",
+              value: "3",
               text: {
                 en: "4-5"
               }
             }, {
-              value: "0",
+              value: "4",
               text: {
                 en: "5-6"
               }
-            },
-            {
-              value: "7",
+            }, {
+              value: "5",
               text: {
-                en: "7 ou mais"
+                en: "7-8"
+              }
+            }, {
+              value: "6",
+              text: {
+                en: "8 ou mais"
               }
             }
           ]
