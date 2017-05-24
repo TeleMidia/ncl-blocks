@@ -254,12 +254,270 @@ var surveyJSON = {
     {
       elements: [
         {
-          type: "text",
-          name: "multimodal_concepts_feedback_question_1"
+          type: "panel",
+          innerIndent: 1,
+          title: "Por favor, nos ajude a compreender a utilidade dos conceitos apresentados",
+          elements: [
+            {
+              type: "radiogroup",
+              title: "Os conceitos apresentadados permitem realizar mais facilmente o desenvolmento de aplicações multimodais",
+              choices: [
+                {
+                  value: "0",
+                  text: {
+                    en: "bastante improvável"
+                  }
+                }, {
+                  value: "1",
+                  text: {
+                    en: "muito improvável"
+                  }
+                }, {
+                  value: "2",
+                  text: {
+                    en: "pouco improvável"
+                  }
+                }, {
+                  value: "3",
+                  text: {
+                    en: "indiferente"
+                  }
+                }, {
+                  value: "4",
+                  text: {
+                    en: "pouco provável"
+                  }
+                }, {
+                  value: "5",
+                  text: {
+                    en: "muito provável"
+                  }
+                }, {
+                  value: "6",
+                  text: {
+                    en: "bastante provável"
+                  }
+                }
+              ]
+            },
+            {
+              type: "radiogroup",
+              title: "Os conceitos apresentadados permitem realizar mais rapidamente o desenvolmento de aplicações multimodais?",
+              choices: [
+                {
+                  value: "0",
+                  text: {
+                    en: "bastante improvável"
+                  }
+                }, {
+                  value: "1",
+                  text: {
+                    en: "muito improvável"
+                  }
+                }, {
+                  value: "2",
+                  text: {
+                    en: "pouco improvável"
+                  }
+                }, {
+                  value: "3",
+                  text: {
+                    en: "indiferente"
+                  }
+                }, {
+                  value: "4",
+                  text: {
+                    en: "pouco provável"
+                  }
+                }, {
+                  value: "5",
+                  text: {
+                    en: "muito provável"
+                  }
+                }, {
+                  value: "6",
+                  text: {
+                    en: "bastante provável"
+                  }
+                }
+              ]
+            },
+            {
+              type: "radiogroup",
+              title: "De modo geral, os conceitos apresentadados são úteis para o desenvolmento de aplicações multimodais?",
+              choices: [
+                {
+                  value: "0",
+                  text: {
+                    en: "bastante improvável"
+                  }
+                }, {
+                  value: "1",
+                  text: {
+                    en: "muito improvável"
+                  }
+                }, {
+                  value: "2",
+                  text: {
+                    en: "pouco improvável"
+                  }
+                }, {
+                  value: "3",
+                  text: {
+                    en: "indiferente"
+                  }
+                }, {
+                  value: "4",
+                  text: {
+                    en: "pouco provável"
+                  }
+                }, {
+                  value: "5",
+                  text: {
+                    en: "muito provável"
+                  }
+                }, {
+                  value: "6",
+                  text: {
+                    en: "bastante provável"
+                  }
+                }
+              ]
+            }]
+        }, {
+          type: "panel", 
+          innerIndent: 1, 
+          title: "Por favor, nos ajude a compreender a facilidade dos conceitos apresentados",
+          elements: [
+            {
+              type: "radiogroup",
+              title: "Aprender os conceitos é fácil?",
+              choices: [
+                {
+                  value: "0",
+                  text: {
+                    en: "bastante improvável"
+                  }
+                }, {
+                  value: "1",
+                  text: {
+                    en: "muito improvável"
+                  }
+                }, {
+                  value: "2",
+                  text: {
+                    en: "pouco improvável"
+                  }
+                }, {
+                  value: "3",
+                  text: {
+                    en: "indiferente"
+                  }
+                }, {
+                  value: "4",
+                  text: {
+                    en: "pouco provável"
+                  }
+                }, {
+                  value: "5",
+                  text: {
+                    en: "muito provável"
+                  }
+                }, {
+                  value: "6",
+                  text: {
+                    en: "bastante provável"
+                  }
+                }
+              ]
+            },
+            {
+              type: "radiogroup",
+              title: "Os conceitos são são claros e entendíveis?",
+              choices: [
+                {
+                  value: "0",
+                  text: {
+                    en: "bastante improvável"
+                  }
+                }, {
+                  value: "1",
+                  text: {
+                    en: "muito improvável"
+                  }
+                }, {
+                  value: "2",
+                  text: {
+                    en: "pouco improvável"
+                  }
+                }, {
+                  value: "3",
+                  text: {
+                    en: "indiferente"
+                  }
+                }, {
+                  value: "4",
+                  text: {
+                    en: "pouco provável"
+                  }
+                }, {
+                  value: "5",
+                  text: {
+                    en: "muito provável"
+                  }
+                }, {
+                  value: "6",
+                  text: {
+                    en: "bastante provável"
+                  }
+                }
+              ]
+            },
+            {
+              type: "radiogroup",
+              title: "De modo geral, os conceitos apresentadados são útefáceis de utilizar?",
+              choices: [
+                {
+                  value: "0",
+                  text: {
+                    en: "bastante improvável"
+                  }
+                }, {
+                  value: "1",
+                  text: {
+                    en: "muito improvável"
+                  }
+                }, {
+                  value: "2",
+                  text: {
+                    en: "pouco improvável"
+                  }
+                }, {
+                  value: "3",
+                  text: {
+                    en: "indiferente"
+                  }
+                }, {
+                  value: "4",
+                  text: {
+                    en: "pouco provável"
+                  }
+                }, {
+                  value: "5",
+                  text: {
+                    en: "muito provável"
+                  }
+                }, {
+                  value: "6",
+                  text: {
+                    en: "bastante provável"
+                  }
+                }
+              ]
+            }]
         }
       ],
-      name: "multimodal_concepts_feedback",
-      title: "Feedback dos conceitos multimodais em linguagens multimídia"
+      name: "multimodal_concepts_feedback"
     },
     {
       elements: [
@@ -585,4 +843,4 @@ $("#surveyContainer").Survey({
   // onAfterRenderSurvey: onRenderSurvey
 });
 
-// survey.currentPageNo = 2;
+survey.currentPageNo = 3;
