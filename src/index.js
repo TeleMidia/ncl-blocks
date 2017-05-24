@@ -35,7 +35,7 @@ var surveyJSON = {
       elements: [
         {
           type: "rating",
-          name: "xp_ncl",
+          name: "profile_q1",
           title: "Qual seu conhecimento no uso da linguagem NCL?",
           rateValues: [
             {
@@ -83,9 +83,9 @@ var surveyJSON = {
         },
         {
           type: "rating",
-          name: "n_app_ncl",
+          name: "profile_q2",
           title: "Quantas aplicações NCL você desenvolveu?",
-          visibleIf: "{xp_ncl} > 0",
+          visibleIf: "{profile_q1} > 0",
           rateValues: [
             {
               value: "0",
@@ -127,7 +127,7 @@ var surveyJSON = {
         },
         {
           type: "rating",
-          name: "xp_html",
+          name: "profile_q3",
           title: "Qual seu conhecimento no uso de HTML/JavaScript?",
           rateValues: [
             {
@@ -175,9 +175,9 @@ var surveyJSON = {
         },
         {
           type: "rating",
-          name: "n_apps_html",
+          name: "profile_q4",
           title: "Quantas aplicações HTML/JavaScript você desenvolveu?",
-          visibleIf: "{xp_html} > 0",
+          visibleIf: "{profile_q3} > 0",
           rateValues: [
             {
               value: "0",
@@ -252,6 +252,7 @@ var surveyJSON = {
       title: "Conceitos multimodais em linguagens multimídia"
     },
     {
+      name: "concepts_feedback",
       elements: [
         {
           type: "panel",
@@ -260,6 +261,7 @@ var surveyJSON = {
           elements: [
             {
               type: "radiogroup",
+              name: "concepts_feedback_q1",
               title: "Os conceitos apresentadados permitem realizar mais facilmente o desenvolmento de aplicações multimodais",
               choices: [
                 {
@@ -302,6 +304,7 @@ var surveyJSON = {
             },
             {
               type: "radiogroup",
+              name: "concepts_feedback_q2",
               title: "Os conceitos apresentadados permitem realizar mais rapidamente o desenvolmento de aplicações multimodais?",
               choices: [
                 {
@@ -344,6 +347,7 @@ var surveyJSON = {
             },
             {
               type: "radiogroup",
+              name: "concepts_feedback_q3",
               title: "De modo geral, os conceitos apresentadados são úteis para o desenvolmento de aplicações multimodais?",
               choices: [
                 {
@@ -391,6 +395,7 @@ var surveyJSON = {
           elements: [
             {
               type: "radiogroup",
+              name: "concepts_feedback_q4",
               title: "Aprender os conceitos é fácil?",
               choices: [
                 {
@@ -433,6 +438,7 @@ var surveyJSON = {
             },
             {
               type: "radiogroup",
+              name: "concepts_feedback_q5",
               title: "Os conceitos são claros e entendíveis?",
               choices: [
                 {
@@ -475,6 +481,7 @@ var surveyJSON = {
             },
             {
               type: "radiogroup",
+              name: "concepts_feedback_q6",
               title: "De modo geral, os conceitos apresentadados são fáceis de utilizar?",
               choices: [
                 {
@@ -516,8 +523,7 @@ var surveyJSON = {
               ]
             }]
         }
-      ],
-      name: "multimodal_concepts_feedback"
+      ]
     },
     {
       elements: [
@@ -529,22 +535,22 @@ var surveyJSON = {
         {
           type: "html",
           html: "O código a seguir consiste em uma aplicação NCL sem interações multimodais.",
-          name: "ncl_code_1"
+          name: "ncl_code1"
         },
         {
           type: "comment",
-          name: "ncl_question_1",
+          name: "ncl_q1",
           rows: "9",
           title: "Qual o comportamento da aplicação?"
         },
         {
           type: "html",
           html: "O aplicação NCL acima foi modificada para permitir interações multimodais. O novo código é apresentado a seguir com as modificações destacadas:",
-          name: "ncl_code_2"
+          name: "ncl_code2"
         },
         {
           type: "comment",
-          name: "ncl_question_2",
+          name: "ncl_q2",
           rows: "9",
           title: "Qual o novo comportamento da aplicação?"
         }
@@ -553,6 +559,7 @@ var surveyJSON = {
       title: "Conceitos multimodais em NCL"
     },
     {
+      name: "ncl_feedback",
       elements: [
         {
           type: "panel",
@@ -561,6 +568,7 @@ var surveyJSON = {
           elements: [
             {
               type: "radiogroup",
+              name: "ncl_feedback_q1",
               title: "A NCL estendida permite realizar mais facilmente o desenvolmento de aplicações multimodais",
               choices: [
                 {
@@ -603,6 +611,7 @@ var surveyJSON = {
             },
             {
               type: "radiogroup",
+              name: "ncl_feedback_q2",
               title: "A NCL estendida permite realizar mais rapidamente o desenvolmento de aplicações multimodais?",
               choices: [
                 {
@@ -645,6 +654,7 @@ var surveyJSON = {
             },
             {
               type: "radiogroup",
+              name: "ncl_feedback_q3",
               title: "A NCL estendida aumenta a qualidade no desenvolmento de aplicações multimodais?",
               choices: [
                 {
@@ -687,6 +697,7 @@ var surveyJSON = {
             },
             {
               type: "radiogroup",
+              name: "ncl_feedback_q4",
               title: "A NCL estendida fornece maior controle no desenvolmento de aplicações multimodais?",
               choices: [
                 {
@@ -729,6 +740,7 @@ var surveyJSON = {
             },
             {
               type: "radiogroup",
+              name: "ncl_feedback_q5",
               title: "De modo geral, A NCL estendida é util para realizar o desenvolmento de aplicações multimodais?",
               choices: [
                 {
@@ -777,6 +789,7 @@ var surveyJSON = {
           elements: [
             {
               type: "radiogroup",
+              name: "ncl_feedback_q6",
               title: "Aprender a NCL estendida é fácil?",
               choices: [
                 {
@@ -819,6 +832,7 @@ var surveyJSON = {
             },
             {
               type: "radiogroup",
+              name: "ncl_feedback_q7",
               title: "A NCL estendida é claro e entendível?",
               choices: [
                 {
@@ -861,6 +875,7 @@ var surveyJSON = {
             },
             {
               type: "radiogroup",
+              name: "ncl_feedback_q8",
               title: "De modo geral, a NCL estendida é fácil de utilizar?",
               choices: [
                 {
@@ -902,8 +917,7 @@ var surveyJSON = {
               ]
             }]
         }
-      ],
-      name: "ncl_feedback"
+      ]
     },
     {
       elements: [
@@ -916,6 +930,7 @@ var surveyJSON = {
       title: "Conceitos multimodais em HTML"
     },
     {
+      name: "html_feedback",
       elements: [
         {
           type: "panel",
@@ -924,6 +939,7 @@ var surveyJSON = {
           elements: [
             {
               type: "radiogroup",
+              name: "html_feedback_q1",
               title: "A HTML/JavaScrip estendida permite realizar mais facilmente o desenvolmento de aplicações multimodais",
               choices: [
                 {
@@ -966,6 +982,7 @@ var surveyJSON = {
             },
             {
               type: "radiogroup",
+              name: "html_feedback_q2",
               title: "A HTML/JavaScrip estendida permite realizar mais rapidamente o desenvolmento de aplicações multimodais?",
               choices: [
                 {
@@ -1008,6 +1025,7 @@ var surveyJSON = {
             },
             {
               type: "radiogroup",
+              name: "html_feedback_q3",
               title: "A HTML/JavaScrip estendida aumenta a qualidade no desenvolmento de aplicações multimodais?",
               choices: [
                 {
@@ -1050,6 +1068,7 @@ var surveyJSON = {
             },
             {
               type: "radiogroup",
+              name: "html_feedback_q4",
               title: "A HTML/JavaScrip estendida fornece maior controle no desenvolmento de aplicações multimodais?",
               choices: [
                 {
@@ -1092,6 +1111,7 @@ var surveyJSON = {
             },
             {
               type: "radiogroup",
+              name: "html_feedback_q5",
               title: "De modo geral, a HTML/JavaScript estendida é util para realizar o desenvolmento de aplicações multimodais?",
               choices: [
                 {
@@ -1140,6 +1160,7 @@ var surveyJSON = {
           elements: [
             {
               type: "radiogroup",
+              name: "html_feedback_q6",
               title: "Aprender a HTML/Javascript estendida é fácil?",
               choices: [
                 {
@@ -1182,6 +1203,7 @@ var surveyJSON = {
             },
             {
               type: "radiogroup",
+              name: "html_feedback_q7",
               title: "A HTML/Javascript estendida é claro e entendível?",
               choices: [
                 {
@@ -1224,6 +1246,7 @@ var surveyJSON = {
             },
             {
               type: "radiogroup",
+              name: "html_feedback_q8",
               title: "De modo geral, a HTML/Javascript estendida é fácil de utilizar?",
               choices: [
                 {
@@ -1263,10 +1286,10 @@ var surveyJSON = {
                   }
                 }
               ]
-            }]
+            }
+          ]
         }
-      ],
-      name: "html_feedback"
+      ]
     },
     {
       elements: [
@@ -1459,10 +1482,10 @@ function onRenderQuestion(target_survey, question_and_html) {
     case "conceitos_multimodais_blocks1":
       inject_conceitos_multimodais_task1(question_and_html.question.idValue);
       break;
-    case "ncl_code_1":
+    case "ncl_code1":
       inject_ncl_task1(question_and_html.question.idValue);
       break;
-    case "ncl_code_2":
+    case "ncl_code2":
       inject_ncl_task2(question_and_html.question.idValue);
       break;
   }
