@@ -1277,6 +1277,14 @@ var surveyJSON = {
           title: {
             en: "Chegamos ao fim de nosso estudo. Se desejar, deixe comentários ou sugestões relacionados ao nosso estudo."
           }
+        },
+        {
+          type: "comment",
+          name: "comments_q2",
+          rows: "9",
+          title: {
+            en: "Adcionalmente, você poderia falar que tipos de aplicações você gostaria de desenvolver com conceitos apresentados nesse questionário."
+          }
         }
       ],
       name: "comments",
