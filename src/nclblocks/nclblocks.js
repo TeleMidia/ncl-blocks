@@ -4,15 +4,19 @@ NclBlocks = {};
 
 NclBlocks.USE_BODY = false;
 NclBlocks.USE_CHECK = false;
-NclBlocks.BODY_COLOR = 20;
-NclBlocks.MEDIA_COLOR = 100;
+NclBlocks.BODY_COLOUR = 20;
+NclBlocks.MEDIA_COLOUR = 100;
 NclBlocks.INPUT_COLOUR = 150;
 NclBlocks.USER_COLOUR = 40;
 NclBlocks.LINK_COLOUR = 260;
-NclBlocks.CONDITION_COLOUR = 260;
+NclBlocks.PORT_COLOUR = 260;
+NclBlocks.CONDITION_COLOUR = 280;
 NclBlocks.ACTION_COLOUR = 230;
 NclBlocks.START_WORKSPACE = "";
 
+NclBlocks.BODY_STR = "aplicação";
+NclBlocks.PORT_STR = "início da aplicação"
+NclBlocks.PORT_LABEL_STR = "quando iniciar aplicação inicie";
 NclBlocks.MEDIA_STR = "mídia";
 NclBlocks.SRC_STR = "conteúdo";
 NclBlocks.MEDIAS_STR = "mídias";
@@ -41,7 +45,6 @@ NclBlocks.DEVICE_STR = "dispositivo";
 NclBlocks.DEVICES_STR = "dispositivos";
 NclBlocks.LEAP_STR = "sensor de gestos de mão";
 NclBlocks.MICROFONE_STR = "microfone";
-NclBlocks.BODY_STR = "aplicação";
 NclBlocks.CONDITION_STR = "condição";
 NclBlocks.CONDITIONS_STR = "condições";
 NclBlocks.ONRECOGNIZE_STR = 'reconhecer';
@@ -77,7 +80,7 @@ function useNclBlocksBody() {
 
 Blockly.Blocks.media_item = {
   init: function () {
-    this.setColour(NclBlocks.MEDIA_COLOR);
+    this.setColour(NclBlocks.MEDIA_COLOUR);
     this.appendDummyInput()
       .appendField(NclBlocks.MEDIA_STR);
     this.setPreviousStatement(true, ['media_item']);
@@ -110,7 +113,7 @@ Blockly.Blocks.link_item = {
 
 Blockly.Blocks.body = {
   init: function () {
-    this.setColour(NclBlocks.BODY_COLOR);
+    this.setColour(NclBlocks.BODY_COLOUR);
     this.appendDummyInput().appendField('--' + NclBlocks.BODY_STR + '--');
     this.appendValueInput('MEDIA0')
       .setCheck(NclBlocks.USE_CHECK ? 'media' : null)
@@ -152,7 +155,7 @@ Blockly.Blocks.body = {
   // Populate the mutator's dialog with this block's components.
   decompose: function (workspace) {
     var containerBlock = workspace.newBlock('lists_create_with_container');
-    containerBlock.setColour(NclBlocks.BODY_COLOR);
+    containerBlock.setColour(NclBlocks.BODY_COLOUR);
     containerBlock.initSvg();
     var connection = containerBlock.getInput('STACK').connection;
     for (var i = 0; i < this.mediaCount; i++) {
@@ -268,6 +271,12 @@ function getinputIds() {
   return inputIds;
 }
 
+function getBothMediaInputIds() {
+  ret = mediaIds.concat(inputIds);
+  ret.sort().splice(0, 1);
+  return ret;
+}
+
 function validateInputId(text) {
   if (text === '') return null;
   for (var i in inputIds) {
@@ -329,7 +338,7 @@ Blockly.Blocks.media = {
         validateMediaId))
       .appendField(', ' + NclBlocks.SRC_STR + '=');
     this.setInputsInline(false);
-    this.setColour(NclBlocks.MEDIA_COLOR);
+    this.setColour(NclBlocks.MEDIA_COLOUR);
     if (NclBlocks.USE_BODY == true) this.setOutput(true, 'media');
     this.contextMenu = false;
   }
@@ -417,6 +426,22 @@ Blockly.Blocks.user.updateShape_ = function () {
   }
 };
 
+// port
+
+Blockly.Blocks.port = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/icon-link.png', 45, 45, '*'))
+      .appendField('--' + NclBlocks.LINK_STR + '--')
+    this.appendDummyInput()
+      .appendField(NclBlocks.PORT_LABEL_STR)
+      .appendField(new Blockly.FieldDropdown(getBothMediaInputIds), 'NAME');
+    this.setInputsInline(false);
+    this.setColour(NclBlocks.PORT_COLOUR);
+    this.contextMenu = false;
+  }
+};
+
 // link
 
 Blockly.Blocks.link = {
@@ -477,7 +502,7 @@ Blockly.Blocks.image = {
         '*'))
       .appendField('--' + NclBlocks.IMAGE_STR + '--');
     this.setOutput(true, 'media_content');
-    this.setColour(NclBlocks.MEDIA_COLOR);
+    this.setColour(NclBlocks.MEDIA_COLOUR);
     this.contextMenu = false;
   }
 };
@@ -486,7 +511,7 @@ Blockly.Blocks.image = {
 
 Blockly.Blocks.sentence_item = {
   init: function () {
-    this.setColour(NclBlocks.MEDIA_COLOR);
+    this.setColour(NclBlocks.MEDIA_COLOUR);
     this.appendDummyInput()
       .appendField(NclBlocks.SSML_ITEM_STR);
     this.setPreviousStatement(true, ['sentence_item']);
@@ -502,7 +527,7 @@ Blockly.Blocks.ssml.init = function () {
     .setAlign(Blockly.ALIGN_CENTRE)
     .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + 'media/ssml.png', 45, 45, '*'))
     .appendField('--' + NclBlocks.SSML_STR + '--');
-  this.setColour(NclBlocks.MEDIA_COLOR);
+  this.setColour(NclBlocks.MEDIA_COLOUR);
   this.itemCount_ = 2;
   this.updateShape_();
   this.setOutput(true, 'media_content');
@@ -512,7 +537,7 @@ Blockly.Blocks.ssml.init = function () {
 
 Blockly.Blocks.ssml.decompose = function (workspace) {
   var containerBlock = workspace.newBlock('lists_create_with_container');
-  containerBlock.setColour(NclBlocks.MEDIA_COLOR);
+  containerBlock.setColour(NclBlocks.MEDIA_COLOUR);
   containerBlock.initSvg();
   var connection = containerBlock.getInput('STACK').connection;
 
@@ -567,7 +592,7 @@ Blockly.Blocks.ssml.updateShape_ = function () {
 
 Blockly.Blocks.clip_item = {
   init: function () {
-    this.setColour(NclBlocks.MEDIA_COLOR);
+    this.setColour(NclBlocks.MEDIA_COLOUR);
     this.appendDummyInput()
       .appendField(NclBlocks.VIDEO_ITEM_STR);
     this.setPreviousStatement(true, ['clip_item']);
@@ -584,7 +609,7 @@ Blockly.Blocks.video.init = function () {
       '*'))
     .appendField('--' + NclBlocks.VIDEO_STR + '--')
     .setAlign(Blockly.ALIGN_CENTRE);
-  this.setColour(NclBlocks.MEDIA_COLOR);
+  this.setColour(NclBlocks.MEDIA_COLOUR);
   this.itemCount_ = 2;
   this.updateShape_();
   this.setOutput(true, 'media_content');
@@ -594,7 +619,7 @@ Blockly.Blocks.video.init = function () {
 
 Blockly.Blocks.video.decompose = function (workspace) {
   var containerBlock = workspace.newBlock('lists_create_with_container');
-  containerBlock.setColour(NclBlocks.MEDIA_COLOR);
+  containerBlock.setColour(NclBlocks.MEDIA_COLOUR);
   containerBlock.initSvg();
   var connection = containerBlock.getInput('STACK').connection;
   for (var i = 0; i < this.itemCount_; i++) {
@@ -1068,6 +1093,7 @@ NclBlocks.defaultToolbox =
     <block type="hand_gesture_sensor"></block>
   </category>
   <category name="`+ NclBlocks.LINK_STR + `">
+    <block type="port"></block>
     <block type="link"></block>
   </category>
   <category name="`+ NclBlocks.CONDITIONS_STR + `">
