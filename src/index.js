@@ -385,8 +385,8 @@ var surveyJSON = {
               ]
             }]
         }, {
-          type: "panel", 
-          innerIndent: 1, 
+          type: "panel",
+          innerIndent: 1,
           title: "Por favor, nos ajude a compreender a facilidade dos conceitos apresentados",
           elements: [
             {
@@ -433,7 +433,7 @@ var surveyJSON = {
             },
             {
               type: "radiogroup",
-              title: "Os conceitos são são claros e entendíveis?",
+              title: "Os conceitos são claros e entendíveis?",
               choices: [
                 {
                   value: "0",
@@ -475,7 +475,7 @@ var surveyJSON = {
             },
             {
               type: "radiogroup",
-              title: "De modo geral, os conceitos apresentadados são útefáceis de utilizar?",
+              title: "De modo geral, os conceitos apresentadados são fáceis de utilizar?",
               choices: [
                 {
                   value: "0",
@@ -555,15 +555,355 @@ var surveyJSON = {
     {
       elements: [
         {
-          type: "text",
-          name: "ncl_feedback_question_1",
-          title: {
-            en: "Qual a sua aceitação de conceitos multimodais em NCL"
-          }
+          type: "panel",
+          innerIndent: 1,
+          title: "Por favor, nos ajude a compreender a utilidade da NCL estendida com conceitos multimodais.",
+          elements: [
+            {
+              type: "radiogroup",
+              title: "A NCL estendida permite realizar mais facilmente o desenvolmento de aplicações multimodais",
+              choices: [
+                {
+                  value: "0",
+                  text: {
+                    en: "bastante improvável"
+                  }
+                }, {
+                  value: "1",
+                  text: {
+                    en: "muito improvável"
+                  }
+                }, {
+                  value: "2",
+                  text: {
+                    en: "pouco improvável"
+                  }
+                }, {
+                  value: "3",
+                  text: {
+                    en: "indiferente"
+                  }
+                }, {
+                  value: "4",
+                  text: {
+                    en: "pouco provável"
+                  }
+                }, {
+                  value: "5",
+                  text: {
+                    en: "muito provável"
+                  }
+                }, {
+                  value: "6",
+                  text: {
+                    en: "bastante provável"
+                  }
+                }
+              ]
+            },
+            {
+              type: "radiogroup",
+              title: "A NCL estendida permite realizar mais rapidamente o desenvolmento de aplicações multimodais?",
+              choices: [
+                {
+                  value: "0",
+                  text: {
+                    en: "bastante improvável"
+                  }
+                }, {
+                  value: "1",
+                  text: {
+                    en: "muito improvável"
+                  }
+                }, {
+                  value: "2",
+                  text: {
+                    en: "pouco improvável"
+                  }
+                }, {
+                  value: "3",
+                  text: {
+                    en: "indiferente"
+                  }
+                }, {
+                  value: "4",
+                  text: {
+                    en: "pouco provável"
+                  }
+                }, {
+                  value: "5",
+                  text: {
+                    en: "muito provável"
+                  }
+                }, {
+                  value: "6",
+                  text: {
+                    en: "bastante provável"
+                  }
+                }
+              ]
+            },
+            {
+              type: "radiogroup",
+              title: "A NCL estendida aumenta a qualidade no desenvolmento de aplicações multimodais?",
+              choices: [
+                {
+                  value: "0",
+                  text: {
+                    en: "bastante improvável"
+                  }
+                }, {
+                  value: "1",
+                  text: {
+                    en: "muito improvável"
+                  }
+                }, {
+                  value: "2",
+                  text: {
+                    en: "pouco improvável"
+                  }
+                }, {
+                  value: "3",
+                  text: {
+                    en: "indiferente"
+                  }
+                }, {
+                  value: "4",
+                  text: {
+                    en: "pouco provável"
+                  }
+                }, {
+                  value: "5",
+                  text: {
+                    en: "muito provável"
+                  }
+                }, {
+                  value: "6",
+                  text: {
+                    en: "bastante provável"
+                  }
+                }
+              ]
+            },
+            {
+              type: "radiogroup",
+              title: "A NCL estendida fornece maior controle no desenvolmento de aplicações multimodais?",
+              choices: [
+                {
+                  value: "0",
+                  text: {
+                    en: "bastante improvável"
+                  }
+                }, {
+                  value: "1",
+                  text: {
+                    en: "muito improvável"
+                  }
+                }, {
+                  value: "2",
+                  text: {
+                    en: "pouco improvável"
+                  }
+                }, {
+                  value: "3",
+                  text: {
+                    en: "indiferente"
+                  }
+                }, {
+                  value: "4",
+                  text: {
+                    en: "pouco provável"
+                  }
+                }, {
+                  value: "5",
+                  text: {
+                    en: "muito provável"
+                  }
+                }, {
+                  value: "6",
+                  text: {
+                    en: "bastante provável"
+                  }
+                }
+              ]
+            },
+            {
+              type: "radiogroup",
+              title: "De modo geral, A NCL estendida é util para realizar o desenvolmento de aplicações multimodais?",
+              choices: [
+                {
+                  value: "0",
+                  text: {
+                    en: "bastante improvável"
+                  }
+                }, {
+                  value: "1",
+                  text: {
+                    en: "muito improvável"
+                  }
+                }, {
+                  value: "2",
+                  text: {
+                    en: "pouco improvável"
+                  }
+                }, {
+                  value: "3",
+                  text: {
+                    en: "indiferente"
+                  }
+                }, {
+                  value: "4",
+                  text: {
+                    en: "pouco provável"
+                  }
+                }, {
+                  value: "5",
+                  text: {
+                    en: "muito provável"
+                  }
+                }, {
+                  value: "6",
+                  text: {
+                    en: "bastante provável"
+                  }
+                }
+              ]
+            }
+          ]
+        }, {
+          type: "panel",
+          innerIndent: 1,
+          title: "Por favor, nos ajude a compreender a facilidade do uso da NCL estendida",
+          elements: [
+            {
+              type: "radiogroup",
+              title: "Aprender a NCL estendida é fácil?",
+              choices: [
+                {
+                  value: "0",
+                  text: {
+                    en: "bastante improvável"
+                  }
+                }, {
+                  value: "1",
+                  text: {
+                    en: "muito improvável"
+                  }
+                }, {
+                  value: "2",
+                  text: {
+                    en: "pouco improvável"
+                  }
+                }, {
+                  value: "3",
+                  text: {
+                    en: "indiferente"
+                  }
+                }, {
+                  value: "4",
+                  text: {
+                    en: "pouco provável"
+                  }
+                }, {
+                  value: "5",
+                  text: {
+                    en: "muito provável"
+                  }
+                }, {
+                  value: "6",
+                  text: {
+                    en: "bastante provável"
+                  }
+                }
+              ]
+            },
+            {
+              type: "radiogroup",
+              title: "A NCL estendida é claro e entendível?",
+              choices: [
+                {
+                  value: "0",
+                  text: {
+                    en: "bastante improvável"
+                  }
+                }, {
+                  value: "1",
+                  text: {
+                    en: "muito improvável"
+                  }
+                }, {
+                  value: "2",
+                  text: {
+                    en: "pouco improvável"
+                  }
+                }, {
+                  value: "3",
+                  text: {
+                    en: "indiferente"
+                  }
+                }, {
+                  value: "4",
+                  text: {
+                    en: "pouco provável"
+                  }
+                }, {
+                  value: "5",
+                  text: {
+                    en: "muito provável"
+                  }
+                }, {
+                  value: "6",
+                  text: {
+                    en: "bastante provável"
+                  }
+                }
+              ]
+            },
+            {
+              type: "radiogroup",
+              title: "De modo geral, a NCL estendida é fácil de utilizar?",
+              choices: [
+                {
+                  value: "0",
+                  text: {
+                    en: "bastante improvável"
+                  }
+                }, {
+                  value: "1",
+                  text: {
+                    en: "muito improvável"
+                  }
+                }, {
+                  value: "2",
+                  text: {
+                    en: "pouco improvável"
+                  }
+                }, {
+                  value: "3",
+                  text: {
+                    en: "indiferente"
+                  }
+                }, {
+                  value: "4",
+                  text: {
+                    en: "pouco provável"
+                  }
+                }, {
+                  value: "5",
+                  text: {
+                    en: "muito provável"
+                  }
+                }, {
+                  value: "6",
+                  text: {
+                    en: "bastante provável"
+                  }
+                }
+              ]
+            }]
         }
       ],
-      name: "ncl_feedback",
-      title: "Feedback dos conceitos multimodais em NCL"
+      name: "ncl_feedback"
     },
     {
       elements: [
@@ -578,24 +918,361 @@ var surveyJSON = {
     {
       elements: [
         {
-          type: "text",
-          name: "html_feedback_question_1",
-          title: {
-            en: "Qual a sua aceitação de conceitos multimodais em HTML"
-          }
+          type: "panel",
+          innerIndent: 1,
+          title: "Por favor, nos ajude a compreender a utilidade da HTML/JavaScrip estendida com conceitos multimodais.",
+          elements: [
+            {
+              type: "radiogroup",
+              title: "A HTML/JavaScrip estendida permite realizar mais facilmente o desenvolmento de aplicações multimodais",
+              choices: [
+                {
+                  value: "0",
+                  text: {
+                    en: "bastante improvável"
+                  }
+                }, {
+                  value: "1",
+                  text: {
+                    en: "muito improvável"
+                  }
+                }, {
+                  value: "2",
+                  text: {
+                    en: "pouco improvável"
+                  }
+                }, {
+                  value: "3",
+                  text: {
+                    en: "indiferente"
+                  }
+                }, {
+                  value: "4",
+                  text: {
+                    en: "pouco provável"
+                  }
+                }, {
+                  value: "5",
+                  text: {
+                    en: "muito provável"
+                  }
+                }, {
+                  value: "6",
+                  text: {
+                    en: "bastante provável"
+                  }
+                }
+              ]
+            },
+            {
+              type: "radiogroup",
+              title: "A HTML/JavaScrip estendida permite realizar mais rapidamente o desenvolmento de aplicações multimodais?",
+              choices: [
+                {
+                  value: "0",
+                  text: {
+                    en: "bastante improvável"
+                  }
+                }, {
+                  value: "1",
+                  text: {
+                    en: "muito improvável"
+                  }
+                }, {
+                  value: "2",
+                  text: {
+                    en: "pouco improvável"
+                  }
+                }, {
+                  value: "3",
+                  text: {
+                    en: "indiferente"
+                  }
+                }, {
+                  value: "4",
+                  text: {
+                    en: "pouco provável"
+                  }
+                }, {
+                  value: "5",
+                  text: {
+                    en: "muito provável"
+                  }
+                }, {
+                  value: "6",
+                  text: {
+                    en: "bastante provável"
+                  }
+                }
+              ]
+            },
+            {
+              type: "radiogroup",
+              title: "A HTML/JavaScrip estendida aumenta a qualidade no desenvolmento de aplicações multimodais?",
+              choices: [
+                {
+                  value: "0",
+                  text: {
+                    en: "bastante improvável"
+                  }
+                }, {
+                  value: "1",
+                  text: {
+                    en: "muito improvável"
+                  }
+                }, {
+                  value: "2",
+                  text: {
+                    en: "pouco improvável"
+                  }
+                }, {
+                  value: "3",
+                  text: {
+                    en: "indiferente"
+                  }
+                }, {
+                  value: "4",
+                  text: {
+                    en: "pouco provável"
+                  }
+                }, {
+                  value: "5",
+                  text: {
+                    en: "muito provável"
+                  }
+                }, {
+                  value: "6",
+                  text: {
+                    en: "bastante provável"
+                  }
+                }
+              ]
+            },
+            {
+              type: "radiogroup",
+              title: "A HTML/JavaScrip estendida fornece maior controle no desenvolmento de aplicações multimodais?",
+              choices: [
+                {
+                  value: "0",
+                  text: {
+                    en: "bastante improvável"
+                  }
+                }, {
+                  value: "1",
+                  text: {
+                    en: "muito improvável"
+                  }
+                }, {
+                  value: "2",
+                  text: {
+                    en: "pouco improvável"
+                  }
+                }, {
+                  value: "3",
+                  text: {
+                    en: "indiferente"
+                  }
+                }, {
+                  value: "4",
+                  text: {
+                    en: "pouco provável"
+                  }
+                }, {
+                  value: "5",
+                  text: {
+                    en: "muito provável"
+                  }
+                }, {
+                  value: "6",
+                  text: {
+                    en: "bastante provável"
+                  }
+                }
+              ]
+            },
+            {
+              type: "radiogroup",
+              title: "De modo geral, a HTML/JavaScript estendida é util para realizar o desenvolmento de aplicações multimodais?",
+              choices: [
+                {
+                  value: "0",
+                  text: {
+                    en: "bastante improvável"
+                  }
+                }, {
+                  value: "1",
+                  text: {
+                    en: "muito improvável"
+                  }
+                }, {
+                  value: "2",
+                  text: {
+                    en: "pouco improvável"
+                  }
+                }, {
+                  value: "3",
+                  text: {
+                    en: "indiferente"
+                  }
+                }, {
+                  value: "4",
+                  text: {
+                    en: "pouco provável"
+                  }
+                }, {
+                  value: "5",
+                  text: {
+                    en: "muito provável"
+                  }
+                }, {
+                  value: "6",
+                  text: {
+                    en: "bastante provável"
+                  }
+                }
+              ]
+            }
+          ]
+        }, {
+          type: "panel",
+          innerIndent: 1,
+          title: "Por favor, nos ajude a compreender a facilidade do uso de HTML/Javascript estendida",
+          elements: [
+            {
+              type: "radiogroup",
+              title: "Aprender a HTML/Javascript estendida é fácil?",
+              choices: [
+                {
+                  value: "0",
+                  text: {
+                    en: "bastante improvável"
+                  }
+                }, {
+                  value: "1",
+                  text: {
+                    en: "muito improvável"
+                  }
+                }, {
+                  value: "2",
+                  text: {
+                    en: "pouco improvável"
+                  }
+                }, {
+                  value: "3",
+                  text: {
+                    en: "indiferente"
+                  }
+                }, {
+                  value: "4",
+                  text: {
+                    en: "pouco provável"
+                  }
+                }, {
+                  value: "5",
+                  text: {
+                    en: "muito provável"
+                  }
+                }, {
+                  value: "6",
+                  text: {
+                    en: "bastante provável"
+                  }
+                }
+              ]
+            },
+            {
+              type: "radiogroup",
+              title: "A HTML/Javascript estendida é claro e entendível?",
+              choices: [
+                {
+                  value: "0",
+                  text: {
+                    en: "bastante improvável"
+                  }
+                }, {
+                  value: "1",
+                  text: {
+                    en: "muito improvável"
+                  }
+                }, {
+                  value: "2",
+                  text: {
+                    en: "pouco improvável"
+                  }
+                }, {
+                  value: "3",
+                  text: {
+                    en: "indiferente"
+                  }
+                }, {
+                  value: "4",
+                  text: {
+                    en: "pouco provável"
+                  }
+                }, {
+                  value: "5",
+                  text: {
+                    en: "muito provável"
+                  }
+                }, {
+                  value: "6",
+                  text: {
+                    en: "bastante provável"
+                  }
+                }
+              ]
+            },
+            {
+              type: "radiogroup",
+              title: "De modo geral, a HTML/Javascript estendida é fácil de utilizar?",
+              choices: [
+                {
+                  value: "0",
+                  text: {
+                    en: "bastante improvável"
+                  }
+                }, {
+                  value: "1",
+                  text: {
+                    en: "muito improvável"
+                  }
+                }, {
+                  value: "2",
+                  text: {
+                    en: "pouco improvável"
+                  }
+                }, {
+                  value: "3",
+                  text: {
+                    en: "indiferente"
+                  }
+                }, {
+                  value: "4",
+                  text: {
+                    en: "pouco provável"
+                  }
+                }, {
+                  value: "5",
+                  text: {
+                    en: "muito provável"
+                  }
+                }, {
+                  value: "6",
+                  text: {
+                    en: "bastante provável"
+                  }
+                }
+              ]
+            }]
         }
       ],
-      name: "html_feedback",
-      title: {
-        default: "Feedback dos conceitos multimodais em NCL",
-        en: "Feedback dos conceitos multimodais em HTML"
-      }
+      name: "html_feedback"
     },
     {
       elements: [
         {
           type: "comment",
-          name: "comments_question_1",
+          name: "comments_q1",
           rows: "9",
           title: {
             en: "Chegamos ao fim de nosso estudo. Se desejar, deixe comentários ou sugestões relacionados ao nosso estudo."
