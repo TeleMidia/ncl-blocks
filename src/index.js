@@ -225,4 +225,8 @@ if ($('#surveyPageNo').length) {
       .appendTo("#surveyPageNo");
   }
 }
-survey.currentPageNo = 2;
+$("#surveyPageNo").change(function () {
+  survey.currentPageNo = this.value;
+});
+
+$("#surveyPageNo").val(2).change();
