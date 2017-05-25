@@ -150,11 +150,11 @@ function ncl_task2_code(question_id) {
 // survey listeners
 // ----------------------------------------
 
-function onRenderPage(target_survey, page_and_html) {
+function on_render_page(target_survey, page_and_html) {
   window.scrollTo(0, 0);
 }
 
-function onRenderQuestion(target_survey, question_and_html) {
+function on_render_question(target_survey, question_and_html) {
   switch (question_and_html.question.name) {
     case "concepts_task1":
       concepts_task1_inject(question_and_html.question.idValue);
@@ -169,7 +169,7 @@ function onRenderQuestion(target_survey, question_and_html) {
 
 }
 
-function onPageChanged(target_survey, old_and_new_page) {
+function on_page_change(target_survey, old_and_new_page) {
   if (old_and_new_page.oldCurrentPage.name == "concepts") {
     concepts_task1_save_result();
     window.scrollTo(0, 0);
@@ -209,9 +209,9 @@ survey_css = {
 $("#surveyContainer").Survey({
   model: survey,
   css: survey_css,
-  onAfterRenderPage: onRenderPage,
-  onAfterRenderQuestion: onRenderQuestion,
-  onCurrentPageChanged: onPageChanged
+  onAfterRenderPage: on_render_page,
+  onAfterRenderQuestion: on_render_question,
+  onCurrentPageChanged: on_page_change  
 });
 
 // ----------------------------------------
