@@ -180,6 +180,8 @@ var survey, survey_css;
 
 Survey.surveyLocalization.locales["en"] = {
   requiredError: "Por favor, responda a pergunta.",
+  invalidEmail: "Por favor, entre com um email valido.",
+  progressText: "Página {0} de {1}",
 };
 Survey.Survey.cssType = "bootstrap";
 survey = new Survey.Model(surveyJSON);
