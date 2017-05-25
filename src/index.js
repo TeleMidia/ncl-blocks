@@ -225,30 +225,28 @@ var surveyJSON = {
       elements: [
         {
           type: "html",
-          name: "conceitos_multimodais_intro_1",
           html: "<div class='text-justify'> Primeiro devemos introduzir os conceitos de multimídia e documentos multimídia.<br><br> Steinmetz [1] caracteriza a multimídia como o uso conjunto de pelo menos uma mídia discreta e uma contínua. Mídias discretas são aquelas que não mudam com tempo ao serem exibidas e são também chamadas de mídias independente de tempo. Exemplos de mídias discretas são textos, imagens e gráficos. Mídias contínuas mudam com o tempo ao serem exibidas e também são chamdas de mídias dependentes de tempo.  Exemplos de mídias contínuas são áudios, vídeos e animações. <br><br> Um documento multimídia define como diferentes mídias (discretas e contínuas) são exibidas na forma de uma apresentação multimídia. Entres outros aspectos, um documento defini sincronismo das mídias, que consiste no comportamento das mídias ao longo do tempo da apresentação e dado interações de usuário. <br><br> A figura a seguir ilustra a criação e apresentação de um documento multimídia. Na criação, o autor do documento defini as mídias e o sincronismo. Em seguida, um sistema multimídia processa esse documento e apresenta ao usuario considerando o sincronismo definido pelo autor. Esse sistema utiliza de dispositivos audiovisuais para exibição de mídias e dispositivos de teclado e mouse para receber interações de usuário. <br><br> <img class='center-block img-thumbnail' style='height: 500px' src='assets/overview1.svg'><br><br>[1] R. Steinmetz and K. Nahrstedt. Multimedia: Computing, Communications and Applications. Prentice Hall, 1995. </div>"
         },
         {
           type: "html",
-          name: "conceitos_multimodais_intro_2",
           html: "<div class='text-justify'> Agora, vamos introduzir o conceito de interações multimodais. <br><br> Oviatt [2] define  que interação multimodal visa o reconhecimento de interações baseadas em formas naturais de linguagem e comportamento humanos. <br><br> Esse tipo de interação foi apoiado pelos recentes avanços nas tecnologias e dispositivos multimodais, como o reconhecimento de fala, gestos de mão e corporais. Ilustrados a seguir, exemplos de dispositivos multimodais são o LeapMotion para gestos de mão e Microsoft Kinect para reconhecimento de gestos coporais. <br><br> <div class='text-center'> <img class='img-thumbnail' style='height: 200px' src='assets/leap.jpg'> <img class='img-thumbnail' style='height: 200px' src='assets/kinect.jpg'> </div> <br><br> A figura anterior sobre criação e apresentação de um documento multimídia foi atualizada para quando documento utiliza interações multimodais. Na criação, o autor do documento defini as mídias, o sincronismo e os reconhecimentos de interações multimodais. Em seguida, um sistema multimídia processa esse documento, apresenta as midias ao usuario e espera reconhecimentos de usuário. Esse sistema utiliza de dispositivos audiovisuais para exibição de mídias e dispositivos de interação multimodal. <br><br> <img class='center-block img-thumbnail' style='height: 500px' src='assets/overview2.svg'><br><br> [2] Oviatt S (2007) Multimodal Interfaces. Hum-Comput Interact Handb. CRC Press, 413–432 </div>"
         },
         {
           type: "html",
-          name: "conceitos_multimodais_blocks1",
+          name: "concepts_blocks1",
         },
         {
           type: "text",
-          name: "conceitos_multimodais_blocks1_changes",
+          name: "concepts_blocks1_changes",
           visible: false
         },
         {
           type: "text",
-          name: "conceitos_multimodais_blocks1_inserted",
+          name: "concepts_blocks1_inserted",
           visible: false
         }
       ],
-      name: "multimodal_concepts",
+      name: "concepts",
       title: "Conceitos multimodais em linguagens multimídia"
     },
     {
@@ -1322,15 +1320,15 @@ var surveyJSON = {
 }
 
 // ----------------------------------------------------------------------------
-// multimodal_concepts page addtions
+// concepts page addtions
 // ----------------------------------------------------------------------------
 
-var workspace_conceitos_multimodais_task1;
+var workspace_concepts_task1;
 
-function changes_conceitos_multimodais_task1(primaryEvent) {
+function changes_concepts_task1(primaryEvent) {
   var json_from_event = primaryEvent.toJson();
   // console.log(json_from_event);
-  var saved_json_str = survey.getQuestionByName("conceitos_multimodais_blocks1_changes").value;
+  var saved_json_str = survey.getQuestionByName("concepts_blocks1_changes").value;
   var json_to_save;
   if (saved_json_str == null) {
     json_to_save = { "changes": [] };
@@ -1340,30 +1338,30 @@ function changes_conceitos_multimodais_task1(primaryEvent) {
   }
   // console.log(json_to_save);
   json_to_save.changes.push(json_from_event);
-  survey.getQuestionByName("conceitos_multimodais_blocks1_changes").value = JSON.stringify(json_to_save);
+  survey.getQuestionByName("concepts_blocks1_changes").value = JSON.stringify(json_to_save);
   // console.log(json_to_save);
 }
 
-function save_conceitos_multimodais_task1() {
-  var xml = Blockly.Xml.workspaceToDom(workspace_conceitos_multimodais_task1);
+function save_concepts_task1() {
+  var xml = Blockly.Xml.workspaceToDom(workspace_concepts_task1);
   var xml_text = Blockly.Xml.domToText(xml);
-  survey.getQuestionByName("conceitos_multimodais_blocks1_inserted").value = xml_text;
+  survey.getQuestionByName("concepts_blocks1_inserted").value = xml_text;
 }
 
-function inject_conceitos_multimodais_task1(question_id) {
+function inject_concepts_task1(question_id) {
   var question_div_name = "#" + question_id;
   var inject_div_name = "blockly_" + question_id;
   $(question_div_name).append("<div id=" + inject_div_name + " class='center-block'  style='height: 600px; width: 1024px;'></div>");
 
   Blockly.pathToBlockly = 'nclblocks/'
-  workspace_conceitos_multimodais_task1 = Blockly.inject(inject_div_name, {
+  workspace_concepts_task1 = Blockly.inject(inject_div_name, {
     media: Blockly.pathToBlockly + 'media/',
     toolbox: NclBlocks.defaultToolbox,
     scrollbars: true,
     sounds: true
   });
-  Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(NclBlocks.START_WORKSPACE), workspace_conceitos_multimodais_task1);
-  workspace_conceitos_multimodais_task1.addChangeListener(changes_conceitos_multimodais_task1);
+  Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(NclBlocks.START_WORKSPACE), workspace_concepts_task1);
+  workspace_concepts_task1.addChangeListener(changes_concepts_task1);
   window.scrollTo(0, 0);
 }
 
@@ -1479,8 +1477,8 @@ function inject_ncl_task2(question_id) {
 function onRenderQuestion(target_survey, question_and_html) {
   // console.log(question_and_html);
   switch (question_and_html.question.name) {
-    case "conceitos_multimodais_blocks1":
-      inject_conceitos_multimodais_task1(question_and_html.question.idValue);
+    case "concepts_blocks1":
+      inject_concepts_task1(question_and_html.question.idValue);
       break;
     case "ncl_code1":
       inject_ncl_task1(question_and_html.question.idValue);
@@ -1507,8 +1505,8 @@ function onRenderQuestion(target_survey, question_and_html) {
 function onPageChanged(target_survey, old_and_new_page) {
   // console.log(old_and_new_page);
   // console.log(survey);
-  if (old_and_new_page.oldCurrentPage.name == "multimodal_concepts") {
-    save_conceitos_multimodais_task1();
+  if (old_and_new_page.oldCurrentPage.name == "concepts") {
+    save_concepts_task1();
   }
 }
 
