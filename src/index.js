@@ -1540,7 +1540,12 @@ function onPageChanged(target_survey, old_and_new_page) {
   }
 }
 
+var customSurveyStrings = {
+  requiredError: "Por favor, responda a pergunta.",
+};
+Survey.surveyLocalization.locales["en"] = customSurveyStrings;
 Survey.Survey.cssType = "bootstrap";
+
 var survey = new Survey.Model(surveyJSON);
 var survey_css = {
   // root
