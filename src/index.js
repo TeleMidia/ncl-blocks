@@ -187,6 +187,7 @@ function onPageChanged(target_survey, old_and_new_page) {
   if (old_and_new_page.oldCurrentPage.name == "concepts") {
     concepts_task1_save_result();
   }
+  window.scrollTo(0, 0);
 }
 
 var customSurveyStrings = {
