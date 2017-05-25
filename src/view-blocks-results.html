@@ -62,7 +62,7 @@
     $("#result_number").change(function () {
       var select_value = parseInt($(this).val());
       // console.log(results_data);
-      var saved_workspace = results_data[select_value].concepts_blocks1_inserted;
+      var saved_workspace = results_data[select_value].concepts_task1_result;
       workspace.clear();
       Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(saved_workspace), workspace);
       var blocks = workspace.getAllBlocks();
@@ -78,7 +78,7 @@
 
     var run_event_interval_index = 0;
     var run_event_interval = function (index) {
-      var result = JSON.parse(results_data[index].concepts_blocks1_changes);
+      var result = JSON.parse(results_data[index].concepts_task1_changes);
       if (run_event_interval_index >= result.changes.length) {
         clearInterval(run_event_interval);
         return;

@@ -239,16 +239,16 @@ var surveyJSON = {
         },
         {
           type: "html",
-          name: "concepts_blocks1",
+          name: "concepts_task1",
         },
         {
           type: "text",
-          name: "concepts_blocks1_changes",
+          name: "concepts_task1_changes",
           visible: false
         },
         {
           type: "text",
-          name: "concepts_blocks1_inserted",
+          name: "concepts_task1_result",
           visible: false
         }
       ],

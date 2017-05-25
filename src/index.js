@@ -2,12 +2,12 @@
 // concepts page addtions
 // ----------------------------------------------------------------------------
 
-var workspace_concepts_task1;
+var concepts_task1_workspace;
 
-function changes_concepts_task1(primaryEvent) {
+function concepts_task1_save_changes(primaryEvent) {
   var json_from_event = primaryEvent.toJson();
   // console.log(json_from_event);
-  var saved_json_str = survey.getQuestionByName("concepts_blocks1_changes").value;
+  var saved_json_str = survey.getQuestionByName("concepts_task1_changes").value;
   var json_to_save;
   if (saved_json_str == null) {
     json_to_save = { "changes": [] };
@@ -17,30 +17,30 @@ function changes_concepts_task1(primaryEvent) {
   }
   // console.log(json_to_save);
   json_to_save.changes.push(json_from_event);
-  survey.getQuestionByName("concepts_blocks1_changes").value = JSON.stringify(json_to_save);
+  survey.getQuestionByName("concepts_task1_changes").value = JSON.stringify(json_to_save);
   // console.log(json_to_save);
 }
 
-function save_concepts_task1() {
-  var xml = Blockly.Xml.workspaceToDom(workspace_concepts_task1);
+function concepts_task1_save_result() {
+  var xml = Blockly.Xml.workspaceToDom(concepts_task1_workspace);
   var xml_text = Blockly.Xml.domToText(xml);
-  survey.getQuestionByName("concepts_blocks1_inserted").value = xml_text;
+  survey.getQuestionByName("concepts_task1_result").value = xml_text;
 }
 
-function inject_concepts_task1(question_id) {
+function concepts_task1_inject(question_id) {
   var question_div_name = "#" + question_id;
   var inject_div_name = "blockly_" + question_id;
   $(question_div_name).append("<div id=" + inject_div_name + " class='center-block'  style='height: 600px; width: 1024px;'></div>");
 
   Blockly.pathToBlockly = 'nclblocks/'
-  workspace_concepts_task1 = Blockly.inject(inject_div_name, {
+  concepts_task1_workspace = Blockly.inject(inject_div_name, {
     media: Blockly.pathToBlockly + 'media/',
     toolbox: NclBlocks.defaultToolbox,
     scrollbars: true,
     sounds: true
   });
-  Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(NclBlocks.START_WORKSPACE), workspace_concepts_task1);
-  workspace_concepts_task1.addChangeListener(changes_concepts_task1);
+  Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(NclBlocks.START_WORKSPACE), concepts_task1_workspace);
+  concepts_task1_workspace.addChangeListener(concepts_task1_save_changes);
   window.scrollTo(0, 0);
 }
 
@@ -156,8 +156,8 @@ function inject_ncl_task2(question_id) {
 function onRenderQuestion(target_survey, question_and_html) {
   // console.log(question_and_html);
   switch (question_and_html.question.name) {
-    case "concepts_blocks1":
-      inject_concepts_task1(question_and_html.question.idValue);
+    case "concepts_task1":
+      concepts_task1_inject(question_and_html.question.idValue);
       break;
     case "ncl_code1":
       inject_ncl_task1(question_and_html.question.idValue);
@@ -185,7 +185,7 @@ function onPageChanged(target_survey, old_and_new_page) {
   // console.log(old_and_new_page);
   // console.log(survey);
   if (old_and_new_page.oldCurrentPage.name == "concepts") {
-    save_concepts_task1();
+    concepts_task1_save_result();
   }
 }
 
