@@ -166,7 +166,6 @@ function on_render_question(target_survey, question_and_html) {
       ncl_task2_code(question_and_html.question.idValue);
       break;
   }
-
 }
 
 function on_page_change(target_survey, old_and_new_page) {
@@ -177,10 +176,8 @@ function on_page_change(target_survey, old_and_new_page) {
 }
 
 // ----------------------------------------
-// survey config
+// survey.js config
 // ----------------------------------------
-
-var survey, survey_css;
 
 Survey.surveyLocalization.locales["en"] = {
   requiredError: "Por favor, responda a pergunta.",
@@ -188,6 +185,12 @@ Survey.surveyLocalization.locales["en"] = {
   progressText: "Página {0} de {1}",
 };
 Survey.Survey.cssType = "bootstrap";
+
+// ----------------------------------------
+// survey create
+// ----------------------------------------
+
+var survey, survey_css;
 survey = new Survey.Model(surveyJSON);
 survey_css = {
   // root
@@ -221,7 +224,6 @@ $("#surveyContainer").Survey({
 $("#complete-btn").click(function () {
   survey.doComplete();
 });
-
 if ($('#surveyPageNo').length) {
   for (var i = 0; i < survey.pages.length; i++) {
     $("<option />")
@@ -233,5 +235,4 @@ if ($('#surveyPageNo').length) {
 $("#surveyPageNo").change(function () {
   survey.currentPageNo = this.value;
 });
-
 $("#surveyPageNo").val(2).change();
