@@ -211,6 +211,10 @@ $("#surveyContainer").Survey({
 // survey page jump
 // ----------------------------------------
 
+$("#complete-btn").click(function () {
+  survey.doComplete();
+});
+
 if ($('#surveyPageNo').length) {
   for (var i = 0; i < survey.pages.length; i++) {
     $("<option />")
