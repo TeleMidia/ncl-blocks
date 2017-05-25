@@ -1,37 +1,35 @@
-// ----------------------------------------------------------------------------
+// ----------------------------------------
 // concepts page addtions
-// ----------------------------------------------------------------------------
+// ----------------------------------------
 
 var concepts_task1_workspace;
 
 function concepts_task1_save_changes(primaryEvent) {
   var json_from_event = primaryEvent.toJson();
-  // console.log(json_from_event);
   var saved_json_str = survey.getQuestionByName("concepts_task1_changes").value;
   var json_to_save;
+
   if (saved_json_str == null) {
     json_to_save = { "changes": [] };
   } else {
-    // console.log("stored value=" + saved_json_str);
     json_to_save = JSON.parse(saved_json_str);
   }
-  // console.log(json_to_save);
   json_to_save.changes.push(json_from_event);
   survey.getQuestionByName("concepts_task1_changes").value = JSON.stringify(json_to_save);
-  // console.log(json_to_save);
 }
 
 function concepts_task1_save_result() {
   var xml = Blockly.Xml.workspaceToDom(concepts_task1_workspace);
   var xml_text = Blockly.Xml.domToText(xml);
+
   survey.getQuestionByName("concepts_task1_result").value = xml_text;
 }
 
 function concepts_task1_inject(question_id) {
   var question_div_name = "#" + question_id;
   var inject_div_name = "blockly_" + question_id;
-  $(question_div_name).append("<div id=" + inject_div_name + " class='center-block'  style='height: 600px; width: 1024px;'></div>");
 
+  $(question_div_name).append("<div id=" + inject_div_name + " class='center-block'  style='height: 600px; width: 1024px;'></div>");
   Blockly.pathToBlockly = 'nclblocks/'
   concepts_task1_workspace = Blockly.inject(inject_div_name, {
     media: Blockly.pathToBlockly + 'media/',
@@ -44,9 +42,9 @@ function concepts_task1_inject(question_id) {
   window.scrollTo(0, 0);
 }
 
-// ----------------------------------------------------------------------------
+// ----------------------------------------
 //  page addtions
-// ----------------------------------------------------------------------------
+// ----------------------------------------
 
 function inject_ncl_task1(question_id) {
   var question_div_name = "#" + question_id;
@@ -84,10 +82,9 @@ function inject_ncl_task1(question_id) {
   SyntaxHighlighter.highlight();
 }
 
-// ----------------------------------------------------------------------------
+// ----------------------------------------
 // html page addtions
-// ----------------------------------------------------------------------------
-
+// ----------------------------------------
 
 function inject_ncl_task2(question_id) {
   var question_div_name = "#" + question_id;
@@ -149,12 +146,11 @@ function inject_ncl_task2(question_id) {
   SyntaxHighlighter.highlight();
 }
 
-// ----------------------------------------------------------------------------
-// survey
-// ----------------------------------------------------------------------------
+// ----------------------------------------
+// survey listeners
+// ----------------------------------------
 
 function onRenderQuestion(target_survey, question_and_html) {
-  // console.log(question_and_html);
   switch (question_and_html.question.name) {
     case "concepts_task1":
       concepts_task1_inject(question_and_html.question.idValue);
@@ -169,35 +165,25 @@ function onRenderQuestion(target_survey, question_and_html) {
 
 }
 
-// function onRenderPage(target_survey, page_and_html) {
-//   console.log(page_and_html);
-// }
-
-// function onRenderSurvey(target_survey, survey_and_html) {
-//   console.log(survey_and_html);
-// }
-
-// function onRenderPanel(target_survey, panel_and_html) {
-//   console.log(panel_and_html);
-// }
-
 function onPageChanged(target_survey, old_and_new_page) {
-  // console.log(old_and_new_page);
-  // console.log(survey);
   if (old_and_new_page.oldCurrentPage.name == "concepts") {
     concepts_task1_save_result();
   }
   window.scrollTo(0, 0);
 }
 
-var customSurveyStrings = {
+// ----------------------------------------
+// survey config
+// ----------------------------------------
+
+var survey, survey_css;
+
+Survey.surveyLocalization.locales["en"] = {
   requiredError: "Por favor, responda a pergunta.",
 };
-Survey.surveyLocalization.locales["en"] = customSurveyStrings;
 Survey.Survey.cssType = "bootstrap";
-
-var survey = new Survey.Model(surveyJSON);
-var survey_css = {
+survey = new Survey.Model(surveyJSON);
+survey_css = {
   // root
   "root": "h4 panel panel-default",
   "header": "h3 text-center breadcrumb",
@@ -214,6 +200,16 @@ var survey_css = {
   },
   "navigationButton": "h4 btn btn-primary"
 };
+$("#surveyContainer").Survey({
+  model: survey,
+  css: survey_css,
+  onAfterRenderQuestion: onRenderQuestion,
+  onCurrentPageChanged: onPageChanged
+});
+
+// ----------------------------------------
+// survey page jump
+// ----------------------------------------
 
 if ($('#surveyPageNo').length) {
   for (var i = 0; i < survey.pages.length; i++) {
@@ -223,15 +219,4 @@ if ($('#surveyPageNo').length) {
       .appendTo("#surveyPageNo");
   }
 }
-
-$("#surveyContainer").Survey({
-  model: survey,
-  css: survey_css,
-  onAfterRenderQuestion: onRenderQuestion,
-  // onAfterRenderPage: onRenderPage,
-  // onRenderPanel: onRenderPanel,
-  onCurrentPageChanged: onPageChanged
-  // onAfterRenderSurvey: onRenderSurvey
-});
-
 survey.currentPageNo = 2;
