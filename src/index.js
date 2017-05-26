@@ -26,10 +26,10 @@ function concepts_task1_save_result() {
 }
 
 function concepts_task1_inject(question_id) {
-  var question_div_name = "#" + question_id;
+  var question_div_selector = "#" + question_id;
   var inject_div_name = "blockly_" + question_id;
 
-  $(question_div_name).append("<div id=" + inject_div_name + " class='center-block'  style='height: 600px; width: 1024px;'></div>");
+  $(question_div_selector).append("<div id=" + inject_div_name + " class='center-block'  style='height: 600px; width: 1024px;'></div>");
   Blockly.pathToBlockly = 'nclblocks/'
   concepts_task1_workspace = Blockly.inject(inject_div_name, {
     media: Blockly.pathToBlockly + 'media/',
@@ -47,7 +47,7 @@ function concepts_task1_inject(question_id) {
 // ----------------------------------------
 
 function ncl_task1_code(question_id) {
-  var question_div_name = "#" + question_id;
+  var question_div_selector = "#" + question_id;
   var code =
     `<script type="syntaxhighlighter" class="brush: xml; toolbar: false;">
   <![CDATA[
@@ -78,7 +78,7 @@ function ncl_task1_code(question_id) {
     </body>
   </ncl>
   ]]></script>`;
-  $(question_div_name).append(code);
+  $(question_div_selector).append(code);
   SyntaxHighlighter.highlight();
 }
 
@@ -87,7 +87,7 @@ function ncl_task1_code(question_id) {
 // ----------------------------------------
 
 function ncl_task2_code(question_id) {
-  var question_div_name = "#" + question_id;
+  var question_div_selector = "#" + question_id;
   var code =
     `<script type="syntaxhighlighter" class="brush: xml; toolbar: false; highlight: [11,12,13,14,15,16,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48]">
   <![CDATA[
@@ -142,9 +142,30 @@ function ncl_task2_code(question_id) {
     </body>
   </ncl>
   ]]></script>`;
-  $(question_div_name).append(code);
+  $(question_div_selector).append(code);
   SyntaxHighlighter.highlight();
 }
+
+var msg_empty_block_task = "Por favor, preencha com blocos.";
+
+function validate_questions(survey, options) {
+  if (survey.currentPage.name == "concepts") {
+    if (concepts_task1_workspace.getAllBlocks().length) {
+      concepts_task1_save_result();
+    } else {
+      var block = survey.getQuestionByName("concepts_task1");
+      var question_div_selector = "#" + block.idValue;
+      var error_div_id = block.idValue + "_error";
+      var error_div_selector = "#" + error_div_id;
+      if (!$(error_div_selector).length) {
+        $(question_div_selector).prepend("<div id='" + error_div_id + "' class='label label-danger'>" + msg_empty_block_task + "</div>");
+      }
+      return true;
+    }
+  }
+  options.complete();
+}
+
 
 // ----------------------------------------
 // survey listeners
@@ -165,13 +186,6 @@ function on_render_question(target_survey, question_and_html) {
     case "ncl_code2":
       ncl_task2_code(question_and_html.question.idValue);
       break;
-  }
-}
-
-function on_page_change(target_survey, old_and_new_page) {
-  if (old_and_new_page.oldCurrentPage.name == "concepts") {
-    concepts_task1_save_result();
-    window.scrollTo(0, 0);
   }
 }
 
@@ -214,7 +228,7 @@ $("#surveyContainer").Survey({
   css: survey_css,
   onAfterRenderPage: on_render_page,
   onAfterRenderQuestion: on_render_question,
-  onCurrentPageChanged: on_page_change  
+  onServerValidateQuestions: validate_questions
 });
 
 // ----------------------------------------
