@@ -5,8 +5,8 @@
 var concepts_task1_workspace;
 
 function concepts_task1_save_changes(primaryEvent) {
-  var json_from_event = primaryEvent.toJson();
   var saved_json_str = survey.getQuestionByName("concepts_task1_changes").value;
+  var json_from_event = primaryEvent.toJson();
   var json_to_save;
 
   if (saved_json_str == null) {
@@ -25,7 +25,8 @@ function concepts_task1_save_result() {
   survey.getQuestionByName("concepts_task1_result").value = xml_text;
 }
 
-function concepts_task1_inject(question_id) {
+function concepts_task1_inject() {
+  var question_id = survey.getQuestionByName("concepts_task1").idValue;
   var question_div_selector = "#" + question_id;
   var inject_div_name = "blockly_" + question_id;
 
@@ -46,7 +47,8 @@ function concepts_task1_inject(question_id) {
 //  ncl page functions
 // ----------------------------------------
 
-function ncl_task1_code(question_id) {
+function ncl_task1_code() {
+  var question_id = survey.getQuestionByName("ncl_code1").idValue;
   var question_div_selector = "#" + question_id;
   var code =
     `<script type="syntaxhighlighter" class="brush: xml; toolbar: false;">
@@ -82,7 +84,8 @@ function ncl_task1_code(question_id) {
   SyntaxHighlighter.highlight();
 }
 
-function ncl_task2_code(question_id) {
+function ncl_task2_code() {
+  var question_id = survey.getQuestionByName("ncl_code2").idValue;
   var question_div_selector = "#" + question_id;
   var code =
     `<script type="syntaxhighlighter" class="brush: xml; toolbar: false; highlight: [11,12,13,14,15,16,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48]">
@@ -180,13 +183,13 @@ function on_render_page(target_survey, page_and_html) {
 function on_render_question(target_survey, question_and_html) {
   switch (question_and_html.question.name) {
     case "concepts_task1":
-      concepts_task1_inject(question_and_html.question.idValue);
+      concepts_task1_inject();
       break;
     case "ncl_code1":
-      ncl_task1_code(question_and_html.question.idValue);
+      ncl_task1_code();
       break;
     case "ncl_code2":
-      ncl_task2_code(question_and_html.question.idValue);
+      ncl_task2_code();
       break;
   }
 }
