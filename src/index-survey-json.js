@@ -1,4 +1,4 @@
-var surveyJSON = {
+var _surveyJSON = {
   completeText: "Finalizar estudo",
   completedHtml: "<br><br><br><br><br><br><br><br><br><br><br><br><div class='alert alert-success' role='alert' style='text-align:center;'> <h2>Muito bem!!!Obrigado por sua participação em nosso estudo.</h2><span class='glyphicon glyphicon-thumbs-up' style='font-size: 75px;' aria-hidden='true'>  </span></div>",
   focusFirstQuestionAutomatic: false,
