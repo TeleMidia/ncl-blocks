@@ -43,7 +43,7 @@ function concepts_task1_inject(question_id) {
 }
 
 // ----------------------------------------
-//  page addtions
+//  ncl page functions
 // ----------------------------------------
 
 function ncl_task1_code(question_id) {
@@ -81,10 +81,6 @@ function ncl_task1_code(question_id) {
   $(question_div_selector).append(code);
   SyntaxHighlighter.highlight();
 }
-
-// ----------------------------------------
-// html page addtions
-// ----------------------------------------
 
 function ncl_task2_code(question_id) {
   var question_div_selector = "#" + question_id;
@@ -146,9 +142,20 @@ function ncl_task2_code(question_id) {
   SyntaxHighlighter.highlight();
 }
 
+
+// ----------------------------------------
+// html page functions
+// ----------------------------------------
+
+
+
+// ----------------------------------------
+// survey listeners
+// ----------------------------------------
+
 var msg_empty_block_task = "Por favor, preencha com blocos.";
 
-function validate_questions(survey, options) {
+function on_validate_questions(survey, options) {
   if (survey.currentPage.name == "concepts") {
     if (concepts_task1_workspace.getAllBlocks().length) {
       concepts_task1_save_result();
@@ -165,11 +172,6 @@ function validate_questions(survey, options) {
   }
   options.complete();
 }
-
-
-// ----------------------------------------
-// survey listeners
-// ----------------------------------------
 
 function on_render_page(target_survey, page_and_html) {
   window.scrollTo(0, 0);
@@ -228,7 +230,7 @@ $("#surveyContainer").Survey({
   css: survey_css,
   onAfterRenderPage: on_render_page,
   onAfterRenderQuestion: on_render_question,
-  onServerValidateQuestions: validate_questions
+  onServerValidateQuestions: on_validate_questions
 });
 
 // ----------------------------------------
