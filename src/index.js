@@ -47,7 +47,7 @@ function concepts_task1_inject() {
 //  ncl page functions
 // ----------------------------------------
 
-function ncl_task1_code() {
+function ncl_code1_inject() {
   var question_id = survey.getQuestionByName("ncl_code1").idValue;
   var question_div_selector = "#" + question_id;
   var code =
@@ -84,7 +84,7 @@ function ncl_task1_code() {
   SyntaxHighlighter.highlight();
 }
 
-function ncl_task2_code() {
+function ncl_code2_inject() {
   var question_id = survey.getQuestionByName("ncl_code2").idValue;
   var question_div_selector = "#" + question_id;
   var code =
@@ -186,10 +186,10 @@ function on_render_question(target_survey, question_and_html) {
       concepts_task1_inject();
       break;
     case "ncl_code1":
-      ncl_task1_code();
+      ncl_code1_inject();
       break;
     case "ncl_code2":
-      ncl_task2_code();
+      ncl_code2_inject();
       break;
   }
 }
