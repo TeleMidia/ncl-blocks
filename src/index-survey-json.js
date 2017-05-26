@@ -36,11 +36,11 @@ var _surveyJSON = {
     {
       elements: [
         {
-          type: "rating",
+          type: "radiogroup",
           isRequired: true,
           name: "profile_q1",
           title: "Qual seu conhecimento no uso da linguagem NCL?",
-          rateValues: [
+          choices: [
             {
               value: "0",
               text: {
@@ -85,12 +85,12 @@ var _surveyJSON = {
           ]
         },
         {
-          type: "rating",
+          type: "radiogroup",
           isRequired: true,
           name: "profile_q2",
           title: "Quantas aplicações NCL você desenvolveu?",
           visibleIf: "{profile_q1} > 0",
-          rateValues: [
+          choices: [
             {
               value: "0",
               text: {
@@ -130,11 +130,11 @@ var _surveyJSON = {
           ]
         },
         {
-          type: "rating",
+          type: "radiogroup",
           isRequired: true,
           name: "profile_q3",
           title: "Qual seu conhecimento no uso de HTML/JavaScript?",
-          rateValues: [
+          choices: [
             {
               value: "0",
               text: {
@@ -179,12 +179,12 @@ var _surveyJSON = {
           ]
         },
         {
-          type: "rating",
+          type: "radiogroup",
           isRequired: true,
           name: "profile_q4",
           title: "Quantas aplicações HTML/JavaScript você desenvolveu?",
           visibleIf: "{profile_q3} > 0",
-          rateValues: [
+          choices: [
             {
               value: "0",
               text: {
