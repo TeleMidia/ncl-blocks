@@ -73,11 +73,11 @@ function on_validate_questions(survey, options) {
       concepts_task1_save_result();
     } else {
       var block = _survey.getQuestionByName("concepts_task1");
-      var question_div_selector = "#" + block.idValue;
+      var block_div_selector = "#blockly_" + block.idValue;
       var error_div_id = block.idValue + "_error";
       var error_div_selector = "#" + error_div_id;
       if (!$(error_div_selector).length) {
-        $(question_div_selector).prepend("<div id='" + error_div_id + "' class='label label-danger'>" + _msg_empty_block_task + "</div>");
+        $(block_div_selector).prepend("<div id='" + error_div_id + "' class='label label-danger'>" + _msg_empty_block_task + "</div>");
       }
       return true;
     }
@@ -134,7 +134,7 @@ function concepts_task1_inject() {
   var question_div_selector = "#" + question_id;
   var inject_div_name = "blockly_" + question_id;
 
-  $(question_div_selector).append("<div id=" + inject_div_name + " class='center-block'  style='height: 600px; width: 1024px;'></div>");
+  $(question_div_selector).append("<div id=" + inject_div_name + " class='center-block' style='height: 600px; width: 1024px;'></div>");
   Blockly.pathToBlockly = 'nclblocks/'
   _concepts_task1_workspace = Blockly.inject(inject_div_name, {
     media: Blockly.pathToBlockly + 'media/',
