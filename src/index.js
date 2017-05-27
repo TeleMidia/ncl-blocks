@@ -1,4 +1,10 @@
 // ----------------------------------------
+// nclblocks config
+// ----------------------------------------
+
+Blockly.pathToBlockly = 'nclblocks/';
+
+// ----------------------------------------
 // survey config
 // ----------------------------------------
 
@@ -138,7 +144,6 @@ function concepts_task1_inject() {
   var inject_div_name = "blockly_" + question_id;
 
   $(question_div_selector).append("<div id=" + inject_div_name + " class='center-block' style='height: 600px; width: 1024px;'></div>");
-  Blockly.pathToBlockly = 'nclblocks/'
   _concepts_task1_workspace = Blockly.inject(inject_div_name, {
     media: Blockly.pathToBlockly + 'media/',
     toolbox: NclBlocks.defaultToolbox,
@@ -158,7 +163,6 @@ function concepts_blocks1_inject() {
 
 
   $(question_div_selector).append("<div id=" + inject_div_name + " class='center-block' style='height: 600px; width: 1024px;'></div>");
-  Blockly.pathToBlockly = 'nclblocks/'
 
   workspace = Blockly.inject(inject_div_name, {
     media: Blockly.pathToBlockly + 'media/',
