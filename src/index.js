@@ -123,7 +123,7 @@ function concepts_blocks1_inject() {
     `<xml id="startBlocks" style="display: none">
     <block type="media" inline="false" x="20" y="20"></block>
     </xml>`;
-  nclblocks_inject_as_child_div(question_id, "", blocks1, true);
+  nclblocks_inject_as_child_div(question_id, "", blocks1, true, false);
 }
 
 function concepts_task1_save_changes(primaryEvent) {
@@ -149,7 +149,7 @@ function concepts_task1_save_result() {
 function concepts_task1_inject() {
 
   var question_id = _survey.getQuestionByName("concepts_task1").idValue;
-  _concepts_task1_workspace = nclblocks_inject_as_child_div(question_id, NclBlocks.defaultToolbox, "", false);
+  _concepts_task1_workspace = nclblocks_inject_as_child_div(question_id, NclBlocks.defaultToolbox, "", false, true);
   _concepts_task1_workspace.addChangeListener(concepts_task1_save_changes);
 }
 

@@ -149,7 +149,7 @@ function nclblocks_use_body() {
     </xml>`;
 }
 
-function nclblocks_inject_as_child_div(parend_div_id, toolbox, start_workspace, locked) {
+function nclblocks_inject_as_child_div(parend_div_id, toolbox, start_workspace, readOnly, scrollbars) {
   var inject_div_name = "blockly_" + parend_div_id;
   var workspace;
 
@@ -178,18 +178,12 @@ function nclblocks_inject_as_child_div(parend_div_id, toolbox, start_workspace, 
   workspace = Blockly.inject(inject_div_name, {
     media: Blockly.pathToBlockly + 'media/',
     toolbox: toolbox,
-    scrollbars: true,
+    scrollbars: scrollbars,
+    readOnly: readOnly,
     sounds: true
   });
   Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(start_workspace), workspace);
 
-  if (locked) {
-    var blocks = workspace.getAllBlocks();
-    for (var i = 0; i < blocks.length; i++) {
-      blocks[i].setEditable(false);
-      blocks[i].setMovable(false);
-    }
-  }
   onresize();
   Blockly.svgResize(workspace);
 
