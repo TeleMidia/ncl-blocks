@@ -138,6 +138,8 @@ NclBlocks.defaultToolbox =
   </category>
 </xml>`;
 
+// utils functions
+
 function ncl_blocks_use_body() {
   Blockly.BlockSvg.START_HAT = false;
   NclBlocks.USE_BODY = true;
@@ -146,6 +148,54 @@ function ncl_blocks_use_body() {
     <block type="body" inline="false" x="20" y="20"></block>
     </xml>`;
 }
+
+function ncl_blocks_inject_as_child_div(parend_div_id, toolbox, start_workspace, locked) {
+  var inject_div_name = "blockly_" + parend_div_id;
+  var workspace;
+
+  // create div and configure auto resize
+  var blocklyArea = document.getElementById(parend_div_id);
+  var html_to_insert = "<div id=" + inject_div_name + " class='center-block' style='height: 600px;'></div>";
+  blocklyArea.innerHTML += html_to_insert;
+  var padding = window.getComputedStyle(blocklyArea, null).getPropertyValue('padding-right');
+  var blocklyDiv = document.getElementById(inject_div_name);
+  var onresize = function (e) {
+    var element = blocklyArea;
+    var x = 0;
+    var y = 0;
+    do {
+      x += element.offsetLeft;
+      y += element.offsetTop;
+      element = element.offsetParent;
+    } while (element);
+    blocklyDiv.style.left = x + 'px';
+    blocklyDiv.style.top = y + 'px';
+    blocklyDiv.style.width = blocklyArea.offsetWidth - 2 * padding + 'px';
+  };
+  window.addEventListener('resize', onresize, false);
+  
+  // inject
+  workspace = Blockly.inject(inject_div_name, {
+    media: Blockly.pathToBlockly + 'media/',
+    toolbox: toolbox,
+    scrollbars: true,
+    sounds: true
+  });
+  Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(start_workspace), workspace);
+
+  if (locked) {
+    var blocks = workspace.getAllBlocks();
+    for (var i = 0; i < blocks.length; i++) {
+      blocks[i].setEditable(false);
+      blocks[i].setMovable(false);
+    }
+  }
+  onresize();
+  Blockly.svgResize(workspace);
+
+  return workspace;
+}
+
 
 // body
 
