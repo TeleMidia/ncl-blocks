@@ -139,71 +139,20 @@ function concepts_task1_save_result() {
 }
 
 function concepts_task1_inject() {
+
   var question_id = _survey.getQuestionByName("concepts_task1").idValue;
-  var question_div_selector = "#" + question_id;
-  var inject_div_name = "blockly_" + question_id;
-
-  $(question_div_selector).append("<div id=" + inject_div_name + " class='center-block' style='height: 600px; width: 1024px;'></div>");
-  _concepts_task1_workspace = Blockly.inject(inject_div_name, {
-    media: Blockly.pathToBlockly + 'media/',
-    toolbox: NclBlocks.defaultToolbox,
-    scrollbars: true,
-    sounds: true
-  });
-
-  Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(NclBlocks.START_WORKSPACE), _concepts_task1_workspace);
+  _concepts_task1_workspace = ncl_blocks_inject_as_child_div(question_id, NclBlocks.defaultToolbox, "", false);
   _concepts_task1_workspace.addChangeListener(concepts_task1_save_changes);
 }
 
 function concepts_blocks1_inject() {
   var question_id = _survey.getQuestionByName("concepts_blocks_intro1").idValue;
-  var question_div_selector = "#" + question_id;
-  var inject_div_name = "blockly_" + question_id;
-  var inject_area_name = "blockly_area_" + question_id;
-  var workspace, blocks1, blocks;
-
-
-  $(question_div_selector).append("<div id=" + inject_div_name + " class='center-block' style='height: 600px;'></div>");
-
-  var blocklyArea = document.getElementById(question_id);
-  var padding = window.getComputedStyle(blocklyArea, null).getPropertyValue('padding-right');
-  console.log(padding);
-  var blocklyDiv = document.getElementById(inject_div_name);
-  var onresize = function (e) {
-    var element = blocklyArea;
-    var x = 0;
-    var y = 0;
-    do {
-      x += element.offsetLeft;
-      y += element.offsetTop;
-      element = element.offsetParent;
-    } while (element);
-    blocklyDiv.style.left = x + 'px';
-    blocklyDiv.style.top = y + 'px';
-    console.log(blocklyArea.offsetWidth);
-    blocklyDiv.style.width = blocklyArea.offsetWidth - 2*padding + 'px';
-  };
-  window.addEventListener('resize', onresize, false);
-  workspace = Blockly.inject(inject_div_name, {
-    media: Blockly.pathToBlockly + 'media/',
-    toolbox: "",
-    scrollbars: true,
-    sounds: true
-  });
-  onresize();
-  Blockly.svgResize(workspace);
-
-  blocks1 =
+  var blocks1 =
     `<xml id="startBlocks" style="display: none">
     <block type="media" inline="false" x="20" y="20"></block>
     </xml>`;
 
-  Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(blocks1), workspace);
-  blocks = workspace.getAllBlocks();
-  for (var i = 0; i < blocks.length; i++) {
-    blocks[i].setEditable(false);
-    blocks[i].setMovable(false);
-  }
+  ncl_blocks_inject_as_child_div(question_id, "", blocks1, true);
 }
 
 // ----------------------------------------
