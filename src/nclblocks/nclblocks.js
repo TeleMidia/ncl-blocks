@@ -1,7 +1,5 @@
 goog.require('Blockly.Blocks');
 
-Blockly.BlockSvg.START_HAT = true;
-
 NclBlocks = {};
 NclBlocks.Msg = {};
 NclBlocks.Icons = {};
@@ -59,7 +57,6 @@ NclBlocks.Msg.PAUSE = "pause"
 NclBlocks.Msg.RESUME = "resuma"
 NclBlocks.Msg.SET = "atribua"
 
-
 // icons
 
 NclBlocks.Icons.video = 'media/icon-video.png';
@@ -83,9 +80,8 @@ NclBlocks.Icons.pause = 'media/icon-bind-pause.png';
 NclBlocks.Icons.resume = 'media/icon-bind-resume.png';
 NclBlocks.Icons.set = 'media/icon-bind-set.png';
 
-// configuration
+// colours
 
-NclBlocks.USE_BODY = false;
 NclBlocks.USE_CHECK = false;
 NclBlocks.BODY_COLOUR = 20;
 NclBlocks.MEDIA_COLOUR = 100;
@@ -95,8 +91,12 @@ NclBlocks.LINK_COLOUR = 260;
 NclBlocks.PORT_COLOUR = 260;
 NclBlocks.CONDITION_COLOUR = 280;
 NclBlocks.ACTION_COLOUR = 230;
-NclBlocks.START_WORKSPACE = "";
 
+// configuration
+
+Blockly.BlockSvg.START_HAT = true;
+NclBlocks.USE_BODY = false;
+NclBlocks.START_WORKSPACE = "";
 NclBlocks.defaultToolbox =
   `<xml id="toolbox" style="display: none">
   <category name="`+ NclBlocks.Msg.MEDIA + `">
@@ -138,8 +138,8 @@ NclBlocks.defaultToolbox =
   </category>
 </xml>`;
 
-function useNclBlocksBody() {
-  Blockly.BlockSvg.START_HAT = true;
+function ncl_blocks_use_body() {
+  Blockly.BlockSvg.START_HAT = false;
   NclBlocks.USE_BODY = true;
   NclBlocks.START_WORKSPACE =
     `<xml id="startBlocks" style="display: none">
