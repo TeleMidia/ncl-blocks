@@ -91,6 +91,9 @@ function on_render_page(target_survey, page_and_html) {
 
 function on_render_question(target_survey, question_and_html) {
   switch (question_and_html.question.name) {
+    case "concepts_blocks_intro1":
+      concepts_blocks1_inject();
+      break;
     case "concepts_task1":
       concepts_task1_inject();
       break;
@@ -142,10 +145,39 @@ function concepts_task1_inject() {
     scrollbars: true,
     sounds: true
   });
-  
+
   Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(NclBlocks.START_WORKSPACE), _concepts_task1_workspace);
   _concepts_task1_workspace.addChangeListener(concepts_task1_save_changes);
-  window.scrollTo(0, 0);
+}
+
+function concepts_blocks1_inject() {
+  var question_id = _survey.getQuestionByName("concepts_blocks_intro1").idValue;
+  var question_div_selector = "#" + question_id;
+  var inject_div_name = "blockly_" + question_id;
+  var workspace, blocks1, blocks;
+
+
+  $(question_div_selector).append("<div id=" + inject_div_name + " class='center-block' style='height: 600px; width: 1024px;'></div>");
+  Blockly.pathToBlockly = 'nclblocks/'
+
+  workspace = Blockly.inject(inject_div_name, {
+    media: Blockly.pathToBlockly + 'media/',
+    toolbox: "",
+    scrollbars: true,
+    sounds: true
+  });
+
+  blocks1 =
+    `<xml id="startBlocks" style="display: none">
+    <block type="media" inline="false" x="20" y="20"></block>
+    </xml>`;
+
+  Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(blocks1), workspace);
+  blocks = workspace.getAllBlocks();
+  for (var i = 0; i < blocks.length; i++) {
+    blocks[i].setEditable(false);
+    blocks[i].setMovable(false);
+  }
 }
 
 // ----------------------------------------

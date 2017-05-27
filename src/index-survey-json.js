@@ -239,6 +239,11 @@ var _surveyJSON = {
         },
         {
           type: "html",
+          name: "concepts_blocks_intro1",
+          html: "<div class='text-justify'> Segue o uso de uma mídia como um bloco. </div>"
+        },
+        {
+          type: "html",
           name: "concepts_task1",
         },
         {
