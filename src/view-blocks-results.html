@@ -34,38 +34,30 @@
     // ---------------------------------------- 
     // blockly
     // ---------------------------------------- 
-    var inject_div_name = "blocklyDiv";
-    $('#content').append("<div id='" + inject_div_name + "'style='height: 768px; width: 1024px;'></div>");
-
     Blockly.pathToBlockly = 'nclblocks/'
-    var workspace = Blockly.inject(inject_div_name, {
-      media: Blockly.pathToBlockly + 'media/',
-      toolbox: "",
-      scrollbars: true,
-      sounds: true
-    });
-    Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(NclBlocks.START_WORKSPACE), workspace);
+    var _workspace = nclblocks_inject("content", "", "", false, false, "800px");
 
     // ---------------------------------------- 
     // request
     // ---------------------------------------- 
     // wget dxsurvey.com/api/MySurveys/getSurveyResults/59bd2657-93ac-492c-8dd5-134a10ebd69a?accessKey=d72526e70b814a3d8f918b60b94dafe4 -O result.json
-    var results_data
+    var _results_data
+    
     $.get("http://dxsurvey.com/api/MySurveys/getSurveyResults/59bd2657-93ac-492c-8dd5-134a10ebd69a?accessKey=d72526e70b814a3d8f918b60b94dafe4", function (data) {
-      results_data = data.Data;
-      // console.log(results_data);
-      for (var i = 0; i < results_data.length; i++) {
+      _results_data = data.Data;
+      // console.log(_results_data);
+      for (var i = 0; i < _results_data.length; i++) {
         $("<option />").attr("value", i).html(i).appendTo("#result_number");
       }
       $('#result_number').val('0').change();
     });
     $("#result_number").change(function () {
       var select_value = parseInt($(this).val());
-      // console.log(results_data);
-      var saved_workspace = results_data[select_value].concepts_task1_result;
-      workspace.clear();
-      Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(saved_workspace), workspace);
-      var blocks = workspace.getAllBlocks();
+      // console.log(_results_data);
+      var saved_workspace = _results_data[select_value].concepts_task1_result;
+      _workspace.clear();
+      Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(saved_workspace), _workspace);
+      var blocks = _workspace.getAllBlocks();
       for (var i = 0; i < blocks.length; i++) {
         blocks[i].setEditable(false);
         blocks[i].setMovable(false);
@@ -75,34 +67,34 @@
     // ---------------------------------------- 
     // show changes button
     // ---------------------------------------- 
-
-    var run_event_interval_index = 0;
-    var run_event_interval = function (index) {
-      var result = JSON.parse(results_data[index].concepts_task1_changes);
-      if (run_event_interval_index >= result.changes.length) {
-        clearInterval(run_event_interval);
+    var _run_event_frequency = 100;
+    var _run_event_interval_index = 0;
+    var _run_event_interval = function (index) {
+      var result = JSON.parse(_results_data[index].concepts_task1_changes);
+      if (_run_event_interval_index >= result.changes.length) {
+        clearInterval(_run_event_interval);
         return;
       }
-      var json = result.changes[run_event_interval_index];
+      var json = result.changes[_run_event_interval_index];
       // console.log(json);
-      // console.log(run_event_interval_index);
-      var event = Blockly.Events.fromJson(json, workspace);
+      // console.log(_run_event_interval_index);
+      var event = Blockly.Events.fromJson(json, _workspace);
       event.run(true);
-      var blocks = workspace.getAllBlocks();
+      var blocks = _workspace.getAllBlocks();
       for (var i = 0; i < blocks.length; i++) {
         blocks[i].setEditable(false);
         blocks[i].setMovable(false);
       }
-      run_event_interval_index++;
+      _run_event_interval_index++;
     }
 
     $("#changes").click(function () {
-      if (results_data == null) return;
+      if (_results_data == null) return;
       var index = parseInt(($("#result_number option:selected").val()));
-      workspace.clear();
-      run_event_interval_index = 0;
-      clearInterval(run_event_interval);
-      setInterval(run_event_interval, 200, index);
+      _workspace.clear();
+      _run_event_interval_index = 0;
+      clearInterval(_run_event_interval);
+      setInterval(_run_event_interval, _run_event_frequency, index);
     });
   </script>
 </body>
