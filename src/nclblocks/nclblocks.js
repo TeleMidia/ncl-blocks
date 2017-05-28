@@ -149,13 +149,13 @@ function nclblocks_use_body() {
     </xml>`;
 }
 
-function nclblocks_inject(parend_div_id, toolbox, start_workspace, readOnly, scrollbars) {
+function nclblocks_inject(parend_div_id, toolbox, start_workspace, readOnly, scrollbars, height) {
   var inject_div_name = "blockly_" + parend_div_id;
   var workspace;
 
   // create div and configure auto resize
   var blocklyArea = document.getElementById(parend_div_id);
-  var html_to_insert = "<div id=" + inject_div_name + " class='center-block' style='height: 600px;'></div>";
+  var html_to_insert = "<div id=" + inject_div_name + " class='center-block' style='height: "+height+";'></div>";
   blocklyArea.innerHTML += html_to_insert;
   var padding = window.getComputedStyle(blocklyArea, null).getPropertyValue('padding-right');
   var blocklyDiv = document.getElementById(inject_div_name);

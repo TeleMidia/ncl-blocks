@@ -119,11 +119,12 @@ function on_render_question(target_survey, question_and_html) {
 
 function concepts_blocks1_inject() {
   var question_id = _survey.getQuestionByName("concepts_blocks_intro1").idValue;
+  var height = 200;
   var blocks1 =
     `<xml id="startBlocks" style="display: none">
-    <block type="media" inline="false" x="20" y="20"></block>
+    <block type="media" inline="false" x="`+ height * 2 + `" y="` + height / 2 + `"></block>
     </xml>`;
-  nclblocks_inject(question_id, "", blocks1, true, false);
+  nclblocks_inject(question_id, "", blocks1, true, false, height + "px");
 }
 
 function concepts_task1_save_changes(primaryEvent) {
@@ -149,7 +150,7 @@ function concepts_task1_save_result() {
 function concepts_task1_inject() {
 
   var question_id = _survey.getQuestionByName("concepts_task1").idValue;
-  _concepts_task1_workspace = nclblocks_inject(question_id, NclBlocks.defaultToolbox, "", false, true);
+  _concepts_task1_workspace = nclblocks_inject(question_id, NclBlocks.defaultToolbox, "", false, true, "800px");
   _concepts_task1_workspace.addChangeListener(concepts_task1_save_changes);
 }
 
