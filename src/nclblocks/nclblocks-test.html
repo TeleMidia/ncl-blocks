@@ -20,17 +20,8 @@
     <br><br><br><br>
   </div>
   <script>
-    var inject_div_name = "blocklyDiv";
-    $('#content').append("<div id='" + inject_div_name + "'style='height: 768px; width: 1024px;'></div>");
-
     Blockly.pathToBlockly = './'
-    workspace = Blockly.inject(inject_div_name, {
-      media: Blockly.pathToBlockly + 'media/',
-      toolbox: NclBlocks.defaultToolbox,
-      scrollbars: true,
-      sounds: true
-    });
-    Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(NclBlocks.START_WORKSPACE), workspace);
+    var _workspace = nclblocks_inject("content", NclBlocks.defaultToolbox, "", false, true, "800px");
   </script>
 
 </body>
