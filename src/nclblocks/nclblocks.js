@@ -149,7 +149,7 @@ function nclblocks_use_body() {
     </xml>`;
 }
 
-function nclblocks_inject_as_child_div(parend_div_id, toolbox, start_workspace, readOnly, scrollbars) {
+function nclblocks_inject(parend_div_id, toolbox, start_workspace, readOnly, scrollbars) {
   var inject_div_name = "blockly_" + parend_div_id;
   var workspace;
 
