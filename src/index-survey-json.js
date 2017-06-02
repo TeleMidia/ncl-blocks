@@ -267,7 +267,7 @@ var _surveyJSON = {
               type: "radiogroup",
               isRequired: true,
               name: "ncl_feedback_q1",
-              title: "A NCL estendida permite realizar mais facilmente o desenvolmento de aplicações multimodais",
+              title: "A NCL estendida permite realizar mais facilmente o desenvolmento de aplicações multimodais?",
               choices: ["bastante improvável", "muito improvável", "pouco improvável", "indiferente", "pouco provável", "muito provável", "bastante provável"]
 
             },
@@ -355,7 +355,7 @@ var _surveyJSON = {
               type: "radiogroup",
               isRequired: true,
               name: "html_feedback_q1",
-              title: "A HTML/JavaScrip estendida permite realizar mais facilmente o desenvolmento de aplicações multimodais",
+              title: "A HTML/JavaScrip estendida permite realizar mais facilmente o desenvolmento de aplicações multimodais?",
               choices: ["bastante improvável", "muito improvável", "pouco improvável", "indiferente", "pouco provável", "muito provável", "bastante provável"]
             },
             {
