@@ -130,50 +130,63 @@ function on_render_question(target_survey, question_and_html) {
 
 function concepts_blocks1_inject() {
   var question_id = _survey.getQuestionByName("concepts_blocks_intro1").idValue;
-  var height = 200;
+  var height_padding = 30;
+  var height_one_block = 131;
+  var blocks_len = 3;
+  function hight_by_level(level) {
+    if (!level)
+      return height_padding;
+    else
+      return height_padding * (1+level) + height_one_block * level;
+  }
+  var height = hight_by_level(blocks_len);
+
   var blocks1 =
-    `<xml id="startBlocks" style="display: none">
-    <block type="media" inline="false" x="`+ height * 2 + `" y="` + height / 2 + `"></block>
-    </xml>`;
+    `<xml xmlns="http://www.w3.org/1999/xhtml">
+    <block type="media" id="A(0bL5~#01?,|I,_x!OI" x="50" y="` + hight_by_level(0) + `"><value name="src"><block type="video" id="WzAnP=#ds8Ad/y^}@~J@"><mutation items="2"></mutation><field name="begin">0</field><field name="end">0</field><field name="begin">0</field><field name="end">0</field></block></value></block><block type="media" id="wdGd9(6#Xr^O@H#.jz;y" x="50" y="` + hight_by_level(1) + `"><value name="src"><block type="video" id="Qk)7lfH.YikoVFX5QGu2"><mutation items="2"></mutation><field name="begin">0</field><field name="end">0</field><field name="begin">0</field><field name="end">0</field></block></value></block><block type="media" id="xn(j{h#N$CF+ti?8BHvP" x="50" y="` + hight_by_level(2) + `"><value name="src"><block type="video" id="J_bVMCx=VUhU{:@+90+s"><mutation items="2"></mutation><field name="begin">0</field><field name="end">0</field><field name="begin">0</field><field name="end">0</field></block></value></block>`;
   nclblocks_inject(question_id, "", blocks1, true, false, height + "px");
 }
 
 function concepts_blocks2_inject() {
   var question_id = _survey.getQuestionByName("concepts_blocks_intro2").idValue;
-  var height = 200;
+  var height = 150;
+  var origin = 50;
   var blocks1 =
-    `<xml id="startBlocks" style="display: none">
-    <block type="media" inline="false" x="`+ height * 2 + `" y="` + height / 2 + `"></block>
+    `<xml xmlns="http://www.w3.org/1999/xhtml">
+    <block type="media" id="KZ[g}J_gz%iQCj#u(I:P" x="` + origin + `" y="` + origin + `"><value name="src"><block type="image" id="LHprn9YiDsg/Nlglks0f"></block></value></block>
     </xml>`;
   nclblocks_inject(question_id, "", blocks1, true, false, height + "px");
 }
 
 function concepts_blocks3_inject() {
   var question_id = _survey.getQuestionByName("concepts_blocks_intro3").idValue;
-  var height = 200;
+  var height = 150;
+  var origin = 50;
   var blocks1 =
-    `<xml id="startBlocks" style="display: none">
-    <block type="media" inline="false" x="`+ height * 2 + `" y="` + height / 2 + `"></block>
+    `<xml xmlns="http://www.w3.org/1999/xhtml">
+    <block type="media" id="KZ[g}J_gz%iQCj#u(I:P" x="` + origin + `" y="` + origin + `"><value name="src"><block type="image" id="LHprn9YiDsg/Nlglks0f"></block></value></block>
     </xml>`;
   nclblocks_inject(question_id, "", blocks1, true, false, height + "px");
 }
 
 function concepts_blocks4_inject() {
   var question_id = _survey.getQuestionByName("concepts_blocks_intro4").idValue;
-  var height = 200;
+  var height = 150;
+  var origin = 50;
   var blocks1 =
-    `<xml id="startBlocks" style="display: none">
-    <block type="media" inline="false" x="`+ height * 2 + `" y="` + height / 2 + `"></block>
+    `<xml xmlns="http://www.w3.org/1999/xhtml">
+    <block type="media" id="KZ[g}J_gz%iQCj#u(I:P" x="` + origin + `" y="` + origin + `"><value name="src"><block type="image" id="LHprn9YiDsg/Nlglks0f"></block></value></block>
     </xml>`;
   nclblocks_inject(question_id, "", blocks1, true, false, height + "px");
 }
 
 function concepts_blocks5_inject() {
   var question_id = _survey.getQuestionByName("concepts_blocks_intro5").idValue;
-  var height = 200;
+  var height = 150;
+  var origin = 50;
   var blocks1 =
-    `<xml id="startBlocks" style="display: none">
-    <block type="media" inline="false" x="`+ height * 2 + `" y="` + height / 2 + `"></block>
+    `<xml xmlns="http://www.w3.org/1999/xhtml">
+    <block type="media" id="KZ[g}J_gz%iQCj#u(I:P" x="` + origin + `" y="` + origin + `"><value name="src"><block type="image" id="LHprn9YiDsg/Nlglks0f"></block></value></block>
     </xml>`;
   nclblocks_inject(question_id, "", blocks1, true, false, height + "px");
 }
@@ -196,6 +209,7 @@ function concepts_task1_save_changes(primaryEvent) {
 function concepts_task1_save_result() {
   var xml = Blockly.Xml.workspaceToDom(_concepts_task1_workspace);
   var xml_text = Blockly.Xml.domToText(xml);
+  console.log(xml_text);
   _survey.getQuestionByName("concepts_task1_result").value = xml_text;
 }
 
