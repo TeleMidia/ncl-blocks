@@ -116,7 +116,6 @@ function on_render_question(target_survey, question_and_html) {
 // concepts page addtions
 // ----------------------------------------
 
-
 function concepts_blocks1_inject() {
   var question_id = _survey.getQuestionByName("concepts_blocks_intro1").idValue;
   var height = 200;
