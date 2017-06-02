@@ -100,6 +100,18 @@ function on_render_question(target_survey, question_and_html) {
     case "concepts_blocks_intro1":
       concepts_blocks1_inject();
       break;
+    case "concepts_blocks_intro2":
+      concepts_blocks2_inject();
+      break;
+    case "concepts_blocks_intro3":
+      concepts_blocks3_inject();
+      break;
+    case "concepts_blocks_intro4":
+      concepts_blocks4_inject();
+      break;
+    case "concepts_blocks_intro5":
+      concepts_blocks5_inject();
+      break;
     case "concepts_task1":
       concepts_task1_inject();
       break;
@@ -125,6 +137,47 @@ function concepts_blocks1_inject() {
     </xml>`;
   nclblocks_inject(question_id, "", blocks1, true, false, height + "px");
 }
+
+function concepts_blocks2_inject() {
+  var question_id = _survey.getQuestionByName("concepts_blocks_intro2").idValue;
+  var height = 200;
+  var blocks1 =
+    `<xml id="startBlocks" style="display: none">
+    <block type="media" inline="false" x="`+ height * 2 + `" y="` + height / 2 + `"></block>
+    </xml>`;
+  nclblocks_inject(question_id, "", blocks1, true, false, height + "px");
+}
+
+function concepts_blocks3_inject() {
+  var question_id = _survey.getQuestionByName("concepts_blocks_intro3").idValue;
+  var height = 200;
+  var blocks1 =
+    `<xml id="startBlocks" style="display: none">
+    <block type="media" inline="false" x="`+ height * 2 + `" y="` + height / 2 + `"></block>
+    </xml>`;
+  nclblocks_inject(question_id, "", blocks1, true, false, height + "px");
+}
+
+function concepts_blocks4_inject() {
+  var question_id = _survey.getQuestionByName("concepts_blocks_intro4").idValue;
+  var height = 200;
+  var blocks1 =
+    `<xml id="startBlocks" style="display: none">
+    <block type="media" inline="false" x="`+ height * 2 + `" y="` + height / 2 + `"></block>
+    </xml>`;
+  nclblocks_inject(question_id, "", blocks1, true, false, height + "px");
+}
+
+function concepts_blocks5_inject() {
+  var question_id = _survey.getQuestionByName("concepts_blocks_intro5").idValue;
+  var height = 200;
+  var blocks1 =
+    `<xml id="startBlocks" style="display: none">
+    <block type="media" inline="false" x="`+ height * 2 + `" y="` + height / 2 + `"></block>
+    </xml>`;
+  nclblocks_inject(question_id, "", blocks1, true, false, height + "px");
+}
+
 
 function concepts_task1_save_changes(primaryEvent) {
   var saved_json_str = _survey.getQuestionByName("concepts_task1_changes").value;
