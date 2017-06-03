@@ -498,7 +498,7 @@ Blockly.Blocks.user.init = function () {
   this.appendValueInput('ADD0')
     .appendField('id=')
     .appendField(new Blockly.NclUserFieldText('',
-      validateUserId), 'id')
+      validateUserId), 'id_device' + 1)
     .setCheck(NclBlocks.USE_CHECK ? 'user_content' : null)
     .appendField(', ' + NclBlocks.Msg.DEVICES + '=');
   this.setColour(NclBlocks.USER_COLOUR);
@@ -548,7 +548,7 @@ Blockly.Blocks.port = {
       .appendField('--' + NclBlocks.Msg.LINK + '--')
     this.appendDummyInput()
       .appendField(NclBlocks.Msg.PORT_LABEL)
-      .appendField(new Blockly.FieldDropdown(getBothMediaInputIds), 'NAME');
+      .appendField(new Blockly.FieldDropdown(getBothMediaInputIds), 'component');
     this.setInputsInline(false);
     this.setColour(NclBlocks.PORT_COLOUR);
     this.contextMenu = false;
@@ -685,9 +685,9 @@ Blockly.Blocks.ssml.updateShape_ = function () {
       this.appendDummyInput('ADD' + i)
         .appendField('id=')
         .appendField(new Blockly.MediaIdFieldText('',
-          validateMediaId), 'id')
+          validateMediaId), 'id_area' + i)
         .appendField(NclBlocks.Msg.SSML_ANCHOR)
-        .appendField(new Blockly.FieldTextInput(''), '');
+        .appendField(new Blockly.FieldTextInput(''), 'label' + i);
     }
   }
   while (this.getInput('ADD' + i)) {
@@ -765,11 +765,11 @@ Blockly.Blocks.video.updateShape_ = function () {
       this.appendDummyInput('ADD' + i)
         .appendField('id=')
         .appendField(new Blockly.MediaIdFieldText('',
-          validateMediaId), 'id')
+          validateMediaId), 'id_area' + i)
         .appendField(NclBlocks.Msg.VIDEO_ANCHOR)
-        .appendField(new Blockly.FieldNumber(0, 0), 'begin')
+        .appendField(new Blockly.FieldNumber(0, 0), 'begin' + i)
         .appendField(',')
-        .appendField(new Blockly.FieldNumber(0, 0), 'end');
+        .appendField(new Blockly.FieldNumber(0, 0), 'end' + i);
     }
   }
   while (this.getInput('ADD' + i)) {
@@ -846,9 +846,9 @@ Blockly.Blocks.srgs.updateShape_ = function () {
       this.appendDummyInput('ADD' + i)
         .appendField('id=')
         .appendField(new Blockly.InputIdFieldText('',
-          validateInputId), 'id')
+          validateInputId), 'id_area' + i)
         .appendField(NclBlocks.Msg.SRGS_ANCHOR)
-        .appendField(new Blockly.FieldTextInput(''), '');
+        .appendField(new Blockly.FieldTextInput(''), 'label' + i);
     }
   }
   while (this.getInput('ADD' + i)) {
@@ -926,9 +926,9 @@ Blockly.Blocks.hand_gesture.updateShape_ = function () {
       this.appendDummyInput('ADD' + i)
         .appendField('id=')
         .appendField(new Blockly.InputIdFieldText('',
-          validateInputId), 'id')
+          validateInputId), 'id_area' + i)
         .appendField(NclBlocks.Msg.HAND_GESTURE_ANCHOR)
-        .appendField(new Blockly.FieldTextInput(''), '');
+        .appendField(new Blockly.FieldTextInput(''), 'label' + i);
     }
   }
   while (this.getInput('ADD' + i)) {
@@ -945,7 +945,7 @@ Blockly.Blocks.onbegin = {
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onbegin, 15,
         15, '*'))
       .appendField(NclBlocks.Msg.ONBEGIN)
-      .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
+      .appendField(new Blockly.FieldDropdown(getMediaIds), 'onbegin');
     this.setInputsInline(false);
     this.setOutput(true, 'simplecondition');
     this.setColour(NclBlocks.CONDITION_COLOUR);
@@ -958,7 +958,7 @@ Blockly.Blocks.onend = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onend, 15, 15, '*'))
       .appendField(NclBlocks.Msg.ONEND)
-      .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
+      .appendField(new Blockly.FieldDropdown(getMediaIds), 'onend');
     this.setInputsInline(false);
     this.setOutput(true, 'simplecondition');
     this.setColour(NclBlocks.CONDITION_COLOUR);
@@ -972,7 +972,7 @@ Blockly.Blocks.onpause = {
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onpause, 15,
         15, '*'))
       .appendField(NclBlocks.Msg.ONPAUSE)
-      .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
+      .appendField(new Blockly.FieldDropdown(getMediaIds), 'onpause');
     this.setInputsInline('pause');
     this.setOutput(true, 'simplecondition');
     this.setColour(NclBlocks.CONDITION_COLOUR);
@@ -986,7 +986,7 @@ Blockly.Blocks.onresume = {
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onresume,
         15, 15, '*'))
       .appendField(NclBlocks.Msg.ONRESUME)
-      .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
+      .appendField(new Blockly.FieldDropdown(getMediaIds), 'onresume');
     this.setInputsInline(false);
     this.setOutput(true, 'simplecondition');
     this.setColour(NclBlocks.CONDITION_COLOUR);
@@ -1000,7 +1000,7 @@ Blockly.Blocks.onselection = {
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onselection,
         15, 15, '*'))
       .appendField(NclBlocks.Msg.ONSELECTION)
-      .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
+      .appendField(new Blockly.FieldDropdown(getMediaIds), 'onselection');
     this.setInputsInline(false);
     this.setOutput(true, 'simplecondition');
     this.setColour(NclBlocks.CONDITION_COLOUR);
@@ -1014,7 +1014,7 @@ Blockly.Blocks.onrecognize = {
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onrecognize,
         15, 15, '*'))
       .appendField(NclBlocks.Msg.ONRECOGNIZE)
-      .appendField(new Blockly.FieldDropdown(getinputIds), 'NAME');
+      .appendField(new Blockly.FieldDropdown(getinputIds), 'onrecognize');
     this.setInputsInline(false);
     this.setOutput(true, 'simplecondition');
     this.setColour(NclBlocks.CONDITION_COLOUR);
@@ -1028,9 +1028,9 @@ Blockly.Blocks.onrecognizeuser = {
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onrecognize,
         15, 15, '*'))
       .appendField(NclBlocks.Msg.ONRECOGNIZE)
-      .appendField(new Blockly.FieldDropdown(getinputIds), 'NAME')
+      .appendField(new Blockly.FieldDropdown(getinputIds), 'onrecognize')
       .appendField(NclBlocks.Msg.ONRECOGNIZE_FROM_USER)
-      .appendField(new Blockly.FieldDropdown(getuserIds), 'NAME');
+      .appendField(new Blockly.FieldDropdown(getuserIds), 'onrecognize_from_user');
     this.setInputsInline(false);
     this.setOutput(true, 'simplecondition');
     this.setColour(NclBlocks.CONDITION_COLOUR);
@@ -1109,7 +1109,7 @@ Blockly.Blocks.start = {
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.start, 15,
         15, '*'))
       .appendField(NclBlocks.Msg.START)
-      .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
+      .appendField(new Blockly.FieldDropdown(getMediaIds), 'start');
     this.setInputsInline(false);
     this.setPreviousStatement(true, 'simpleaction');
     this.setNextStatement(true, 'simpleaction');
@@ -1124,7 +1124,7 @@ Blockly.Blocks.stop = {
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.stop, 15,
         15, '*'))
       .appendField(NclBlocks.Msg.STOP)
-      .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
+      .appendField(new Blockly.FieldDropdown(getMediaIds), 'stop');
     this.setPreviousStatement(true, 'simpleaction');
     this.setNextStatement(true, 'simpleaction');
     this.setColour(NclBlocks.ACTION_COLOUR);
@@ -1138,7 +1138,7 @@ Blockly.Blocks.pause = {
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.pause, 15,
         15, '*'))
       .appendField(NclBlocks.Msg.PAUSE)
-      .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
+      .appendField(new Blockly.FieldDropdown(getMediaIds), 'pause');
     this.setPreviousStatement(true, 'simpleaction');
     this.setNextStatement(true, 'simpleaction');
     this.setColour(NclBlocks.ACTION_COLOUR);
@@ -1152,7 +1152,7 @@ Blockly.Blocks.resume = {
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.resume, 15,
         15, '*'))
       .appendField(NclBlocks.Msg.RESUME)
-      .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME');
+      .appendField(new Blockly.FieldDropdown(getMediaIds), 'resume');
     this.setInputsInline(false);
     this.setPreviousStatement(true, 'simpleaction');
     this.setNextStatement(true, 'simpleaction');
@@ -1167,7 +1167,7 @@ Blockly.Blocks.set = {
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.set, 15, 15,
         '*'))
       .appendField(NclBlocks.Msg.SET)
-      .appendField(new Blockly.FieldDropdown(getMediaIds), 'NAME')
+      .appendField(new Blockly.FieldDropdown(getMediaIds), 'set')
       .appendField('=')
       .appendField(new Blockly.FieldTextInput(''), 'value');
     this.setInputsInline(false);

@@ -143,7 +143,9 @@ function concepts_blocks1_inject() {
 
   var blocks1 =
     `<xml xmlns="http://www.w3.org/1999/xhtml">
-    <block type="media" id="A(0bL5~#01?,|I,_x!OI" x="50" y="` + hight_by_level(0) + `"><value name="src"><block type="video" id="WzAnP=#ds8Ad/y^}@~J@"><mutation items="2"></mutation><field name="begin">0</field><field name="end">0</field><field name="begin">0</field><field name="end">0</field></block></value></block><block type="media" id="wdGd9(6#Xr^O@H#.jz;y" x="50" y="` + hight_by_level(1) + `"><value name="src"><block type="video" id="Qk)7lfH.YikoVFX5QGu2"><mutation items="2"></mutation><field name="begin">0</field><field name="end">0</field><field name="begin">0</field><field name="end">0</field></block></value></block><block type="media" id="xn(j{h#N$CF+ti?8BHvP" x="50" y="` + hight_by_level(2) + `"><value name="src"><block type="video" id="J_bVMCx=VUhU{:@+90+s"><mutation items="2"></mutation><field name="begin">0</field><field name="end">0</field><field name="begin">0</field><field name="end">0</field></block></value></block>`;
+    <block type="media" id="A(0bL5~#01?,|I,_x!OI" x="50" y="` + hight_by_level(0) + `"><field name="id">main_video</field><value name="src"><block type="video" id_area0="WzAnP=#ds8Ad/y^}@~J@"><mutation items="2"></mutation><field name="id_area0">credits</field><field name="begin0">100</field><field name="end0">200</field><field name="id_area1">credits2</field></block></value>
+    </block><block type="media" id="wdGd9(6#Xr^O@H#.jz;y" x="50" y="` + hight_by_level(1) + `"><value name="src"><block type="video" id="Qk)7lfH.YikoVFX5QGu2"><mutation items="2"></mutation><field name="begin0">10</field><field name="end0">200</field><field name="begin1">20</field><field name="end1">300</field></block></value></block>
+    <block type="media" id="xn(j{h#N$CF+ti?8BHvP" x="50" y="` + hight_by_level(2) + `"><value name="src"><block type="video" id="J_bVMCx=VUhU{:@+90+s"><mutation items="2"></mutation><field name="id_area0">credits</field><field name="begin0">0</field><field name="end0">0</field><field name="id_area1">credits2</field><field name="begin1">0</field><field name="end1">0</field></block></value></block>`;
   nclblocks_inject(question_id, "", blocks1, true, false, height + "px");
 }
 
@@ -161,7 +163,7 @@ function concepts_blocks2_inject() {
 function concepts_blocks3_inject() {
   var question_id = _survey.getQuestionByName("concepts_blocks_intro3").idValue;
   var height = 150;
-  var origin = 50;
+  var origin = 50; 
   var blocks1 =
     `<xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="KZ[g}J_gz%iQCj#u(I:P" x="` + origin + `" y="` + origin + `"><value name="src"><block type="image" id="LHprn9YiDsg/Nlglks0f"></block></value></block>
@@ -203,6 +205,8 @@ function concepts_task1_save_changes(primaryEvent) {
     json_to_save = JSON.parse(saved_json_str);
   }
   json_to_save.changes.push(json_from_event);
+  // console.log(json_from_event);
+  // console.log(Blockly.Xml.workspaceToDom(_concepts_task1_workspace));
   _survey.getQuestionByName("concepts_task1_changes").value = JSON.stringify(json_to_save);
 }
 
