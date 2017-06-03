@@ -155,7 +155,7 @@ function nclblocks_inject(parend_div_id, toolbox, start_workspace, readOnly, scr
 
   // create div and configure auto resize
   var blocklyArea = document.getElementById(parend_div_id);
-  var html_to_insert = "<div id=" + inject_div_name + " class='center-block' style='height: "+height+";'></div>";
+  var html_to_insert = "<div id=" + inject_div_name + " class='center-block' style='height: " + height + ";'></div>";
   blocklyArea.innerHTML += html_to_insert;
   var padding = window.getComputedStyle(blocklyArea, null).getPropertyValue('padding-right');
   var blocklyDiv = document.getElementById(inject_div_name);
@@ -173,7 +173,7 @@ function nclblocks_inject(parend_div_id, toolbox, start_workspace, readOnly, scr
     blocklyDiv.style.width = blocklyArea.offsetWidth - 2 * padding + 'px';
   };
   window.addEventListener('resize', onresize, false);
-  
+
   // inject
   workspace = Blockly.inject(inject_div_name, {
     media: Blockly.pathToBlockly + 'media/',
@@ -449,7 +449,7 @@ Blockly.Blocks.media = {
       .setCheck(NclBlocks.USE_CHECK ? 'media_content' : null)
       .appendField('id=')
       .appendField(new Blockly.MediaIdFieldText('',
-        validateMediaId))
+        validateMediaId), 'id')
       .appendField(', ' + NclBlocks.Msg.SRC + '=');
     this.setInputsInline(false);
     this.setColour(NclBlocks.MEDIA_COLOUR);
@@ -468,7 +468,7 @@ Blockly.Blocks.input = {
       .setCheck(NclBlocks.USE_CHECK ? 'input_content' : null)
       .appendField('id=')
       .appendField(new Blockly.InputIdFieldText('',
-        validateInputId))
+        validateInputId), 'id')
       .appendField(', ' + NclBlocks.Msg.SRC + '=');
     this.setInputsInline(false);
     this.setColour(NclBlocks.MEDIA_COLOUR);
@@ -498,7 +498,7 @@ Blockly.Blocks.user.init = function () {
   this.appendValueInput('ADD0')
     .appendField('id=')
     .appendField(new Blockly.NclUserFieldText('',
-      validateUserId))
+      validateUserId), 'id')
     .setCheck(NclBlocks.USE_CHECK ? 'user_content' : null)
     .appendField(', ' + NclBlocks.Msg.DEVICES + '=');
   this.setColour(NclBlocks.USER_COLOUR);
@@ -685,7 +685,7 @@ Blockly.Blocks.ssml.updateShape_ = function () {
       this.appendDummyInput('ADD' + i)
         .appendField('id=')
         .appendField(new Blockly.MediaIdFieldText('',
-          validateMediaId))
+          validateMediaId), 'id')
         .appendField(NclBlocks.Msg.SSML_ANCHOR)
         .appendField(new Blockly.FieldTextInput(''), '');
     }
@@ -765,7 +765,7 @@ Blockly.Blocks.video.updateShape_ = function () {
       this.appendDummyInput('ADD' + i)
         .appendField('id=')
         .appendField(new Blockly.MediaIdFieldText('',
-          validateMediaId))
+          validateMediaId), 'id')
         .appendField(NclBlocks.Msg.VIDEO_ANCHOR)
         .appendField(new Blockly.FieldNumber(0, 0), 'begin')
         .appendField(',')
@@ -846,7 +846,7 @@ Blockly.Blocks.srgs.updateShape_ = function () {
       this.appendDummyInput('ADD' + i)
         .appendField('id=')
         .appendField(new Blockly.InputIdFieldText('',
-          validateInputId))
+          validateInputId), 'id')
         .appendField(NclBlocks.Msg.SRGS_ANCHOR)
         .appendField(new Blockly.FieldTextInput(''), '');
     }
@@ -925,7 +925,8 @@ Blockly.Blocks.hand_gesture.updateShape_ = function () {
     if (!this.getInput('ADD' + i)) {
       this.appendDummyInput('ADD' + i)
         .appendField('id=')
-        .appendField(new Blockly.FieldTextInput(''), 'id=')
+        .appendField(new Blockly.InputIdFieldText('',
+          validateInputId), 'id')
         .appendField(NclBlocks.Msg.HAND_GESTURE_ANCHOR)
         .appendField(new Blockly.FieldTextInput(''), '');
     }
