@@ -15,17 +15,17 @@ NclBlocks.Msg.MEDIAS = "mídias";
 NclBlocks.Msg.INPUT = "reconhecedor";
 NclBlocks.Msg.INPUTS = "reconhecedores";
 NclBlocks.Msg.VIDEO = "conteúdo de vídeo";
-NclBlocks.Msg.VIDEO_ANCHOR = "define trecho inicio, fim=";
+NclBlocks.Msg.VIDEO_ANCHOR = "define trecho inicio, fim";
 NclBlocks.Msg.VIDEO_ITEM = "trecho do vídeo";
 NclBlocks.Msg.IMAGE = "imagem";
 NclBlocks.Msg.SSML = "texto para sintetização";
-NclBlocks.Msg.SSML_ANCHOR = "sintetiza frase=";
+NclBlocks.Msg.SSML_ANCHOR = "sintetiza frase";
 NclBlocks.Msg.SSML_ITEM = "frase a sintetizar";
 NclBlocks.Msg.SRGS = "comandos de voz";
-NclBlocks.Msg.SRGS_ANCHOR = "reconhece frase=";
+NclBlocks.Msg.SRGS_ANCHOR = "reconhece frase";
 NclBlocks.Msg.SRGS_ITEM = "frase a reconhecer";
 NclBlocks.Msg.HAND_GESTURE = "gestos de mão";
-NclBlocks.Msg.HAND_GESTURE_ANCHOR = "reconhece gesto=";
+NclBlocks.Msg.HAND_GESTURE_ANCHOR = "reconhece gesto";
 NclBlocks.Msg.HAND_GESTURE_ITEM = "gesto a reconhecer";
 NclBlocks.Msg.LINK = "sincronismo";
 NclBlocks.Msg.LINKS = "sincronismos";
@@ -563,7 +563,7 @@ Blockly.Blocks.ssml.init = function () {
     appended_input.appendField('id=')
       .appendField(new Blockly.MediaIdFieldText('',
         validateMediaId), 'id_area' + index)
-      .appendField(NclBlocks.Msg.SSML_ANCHOR)
+      .appendField(NclBlocks.Msg.SSML_ANCHOR + '=')
       .appendField(new Blockly.FieldTextInput(''), 'label' + index);
   };
   this.length = 0;
@@ -590,7 +590,7 @@ Blockly.Blocks.video.init = function () {
     appended_input.appendField('id=')
       .appendField(new Blockly.MediaIdFieldText('',
         validateMediaId), 'id_area' + index)
-      .appendField(NclBlocks.Msg.VIDEO_ANCHOR)
+      .appendField(NclBlocks.Msg.VIDEO_ANCHOR + '=')
       .appendField(new Blockly.FieldTextInput(''), 'label' + index);
   };
   this.length = 0;
@@ -616,7 +616,7 @@ Blockly.Blocks.srgs.init = function () {
     appended_input.appendField('id=')
       .appendField(new Blockly.InputIdFieldText('',
         validateInputId), 'id_area' + index)
-      .appendField(NclBlocks.Msg.SRGS_ANCHOR)
+      .appendField(NclBlocks.Msg.SRGS_ANCHOR + '=')
       .appendField(new Blockly.FieldTextInput(''), 'label' + index);
   };
   this.length = 0;
@@ -667,7 +667,7 @@ Blockly.Blocks.hand_gesture.init = function () {
     appended_input.appendField('id=')
       .appendField(new Blockly.InputIdFieldText('',
         validateInputId), 'id_area' + index)
-      .appendField(NclBlocks.Msg.HAND_GESTURE_ANCHOR)
+      .appendField(NclBlocks.Msg.HAND_GESTURE_ANCHOR + '=')
       .appendField(new Blockly.FieldTextInput(''), 'label' + index);
   };
   this.length = 0;
