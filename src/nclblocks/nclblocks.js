@@ -306,7 +306,9 @@ Blockly.Blocks.body.init = function () {
   this.contextMenu = false;
 
   this.append_fields_to_indexed_element = function (appended_input, index) {
-    appended_input.appendField();
+    appended_input.appendField()
+      .setCheck(NclBlocks.USE_CHECK ? ['media_type', 'input_type', 'user_type', 'link_type' ] : null)
+;
   };
   this.length = 0;
   for (var i = 0; i < 5; i++)
@@ -412,14 +414,14 @@ Blockly.Blocks.media = {
     this.appendDummyInput()
       .appendField('{' + NclBlocks.Msg.MEDIA + '}');
     this.appendValueInput('src')
-      .setCheck(NclBlocks.USE_CHECK ? 'media_content' : null)
+      .setCheck(NclBlocks.USE_CHECK ? 'media_src_type' : null)
       .appendField('id=')
       .appendField(new Blockly.MediaIdFieldText('',
         validateMediaId), 'id')
       .appendField(', ' + NclBlocks.Msg.SRC + '=');
     this.setInputsInline(false);
     this.setColour(NclBlocks.MEDIA_COLOUR);
-    if (NclBlocks.USE_BODY == true) this.setOutput(true, 'media');
+    if (NclBlocks.USE_BODY == true) this.setOutput(true, 'media_type');
     this.contextMenu = false;
   }
 };
@@ -431,14 +433,14 @@ Blockly.Blocks.input = {
     this.appendDummyInput()
       .appendField('{' + NclBlocks.Msg.INPUT + '}');
     this.appendValueInput('src')
-      .setCheck(NclBlocks.USE_CHECK ? 'input_content' : null)
+      .setCheck(NclBlocks.USE_CHECK ? 'input_src_type' : null)
       .appendField('id=')
       .appendField(new Blockly.InputIdFieldText('',
         validateInputId), 'id')
       .appendField(', ' + NclBlocks.Msg.SRC + '=');
     this.setInputsInline(false);
     this.setColour(NclBlocks.MEDIA_COLOUR);
-    if (NclBlocks.USE_BODY == true) this.setOutput(true, 'input');
+    if (NclBlocks.USE_BODY == true) this.setOutput(true, 'input_type');
     this.contextMenu = false;
   }
 };
@@ -454,13 +456,13 @@ Blockly.Blocks.user.init = function () {
       this.sourceBlock_.appendArrayElementInput(true);
     }));
   this.setColour(NclBlocks.USER_COLOUR);
-  if (NclBlocks.USE_BODY == true) this.setOutput(true, 'user');
+  if (NclBlocks.USE_BODY == true) this.setOutput(true, 'user_type');
   this.contextMenu = false;
 
   this.append_fields_to_indexed_element = function (appended_input, index) {
     appended_input
       .appendField(NclBlocks.Msg.DEVICE + '=')
-      .setCheck(NclBlocks.USE_CHECK ? 'user_content' : null)
+      .setCheck(NclBlocks.USE_CHECK ? 'user_device_type' : null)
   };
   this.length = 0;
   this.appendArrayElementInput(true);
@@ -477,7 +479,7 @@ Blockly.Blocks.port = {
     this.appendDummyInput()
       .appendField(NclBlocks.Msg.PORT_LABEL)
       .appendField(new Blockly.FieldDropdown(getBothMediaInputIds), 'component');
-    if (NclBlocks.USE_BODY == true) this.setOutput(true, 'link');
+    if (NclBlocks.USE_BODY == true) this.setOutput(true, 'link_type');
     this.setInputsInline(false);
     this.setColour(NclBlocks.PORT_COLOUR);
     this.contextMenu = false;
@@ -492,14 +494,14 @@ Blockly.Blocks.link = {
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.link, 30, 30, '*'))
       .appendField('{' + NclBlocks.Msg.LINK + '}');
     this.appendValueInput('conditions')
-      .setCheck(NclBlocks.USE_CHECK ? ['compoundcondition', 'simplecondition'] : null)
+      .setCheck(NclBlocks.USE_CHECK ? 'condition_type' : null)
       .appendField(NclBlocks.Msg.WHEN + '=');
     this.appendStatementInput('actions')
-      .setCheck(NclBlocks.USE_CHECK ? 'simpleaction' : null)
+      .setCheck(NclBlocks.USE_CHECK ? 'simpleaction_type' : null)
       .appendField(NclBlocks.Msg.DO);
     this.setInputsInline(false);
     this.setColour(NclBlocks.LINK_COLOUR);
-    if (NclBlocks.USE_BODY == true) this.setOutput(true, 'link');
+    if (NclBlocks.USE_BODY == true) this.setOutput(true, 'link_type');
     this.contextMenu = false;
   }
 };
@@ -511,7 +513,7 @@ Blockly.Blocks.headset = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.microfone, 30, 30, '*'))
       .appendField('{' + NclBlocks.Msg.MICROFONE + '}');
-    this.setOutput(true, 'user_content');
+    this.setOutput(true, NclBlocks.USE_CHECK ? 'user_device_type' : null);
     this.setColour(NclBlocks.USER_COLOUR);
     this.contextMenu = false;
   }
@@ -525,7 +527,7 @@ Blockly.Blocks.hand_gesture_sensor = {
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.hand_gesture_sensor,
         30, 30, '*'))
       .appendField('{' + NclBlocks.Msg.LEAP + '}');
-    this.setOutput(true, 'user_content');
+    this.setOutput(true, NclBlocks.USE_CHECK ? 'user_device_type' : null);
     this.setColour(NclBlocks.USER_COLOUR);
     this.contextMenu = false;
   }
@@ -539,7 +541,7 @@ Blockly.Blocks.image = {
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.image, 30, 30,
         '*'))
       .appendField('{' + NclBlocks.Msg.IMAGE + '}');
-    this.setOutput(true, 'media_content');
+    this.setOutput(true, NclBlocks.USE_CHECK ? 'media_src_type' : null);
     this.setColour(NclBlocks.MEDIA_COLOUR);
     this.contextMenu = false;
   }
@@ -557,7 +559,7 @@ Blockly.Blocks.ssml.init = function () {
       this.sourceBlock_.appendArrayElementInput();
     }));
   this.setColour(NclBlocks.MEDIA_COLOUR);
-  this.setOutput(true, 'media_content');
+  this.setOutput(true, NclBlocks.USE_CHECK ? 'media_src_type' : null);
   this.contextMenu = false;
   this.append_fields_to_indexed_element = function (appended_input, index) {
     appended_input.appendField('id=')
@@ -584,7 +586,7 @@ Blockly.Blocks.video.init = function () {
       this.sourceBlock_.appendArrayElementInput();
     }));
   this.setColour(NclBlocks.MEDIA_COLOUR);
-  this.setOutput(true, 'media_content');
+  this.setOutput(true, NclBlocks.USE_CHECK ? 'media_src_type' : null);
   this.contextMenu = false;
   this.append_fields_to_indexed_element = function (appended_input, index) {
     appended_input.appendField('id=')
@@ -610,7 +612,7 @@ Blockly.Blocks.srgs.init = function () {
       this.sourceBlock_.appendArrayElementInput();
     }));
   this.setColour(NclBlocks.MEDIA_COLOUR);
-  this.setOutput(true, 'input_content');
+  this.setOutput(true, NclBlocks.USE_CHECK ? 'input_src_type' : null);
   this.contextMenu = false;
   this.append_fields_to_indexed_element = function (appended_input, index) {
     appended_input.appendField('id=')
@@ -636,7 +638,7 @@ Blockly.Blocks.srgs.init = function () {
       this.sourceBlock_.appendArrayElementInput();
     }));
   this.setColour(NclBlocks.MEDIA_COLOUR);
-  this.setOutput(true, 'input_content');
+  this.setOutput(true, NclBlocks.USE_CHECK ? 'input_src_type' : null);
   this.contextMenu = false;
   this.append_fields_to_indexed_element = function (appended_input, index) {
     appended_input.appendField('id=')
@@ -661,7 +663,7 @@ Blockly.Blocks.hand_gesture.init = function () {
       this.sourceBlock_.appendArrayElementInput();
     }));
   this.setColour(NclBlocks.INPUT_COLOUR);
-  this.setOutput(true, 'input_content');
+  this.setOutput(true, NclBlocks.USE_CHECK ? 'input_src_type' : null);
   this.contextMenu = false;
   this.append_fields_to_indexed_element = function (appended_input, index) {
     appended_input.appendField('id=')
@@ -685,7 +687,7 @@ Blockly.Blocks.onbegin = {
       .appendField(NclBlocks.Msg.ONBEGIN)
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'onbegin');
     this.setInputsInline(false);
-    this.setOutput(true, 'simplecondition');
+    this.setOutput(true, NclBlocks.USE_CHECK ? 'condition_type' : null);
     this.setColour(NclBlocks.CONDITION_COLOUR);
     this.contextMenu = false;
   }
@@ -698,7 +700,7 @@ Blockly.Blocks.onend = {
       .appendField(NclBlocks.Msg.ONEND)
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'onend');
     this.setInputsInline(false);
-    this.setOutput(true, 'simplecondition');
+    this.setOutput(true, NclBlocks.USE_CHECK ? 'condition_type' : null);
     this.setColour(NclBlocks.CONDITION_COLOUR);
     this.contextMenu = false;
   }
@@ -712,7 +714,7 @@ Blockly.Blocks.onpause = {
       .appendField(NclBlocks.Msg.ONPAUSE)
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'onpause');
     this.setInputsInline('pause');
-    this.setOutput(true, 'simplecondition');
+    this.setOutput(true, NclBlocks.USE_CHECK ? 'condition_type' : null);
     this.setColour(NclBlocks.CONDITION_COLOUR);
     this.contextMenu = false;
   }
@@ -726,7 +728,7 @@ Blockly.Blocks.onresume = {
       .appendField(NclBlocks.Msg.ONRESUME)
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'onresume');
     this.setInputsInline(false);
-    this.setOutput(true, 'simplecondition');
+    this.setOutput(true, NclBlocks.USE_CHECK ? 'condition_type' : null);
     this.setColour(NclBlocks.CONDITION_COLOUR);
     this.contextMenu = false;
   }
@@ -740,7 +742,7 @@ Blockly.Blocks.onselection = {
       .appendField(NclBlocks.Msg.ONSELECTION)
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'onselection');
     this.setInputsInline(false);
-    this.setOutput(true, 'simplecondition');
+    this.setOutput(true, NclBlocks.USE_CHECK ? 'condition_type' : null);
     this.setColour(NclBlocks.CONDITION_COLOUR);
     this.contextMenu = false;
   }
@@ -754,7 +756,7 @@ Blockly.Blocks.onrecognize = {
       .appendField(NclBlocks.Msg.ONRECOGNIZE)
       .appendField(new Blockly.FieldDropdown(getinputIds), 'onrecognize');
     this.setInputsInline(false);
-    this.setOutput(true, 'simplecondition');
+    this.setOutput(true, NclBlocks.USE_CHECK ? 'condition_type' : null);
     this.setColour(NclBlocks.CONDITION_COLOUR);
     this.contextMenu = false;
   }
@@ -770,7 +772,7 @@ Blockly.Blocks.onrecognizeuser = {
       .appendField(NclBlocks.Msg.ONRECOGNIZE_FROM_USER)
       .appendField(new Blockly.FieldDropdown(getuserIds), 'onrecognize_from_user');
     this.setInputsInline(false);
-    this.setOutput(true, 'simplecondition');
+    this.setOutput(true, NclBlocks.USE_CHECK ? 'condition_type' : null);
     this.setColour(NclBlocks.CONDITION_COLOUR);
     this.contextMenu = false;
   }
@@ -795,10 +797,11 @@ Blockly.Blocks.compoundcondition.init =
       }));
     ;
     this.setColour(NclBlocks.CONDITION_COLOUR);
-    this.setOutput(true, 'simplecondition');
+    this.setOutput(true, NclBlocks.USE_CHECK ? 'condition_type' : null);
     this.contextMenu = false;
     this.append_fields_to_indexed_element = function (appended_input, index) {
-      appended_input.appendField(NclBlocks.Msg.WHEN + '=');
+      appended_input.appendField(NclBlocks.Msg.WHEN + '=')
+        .setCheck(NclBlocks.USE_CHECK ? 'condition_type' : null);
     };
     this.length = 0;
     this.appendArrayElementInput(true);
@@ -815,8 +818,8 @@ Blockly.Blocks.start = {
       .appendField(NclBlocks.Msg.START)
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'start');
     this.setInputsInline(false);
-    this.setPreviousStatement(true, 'simpleaction');
-    this.setNextStatement(true, 'simpleaction');
+    this.setPreviousStatement(true, NclBlocks.USE_CHECK ? 'simpleaction_type' : null);
+    this.setNextStatement(true, NclBlocks.USE_CHECK ? 'simpleaction_type' : null);
     this.setColour(NclBlocks.ACTION_COLOUR);
     this.contextMenu = false;
   }
@@ -829,8 +832,8 @@ Blockly.Blocks.stop = {
         15, '*'))
       .appendField(NclBlocks.Msg.STOP)
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'stop');
-    this.setPreviousStatement(true, 'simpleaction');
-    this.setNextStatement(true, 'simpleaction');
+    this.setPreviousStatement(true, NclBlocks.USE_CHECK ? 'simpleaction_type' : null);
+    this.setNextStatement(true, NclBlocks.USE_CHECK ? 'simpleaction_type' : null);
     this.setColour(NclBlocks.ACTION_COLOUR);
     this.contextMenu = false;
   }
@@ -843,8 +846,8 @@ Blockly.Blocks.pause = {
         15, '*'))
       .appendField(NclBlocks.Msg.PAUSE)
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'pause');
-    this.setPreviousStatement(true, 'simpleaction');
-    this.setNextStatement(true, 'simpleaction');
+    this.setPreviousStatement(true, NclBlocks.USE_CHECK ? 'simpleaction_type' : null);
+    this.setNextStatement(true, NclBlocks.USE_CHECK ? 'simpleaction_type' : null);
     this.setColour(NclBlocks.ACTION_COLOUR);
     this.contextMenu = false;
   }
@@ -858,8 +861,8 @@ Blockly.Blocks.resume = {
       .appendField(NclBlocks.Msg.RESUME)
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'resume');
     this.setInputsInline(false);
-    this.setPreviousStatement(true, 'simpleaction');
-    this.setNextStatement(true, 'simpleaction');
+    this.setPreviousStatement(true, NclBlocks.USE_CHECK ? 'simpleaction_type' : null);
+    this.setNextStatement(true, NclBlocks.USE_CHECK ? 'simpleaction_type' : null);
     this.setColour(NclBlocks.ACTION_COLOUR);
     this.contextMenu = false;
   }
@@ -875,8 +878,8 @@ Blockly.Blocks.set = {
       .appendField('=')
       .appendField(new Blockly.FieldTextInput(''), 'value');
     this.setInputsInline(false);
-    this.setPreviousStatement(true, 'simpleaction');
-    this.setNextStatement(true, 'simpleaction');
+    this.setPreviousStatement(true, NclBlocks.USE_CHECK ? 'simpleaction_type' : null);
+    this.setNextStatement(true, NclBlocks.USE_CHECK ? 'simpleaction_type' : null);
     this.setColour(NclBlocks.ACTION_COLOUR);
     this.contextMenu = false;
   }
