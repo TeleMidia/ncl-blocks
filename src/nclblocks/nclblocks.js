@@ -65,13 +65,16 @@ NclBlocks.Msg.SET = "atribua";
 // icons
 // ---------------------------------------- 
 
+NclBlocks.Icons.media = 'media/icon-media.png';
 NclBlocks.Icons.video = 'media/icon-video.png';
 NclBlocks.Icons.image = 'media/icon-image.png';
+NclBlocks.Icons.input = 'media/icon-recognition.png';
 NclBlocks.Icons.ssml = 'media/ssml.png';
 NclBlocks.Icons.srgs = 'media/srgs.png';
 NclBlocks.Icons.hand_gesture = 'media/hand-gesture.png';
 NclBlocks.Icons.port = 'media/icon-link.png';
 NclBlocks.Icons.link = 'media/icon-link.png';
+NclBlocks.Icons.user = 'media/icon-user-class.png';
 NclBlocks.Icons.hand_gesture_sensor = 'media/hand-gesture-sensor.png';
 NclBlocks.Icons.microfone = 'media/headset.png';
 NclBlocks.Icons.onrecognize = 'media/icon-bind-onselection.png';
@@ -98,7 +101,7 @@ NclBlocks.USER_COLOUR = 40;
 NclBlocks.LINK_COLOUR = 260;
 NclBlocks.PORT_COLOUR = 260;
 NclBlocks.CONDITION_COLOUR = 280;
-NclBlocks.ACTION_COLOUR = 230;
+NclBlocks.ACTION_COLOUR = 225;
 
 // ---------------------------------------- 
 // configuration
@@ -436,6 +439,8 @@ Blockly.NclUserFieldText.prototype.onFinishEditing_ = function (text) {
 Blockly.Blocks.media = {
   init: function () {
     this.appendDummyInput()
+      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.media, 25, 25,
+        '*'))
       .appendField('{' + NclBlocks.Msg.MEDIA + '}');
     this.appendValueInput('src')
       .setCheck(NclBlocks.USE_CHECK ? 'media_src_type' : null)
@@ -453,7 +458,7 @@ Blockly.Blocks.media = {
 Blockly.Blocks.image = {
   init: function () {
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.image, 30, 30,
+      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.image, 25, 25,
         '*'))
       .appendField('{' + NclBlocks.Msg.IMAGE + '}');
     this.setOutput(true, NclBlocks.USE_CHECK ? 'media_src_type' : null);
@@ -466,7 +471,7 @@ Blockly.Blocks.ssml = Object.assign({}, Blockly.Blocks.DynamicArray);
 
 Blockly.Blocks.ssml.init = function () {
   this.appendDummyInput()
-    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.ssml, 30, 30, '*'))
+    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.ssml, 25, 25, '*'))
     .appendField('{' + NclBlocks.Msg.SSML + '}')
     .appendField(new Blockly.FieldTextbutton('+', function () {
       this.sourceBlock_.appendArrayElementInput();
@@ -490,7 +495,7 @@ Blockly.Blocks.video = Object.assign({}, Blockly.Blocks.DynamicArray);
 
 Blockly.Blocks.video.init = function () {
   this.appendDummyInput()
-    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.video, 30, 30,
+    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.video, 25, 25,
       '*'))
     .appendField('{' + NclBlocks.Msg.VIDEO + '}')
     .appendField(new Blockly.FieldTextbutton('+', function () {
@@ -520,6 +525,8 @@ Blockly.Blocks.video.init = function () {
 Blockly.Blocks.input = {
   init: function () {
     this.appendDummyInput()
+      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.input, 25, 25,
+        '*'))
       .appendField('{' + NclBlocks.Msg.INPUT + '}');
     this.appendValueInput('src')
       .setCheck(NclBlocks.USE_CHECK ? 'input_src_type' : null)
@@ -542,6 +549,8 @@ Blockly.Blocks.user = Object.assign({}, Blockly.Blocks.DynamicArray);
 
 Blockly.Blocks.user.init = function () {
   this.appendDummyInput()
+    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.user, 25, 25,
+      '*'))
     .appendField('{' + NclBlocks.Msg.USERS + '}')
     .appendField(new Blockly.FieldTextbutton('+', function () {
       this.sourceBlock_.appendArrayElementInput(true);
@@ -563,7 +572,7 @@ Blockly.Blocks.user.init = function () {
 Blockly.Blocks.headset = {
   init: function () {
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.microfone, 30, 30, '*'))
+      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.microfone, 25, 25, '*'))
       .appendField('{' + NclBlocks.Msg.MICROFONE + '}');
     this.setOutput(true, NclBlocks.USE_CHECK ? 'user_device_type' : null);
     this.setColour(NclBlocks.USER_COLOUR);
@@ -575,7 +584,7 @@ Blockly.Blocks.hand_gesture_sensor = {
   init: function () {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.hand_gesture_sensor,
-        30, 30, '*'))
+        25, 25, '*'))
       .appendField('{' + NclBlocks.Msg.LEAP + '}');
     this.setOutput(true, NclBlocks.USE_CHECK ? 'user_device_type' : null);
     this.setColour(NclBlocks.USER_COLOUR);
@@ -587,7 +596,7 @@ Blockly.Blocks.srgs = Object.assign({}, Blockly.Blocks.DynamicArray);
 
 Blockly.Blocks.srgs.init = function () {
   this.appendDummyInput()
-    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.srgs, 30, 30, '*'))
+    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.srgs, 25, 25, '*'))
     .appendField('{' + NclBlocks.Msg.SRGS + '}')
     .appendField(new Blockly.FieldTextbutton('+', function () {
       this.sourceBlock_.appendArrayElementInput();
@@ -611,7 +620,7 @@ Blockly.Blocks.srgs = Object.assign({}, Blockly.Blocks.DynamicArray);
 
 Blockly.Blocks.srgs.init = function () {
   this.appendDummyInput()
-    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.srgs, 30, 30, '*'))
+    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.srgs, 25, 25, '*'))
     .appendField('{' + NclBlocks.Msg.SRGS + '}')
     .appendField(new Blockly.FieldTextbutton('+', function () {
       this.sourceBlock_.appendArrayElementInput();
@@ -635,7 +644,7 @@ Blockly.Blocks.hand_gesture = Object.assign({}, Blockly.Blocks.DynamicArray);
 
 Blockly.Blocks.hand_gesture.init = function () {
   this.appendDummyInput()
-    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.hand_gesture, 30, 30,
+    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.hand_gesture, 25, 25,
       '*'))
     .appendField('{' + NclBlocks.Msg.HAND_GESTURE + '}')
     .appendField(new Blockly.FieldTextbutton('+', function () {
@@ -663,7 +672,7 @@ Blockly.Blocks.hand_gesture.init = function () {
 Blockly.Blocks.port = {
   init: function () {
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.port, 30, 30, '*'))
+      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.port, 25, 25, '*'))
       .appendField('{' + NclBlocks.Msg.LINK + '}')
     this.appendDummyInput()
       .appendField(NclBlocks.Msg.PORT_LABEL)
@@ -682,7 +691,7 @@ Blockly.Blocks.port = {
 Blockly.Blocks.link = {
   init: function () {
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.link, 30, 30, '*'))
+      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.link, 25, 25, '*'))
       .appendField('{' + NclBlocks.Msg.LINK + '}');
     this.appendValueInput('conditions')
       .setCheck(NclBlocks.USE_CHECK ? 'condition_type' : null)
