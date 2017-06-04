@@ -4,7 +4,9 @@ NclBlocks = {};
 NclBlocks.Msg = {};
 NclBlocks.Icons = {};
 
+// ---------------------------------------- 
 // messsages
+// ---------------------------------------- 
 
 NclBlocks.Msg.BODY = "app";
 NclBlocks.Msg.PORT = "início da aplicação"
@@ -58,7 +60,9 @@ NclBlocks.Msg.PAUSE = "pause";
 NclBlocks.Msg.RESUME = "resuma";
 NclBlocks.Msg.SET = "atribua";
 
+// ---------------------------------------- 
 // icons
+// ---------------------------------------- 
 
 NclBlocks.Icons.video = 'media/icon-video.png';
 NclBlocks.Icons.image = 'media/icon-image.png';
@@ -81,7 +85,9 @@ NclBlocks.Icons.pause = 'media/icon-bind-pause.png';
 NclBlocks.Icons.resume = 'media/icon-bind-resume.png';
 NclBlocks.Icons.set = 'media/icon-bind-set.png';
 
+// ---------------------------------------- 
 // colours
+// ---------------------------------------- 
 
 NclBlocks.USE_CHECK = false;
 NclBlocks.BODY_COLOUR = 20;
@@ -93,7 +99,9 @@ NclBlocks.PORT_COLOUR = 260;
 NclBlocks.CONDITION_COLOUR = 280;
 NclBlocks.ACTION_COLOUR = 230;
 
+// ---------------------------------------- 
 // configuration
+// ---------------------------------------- 
 
 Blockly.BlockSvg.START_HAT = true;
 NclBlocks.USE_BODY = false;
@@ -139,7 +147,9 @@ NclBlocks.defaultToolbox =
   </category>
 </xml>`;
 
+// ---------------------------------------- 
 // utils functions
+// ---------------------------------------- 
 
 NclBlocks.useBody = function () {
   Blockly.BlockSvg.START_HAT = false;
@@ -192,7 +202,9 @@ NclBlocks.injectInDiv = function (parend_div_id, toolbox, start_workspace, readO
   return workspace;
 }
 
+// ---------------------------------------- 
 // reusable DynamicArray block
+// ---------------------------------------- 
 
 Blockly.FieldTextbutton = function (buttontext, changeHandler) {
   Blockly.FieldTextbutton.superClass_.constructor.call(this, '');
@@ -276,7 +288,9 @@ Blockly.Blocks.DynamicArray.domToMutation = function (xmlElement) {
       this.appendArrayElementInput();
 };
 
-// body
+// ---------------------------------------- 
+// body block
+// ---------------------------------------- 
 
 Blockly.Blocks.body = Object.assign({}, Blockly.Blocks.DynamicArray);
 
@@ -315,7 +329,9 @@ Blockly.Blocks.body.init = function () {
     this.appendArrayElementInput(true);
 };
 
+// ---------------------------------------- 
 // media ids
+// ---------------------------------------- 
 
 var mediaIds = [
   ['-', '-']
@@ -344,7 +360,9 @@ Blockly.MediaIdFieldText.prototype.onFinishEditing_ = function (text) {
   mediaIds.push([text, text]);
 };
 
+// ---------------------------------------- 
 // input ids
+// ---------------------------------------- 
 
 var inputIds = [
   ['-', '-']
@@ -379,7 +397,10 @@ Blockly.InputIdFieldText.prototype.onFinishEditing_ = function (text) {
   inputIds.push([text, text]);
 };
 
+// ---------------------------------------- 
 // user ids
+// ---------------------------------------- 
+
 var userIds = [
   ['-', '-']
 ];
@@ -407,7 +428,9 @@ Blockly.NclUserFieldText.prototype.onFinishEditing_ = function (text) {
   userIds.push([text, text]);
 };
 
-// media
+// ---------------------------------------- 
+// media block
+// ---------------------------------------- 
 
 Blockly.Blocks.media = {
   init: function () {
@@ -426,7 +449,9 @@ Blockly.Blocks.media = {
   }
 };
 
-// input
+// ---------------------------------------- 
+// input block
+// ---------------------------------------- 
 
 Blockly.Blocks.input = {
   init: function () {
@@ -445,7 +470,9 @@ Blockly.Blocks.input = {
   }
 };
 
-// user
+// ---------------------------------------- 
+// user block
+// ---------------------------------------- 
 
 Blockly.Blocks.user = Object.assign({}, Blockly.Blocks.DynamicArray);
 
@@ -469,7 +496,9 @@ Blockly.Blocks.user.init = function () {
   this.appendArrayElementInput(true);
 };
 
-// port
+// ---------------------------------------- 
+// port block
+// ---------------------------------------- 
 
 Blockly.Blocks.port = {
   init: function () {
@@ -486,7 +515,9 @@ Blockly.Blocks.port = {
   }
 };
 
-// link
+// ---------------------------------------- 
+// link block
+// ---------------------------------------- 
 
 Blockly.Blocks.link = {
   init: function () {
@@ -506,7 +537,9 @@ Blockly.Blocks.link = {
   }
 };
 
-// user contents - headset
+// ---------------------------------------- 
+// headset block
+// ---------------------------------------- 
 
 Blockly.Blocks.headset = {
   init: function () {
@@ -519,7 +552,9 @@ Blockly.Blocks.headset = {
   }
 };
 
-// user contents - hand_gesture_sensor
+// ---------------------------------------- 
+// hand_gesture_sensor block
+// ---------------------------------------- 
 
 Blockly.Blocks.hand_gesture_sensor = {
   init: function () {
@@ -533,7 +568,9 @@ Blockly.Blocks.hand_gesture_sensor = {
   }
 };
 
-// media contents - image
+// ---------------------------------------- 
+// image block
+// ---------------------------------------- 
 
 Blockly.Blocks.image = {
   init: function () {
@@ -547,7 +584,9 @@ Blockly.Blocks.image = {
   }
 };
 
-// media contents - ssml
+// ---------------------------------------- 
+// ssml block
+// ---------------------------------------- 
 
 Blockly.Blocks.ssml = Object.assign({}, Blockly.Blocks.DynamicArray);
 
@@ -573,7 +612,9 @@ Blockly.Blocks.ssml.init = function () {
   this.appendArrayElementInput();
 }
 
-// media contents - video
+// ---------------------------------------- 
+// video block
+// ---------------------------------------- 
 
 Blockly.Blocks.video = Object.assign({}, Blockly.Blocks.DynamicArray);
 
@@ -600,7 +641,9 @@ Blockly.Blocks.video.init = function () {
   this.appendArrayElementInput();
 }
 
-// input contents - srgs
+// ---------------------------------------- 
+// srgs block
+// ---------------------------------------- 
 
 Blockly.Blocks.srgs = Object.assign({}, Blockly.Blocks.DynamicArray);
 
@@ -626,7 +669,9 @@ Blockly.Blocks.srgs.init = function () {
   this.appendArrayElementInput();
 }
 
-// input contents - gesture
+// ---------------------------------------- 
+// srgs block
+// ---------------------------------------- 
 
 Blockly.Blocks.srgs = Object.assign({}, Blockly.Blocks.DynamicArray);
 
@@ -677,7 +722,9 @@ Blockly.Blocks.hand_gesture.init = function () {
   this.appendArrayElementInput();
 }
 
-// conditions
+// ---------------------------------------- 
+// simplecondition blocks
+// ---------------------------------------- 
 
 Blockly.Blocks.onbegin = {
   init: function () {
@@ -777,8 +824,9 @@ Blockly.Blocks.onrecognizeuser = {
     this.contextMenu = false;
   }
 };
-
-// compound condition
+// ---------------------------------------- 
+// compoundcondition block
+// ---------------------------------------- 
 
 Blockly.Blocks.compoundcondition =
   Object.assign({}, Blockly.Blocks.DynamicArray);
@@ -808,7 +856,9 @@ Blockly.Blocks.compoundcondition.init =
     this.appendArrayElementInput(true);
   };
 
-// actions
+// ---------------------------------------- 
+// actions blocks
+// ---------------------------------------- 
 
 Blockly.Blocks.start = {
   init: function () {
