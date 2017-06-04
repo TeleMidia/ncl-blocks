@@ -17,7 +17,8 @@ NclBlocks.Msg.MEDIAS = "mídias";
 NclBlocks.Msg.INPUT = "reconhecedor";
 NclBlocks.Msg.INPUTS = "reconhecedores";
 NclBlocks.Msg.VIDEO = "conteúdo de vídeo";
-NclBlocks.Msg.VIDEO_ANCHOR = "define trecho inicio, fim";
+NclBlocks.Msg.VIDEO_ANCHOR_BEGIN = "define trecho inicio";
+NclBlocks.Msg.VIDEO_ANCHOR_END = ", fim";
 NclBlocks.Msg.VIDEO_ITEM = "trecho do vídeo";
 NclBlocks.Msg.IMAGE = "imagem";
 NclBlocks.Msg.SSML = "texto para sintetização";
@@ -501,8 +502,10 @@ Blockly.Blocks.video.init = function () {
     appended_input.appendField('id=')
       .appendField(new Blockly.MediaIdFieldText('',
         validateMediaId), 'id_area' + index)
-      .appendField(NclBlocks.Msg.VIDEO_ANCHOR + '=')
-      .appendField(new Blockly.FieldTextInput(''), 'label' + index);
+      .appendField(NclBlocks.Msg.VIDEO_ANCHOR_BEGIN + '=')
+      .appendField(new Blockly.FieldTextInput(''), 'begin' + index)
+      .appendField(NclBlocks.Msg.VIDEO_ANCHOR_END + '=')
+      .appendField(new Blockly.FieldTextInput(''), 'end' + index);
   };
   this.length = 0;
   this.appendArrayElementInput();
