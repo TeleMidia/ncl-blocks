@@ -146,21 +146,16 @@ NclBlocks.defaultToolbox =
     <block type="set"></block>
   </category>
 </xml>`;
+NclBlocks.START_WORKSPACE_WITH_BODY =
+  `<xml id="startBlocks" style="display: none">
+    <block type="body" inline="false" x="20" y="20"></block>
+    </xml>`;
 
 // ---------------------------------------- 
 // utils functions
 // ---------------------------------------- 
 
-NclBlocks.useBody = function () {
-  Blockly.BlockSvg.START_HAT = false;
-  NclBlocks.USE_BODY = true;
-  NclBlocks.START_WORKSPACE_WITH_BODY =
-    `<xml id="startBlocks" style="display: none">
-    <block type="body" inline="false" x="20" y="20"></block>
-    </xml>`;
-}
-
-NclBlocks.injectInDiv = function (parend_div_id, toolbox, start_workspace, readOnly, scrollbars, height) {
+NclBlocks.injectInDiv = function (parend_div_id, toolbox, start_workspace, readOnly, scrollbars, height, use_body = false) {
   var inject_div_name = "blockly_" + parend_div_id;
   var workspace;
 
@@ -193,7 +188,11 @@ NclBlocks.injectInDiv = function (parend_div_id, toolbox, start_workspace, readO
     readOnly: readOnly,
     sounds: true
   });
-  if (NclBlocks.USE_BODY) start_workspace = NclBlocks.START_WORKSPACE_WITH_BODY;
+  if (use_body) {
+    Blockly.BlockSvg.START_HAT = false;
+    NclBlocks.USE_BODY = true;
+    start_workspace = NclBlocks.START_WORKSPACE_WITH_BODY;
+  }
   Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(start_workspace), workspace);
 
   onresize();
@@ -321,8 +320,8 @@ Blockly.Blocks.body.init = function () {
 
   this.append_fields_to_indexed_element = function (appended_input, index) {
     appended_input.appendField()
-      .setCheck(NclBlocks.USE_CHECK ? ['media_type', 'input_type', 'user_type', 'link_type' ] : null)
-;
+      .setCheck(NclBlocks.USE_CHECK ? ['media_type', 'input_type', 'user_type', 'link_type'] : null)
+      ;
   };
   this.length = 0;
   for (var i = 0; i < 5; i++)
