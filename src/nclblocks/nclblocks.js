@@ -428,7 +428,7 @@ Blockly.NclUserFieldText.prototype.onFinishEditing_ = function (text) {
 };
 
 // ---------------------------------------- 
-// media block
+// media, image, ssml, video blocks
 // ---------------------------------------- 
 
 Blockly.Blocks.media = {
@@ -448,129 +448,6 @@ Blockly.Blocks.media = {
   }
 };
 
-// ---------------------------------------- 
-// input block
-// ---------------------------------------- 
-
-Blockly.Blocks.input = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField('{' + NclBlocks.Msg.INPUT + '}');
-    this.appendValueInput('src')
-      .setCheck(NclBlocks.USE_CHECK ? 'input_src_type' : null)
-      .appendField('id=')
-      .appendField(new Blockly.InputIdFieldText('',
-        validateInputId), 'id')
-      .appendField(', ' + NclBlocks.Msg.SRC + '=');
-    this.setInputsInline(false);
-    this.setColour(NclBlocks.MEDIA_COLOUR);
-    if (NclBlocks.USE_BODY == true) this.setOutput(true, 'input_type');
-    this.contextMenu = false;
-  }
-};
-
-// ---------------------------------------- 
-// user block
-// ---------------------------------------- 
-
-Blockly.Blocks.user = Object.assign({}, Blockly.Blocks.DynamicArray);
-
-Blockly.Blocks.user.init = function () {
-  this.appendDummyInput()
-    .appendField('{' + NclBlocks.Msg.USERS + '}')
-    .appendField(new Blockly.FieldTextbutton('+', function () {
-      this.sourceBlock_.appendArrayElementInput(true);
-    }));
-  this.setColour(NclBlocks.USER_COLOUR);
-  if (NclBlocks.USE_BODY == true) this.setOutput(true, 'user_type');
-  this.contextMenu = false;
-
-  this.append_fields_to_indexed_element = function (appended_input, index) {
-    appended_input
-      .appendField(NclBlocks.Msg.DEVICE + '=')
-      .setCheck(NclBlocks.USE_CHECK ? 'user_device_type' : null)
-  };
-  this.length = 0;
-  this.appendArrayElementInput(true);
-  this.appendArrayElementInput(true);
-};
-
-// ---------------------------------------- 
-// port block
-// ---------------------------------------- 
-
-Blockly.Blocks.port = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.port, 30, 30, '*'))
-      .appendField('{' + NclBlocks.Msg.LINK + '}')
-    this.appendDummyInput()
-      .appendField(NclBlocks.Msg.PORT_LABEL)
-      .appendField(new Blockly.FieldDropdown(getBothMediaInputIds), 'component');
-    if (NclBlocks.USE_BODY == true) this.setOutput(true, 'link_type');
-    this.setInputsInline(false);
-    this.setColour(NclBlocks.PORT_COLOUR);
-    this.contextMenu = false;
-  }
-};
-
-// ---------------------------------------- 
-// link block
-// ---------------------------------------- 
-
-Blockly.Blocks.link = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.link, 30, 30, '*'))
-      .appendField('{' + NclBlocks.Msg.LINK + '}');
-    this.appendValueInput('conditions')
-      .setCheck(NclBlocks.USE_CHECK ? 'condition_type' : null)
-      .appendField(NclBlocks.Msg.WHEN + '=');
-    this.appendStatementInput('actions')
-      .setCheck(NclBlocks.USE_CHECK ? 'simpleaction_type' : null)
-      .appendField(NclBlocks.Msg.DO);
-    this.setInputsInline(false);
-    this.setColour(NclBlocks.LINK_COLOUR);
-    if (NclBlocks.USE_BODY == true) this.setOutput(true, 'link_type');
-    this.contextMenu = false;
-  }
-};
-
-// ---------------------------------------- 
-// headset block
-// ---------------------------------------- 
-
-Blockly.Blocks.headset = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.microfone, 30, 30, '*'))
-      .appendField('{' + NclBlocks.Msg.MICROFONE + '}');
-    this.setOutput(true, NclBlocks.USE_CHECK ? 'user_device_type' : null);
-    this.setColour(NclBlocks.USER_COLOUR);
-    this.contextMenu = false;
-  }
-};
-
-// ---------------------------------------- 
-// hand_gesture_sensor block
-// ---------------------------------------- 
-
-Blockly.Blocks.hand_gesture_sensor = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.hand_gesture_sensor,
-        30, 30, '*'))
-      .appendField('{' + NclBlocks.Msg.LEAP + '}');
-    this.setOutput(true, NclBlocks.USE_CHECK ? 'user_device_type' : null);
-    this.setColour(NclBlocks.USER_COLOUR);
-    this.contextMenu = false;
-  }
-};
-
-// ---------------------------------------- 
-// image block
-// ---------------------------------------- 
-
 Blockly.Blocks.image = {
   init: function () {
     this.appendDummyInput()
@@ -582,10 +459,6 @@ Blockly.Blocks.image = {
     this.contextMenu = false;
   }
 };
-
-// ---------------------------------------- 
-// ssml block
-// ---------------------------------------- 
 
 Blockly.Blocks.ssml = Object.assign({}, Blockly.Blocks.DynamicArray);
 
@@ -610,10 +483,6 @@ Blockly.Blocks.ssml.init = function () {
   this.appendArrayElementInput();
   this.appendArrayElementInput();
 }
-
-// ---------------------------------------- 
-// video block
-// ---------------------------------------- 
 
 Blockly.Blocks.video = Object.assign({}, Blockly.Blocks.DynamicArray);
 
@@ -641,8 +510,74 @@ Blockly.Blocks.video.init = function () {
 }
 
 // ---------------------------------------- 
-// srgs block
+// input block
 // ---------------------------------------- 
+
+Blockly.Blocks.input = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField('{' + NclBlocks.Msg.INPUT + '}');
+    this.appendValueInput('src')
+      .setCheck(NclBlocks.USE_CHECK ? 'input_src_type' : null)
+      .appendField('id=')
+      .appendField(new Blockly.InputIdFieldText('',
+        validateInputId), 'id')
+      .appendField(', ' + NclBlocks.Msg.SRC + '=');
+    this.setInputsInline(false);
+    this.setColour(NclBlocks.MEDIA_COLOUR);
+    if (NclBlocks.USE_BODY == true) this.setOutput(true, 'input_type');
+    this.contextMenu = false;
+  }
+};
+
+// ---------------------------------------- 
+// user related blocks
+// ---------------------------------------- 
+
+Blockly.Blocks.user = Object.assign({}, Blockly.Blocks.DynamicArray);
+
+Blockly.Blocks.user.init = function () {
+  this.appendDummyInput()
+    .appendField('{' + NclBlocks.Msg.USERS + '}')
+    .appendField(new Blockly.FieldTextbutton('+', function () {
+      this.sourceBlock_.appendArrayElementInput(true);
+    }));
+  this.setColour(NclBlocks.USER_COLOUR);
+  if (NclBlocks.USE_BODY == true) this.setOutput(true, 'user_type');
+  this.contextMenu = false;
+
+  this.append_fields_to_indexed_element = function (appended_input, index) {
+    appended_input
+      .appendField(NclBlocks.Msg.DEVICE + '=')
+      .setCheck(NclBlocks.USE_CHECK ? 'user_device_type' : null)
+  };
+  this.length = 0;
+  this.appendArrayElementInput(true);
+  this.appendArrayElementInput(true);
+};
+
+Blockly.Blocks.headset = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.microfone, 30, 30, '*'))
+      .appendField('{' + NclBlocks.Msg.MICROFONE + '}');
+    this.setOutput(true, NclBlocks.USE_CHECK ? 'user_device_type' : null);
+    this.setColour(NclBlocks.USER_COLOUR);
+    this.contextMenu = false;
+  }
+};
+
+Blockly.Blocks.hand_gesture_sensor = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.hand_gesture_sensor,
+        30, 30, '*'))
+      .appendField('{' + NclBlocks.Msg.LEAP + '}');
+    this.setOutput(true, NclBlocks.USE_CHECK ? 'user_device_type' : null);
+    this.setColour(NclBlocks.USER_COLOUR);
+    this.contextMenu = false;
+  }
+};
 
 Blockly.Blocks.srgs = Object.assign({}, Blockly.Blocks.DynamicArray);
 
@@ -667,10 +602,6 @@ Blockly.Blocks.srgs.init = function () {
   this.appendArrayElementInput();
   this.appendArrayElementInput();
 }
-
-// ---------------------------------------- 
-// srgs block
-// ---------------------------------------- 
 
 Blockly.Blocks.srgs = Object.assign({}, Blockly.Blocks.DynamicArray);
 
@@ -722,7 +653,48 @@ Blockly.Blocks.hand_gesture.init = function () {
 }
 
 // ---------------------------------------- 
-// simplecondition blocks
+// port block
+// ---------------------------------------- 
+
+Blockly.Blocks.port = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.port, 30, 30, '*'))
+      .appendField('{' + NclBlocks.Msg.LINK + '}')
+    this.appendDummyInput()
+      .appendField(NclBlocks.Msg.PORT_LABEL)
+      .appendField(new Blockly.FieldDropdown(getBothMediaInputIds), 'component');
+    if (NclBlocks.USE_BODY == true) this.setOutput(true, 'link_type');
+    this.setInputsInline(false);
+    this.setColour(NclBlocks.PORT_COLOUR);
+    this.contextMenu = false;
+  }
+};
+
+// ---------------------------------------- 
+// link block
+// ---------------------------------------- 
+
+Blockly.Blocks.link = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.link, 30, 30, '*'))
+      .appendField('{' + NclBlocks.Msg.LINK + '}');
+    this.appendValueInput('conditions')
+      .setCheck(NclBlocks.USE_CHECK ? 'condition_type' : null)
+      .appendField(NclBlocks.Msg.WHEN + '=');
+    this.appendStatementInput('actions')
+      .setCheck(NclBlocks.USE_CHECK ? 'simpleaction_type' : null)
+      .appendField(NclBlocks.Msg.DO);
+    this.setInputsInline(false);
+    this.setColour(NclBlocks.LINK_COLOUR);
+    if (NclBlocks.USE_BODY == true) this.setOutput(true, 'link_type');
+    this.contextMenu = false;
+  }
+};
+
+// ---------------------------------------- 
+// condition related blocks
 // ---------------------------------------- 
 
 Blockly.Blocks.onbegin = {
@@ -823,9 +795,6 @@ Blockly.Blocks.onrecognizeuser = {
     this.contextMenu = false;
   }
 };
-// ---------------------------------------- 
-// compoundcondition block
-// ---------------------------------------- 
 
 Blockly.Blocks.compoundcondition =
   Object.assign({}, Blockly.Blocks.DynamicArray);
@@ -856,7 +825,7 @@ Blockly.Blocks.compoundcondition.init =
   };
 
 // ---------------------------------------- 
-// actions blocks
+// actions related blocks
 // ---------------------------------------- 
 
 Blockly.Blocks.start = {
