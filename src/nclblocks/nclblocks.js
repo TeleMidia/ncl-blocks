@@ -143,7 +143,7 @@ NclBlocks.defaultToolbox =
 function nclblocks_use_body() {
   Blockly.BlockSvg.START_HAT = false;
   NclBlocks.USE_BODY = true;
-  NclBlocks.START_WORKSPACE =
+  NclBlocks.START_WORKSPACE_WITH_BODY =
     `<xml id="startBlocks" style="display: none">
     <block type="body" inline="false" x="20" y="20"></block>
     </xml>`;
@@ -182,6 +182,7 @@ function nclblocks_inject(parend_div_id, toolbox, start_workspace, readOnly, scr
     readOnly: readOnly,
     sounds: true
   });
+  if (NclBlocks.USE_BODY) start_workspace = NclBlocks.START_WORKSPACE_WITH_BODY;
   Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(start_workspace), workspace);
 
   onresize();
@@ -549,6 +550,7 @@ Blockly.Blocks.port = {
     this.appendDummyInput()
       .appendField(NclBlocks.Msg.PORT_LABEL)
       .appendField(new Blockly.FieldDropdown(getBothMediaInputIds), 'component');
+    if (NclBlocks.USE_BODY == true) this.setOutput(true, 'link');
     this.setInputsInline(false);
     this.setColour(NclBlocks.PORT_COLOUR);
     this.contextMenu = false;
