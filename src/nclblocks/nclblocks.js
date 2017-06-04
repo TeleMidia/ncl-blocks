@@ -156,7 +156,7 @@ NclBlocks.START_WORKSPACE_WITH_BODY =
 // utils functions
 // ---------------------------------------- 
 
-NclBlocks.injectInDiv = function (parend_div_id, toolbox, start_workspace, readOnly, scrollbars, height, use_body = false) {
+NclBlocks.injectInDiv = function (parend_div_id, toolbox, start_workspace = '', readOnly = false, scrollbars = true, height = '800px', zoom = true, use_body = false) {
   var inject_div_name = "blockly_" + parend_div_id;
   var workspace;
 
@@ -187,6 +187,7 @@ NclBlocks.injectInDiv = function (parend_div_id, toolbox, start_workspace, readO
     toolbox: toolbox,
     scrollbars: scrollbars,
     readOnly: readOnly,
+    zoom: { controls: zoom},
     sounds: true
   });
   if (use_body) {

@@ -221,7 +221,7 @@ function concepts_task1_save_result() {
 function concepts_task1_inject() {
 
   var question_id = _survey.getQuestionByName("concepts_task1").idValue;
-  _concepts_task1_workspace = NclBlocks.injectInDiv(question_id, NclBlocks.defaultToolbox, "", false, true, "800px");
+  _concepts_task1_workspace = NclBlocks.injectInDiv(question_id, NclBlocks.defaultToolbox, "", false, true, "800px", true);
   _concepts_task1_workspace.addChangeListener(concepts_task1_save_changes);
 }
 
