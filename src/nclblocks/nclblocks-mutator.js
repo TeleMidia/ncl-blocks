@@ -140,7 +140,7 @@ NclBlocks.defaultToolbox =
 
 // utils functions
 
-function nclblocks_use_body() {
+NclBlocks.useBody = function () {
   Blockly.BlockSvg.START_HAT = false;
   NclBlocks.USE_BODY = true;
   NclBlocks.START_WORKSPACE_WITH_BODY =
@@ -149,7 +149,7 @@ function nclblocks_use_body() {
     </xml>`;
 }
 
-function nclblocks_inject(parend_div_id, toolbox, start_workspace, readOnly, scrollbars, height) {
+NclBlocks.injectInDiv = function (parend_div_id, toolbox, start_workspace, readOnly, scrollbars, height) {
   var inject_div_name = "blockly_" + parend_div_id;
   var workspace;
 
