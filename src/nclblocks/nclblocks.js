@@ -6,7 +6,7 @@ NclBlocks.Icons = {};
 
 // messsages
 
-NclBlocks.Msg.BODY = "aplicação";
+NclBlocks.Msg.BODY = "app";
 NclBlocks.Msg.PORT = "início da aplicação"
 NclBlocks.Msg.PORT_LABEL = "quando iniciar aplicação inicie";
 NclBlocks.Msg.MEDIA = "mídia";
@@ -14,7 +14,7 @@ NclBlocks.Msg.SRC = "conteúdo";
 NclBlocks.Msg.MEDIAS = "mídias";
 NclBlocks.Msg.INPUT = "reconhecedor";
 NclBlocks.Msg.INPUTS = "reconhecedores";
-NclBlocks.Msg.VIDEO = "vídeo";
+NclBlocks.Msg.VIDEO = "conteúdo de vídeo";
 NclBlocks.Msg.VIDEO_ANCHOR = "define trecho inicio, fim=";
 NclBlocks.Msg.VIDEO_ITEM = "trecho do vídeo";
 NclBlocks.Msg.IMAGE = "imagem";
@@ -29,7 +29,7 @@ NclBlocks.Msg.HAND_GESTURE_ANCHOR = "reconhece gesto=";
 NclBlocks.Msg.HAND_GESTURE_ITEM = "gesto a reconhecer";
 NclBlocks.Msg.LINK = "sincronismo";
 NclBlocks.Msg.LINKS = "sincronismos";
-NclBlocks.Msg.WHEN = "quando=";
+NclBlocks.Msg.WHEN = "quando";
 NclBlocks.Msg.DO = "faça=";
 NclBlocks.Msg.USER = "usuário";
 NclBlocks.Msg.USERS = "usuário";
@@ -38,6 +38,7 @@ NclBlocks.Msg.DEVICES = "dispositivos";
 NclBlocks.Msg.LEAP = "sensor de gestos de mão";
 NclBlocks.Msg.MICROFONE = "microfone";
 NclBlocks.Msg.CONDITION = "condição";
+NclBlocks.Msg.CONDITION_SIMPLE = "condição simples";
 NclBlocks.Msg.CONDITIONS = "condições";
 NclBlocks.Msg.ONRECOGNIZE = 'reconhecer';
 NclBlocks.Msg.ONRECOGNIZE_FROM_USER = 'do usuário';
@@ -99,27 +100,27 @@ NclBlocks.USE_BODY = false;
 NclBlocks.START_WORKSPACE = "";
 NclBlocks.defaultToolbox =
   `<xml id="toolbox" style="display: none">
-  <category name="`+ NclBlocks.Msg.MEDIA + `">
+  <category name="` + NclBlocks.Msg.MEDIA + `">
     <block type="media"></block>
     <block type="image"></block>
     <block type="video"></block>
     <block type="ssml"></block>
   </category>
-  <category name="`+ NclBlocks.Msg.INPUT + `">
+  <category name="` + NclBlocks.Msg.INPUT + `">
     <block type="input"></block>
     <block type="srgs"></block>
     <block type="hand_gesture"></block>
   </category>
-  <category name="`+ NclBlocks.Msg.USER + `">
+  <category name="` + NclBlocks.Msg.USER + `">
     <block type="user"></block>
     <block type="headset"></block>
     <block type="hand_gesture_sensor"></block>
   </category>
-  <category name="`+ NclBlocks.Msg.LINK + `">
+  <category name="` + NclBlocks.Msg.LINK + `">
     <block type="port"></block>
     <block type="link"></block>
   </category>
-  <category name="`+ NclBlocks.Msg.CONDITIONS + `">
+  <category name="` + NclBlocks.Msg.CONDITIONS + `">
     <block type="onbegin"></block>
     <block type="onend"></block>
     <block type="onpause"></block>
@@ -129,7 +130,7 @@ NclBlocks.defaultToolbox =
     <block type="onrecognizeuser"></block>
     <block type="compoundcondition"></block>
   </category>
-  <category name="`+ NclBlocks.Msg.ACTIONS + `">
+  <category name="` + NclBlocks.Msg.ACTIONS + `">
     <block type="start"></block>
     <block type="stop"></block>
     <block type="pause"></block>
@@ -191,161 +192,99 @@ function nclblocks_inject(parend_div_id, toolbox, start_workspace, readOnly, scr
   return workspace;
 }
 
+// reusable DynamicArray block
+
+Blockly.FieldTextbutton = function (buttontext, changeHandler) {
+  Blockly.FieldTextbutton.superClass_.constructor.call(this, '');
+  this.buttontext_ = buttontext;
+  this.changeHandler_ = changeHandler;
+  this.setText(buttontext);
+};
+
+goog.inherits(Blockly.FieldTextbutton, Blockly.Field);
+
+Blockly.FieldTextbutton.prototype.clone = function () {
+  return new Blockly.FieldTextbutton(this.buttontext_, this.changeHandler_);
+};
+
+Blockly.FieldTextbutton.prototype.CURSOR = 'default';
+
+Blockly.FieldTextbutton.prototype.showEditor_ = function () {
+  if (this.changeHandler_) {
+    this.changeHandler_();
+  }
+};
+
+Blockly.Blocks.DynamicArray = {};
+
+Blockly.Blocks.DynamicArray.appendArrayElementInput = function(
+    isValueInput = false, elementToAppendBefore = "") {
+  var lastIndex = this.length++;
+  var appended_input;
+  if (isValueInput)
+    appended_input = this.appendValueInput('element_' + lastIndex);
+  else
+    appended_input = this.appendDummyInput('element_' + lastIndex);
+  appended_input.appendField(new Blockly.FieldTextbutton('–', function () {
+    this.sourceBlock_.deleteArrayElementInput(appended_input);
+  }))
+  this.append_fields_to_indexed_element(appended_input, lastIndex);
+  if (elementToAppendBefore)
+    this.moveInputBefore('element_' + lastIndex, elementToAppendBefore);
+
+  return appended_input;
+};
+
+Blockly.Blocks.DynamicArray.deleteArrayElementInput = function (inputToDelete) {
+  var inputNameToDelete = inputToDelete.name;
+  var substructure = this.getInputTargetBlock(inputNameToDelete);
+  if (substructure) {
+    substructure.dispose(true, true);
+  }
+  this.removeInput(inputNameToDelete);
+  var inputIndexToDelete = parseInt(inputToDelete.name.match(/\d+/)[0]);
+  var lastIndex = --this.length;
+  for (var i = inputIndexToDelete + 1; i <= lastIndex; i++) {
+    var input = this.getInput('element_' + i);
+    input.name = 'element_' + (i - 1);
+  }
+};
 
 // body
 
-Blockly.Blocks.media_item = {
-  init: function () {
-    this.setColour(NclBlocks.MEDIA_COLOUR);
-    this.appendDummyInput()
-      .appendField(NclBlocks.Msg.MEDIA);
-    this.setPreviousStatement(true, ['media_item']);
-    this.setNextStatement(true, ['media_item', 'input_item']);
-    this.contextMenu = false;
-  }
-};
+Blockly.Blocks.body = Object.assign({}, Blockly.Blocks.DynamicArray);
 
-Blockly.Blocks.input_item = {
-  init: function () {
-    this.setColour(NclBlocks.INPUT_COLOUR);
-    this.appendDummyInput()
-      .appendField(NclBlocks.Msg.INPUT);
-    this.setPreviousStatement(true, ['media_item', 'input_item']);
-    this.setNextStatement(true, ['input_item', 'link_item']);
-    this.contextMenu = false;
-  }
-};
+Blockly.Blocks.body.init = function() {
+  this.appendDummyInput()
+      .appendField('--' + NclBlocks.Msg.BODY + '--').appendField(new Blockly.FieldTextbutton('+', function() {
+        this.sourceBlock_.appendArrayElementInput(true);
+      }));;
+  // this.appendDummyInput('MEDIAS')
+  //     .appendField(new Blockly.FieldTextbutton('+'+NclBlocks.Msg.MEDIA, function() {
+  //       this.sourceBlock_.appendArrayElementInput(true, "INPUTS");
+  //     }));
+  // this.appendDummyInput('INPUTS')
+  //     .appendField(new Blockly.FieldTextbutton('+'+NclBlocks.Msg.INPUT, function() {
+  //       this.sourceBlock_.appendArrayElementInput(true, "USERS");
+  //     }));
+  // this.appendDummyInput('USERS')
+  //     .appendField(new Blockly.FieldTextbutton('+'+NclBlocks.Msg.USER, function() {
+  //       this.sourceBlock_.appendArrayElementInput(true, "LINKS");
+  //     }));
+  // this.appendDummyInput('LINKS')
+  //     .appendField(new Blockly.FieldTextbutton('+'+NclBlocks.Msg.LINK, function() {
+  //       this.sourceBlock_.appendArrayElementInput(true);
+  //     }));
 
-Blockly.Blocks.link_item = {
-  init: function () {
-    this.setColour(NclBlocks.LINK_COLOUR);
-    this.appendDummyInput()
-      .appendField(NclBlocks.Msg.LINK);
-    this.setPreviousStatement(true, ['input_item', 'link_item']);
-    this.setNextStatement(true, ['link_item']);
-    this.contextMenu = false;
-  }
-};
+  this.setColour(NclBlocks.BODY_COLOUR);
+  this.contextMenu = false;
 
-Blockly.Blocks.body = {
-  init: function () {
-    this.setColour(NclBlocks.BODY_COLOUR);
-    this.appendDummyInput().appendField('--' + NclBlocks.Msg.BODY + '--');
-    this.appendValueInput('MEDIA0')
-      .setCheck(NclBlocks.USE_CHECK ? 'media' : null)
-      .appendField(NclBlocks.Msg.MEDIAS + ':');
-    this.appendValueInput('INPUT0')
-      .setCheck(NclBlocks.USE_CHECK ? 'input' : null)
-      .appendField(NclBlocks.Msg.INPUTS + ':');
-    this.appendValueInput('USER0')
-      .setCheck(NclBlocks.USE_CHECK ? 'user' : null)
-      .appendField(NclBlocks.Msg.USERS + ':');
-    this.appendValueInput('LINK0')
-      .setCheck(NclBlocks.USE_CHECK ? 'link' : null)
-      .appendField(NclBlocks.Msg.LINKS + ':');
-    this.setMutator(new Blockly.Mutator(['media_item',
-      'input_item', 'link_item'
-    ]));
-    this.mediaCount = 2;
-    this.inputCount = 2;
-    this.linkCount = 2;
-    this.contextMenu = false;
-    this.setDeletable(false);
-    this.updateShape_();
-  },
-
-  mutationToDom: function () {
-    var container = document.createElement('mutation');
-    container.setAttribute('mediaCount', this.mediaCount);
-    container.setAttribute('inputCount', this.inputCount);
-    container.setAttribute('linkCount', this.linkCount);
-    return container;
-  },
-
-  domToMutation: function (xmlElement) {
-    this.mediaCount = parseInt(xmlElement.getAttribute('mediaCount'), 10) || 1;
-    this.inputCount = parseInt(xmlElement.getAttribute('inputCount'), 10) || 1;
-    this.linkCount = parseInt(xmlElement.getAttribute('linkCount'), 10) || 1;
-    this.updateShape_();
-  },
-  // Populate the mutator's dialog with this block's components.
-  decompose: function (workspace) {
-    var containerBlock = workspace.newBlock('lists_create_with_container');
-    containerBlock.setColour(NclBlocks.BODY_COLOUR);
-    containerBlock.initSvg();
-    var connection = containerBlock.getInput('STACK').connection;
-    for (var i = 0; i < this.mediaCount; i++) {
-      var itemBlock = workspace.newBlock('media_item');
-      if (i === 0) itemBlock.setMovable(false);
-      itemBlock.initSvg();
-      connection.connect(itemBlock.previousConnection);
-      connection = itemBlock.nextConnection;
-    }
-    for (var i = 0; i < this.inputCount; i++) {
-      var itemBlock = workspace.newBlock('input_item');
-      itemBlock.initSvg();
-      if (i === 0) itemBlock.setMovable(false);
-      connection.connect(itemBlock.previousConnection);
-      connection = itemBlock.nextConnection;
-    }
-    for (var i = 0; i < this.linkCount; i++) {
-      var itemBlock = workspace.newBlock('link_item');
-      itemBlock.initSvg();
-      if (i === 0) itemBlock.setMovable(false);
-      connection.connect(itemBlock.previousConnection);
-      connection = itemBlock.nextConnection;
-    }
-    return containerBlock;
-  },
-
-  // Reconfigure this block based on the mutator dialog's components.
-  compose: function (containerBlock) {
-    var itemBlock = containerBlock.getInputTargetBlock('STACK');
-    var mediaAux = 0,
-      inputAux = 0,
-      linkAux = 0;
-    while (itemBlock) {
-      if (itemBlock.type == 'media_item') {
-        mediaAux++;
-      }
-      if (itemBlock.type == 'input_item') {
-        inputAux++;
-      }
-      if (itemBlock.type == 'link_item') {
-        linkAux++;
-      }
-      itemBlock = itemBlock.nextConnection &&
-        itemBlock.nextConnection.targetBlock();
-    }
-    this.mediaCount = mediaAux;
-    this.inputCount = inputAux;
-    this.linkCount = linkAux;
-    this.updateShape_();
-  },
-  // Store pointers to any connected child blocks.
-  saveConnections: function () { },
-  updateShape_: function () {
-    for (var i = 1; i < this.mediaCount; i++) {
-      if (!this.getInput('MEDIA' + i)) {
-        this.appendValueInput('MEDIA' + i)
-          .setCheck(NclBlocks.USE_CHECK ? 'media' : null);
-        this.moveInputBefore('MEDIA' + i, 'INPUT0');
-      }
-    }
-    for (var i = 1; i < this.inputCount; i++) {
-      if (!this.getInput('INPUT' + i)) {
-        this.appendValueInput('INPUT' + i)
-          .setCheck(NclBlocks.USE_CHECK ? 'input' : null);
-        this.moveInputBefore('INPUT' + i, 'USER0');
-      }
-    }
-    for (var i = 1; i < this.linkCount; i++) {
-      if (!this.getInput('LINK' + i)) {
-        this.appendValueInput('LINK' + i)
-          .setCheck(NclBlocks.USE_CHECK ? 'link' : null);
-      }
-    }
-  }
+  this.append_fields_to_indexed_element = function(appended_input, index) {
+    appended_input.appendField();
+  };
+  this.length = 0;
+  for(var i=0; i< 5; i++)
+    this.appendArrayElementInput(true);
 };
 
 // media ids
@@ -355,15 +294,15 @@ var mediaIds = [
 ];
 
 function getMediaIds() {
-  return mediaIds;
+    return mediaIds;
 }
 
 function validateMediaId(text) {
-  if (text === '') return null;
-  for (var i in mediaIds) {
-    if (mediaIds[i][0] === text) {
-      return null;
-    }
+    if (text === '') return null;
+    for (var i in mediaIds) {
+      if (mediaIds[i][0] === text) {
+        return null;
+      }
   }
 }
 
@@ -480,70 +419,32 @@ Blockly.Blocks.input = {
 
 // user
 
-Blockly.Blocks.device_item = {
-  init: function () {
-    this.setColour(NclBlocks.USER_COLOUR);
-    this.appendDummyInput()
-      .appendField(NclBlocks.Msg.DEVICE);
-    this.setPreviousStatement(true, ['device_item']);
-    this.setNextStatement(true, ['device_item']);
-    this.contextMenu = false;
-  }
-};
+Blockly.Blocks.user = Object.assign({}, Blockly.Blocks.DynamicArray);
 
-Blockly.Blocks.user = Object.assign({}, Blockly.Blocks.lists_create_with);
-
-Blockly.Blocks.user.init = function () {
+Blockly.Blocks.user.init = function() {
   this.appendDummyInput()
-    .appendField('--' + NclBlocks.Msg.USERS + '--');
-  this.appendValueInput('ADD0')
-    .appendField('id=')
-    .appendField(new Blockly.NclUserFieldText('',
-      validateUserId), 'id_device' + 1)
-    .setCheck(NclBlocks.USE_CHECK ? 'user_content' : null)
-    .appendField(', ' + NclBlocks.Msg.DEVICES + '=');
+      .appendField('--' + NclBlocks.Msg.USERS + '--')
+      .appendField(new Blockly.FieldTextbutton('+', function() {
+        this.sourceBlock_.appendArrayElementInput(true);
+      }));
   this.setColour(NclBlocks.USER_COLOUR);
-  this.itemCount_ = 2;
-  this.updateShape_();
-  this.setMutator(new Blockly.Mutator(['device_item']));
   if (NclBlocks.USE_BODY == true) this.setOutput(true, 'user');
   this.contextMenu = false;
-};
-
-Blockly.Blocks.user.decompose = function (workspace) {
-  var containerBlock = workspace.newBlock('lists_create_with_container');
-  containerBlock.setColour(NclBlocks.USER_COLOUR);
-  containerBlock.initSvg();
-  var connection = containerBlock.getInput('STACK').connection;
-  for (var i = 0; i < this.itemCount_; i++) {
-    var itemBlock = workspace.newBlock('device_item');
-    if (i === 0) itemBlock.setMovable(false);
-    itemBlock.initSvg();
-    connection.connect(itemBlock.previousConnection);
-    connection = itemBlock.nextConnection;
-  }
-  return containerBlock;
-};
-
-Blockly.Blocks.user.updateShape_ = function () {
-  // Add new inputs.
-  for (var i = 1; i < this.itemCount_; i++) {
-    if (!this.getInput('ADD' + i)) {
-      var input = this.appendValueInput('ADD' + i);
-      input.setCheck(NclBlocks.USE_CHECK ? 'user_content' : null);
-    }
-  }
-  // Remove deleted inputs.
-  while (this.getInput('ADD' + i)) {
-    this.removeInput('ADD' + i);
-    i++;
-  }
+  
+  this.append_fields_to_indexed_element = function(appended_input, index) {
+    appended_input
+        .appendField(NclBlocks.Msg.DEVICE + '=')
+        .setCheck(NclBlocks.USE_CHECK ? 'user_content' : null)
+  };
+  this.length = 0;
+  this.appendArrayElementInput(true);
+  this.appendArrayElementInput(true);
 };
 
 // port
 
 Blockly.Blocks.port = {
-  init: function () {
+  init: function() {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.port, 30, 30, '*'))
       .appendField('--' + NclBlocks.Msg.LINK + '--')
@@ -566,7 +467,7 @@ Blockly.Blocks.link = {
       .appendField('--' + NclBlocks.Msg.LINK + '--');
     this.appendValueInput('conditions')
       .setCheck(NclBlocks.USE_CHECK ? ['compoundcondition', 'simplecondition'] : null)
-      .appendField(NclBlocks.Msg.WHEN);
+      .appendField(NclBlocks.Msg.WHEN+'=');
     this.appendStatementInput('actions')
       .setCheck(NclBlocks.USE_CHECK ? 'simpleaction' : null)
       .appendField(NclBlocks.Msg.DO);
@@ -620,324 +521,133 @@ Blockly.Blocks.image = {
 
 // media contents - ssml
 
-Blockly.Blocks.sentence_item = {
-  init: function () {
-    this.setColour(NclBlocks.MEDIA_COLOUR);
-    this.appendDummyInput()
-      .appendField(NclBlocks.Msg.SSML_ITEM);
-    this.setPreviousStatement(true, ['sentence_item']);
-    this.setNextStatement(true, ['sentence_item']);
-    this.contextMenu = false;
-  }
-};
-
-Blockly.Blocks.ssml = Object.assign({}, Blockly.Blocks.lists_create_with);
+Blockly.Blocks.ssml = Object.assign({}, Blockly.Blocks.DynamicArray);
 
 Blockly.Blocks.ssml.init = function () {
   this.appendDummyInput()
     .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.ssml, 30, 30, '*'))
-    .appendField('--' + NclBlocks.Msg.SSML + '--');
+    .appendField('--' + NclBlocks.Msg.SSML + '--')
+    .appendField(new Blockly.FieldTextbutton('+', function () {
+      this.sourceBlock_.appendArrayElementInput();
+    }));
   this.setColour(NclBlocks.MEDIA_COLOUR);
-  this.itemCount_ = 2;
-  this.updateShape_();
   this.setOutput(true, 'media_content');
-  this.setMutator(new Blockly.Mutator(['sentence_item']));
   this.contextMenu = false;
-};
-
-Blockly.Blocks.ssml.decompose = function (workspace) {
-  var containerBlock = workspace.newBlock('lists_create_with_container');
-  containerBlock.setColour(NclBlocks.MEDIA_COLOUR);
-  containerBlock.initSvg();
-  var connection = containerBlock.getInput('STACK').connection;
-
-  for (var i = 0; i < this.itemCount_; i++) {
-    var itemBlock = workspace.newBlock('sentence_item');
-    if (i === 0) itemBlock.setMovable(false);
-    itemBlock.initSvg();
-    connection.connect(itemBlock.previousConnection);
-    connection = itemBlock.nextConnection;
-  }
-  return containerBlock;
-};
-
-Blockly.Blocks.ssml.compose = function (containerBlock) {
-  var itemBlock = containerBlock.getInputTargetBlock('STACK');
-  var connections = [];
-
-  while (itemBlock) {
-    connections.push(itemBlock.valueConnection_);
-    itemBlock = itemBlock.nextConnection &&
-      itemBlock.nextConnection.targetBlock();
-  }
-  this.itemCount_ = connections.length;
-  this.updateShape_();
-};
-
-Blockly.Blocks.ssml.saveConnections = function () { };
-
-Blockly.Blocks.ssml.updateShape_ = function () {
-  if (this.itemCount_ && this.getInput('EMPTY')) {
-    this.removeInput('EMPTY');
-  } else if (!this.itemCount_ && !this.getInput('EMPTY')) {
-    this.appendDummyInput('EMPTY');
-  }
-  for (var i = 0; i < this.itemCount_; i++) {
-    if (!this.getInput('ADD' + i)) {
-      this.appendDummyInput('ADD' + i)
-        .appendField('id=')
-        .appendField(new Blockly.MediaIdFieldText('',
-          validateMediaId), 'id_area' + i)
-        .appendField(NclBlocks.Msg.SSML_ANCHOR)
-        .appendField(new Blockly.FieldTextInput(''), 'label' + i);
-    }
-  }
-  while (this.getInput('ADD' + i)) {
-    this.removeInput('ADD' + i);
-    i++;
-  }
-};
+  this.append_fields_to_indexed_element = function (appended_input, index) {
+    appended_input.appendField('id=')
+      .appendField(new Blockly.MediaIdFieldText('',
+        validateMediaId), 'id_area' + index)
+      .appendField(NclBlocks.Msg.SSML_ANCHOR)
+      .appendField(new Blockly.FieldTextInput(''), 'label' + index);
+  };
+  this.length = 0;
+  this.appendArrayElementInput();
+  this.appendArrayElementInput();
+}
 
 // media contents - video
 
-Blockly.Blocks.clip_item = {
-  init: function () {
-    this.setColour(NclBlocks.MEDIA_COLOUR);
-    this.appendDummyInput()
-      .appendField(NclBlocks.Msg.VIDEO_ITEM);
-    this.setPreviousStatement(true, ['clip_item']);
-    this.setNextStatement(true, ['clip_item']);
-    this.contextMenu = false;
-  }
-};
-
-Blockly.Blocks.video = Object.assign({}, Blockly.Blocks.lists_create_with);
+Blockly.Blocks.video = Object.assign({}, Blockly.Blocks.DynamicArray);
 
 Blockly.Blocks.video.init = function () {
   this.appendDummyInput()
     .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.video, 30, 30,
       '*'))
-    .appendField('--' + NclBlocks.Msg.VIDEO + '--');
+    .appendField('--' + NclBlocks.Msg.VIDEO + '--')
+    .appendField(new Blockly.FieldTextbutton('+', function () {
+      this.sourceBlock_.appendArrayElementInput();
+    }));
   this.setColour(NclBlocks.MEDIA_COLOUR);
-  this.itemCount_ = 2;
-  this.updateShape_();
   this.setOutput(true, 'media_content');
-  this.setMutator(new Blockly.Mutator(['clip_item']));
   this.contextMenu = false;
-};
-
-Blockly.Blocks.video.decompose = function (workspace) {
-  var containerBlock = workspace.newBlock('lists_create_with_container');
-  containerBlock.setColour(NclBlocks.MEDIA_COLOUR);
-  containerBlock.initSvg();
-  var connection = containerBlock.getInput('STACK').connection;
-  for (var i = 0; i < this.itemCount_; i++) {
-    var itemBlock = workspace.newBlock('clip_item');
-    if (i === 0) itemBlock.setMovable(false);
-    itemBlock.initSvg();
-    connection.connect(itemBlock.previousConnection);
-    connection = itemBlock.nextConnection;
-  }
-  return containerBlock;
-};
-
-Blockly.Blocks.video.compose = function (containerBlock) {
-  var itemBlock = containerBlock.getInputTargetBlock('STACK');
-  var connections = [];
-
-  while (itemBlock) {
-    connections.push(itemBlock.valueConnection_);
-    itemBlock = itemBlock.nextConnection &&
-      itemBlock.nextConnection.targetBlock();
-  }
-  this.itemCount_ = connections.length;
-  this.updateShape_();
-};
-
-Blockly.Blocks.video.saveConnections = function () { };
-
-Blockly.Blocks.video.updateShape_ = function () {
-  if (this.itemCount_ && this.getInput('EMPTY')) {
-    this.removeInput('EMPTY');
-  } else if (!this.itemCount_ && !this.getInput('EMPTY')) {
-    this.appendDummyInput('EMPTY');
-  }
-  for (var i = 0; i < this.itemCount_; i++) {
-    if (!this.getInput('ADD' + i)) {
-      this.appendDummyInput('ADD' + i)
-        .appendField('id=')
-        .appendField(new Blockly.MediaIdFieldText('',
-          validateMediaId), 'id_area' + i)
-        .appendField(NclBlocks.Msg.VIDEO_ANCHOR)
-        .appendField(new Blockly.FieldNumber(0, 0), 'begin' + i)
-        .appendField(',')
-        .appendField(new Blockly.FieldNumber(0, 0), 'end' + i);
-    }
-  }
-  while (this.getInput('ADD' + i)) {
-    this.removeInput('ADD' + i);
-    i++;
-  }
-};
+  this.append_fields_to_indexed_element = function (appended_input, index) {
+    appended_input.appendField('id=')
+      .appendField(new Blockly.MediaIdFieldText('',
+        validateMediaId), 'id_area' + index)
+      .appendField(NclBlocks.Msg.VIDEO_ANCHOR)
+      .appendField(new Blockly.FieldTextInput(''), 'label' + index);
+  };
+  this.length = 0;
+  this.appendArrayElementInput();
+  this.appendArrayElementInput();
+}
 
 // input contents - srgs
 
-Blockly.Blocks.recognition_item = {
-  init: function () {
-    this.setColour(NclBlocks.MEDIA_COLOUR);
-    this.appendDummyInput()
-      .appendField(NclBlocks.Msg.SRGS_ITEM);
-    this.setPreviousStatement(true, ['input_item', 'link_item']);
-    this.setNextStatement(true, ['link_item']);
-    this.contextMenu = false;
-  }
-};
-
-Blockly.Blocks.srgs = Object.assign({}, Blockly.Blocks.lists_create_with);
+Blockly.Blocks.srgs = Object.assign({}, Blockly.Blocks.DynamicArray);
 
 Blockly.Blocks.srgs.init = function () {
   this.appendDummyInput()
     .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.srgs, 30, 30, '*'))
-    .appendField('--' + NclBlocks.Msg.SRGS + '--');
+    .appendField('--' + NclBlocks.Msg.SRGS + '--')
+    .appendField(new Blockly.FieldTextbutton('+', function () {
+      this.sourceBlock_.appendArrayElementInput();
+    }));
   this.setColour(NclBlocks.MEDIA_COLOUR);
-  this.itemCount_ = 2;
-  this.updateShape_();
   this.setOutput(true, 'input_content');
-  this.setMutator(new Blockly.Mutator(['recognition_item']));
   this.contextMenu = false;
-};
-
-Blockly.Blocks.srgs.decompose = function (workspace) {
-  var containerBlock = workspace.newBlock('lists_create_with_container');
-  containerBlock.setColour(NclBlocks.MEDIA_COLOUR);
-  containerBlock.initSvg();
-  var connection = containerBlock.getInput('STACK').connection;
-  for (var i = 0; i < this.itemCount_; i++) {
-    var itemBlock = workspace.newBlock('recognition_item');
-    if (i === 0) itemBlock.setMovable(false);
-    itemBlock.initSvg();
-    connection.connect(itemBlock.previousConnection);
-    connection = itemBlock.nextConnection;
-  }
-  return containerBlock;
-};
-
-Blockly.Blocks.srgs.compose = function (containerBlock) {
-  var itemBlock = containerBlock.getInputTargetBlock('STACK');
-  var connections = [];
-
-  while (itemBlock) {
-    connections.push(itemBlock.valueConnection_);
-    itemBlock = itemBlock.nextConnection &&
-      itemBlock.nextConnection.targetBlock();
-  }
-  this.itemCount_ = connections.length;
-  this.updateShape_();
-};
-
-Blockly.Blocks.srgs.saveConnections = function () { };
-
-Blockly.Blocks.srgs.updateShape_ = function () {
-  if (this.itemCount_ && this.getInput('EMPTY')) {
-    this.removeInput('EMPTY');
-  } else if (!this.itemCount_ && !this.getInput('EMPTY')) {
-    this.appendDummyInput('EMPTY');
-  }
-  for (var i = 0; i < this.itemCount_; i++) {
-    if (!this.getInput('ADD' + i)) {
-      this.appendDummyInput('ADD' + i)
-        .appendField('id=')
-        .appendField(new Blockly.InputIdFieldText('',
-          validateInputId), 'id_area' + i)
-        .appendField(NclBlocks.Msg.SRGS_ANCHOR)
-        .appendField(new Blockly.FieldTextInput(''), 'label' + i);
-    }
-  }
-  while (this.getInput('ADD' + i)) {
-    this.removeInput('ADD' + i);
-    i++;
-  }
-};
+  this.append_fields_to_indexed_element = function (appended_input, index) {
+    appended_input.appendField('id=')
+      .appendField(new Blockly.InputIdFieldText('',
+        validateInputId), 'id_area' + index)
+      .appendField(NclBlocks.Msg.SRGS_ANCHOR)
+      .appendField(new Blockly.FieldTextInput(''), 'label' + index);
+  };
+  this.length = 0;
+  this.appendArrayElementInput();
+  this.appendArrayElementInput();
+}
 
 // input contents - gesture
 
-Blockly.Blocks.hand_gesture_item = {
-  init: function () {
-    this.setColour(NclBlocks.INPUT_COLOUR);
-    this.appendDummyInput()
-      .appendField(NclBlocks.Msg.HAND_GESTURE_ITEM);
-    this.setPreviousStatement(true, ['hand_gesture_item']);
-    this.setNextStatement(true, ['hand_gesture_item']);
-    this.contextMenu = false;
-  }
-};
+Blockly.Blocks.srgs = Object.assign({}, Blockly.Blocks.DynamicArray);
 
-Blockly.Blocks.hand_gesture = Object.assign({}, Blockly.Blocks.lists_create_with);
+Blockly.Blocks.srgs.init = function () {
+  this.appendDummyInput()
+    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.srgs, 30, 30, '*'))
+    .appendField('--' + NclBlocks.Msg.SRGS + '--')
+    .appendField(new Blockly.FieldTextbutton('+', function () {
+      this.sourceBlock_.appendArrayElementInput();
+    }));
+  this.setColour(NclBlocks.MEDIA_COLOUR);
+  this.setOutput(true, 'input_content');
+  this.contextMenu = false;
+  this.append_fields_to_indexed_element = function (appended_input, index) {
+    appended_input.appendField('id=')
+      .appendField(new Blockly.InputIdFieldText('',
+        validateInputId), 'id_area' + index)
+      .appendField(NclBlocks.Msg.SRGS_ANCHOR)
+      .appendField(new Blockly.FieldTextInput(''), 'label' + index);
+  };
+  this.length = 0;
+  this.appendArrayElementInput();
+  this.appendArrayElementInput();
+}
+
+Blockly.Blocks.hand_gesture = Object.assign({}, Blockly.Blocks.DynamicArray);
 
 Blockly.Blocks.hand_gesture.init = function () {
   this.appendDummyInput()
     .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.hand_gesture, 30, 30,
       '*'))
-    .appendField('--' + NclBlocks.Msg.HAND_GESTURE + '--');
+    .appendField('--' + NclBlocks.Msg.HAND_GESTURE + '--')
+    .appendField(new Blockly.FieldTextbutton('+', function () {
+      this.sourceBlock_.appendArrayElementInput();
+    }));
   this.setColour(NclBlocks.INPUT_COLOUR);
-  this.itemCount_ = 2;
-  this.updateShape_();
   this.setOutput(true, 'input_content');
-  this.setMutator(new Blockly.Mutator(['hand_gesture_item']));
   this.contextMenu = false;
-};
-
-Blockly.Blocks.hand_gesture.decompose = function (workspace) {
-  var containerBlock = workspace.newBlock('lists_create_with_container');
-  containerBlock.setColour(NclBlocks.MEDIA_COLOUR);
-  containerBlock.initSvg();
-  var connection = containerBlock.getInput('STACK').connection;
-  for (var i = 0; i < this.itemCount_; i++) {
-    var itemBlock = workspace.newBlock('hand_gesture_item');
-    if (i === 0) itemBlock.setMovable(false);
-    itemBlock.initSvg();
-    connection.connect(itemBlock.previousConnection);
-    connection = itemBlock.nextConnection;
-  }
-  return containerBlock;
-};
-
-Blockly.Blocks.hand_gesture.compose = function (containerBlock) {
-  var itemBlock = containerBlock.getInputTargetBlock('STACK');
-  var connections = [];
-
-  while (itemBlock) {
-    connections.push(itemBlock.valueConnection_);
-    itemBlock = itemBlock.nextConnection &&
-      itemBlock.nextConnection.targetBlock();
-  }
-  this.itemCount_ = connections.length;
-  this.updateShape_();
-};
-
-Blockly.Blocks.hand_gesture.saveConnections = function () { };
-
-Blockly.Blocks.hand_gesture.updateShape_ = function () {
-  if (this.itemCount_ && this.getInput('EMPTY')) {
-    this.removeInput('EMPTY');
-  } else if (!this.itemCount_ && !this.getInput('EMPTY')) {
-    this.appendDummyInput('EMPTY');
-  }
-  for (var i = 0; i < this.itemCount_; i++) {
-    if (!this.getInput('ADD' + i)) {
-      this.appendDummyInput('ADD' + i)
-        .appendField('id=')
-        .appendField(new Blockly.InputIdFieldText('',
-          validateInputId), 'id_area' + i)
-        .appendField(NclBlocks.Msg.HAND_GESTURE_ANCHOR)
-        .appendField(new Blockly.FieldTextInput(''), 'label' + i);
-    }
-  }
-  while (this.getInput('ADD' + i)) {
-    this.removeInput('ADD' + i);
-    i++;
-  }
-};
+  this.append_fields_to_indexed_element = function (appended_input, index) {
+    appended_input.appendField('id=')
+      .appendField(new Blockly.InputIdFieldText('',
+        validateInputId), 'id_area' + index)
+      .appendField(NclBlocks.Msg.HAND_GESTURE_ANCHOR)
+      .appendField(new Blockly.FieldTextInput(''), 'label' + index);
+  };
+  this.length = 0;
+  this.appendArrayElementInput();
+  this.appendArrayElementInput();
+}
 
 // conditions
 
@@ -1042,71 +752,37 @@ Blockly.Blocks.onrecognizeuser = {
 
 // compound condition
 
-Blockly.Blocks.condition_item = {
-  init: function () {
-    this.setColour(NclBlocks.CONDITION_COLOUR);
-    this.appendDummyInput()
-      .appendField(NclBlocks.Msg.CONDITION);
-    this.setPreviousStatement(true, ['condition_item']);
-    this.setNextStatement(true, ['condition_item']);
-    this.contextMenu = false;
-  }
-};
+Blockly.Blocks.compoundcondition =
+    Object.assign({}, Blockly.Blocks.DynamicArray);
 
-Blockly.Blocks.compoundcondition = Object.assign({}, Blockly.Blocks.lists_create_with);
-
-Blockly.Blocks.compoundcondition.init = function () {
+Blockly.Blocks.compoundcondition.init =
+    function() {
   this.appendDummyInput()
-    .appendField(
-    new Blockly.FieldDropdown([
-      [NclBlocks.Msg.SEQ, 'seq'],
-      [NclBlocks.Msg.AND, 'and'],
-      [NclBlocks.Msg.OR, 'or']
-    ]),
-    'operator');
+      .appendField(
+          new Blockly.FieldDropdown([
+            [NclBlocks.Msg.SEQ, 'seq'], [NclBlocks.Msg.AND, 'and'],
+            [NclBlocks.Msg.OR, 'or']
+          ]),
+          'operator')
+      .appendField(new Blockly.FieldTextbutton('+', function() {
+        this.sourceBlock_.appendArrayElementInput(true);
+      }));
+  ;
   this.setColour(NclBlocks.CONDITION_COLOUR);
-  this.itemCount_ = 2;
-  this.updateShape_();
   this.setOutput(true, 'simplecondition');
-  this.setMutator(new Blockly.Mutator(['condition_item']));
   this.contextMenu = false;
-};
-
-Blockly.Blocks.compoundcondition.decompose = function (workspace) {
-  var containerBlock = workspace.newBlock('lists_create_with_container');
-  containerBlock.initSvg();
-  var connection = containerBlock.getInput('STACK').connection;
-  for (var i = 0; i < this.itemCount_; i++) {
-    var itemBlock = workspace.newBlock('condition_item');
-    if (i === 0) itemBlock.setMovable(false);
-    itemBlock.initSvg();
-    connection.connect(itemBlock.previousConnection);
-    connection = itemBlock.nextConnection;
-  }
-  return containerBlock;
-};
-
-Blockly.Blocks.compoundcondition.updateShape_ = function () {
-  if (this.itemCount_ && this.getInput('EMPTY')) {
-    this.removeInput('EMPTY');
-  } else if (!this.itemCount_ && !this.getInput('EMPTY')) {
-    this.appendDummyInput('EMPTY');
-  }
-  for (var i = 0; i < this.itemCount_; i++) {
-    if (!this.getInput('ADD' + i)) {
-      this.appendValueInput('ADD' + i);
-    }
-  }
-  while (this.getInput('ADD' + i)) {
-    this.removeInput('ADD' + i);
-    i++;
-  }
+  this.append_fields_to_indexed_element = function(appended_input, index) {
+    appended_input.appendField(NclBlocks.Msg.WHEN + '=');
+  };
+  this.length = 0;
+  this.appendArrayElementInput(true);
+  this.appendArrayElementInput(true);
 };
 
 // actions
 
 Blockly.Blocks.start = {
-  init: function () {
+  init: function() {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.start, 15,
         15, '*'))
