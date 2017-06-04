@@ -219,6 +219,9 @@ Blockly.Blocks.DynamicArray = {};
 
 Blockly.Blocks.DynamicArray.appendArrayElementInput = function(
     isValueInput = false, elementToAppendBefore = "") {
+  var oldMutationDom = this.mutationToDom();
+  var oldMutation = Blockly.Xml.domToText(oldMutationDom);
+
   var lastIndex = this.length++;
   var appended_input;
   if (isValueInput)
@@ -232,7 +235,13 @@ Blockly.Blocks.DynamicArray.appendArrayElementInput = function(
   if (elementToAppendBefore)
     this.moveInputBefore('element_' + lastIndex, elementToAppendBefore);
 
-  return appended_input;
+  var newMutationDom = this.mutationToDom();
+  var newMutation = Blockly.Xml.domToText(newMutationDom);
+
+  Blockly.Events.fire(new Blockly.Events.Change(
+    this, 'mutation', null, oldMutation, newMutation));
+
+    return appended_input;
 };
 
 Blockly.Blocks.DynamicArray.deleteArrayElementInput = function (inputToDelete) {
@@ -248,6 +257,23 @@ Blockly.Blocks.DynamicArray.deleteArrayElementInput = function (inputToDelete) {
     var input = this.getInput('element_' + i);
     input.name = 'element_' + (i - 1);
   }
+};
+
+Blockly.Blocks.DynamicArray.mutationToDom = function () {
+  var container = document.createElement('mutation');
+  container.setAttribute('length', this.length);
+  return container;
+};
+
+Blockly.Blocks.DynamicArray.domToMutation = function (xmlElement) {
+  var new_length = xmlElement.getAttribute('length');
+  // console.log(xmlElement);
+  // console.log(this);
+  // console.log(this.length);
+  // console.log(new_length);
+  if (new_length - this.length> 0 )
+    for (var i = 0; i < new_length-this.length; i++)
+      this.appendArrayElementInput();
 };
 
 // body
