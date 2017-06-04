@@ -282,7 +282,7 @@ Blockly.Blocks.body = Object.assign({}, Blockly.Blocks.DynamicArray);
 
 Blockly.Blocks.body.init = function () {
   this.appendDummyInput()
-    .appendField('--' + NclBlocks.Msg.BODY + '--').appendField(new Blockly.FieldTextbutton('+', function () {
+    .appendField('{' + NclBlocks.Msg.BODY + '}').appendField(new Blockly.FieldTextbutton('+', function () {
       this.sourceBlock_.appendArrayElementInput(true);
     }));;
   // this.appendDummyInput('MEDIAS')
@@ -410,7 +410,7 @@ Blockly.NclUserFieldText.prototype.onFinishEditing_ = function (text) {
 Blockly.Blocks.media = {
   init: function () {
     this.appendDummyInput()
-      .appendField('--' + NclBlocks.Msg.MEDIA + '--');
+      .appendField('{' + NclBlocks.Msg.MEDIA + '}');
     this.appendValueInput('src')
       .setCheck(NclBlocks.USE_CHECK ? 'media_content' : null)
       .appendField('id=')
@@ -429,7 +429,7 @@ Blockly.Blocks.media = {
 Blockly.Blocks.input = {
   init: function () {
     this.appendDummyInput()
-      .appendField('--' + NclBlocks.Msg.INPUT + '--');
+      .appendField('{' + NclBlocks.Msg.INPUT + '}');
     this.appendValueInput('src')
       .setCheck(NclBlocks.USE_CHECK ? 'input_content' : null)
       .appendField('id=')
@@ -449,7 +449,7 @@ Blockly.Blocks.user = Object.assign({}, Blockly.Blocks.DynamicArray);
 
 Blockly.Blocks.user.init = function () {
   this.appendDummyInput()
-    .appendField('--' + NclBlocks.Msg.USERS + '--')
+    .appendField('{' + NclBlocks.Msg.USERS + '}')
     .appendField(new Blockly.FieldTextbutton('+', function () {
       this.sourceBlock_.appendArrayElementInput(true);
     }));
@@ -473,7 +473,7 @@ Blockly.Blocks.port = {
   init: function () {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.port, 30, 30, '*'))
-      .appendField('--' + NclBlocks.Msg.LINK + '--')
+      .appendField('{' + NclBlocks.Msg.LINK + '}')
     this.appendDummyInput()
       .appendField(NclBlocks.Msg.PORT_LABEL)
       .appendField(new Blockly.FieldDropdown(getBothMediaInputIds), 'component');
@@ -490,7 +490,7 @@ Blockly.Blocks.link = {
   init: function () {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.link, 30, 30, '*'))
-      .appendField('--' + NclBlocks.Msg.LINK + '--');
+      .appendField('{' + NclBlocks.Msg.LINK + '}');
     this.appendValueInput('conditions')
       .setCheck(NclBlocks.USE_CHECK ? ['compoundcondition', 'simplecondition'] : null)
       .appendField(NclBlocks.Msg.WHEN + '=');
@@ -510,7 +510,7 @@ Blockly.Blocks.headset = {
   init: function () {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.microfone, 30, 30, '*'))
-      .appendField('--' + NclBlocks.Msg.MICROFONE + '--');
+      .appendField('{' + NclBlocks.Msg.MICROFONE + '}');
     this.setOutput(true, 'user_content');
     this.setColour(NclBlocks.USER_COLOUR);
     this.contextMenu = false;
@@ -524,7 +524,7 @@ Blockly.Blocks.hand_gesture_sensor = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.hand_gesture_sensor,
         30, 30, '*'))
-      .appendField('--' + NclBlocks.Msg.LEAP + '--');
+      .appendField('{' + NclBlocks.Msg.LEAP + '}');
     this.setOutput(true, 'user_content');
     this.setColour(NclBlocks.USER_COLOUR);
     this.contextMenu = false;
@@ -538,7 +538,7 @@ Blockly.Blocks.image = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.image, 30, 30,
         '*'))
-      .appendField('--' + NclBlocks.Msg.IMAGE + '--');
+      .appendField('{' + NclBlocks.Msg.IMAGE + '}');
     this.setOutput(true, 'media_content');
     this.setColour(NclBlocks.MEDIA_COLOUR);
     this.contextMenu = false;
@@ -552,7 +552,7 @@ Blockly.Blocks.ssml = Object.assign({}, Blockly.Blocks.DynamicArray);
 Blockly.Blocks.ssml.init = function () {
   this.appendDummyInput()
     .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.ssml, 30, 30, '*'))
-    .appendField('--' + NclBlocks.Msg.SSML + '--')
+    .appendField('{' + NclBlocks.Msg.SSML + '}')
     .appendField(new Blockly.FieldTextbutton('+', function () {
       this.sourceBlock_.appendArrayElementInput();
     }));
@@ -579,7 +579,7 @@ Blockly.Blocks.video.init = function () {
   this.appendDummyInput()
     .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.video, 30, 30,
       '*'))
-    .appendField('--' + NclBlocks.Msg.VIDEO + '--')
+    .appendField('{' + NclBlocks.Msg.VIDEO + '}')
     .appendField(new Blockly.FieldTextbutton('+', function () {
       this.sourceBlock_.appendArrayElementInput();
     }));
@@ -605,7 +605,7 @@ Blockly.Blocks.srgs = Object.assign({}, Blockly.Blocks.DynamicArray);
 Blockly.Blocks.srgs.init = function () {
   this.appendDummyInput()
     .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.srgs, 30, 30, '*'))
-    .appendField('--' + NclBlocks.Msg.SRGS + '--')
+    .appendField('{' + NclBlocks.Msg.SRGS + '}')
     .appendField(new Blockly.FieldTextbutton('+', function () {
       this.sourceBlock_.appendArrayElementInput();
     }));
@@ -631,7 +631,7 @@ Blockly.Blocks.srgs = Object.assign({}, Blockly.Blocks.DynamicArray);
 Blockly.Blocks.srgs.init = function () {
   this.appendDummyInput()
     .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.srgs, 30, 30, '*'))
-    .appendField('--' + NclBlocks.Msg.SRGS + '--')
+    .appendField('{' + NclBlocks.Msg.SRGS + '}')
     .appendField(new Blockly.FieldTextbutton('+', function () {
       this.sourceBlock_.appendArrayElementInput();
     }));
@@ -656,7 +656,7 @@ Blockly.Blocks.hand_gesture.init = function () {
   this.appendDummyInput()
     .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.hand_gesture, 30, 30,
       '*'))
-    .appendField('--' + NclBlocks.Msg.HAND_GESTURE + '--')
+    .appendField('{' + NclBlocks.Msg.HAND_GESTURE + '}')
     .appendField(new Blockly.FieldTextbutton('+', function () {
       this.sourceBlock_.appendArrayElementInput();
     }));
