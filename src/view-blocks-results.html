@@ -26,7 +26,8 @@
 
 <body>
   <div id="content" class="center-block text-center" style="width: 55%">
-    resultId=<select id="result_number" type="text" value="0">
+    resultId=<select id="result_number" type="text" value="-">
+      <option value="-">-</option>
     </select>
     <br><br><button id="changes">show changes</button><br><br>
   </div>
@@ -42,20 +43,23 @@
     // ---------------------------------------- 
     // wget dxsurvey.com/api/MySurveys/getSurveyResults/59bd2657-93ac-492c-8dd5-134a10ebd69a?accessKey=d72526e70b814a3d8f918b60b94dafe4 -O result.json
     var _results_data
-    
+
     $.get("http://dxsurvey.com/api/MySurveys/getSurveyResults/59bd2657-93ac-492c-8dd5-134a10ebd69a?accessKey=d72526e70b814a3d8f918b60b94dafe4", function (data) {
       _results_data = data.Data;
       // console.log(_results_data);
       for (var i = 0; i < _results_data.length; i++) {
-        $("<option />").attr("value", i).html(i).appendTo("#result_number");
+        $("#result_number").append($('<option>').attr("value", i).html(i));
       }
-      $('#result_number').val('0').change();
+      // $('#result_number').val('0').change();
     });
     $("#result_number").change(function () {
       var select_value = parseInt($(this).val());
+      _workspace.clear();
+      if(select_value == '-')
+        return;
+
       // console.log(_results_data);
       var saved_workspace = _results_data[select_value].concepts_task1_result;
-      _workspace.clear();
       Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(saved_workspace), _workspace);
       var blocks = _workspace.getAllBlocks();
       for (var i = 0; i < blocks.length; i++) {
@@ -67,12 +71,12 @@
     // ---------------------------------------- 
     // show changes button
     // ---------------------------------------- 
-    var _run_event_frequency = 100;
+    var _run_event_frequency = 200;
     var _run_event_interval_index = 0;
-    var _run_event_interval = function (index) {
+    var _runEventInterval = function (index) {
       var result = JSON.parse(_results_data[index].concepts_task1_changes);
       if (_run_event_interval_index >= result.changes.length) {
-        clearInterval(_run_event_interval);
+        clearInterval(_runEventInterval);
         return;
       }
       var json = result.changes[_run_event_interval_index];
@@ -93,8 +97,8 @@
       var index = parseInt(($("#result_number option:selected").val()));
       _workspace.clear();
       _run_event_interval_index = 0;
-      clearInterval(_run_event_interval);
-      setInterval(_run_event_interval, _run_event_frequency, index);
+      clearInterval(_runEventInterval);
+      setInterval(_runEventInterval, _run_event_frequency, index);
     });
   </script>
 </body>
