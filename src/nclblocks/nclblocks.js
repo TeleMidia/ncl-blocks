@@ -236,7 +236,7 @@ NclBlocks.injectInDiv = function (pathToBlockly, parend_div_id, height, opt_init
 }
 
 // ---------------------------------------- 
-// reusable DynamicArray block
+// reusable DynamicArrayMixin block
 // ---------------------------------------- 
 
 Blockly.FieldTextbutton = function (buttontext, changeHandler) {
@@ -260,76 +260,76 @@ Blockly.FieldTextbutton.prototype.showEditor_ = function () {
   }
 };
 
-Blockly.Blocks.DynamicArray = {};
+Blockly.Blocks.DynamicArrayMixin = {
+  appendIndexedInput: function (
+    isValueInput = false, elementToAppendBefore = "") {
+    var oldMutationDom = this.mutationToDom();
+    var oldMutation = Blockly.Xml.domToText(oldMutationDom);
+    var lastIndex = this.length++;
+    var appended_input;
 
-Blockly.Blocks.DynamicArray.appendIndexedInput = function (
-  isValueInput = false, elementToAppendBefore = "") {
-  var oldMutationDom = this.mutationToDom();
-  var oldMutation = Blockly.Xml.domToText(oldMutationDom);
+    // append element
+    if (isValueInput)
+      appended_input = this.appendValueInput('element_' + lastIndex);
+    else
+      appended_input = this.appendDummyInput('element_' + lastIndex);
+    this.appendFieldsToIndexedInput(appended_input, lastIndex);
+    appended_input.appendField(new Blockly.FieldTextbutton('–', function () {
+      this.sourceBlock_.removeIndexedInput(appended_input);
+    }));
+    if (elementToAppendBefore)
+      this.moveInputBefore('element_' + lastIndex, elementToAppendBefore);
 
-  var lastIndex = this.length++;
-  var appended_input;
-  if (isValueInput)
-    appended_input = this.appendValueInput('element_' + lastIndex);
-  else
-    appended_input = this.appendDummyInput('element_' + lastIndex);
-  this.appendFieldsToIndexedInput(appended_input, lastIndex);
-  appended_input.appendField(new Blockly.FieldTextbutton('–', function () {
-    this.sourceBlock_.removeIndexedInput(appended_input);
-  }));
-  if (elementToAppendBefore)
-    this.moveInputBefore('element_' + lastIndex, elementToAppendBefore);
+    // fire mutation event
+    var newMutationDom = this.mutationToDom();
+    var newMutation = Blockly.Xml.domToText(newMutationDom);
+    Blockly.Events.fire(new Blockly.Events.Change(
+      this, 'mutation', null, oldMutation, newMutation));
 
-  var newMutationDom = this.mutationToDom();
-  var newMutation = Blockly.Xml.domToText(newMutationDom);
+    return appended_input;
+  },
 
-  Blockly.Events.fire(new Blockly.Events.Change(
-    this, 'mutation', null, oldMutation, newMutation));
+  removeIndexedInput: function (inputToDelete) {
+    var inputNameToDelete = inputToDelete.name;
+    var substructure = this.getInputTargetBlock(inputNameToDelete);
+    if (substructure) {
+      substructure.dispose(true, true);
+    }
+    // remove element
+    this.removeInput(inputNameToDelete);
+    var inputIndexToDelete = parseInt(inputToDelete.name.match(/\d+/)[0]);
+    var lastIndex = --this.length;
+    for (var i = inputIndexToDelete + 1; i <= lastIndex; i++) {
+      var input = this.getInput('element_' + i);
+      input.name = 'element_' + (i - 1);
+    }
+  },
 
-  return appended_input;
-};
+  mutationToDom: function () {
+    var container = document.createElement('mutation');
+    container.setAttribute('length', this.length);
+    return container;
+  },
 
-Blockly.Blocks.DynamicArray.removeIndexedInput = function (inputToDelete) {
-  var inputNameToDelete = inputToDelete.name;
-  var substructure = this.getInputTargetBlock(inputNameToDelete);
-  if (substructure) {
-    substructure.dispose(true, true);
+  domToMutation: function (xmlElement) {
+    var new_length = xmlElement.getAttribute('length');
+    // console.log(xmlElement);
+    // console.log(this);
+    if (new_length - this.length > 0) {
+      for (var i = 0; i < new_length - this.length; i++)
+        this.appendIndexedInput();
+    } else {
+      for (var i = 0; i < this.length - new_length; i++)
+        this.appendIndexedInput();
+    }
   }
-  this.removeInput(inputNameToDelete);
-  var inputIndexToDelete = parseInt(inputToDelete.name.match(/\d+/)[0]);
-  var lastIndex = --this.length;
-  for (var i = inputIndexToDelete + 1; i <= lastIndex; i++) {
-    var input = this.getInput('element_' + i);
-    input.name = 'element_' + (i - 1);
-  }
-};
-
-Blockly.Blocks.DynamicArray.mutationToDom = function () {
-  var container = document.createElement('mutation');
-  container.setAttribute('length', this.length);
-  return container;
-};
-
-Blockly.Blocks.DynamicArray.domToMutation = function (xmlElement) {
-  var new_length = xmlElement.getAttribute('length');
-  // console.log(xmlElement);
-  // console.log(this);
-  // console.log(this.length);
-  // console.log(new_length);
-  if (new_length - this.length > 0) {
-    for (var i = 0; i < new_length - this.length; i++)
-      this.appendIndexedInput();
-  } else {
-    for (var i = 0; i < this.length - new_length; i++)
-      this.appendIndexedInput();
-  }
-};
+}
 
 // ---------------------------------------- 
 // body block
 // ---------------------------------------- 
 
-Blockly.Blocks.body = Object.assign({}, Blockly.Blocks.DynamicArray);
+Blockly.Blocks.body = Object.assign({}, Blockly.Blocks.DynamicArrayMixin);
 
 Blockly.Blocks.body.init = function () {
   this.appendDummyInput()
@@ -500,7 +500,7 @@ Blockly.Blocks.image = {
   }
 };
 
-Blockly.Blocks.ssml = Object.assign({}, Blockly.Blocks.DynamicArray);
+Blockly.Blocks.ssml = Object.assign({}, Blockly.Blocks.DynamicArrayMixin);
 
 Blockly.Blocks.ssml.init = function () {
   this.setColour(NclBlocks.MEDIA_COLOUR);
@@ -535,7 +535,7 @@ Blockly.Blocks.ssml.init = function () {
     }));
 }
 
-Blockly.Blocks.video = Object.assign({}, Blockly.Blocks.DynamicArray);
+Blockly.Blocks.video = Object.assign({}, Blockly.Blocks.DynamicArrayMixin);
 
 Blockly.Blocks.video.init = function () {
   this.setColour(NclBlocks.MEDIA_COLOUR);
@@ -601,7 +601,7 @@ Blockly.Blocks.input = {
 // user related blocks
 // ---------------------------------------- 
 
-Blockly.Blocks.user = Object.assign({}, Blockly.Blocks.DynamicArray);
+Blockly.Blocks.user = Object.assign({}, Blockly.Blocks.DynamicArrayMixin);
 
 Blockly.Blocks.user.init = function () {
   this.setColour(NclBlocks.USER_COLOUR);
@@ -655,7 +655,7 @@ Blockly.Blocks.hand_gesture_sensor = {
   }
 };
 
-Blockly.Blocks.srgs = Object.assign({}, Blockly.Blocks.DynamicArray);
+Blockly.Blocks.srgs = Object.assign({}, Blockly.Blocks.DynamicArrayMixin);
 
 Blockly.Blocks.srgs.init = function () {
   this.setColour(NclBlocks.INPUT_COLOUR);
@@ -690,7 +690,7 @@ Blockly.Blocks.srgs.init = function () {
     }));
 }
 
-Blockly.Blocks.hand_gesture = Object.assign({}, Blockly.Blocks.DynamicArray);
+Blockly.Blocks.hand_gesture = Object.assign({}, Blockly.Blocks.DynamicArrayMixin);
 
 Blockly.Blocks.hand_gesture.init = function () {
   this.setColour(NclBlocks.INPUT_COLOUR);
@@ -870,7 +870,7 @@ Blockly.Blocks.onrecognizeuser = {
 };
 
 Blockly.Blocks.compoundcondition =
-  Object.assign({}, Blockly.Blocks.DynamicArray);
+  Object.assign({}, Blockly.Blocks.DynamicArrayMixin);
 
 Blockly.Blocks.compoundcondition.init =
   function () {
