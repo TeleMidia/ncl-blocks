@@ -44,9 +44,9 @@ var _concepts_task1_workspace;
 $("#surveyContainer").Survey({
   model: _survey,
   css: _survey_css,
-  onAfterRenderPage: on_render_page,
-  onAfterRenderQuestion: on_render_question,
-  onServerValidateQuestions: on_validate_questions
+  onAfterRenderPage: onRenderPage,
+  onAfterRenderQuestion: onRenderQuestion,
+  onServerValidateQuestions: onValidateQuestions
 });
 
 // ----------------------------------------
@@ -73,10 +73,10 @@ $("#surveyPageNo").val(2).change();
 // survey listeners
 // ----------------------------------------
 
-function on_validate_questions(survey, options) {
+function onValidateQuestions(survey, options) {
   if (_survey.currentPage.name == "concepts") {
     if (_concepts_task1_workspace.getAllBlocks().length) {
-      concepts_task1_save_result();
+      saveConceptsTask1Result();
     } else {
       var block = _survey.getQuestionByName("concepts_task1");
       var block_div_selector = "#blockly_" + block.idValue;
@@ -91,35 +91,35 @@ function on_validate_questions(survey, options) {
   options.complete();
 }
 
-function on_render_page(target_survey, page_and_html) {
+function onRenderPage(target_survey, page_and_html) {
   window.scrollTo(0, 0);
 }
 
-function on_render_question(target_survey, question_and_html) {
+function onRenderQuestion(target_survey, question_and_html) {
   switch (question_and_html.question.name) {
     case "concepts_blocks_intro1":
-      concepts_blocks1_inject();
+      injectConceptsBlocks1();
       break;
     case "concepts_blocks_intro2":
-      concepts_blocks2_inject();
+      injectConceptsBlocks2();
       break;
     case "concepts_blocks_intro3":
-      concepts_blocks3_inject();
+      injectConceptsBlocks3();
       break;
     case "concepts_blocks_intro4":
-      concepts_blocks4_inject();
+      injectConceptsBlocks4();
       break;
     case "concepts_blocks_intro5":
-      concepts_blocks5_inject();
+      injectConceptsBlocks5();
       break;
     case "concepts_task1":
-      concepts_task1_inject();
+      injectConceptsTask1();
       break;
     case "ncl_code1":
-      ncl_code1_inject();
+      injectNclCode1();
       break;
     case "ncl_code2":
-      ncl_code2_inject();
+      injectNclCode2();
       break;
   }
 }
@@ -128,7 +128,7 @@ function on_render_question(target_survey, question_and_html) {
 // concepts page addtions
 // ----------------------------------------
 
-function concepts_blocks1_inject() {
+function injectConceptsBlocks1() {
   var question_id = _survey.getQuestionByName("concepts_blocks_intro1").idValue;
   var height_padding = 30;
   var height_one_block = 131;
@@ -146,10 +146,10 @@ function concepts_blocks1_inject() {
     <block type="media" id="A(0bL5~#01?,|I,_x!OI" x="50" y="` + hight_by_level(0) + `"><field name="id">main_video</field><value name="src"><block type="video" id_area0="WzAnP=#ds8Ad/y^}@~J@"><mutation items="2"></mutation><field name="id_area0">credits</field><field name="begin0">100</field><field name="end0">200</field><field name="id_area1">credits2</field></block></value>
     </block><block type="media" id="wdGd9(6#Xr^O@H#.jz;y" x="50" y="` + hight_by_level(1) + `"><value name="src"><block type="video" id="Qk)7lfH.YikoVFX5QGu2"><mutation items="2"></mutation><field name="begin0">10</field><field name="end0">200</field><field name="begin1">20</field><field name="end1">300</field></block></value></block>
     <block type="media" id="xn(j{h#N$CF+ti?8BHvP" x="50" y="` + hight_by_level(2) + `"><value name="src"><block type="video" id="J_bVMCx=VUhU{:@+90+s"><mutation items="2"></mutation><field name="id_area0">credits</field><field name="begin0">0</field><field name="end0">0</field><field name="id_area1">credits2</field><field name="begin1">0</field><field name="end1">0</field></block></value></block>`;
-  NclBlocks.injectInDiv(question_id, "", blocks1, true, false, height + "px");
+  NclBlocks.injectInDiv(question_id, "", blocks1, true, false, height + "px", false);
 }
 
-function concepts_blocks2_inject() {
+function injectConceptsBlocks2() {
   var question_id = _survey.getQuestionByName("concepts_blocks_intro2").idValue;
   var height = 150;
   var origin = 50;
@@ -157,10 +157,10 @@ function concepts_blocks2_inject() {
     `<xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="KZ[g}J_gz%iQCj#u(I:P" x="` + origin + `" y="` + origin + `"><value name="src"><block type="image" id="LHprn9YiDsg/Nlglks0f"></block></value></block>
     </xml>`;
-  NclBlocks.injectInDiv(question_id, "", blocks1, true, false, height + "px");
+  NclBlocks.injectInDiv(question_id, "", blocks1, true, false, height + "px", false);
 }
 
-function concepts_blocks3_inject() {
+function injectConceptsBlocks3() {
   var question_id = _survey.getQuestionByName("concepts_blocks_intro3").idValue;
   var height = 150;
   var origin = 50; 
@@ -168,10 +168,10 @@ function concepts_blocks3_inject() {
     `<xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="KZ[g}J_gz%iQCj#u(I:P" x="` + origin + `" y="` + origin + `"><value name="src"><block type="image" id="LHprn9YiDsg/Nlglks0f"></block></value></block>
     </xml>`;
-  NclBlocks.injectInDiv(question_id, "", blocks1, true, false, height + "px");
+  NclBlocks.injectInDiv(question_id, "", blocks1, true, false, height + "px", false);
 }
 
-function concepts_blocks4_inject() {
+function injectConceptsBlocks4() {
   var question_id = _survey.getQuestionByName("concepts_blocks_intro4").idValue;
   var height = 150;
   var origin = 50;
@@ -179,10 +179,10 @@ function concepts_blocks4_inject() {
     `<xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="KZ[g}J_gz%iQCj#u(I:P" x="` + origin + `" y="` + origin + `"><value name="src"><block type="image" id="LHprn9YiDsg/Nlglks0f"></block></value></block>
     </xml>`;
-  NclBlocks.injectInDiv(question_id, "", blocks1, true, false, height + "px");
+  NclBlocks.injectInDiv(question_id, "", blocks1, true, false, height + "px", false);
 }
 
-function concepts_blocks5_inject() {
+function injectConceptsBlocks5() {
   var question_id = _survey.getQuestionByName("concepts_blocks_intro5").idValue;
   var height = 150;
   var origin = 50;
@@ -191,11 +191,11 @@ function concepts_blocks5_inject() {
     <block type="media" id="KZ[g}J_gz%iQCj#u(I:P" x="` + origin + `" y="` + origin + `"><value name="src"><block type="image" id="LHprn9YiDsg/Nlglks0f"></block></value></block>
     </xml>`;
   // NclBlocks.useBody();
-  NclBlocks.injectInDiv(question_id, "", blocks1, true, false, height + "px");
+  NclBlocks.injectInDiv(question_id, "", blocks1, true, false, height + "px", false);
 }
 
 
-function concepts_task1_save_changes(primaryEvent) {
+function saveConceptsTask1Changes(primaryEvent) {
   var saved_json_str = _survey.getQuestionByName("concepts_task1_changes").value;
   var json_from_event = primaryEvent.toJson();
   var json_to_save;
@@ -211,25 +211,25 @@ function concepts_task1_save_changes(primaryEvent) {
   _survey.getQuestionByName("concepts_task1_changes").value = JSON.stringify(json_to_save);
 }
 
-function concepts_task1_save_result() {
+function saveConceptsTask1Result() {
   var xml = Blockly.Xml.workspaceToDom(_concepts_task1_workspace);
   var xml_text = Blockly.Xml.domToText(xml);
   console.log(xml_text);
   _survey.getQuestionByName("concepts_task1_result").value = xml_text;
 }
 
-function concepts_task1_inject() {
+function injectConceptsTask1() {
 
   var question_id = _survey.getQuestionByName("concepts_task1").idValue;
   _concepts_task1_workspace = NclBlocks.injectInDiv(question_id, NclBlocks.defaultToolbox, "", false, true, "800px", true);
-  _concepts_task1_workspace.addChangeListener(concepts_task1_save_changes);
+  _concepts_task1_workspace.addChangeListener(saveConceptsTask1Changes);
 }
 
 // ----------------------------------------
 //  ncl page functions
 // ----------------------------------------
 
-function ncl_code1_inject() {
+function injectNclCode1() {
   var question_id = _survey.getQuestionByName("ncl_code1").idValue;
   var question_div_selector = "#" + question_id;
   var code =
@@ -266,7 +266,7 @@ function ncl_code1_inject() {
   SyntaxHighlighter.highlight();
 }
 
-function ncl_code2_inject() {
+function injectNclCode2() {
   var question_id = _survey.getQuestionByName("ncl_code2").idValue;
   var question_div_selector = "#" + question_id;
   var code =

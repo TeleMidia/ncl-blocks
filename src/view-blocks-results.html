@@ -73,10 +73,10 @@
     // ---------------------------------------- 
     var _run_event_frequency = 200;
     var _run_event_interval_index = 0;
-    var _runEventInterval = function (index) {
+    var runEventInterval = function (index) {
       var result = JSON.parse(_results_data[index].concepts_task1_changes);
       if (_run_event_interval_index >= result.changes.length) {
-        clearInterval(_runEventInterval);
+        clearInterval(runEventInterval);
         return;
       }
       var json = result.changes[_run_event_interval_index];
@@ -97,8 +97,8 @@
       var index = parseInt(($("#result_number option:selected").val()));
       _workspace.clear();
       _run_event_interval_index = 0;
-      clearInterval(_runEventInterval);
-      setInterval(_runEventInterval, _run_event_frequency, index);
+      clearInterval(runEventInterval);
+      setInterval(runEventInterval, _run_event_frequency, index);
     });
   </script>
 </body>
