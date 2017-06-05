@@ -262,7 +262,7 @@ Blockly.FieldTextbutton.prototype.showEditor_ = function () {
 
 Blockly.Blocks.DynamicArray = {};
 
-Blockly.Blocks.DynamicArray.appendArrayElementInput = function (
+Blockly.Blocks.DynamicArray.appendIndexedInput = function (
   isValueInput = false, elementToAppendBefore = "") {
   var oldMutationDom = this.mutationToDom();
   var oldMutation = Blockly.Xml.domToText(oldMutationDom);
@@ -273,9 +273,9 @@ Blockly.Blocks.DynamicArray.appendArrayElementInput = function (
     appended_input = this.appendValueInput('element_' + lastIndex);
   else
     appended_input = this.appendDummyInput('element_' + lastIndex);
-  this.append_fields_to_indexed_element(appended_input, lastIndex);
+  this.appendFieldsToIndexedInput(appended_input, lastIndex);
   appended_input.appendField(new Blockly.FieldTextbutton('–', function () {
-    this.sourceBlock_.deleteArrayElementInput(appended_input);
+    this.sourceBlock_.removeIndexedInput(appended_input);
   }));
   if (elementToAppendBefore)
     this.moveInputBefore('element_' + lastIndex, elementToAppendBefore);
@@ -289,7 +289,7 @@ Blockly.Blocks.DynamicArray.appendArrayElementInput = function (
   return appended_input;
 };
 
-Blockly.Blocks.DynamicArray.deleteArrayElementInput = function (inputToDelete) {
+Blockly.Blocks.DynamicArray.removeIndexedInput = function (inputToDelete) {
   var inputNameToDelete = inputToDelete.name;
   var substructure = this.getInputTargetBlock(inputNameToDelete);
   if (substructure) {
@@ -318,10 +318,10 @@ Blockly.Blocks.DynamicArray.domToMutation = function (xmlElement) {
   // console.log(new_length);
   if (new_length - this.length > 0) {
     for (var i = 0; i < new_length - this.length; i++)
-      this.appendArrayElementInput();
+      this.appendIndexedInput();
   } else {
     for (var i = 0; i < this.length - new_length; i++)
-      this.appendArrayElementInput();
+      this.appendIndexedInput();
   }
 };
 
@@ -334,36 +334,36 @@ Blockly.Blocks.body = Object.assign({}, Blockly.Blocks.DynamicArray);
 Blockly.Blocks.body.init = function () {
   this.appendDummyInput()
     .appendField('{' + NclBlocks.Msg.BODY + '}').appendField(new Blockly.FieldTextbutton('+', function () {
-      this.sourceBlock_.appendArrayElementInput(true);
+      this.sourceBlock_.appendIndexedInput(true);
     }));;
   // this.appendDummyInput('MEDIAS')
   //     .appendField(new Blockly.FieldTextbutton('+'+NclBlocks.Msg.MEDIA, function() {
-  //       this.sourceBlock_.appendArrayElementInput(true, "INPUTS");
+  //       this.sourceBlock_.appendIndexedInput(true, "INPUTS");
   //     }));
   // this.appendDummyInput('INPUTS')
   //     .appendField(new Blockly.FieldTextbutton('+'+NclBlocks.Msg.INPUT, function() {
-  //       this.sourceBlock_.appendArrayElementInput(true, "USERS");
+  //       this.sourceBlock_.appendIndexedInput(true, "USERS");
   //     }));
   // this.appendDummyInput('USERS')
   //     .appendField(new Blockly.FieldTextbutton('+'+NclBlocks.Msg.USER, function() {
-  //       this.sourceBlock_.appendArrayElementInput(true, "LINKS");
+  //       this.sourceBlock_.appendIndexedInput(true, "LINKS");
   //     }));
   // this.appendDummyInput('LINKS')
   //     .appendField(new Blockly.FieldTextbutton('+'+NclBlocks.Msg.LINK, function() {
-  //       this.sourceBlock_.appendArrayElementInput(true);
+  //       this.sourceBlock_.appendIndexedInput(true);
   //     }));
 
   this.setColour(NclBlocks.BODY_COLOUR);
   this.contextMenu = false;
 
-  this.append_fields_to_indexed_element = function (appended_input, index) {
+  this.appendFieldsToIndexedInput = function (appended_input, index) {
     appended_input.appendField()
       .setCheck(NclBlocks.USE_CHECK ? ['media_type', 'input_type', 'user_type', 'link_type'] : null)
       ;
   };
   this.length = 0;
   for (var i = 0; i < 5; i++)
-    this.appendArrayElementInput(true);
+    this.appendIndexedInput(true);
 };
 
 // ---------------------------------------- 
@@ -522,7 +522,7 @@ Blockly.Blocks.ssml.init = function () {
     .appendField(new Blockly.FieldTextInput(''), 'label_');
 
   // add plus button
-  this.append_fields_to_indexed_element = function (appended_input, index) {
+  this.appendFieldsToIndexedInput = function (appended_input, index) {
     appended_input.appendField('id=')
       .appendField(new Blockly.MediaIdFieldText('',
         validateMediaId), 'id_area' + index)
@@ -531,7 +531,7 @@ Blockly.Blocks.ssml.init = function () {
   };
   this.appendDummyInput("plus")
     .appendField(new Blockly.FieldTextbutton('+', function () {
-      this.sourceBlock_.appendArrayElementInput(false, "plus");
+      this.sourceBlock_.appendIndexedInput(false, "plus");
     }));
 }
 
@@ -559,7 +559,7 @@ Blockly.Blocks.video.init = function () {
     .appendField(new Blockly.FieldTextInput(''), 'end_');
 
   // add plus button 
-  this.append_fields_to_indexed_element = function (appended_input, index) {
+  this.appendFieldsToIndexedInput = function (appended_input, index) {
     appended_input.appendField('id=')
       .appendField(new Blockly.MediaIdFieldText('',
         validateMediaId), 'id_area' + index)
@@ -570,7 +570,7 @@ Blockly.Blocks.video.init = function () {
   };
   this.appendDummyInput("plus")
     .appendField(new Blockly.FieldTextbutton('+', function () {
-      this.sourceBlock_.appendArrayElementInput(false, "plus");
+      this.sourceBlock_.appendIndexedInput(false, "plus");
     }));
 }
 
@@ -621,14 +621,14 @@ Blockly.Blocks.user.init = function () {
     .setCheck(NclBlocks.USE_CHECK ? 'user_device_type' : null);
 
   // add plus button 
-  this.append_fields_to_indexed_element = function (appended_input, index) {
+  this.appendFieldsToIndexedInput = function (appended_input, index) {
     appended_input
       .appendField(NclBlocks.Msg.DEVICE + '=')
       .setCheck(NclBlocks.USE_CHECK ? 'user_device_type' : null)
   };
   this.appendDummyInput("plus")
     .appendField(new Blockly.FieldTextbutton('+', function () {
-      this.sourceBlock_.appendArrayElementInput(true, "plus");
+      this.sourceBlock_.appendIndexedInput(true, "plus");
     }));
 };
 
@@ -677,7 +677,7 @@ Blockly.Blocks.srgs.init = function () {
     .appendField(new Blockly.FieldTextInput(''), 'label_');
 
   // add plus button 
-  this.append_fields_to_indexed_element = function (appended_input, index) {
+  this.appendFieldsToIndexedInput = function (appended_input, index) {
     appended_input.appendField('id=')
       .appendField(new Blockly.InputIdFieldText('',
         validateInputId), 'id_area' + index)
@@ -686,7 +686,7 @@ Blockly.Blocks.srgs.init = function () {
   };
   this.appendDummyInput("plus")
     .appendField(new Blockly.FieldTextbutton('+', function () {
-      this.sourceBlock_.appendArrayElementInput(false, "plus");
+      this.sourceBlock_.appendIndexedInput(false, "plus");
     }));
 }
 
@@ -712,7 +712,7 @@ Blockly.Blocks.hand_gesture.init = function () {
     .appendField(new Blockly.FieldTextInput(''), 'label_');
 
   // add plus button 
-  this.append_fields_to_indexed_element = function (appended_input, index) {
+  this.appendFieldsToIndexedInput = function (appended_input, index) {
     appended_input.appendField('id=')
       .appendField(new Blockly.InputIdFieldText('',
         validateInputId), 'id_area' + index)
@@ -721,7 +721,7 @@ Blockly.Blocks.hand_gesture.init = function () {
   };
   this.appendDummyInput("plus")
     .appendField(new Blockly.FieldTextbutton('+', function () {
-      this.sourceBlock_.appendArrayElementInput(false, "plus");
+      this.sourceBlock_.appendIndexedInput(false, "plus");
     }));
 }
 
@@ -897,13 +897,13 @@ Blockly.Blocks.compoundcondition.init =
       .setCheck(NclBlocks.USE_CHECK ? 'condition_type' : null);
 
     // add plus button
-    this.append_fields_to_indexed_element = function (appended_input, index) {
+    this.appendFieldsToIndexedInput = function (appended_input, index) {
       appended_input.appendField(NclBlocks.Msg.WHEN + '=')
         .setCheck(NclBlocks.USE_CHECK ? 'condition_type' : null);
     };
     this.appendDummyInput("plus")
       .appendField(new Blockly.FieldTextbutton('+', function () {
-        this.sourceBlock_.appendArrayElementInput(true, "plus");
+        this.sourceBlock_.appendIndexedInput(true, "plus");
       }));
   };
 
