@@ -104,12 +104,9 @@ NclBlocks.CONDITION_COLOUR = 280;
 NclBlocks.ACTION_COLOUR = 225;
 
 // ---------------------------------------- 
-// configuration
+// default toolbox
 // ---------------------------------------- 
 
-Blockly.BlockSvg.START_HAT = true;
-NclBlocks.USE_BODY = false;
-NclBlocks.START_WORKSPACE = "";
 NclBlocks.defaultToolbox =
   `<xml id="toolbox" style="display: none">
   <category name="` + NclBlocks.Msg.MEDIA + `">
@@ -156,13 +153,36 @@ NclBlocks.START_WORKSPACE_WITH_BODY =
     </xml>`;
 
 // ---------------------------------------- 
+// flag functions
+// ---------------------------------------- 
+
+Blockly.BlockSvg.START_HAT = true;
+NclBlocks.USE_BODY = false;
+
+NclBlocks.setUseBodyFlag = function () {
+  Blockly.BlockSvg.START_HAT = false;
+  NclBlocks.USE_BODY = true;
+}
+
+NclBlocks.resetFlags = function () {
+  Blockly.BlockSvg.START_HAT = true;
+  NclBlocks.USE_BODY = false;
+}
+
+
+// ---------------------------------------- 
 // utils functions
 // ---------------------------------------- 
 
-NclBlocks.injectInDiv = function (pathToBlockly, parend_div_id, height, opt_initial_workspace = "", opt_static = false, use_body = false) {
+NclBlocks.injectInDiv = function (pathToBlockly, parend_div_id, height, opt_initial_workspace = "", opt_static = false, opt_use_body = false) {
   var inject_div_name = "blockly_" + parend_div_id;
-  Blockly.pathToBlockly = pathToBlockly;
   var workspace;
+
+  Blockly.pathToBlockly = pathToBlockly ? pathToBlockly : "./";
+  if (opt_use_body) {
+    NclBlocks.setUseBodyFlag();
+    opt_initial_workspace = NclBlocks.START_WORKSPACE_WITH_BODY;
+  }
 
   // create div and configure auto resize
   var blocklyArea = document.getElementById(parend_div_id);
@@ -194,7 +214,6 @@ NclBlocks.injectInDiv = function (pathToBlockly, parend_div_id, height, opt_init
       readOnly: true,
       sounds: true
     });
-    Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(opt_initial_workspace), workspace);
   }
   else {
     workspace = Blockly.inject(inject_div_name, {
@@ -204,13 +223,11 @@ NclBlocks.injectInDiv = function (pathToBlockly, parend_div_id, height, opt_init
       zoom: { controls: true },
       sounds: true
     });
-    Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(opt_initial_workspace), workspace);
   }
-  // if (use_body) {
-  //   Blockly.BlockSvg.START_HAT = false;
-  //   NclBlocks.USE_BODY = true;
-  //   start_workspace = NclBlocks.START_WORKSPACE_WITH_BODY;
-  // }
+
+  Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(opt_initial_workspace), workspace);
+  NclBlocks.resetFlags();
+
 
   onresize();
   Blockly.svgResize(workspace);
