@@ -159,8 +159,9 @@ NclBlocks.START_WORKSPACE_WITH_BODY =
 // utils functions
 // ---------------------------------------- 
 
-NclBlocks.injectInDiv = function (parend_div_id, toolbox, start_workspace = '', readOnly = false, scrollbars = true, height = '800px', zoom = true, use_body = false) {
+NclBlocks.injectInDiv = function (pathToBlockly, parend_div_id, height, opt_initial_workspace = "", opt_static = false, use_body = false) {
   var inject_div_name = "blockly_" + parend_div_id;
+  Blockly.pathToBlockly = pathToBlockly;
   var workspace;
 
   // create div and configure auto resize
@@ -185,20 +186,31 @@ NclBlocks.injectInDiv = function (parend_div_id, toolbox, start_workspace = '', 
   window.addEventListener('resize', onresize, false);
 
   // inject
-  workspace = Blockly.inject(inject_div_name, {
-    media: Blockly.pathToBlockly + 'media/',
-    toolbox: toolbox,
-    scrollbars: scrollbars,
-    readOnly: readOnly,
-    zoom: { controls: zoom},
-    sounds: true
-  });
-  if (use_body) {
-    Blockly.BlockSvg.START_HAT = false;
-    NclBlocks.USE_BODY = true;
-    start_workspace = NclBlocks.START_WORKSPACE_WITH_BODY;
+  if (opt_static) {
+    workspace = Blockly.inject(inject_div_name, {
+      media: Blockly.pathToBlockly + 'media/',
+      toolbox: false,
+      scrollbars: false,
+      readOnly: true,
+      sounds: true
+    });
+    Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(opt_initial_workspace), workspace);
   }
-  Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(start_workspace), workspace);
+  else {
+    workspace = Blockly.inject(inject_div_name, {
+      media: Blockly.pathToBlockly + 'media/',
+      toolbox: NclBlocks.defaultToolbox,
+      scrollbars: scrollbars,
+      zoom: { controls: true },
+      sounds: true
+    });
+    Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(opt_initial_workspace), workspace);
+  }
+  // if (use_body) {
+  //   Blockly.BlockSvg.START_HAT = false;
+  //   NclBlocks.USE_BODY = true;
+  //   start_workspace = NclBlocks.START_WORKSPACE_WITH_BODY;
+  // }
 
   onresize();
   Blockly.svgResize(workspace);

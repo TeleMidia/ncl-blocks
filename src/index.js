@@ -2,7 +2,7 @@
 // nclblocks config
 // ----------------------------------------
 
-Blockly.pathToBlockly = 'nclblocks/';
+var _pathToBlockly = "nclblocks/";
 
 // ----------------------------------------
 // survey config
@@ -146,7 +146,7 @@ function injectConceptsBlocks1() {
     <block type="media" id="A(0bL5~#01?,|I,_x!OI" x="50" y="` + hight_by_level(0) + `"><field name="id">main_video</field><value name="src"><block type="video" id_area0="WzAnP=#ds8Ad/y^}@~J@"><mutation items="2"></mutation><field name="id_area0">credits</field><field name="begin0">100</field><field name="end0">200</field><field name="id_area1">credits2</field></block></value>
     </block><block type="media" id="wdGd9(6#Xr^O@H#.jz;y" x="50" y="` + hight_by_level(1) + `"><value name="src"><block type="video" id="Qk)7lfH.YikoVFX5QGu2"><mutation items="2"></mutation><field name="begin0">10</field><field name="end0">200</field><field name="begin1">20</field><field name="end1">300</field></block></value></block>
     <block type="media" id="xn(j{h#N$CF+ti?8BHvP" x="50" y="` + hight_by_level(2) + `"><value name="src"><block type="video" id="J_bVMCx=VUhU{:@+90+s"><mutation items="2"></mutation><field name="id_area0">credits</field><field name="begin0">0</field><field name="end0">0</field><field name="id_area1">credits2</field><field name="begin1">0</field><field name="end1">0</field></block></value></block>`;
-  NclBlocks.injectInDiv(question_id, "", blocks1, true, false, height + "px", false);
+  NclBlocks.injectInDiv(_pathToBlockly, question_id, height+'px', blocks1, true);
 }
 
 function injectConceptsBlocks2() {
@@ -157,7 +157,7 @@ function injectConceptsBlocks2() {
     `<xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="KZ[g}J_gz%iQCj#u(I:P" x="` + origin + `" y="` + origin + `"><value name="src"><block type="image" id="LHprn9YiDsg/Nlglks0f"></block></value></block>
     </xml>`;
-  NclBlocks.injectInDiv(question_id, "", blocks1, true, false, height + "px", false);
+  NclBlocks.injectInDiv(_pathToBlockly, question_id, height+'px', blocks1, true);
 }
 
 function injectConceptsBlocks3() {
@@ -168,7 +168,7 @@ function injectConceptsBlocks3() {
     `<xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="KZ[g}J_gz%iQCj#u(I:P" x="` + origin + `" y="` + origin + `"><value name="src"><block type="image" id="LHprn9YiDsg/Nlglks0f"></block></value></block>
     </xml>`;
-  NclBlocks.injectInDiv(question_id, "", blocks1, true, false, height + "px", false);
+  NclBlocks.injectInDiv(_pathToBlockly, question_id, height+'px', blocks1, true);
 }
 
 function injectConceptsBlocks4() {
@@ -179,7 +179,7 @@ function injectConceptsBlocks4() {
     `<xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="KZ[g}J_gz%iQCj#u(I:P" x="` + origin + `" y="` + origin + `"><value name="src"><block type="image" id="LHprn9YiDsg/Nlglks0f"></block></value></block>
     </xml>`;
-  NclBlocks.injectInDiv(question_id, "", blocks1, true, false, height + "px", false);
+  NclBlocks.injectInDiv(_pathToBlockly, question_id, height+'px', blocks1, true);
 }
 
 function injectConceptsBlocks5() {
@@ -191,7 +191,7 @@ function injectConceptsBlocks5() {
     <block type="media" id="KZ[g}J_gz%iQCj#u(I:P" x="` + origin + `" y="` + origin + `"><value name="src"><block type="image" id="LHprn9YiDsg/Nlglks0f"></block></value></block>
     </xml>`;
   // NclBlocks.useBody();
-  NclBlocks.injectInDiv(question_id, "", blocks1, true, false, height + "px", false);
+  NclBlocks.injectInDiv(_pathToBlockly, question_id, height+'px', blocks1, true);
 }
 
 
@@ -221,7 +221,7 @@ function saveConceptsTask1Result() {
 function injectConceptsTask1() {
 
   var question_id = _survey.getQuestionByName("concepts_task1").idValue;
-  _concepts_task1_workspace = NclBlocks.injectInDiv(question_id, NclBlocks.defaultToolbox, "", false, true, "800px", true);
+  _concepts_task1_workspace = NclBlocks.injectInDiv(_pathToBlockly, question_id, "800px");
   _concepts_task1_workspace.addChangeListener(saveConceptsTask1Changes);
 }
 
