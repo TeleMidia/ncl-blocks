@@ -173,13 +173,12 @@ NclBlocks.resetFlags = function () {
 // utils functions
 // ---------------------------------------- 
 
-NclBlocks.injectInDiv = function (pathToBlockly, parend_div_id, height, opt_workspace_xml = "", opt_static = false, opt_use_body = false) {
+NclBlocks.injectInDiv = function (pathToBlockly, parend_div_id, height, opt_workspace_xml = "", opt_static = false) {
   var inject_div_name = "blockly_" + parend_div_id;
   var workspace;
 
   Blockly.pathToBlockly = pathToBlockly ? pathToBlockly : "./";
-  if (opt_use_body) {
-    NclBlocks.setUseBodyFlag();
+  if (NclBlocks.USE_BODY) {
     opt_workspace_xml = NclBlocks.START_WORKSPACE_WITH_BODY;
   }
 
