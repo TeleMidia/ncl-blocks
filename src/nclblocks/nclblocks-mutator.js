@@ -97,7 +97,7 @@ NclBlocks.ACTION_COLOUR = 230;
 Blockly.BlockSvg.START_HAT = true;
 NclBlocks.USE_BODY = false;
 NclBlocks.START_WORKSPACE = "";
-NclBlocks.defaultToolbox =
+NclBlocks.getDefaultToolboxXML =
   `<xml id="toolbox" style="display: none">
   <category name="`+ NclBlocks.Msg.MEDIA + `">
     <block type="media"></block>
@@ -143,13 +143,13 @@ NclBlocks.defaultToolbox =
 NclBlocks.useBody = function () {
   Blockly.BlockSvg.START_HAT = false;
   NclBlocks.USE_BODY = true;
-  NclBlocks.START_WORKSPACE_WITH_BODY =
+  NclBlocks.WORKSPACE_WITH_BODY_XML =
     `<xml id="startBlocks" style="display: none">
     <block type="body" inline="false" x="20" y="20"></block>
     </xml>`;
 }
 
-NclBlocks.injectInDiv = function (parend_div_id, toolbox, start_workspace, readOnly, scrollbars, height) {
+NclBlocks.injectInDiv = function (parend_div_id, toolbox, start_workspace_xml, readOnly, scrollbars, height) {
   var inject_div_name = "blockly_" + parend_div_id;
   var workspace;
 
@@ -182,15 +182,14 @@ NclBlocks.injectInDiv = function (parend_div_id, toolbox, start_workspace, readO
     readOnly: readOnly,
     sounds: true
   });
-  if (NclBlocks.USE_BODY) start_workspace = NclBlocks.START_WORKSPACE_WITH_BODY;
-  Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(start_workspace), workspace);
+  if (NclBlocks.USE_BODY) start_workspace_xml = NclBlocks.WORKSPACE_WITH_BODY_XML;
+  Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(start_workspace_xml), workspace);
 
   onresize();
   Blockly.svgResize(workspace);
 
   return workspace;
 }
-
 
 // body
 

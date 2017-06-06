@@ -106,7 +106,7 @@ NclBlocks.ACTION_COLOUR = 225;
 // default toolbox
 // ---------------------------------------- 
 
-NclBlocks.defaultToolbox =
+NclBlocks.defaultToolboxXML =
   `<xml id="toolbox" style="display: none">
   <category name="` + NclBlocks.Msg.MEDIA + `">
     <block type="media"></block>
@@ -173,14 +173,14 @@ NclBlocks.resetFlags = function () {
 // utils functions
 // ---------------------------------------- 
 
-NclBlocks.injectInDiv = function (pathToBlockly, parend_div_id, height, opt_initial_workspace = "", opt_static = false, opt_use_body = false) {
+NclBlocks.injectInDiv = function (pathToBlockly, parend_div_id, height, opt_workspace_xml = "", opt_static = false, opt_use_body = false) {
   var inject_div_name = "blockly_" + parend_div_id;
   var workspace;
 
   Blockly.pathToBlockly = pathToBlockly ? pathToBlockly : "./";
   if (opt_use_body) {
     NclBlocks.setUseBodyFlag();
-    opt_initial_workspace = NclBlocks.START_WORKSPACE_WITH_BODY;
+    opt_workspace_xml = NclBlocks.START_WORKSPACE_WITH_BODY;
   }
 
   // create div and configure auto resize
@@ -217,14 +217,14 @@ NclBlocks.injectInDiv = function (pathToBlockly, parend_div_id, height, opt_init
   else {
     workspace = Blockly.inject(inject_div_name, {
       media: Blockly.pathToBlockly + 'media/',
-      toolbox: NclBlocks.defaultToolbox,
+      toolbox: NclBlocks.defaultToolboxXML,
       scrollbars: scrollbars,
       zoom: { controls: true },
       sounds: true
     });
   }
 
-  Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(opt_initial_workspace), workspace);
+  Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(opt_workspace_xml), workspace);
   NclBlocks.resetFlags();
 
   onresize();

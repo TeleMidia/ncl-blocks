@@ -58,8 +58,8 @@
         return;
 
       // console.log(_results_data);
-      var saved_workspace = _results_data[select_value].concepts_task1_result;
-      Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(saved_workspace), _workspace);
+      var saved_workspace_xml = _results_data[select_value].concepts_task1_result;
+      Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(saved_workspace_xml), _workspace);
       var blocks = _workspace.getAllBlocks();
       for (var i = 0; i < blocks.length; i++) {
         blocks[i].setEditable(false);
