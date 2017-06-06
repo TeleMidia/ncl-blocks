@@ -93,7 +93,6 @@ NclBlocks.Icons.set = 'media/icon-bind-set.png';
 // colours
 // ---------------------------------------- 
 
-NclBlocks.USE_CHECK = false;
 NclBlocks.BODY_COLOUR = 20;
 NclBlocks.MEDIA_COLOUR = 100;
 NclBlocks.INPUT_COLOUR = 150;
@@ -153,11 +152,12 @@ NclBlocks.START_WORKSPACE_WITH_BODY =
     </xml>`;
 
 // ---------------------------------------- 
-// flag functions
+// flags
 // ---------------------------------------- 
 
 Blockly.BlockSvg.START_HAT = true;
 NclBlocks.USE_BODY = false;
+NclBlocks.USE_CHECK = false;
 
 NclBlocks.setUseBodyFlag = function () {
   Blockly.BlockSvg.START_HAT = false;
@@ -168,7 +168,6 @@ NclBlocks.resetFlags = function () {
   Blockly.BlockSvg.START_HAT = true;
   NclBlocks.USE_BODY = false;
 }
-
 
 // ---------------------------------------- 
 // utils functions
@@ -327,7 +326,6 @@ Blockly.Blocks.DynamicArrayMixin = {
 // ---------------------------------------- 
 // body block
 // ---------------------------------------- 
-
 
 Blockly.Blocks.body = {
   init: function () {
@@ -489,7 +487,6 @@ Blockly.Blocks.media = {
     this.contextMenu = false;
   }
 };
-
 
 Blockly.Blocks.video = {
   init: function () {
