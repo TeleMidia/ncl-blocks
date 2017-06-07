@@ -18,9 +18,10 @@ NclBlocks.Msg.INPUT = "reconhecedor";
 NclBlocks.Msg.INPUTS = "reconhecedores";
 NclBlocks.Msg.VIDEO = "vídeo";
 NclBlocks.Msg.PORTION = "trecho";
-NclBlocks.Msg.VIDEO_ANCHOR_BEGIN = "tem inicio";
-NclBlocks.Msg.VIDEO_ANCHOR_END = "e fim";
+NclBlocks.Msg.ANCHOR_BEGIN = "tem inicio";
+NclBlocks.Msg.ANCHOR_END = "e fim";
 NclBlocks.Msg.VIDEO_ITEM = "trecho do vídeo";
+NclBlocks.Msg.AUDIO = "áudio";
 NclBlocks.Msg.IMAGE = "imagem";
 NclBlocks.Msg.SSML = "texto para sintetização";
 NclBlocks.Msg.SSML_ANCHOR = "sintetiza frase";
@@ -72,6 +73,7 @@ NclBlocks.Msg.SET_TO = "com valor"
 NclBlocks.Icons.media = 'media/icon-media.png';
 NclBlocks.Icons.video = 'media/icon-media-video.png';
 NclBlocks.Icons.image = 'media/icon-media-image.png';
+NclBlocks.Icons.audio = 'media/icon-media-audio.png';
 NclBlocks.Icons.input = 'media/icon-recognition.png';
 NclBlocks.Icons.ssml = 'media/ssml.png';
 NclBlocks.Icons.srgs = 'media/srgs.png';
@@ -115,6 +117,7 @@ NclBlocks.defaultToolboxXML =
   <category name="` + NclBlocks.Msg.MEDIA + `">
     <block type="media"></block>
     <block type="image"></block>
+    <block type="audio"></block>
     <block type="video"></block>
     <block type="ssml"></block>
   </category>
@@ -492,6 +495,18 @@ Blockly.Blocks.media = {
 // media_src_type blocks
 // ---------------------------------------- 
 
+Blockly.Blocks.image = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.image, 25, 25,
+        '*'))
+      .appendField('{' + NclBlocks.Msg.IMAGE + '}');
+    this.setOutput(true, NclBlocks.USE_CHECK ? 'media_src_type' : null);
+    this.setColour(NclBlocks.MEDIA_COLOUR);
+    this.contextMenu = false;
+  }
+};
+
 Blockly.Blocks.video = Object.assign({}, Blockly.Blocks.InputStackMixin);
 Blockly.Blocks.video.init = function () {
   this.setColour(NclBlocks.MEDIA_COLOUR);
@@ -503,9 +518,9 @@ Blockly.Blocks.video.init = function () {
   this.stack_of_value_input = false;
   this.configureNewInput = function (new_input, index) {
     new_input.appendField(new Blockly.MediaIdFieldText(NclBlocks.Msg.PORTION + index, validateMediaId), 'id_area' + index)
-      .appendField(NclBlocks.Msg.VIDEO_ANCHOR_BEGIN)
+      .appendField(NclBlocks.Msg.ANCHOR_BEGIN)
       .appendField(new Blockly.FieldTextInput(''), 'begin' + index)
-      .appendField(NclBlocks.Msg.VIDEO_ANCHOR_END)
+      .appendField(NclBlocks.Msg.ANCHOR_END)
       .appendField(new Blockly.FieldTextInput(''), 'end' + index);
     this.moveInputBefore(new_input.name, "edit");
   };
@@ -525,17 +540,38 @@ Blockly.Blocks.video.init = function () {
   this.pushInput();
 }
 
-Blockly.Blocks.image = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.image, 25, 25,
-        '*'))
-      .appendField('{' + NclBlocks.Msg.IMAGE + '}');
-    this.setOutput(true, NclBlocks.USE_CHECK ? 'media_src_type' : null);
-    this.setColour(NclBlocks.MEDIA_COLOUR);
-    this.contextMenu = false;
-  }
-};
+Blockly.Blocks.audio = Object.assign({}, Blockly.Blocks.InputStackMixin);
+Blockly.Blocks.audio.init = function () {
+  this.setColour(NclBlocks.MEDIA_COLOUR);
+  this.setOutput(true, NclBlocks.USE_CHECK ? 'media_src_type' : null);
+  this.contextMenu = false;
+
+  // InputStackMixin config
+  this.stack_size = 0;
+  this.stack_of_value_input = false;
+  this.configureNewInput = function (new_input, index) {
+    new_input.appendField(new Blockly.MediaIdFieldText(NclBlocks.Msg.PORTION + index, validateMediaId), 'id_area' + index)
+      .appendField(NclBlocks.Msg.ANCHOR_BEGIN)
+      .appendField(new Blockly.FieldTextInput(''), 'begin' + index)
+      .appendField(NclBlocks.Msg.ANCHOR_END)
+      .appendField(new Blockly.FieldTextInput(''), 'end' + index);
+    this.moveInputBefore(new_input.name, "edit");
+  };
+  // add name
+  this.appendDummyInput()
+    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.audio, 25, 25, '*'))
+    .appendField('{' + NclBlocks.Msg.AUDIO + '}');
+  // add edit buttons
+  this.appendDummyInput('edit')
+    .appendField(new Blockly.FieldTextbutton('–', function () {
+      this.sourceBlock_.popInput();
+    }))
+    .appendField(new Blockly.FieldTextbutton('+', function () {
+      this.sourceBlock_.pushInput();
+    }));
+  // add one area
+  this.pushInput();
+}
 
 Blockly.Blocks.ssml = Object.assign({}, Blockly.Blocks.InputStackMixin);
 Blockly.Blocks.ssml.init = function () {
