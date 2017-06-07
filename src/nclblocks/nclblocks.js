@@ -728,7 +728,8 @@ Blockly.Blocks.user.init = function () {
     .appendField(new Blockly.FieldTextbutton('+', function () {
       this.sourceBlock_.pushInput();
     }));
-  // add first device
+  // add two devices
+  this.pushInput();
   this.pushInput();
 }
 
@@ -914,12 +915,11 @@ Blockly.Blocks.compoundcondition.init = function () {
     this.moveInputBefore(new_input.name, "edit");
   };
   // add name
-  this.appendValueInput("element_static")
+  this.appendDummyInput()
     .appendField(new Blockly.FieldDropdown([
       [NclBlocks.Msg.SEQ, 'seq'], [NclBlocks.Msg.AND, 'and'],
       [NclBlocks.Msg.OR, 'or']
-    ]), 'operator')
-    .setCheck(NclBlocks.USE_CHECK ? 'condition_type' : null);
+    ]), 'operator');
   // add plus button
   this.appendDummyInput('edit')
     .appendField(new Blockly.FieldTextbutton('–', function () {
@@ -928,7 +928,8 @@ Blockly.Blocks.compoundcondition.init = function () {
     .appendField(new Blockly.FieldTextbutton('+', function () {
       this.sourceBlock_.pushInput();
     }));
-  // add one
+  // add two conditions
+  this.pushInput();
   this.pushInput();
 }
 
