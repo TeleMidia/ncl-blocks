@@ -143,9 +143,9 @@ function injectConceptsBlocks1() {
 
   var blocks1_xml =
     `<xml xmlns="http://www.w3.org/1999/xhtml">
-    <block type="media" id="A(0bL5~#01?,|I,_x!OI" x="50" y="` + hight_by_level(0) + `"><field name="id">main_video</field><value name="src"><block type="video" id_area0="WzAnP=#ds8Ad/y^}@~J@"><mutation items="2"></mutation><field name="id_area0">credits</field><field name="begin0">100</field><field name="end0">200</field><field name="id_area1">credits2</field></block></value>
-    </block><block type="media" id="wdGd9(6#Xr^O@H#.jz;y" x="50" y="` + hight_by_level(1) + `"><value name="src"><block type="video" id="Qk)7lfH.YikoVFX5QGu2"><mutation items="2"></mutation><field name="begin0">10</field><field name="end0">200</field><field name="begin1">20</field><field name="end1">300</field></block></value></block>
-    <block type="media" id="xn(j{h#N$CF+ti?8BHvP" x="50" y="` + hight_by_level(2) + `"><value name="src"><block type="video" id="J_bVMCx=VUhU{:@+90+s"><mutation items="2"></mutation><field name="id_area0">credits</field><field name="begin0">0</field><field name="end0">0</field><field name="id_area1">credits2</field><field name="begin1">0</field><field name="end1">0</field></block></value></block>`;
+    <block type="media" id="A(0bL5~#01?,|I,_x!OI" x="50" y="` + hight_by_level(0) + `"><field name="id">main_video</field><value name="src"><block type="video" id_area0="WzAnP=#ds8Ad/y^}@~J@"><mutation length="2"></mutation><field name="id_area0">credits</field><field name="begin0">100</field><field name="end0">200</field><field name="id_area1">credits2</field></block></value>
+    </block><block type="media" id="wdGd9(6#Xr^O@H#.jz;y" x="50" y="` + hight_by_level(1) + `"><value name="src"><block type="video" id="Qk)7lfH.YikoVFX5QGu2"><mutation length="2"></mutation><field name="begin0">10</field><field name="end0">200</field><field name="begin1">20</field><field name="end1">300</field></block></value></block>
+    <block type="media" id="xn(j{h#N$CF+ti?8BHvP" x="50" y="` + hight_by_level(2) + `"><value name="src"><block type="video" id="J_bVMCx=VUhU{:@+90+s"><mutation length="2"></mutation><field name="id_area0">credits</field><field name="begin0">0</field><field name="end0">0</field><field name="id_area1">credits2</field><field name="begin1">0</field><field name="end1">0</field></block></value></block>`;
   NclBlocks.injectInDiv(_pathToBlockly, question_id, height + 'px', blocks1_xml, true);
 }
 
@@ -206,8 +206,8 @@ function saveConceptsTask1Changes(primaryEvent) {
     json_to_save = JSON.parse(saved_json_str);
   }
   json_to_save.changes.push(json_from_event);
-  // console.log(json_from_event);
-  // console.log(Blockly.Xml.workspaceToDom(_concepts_task1_workspace));
+  console.log(json_from_event);
+  console.log(Blockly.Xml.workspaceToDom(_concepts_task1_workspace));
   _survey.getQuestionByName("concepts_task1_changes").value = JSON.stringify(json_to_save);
 }
 
