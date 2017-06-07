@@ -227,7 +227,7 @@ NclBlocks.injectInDiv = function (pathToBlockly, parend_div_id, height, opt_work
 }
 
 // ---------------------------------------- 
-// reusable InputStackMixin block
+// InputStackMixin
 // ---------------------------------------- 
 
 Blockly.FieldTextbutton = function (buttontext, changeHandler) {
@@ -259,10 +259,9 @@ Blockly.Blocks.InputStackMixin = {
     var oldMutation = Blockly.Xml.domToText(oldMutationDom);
     var new_input;
 
+    // append element
     var new_index = this.dynamic_array_size;
     // console.log("append element_" + new_index);
-
-    // append element
     if (this.dynamic_array_of_value_input)
       new_input = this.appendValueInput('element_' + new_index);
     else
@@ -279,6 +278,9 @@ Blockly.Blocks.InputStackMixin = {
   },
 
   popInput: function () {
+    var oldMutationDom = this.mutationToDom();
+    var oldMutation = Blockly.Xml.domToText(oldMutationDom);
+
     if (this.dynamic_array_size <= 0) return;
     var rm_index = this.dynamic_array_size - 1;
     // console.log("remove element_" + rm_index);
@@ -289,6 +291,12 @@ Blockly.Blocks.InputStackMixin = {
     }
     this.removeInput(inputNameToDelete);
     this.dynamic_array_size--;
+
+    // fire mutation event
+    var newMutationDom = this.mutationToDom();
+    var newMutation = Blockly.Xml.domToText(newMutationDom);
+    Blockly.Events.fire(new Blockly.Events.Change(
+      this, 'mutation', null, oldMutation, newMutation));
   },
 
   mutationToDom: function () {
@@ -315,12 +323,10 @@ Blockly.Blocks.InputStackMixin = {
 // body block
 // ---------------------------------------- 
 
-
 Blockly.Blocks.body = Object.assign({}, Blockly.Blocks.InputStackMixin);
 Blockly.Blocks.body.init = function () {
   this.setColour(NclBlocks.BODY_COLOUR);
   this.contextMenu = false;
-
 
   // InputStackMixin config
   this.dynamic_array_size = 0;
