@@ -16,9 +16,9 @@ NclBlocks.Msg.SRC = "conteúdo";
 NclBlocks.Msg.MEDIAS = "mídias";
 NclBlocks.Msg.INPUT = "reconhecedor";
 NclBlocks.Msg.INPUTS = "reconhecedores";
-NclBlocks.Msg.VIDEO = "conteúdo de vídeo";
+NclBlocks.Msg.VIDEO = "vídeo";
 NclBlocks.Msg.VIDEO_ANCHOR_BEGIN = "define trecho inicio";
-NclBlocks.Msg.VIDEO_ANCHOR_END = ", fim";
+NclBlocks.Msg.VIDEO_ANCHOR_END = "e fim";
 NclBlocks.Msg.VIDEO_ITEM = "trecho do vídeo";
 NclBlocks.Msg.IMAGE = "imagem";
 NclBlocks.Msg.SSML = "texto para sintetização";
@@ -33,7 +33,7 @@ NclBlocks.Msg.HAND_GESTURE_ITEM = "gesto a reconhecer";
 NclBlocks.Msg.LINK = "sincronismo";
 NclBlocks.Msg.LINKS = "sincronismos";
 NclBlocks.Msg.WHEN = "quando";
-NclBlocks.Msg.DO = "faça=";
+NclBlocks.Msg.DO = "faça";
 NclBlocks.Msg.USER = "usuário";
 NclBlocks.Msg.USERS = "usuário";
 NclBlocks.Msg.DEVICE = "dispositivo";
@@ -60,6 +60,7 @@ NclBlocks.Msg.STOP = "termine";
 NclBlocks.Msg.PAUSE = "pause";
 NclBlocks.Msg.RESUME = "resuma";
 NclBlocks.Msg.SET = "atribua";
+NclBlocks.Msg.SET_TO = "com valor"
 
 // ---------------------------------------- 
 // icons
@@ -467,16 +468,15 @@ Blockly.NclUserFieldText.prototype.onFinishEditing_ = function (text) {
 
 Blockly.Blocks.media = {
   init: function () {
-    this.appendDummyInput()
+    this.appendValueInput('src')
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.media, 25, 25,
         '*'))
-      .appendField('{' + NclBlocks.Msg.MEDIA + '}');
-    this.appendValueInput('src')
+      .appendField('{' + NclBlocks.Msg.MEDIA + '}')
       .setCheck(NclBlocks.USE_CHECK ? 'media_src_type' : null)
-      .appendField('id=')
+      .appendField('id')
       .appendField(new Blockly.MediaIdFieldText('',
         validateMediaId), 'id')
-      .appendField(', ' + NclBlocks.Msg.SRC + '=');
+      .appendField('e ' + NclBlocks.Msg.SRC);
     this.setInputsInline(false);
     this.setColour(NclBlocks.MEDIA_COLOUR);
     if (NclBlocks.USE_BODY == true) this.setOutput(true, 'media_type');
@@ -494,12 +494,12 @@ Blockly.Blocks.video.init = function () {
   this.stack_size = 0;
   this.stack_of_value_input = false;
   this.configureNewInput = function (new_input, index) {
-    new_input.appendField('id=')
+    new_input.appendField('id')
       .appendField(new Blockly.MediaIdFieldText('',
         validateMediaId), 'id_area' + index)
-      .appendField(NclBlocks.Msg.VIDEO_ANCHOR_BEGIN + '=')
+      .appendField(NclBlocks.Msg.VIDEO_ANCHOR_BEGIN)
       .appendField(new Blockly.FieldTextInput(''), 'begin' + index)
-      .appendField(NclBlocks.Msg.VIDEO_ANCHOR_END + '=')
+      .appendField(NclBlocks.Msg.VIDEO_ANCHOR_END)
       .appendField(new Blockly.FieldTextInput(''), 'end' + index);
     this.moveInputBefore(new_input.name, "edit");
   };
@@ -541,10 +541,10 @@ Blockly.Blocks.ssml.init = function () {
   this.stack_size = 0;
   this.stack_of_value_input = false;
   this.configureNewInput = function (new_input, index) {
-    new_input.appendField('id=')
+    new_input.appendField('id')
       .appendField(new Blockly.MediaIdFieldText('',
         validateMediaId), 'id_area' + index)
-      .appendField(NclBlocks.Msg.SSML_ANCHOR + '=')
+      .appendField(NclBlocks.Msg.SSML_ANCHOR)
       .appendField(new Blockly.FieldTextInput(''), 'label' + index);
     this.moveInputBefore(new_input.name, "edit");
   };
@@ -577,10 +577,10 @@ Blockly.Blocks.input = {
       .appendField('{' + NclBlocks.Msg.INPUT + '}');
     this.appendValueInput('src')
       .setCheck(NclBlocks.USE_CHECK ? 'input_src_type' : null)
-      .appendField('id=')
+      .appendField('id')
       .appendField(new Blockly.InputIdFieldText('',
         validateInputId), 'id')
-      .appendField(', ' + NclBlocks.Msg.SRC + '=');
+      .appendField(', ' + NclBlocks.Msg.SRC);
     this.setInputsInline(false);
     this.setColour(NclBlocks.INPUT_COLOUR);
     if (NclBlocks.USE_BODY == true) this.setOutput(true, 'input_type');
@@ -602,10 +602,10 @@ Blockly.Blocks.srgs.init = function () {
   this.stack_size = 0;
   this.stack_of_value_input = false;
   this.configureNewInput = function (new_input, index) {
-    new_input.appendField('id=')
+    new_input.appendField('id')
       .appendField(new Blockly.InputIdFieldText('',
         validateInputId), 'id_area' + index)
-      .appendField(NclBlocks.Msg.SRGS_ANCHOR + '=')
+      .appendField(NclBlocks.Msg.SRGS_ANCHOR)
       .appendField(new Blockly.FieldTextInput(''), 'label' + index);
     this.moveInputBefore(new_input.name, "edit");
   };
@@ -635,10 +635,10 @@ Blockly.Blocks.hand_gesture.init = function () {
   this.stack_size = 0;
   this.stack_of_value_input = false;
   this.configureNewInput = function (new_input, index) {
-    new_input.appendField('id=')
+    new_input.appendField('id')
       .appendField(new Blockly.InputIdFieldText('',
         validateInputId), 'id_area' + index)
-      .appendField(NclBlocks.Msg.HAND_GESTURE_ANCHOR + '=')
+      .appendField(NclBlocks.Msg.HAND_GESTURE_ANCHOR)
       .appendField(new Blockly.FieldTextInput(''), 'label' + index);
     this.moveInputBefore(new_input.name, "edit");
   };
@@ -673,7 +673,7 @@ Blockly.Blocks.user.init = function () {
   this.stack_size = 0;
   this.stack_of_value_input = true;
   this.configureNewInput = function (new_input, index) {
-    new_input.appendField(NclBlocks.Msg.DEVICE + '=')
+    new_input.appendField(NclBlocks.Msg.DEVICE)
       .setCheck(NclBlocks.USE_CHECK ? 'user_device_type' : null)
     this.moveInputBefore(new_input.name, "edit");
   };
@@ -746,7 +746,7 @@ Blockly.Blocks.link = {
       .appendField('{' + NclBlocks.Msg.LINK + '}');
     this.appendValueInput('conditions')
       .setCheck(NclBlocks.USE_CHECK ? 'condition_type' : null)
-      .appendField(NclBlocks.Msg.WHEN + '=');
+      .appendField(NclBlocks.Msg.WHEN);
     this.appendStatementInput('actions')
       .setCheck(NclBlocks.USE_CHECK ? 'simpleaction_type' : null)
       .appendField(NclBlocks.Msg.DO);
@@ -962,7 +962,7 @@ Blockly.Blocks.set = {
         '*'))
       .appendField(NclBlocks.Msg.SET)
       .appendField(new Blockly.FieldDropdown(getMediaIds), 'set')
-      .appendField('=')
+      .appendField(NclBlocks.Msg.SET_TO)
       .appendField(new Blockly.FieldTextInput(''), 'value');
     this.setInputsInline(false);
     this.setPreviousStatement(true, NclBlocks.USE_CHECK ? 'simpleaction_type' : null);
