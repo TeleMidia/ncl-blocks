@@ -36,8 +36,10 @@ NclBlocks.Msg.LINKS = "sincronismos";
 NclBlocks.Msg.WHEN = "quando";
 NclBlocks.Msg.DO = "faça";
 NclBlocks.Msg.USER = "usuário";
-NclBlocks.Msg.USERS = "usuário";
+NclBlocks.Msg.USERS = "tipo de usuários";
+NclBlocks.Msg.MAX_USERS = "máximo de ususários"
 NclBlocks.Msg.DEVICE = "dispositivo";
+NclBlocks.Msg.WITH_DEVICE = "com dispositivo";
 NclBlocks.Msg.DEVICES = "dispositivos";
 NclBlocks.Msg.LEAP = "sensor de gestos de mão";
 NclBlocks.Msg.MICROFONE = "microfone";
@@ -666,7 +668,7 @@ Blockly.Blocks.user.init = function () {
   this.stack_size = 0;
   this.stack_of_value_input = true;
   this.configureNewInput = function (new_input, index) {
-    new_input.appendField(NclBlocks.Msg.DEVICE)
+    new_input.appendField(NclBlocks.Msg.WITH_DEVICE)
       .setCheck(NclBlocks.USE_CHECK ? 'user_device_type' : null)
     this.moveInputBefore(new_input.name, "edit");
   };
@@ -674,6 +676,9 @@ Blockly.Blocks.user.init = function () {
   this.appendDummyInput()
     .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.user, 25, 25, '*'))
     .appendField('{' + NclBlocks.Msg.USERS + '}');
+  this.appendDummyInput()
+    .appendField(NclBlocks.Msg.MAX_USERS)
+    .appendField(new Blockly.FieldTextInput('2'));
   // add edit buttons
   this.appendDummyInput('edit')
     .appendField(new Blockly.FieldTextbutton('–', function () {
