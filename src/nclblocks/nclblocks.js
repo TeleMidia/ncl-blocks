@@ -70,8 +70,8 @@ NclBlocks.Msg.SET_TO = "com valor"
 // ---------------------------------------- 
 
 NclBlocks.Icons.media = 'media/icon-media.png';
-NclBlocks.Icons.video = 'media/icon-video.png';
-NclBlocks.Icons.image = 'media/icon-image.png';
+NclBlocks.Icons.video = 'media/icon-media-video.png';
+NclBlocks.Icons.image = 'media/icon-media-image.png';
 NclBlocks.Icons.input = 'media/icon-recognition.png';
 NclBlocks.Icons.ssml = 'media/ssml.png';
 NclBlocks.Icons.srgs = 'media/srgs.png';
