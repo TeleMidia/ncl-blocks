@@ -206,15 +206,15 @@ function saveConceptsTask1Changes(primaryEvent) {
     json_to_save = JSON.parse(saved_json_str);
   }
   json_to_save.changes.push(json_from_event);
-  console.log(json_from_event);
-  console.log(Blockly.Xml.workspaceToDom(_concepts_task1_workspace));
+  // console.log(json_from_event);
+  // console.log(Blockly.Xml.workspaceToDom(_concepts_task1_workspace));
   _survey.getQuestionByName("concepts_task1_changes").value = JSON.stringify(json_to_save);
 }
 
 function saveConceptsTask1Result() {
   var xml = Blockly.Xml.workspaceToDom(_concepts_task1_workspace);
   var xml_text = Blockly.Xml.domToText(xml);
-  console.log(xml_text);
+  // console.log(xml_text);
   _survey.getQuestionByName("concepts_task1_result").value = xml_text;
 }
 
