@@ -9,8 +9,8 @@ NclBlocks.Icons = {};
 // ---------------------------------------- 
 
 NclBlocks.Msg.BODY = "app";
-NclBlocks.Msg.PORT = "início da aplicação"
-NclBlocks.Msg.PORT_LABEL = "quando iniciar aplicação inicie";
+NclBlocks.Msg.PORT = "início da app"
+NclBlocks.Msg.PORT_LABEL = "quando iniciar app inicie";
 NclBlocks.Msg.MEDIA = "mídia";
 NclBlocks.Msg.SRC = "conteúdo";
 NclBlocks.Msg.MEDIAS = "mídias";
@@ -180,9 +180,6 @@ NclBlocks.injectInDiv = function (pathToBlockly, parend_div_id, height, opt_work
   var workspace;
 
   Blockly.pathToBlockly = pathToBlockly ? pathToBlockly : "./";
-  if (NclBlocks.USE_BODY) {
-    opt_workspace_xml = NclBlocks.START_WORKSPACE_WITH_BODY;
-  }
 
   // create div and configure auto resize
   var blocklyArea = document.getElementById(parend_div_id);
@@ -224,7 +221,9 @@ NclBlocks.injectInDiv = function (pathToBlockly, parend_div_id, height, opt_work
       sounds: true
     });
   }
-
+  if (NclBlocks.USE_BODY) {
+    opt_workspace_xml = NclBlocks.START_WORKSPACE_WITH_BODY;
+  }
   Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(opt_workspace_xml), workspace);
 
   onresize();
@@ -259,7 +258,7 @@ Blockly.FieldTextbutton.prototype.showEditor_ = function () {
 };
 
 Blockly.Blocks.InputStackMixin = {
-  isArrayOfValueInput: false,
+  stack_of_value_input: false,
 
   pushInput: function () {
     var oldMutationDom = this.mutationToDom();
@@ -325,7 +324,7 @@ Blockly.Blocks.InputStackMixin = {
         this.popInput();
     }
   },
-  
+
   addMinusPlusDummyInput: function () {
     this.appendDummyInput('edit')
       .appendField(new Blockly.FieldTextbutton('minus', '–', function () {
@@ -345,36 +344,20 @@ Blockly.Blocks.body = Object.assign({}, Blockly.Blocks.InputStackMixin);
 Blockly.Blocks.body.init = function () {
   this.setColour(NclBlocks.BODY_COLOUR);
   this.contextMenu = false;
+  this.setDeletable(false);
 
   // InputStackMixin config
   this.stack_size = 0;
+  this.stack_of_value_input = true;
   this.configureNewInput = function (new_input, index) {
     new_input.appendField()
-      .setCheck(NclBlocks.USE_CHECK ? ['media_type', 'input_type', 'user_type', 'link_type'] : null)
-      ;
+      .setCheck(NclBlocks.USE_CHECK ? ['media_type', 'input_type', 'user_type', 'link_type'] : null);
   };
   // add name
   this.appendDummyInput()
-    .appendField('{' + NclBlocks.Msg.BODY + '}').appendField(new Blockly.FieldTextbutton('+', function () {
-      this.sourceBlock_.pushInput();
-    }));;
-  // add sections names
-  // this.appendDummyInput('MEDIAS')
-  //   .appendField(new Blockly.FieldTextbutton('+' + NclBlocks.Msg.MEDIA, function () {
-  //     this.sourceBlock_.pushInput("INPUTS");
-  //   }));
-  // this.appendDummyInput('INPUTS')
-  //   .appendField(new Blockly.FieldTextbutton('+' + NclBlocks.Msg.INPUT, function () {
-  //     this.sourceBlock_.pushInput("USERS");
-  //   }));
-  // this.appendDummyInput('USERS')
-  //   .appendField(new Blockly.FieldTextbutton('+' + NclBlocks.Msg.USER, function () {
-  //     this.sourceBlock_.pushInput("LINKS");
-  //   }));
-  // this.appendDummyInput('LINKS')
-  //   .appendField(new Blockly.FieldTextbutton('+' + NclBlocks.Msg.LINK, function () {
-  //     this.sourceBlock_.pushInput("edit");
-  //   }));
+    .appendField('{' + NclBlocks.Msg.BODY + '}');
+  // add edit buttons
+  this.addMinusPlusDummyInput();
   // add initial inputs
   for (var i = 0; i < 5; i++)
     this.pushInput();

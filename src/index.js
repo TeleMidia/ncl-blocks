@@ -190,7 +190,6 @@ function injectConceptsBlocks5() {
     `<xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="KZ[g}J_gz%iQCj#u(I:P" x="` + origin + `" y="` + origin + `"><value name="src"><block type="image" id="LHprn9YiDsg/Nlglks0f"></block></value></block>
     </xml>`;
-  // NclBlocks.useBody();
   NclBlocks.injectInDiv(_pathToBlockly, question_id, height + 'px', blocks1_xml, true);
 }
 
