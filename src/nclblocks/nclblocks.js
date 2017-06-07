@@ -159,14 +159,9 @@ Blockly.BlockSvg.START_HAT = true;
 NclBlocks.USE_BODY = false;
 NclBlocks.USE_CHECK = false;
 
-NclBlocks.setUseBodyFlag = function () {
+NclBlocks.useBody = function () {
   Blockly.BlockSvg.START_HAT = false;
   NclBlocks.USE_BODY = true;
-}
-
-NclBlocks.resetFlags = function () {
-  Blockly.BlockSvg.START_HAT = true;
-  NclBlocks.USE_BODY = false;
 }
 
 // ---------------------------------------- 
@@ -224,7 +219,6 @@ NclBlocks.injectInDiv = function (pathToBlockly, parend_div_id, height, opt_work
   }
 
   Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(opt_workspace_xml), workspace);
-  NclBlocks.resetFlags();
 
   onresize();
   Blockly.svgResize(workspace);
