@@ -237,8 +237,8 @@ NclBlocks.injectInDiv = function (pathToBlockly, parend_div_id, height, opt_work
 // InputStackMixin
 // ---------------------------------------- 
 
-Blockly.FieldTextbutton = function (buttontext, changeHandler) {
-  Blockly.FieldTextbutton.superClass_.constructor.call(this, '');
+Blockly.FieldTextbutton = function (inputname, buttontext, changeHandler) {
+  Blockly.FieldTextbutton.superClass_.constructor.call(this, inputname);
   this.buttontext_ = buttontext;
   this.changeHandler_ = changeHandler;
   this.setText(buttontext);
@@ -274,6 +274,7 @@ Blockly.Blocks.InputStackMixin = {
     else
       new_input = this.appendDummyInput('element_' + new_index);
     this.configureNewInput(new_input, new_index);
+    this.moveInputBefore(new_input.name, 'edit');
     this.stack_size++;
     // fire mutation event
     var newMutationDom = this.mutationToDom();
@@ -323,6 +324,16 @@ Blockly.Blocks.InputStackMixin = {
       for (var i = 0; i < this.stack_size - new_length; i++)
         this.popInput();
     }
+  },
+  
+  addMinusPlusDummyInput: function () {
+    this.appendDummyInput('edit')
+      .appendField(new Blockly.FieldTextbutton('minus', '–', function () {
+        this.sourceBlock_.popInput();
+      }))
+      .appendField(new Blockly.FieldTextbutton('plus', '+', function () {
+        this.sourceBlock_.pushInput();
+      }));
   }
 }
 
@@ -522,20 +533,13 @@ Blockly.Blocks.video.init = function () {
       .appendField(new Blockly.FieldTextInput(''), 'begin' + index)
       .appendField(NclBlocks.Msg.ANCHOR_END)
       .appendField(new Blockly.FieldTextInput(''), 'end' + index);
-    this.moveInputBefore(new_input.name, "edit");
   };
   // add name
   this.appendDummyInput()
     .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.video, 25, 25, '*'))
     .appendField('{' + NclBlocks.Msg.VIDEO + '}');
   // add edit buttons
-  this.appendDummyInput('edit')
-    .appendField(new Blockly.FieldTextbutton('–', function () {
-      this.sourceBlock_.popInput();
-    }))
-    .appendField(new Blockly.FieldTextbutton('+', function () {
-      this.sourceBlock_.pushInput();
-    }));
+  this.addMinusPlusDummyInput();
   // add one area
   this.pushInput();
 }
@@ -555,20 +559,13 @@ Blockly.Blocks.audio.init = function () {
       .appendField(new Blockly.FieldTextInput(''), 'begin' + index)
       .appendField(NclBlocks.Msg.ANCHOR_END)
       .appendField(new Blockly.FieldTextInput(''), 'end' + index);
-    this.moveInputBefore(new_input.name, "edit");
   };
   // add name
   this.appendDummyInput()
     .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.audio, 25, 25, '*'))
     .appendField('{' + NclBlocks.Msg.AUDIO + '}');
   // add edit buttons
-  this.appendDummyInput('edit')
-    .appendField(new Blockly.FieldTextbutton('–', function () {
-      this.sourceBlock_.popInput();
-    }))
-    .appendField(new Blockly.FieldTextbutton('+', function () {
-      this.sourceBlock_.pushInput();
-    }));
+  this.addMinusPlusDummyInput();
   // add one area
   this.pushInput();
 }
@@ -586,7 +583,6 @@ Blockly.Blocks.ssml.init = function () {
     new_input.appendField(new Blockly.MediaIdFieldText(NclBlocks.Msg.PORTION + index, validateMediaId), 'id_area' + index)
       .appendField(NclBlocks.Msg.SSML_ANCHOR)
       .appendField(new Blockly.FieldTextInput(''), 'label' + index);
-    this.moveInputBefore(new_input.name, "edit");
   };
   // add name
   this.appendDummyInput()
@@ -594,13 +590,7 @@ Blockly.Blocks.ssml.init = function () {
     .appendField('{' + NclBlocks.Msg.SSML + '}');
   this.stack_size++;
   // add plus button
-  this.appendDummyInput('edit')
-    .appendField(new Blockly.FieldTextbutton('–', function () {
-      this.sourceBlock_.popInput();
-    }))
-    .appendField(new Blockly.FieldTextbutton('+', function () {
-      this.sourceBlock_.pushInput();
-    }));
+  this.addMinusPlusDummyInput();
   // add one area
   this.pushInput();
 }
@@ -645,20 +635,13 @@ Blockly.Blocks.srgs.init = function () {
     new_input.appendField(new Blockly.InputIdFieldText(NclBlocks.Msg.PORTION + index, validateInputId), 'id_area' + index)
       .appendField(NclBlocks.Msg.SRGS_ANCHOR)
       .appendField(new Blockly.FieldTextInput(''), 'label' + index);
-    this.moveInputBefore(new_input.name, "edit");
   };
   // add name
   this.appendDummyInput()
     .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.srgs, 25, 25, '*'))
     .appendField('{' + NclBlocks.Msg.SRGS + '}');
   // add edit buttons
-  this.appendDummyInput('edit')
-    .appendField(new Blockly.FieldTextbutton('–', function () {
-      this.sourceBlock_.popInput();
-    }))
-    .appendField(new Blockly.FieldTextbutton('+', function () {
-      this.sourceBlock_.pushInput();
-    }));
+  this.addMinusPlusDummyInput();
   // add one area
   this.pushInput();
 }
@@ -676,20 +659,13 @@ Blockly.Blocks.hand_gesture.init = function () {
     new_input.appendField(new Blockly.InputIdFieldText(NclBlocks.Msg.PORTION + index, validateInputId), 'id_area' + index)
       .appendField(NclBlocks.Msg.HAND_GESTURE_ANCHOR)
       .appendField(new Blockly.FieldTextInput(''), 'label' + index);
-    this.moveInputBefore(new_input.name, "edit");
   };
   // add name
   this.appendDummyInput()
     .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.hand_gesture, 25, 25, '*'))
     .appendField('{' + NclBlocks.Msg.HAND_GESTURE + '}');
   // add edit buttons
-  this.appendDummyInput('edit')
-    .appendField(new Blockly.FieldTextbutton('–', function () {
-      this.sourceBlock_.popInput();
-    }))
-    .appendField(new Blockly.FieldTextbutton('+', function () {
-      this.sourceBlock_.pushInput();
-    }));
+  this.addMinusPlusDummyInput();
   // add one area
   this.pushInput();;
 }
@@ -711,7 +687,6 @@ Blockly.Blocks.user.init = function () {
   this.configureNewInput = function (new_input, index) {
     new_input.appendField(NclBlocks.Msg.WITH_DEVICE)
       .setCheck(NclBlocks.USE_CHECK ? 'user_device_type' : null)
-    this.moveInputBefore(new_input.name, "edit");
   };
   // add name
   this.appendDummyInput()
@@ -721,13 +696,7 @@ Blockly.Blocks.user.init = function () {
     .appendField(NclBlocks.Msg.MAX_USERS)
     .appendField(new Blockly.FieldTextInput('2'));
   // add edit buttons
-  this.appendDummyInput('edit')
-    .appendField(new Blockly.FieldTextbutton('–', function () {
-      this.sourceBlock_.popInput();
-    }))
-    .appendField(new Blockly.FieldTextbutton('+', function () {
-      this.sourceBlock_.pushInput();
-    }));
+  this.addMinusPlusDummyInput();
   // add two devices
   this.pushInput();
   this.pushInput();
@@ -912,7 +881,6 @@ Blockly.Blocks.compoundcondition.init = function () {
   this.stack_of_value_input = true;
   this.configureNewInput = function (new_input, index) {
     new_input.setCheck(NclBlocks.USE_CHECK ? 'condition_type' : null);
-    this.moveInputBefore(new_input.name, "edit");
   };
   // add name
   this.appendDummyInput()
@@ -921,13 +889,7 @@ Blockly.Blocks.compoundcondition.init = function () {
       [NclBlocks.Msg.OR, 'or']
     ]), 'operator');
   // add plus button
-  this.appendDummyInput('edit')
-    .appendField(new Blockly.FieldTextbutton('–', function () {
-      this.sourceBlock_.popInput();
-    }))
-    .appendField(new Blockly.FieldTextbutton('+', function () {
-      this.sourceBlock_.pushInput();
-    }));
+  this.addMinusPlusDummyInput();
   // add two conditions
   this.pushInput();
   this.pushInput();
