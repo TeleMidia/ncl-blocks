@@ -50,9 +50,9 @@ NclBlocks.Msg.ONEND = "terminar";
 NclBlocks.Msg.ONPAUSE = "pausar";
 NclBlocks.Msg.ONRESUME = "resumir";
 NclBlocks.Msg.ONSELECTION = "selecionar";
-NclBlocks.Msg.SEQ = 'sequencia';
+NclBlocks.Msg.SEQ = 'em sequencia';
 NclBlocks.Msg.AND = 'todos entre';
-NclBlocks.Msg.OR = 'qualquer entre';
+NclBlocks.Msg.OR = 'um entre';
 NclBlocks.Msg.ACTION = "ação";
 NclBlocks.Msg.ACTIONS = "ações";
 NclBlocks.Msg.START = "inicie";
@@ -871,16 +871,16 @@ Blockly.Blocks.compoundcondition.init = function () {
   this.stack_size = 0;
   this.stack_of_value_input = true;
   this.configureNewInput = function (new_input, index) {
-    new_input.appendField(NclBlocks.Msg.WHEN + '=')
-      .setCheck(NclBlocks.USE_CHECK ? 'condition_type' : null);
+    new_input.setCheck(NclBlocks.USE_CHECK ? 'condition_type' : null);
     this.moveInputBefore(new_input.name, "edit");
   };
   // add name
-  this.appendDummyInput()
+  this.appendValueInput("element_static")
     .appendField(new Blockly.FieldDropdown([
       [NclBlocks.Msg.SEQ, 'seq'], [NclBlocks.Msg.AND, 'and'],
       [NclBlocks.Msg.OR, 'or']
-    ]), 'operator');
+    ]), 'operator')
+    .setCheck(NclBlocks.USE_CHECK ? 'condition_type' : null);
   // add plus button
   this.appendDummyInput('edit')
     .appendField(new Blockly.FieldTextbutton('–', function () {
@@ -889,8 +889,7 @@ Blockly.Blocks.compoundcondition.init = function () {
     .appendField(new Blockly.FieldTextbutton('+', function () {
       this.sourceBlock_.pushInput();
     }));
-  // add two conditions
-  this.pushInput();
+  // add one
   this.pushInput();
 }
 
