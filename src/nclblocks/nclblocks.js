@@ -260,14 +260,14 @@ Blockly.Blocks.InputStackMixin = {
     var new_input;
 
     // append element
-    var new_index = this.dynamic_array_size;
+    var new_index = this.stack_size;
     // console.log("append element_" + new_index);
-    if (this.dynamic_array_of_value_input)
+    if (this.stack_of_value_input)
       new_input = this.appendValueInput('element_' + new_index);
     else
       new_input = this.appendDummyInput('element_' + new_index);
     this.configureNewInput(new_input, new_index);
-    this.dynamic_array_size++;
+    this.stack_size++;
     // fire mutation event
     var newMutationDom = this.mutationToDom();
     var newMutation = Blockly.Xml.domToText(newMutationDom);
@@ -281,8 +281,8 @@ Blockly.Blocks.InputStackMixin = {
     var oldMutationDom = this.mutationToDom();
     var oldMutation = Blockly.Xml.domToText(oldMutationDom);
 
-    if (this.dynamic_array_size <= 0) return;
-    var rm_index = this.dynamic_array_size - 1;
+    if (this.stack_size <= 0) return;
+    var rm_index = this.stack_size - 1;
     // console.log("remove element_" + rm_index);
     var inputNameToDelete = 'element_' + rm_index;
     var substructure = this.getInputTargetBlock(inputNameToDelete);
@@ -290,7 +290,7 @@ Blockly.Blocks.InputStackMixin = {
       substructure.dispose(true, true);
     }
     this.removeInput(inputNameToDelete);
-    this.dynamic_array_size--;
+    this.stack_size--;
 
     // fire mutation event
     var newMutationDom = this.mutationToDom();
@@ -301,7 +301,7 @@ Blockly.Blocks.InputStackMixin = {
 
   mutationToDom: function () {
     var container = document.createElement('mutation');
-    container.setAttribute('length', this.dynamic_array_size);
+    container.setAttribute('length', this.stack_size);
     return container;
   },
 
@@ -309,11 +309,11 @@ Blockly.Blocks.InputStackMixin = {
     var new_length = xmlElement.getAttribute('length');
     // console.log(xmlElement);
     // console.log(this);
-    if (new_length - this.dynamic_array_size > 0) {
-      for (var i = 0; i < new_length - this.dynamic_array_size; i++)
+    if (new_length - this.stack_size > 0) {
+      for (var i = 0; i < new_length - this.stack_size; i++)
         this.pushInput();
     } else {
-      for (var i = 0; i < this.dynamic_array_size - new_length; i++)
+      for (var i = 0; i < this.stack_size - new_length; i++)
         this.popInput();
     }
   }
@@ -329,7 +329,7 @@ Blockly.Blocks.body.init = function () {
   this.contextMenu = false;
 
   // InputStackMixin config
-  this.dynamic_array_size = 0;
+  this.stack_size = 0;
   this.configureNewInput = function (new_input, index) {
     new_input.appendField()
       .setCheck(NclBlocks.USE_CHECK ? ['media_type', 'input_type', 'user_type', 'link_type'] : null)
@@ -491,8 +491,8 @@ Blockly.Blocks.video.init = function () {
   this.contextMenu = false;
 
   // InputStackMixin config
-  this.dynamic_array_size = 0;
-  this.dynamic_array_of_value_input = false;
+  this.stack_size = 0;
+  this.stack_of_value_input = false;
   this.configureNewInput = function (new_input, index) {
     new_input.appendField('id=')
       .appendField(new Blockly.MediaIdFieldText('',
@@ -538,8 +538,8 @@ Blockly.Blocks.ssml.init = function () {
   this.contextMenu = false;
 
   // InputStackMixin config
-  this.dynamic_array_size = 0;
-  this.dynamic_array_of_value_input = false;
+  this.stack_size = 0;
+  this.stack_of_value_input = false;
   this.configureNewInput = function (new_input, index) {
     new_input.appendField('id=')
       .appendField(new Blockly.MediaIdFieldText('',
@@ -552,7 +552,7 @@ Blockly.Blocks.ssml.init = function () {
   this.appendDummyInput()
     .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.ssml, 25, 25, '*'))
     .appendField('{' + NclBlocks.Msg.SSML + '}');
-  this.dynamic_array_size++;
+  this.stack_size++;
   // add plus button
   this.appendDummyInput('edit')
     .appendField(new Blockly.FieldTextbutton('–', function () {
@@ -599,8 +599,8 @@ Blockly.Blocks.srgs.init = function () {
   this.contextMenu = false;
 
   // InputStackMixin config
-  this.dynamic_array_size = 0;
-  this.dynamic_array_of_value_input = false;
+  this.stack_size = 0;
+  this.stack_of_value_input = false;
   this.configureNewInput = function (new_input, index) {
     new_input.appendField('id=')
       .appendField(new Blockly.InputIdFieldText('',
@@ -632,8 +632,8 @@ Blockly.Blocks.hand_gesture.init = function () {
   this.contextMenu = false;
 
   // InputStackMixin config
-  this.dynamic_array_size = 0;
-  this.dynamic_array_of_value_input = false;
+  this.stack_size = 0;
+  this.stack_of_value_input = false;
   this.configureNewInput = function (new_input, index) {
     new_input.appendField('id=')
       .appendField(new Blockly.InputIdFieldText('',
@@ -670,8 +670,8 @@ Blockly.Blocks.user.init = function () {
   this.contextMenu = false;
 
   // InputStackMixin config
-  this.dynamic_array_size = 0;
-  this.dynamic_array_of_value_input = true;
+  this.stack_size = 0;
+  this.stack_of_value_input = true;
   this.configureNewInput = function (new_input, index) {
     new_input.appendField(NclBlocks.Msg.DEVICE + '=')
       .setCheck(NclBlocks.USE_CHECK ? 'user_device_type' : null)
@@ -868,8 +868,8 @@ Blockly.Blocks.compoundcondition.init = function () {
   this.setInputsInline(false);
 
   // InputStackMixin config
-  this.dynamic_array_size = 0;
-  this.dynamic_array_of_value_input = true;
+  this.stack_size = 0;
+  this.stack_of_value_input = true;
   this.configureNewInput = function (new_input, index) {
     new_input.appendField(NclBlocks.Msg.WHEN + '=')
       .setCheck(NclBlocks.USE_CHECK ? 'condition_type' : null);
