@@ -466,15 +466,16 @@ Blockly.NclUserFieldText.prototype.onFinishEditing_ = function (text) {
 };
 
 // ---------------------------------------- 
-// media, image, ssml, video blocks
+// media block
 // ---------------------------------------- 
 
 Blockly.Blocks.media = {
   init: function () {
-    this.appendValueInput('src')
+    this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.media, 25, 25,
         '*'))
-      .appendField('{' + NclBlocks.Msg.MEDIA + '}')
+      .appendField('{' + NclBlocks.Msg.MEDIA + '}');
+    this.appendValueInput('src')
       .setCheck(NclBlocks.USE_CHECK ? 'media_src_type' : null)
       .appendField('id')
       .appendField(new Blockly.MediaIdFieldText('',
@@ -486,6 +487,10 @@ Blockly.Blocks.media = {
     this.contextMenu = false;
   }
 };
+
+// ---------------------------------------- 
+// media_src_type blocks
+// ---------------------------------------- 
 
 Blockly.Blocks.video = Object.assign({}, Blockly.Blocks.InputStackMixin);
 Blockly.Blocks.video.init = function () {
@@ -579,7 +584,7 @@ Blockly.Blocks.input = {
       .appendField('id')
       .appendField(new Blockly.InputIdFieldText('',
         validateInputId), 'id')
-      .appendField(', ' + NclBlocks.Msg.SRC);
+      .appendField('e ' + NclBlocks.Msg.SRC);
     this.setInputsInline(false);
     this.setColour(NclBlocks.INPUT_COLOUR);
     if (NclBlocks.USE_BODY == true) this.setOutput(true, 'input_type');
@@ -588,7 +593,7 @@ Blockly.Blocks.input = {
 };
 
 // ---------------------------------------- 
-// srgs, hand_gestures blocks
+// input_src_type blocks
 // ---------------------------------------- 
 
 Blockly.Blocks.srgs = Object.assign({}, Blockly.Blocks.InputStackMixin);
