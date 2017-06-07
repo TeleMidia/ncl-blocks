@@ -17,17 +17,18 @@ NclBlocks.Msg.MEDIAS = "mídias";
 NclBlocks.Msg.INPUT = "reconhecedor";
 NclBlocks.Msg.INPUTS = "reconhecedores";
 NclBlocks.Msg.VIDEO = "vídeo";
-NclBlocks.Msg.VIDEO_ANCHOR_BEGIN = "define trecho inicio";
+NclBlocks.Msg.PORTION = "trecho";
+NclBlocks.Msg.VIDEO_ANCHOR_BEGIN = "tem inicio";
 NclBlocks.Msg.VIDEO_ANCHOR_END = "e fim";
 NclBlocks.Msg.VIDEO_ITEM = "trecho do vídeo";
 NclBlocks.Msg.IMAGE = "imagem";
 NclBlocks.Msg.SSML = "texto para sintetização";
 NclBlocks.Msg.SSML_ANCHOR = "sintetiza frase";
 NclBlocks.Msg.SSML_ITEM = "frase a sintetizar";
-NclBlocks.Msg.SRGS = "comandos de voz";
+NclBlocks.Msg.SRGS = "especificação de voz";
 NclBlocks.Msg.SRGS_ANCHOR = "reconhece frase";
 NclBlocks.Msg.SRGS_ITEM = "frase a reconhecer";
-NclBlocks.Msg.HAND_GESTURE = "gestos de mão";
+NclBlocks.Msg.HAND_GESTURE = "especificação de gestos";
 NclBlocks.Msg.HAND_GESTURE_ANCHOR = "reconhece gesto";
 NclBlocks.Msg.HAND_GESTURE_ITEM = "gesto a reconhecer";
 NclBlocks.Msg.LINK = "sincronismo";
@@ -494,9 +495,7 @@ Blockly.Blocks.video.init = function () {
   this.stack_size = 0;
   this.stack_of_value_input = false;
   this.configureNewInput = function (new_input, index) {
-    new_input.appendField('id')
-      .appendField(new Blockly.MediaIdFieldText('',
-        validateMediaId), 'id_area' + index)
+    new_input.appendField(new Blockly.MediaIdFieldText(NclBlocks.Msg.PORTION + index, validateMediaId), 'id_area' + index)
       .appendField(NclBlocks.Msg.VIDEO_ANCHOR_BEGIN)
       .appendField(new Blockly.FieldTextInput(''), 'begin' + index)
       .appendField(NclBlocks.Msg.VIDEO_ANCHOR_END)
@@ -541,9 +540,7 @@ Blockly.Blocks.ssml.init = function () {
   this.stack_size = 0;
   this.stack_of_value_input = false;
   this.configureNewInput = function (new_input, index) {
-    new_input.appendField('id')
-      .appendField(new Blockly.MediaIdFieldText('',
-        validateMediaId), 'id_area' + index)
+    new_input.appendField(new Blockly.MediaIdFieldText(NclBlocks.Msg.PORTION + index, validateMediaId), 'id_area' + index)
       .appendField(NclBlocks.Msg.SSML_ANCHOR)
       .appendField(new Blockly.FieldTextInput(''), 'label' + index);
     this.moveInputBefore(new_input.name, "edit");
@@ -602,9 +599,7 @@ Blockly.Blocks.srgs.init = function () {
   this.stack_size = 0;
   this.stack_of_value_input = false;
   this.configureNewInput = function (new_input, index) {
-    new_input.appendField('id')
-      .appendField(new Blockly.InputIdFieldText('',
-        validateInputId), 'id_area' + index)
+    new_input.appendField(new Blockly.InputIdFieldText(NclBlocks.Msg.PORTION + index, validateInputId), 'id_area' + index)
       .appendField(NclBlocks.Msg.SRGS_ANCHOR)
       .appendField(new Blockly.FieldTextInput(''), 'label' + index);
     this.moveInputBefore(new_input.name, "edit");
@@ -635,9 +630,7 @@ Blockly.Blocks.hand_gesture.init = function () {
   this.stack_size = 0;
   this.stack_of_value_input = false;
   this.configureNewInput = function (new_input, index) {
-    new_input.appendField('id')
-      .appendField(new Blockly.InputIdFieldText('',
-        validateInputId), 'id_area' + index)
+    new_input.appendField(new Blockly.InputIdFieldText(NclBlocks.Msg.PORTION + index, validateInputId), 'id_area' + index)
       .appendField(NclBlocks.Msg.HAND_GESTURE_ANCHOR)
       .appendField(new Blockly.FieldTextInput(''), 'label' + index);
     this.moveInputBefore(new_input.name, "edit");
