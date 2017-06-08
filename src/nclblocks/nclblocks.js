@@ -70,6 +70,7 @@ NclBlocks.Msg.SET_TO = "com valor"
 // icons
 // ---------------------------------------- 
 
+NclBlocks.Icons.context = 'media/icon-context.png';
 NclBlocks.Icons.media = 'media/icon-media.png';
 NclBlocks.Icons.video = 'media/icon-media-video.png';
 NclBlocks.Icons.image = 'media/icon-media-image.png';
@@ -355,6 +356,8 @@ Blockly.Blocks.body.init = function () {
   };
   // add name
   this.appendDummyInput()
+    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.context,
+      20, 20, '*'))
     .appendField('{' + NclBlocks.Msg.BODY + '}');
   // add edit buttons
   this.addMinusPlusDummyInput();
