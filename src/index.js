@@ -36,6 +36,9 @@ var _survey_css = {
 
 var _msg_empty_block_task = "Por favor, preencha com blocos.";
 var _concepts_task1_workspace;
+var _concepts_task2_workspace;
+var _concepts_task3_workspace;
+var _concepts_task4_workspace;
 
 // ----------------------------------------
 // survey create
@@ -115,6 +118,15 @@ function onRenderQuestion(target_survey, question_and_html) {
     case "concepts_task1":
       injectConceptsTask1();
       break;
+    case "concepts_task2":
+      injectConceptsTask2();
+      break;
+    case "concepts_task3":
+      injectConceptsTask3();
+      break;
+    case "concepts_task4":
+      injectConceptsTask4();
+      break;
     case "ncl_code1":
       injectNclCode1();
       break;
@@ -193,7 +205,6 @@ function injectConceptsBlocks5() {
   NclBlocks.injectInDiv(_pathToBlockly, question_id, height + 'px', blocks1_xml, true);
 }
 
-
 function saveConceptsTask1Changes(primaryEvent) {
   var saved_json_str = _survey.getQuestionByName("concepts_task1_changes").value;
   var json_from_event = primaryEvent.toJson();
@@ -222,6 +233,27 @@ function injectConceptsTask1() {
   var question_id = _survey.getQuestionByName("concepts_task1").idValue;
   _concepts_task1_workspace = NclBlocks.injectInDiv(_pathToBlockly, question_id, "800px");
   _concepts_task1_workspace.addChangeListener(saveConceptsTask1Changes);
+}
+
+function injectConceptsTask2() {
+
+  var question_id = _survey.getQuestionByName("concepts_task2").idValue;
+  _concepts_task2_workspace = NclBlocks.injectInDiv(_pathToBlockly, question_id, "800px");
+  // _concepts_task2_workspace.addChangeListener(saveConceptsTask1Changes);
+}
+
+function injectConceptsTask3() {
+
+  var question_id = _survey.getQuestionByName("concepts_task3").idValue;
+  _concepts_task3_workspace = NclBlocks.injectInDiv(_pathToBlockly, question_id, "800px");
+  // _concepts_task2_workspace.addChangeListener(saveConceptsTask1Changes);
+}
+
+function injectConceptsTask4() {
+
+  var question_id = _survey.getQuestionByName("concepts_task4").idValue;
+  _concepts_task4_workspace = NclBlocks.injectInDiv(_pathToBlockly, question_id, "800px");
+  // _concepts_task2_workspace.addChangeListener(saveConceptsTask1Changes);
 }
 
 // ----------------------------------------
