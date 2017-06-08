@@ -308,7 +308,8 @@ Blockly.Blocks.InputStackMixin = {
     var inputNameToDelete = 'element_' + rm_index;
     var substructure = this.getInputTargetBlock(inputNameToDelete);
     if (substructure) {
-      substructure.dispose(true, true);
+      substructure.outputConnection.disconnect();
+      // substructure.dispose(true, true);
     }
     this.removeInput(inputNameToDelete);
     this.stack_size--;
