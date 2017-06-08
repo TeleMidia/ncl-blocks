@@ -113,9 +113,9 @@ NclBlocks.ACTION_COLOUR = 225;
 // default toolbox
 // ---------------------------------------- 
 
-NclBlocks.getDefaultToolboxXML = function (toolbox_options = []) {
+NclBlocks.getDefaultToolboxXML = function (toolbox_options) {
   var exclude_recognition = toolbox_options.includes("exclude_recognition") ? true : false;
-  var exclude_resume_pause = toolbox_options.includes("exclude_resume_pause") ? true : false;
+  var exclude_resume_pause_set = toolbox_options.includes("exclude_resume_pause_set") ? true : false;
   var ret;
 
   ret = `<xml id="toolbox" style="display: none">`;
@@ -132,12 +132,12 @@ NclBlocks.getDefaultToolboxXML = function (toolbox_options = []) {
     ret += `  <block type="srgs"></block>`;
     ret += `  <block type="hand_gesture"></block>`;
     ret += `</category>`;
+    ret += `<category name="` + NclBlocks.Msg.USER + `">`;
+    ret += `  <block type="user"></block>`;
+    ret += `  <block type="headset"></block>`;
+    ret += `  <block type="hand_gesture_sensor"></block>`;
+    ret += `</category>`;
   }
-  ret += `<category name="` + NclBlocks.Msg.USER + `">`;
-  ret += `  <block type="user"></block>`;
-  ret += `  <block type="headset"></block>`;
-  ret += `  <block type="hand_gesture_sensor"></block>`;
-  ret += `</category>`;
   ret += `<category name="` + NclBlocks.Msg.LINK + `">`;
   ret += `  <block type="port"></block>`;
   ret += `  <block type="link"></block>`;
@@ -146,7 +146,7 @@ NclBlocks.getDefaultToolboxXML = function (toolbox_options = []) {
   ret += `  <block type="onbegin"></block>`;
   ret += `  <block type="onselection"></block>`;
   ret += `  <block type="onend"></block>`;
-  if (!exclude_resume_pause) {
+  if (!exclude_resume_pause_set) {
     ret += `  <block type="onpause"></block>`;
     ret += `  <block type="onresume"></block>`;
   }
@@ -159,7 +159,7 @@ NclBlocks.getDefaultToolboxXML = function (toolbox_options = []) {
   ret += `<category name="` + NclBlocks.Msg.ACTIONS + `">`;
   ret += `  <block type="start"></block>`;
   ret += `  <block type="stop"></block>`;
-  if (!exclude_resume_pause) {
+  if (!exclude_resume_pause_set) {
     ret += `  <block type="pause"></block>`;
     ret += `  <block type="resume"></block>`;
     ret += `  <block type="set"></block>`;
@@ -190,7 +190,7 @@ NclBlocks.useBody = function () {
 // utils functions
 // ---------------------------------------- 
 
-NclBlocks.injectInDiv = function (pathToBlockly, parend_div_id, height, opt_workspace_xml = "", opt_static = false) {
+NclBlocks.injectInDiv = function (pathToBlockly, parend_div_id, height, opt_workspace_xml = "", opt_static = false, opt_toolbox_options = []) {
   var inject_div_name = "blockly_" + parend_div_id;
   var workspace;
 
@@ -230,7 +230,7 @@ NclBlocks.injectInDiv = function (pathToBlockly, parend_div_id, height, opt_work
   else {
     workspace = Blockly.inject(inject_div_name, {
       media: Blockly.pathToBlockly + 'media/',
-      toolbox: NclBlocks.getDefaultToolboxXML(),
+      toolbox: NclBlocks.getDefaultToolboxXML(opt_toolbox_options),
       scrollbars: scrollbars,
       zoom: { controls: true },
       sounds: true
