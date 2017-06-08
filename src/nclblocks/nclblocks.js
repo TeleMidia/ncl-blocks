@@ -527,7 +527,8 @@ Blockly.Blocks.video.init = function () {
   this.stack_size = 0;
   this.stack_of_value_input = false;
   this.configureNewInput = function (new_input, index) {
-    new_input.appendField(new Blockly.MediaIdFieldText(NclBlocks.Msg.PORTION + index, validateMediaId), 'id_area' + index)
+    new_input.appendField(NclBlocks.Msg.PORTION)
+      .appendField(new Blockly.MediaIdFieldText('', validateMediaId), 'id_area' + index)
       .appendField(NclBlocks.Msg.ANCHOR_BEGIN)
       .appendField(new Blockly.FieldTextInput(''), 'begin' + index)
       .appendField(NclBlocks.Msg.ANCHOR_END)
@@ -553,7 +554,8 @@ Blockly.Blocks.audio.init = function () {
   this.stack_size = 0;
   this.stack_of_value_input = false;
   this.configureNewInput = function (new_input, index) {
-    new_input.appendField(new Blockly.MediaIdFieldText(NclBlocks.Msg.PORTION + index, validateMediaId), 'id_area' + index)
+    new_input.appendField(NclBlocks.Msg.PORTION)
+      .appendField(new Blockly.MediaIdFieldText('', validateMediaId), 'id_area' + index)
       .appendField(NclBlocks.Msg.ANCHOR_BEGIN)
       .appendField(new Blockly.FieldTextInput(''), 'begin' + index)
       .appendField(NclBlocks.Msg.ANCHOR_END)
@@ -579,7 +581,8 @@ Blockly.Blocks.ssml.init = function () {
   this.stack_size = 0;
   this.stack_of_value_input = false;
   this.configureNewInput = function (new_input, index) {
-    new_input.appendField(new Blockly.MediaIdFieldText(NclBlocks.Msg.PORTION + index, validateMediaId), 'id_area' + index)
+    new_input.appendField(NclBlocks.Msg.PORTION)
+      .appendField(new Blockly.MediaIdFieldText('', validateMediaId), 'id_area' + index)
       .appendField(NclBlocks.Msg.SSML_ANCHOR)
       .appendField(new Blockly.FieldTextInput(''), 'label' + index);
   };
@@ -631,7 +634,8 @@ Blockly.Blocks.srgs.init = function () {
   this.stack_size = 0;
   this.stack_of_value_input = false;
   this.configureNewInput = function (new_input, index) {
-    new_input.appendField(new Blockly.InputIdFieldText(NclBlocks.Msg.PORTION + index, validateInputId), 'id_area' + index)
+    new_input.appendField(NclBlocks.Msg.PORTION)
+      .appendField(new Blockly.MediaIdFieldText('', validateMediaId), 'id_area' + index)
       .appendField(NclBlocks.Msg.SRGS_ANCHOR)
       .appendField(new Blockly.FieldTextInput(''), 'label' + index);
   };
@@ -655,7 +659,8 @@ Blockly.Blocks.hand_gesture.init = function () {
   this.stack_size = 0;
   this.stack_of_value_input = false;
   this.configureNewInput = function (new_input, index) {
-    new_input.appendField(new Blockly.InputIdFieldText(NclBlocks.Msg.PORTION + index, validateInputId), 'id_area' + index)
+    new_input.appendField(NclBlocks.Msg.PORTION)
+      .appendField(new Blockly.MediaIdFieldText('', validateMediaId), 'id_area' + index)
       .appendField(NclBlocks.Msg.HAND_GESTURE_ANCHOR)
       .appendField(new Blockly.FieldTextInput(''), 'label' + index);
   };
