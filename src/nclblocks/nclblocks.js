@@ -113,47 +113,61 @@ NclBlocks.ACTION_COLOUR = 225;
 // default toolbox
 // ---------------------------------------- 
 
-NclBlocks.defaultToolboxXML =
-  `<xml id="toolbox" style="display: none">
-  <category name="` + NclBlocks.Msg.MEDIA + `">
-    <block type="media"></block>
-    <block type="image"></block>
-    <block type="audio"></block>
-    <block type="video"></block>
-    <block type="ssml"></block>
-  </category>
-  <category name="` + NclBlocks.Msg.INPUT + `">
-    <block type="input"></block>
-    <block type="srgs"></block>
-    <block type="hand_gesture"></block>
-  </category>
-  <category name="` + NclBlocks.Msg.USER + `">
-    <block type="user"></block>
-    <block type="headset"></block>
-    <block type="hand_gesture_sensor"></block>
-  </category>
-  <category name="` + NclBlocks.Msg.LINK + `">
-    <block type="port"></block>
-    <block type="link"></block>
-  </category>
-  <category name="` + NclBlocks.Msg.CONDITIONS + `">
-    <block type="onbegin"></block>
-    <block type="onend"></block>
-    <block type="onpause"></block>
-    <block type="onresume"></block>
-    <block type="onselection"></block>
-    <block type="onrecognize"></block>
-    <block type="onrecognizeuser"></block>
-    <block type="compoundcondition"></block>
-  </category>
-  <category name="` + NclBlocks.Msg.ACTIONS + `">
-    <block type="start"></block>
-    <block type="stop"></block>
-    <block type="pause"></block>
-    <block type="resume"></block>
-    <block type="set"></block>
-  </category>
-</xml>`;
+NclBlocks.getDefaultToolboxXML = function (toolbox_options = []) {
+  var exclude_recognition = toolbox_options.includes("exclude_recognition") ? true : false;
+  var exclude_resume_pause = toolbox_options.includes("exclude_resume_pause") ? true : false;
+  var ret;
+
+  ret = `<xml id="toolbox" style="display: none">`;
+  ret += `<category name="` + NclBlocks.Msg.MEDIA + `">`;
+  ret += `  <block type="media"></block>`;
+  ret += `  <block type="image"></block>`;
+  ret += `  <block type="audio"></block>`;
+  ret += `  <block type="video"></block>`;
+  ret += `  <block type="ssml"></block>`;
+  ret += `</category>`;
+  if (!exclude_recognition) {
+    ret += `<category name="` + NclBlocks.Msg.INPUT + `">`;
+    ret += `  <block type="input"></block>`;
+    ret += `  <block type="srgs"></block>`;
+    ret += `  <block type="hand_gesture"></block>`;
+    ret += `</category>`;
+  }
+  ret += `<category name="` + NclBlocks.Msg.USER + `">`;
+  ret += `  <block type="user"></block>`;
+  ret += `  <block type="headset"></block>`;
+  ret += `  <block type="hand_gesture_sensor"></block>`;
+  ret += `</category>`;
+  ret += `<category name="` + NclBlocks.Msg.LINK + `">`;
+  ret += `  <block type="port"></block>`;
+  ret += `  <block type="link"></block>`;
+  ret += `</category>`;
+  ret += `<category name="` + NclBlocks.Msg.CONDITIONS + `">`;
+  ret += `  <block type="onbegin"></block>`;
+  ret += `  <block type="onselection"></block>`;
+  ret += `  <block type="onend"></block>`;
+  if (!exclude_resume_pause) {
+    ret += `  <block type="onpause"></block>`;
+    ret += `  <block type="onresume"></block>`;
+  }
+  if (!exclude_recognition) {
+    ret += `  <block type="onrecognize"></block>`;
+    ret += `  <block type="onrecognizeuser"></block>`;
+  }
+  ret += `  <block type="compoundcondition"></block>`;
+  ret += `</category>`;
+  ret += `<category name="` + NclBlocks.Msg.ACTIONS + `">`;
+  ret += `  <block type="start"></block>`;
+  ret += `  <block type="stop"></block>`;
+  if (!exclude_resume_pause) {
+    ret += `  <block type="pause"></block>`;
+    ret += `  <block type="resume"></block>`;
+    ret += `  <block type="set"></block>`;
+  }
+  ret += `</category>`;
+  ret += `</xml>`;
+  return ret;
+}
 NclBlocks.START_WORKSPACE_WITH_BODY =
   `<xml id="startBlocks" style="display: none">
     <block type="body" inline="false" x="20" y="20"></block>
@@ -216,7 +230,7 @@ NclBlocks.injectInDiv = function (pathToBlockly, parend_div_id, height, opt_work
   else {
     workspace = Blockly.inject(inject_div_name, {
       media: Blockly.pathToBlockly + 'media/',
-      toolbox: NclBlocks.defaultToolboxXML,
+      toolbox: NclBlocks.getDefaultToolboxXML(),
       scrollbars: scrollbars,
       zoom: { controls: true },
       sounds: true
