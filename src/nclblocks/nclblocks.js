@@ -481,34 +481,20 @@ IdHandlerMixin = {
   }
 }
 
-Blockly.MediaIdFieldText = function (text, opt_validator) {
-  Blockly.MediaIdFieldText.superClass_.constructor.call(this, text,
+Blockly.IdFieldText = function (text, opt_validator) {
+  Blockly.IdFieldText.superClass_.constructor.call(this, text,
     opt_validator);
 };
-goog.inherits(Blockly.MediaIdFieldText, Blockly.FieldTextInput);
+goog.inherits(Blockly.IdFieldText, Blockly.FieldTextInput);
 
-Blockly.MediaIdFieldText.prototype.onFinishEditing_ = function (text) {
-  this.sourceBlock_.workspace.mediaIds.push([text, text]);
-};
-
-Blockly.InputIdFieldText = function (text, opt_validator) {
-  Blockly.InputIdFieldText.superClass_.constructor.call(this, text,
-    opt_validator);
-};
-goog.inherits(Blockly.InputIdFieldText, Blockly.FieldTextInput);
-
-Blockly.InputIdFieldText.prototype.onFinishEditing_ = function (text) {
-  this.sourceBlock_.workspace.inputIds.push([text, text]);
-};
-
-Blockly.UserIdFieldText = function (text, opt_validator) {
-  Blockly.UserIdFieldText.superClass_.constructor.call(this, text,
-    opt_validator);
-};
-goog.inherits(Blockly.UserIdFieldText, Blockly.FieldTextInput);
-
-Blockly.UserIdFieldText.prototype.onFinishEditing_ = function (text) {
-  this.sourceBlock_.workspace.userIds.push([text, text]);
+Blockly.IdFieldText.prototype.onFinishEditing_ = function (text) {
+  console.log(this);
+  if (this.sourceBlock_.type == "media")
+    this.sourceBlock_.workspace.mediaIds.push([text, text]);
+  else if (this.sourceBlock_.type == "input")
+    this.sourceBlock_.workspace.inputIds.push([text, text]);
+  else if (this.sourceBlock_.type == "user")
+    this.sourceBlock_.workspace.userIds.push([text, text]);
 };
 
 // ---------------------------------------- 
@@ -524,7 +510,7 @@ Blockly.Blocks.media = {
     this.appendValueInput('src')
       .setCheck(NclBlocks.USE_CHECK ? 'media_src_type' : null)
       .appendField('id')
-      .appendField(new Blockly.MediaIdFieldText('',
+      .appendField(new Blockly.IdFieldText('',
         validateMediaId), 'id')
       .appendField('e ' + NclBlocks.Msg.SRC);
     this.setInputsInline(false);
@@ -561,7 +547,7 @@ Blockly.Blocks.video.init = function () {
   this.stack_of_value_input = false;
   this.configureNewInput = function (new_input, index) {
     new_input.appendField(NclBlocks.Msg.PORTION)
-      .appendField(new Blockly.MediaIdFieldText('', validateMediaId), 'id_area' + index)
+      .appendField(new Blockly.IdFieldText('', validateMediaId), 'id_area' + index)
       .appendField(NclBlocks.Msg.ANCHOR_BEGIN)
       .appendField(new Blockly.FieldTextInput(''), 'begin' + index)
       .appendField(NclBlocks.Msg.ANCHOR_END)
@@ -588,7 +574,7 @@ Blockly.Blocks.audio.init = function () {
   this.stack_of_value_input = false;
   this.configureNewInput = function (new_input, index) {
     new_input.appendField(NclBlocks.Msg.PORTION)
-      .appendField(new Blockly.MediaIdFieldText('', validateMediaId), 'id_area' + index)
+      .appendField(new Blockly.IdFieldText('', validateMediaId), 'id_area' + index)
       .appendField(NclBlocks.Msg.ANCHOR_BEGIN)
       .appendField(new Blockly.FieldTextInput(''), 'begin' + index)
       .appendField(NclBlocks.Msg.ANCHOR_END)
@@ -615,7 +601,7 @@ Blockly.Blocks.ssml.init = function () {
   this.stack_of_value_input = false;
   this.configureNewInput = function (new_input, index) {
     new_input.appendField(NclBlocks.Msg.PORTION)
-      .appendField(new Blockly.MediaIdFieldText('', validateMediaId), 'id_area' + index)
+      .appendField(new Blockly.IdFieldText('', validateMediaId), 'id_area' + index)
       .appendField(NclBlocks.Msg.SSML_ANCHOR)
       .appendField(new Blockly.FieldTextInput(''), 'label' + index);
   };
@@ -643,7 +629,7 @@ Blockly.Blocks.input = {
     this.appendValueInput('src')
       .setCheck(NclBlocks.USE_CHECK ? 'input_src_type' : null)
       .appendField('id')
-      .appendField(new Blockly.InputIdFieldText('',
+      .appendField(new Blockly.IdFieldText('',
         validateInputId), 'id')
       .appendField('e ' + NclBlocks.Msg.SRC);
     this.setInputsInline(false);
@@ -668,7 +654,7 @@ Blockly.Blocks.srgs.init = function () {
   this.stack_of_value_input = false;
   this.configureNewInput = function (new_input, index) {
     new_input.appendField(NclBlocks.Msg.PORTION)
-      .appendField(new Blockly.MediaIdFieldText('', validateMediaId), 'id_area' + index)
+      .appendField(new Blockly.IdFieldText('', validateMediaId), 'id_area' + index)
       .appendField(NclBlocks.Msg.SRGS_ANCHOR)
       .appendField(new Blockly.FieldTextInput(''), 'label' + index);
   };
@@ -693,7 +679,7 @@ Blockly.Blocks.hand_gesture.init = function () {
   this.stack_of_value_input = false;
   this.configureNewInput = function (new_input, index) {
     new_input.appendField(NclBlocks.Msg.PORTION)
-      .appendField(new Blockly.MediaIdFieldText('', validateMediaId), 'id_area' + index)
+      .appendField(new Blockly.IdFieldText('', validateMediaId), 'id_area' + index)
       .appendField(NclBlocks.Msg.HAND_GESTURE_ANCHOR)
       .appendField(new Blockly.FieldTextInput(''), 'label' + index);
   };
@@ -731,7 +717,7 @@ Blockly.Blocks.user.init = function () {
     .appendField('{' + NclBlocks.Msg.USERS + '}');
   this.appendDummyInput()
     .appendField('id')
-    .appendField(new Blockly.UserIdFieldText('',
+    .appendField(new Blockly.IdFieldText('',
       validateUserId), 'id')
     .appendField(NclBlocks.Msg.MAX_USERS)
     .appendField(new Blockly.FieldTextInput('2'));
