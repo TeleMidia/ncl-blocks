@@ -352,79 +352,8 @@ Blockly.Blocks.InputStackMixin = {
 }
 
 // ---------------------------------------- 
-// body block
-// ---------------------------------------- 
-
-Blockly.Blocks.body = Object.assign({}, Blockly.Blocks.InputStackMixin);
-Blockly.Blocks.body.init = function () {
-  this.setColour(NclBlocks.BODY_COLOUR);
-  this.contextMenu = false;
-  this.setDeletable(false);
-
-  // InputStackMixin config
-  this.stack_size = 0;
-  this.stack_of_value_input = true;
-  this.configureNewInput = function (new_input, index) {
-    new_input.appendField()
-      .setCheck(NclBlocks.USE_CHECK ? ['media_type', 'input_type', 'user_type', 'link_type'] : null);
-  };
-  // add name
-  this.appendDummyInput()
-    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.context,
-      20, 20, '*'))
-    .appendField('{' + NclBlocks.Msg.BODY + '}');
-  // add edit buttons
-  this.addMinusPlusDummyInput();
-  // add initial inputs
-  for (var i = 0; i < 5; i++)
-    this.pushInput();
-}
-
-// ---------------------------------------- 
 // IdHandlerMixin
 // ---------------------------------------- 
-
-function validateMediaId(text) {
-  if (text === '') return null;
-  if (!this.sourceBlock_.workspace.mediaIds) {
-    this.sourceBlock_.workspace.mediaIds = [
-      ['-', '-']
-    ];
-  }
-  for (var i in this.sourceBlock_.workspace.mediaIds) {
-    if (this.sourceBlock_.workspace.mediaIds[i][0] === text) {
-      return null;
-    }
-  }
-}
-
-function validateInputId(text) {
-  if (text === '') return null;
-  if (!this.sourceBlock_.workspace.inputIds) {
-    this.sourceBlock_.workspace.inputIds = [
-      ['-', '-']
-    ];
-  }
-  for (var i in this.sourceBlock_.workspace.inputIds) {
-    if (this.sourceBlock_.workspace.inputIds[i][0] === text) {
-      return null;
-    }
-  }
-}
-
-function validateUserId(text) {
-  if (text === '') return null;
-  if (!this.sourceBlock_.workspace.userIds) {
-    this.sourceBlock_.workspace.userIds = [
-      ['-', '-']
-    ];
-  }
-  for (var i in this.sourceBlock_.workspace.userIds) {
-    if (this.sourceBlock_.workspace.userIds[i][0] === text) {
-      return null;
-    }
-  }
-}
 
 IdHandlerMixin = {
   getMediaIds: function () {
@@ -481,6 +410,10 @@ IdHandlerMixin = {
   }
 }
 
+// ---------------------------------------- 
+// IdFieldText
+// ---------------------------------------- 
+
 Blockly.IdFieldText = function (text, opt_validator) {
   Blockly.IdFieldText.superClass_.constructor.call(this, text,
     opt_validator);
@@ -488,7 +421,6 @@ Blockly.IdFieldText = function (text, opt_validator) {
 goog.inherits(Blockly.IdFieldText, Blockly.FieldTextInput);
 
 Blockly.IdFieldText.prototype.onFinishEditing_ = function (text) {
-  console.log(this);
   if (this.sourceBlock_.type == "media")
     this.sourceBlock_.workspace.mediaIds.push([text, text]);
   else if (this.sourceBlock_.type == "input")
@@ -496,6 +428,78 @@ Blockly.IdFieldText.prototype.onFinishEditing_ = function (text) {
   else if (this.sourceBlock_.type == "user")
     this.sourceBlock_.workspace.userIds.push([text, text]);
 };
+
+function validateMediaId(text) {
+  if (text === '') return null;
+  if (!this.sourceBlock_.workspace.mediaIds) {
+    this.sourceBlock_.workspace.mediaIds = [
+      ['-', '-']
+    ];
+  }
+  for (var i in this.sourceBlock_.workspace.mediaIds) {
+    if (this.sourceBlock_.workspace.mediaIds[i][0] === text) {
+      return null;
+    }
+  }
+}
+
+function validateInputId(text) {
+  if (text === '') return null;
+  if (!this.sourceBlock_.workspace.inputIds) {
+    this.sourceBlock_.workspace.inputIds = [
+      ['-', '-']
+    ];
+  }
+  for (var i in this.sourceBlock_.workspace.inputIds) {
+    if (this.sourceBlock_.workspace.inputIds[i][0] === text) {
+      return null;
+    }
+  }
+}
+
+function validateUserId(text) {
+  if (text === '') return null;
+  if (!this.sourceBlock_.workspace.userIds) {
+    this.sourceBlock_.workspace.userIds = [
+      ['-', '-']
+    ];
+  }
+  for (var i in this.sourceBlock_.workspace.userIds) {
+    if (this.sourceBlock_.workspace.userIds[i][0] === text) {
+      return null;
+    }
+  }
+}
+
+// ---------------------------------------- 
+// body block
+// ---------------------------------------- 
+
+Blockly.Blocks.body = Object.assign({}, Blockly.Blocks.InputStackMixin);
+Blockly.Blocks.body.init = function () {
+  this.setColour(NclBlocks.BODY_COLOUR);
+  this.contextMenu = false;
+  this.setDeletable(false);
+
+  // InputStackMixin config
+  this.stack_size = 0;
+  this.stack_of_value_input = true;
+  this.configureNewInput = function (new_input, index) {
+    new_input.appendField()
+      .setCheck(NclBlocks.USE_CHECK ? ['media_type', 'input_type', 'user_type', 'link_type'] : null);
+  };
+  // add name
+  this.appendDummyInput()
+    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.context,
+      20, 20, '*'))
+    .appendField('{' + NclBlocks.Msg.BODY + '}');
+  // add edit buttons
+  this.addMinusPlusDummyInput();
+  // add initial inputs
+  for (var i = 0; i < 5; i++)
+    this.pushInput();
+}
+
 
 // ---------------------------------------- 
 // media block
