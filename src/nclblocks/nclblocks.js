@@ -411,7 +411,7 @@ IdHandlerMixin = {
 }
 
 // ---------------------------------------- 
-// IdFieldText
+// IdFieldText block
 // ---------------------------------------- 
 
 Blockly.IdFieldText = function (text, opt_validator) {
@@ -427,6 +427,36 @@ Blockly.IdFieldText.prototype.onFinishEditing_ = function (text) {
     this.sourceBlock_.workspace.inputIds.push([text, text]);
   else if (this.sourceBlock_.type == "user")
     this.sourceBlock_.workspace.userIds.push([text, text]);
+};
+
+Blockly.IdFieldText.prototype.dispose = function () {
+  if (this.workspace_) {
+    if (this.sourceBlock_.type == "media" && this.workspace_.mediaIds) {
+      var index = -1;
+      for (var i = 0; i < this.workspace_.mediaIds.length; i++)
+        if (this.workspace_.mediaIds[i][0] == this.text_)
+          index = index = i;
+      if (index > -1)
+        this.workspace_.mediaIds.splice(index, 1);
+    }
+    else if (this.sourceBlock_.type == "input" && this.workspace_.inputIds) {
+      var index = -1;
+      for (var i = 0; i < this.workspace_.inputIds.length; i++)
+        if (this.workspace_.inputIds[i][0] == this.text_)
+          index = i;
+      if (index > -1)
+        this.workspace_.inputIds.splice(index, 1);
+    }
+    else if (this.sourceBlock_.type == "user" && this.workspace_.userIds) {
+      var index = -1;
+      for (var i = 0; i < this.workspace_.userIds.length; i++)
+        if (this.workspace_.userIds[i][0] == this.text_)
+          index = i;
+      if (index > -1)
+        this.workspace_.userIds.splice(index, 1);
+    }
+  }
+  Blockly.IdFieldText.superClass_.dispose();
 };
 
 function validateMediaId(text) {
