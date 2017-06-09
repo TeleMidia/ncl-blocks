@@ -381,23 +381,103 @@ Blockly.Blocks.body.init = function () {
 }
 
 // ---------------------------------------- 
-// media ids
+// IdHandlerMixin
 // ---------------------------------------- 
-
-var mediaIds = [
-  ['-', '-']
-];
-
-function getMediaIds() {
-  return mediaIds;
-}
 
 function validateMediaId(text) {
   if (text === '') return null;
-  for (var i in mediaIds) {
-    if (mediaIds[i][0] === text) {
+  if (!this.sourceBlock_.workspace.mediaIds) {
+    this.sourceBlock_.workspace.mediaIds = [
+      ['-', '-']
+    ];
+  }
+  for (var i in this.sourceBlock_.workspace.mediaIds) {
+    if (this.sourceBlock_.workspace.mediaIds[i][0] === text) {
       return null;
     }
+  }
+}
+
+function validateInputId(text) {
+  if (text === '') return null;
+  if (!this.sourceBlock_.workspace.inputIds) {
+    this.sourceBlock_.workspace.inputIds = [
+      ['-', '-']
+    ];
+  }
+  for (var i in this.sourceBlock_.workspace.inputIds) {
+    if (this.sourceBlock_.workspace.inputIds[i][0] === text) {
+      return null;
+    }
+  }
+}
+
+function validateUserId(text) {
+  if (text === '') return null;
+  if (!this.sourceBlock_.workspace.userIds) {
+    this.sourceBlock_.workspace.userIds = [
+      ['-', '-']
+    ];
+  }
+  for (var i in this.sourceBlock_.workspace.userIds) {
+    if (this.sourceBlock_.workspace.userIds[i][0] === text) {
+      return null;
+    }
+  }
+}
+
+IdHandlerMixin = {
+  getMediaIds: function () {
+    // at toolbox 
+    if (!this.sourceBlock_)
+      return [['-', '-']];
+    // at workspace and no mediaIds
+    if (!this.sourceBlock_.workspace.mediaIds) {
+      this.sourceBlock_.workspace.mediaIds = [
+        ['-', '-']
+      ];
+    }
+    // at workspace 
+    return this.sourceBlock_.workspace.mediaIds
+  },
+  getInputIds: function () {
+    // at toolbox 
+    if (!this.sourceBlock_)
+      return [['-', '-']];
+    // at workspace and no inputIds
+    if (!this.sourceBlock_.workspace.inputIds) {
+      this.sourceBlock_.workspace.inputIds = [
+        ['-', '-']
+      ];
+    }
+    // at workspace 
+    return this.sourceBlock_.workspace.inputIds
+  },
+  getUserIds: function () {
+    // at toolbox 
+    if (!this.sourceBlock_)
+      return [['-', '-']];
+    // at workspace and no userIds
+    if (!this.sourceBlock_.workspace.userIds) {
+      this.sourceBlock_.workspace.userIds = [
+        ['-', '-']
+      ];
+    }
+    // at workspace 
+    return this.sourceBlock_.workspace.userIds
+  },
+  getBothMediaInputIds: function () {
+    // at toolbox 
+    if (!this.sourceBlock_)
+      return [['-', '-']];
+    // at workspace and no inputIds/mediaIds
+    var medias = this.sourceBlock_.workspace.mediaIds;
+    if (!medias) medias = [['-', '-']];
+    var inputs = this.sourceBlock_.workspace.inputIds;
+    if (!inputs) inputs = [['-', '-']];
+    var ret = medias.concat(inputs);
+    ret.sort().splice(0, 1);
+    return ret;
   }
 }
 
@@ -408,35 +488,8 @@ Blockly.MediaIdFieldText = function (text, opt_validator) {
 goog.inherits(Blockly.MediaIdFieldText, Blockly.FieldTextInput);
 
 Blockly.MediaIdFieldText.prototype.onFinishEditing_ = function (text) {
-  mediaIds.push([text, text]);
+  this.sourceBlock_.workspace.mediaIds.push([text, text]);
 };
-
-// ---------------------------------------- 
-// input ids
-// ---------------------------------------- 
-
-var inputIds = [
-  ['-', '-']
-];
-
-function getinputIds() {
-  return inputIds;
-}
-
-function getBothMediaInputIds() {
-  ret = mediaIds.concat(inputIds);
-  ret.sort().splice(0, 1);
-  return ret;
-}
-
-function validateInputId(text) {
-  if (text === '') return null;
-  for (var i in inputIds) {
-    if (inputIds[i][0] === text) {
-      return null;
-    }
-  }
-}
 
 Blockly.InputIdFieldText = function (text, opt_validator) {
   Blockly.InputIdFieldText.superClass_.constructor.call(this, text,
@@ -445,38 +498,17 @@ Blockly.InputIdFieldText = function (text, opt_validator) {
 goog.inherits(Blockly.InputIdFieldText, Blockly.FieldTextInput);
 
 Blockly.InputIdFieldText.prototype.onFinishEditing_ = function (text) {
-  inputIds.push([text, text]);
+  this.sourceBlock_.workspace.inputIds.push([text, text]);
 };
 
-// ---------------------------------------- 
-// user ids
-// ---------------------------------------- 
-
-var userIds = [
-  ['-', '-']
-];
-
-function getuserIds() {
-  return userIds;
-}
-
-function validateUserId(text) {
-  if (text === '') return null;
-  for (var i in userIds) {
-    if (userIds[i][0] === text) {
-      return null;
-    }
-  }
-}
-
-Blockly.NclUserFieldText = function (text, opt_validator) {
-  Blockly.NclUserFieldText.superClass_.constructor.call(this, text,
+Blockly.UserIdFieldText = function (text, opt_validator) {
+  Blockly.UserIdFieldText.superClass_.constructor.call(this, text,
     opt_validator);
 };
-goog.inherits(Blockly.NclUserFieldText, Blockly.FieldTextInput);
+goog.inherits(Blockly.UserIdFieldText, Blockly.FieldTextInput);
 
-Blockly.NclUserFieldText.prototype.onFinishEditing_ = function (text) {
-  userIds.push([text, text]);
+Blockly.UserIdFieldText.prototype.onFinishEditing_ = function (text) {
+  this.sourceBlock_.workspace.userIds.push([text, text]);
 };
 
 // ---------------------------------------- 
@@ -698,6 +730,9 @@ Blockly.Blocks.user.init = function () {
     .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.user, 25, 25, '*'))
     .appendField('{' + NclBlocks.Msg.USERS + '}');
   this.appendDummyInput()
+    .appendField('id')
+    .appendField(new Blockly.UserIdFieldText('',
+      validateUserId), 'id')
     .appendField(NclBlocks.Msg.MAX_USERS)
     .appendField(new Blockly.FieldTextInput('2'));
   // add edit buttons
@@ -734,20 +769,19 @@ Blockly.Blocks.hand_gesture_sensor = {
 // port block
 // ---------------------------------------- 
 
-Blockly.Blocks.port = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.port, 25, 25, '*'))
-      .appendField('{' + NclBlocks.Msg.LINK + '}')
-    this.appendDummyInput()
-      .appendField(NclBlocks.Msg.PORT_LABEL)
-      .appendField(new Blockly.FieldDropdown(getBothMediaInputIds), 'component');
-    if (NclBlocks.USE_BODY == true) this.setOutput(true, 'link_type');
-    this.setInputsInline(false);
-    this.setColour(NclBlocks.PORT_COLOUR);
-    this.contextMenu = false;
-  }
-};
+Blockly.Blocks.port = Object.assign({}, IdHandlerMixin);
+Blockly.Blocks.port.init = function () {
+  this.appendDummyInput()
+    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.port, 25, 25, '*'))
+    .appendField('{' + NclBlocks.Msg.LINK + '}')
+  this.appendDummyInput()
+    .appendField(NclBlocks.Msg.PORT_LABEL)
+    .appendField(new Blockly.FieldDropdown(this.getBothMediaInputIds), 'component');
+  if (NclBlocks.USE_BODY == true) this.setOutput(true, 'link_type');
+  this.setInputsInline(false);
+  this.setColour(NclBlocks.PORT_COLOUR);
+  this.contextMenu = false;
+}
 
 // ---------------------------------------- 
 // link block
@@ -775,104 +809,97 @@ Blockly.Blocks.link = {
 // condition blocks
 // ---------------------------------------- 
 
-Blockly.Blocks.onbegin = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onbegin, 15,
-        15, '*'))
-      .appendField(NclBlocks.Msg.ONBEGIN)
-      .appendField(new Blockly.FieldDropdown(getMediaIds), 'onbegin');
-    this.setInputsInline(false);
-    this.setOutput(true, NclBlocks.USE_CHECK ? 'condition_type' : null);
-    this.setColour(NclBlocks.CONDITION_COLOUR);
-    this.contextMenu = false;
-  }
-};
+Blockly.Blocks.onbegin = Object.assign({}, IdHandlerMixin);
+Blockly.Blocks.onbegin.init = function () {
+  this.appendDummyInput()
+    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onbegin, 15,
+      15, '*'))
+    .appendField(NclBlocks.Msg.ONBEGIN)
+    .appendField(new Blockly.FieldDropdown(this.getMediaIds), 'onbegin');
+  this.setInputsInline(false);
+  this.setOutput(true, NclBlocks.USE_CHECK ? 'condition_type' : null);
+  this.setColour(NclBlocks.CONDITION_COLOUR);
+  this.contextMenu = false;
+}
 
-Blockly.Blocks.onend = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onend, 15, 15, '*'))
-      .appendField(NclBlocks.Msg.ONEND)
-      .appendField(new Blockly.FieldDropdown(getMediaIds), 'onend');
-    this.setInputsInline(false);
-    this.setOutput(true, NclBlocks.USE_CHECK ? 'condition_type' : null);
-    this.setColour(NclBlocks.CONDITION_COLOUR);
-    this.contextMenu = false;
-  }
-};
+Blockly.Blocks.onend = Object.assign({}, IdHandlerMixin);
+Blockly.Blocks.onend.init = function () {
+  this.appendDummyInput()
+    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onend, 15, 15, '*'))
+    .appendField(NclBlocks.Msg.ONEND)
+    .appendField(new Blockly.FieldDropdown(this.getMediaIds), 'onend');
+  this.setInputsInline(false);
+  this.setOutput(true, NclBlocks.USE_CHECK ? 'condition_type' : null);
+  this.setColour(NclBlocks.CONDITION_COLOUR);
+  this.contextMenu = false;
+}
 
-Blockly.Blocks.onpause = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onpause, 15,
-        15, '*'))
-      .appendField(NclBlocks.Msg.ONPAUSE)
-      .appendField(new Blockly.FieldDropdown(getMediaIds), 'onpause');
-    this.setInputsInline('pause');
-    this.setOutput(true, NclBlocks.USE_CHECK ? 'condition_type' : null);
-    this.setColour(NclBlocks.CONDITION_COLOUR);
-    this.contextMenu = false;
-  }
-};
+Blockly.Blocks.onpause = Object.assign({}, IdHandlerMixin);
+Blockly.Blocks.onpause.init = function () {
+  this.appendDummyInput()
+    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onpause, 15,
+      15, '*'))
+    .appendField(NclBlocks.Msg.ONPAUSE)
+    .appendField(new Blockly.FieldDropdown(this.getMediaIds), 'onpause');
+  this.setInputsInline('pause');
+  this.setOutput(true, NclBlocks.USE_CHECK ? 'condition_type' : null);
+  this.setColour(NclBlocks.CONDITION_COLOUR);
+  this.contextMenu = false;
+}
 
-Blockly.Blocks.onresume = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onresume,
-        15, 15, '*'))
-      .appendField(NclBlocks.Msg.ONRESUME)
-      .appendField(new Blockly.FieldDropdown(getMediaIds), 'onresume');
-    this.setInputsInline(false);
-    this.setOutput(true, NclBlocks.USE_CHECK ? 'condition_type' : null);
-    this.setColour(NclBlocks.CONDITION_COLOUR);
-    this.contextMenu = false;
-  }
-};
+Blockly.Blocks.onresume = Object.assign({}, IdHandlerMixin);
+Blockly.Blocks.onresume.init = function () {
+  this.appendDummyInput()
+    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onresume,
+      15, 15, '*'))
+    .appendField(NclBlocks.Msg.ONRESUME)
+    .appendField(new Blockly.FieldDropdown(this.getMediaIds), 'onresume');
+  this.setInputsInline(false);
+  this.setOutput(true, NclBlocks.USE_CHECK ? 'condition_type' : null);
+  this.setColour(NclBlocks.CONDITION_COLOUR);
+  this.contextMenu = false;
+}
 
-Blockly.Blocks.onselection = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onselection,
-        15, 15, '*'))
-      .appendField(NclBlocks.Msg.ONSELECTION)
-      .appendField(new Blockly.FieldDropdown(getMediaIds), 'onselection');
-    this.setInputsInline(false);
-    this.setOutput(true, NclBlocks.USE_CHECK ? 'condition_type' : null);
-    this.setColour(NclBlocks.CONDITION_COLOUR);
-    this.contextMenu = false;
-  }
-};
+Blockly.Blocks.onselection = Object.assign({}, IdHandlerMixin);
+Blockly.Blocks.onselection.init = function () {
+  this.appendDummyInput()
+    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onselection,
+      15, 15, '*'))
+    .appendField(NclBlocks.Msg.ONSELECTION)
+    .appendField(new Blockly.FieldDropdown(this.getMediaIds), 'onselection');
+  this.setInputsInline(false);
+  this.setOutput(true, NclBlocks.USE_CHECK ? 'condition_type' : null);
+  this.setColour(NclBlocks.CONDITION_COLOUR);
+  this.contextMenu = false;
+}
 
-Blockly.Blocks.onrecognize = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onrecognize,
-        15, 15, '*'))
-      .appendField(NclBlocks.Msg.ONRECOGNIZE)
-      .appendField(new Blockly.FieldDropdown(getinputIds), 'onrecognize');
-    this.setInputsInline(false);
-    this.setOutput(true, NclBlocks.USE_CHECK ? 'condition_type' : null);
-    this.setColour(NclBlocks.CONDITION_COLOUR);
-    this.contextMenu = false;
-  }
-};
+Blockly.Blocks.onrecognize = Object.assign({}, IdHandlerMixin);
+Blockly.Blocks.onrecognize.init = function () {
+  this.appendDummyInput()
+    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onrecognize,
+      15, 15, '*'))
+    .appendField(NclBlocks.Msg.ONRECOGNIZE)
+    .appendField(new Blockly.FieldDropdown(this.getInputIds), 'onrecognize');
+  this.setInputsInline(false);
+  this.setOutput(true, NclBlocks.USE_CHECK ? 'condition_type' : null);
+  this.setColour(NclBlocks.CONDITION_COLOUR);
+  this.contextMenu = false;
+}
 
-Blockly.Blocks.onrecognizeuser = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onrecognize,
-        15, 15, '*'))
-      .appendField(NclBlocks.Msg.ONRECOGNIZE)
-      .appendField(new Blockly.FieldDropdown(getinputIds), 'onrecognize')
-      .appendField(NclBlocks.Msg.ONRECOGNIZE_FROM_USER)
-      .appendField(new Blockly.FieldDropdown(getuserIds), 'onrecognize_from_user');
-    this.setInputsInline(false);
-    this.setOutput(true, NclBlocks.USE_CHECK ? 'condition_type' : null);
-    this.setColour(NclBlocks.CONDITION_COLOUR);
-    this.contextMenu = false;
-  }
-};
+Blockly.Blocks.onrecognizeuser = Object.assign({}, IdHandlerMixin);
+Blockly.Blocks.onrecognizeuser.init = function () {
+  this.appendDummyInput()
+    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onrecognize,
+      15, 15, '*'))
+    .appendField(NclBlocks.Msg.ONRECOGNIZE)
+    .appendField(new Blockly.FieldDropdown(this.getInputIds), 'onrecognize')
+    .appendField(NclBlocks.Msg.ONRECOGNIZE_FROM_USER)
+    .appendField(new Blockly.FieldDropdown(this.getUserIds), 'onrecognize_from_user');
+  this.setInputsInline(false);
+  this.setOutput(true, NclBlocks.USE_CHECK ? 'condition_type' : null);
+  this.setColour(NclBlocks.CONDITION_COLOUR);
+  this.contextMenu = false;
+}
 
 Blockly.Blocks.compoundcondition = Object.assign({}, Blockly.Blocks.InputStackMixin);
 Blockly.Blocks.compoundcondition.init = function () {
@@ -904,77 +931,72 @@ Blockly.Blocks.compoundcondition.init = function () {
 // actions blocks
 // ---------------------------------------- 
 
-Blockly.Blocks.start = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.start, 15,
-        15, '*'))
-      .appendField(NclBlocks.Msg.START)
-      .appendField(new Blockly.FieldDropdown(getMediaIds), 'start');
-    this.setInputsInline(false);
-    this.setPreviousStatement(true, NclBlocks.USE_CHECK ? 'simpleaction_type' : null);
-    this.setNextStatement(true, NclBlocks.USE_CHECK ? 'simpleaction_type' : null);
-    this.setColour(NclBlocks.ACTION_COLOUR);
-    this.contextMenu = false;
-  }
-};
+Blockly.Blocks.start = Object.assign({}, IdHandlerMixin);
+Blockly.Blocks.start.init = function () {
+  this.appendDummyInput()
+    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.start, 15,
+      15, '*'))
+    .appendField(NclBlocks.Msg.START)
+    .appendField(new Blockly.FieldDropdown(this.getMediaIds), 'start');
+  this.setInputsInline(false);
+  this.setPreviousStatement(true, NclBlocks.USE_CHECK ? 'simpleaction_type' : null);
+  this.setNextStatement(true, NclBlocks.USE_CHECK ? 'simpleaction_type' : null);
+  this.setColour(NclBlocks.ACTION_COLOUR);
+  this.contextMenu = false;
+}
 
-Blockly.Blocks.stop = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.stop, 15,
-        15, '*'))
-      .appendField(NclBlocks.Msg.STOP)
-      .appendField(new Blockly.FieldDropdown(getMediaIds), 'stop');
-    this.setPreviousStatement(true, NclBlocks.USE_CHECK ? 'simpleaction_type' : null);
-    this.setNextStatement(true, NclBlocks.USE_CHECK ? 'simpleaction_type' : null);
-    this.setColour(NclBlocks.ACTION_COLOUR);
-    this.contextMenu = false;
-  }
-};
+Blockly.Blocks.stop = Object.assign({}, IdHandlerMixin);
+Blockly.Blocks.stop.init = function () {
+  this.appendDummyInput()
+    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.stop, 15,
+      15, '*'))
+    .appendField(NclBlocks.Msg.STOP)
+    .appendField(new Blockly.FieldDropdown(this.getMediaIds), 'stop');
+  this.setPreviousStatement(true, NclBlocks.USE_CHECK ? 'simpleaction_type' : null);
+  this.setNextStatement(true, NclBlocks.USE_CHECK ? 'simpleaction_type' : null);
+  this.setColour(NclBlocks.ACTION_COLOUR);
+  this.contextMenu = false;
+}
 
-Blockly.Blocks.pause = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.pause, 15,
-        15, '*'))
-      .appendField(NclBlocks.Msg.PAUSE)
-      .appendField(new Blockly.FieldDropdown(getMediaIds), 'pause');
-    this.setPreviousStatement(true, NclBlocks.USE_CHECK ? 'simpleaction_type' : null);
-    this.setNextStatement(true, NclBlocks.USE_CHECK ? 'simpleaction_type' : null);
-    this.setColour(NclBlocks.ACTION_COLOUR);
-    this.contextMenu = false;
-  }
-};
+Blockly.Blocks.pause = Object.assign({}, IdHandlerMixin);
+Blockly.Blocks.pause.init = function () {
+  this.appendDummyInput()
+    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.pause, 15,
+      15, '*'))
+    .appendField(NclBlocks.Msg.PAUSE)
+    .appendField(new Blockly.FieldDropdown(this.getMediaIds), 'pause');
+  this.setPreviousStatement(true, NclBlocks.USE_CHECK ? 'simpleaction_type' : null);
+  this.setNextStatement(true, NclBlocks.USE_CHECK ? 'simpleaction_type' : null);
+  this.setColour(NclBlocks.ACTION_COLOUR);
+  this.contextMenu = false;
+}
 
-Blockly.Blocks.resume = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.resume, 15,
-        15, '*'))
-      .appendField(NclBlocks.Msg.RESUME)
-      .appendField(new Blockly.FieldDropdown(getMediaIds), 'resume');
-    this.setInputsInline(false);
-    this.setPreviousStatement(true, NclBlocks.USE_CHECK ? 'simpleaction_type' : null);
-    this.setNextStatement(true, NclBlocks.USE_CHECK ? 'simpleaction_type' : null);
-    this.setColour(NclBlocks.ACTION_COLOUR);
-    this.contextMenu = false;
-  }
-};
+Blockly.Blocks.resume = Object.assign({}, IdHandlerMixin);
+Blockly.Blocks.resume.init = function () {
+  this.appendDummyInput()
+    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.resume, 15,
+      15, '*'))
+    .appendField(NclBlocks.Msg.RESUME)
+    .appendField(new Blockly.FieldDropdown(this.getMediaIds), 'resume');
+  this.setInputsInline(false);
+  this.setPreviousStatement(true, NclBlocks.USE_CHECK ? 'simpleaction_type' : null);
+  this.setNextStatement(true, NclBlocks.USE_CHECK ? 'simpleaction_type' : null);
+  this.setColour(NclBlocks.ACTION_COLOUR);
+  this.contextMenu = false;
+}
 
-Blockly.Blocks.set = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.set, 15, 15,
-        '*'))
-      .appendField(NclBlocks.Msg.SET)
-      .appendField(new Blockly.FieldDropdown(getMediaIds), 'set')
-      .appendField(NclBlocks.Msg.SET_TO)
-      .appendField(new Blockly.FieldTextInput(''), 'value');
-    this.setInputsInline(false);
-    this.setPreviousStatement(true, NclBlocks.USE_CHECK ? 'simpleaction_type' : null);
-    this.setNextStatement(true, NclBlocks.USE_CHECK ? 'simpleaction_type' : null);
-    this.setColour(NclBlocks.ACTION_COLOUR);
-    this.contextMenu = false;
-  }
-};
+Blockly.Blocks.set = Object.assign({}, IdHandlerMixin);
+Blockly.Blocks.set.init = function () {
+  this.appendDummyInput()
+    .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.set, 15, 15,
+      '*'))
+    .appendField(NclBlocks.Msg.SET)
+    .appendField(new Blockly.FieldDropdown(this.getMediaIds), 'set')
+    .appendField(NclBlocks.Msg.SET_TO)
+    .appendField(new Blockly.FieldTextInput(''), 'value');
+  this.setInputsInline(false);
+  this.setPreviousStatement(true, NclBlocks.USE_CHECK ? 'simpleaction_type' : null);
+  this.setNextStatement(true, NclBlocks.USE_CHECK ? 'simpleaction_type' : null);
+  this.setColour(NclBlocks.ACTION_COLOUR);
+  this.contextMenu = false;
+}
