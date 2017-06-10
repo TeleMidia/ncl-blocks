@@ -757,8 +757,7 @@ Blockly.Blocks.user.init = function () {
     .appendField(new Blockly.FieldTextInput('2'));
   // add edit buttons
   this.addMinusPlusDummyInput();
-  // add two devices
-  this.pushInput();
+  // add one device
   this.pushInput();
 }
 
