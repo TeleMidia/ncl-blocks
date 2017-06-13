@@ -247,29 +247,33 @@ NclBlocks.injectInDiv = function (pathToBlockly, parend_div_id, height, opt_work
 }
 
 // ---------------------------------------- 
-// InputStackMixin
+// FieldTextButton
 // ---------------------------------------- 
 
-Blockly.FieldTextbutton = function (inputname, buttontext, changeHandler) {
-  Blockly.FieldTextbutton.superClass_.constructor.call(this, inputname);
+FieldTextButton = function (inputname, buttontext, changeHandler) {
+  FieldTextButton.superClass_.constructor.call(this, inputname);
   this.buttontext_ = buttontext;
   this.changeHandler_ = changeHandler;
   this.setText(buttontext);
 };
 
-goog.inherits(Blockly.FieldTextbutton, Blockly.Field);
+goog.inherits(FieldTextButton, Blockly.Field);
 
-Blockly.FieldTextbutton.prototype.clone = function () {
-  return new Blockly.FieldTextbutton(this.buttontext_, this.changeHandler_);
+FieldTextButton.prototype.clone = function () {
+  return new FieldTextButton(this.buttontext_, this.changeHandler_);
 };
 
-Blockly.FieldTextbutton.prototype.CURSOR = 'default';
+FieldTextButton.prototype.CURSOR = 'default';
 
-Blockly.FieldTextbutton.prototype.showEditor_ = function () {
+FieldTextButton.prototype.showEditor_ = function () {
   if (this.changeHandler_) {
     this.changeHandler_();
   }
 };
+
+// ---------------------------------------- 
+// InputStackMixin
+// ---------------------------------------- 
 
 InputStackMixin = {
   stack_of_value_input: false,
@@ -342,10 +346,10 @@ InputStackMixin = {
 
   addMinusPlusDummyInput: function () {
     this.appendDummyInput('edit')
-      .appendField(new Blockly.FieldTextbutton('minus', '–', function () {
+      .appendField(new FieldTextButton('minus', '–', function () {
         this.sourceBlock_.popInput();
       }))
-      .appendField(new Blockly.FieldTextbutton('plus', '+', function () {
+      .appendField(new FieldTextButton('plus', '+', function () {
         this.sourceBlock_.pushInput();
       }));
   }
