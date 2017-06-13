@@ -362,40 +362,28 @@ InputStackMixin = {
 IdHandlerMixin = {
   getMediaIds: function () {
     // at toolbox 
-    if (!this.sourceBlock_)
-      return [['-', '-']];
+    if (!this.sourceBlock_) return [['-', '-']];
     // at workspace and no mediaIds
-    if (!this.sourceBlock_.workspace.mediaIds) {
-      this.sourceBlock_.workspace.mediaIds = [
-        ['-', '-']
-      ];
-    }
+    if (!this.sourceBlock_.workspace.mediaIds)
+      this.sourceBlock_.workspace.mediaIds = [['-', '-']];
     // at workspace 
     return this.sourceBlock_.workspace.mediaIds
   },
   getInputIds: function () {
     // at toolbox 
-    if (!this.sourceBlock_)
-      return [['-', '-']];
+    if (!this.sourceBlock_) return [['-', '-']];
     // at workspace and no inputIds
-    if (!this.sourceBlock_.workspace.inputIds) {
-      this.sourceBlock_.workspace.inputIds = [
-        ['-', '-']
-      ];
-    }
+    if (!this.sourceBlock_.workspace.inputIds)
+      this.sourceBlock_.workspace.inputIds = [['-', '-']];
     // at workspace 
     return this.sourceBlock_.workspace.inputIds
   },
   getUserIds: function () {
     // at toolbox 
-    if (!this.sourceBlock_)
-      return [['-', '-']];
+    if (!this.sourceBlock_) return [['-', '-']];
     // at workspace and no userIds
-    if (!this.sourceBlock_.workspace.userIds) {
-      this.sourceBlock_.workspace.userIds = [
-        ['-', '-']
-      ];
-    }
+    if (!this.sourceBlock_.workspace.userIds)
+      this.sourceBlock_.workspace.userIds = [['-', '-']];
     // at workspace 
     return this.sourceBlock_.workspace.userIds
   },
@@ -418,24 +406,59 @@ IdHandlerMixin = {
 // IdFieldText block
 // ---------------------------------------- 
 
-IdFieldText = function (text, opt_validator) {
+IdFieldText = function (text, id_type) {
+  this.id_type = id_type;
+  opt_validator = this.validateMediaId;
+  if (id_type == 'media')
+    opt_validator = this.validateMediaId;
+  else if (id_type == 'input')
+    opt_validator = this.validateInputId;
+  else if (id_type == 'user')
+    opt_validator = this.validateUserId;
   IdFieldText.superClass_.constructor.call(this, text,
     opt_validator);
 };
 goog.inherits(IdFieldText, Blockly.FieldTextInput);
 
+IdFieldText.prototype.validateMediaId = function (text) {
+  if (text === '') return null;
+  if (!this.workspace_.mediaIds)
+    this.workspace_.mediaIds = [['-', '-']];
+  for (var i in this.workspace_.mediaIds)
+    if (this.workspace_.mediaIds[i][0] === text)
+      return null;
+}
+
+IdFieldText.prototype.validateInputId = function (text) {
+  if (text === '') return null;
+  if (!this.workspace_.inputIds)
+    this.workspace_.inputIds = [['-', '-']];
+  for (var i in this.workspace_.inputIds)
+    if (this.workspace_.inputIds[i][0] === text)
+      return null;
+}
+
+IdFieldText.prototype.validateUserId = function (text) {
+  if (text === '') return null;
+  if (!this.workspace_.userIds)
+    this.workspace_.userIds = [['-', '-']];
+  for (var i in this.workspace_.userIds)
+    if (this.workspace_.userIds[i][0] === text)
+      return null;
+}
+
 IdFieldText.prototype.onFinishEditing_ = function (text) {
-  if (this.sourceBlock_.type == "media")
-    this.sourceBlock_.workspace.mediaIds.push([text, text]);
-  else if (this.sourceBlock_.type == "input")
-    this.sourceBlock_.workspace.inputIds.push([text, text]);
-  else if (this.sourceBlock_.type == "user")
-    this.sourceBlock_.workspace.userIds.push([text, text]);
+  if (this.id_type == "media")
+    this.workspace_.mediaIds.push([text, text]);
+  else if (this.id_type == "input")
+    this.workspace_.inputIds.push([text, text]);
+  else if (this.id_type == "user")
+    this.workspace_.userIds.push([text, text]);
 };
 
 IdFieldText.prototype.dispose = function () {
   if (this.workspace_) {
-    if (this.sourceBlock_.type == "media" && this.workspace_.mediaIds) {
+    if (this.id_type == "media" && this.workspace_.mediaIds) {
       var index = -1;
       for (var i = 0; i < this.workspace_.mediaIds.length; i++)
         if (this.workspace_.mediaIds[i][0] == this.text_)
@@ -443,7 +466,7 @@ IdFieldText.prototype.dispose = function () {
       if (index > -1)
         this.workspace_.mediaIds.splice(index, 1);
     }
-    else if (this.sourceBlock_.type == "input" && this.workspace_.inputIds) {
+    else if (this.id_type == "input" && this.workspace_.inputIds) {
       var index = -1;
       for (var i = 0; i < this.workspace_.inputIds.length; i++)
         if (this.workspace_.inputIds[i][0] == this.text_)
@@ -451,7 +474,7 @@ IdFieldText.prototype.dispose = function () {
       if (index > -1)
         this.workspace_.inputIds.splice(index, 1);
     }
-    else if (this.sourceBlock_.type == "user" && this.workspace_.userIds) {
+    else if (this.id_type == "user" && this.workspace_.userIds) {
       var index = -1;
       for (var i = 0; i < this.workspace_.userIds.length; i++)
         if (this.workspace_.userIds[i][0] == this.text_)
@@ -462,48 +485,6 @@ IdFieldText.prototype.dispose = function () {
   }
   IdFieldText.superClass_.dispose();
 };
-
-function validateMediaId(text) {
-  if (text === '') return null;
-  if (!this.sourceBlock_.workspace.mediaIds) {
-    this.sourceBlock_.workspace.mediaIds = [
-      ['-', '-']
-    ];
-  }
-  for (var i in this.sourceBlock_.workspace.mediaIds) {
-    if (this.sourceBlock_.workspace.mediaIds[i][0] === text) {
-      return null;
-    }
-  }
-}
-
-function validateInputId(text) {
-  if (text === '') return null;
-  if (!this.sourceBlock_.workspace.inputIds) {
-    this.sourceBlock_.workspace.inputIds = [
-      ['-', '-']
-    ];
-  }
-  for (var i in this.sourceBlock_.workspace.inputIds) {
-    if (this.sourceBlock_.workspace.inputIds[i][0] === text) {
-      return null;
-    }
-  }
-}
-
-function validateUserId(text) {
-  if (text === '') return null;
-  if (!this.sourceBlock_.workspace.userIds) {
-    this.sourceBlock_.workspace.userIds = [
-      ['-', '-']
-    ];
-  }
-  for (var i in this.sourceBlock_.workspace.userIds) {
-    if (this.sourceBlock_.workspace.userIds[i][0] === text) {
-      return null;
-    }
-  }
-}
 
 // ---------------------------------------- 
 // body block
@@ -534,7 +515,6 @@ Blockly.Blocks.body.init = function () {
     this.pushInput();
 }
 
-
 // ---------------------------------------- 
 // media block
 // ---------------------------------------- 
@@ -548,8 +528,7 @@ Blockly.Blocks.media = {
     this.appendValueInput('src')
       .setCheck(NclBlocks.USE_CHECK ? 'media_src_type' : null)
       .appendField('id')
-      .appendField(new IdFieldText('',
-        validateMediaId), 'id')
+      .appendField(new IdFieldText('', 'media'), 'id')
       .appendField('e ' + NclBlocks.Msg.SRC);
     this.setInputsInline(false);
     this.setColour(NclBlocks.MEDIA_COLOUR);
@@ -585,7 +564,7 @@ Blockly.Blocks.video.init = function () {
   this.stack_of_value_input = false;
   this.configureNewInput = function (new_input, index) {
     new_input.appendField(NclBlocks.Msg.PORTION)
-      .appendField(new IdFieldText('', validateMediaId), 'id_area' + index)
+      .appendField(new IdFieldText('', 'media'), 'id_area' + index)
       .appendField(NclBlocks.Msg.ANCHOR_BEGIN)
       .appendField(new Blockly.FieldTextInput(''), 'begin' + index)
       .appendField(NclBlocks.Msg.ANCHOR_END)
@@ -612,7 +591,7 @@ Blockly.Blocks.audio.init = function () {
   this.stack_of_value_input = false;
   this.configureNewInput = function (new_input, index) {
     new_input.appendField(NclBlocks.Msg.PORTION)
-      .appendField(new IdFieldText('', validateMediaId), 'id_area' + index)
+      .appendField(new IdFieldText('', 'media'), 'id_area' + index)
       .appendField(NclBlocks.Msg.ANCHOR_BEGIN)
       .appendField(new Blockly.FieldTextInput(''), 'begin' + index)
       .appendField(NclBlocks.Msg.ANCHOR_END)
@@ -639,7 +618,7 @@ Blockly.Blocks.ssml.init = function () {
   this.stack_of_value_input = false;
   this.configureNewInput = function (new_input, index) {
     new_input.appendField(NclBlocks.Msg.PORTION)
-      .appendField(new IdFieldText('', validateMediaId), 'id_area' + index)
+      .appendField(new IdFieldText('', 'media'), 'id_area' + index)
       .appendField(NclBlocks.Msg.SSML_ANCHOR)
       .appendField(new Blockly.FieldTextInput(''), 'label' + index);
   };
@@ -667,8 +646,7 @@ Blockly.Blocks.input = {
     this.appendValueInput('src')
       .setCheck(NclBlocks.USE_CHECK ? 'input_src_type' : null)
       .appendField('id')
-      .appendField(new IdFieldText('',
-        validateInputId), 'id')
+      .appendField(new IdFieldText('', 'input'), 'id')
       .appendField('e ' + NclBlocks.Msg.SRC);
     this.setInputsInline(false);
     this.setColour(NclBlocks.INPUT_COLOUR);
@@ -692,7 +670,7 @@ Blockly.Blocks.srgs.init = function () {
   this.stack_of_value_input = false;
   this.configureNewInput = function (new_input, index) {
     new_input.appendField(NclBlocks.Msg.PORTION)
-      .appendField(new IdFieldText('', validateMediaId), 'id_area' + index)
+      .appendField(new IdFieldText('', 'input'), 'id_area' + index)
       .appendField(NclBlocks.Msg.SRGS_ANCHOR)
       .appendField(new Blockly.FieldTextInput(''), 'label' + index);
   };
@@ -717,7 +695,7 @@ Blockly.Blocks.hand_gesture.init = function () {
   this.stack_of_value_input = false;
   this.configureNewInput = function (new_input, index) {
     new_input.appendField(NclBlocks.Msg.PORTION)
-      .appendField(new IdFieldText('', validateMediaId), 'id_area' + index)
+      .appendField(new IdFieldText('', 'input'), 'id_area' + index)
       .appendField(NclBlocks.Msg.HAND_GESTURE_ANCHOR)
       .appendField(new Blockly.FieldTextInput(''), 'label' + index);
   };
@@ -755,8 +733,7 @@ Blockly.Blocks.user.init = function () {
     .appendField('{' + NclBlocks.Msg.USERS + '}');
   this.appendDummyInput()
     .appendField('id')
-    .appendField(new IdFieldText('',
-      validateUserId), 'id')
+    .appendField(new IdFieldText('', 'user'), 'id')
     .appendField(NclBlocks.Msg.MAX_USERS)
     .appendField(new Blockly.FieldTextInput('2'));
   // add edit buttons
