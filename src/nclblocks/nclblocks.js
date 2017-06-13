@@ -418,7 +418,7 @@ IdFieldDropdown.prototype.getBothMediaInputIds = function () {
 }
 
 // ---------------------------------------- 
-// IdFieldText block
+// IdFieldText
 // ---------------------------------------- 
 
 IdFieldText = function (text, id_type) {
@@ -471,7 +471,7 @@ IdFieldText.prototype.onFinishEditing_ = function (text) {
     this.workspace_.userIds.push([text, text]);
 };
 
-IdFieldText.prototype.dispose = function () {
+IdFieldText.prototype.removeId = function () {
   if (this.workspace_) {
     if (this.id_type == "media" && this.workspace_.mediaIds) {
       var index = -1;
@@ -495,11 +495,20 @@ IdFieldText.prototype.dispose = function () {
         if (this.workspace_.userIds[i][0] == this.text_)
           index = i;
       if (index > -1)
-        this.workspace_.userIds.splice(index, 1);
+        this.workspace_.userIds.splice(this, index, 1);
     }
   }
-  IdFieldText.superClass_.dispose();
 };
+
+IdFieldText.prototype.setText = function (newText) {
+  if (newText != this.text_) this.removeId();
+  IdFieldText.superClass_.setText.call(this,newText);
+}
+
+IdFieldText.prototype.dispose = function () {
+  this.removeId(this.text_);
+  IdFieldText.superClass_.dispose.call(this);
+}
 
 // ---------------------------------------- 
 // body block
