@@ -436,7 +436,9 @@ IdFieldText = function (text, id_type) {
 goog.inherits(IdFieldText, Blockly.FieldTextInput);
 
 IdFieldText.prototype.validateMediaId = function (text) {
-  if (text === '') return null;
+  // empty or at toolbox
+  if (text === '' || !this.workspace_) return null;
+  // at workspace and no mediaIds
   if (!this.workspace_.mediaIds)
     this.workspace_.mediaIds = [['-', '-']];
   for (var i in this.workspace_.mediaIds)
@@ -445,7 +447,9 @@ IdFieldText.prototype.validateMediaId = function (text) {
 }
 
 IdFieldText.prototype.validateInputId = function (text) {
-  if (text === '') return null;
+  // empty or at toolbox
+  if (text === '' || !this.workspace_) return null;
+  // at workspace and no inputIds
   if (!this.workspace_.inputIds)
     this.workspace_.inputIds = [['-', '-']];
   for (var i in this.workspace_.inputIds)
@@ -454,7 +458,9 @@ IdFieldText.prototype.validateInputId = function (text) {
 }
 
 IdFieldText.prototype.validateUserId = function (text) {
-  if (text === '') return null;
+  // empty or at toolbox 
+  if (text === '' || !this.workspace_) return null;
+  // at workspace and no userIds
   if (!this.workspace_.userIds)
     this.workspace_.userIds = [['-', '-']];
   for (var i in this.workspace_.userIds)
