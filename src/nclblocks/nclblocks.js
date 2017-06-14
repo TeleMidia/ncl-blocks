@@ -412,8 +412,9 @@ IdFieldDropdown.prototype.getBothMediaInputIds = function () {
   if (!medias) medias = [['-', '-']];
   var inputs = this.sourceBlock_.workspace.inputIds;
   if (!inputs) inputs = [['-', '-']];
-  var ret = medias.concat(inputs);
-  ret.sort().splice(0, 1);
+  var ret = medias.concat(inputs).sort();
+  if (ret[1][0] == '-')
+    ret.splice(1, 1);
   return ret;
 }
 
@@ -436,8 +437,9 @@ IdFieldText = function (text, id_type) {
 goog.inherits(IdFieldText, Blockly.FieldTextInput);
 
 IdFieldText.prototype.validateMediaId = function (text) {
+  if (!text) return;
   // empty or at toolbox
-  if (text === '' || !this.workspace_) return null;
+  if (!this.workspace_) return null;
   // at workspace and no mediaIds
   if (!this.workspace_.mediaIds)
     this.workspace_.mediaIds = [['-', '-']];
@@ -447,8 +449,9 @@ IdFieldText.prototype.validateMediaId = function (text) {
 }
 
 IdFieldText.prototype.validateInputId = function (text) {
+  if (!text) return;
   // empty or at toolbox
-  if (text === '' || !this.workspace_) return null;
+  if (!this.workspace_) return null;
   // at workspace and no inputIds
   if (!this.workspace_.inputIds)
     this.workspace_.inputIds = [['-', '-']];
@@ -458,8 +461,9 @@ IdFieldText.prototype.validateInputId = function (text) {
 }
 
 IdFieldText.prototype.validateUserId = function (text) {
+  if (!text) return;
   // empty or at toolbox 
-  if (text === '' || !this.workspace_) return null;
+  if (!this.workspace_) return null;
   // at workspace and no userIds
   if (!this.workspace_.userIds)
     this.workspace_.userIds = [['-', '-']];
@@ -469,6 +473,7 @@ IdFieldText.prototype.validateUserId = function (text) {
 }
 
 IdFieldText.prototype.onFinishEditing_ = function (text) {
+  if (text == "") return;
   if (this.id_type == "media")
     this.workspace_.mediaIds.push([text, text]);
   else if (this.id_type == "input")
