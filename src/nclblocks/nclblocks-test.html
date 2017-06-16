@@ -20,15 +20,24 @@
 <body>
   <table style="width:100%;height:100%;">
     <tr>
-      <th class="text-center"> blocks</th>
-      <th class="text-center"> xml</th>
+      <th class="text-center">blocks onChangeShowXML=
+        <select id="onChangeShowXML" type="text" value="on">
+          <option value="on">on</option>
+          <option value="off">off</option>
+        </select>
+        <button id="clear">clear</button>
+      </th>
+      <th class="text-center">xml
+        <button id="loadFromXML">loadFromXML</button>
+        <button id="clearxmlcode">clearXML</button>
+      </th>
     </tr>
     <tr>
       <td style="width:70%;height:100%;">
         <div id="divToInject"></div>
       </td>
       <td style="width:30%;height:100%;">
-        <div id="xmlcode" style="width:100%;height:100%;"></div>
+        <textarea id="xmlcode" style="width:100%;height:100%;"></textarea>
       </td>
     </tr>
   </table>
@@ -37,9 +46,33 @@
     // NclBlocks.useBody();
     var _workspace = NclBlocks.injectInDiv("./", "divToInject", "800px");
     // var _workspace = NclBlocks.injectInDiv("./", "content", "800px", "", false, ["exclude_recognition", "exclude_resume_pause_set"]);
-    _workspace.addChangeListener(function () {
+    var onChangeShowXML = function () {
       var workspace_xml = Blockly.Xml.domToText(Blockly.Xml.workspaceToDom(_workspace));
-      $("#xmlcode").text(workspace_xml);
+      $("#xmlcode").val(workspace_xml);
+    };
+    _workspace.addChangeListener(onChangeShowXML)
+
+    $("#onChangeShowXML").change(function () {
+      var selected = $("#onChangeShowXML option:selected").val();
+      if (selected == 'off') _workspace.removeChangeListener(onChangeShowXML);
+      else if (selected == 'on') _workspace.addChangeListener(onChangeShowXML);
+    });
+
+    $("#clear").click(function () {
+      _workspace.clear();
+    });
+
+    $("#clearxmlcode").click(function () {
+      $("#xmlcode").val("");
+    });
+
+
+    $("#loadFromXML").click(function () {
+      _workspace.clear();
+      console.log($("#xmlcode").val());
+      console.log(Blockly.Xml.textToDom($("#xmlcode").val()));
+      var workspace_xml = Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom($("#xmlcode").val()), _workspace);
+      // Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(saved_workspace_xml), _workspace);
     });
   </script>
 
