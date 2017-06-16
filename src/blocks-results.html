@@ -25,17 +25,30 @@
 </head>
 
 <body>
-  <div id="content" class="center-block text-center" style="width: 55%">
-    resultId=<select id="result_number" type="text" value="-">
-      <option value="-">-</option>
-    </select>
-    <br><br><button id="changes">show changes</button><br><br>
+  <div class="center-block text-center">resultId=<select id="result_number" type="text" value="-"><option value="-">-</option></select>
+    <br><br>
+    <button id="changes">show changes</button>
+    <br><br>
   </div>
+  <table style="width:100%;height:100%;">
+    <tr>
+      <th class="text-center"> blocks</th>
+      <th class="text-center"> xml</th>
+    </tr>
+    <tr>
+      <td style="width:70%;height:100%;">
+        <div id="divToInject"></div>
+      </td>
+      <td style="width:30%;height:100%;">
+        <div id="xmlcode" style="width:100%;height:100%;"></div>
+      </td>
+    </tr>
+  </table>
   <script>
     // ---------------------------------------- 
     // blockly
     // ---------------------------------------- 
-    var _workspace = NclBlocks.injectInDiv('nclblocks/', 'content', "800px", "", true);
+    var _workspace = NclBlocks.injectInDiv('nclblocks/', 'divToInject', "800px", "", true);
 
     // ---------------------------------------- 
     // request
@@ -45,26 +58,20 @@
 
     $.get("http://dxsurvey.com/api/MySurveys/getSurveyResults/59bd2657-93ac-492c-8dd5-134a10ebd69a?accessKey=d72526e70b814a3d8f918b60b94dafe4", function (data) {
       _results_data = data.Data;
-      // console.log(_results_data);
       for (var i = 0; i < _results_data.length; i++) {
         $("#result_number").append($('<option>').attr("value", i).html(i));
       }
-      // $('#result_number').val('0').change();
     });
     $("#result_number").change(function () {
-      var select_value = parseInt($(this).val());
+      if (_results_data == null) return;
+      var selected = $("#result_number option:selected").val();
+      if (selected == '-') return;
+      var select_index = parseInt(selected);
       _workspace.clear();
-      if(select_value == '-')
-        return;
-
-      // console.log(_results_data);
-      var saved_workspace_xml = _results_data[select_value].concepts_task1_result;
+      var saved_workspace_xml = _results_data[select_index].concepts_task1_result;
+      // console.log(saved_workspace_xml);
+      $("#xmlcode").text(saved_workspace_xml);
       Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(saved_workspace_xml), _workspace);
-      var blocks = _workspace.getAllBlocks();
-      for (var i = 0; i < blocks.length; i++) {
-        blocks[i].setEditable(false);
-        blocks[i].setMovable(false);
-      }
     });
 
     // ---------------------------------------- 
@@ -80,20 +87,17 @@
       }
       var json = result.changes[_run_event_interval_index];
       // console.log(json);
-      // console.log(_run_event_interval_index);
       var event = Blockly.Events.fromJson(json, _workspace);
       event.run(true);
-      var blocks = _workspace.getAllBlocks();
-      for (var i = 0; i < blocks.length; i++) {
-        blocks[i].setEditable(false);
-        blocks[i].setMovable(false);
-      }
       _run_event_interval_index++;
     }
 
     $("#changes").click(function () {
       if (_results_data == null) return;
-      var index = parseInt(($("#result_number option:selected").val()));
+      var selected = $("#result_number option:selected").val();
+      if (selected == '-') return;
+      _workspace.clear();
+      var index = parseInt(selected);
       _workspace.clear();
       _run_event_interval_index = 0;
       clearInterval(runEventInterval);
