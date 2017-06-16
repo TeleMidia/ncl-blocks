@@ -12,21 +12,34 @@
   <!-- bootstrap-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
   <!-- jquery -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+
+  </script>
 </head>
 
 <body>
-  <div id="content" class="center-block text-center" style="width: 55%">
-    <br><br><br><br>
-  </div>
+  <table style="width:100%;height:100%;">
+    <tr>
+      <th class="text-center"> blocks</th>
+      <th class="text-center"> xml</th>
+    </tr>
+    <tr>
+      <td style="width:70%;height:100%;">
+        <div id="divToInject"></div>
+      </td>
+      <td style="width:30%;height:100%;">
+        <div id="xmlcode" style="width:100%;height:100%;"></div>
+      </td>
+    </tr>
+  </table>
   <script>
     Blockly.pathToBlockly = './'
     // NclBlocks.useBody();
-    var _workspace = NclBlocks.injectInDiv("./", "content", "800px");
+    var _workspace = NclBlocks.injectInDiv("./", "divToInject", "800px");
     // var _workspace = NclBlocks.injectInDiv("./", "content", "800px", "", false, ["exclude_recognition", "exclude_resume_pause_set"]);
     _workspace.addChangeListener(function () {
-      var xml = Blockly.Xml.workspaceToDom(_workspace);
-      console.log(xml);
+      var workspace_xml = Blockly.Xml.domToText(Blockly.Xml.workspaceToDom(_workspace));
+      $("#xmlcode").text(workspace_xml);
     });
   </script>
 
