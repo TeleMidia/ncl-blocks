@@ -117,12 +117,7 @@ var _surveyJSON = {
         {
           type: "html",
           name: "concepts_blocks_intro4",
-          html: "<div class='text-justify'>Segue o uso de uma mídia e sincronismos em condição composta como um bloco. </div>"
-        },  
-        {
-          type: "html",
-          name: "concepts_blocks_intro5",
-          html: "<div class='text-justify'>Segue o uso de uma mídia, sincronismo, reconhecimento de usuário como blocos bloco. </div>"
+          html: "<div class='text-justify'>Segue o uso de uma mídia, sincronismo, reconhecimento de usuário como blocos.</div>"
         },  
         {
           type: "html",
