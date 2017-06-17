@@ -208,43 +208,43 @@ function alignFirstColumnBlocksInXML(xml) {
     }
     return 'x="' + x + '" y="' + y + '"';
   }
-  var xml_x_aligned = xml.replace(/x=\"([0-9]*)\"\sy=\"([0-9]*)\"/g, replaceXY);
+  var xml_x_aligned = xml.replace(/x=\"(\-?[0-9]*)\"\sy=\"(\-?[0-9]*)\"/g, replaceXY);
   return xml_x_aligned;
 }
 
 function moveLeftBlocksInXML(xml) {
   function replaceXY(match, p1, p2) {
     var x = p1, y = p2;
-    return 'x="' + (x - 20) + '" y="' + y + '"';
+    return 'x="' + (parseInt(x) - 20) + '" y="' + y + '"';
   }
-  var xml_x_aligned = xml.replace(/x=\"([0-9]*)\"\sy=\"([0-9]*)\"/g, replaceXY);
+  var xml_x_aligned = xml.replace(/x=\"(\-?[0-9]*)\"\sy=\"(\-?[0-9]*)\"/g, replaceXY);
   return xml_x_aligned;
 }
 
 function moveRightBlocksInXML(xml) {
   function replaceXY(match, p1, p2) {
     var x = p1, y = p2;
-    return 'x="' + (x + 20) + '" y="' + y + '"';
+    return 'x="' + (parseInt(x) + 20) + '" y="' + y + '"';
   }
-  var xml_x_aligned = xml.replace(/x=\"([0-9]*)\"\sy=\"([0-9]*)\"/g, replaceXY);
+  var xml_x_aligned = xml.replace(/x=\"(\-?[0-9]*)\"\sy=\"(\-?[0-9]*)\"/g, replaceXY);
   return xml_x_aligned;
 }
 
 function moveUpBlocksInXML(xml) {
   function replaceXY(match, p1, p2) {
     var x = p1, y = p2;
-    return 'x="' + x + '" y="' + (y - 20) + '"';
+    return 'x="' + x + '" y="' + (parseInt(y) - 20) + '"';
   }
-  var xml_x_aligned = xml.replace(/x=\"([0-9]*)\"\sy=\"([0-9]*)\"/g, replaceXY);
+  var xml_x_aligned = xml.replace(/x=\"(\-?[0-9]*)\"\sy=\"(\-?[0-9]*)\"/g, replaceXY);
   return xml_x_aligned;
 }
 
 function moveDownBlocksInXML(xml) {
   function replaceXY(match, p1, p2) {
     var x = p1, y = p2;
-    return 'x="' + x + '" y="' + (y + 20) + '"';
+    return 'x="' + x + '" y="' + (parseInt(y) + 20) + '"';
   }
-  var xml_x_aligned = xml.replace(/x=\"([0-9]*)\"\sy=\"([0-9]*)\"/g, replaceXY);
+  var xml_x_aligned = xml.replace(/x=\"(\-?[0-9]*)\"\sy=\"(\-?[0-9]*)\"/g, replaceXY);
   return xml_x_aligned;
 }
 
