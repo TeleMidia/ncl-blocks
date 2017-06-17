@@ -74,10 +74,10 @@ $("#surveyPageNo").val(2).change();
 
 function onValidateQuestions(survey, options) {
   if (_survey.currentPage.name == "concepts") {
-    if (_concepts_task1_workspace.getAllBlocks().length) {
-      saveConceptsTask1Result();
+    if (_concepts_task2_workspace.getAllBlocks().length) {
+      saveConceptsTask2Result();
     } else {
-      var block = _survey.getQuestionByName("concepts_task1");
+      var block = _survey.getQuestionByName("concepts_task2");
       var block_div_selector = "#blockly_" + block.idValue;
       var error_div_id = block.idValue + "_error";
       var error_div_selector = "#" + error_div_id;
@@ -117,11 +117,11 @@ function onRenderQuestion(target_survey, question_and_html) {
       NclBlocks.injectInDiv(_pathToBlockly, question_id, height + 'px', _concepts_blocks4_xml, true);
       break;
     case "concepts_task1":
-      _concepts_task1_workspace = NclBlocks.injectInDiv(_pathToBlockly, question_id, "800px");
-      _concepts_task1_workspace.addChangeListener(saveConceptsTask1Changes)
+      // NclBlocks.injectInDiv(_pathToBlockly, question_id, "800px", _concepts_blocks1_xml, true);
       break;
     case "concepts_task2":
       _concepts_task2_workspace = NclBlocks.injectInDiv(_pathToBlockly, question_id, "800px");
+      _concepts_task2_workspace.addChangeListener(saveConceptsTask2Changes)
       break;
     case "concepts_task3":
       _concepts_task3_workspace = NclBlocks.injectInDiv(_pathToBlockly, question_id, "800px");
@@ -153,8 +153,8 @@ var _concepts_task2_workspace;
 var _concepts_task3_workspace;
 var _concepts_task4_workspace;
 
-function saveConceptsTask1Changes(primaryEvent) {
-  var saved_json_str = _survey.getQuestionByName("concepts_task1_changes").value;
+function saveConceptsTask2Changes(primaryEvent) {
+  var saved_json_str = _survey.getQuestionByName("concepts_task2_changes").value;
   var json_from_event = primaryEvent.toJson();
   var json_to_save;
 
@@ -165,15 +165,15 @@ function saveConceptsTask1Changes(primaryEvent) {
   }
   json_to_save.changes.push(json_from_event);
   // console.log(json_from_event);
-  // console.log(Blockly.Xml.workspaceToDom(_concepts_task1_workspace));
-  _survey.getQuestionByName("concepts_task1_changes").value = JSON.stringify(json_to_save);
+  // console.log(Blockly.Xml.workspaceToDom(_concepts_task2_workspace));
+  _survey.getQuestionByName("concepts_task2_changes").value = JSON.stringify(json_to_save);
 }
 
-function saveConceptsTask1Result() {
-  var xml = Blockly.Xml.workspaceToDom(_concepts_task1_workspace);
+function saveConceptsTask2Result() {
+  var xml = Blockly.Xml.workspaceToDom(_concepts_task2_workspace);
   var xml_text = Blockly.Xml.domToText(xml);
   // console.log(xml_text);
-  _survey.getQuestionByName("concepts_task1_result").value = xml_text;
+  _survey.getQuestionByName("concepts_task2_result").value = xml_text;
 }
 
 // ----------------------------------------

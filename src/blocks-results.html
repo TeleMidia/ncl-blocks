@@ -69,7 +69,7 @@
       if (selected == '-') return;
       var select_index = parseInt(selected);
       _workspace.clear();
-      var saved_workspace_xml = _results_data[select_index].concepts_task1_result;
+      var saved_workspace_xml = _results_data[select_index].concepts_task2_result;
       // console.log(saved_workspace_xml);
       $("#xmlcode").text(saved_workspace_xml);
       Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(saved_workspace_xml), _workspace);
@@ -81,7 +81,7 @@
     var _run_event_frequency = 200;
     var _run_event_interval_index = 0;
     var runEventInterval = function (index) {
-      var result = JSON.parse(_results_data[index].concepts_task1_changes);
+      var result = JSON.parse(_results_data[index].concepts_task2_changes);
       if (_run_event_interval_index >= result.changes.length) {
         clearInterval(runEventInterval);
         return;
