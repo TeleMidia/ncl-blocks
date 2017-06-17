@@ -198,7 +198,7 @@ function calculateWorkspaceHeight(level, height_one_block) {
     return block_padding * (1 + level) + height_one_block * level;
 }
 
-function alignFirstColumnBlocksInXML(xml) {
+function alignTwoColumnsInXML(xml) {
   function replaceXY(match, p1, p2) {
     var x = p1, y = p2;
     if (p1 < 300) { // first column

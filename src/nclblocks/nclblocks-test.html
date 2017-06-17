@@ -35,7 +35,8 @@
         <br>
         <input type="checkbox" id="autoInjectBlocksFromXML">autoInjectBlocksFromXML
         <br>
-        <button id="alignFirstColumInXML" class="btn">alignFirstColumInXML</button>
+        <button id="alignTwoColumnsInXML" class="btn">alignTwoColumnsInXML</button>
+        <br>
         <button id="moveLeftBlocksInXML" class="btn">moveLeftBlocksInXML</button>
         <button id="moveRightBlocksInXML" class="btn">moveRightBlocksInXML</button>
         <button id="moveUpBlocksInXML" class="btn">moveUpBlocksInXML</button>
@@ -75,7 +76,7 @@
       $("#loadXMLfromBlocks").prop("disabled", checked_value);
       $("#clearXML").prop("disabled", checked_value);
       $("#autoInjectBlocksFromXML").prop("disabled", checked_value);
-      $("#alignFirstColumInXML").prop("disabled", checked_value);
+      $("#alignTwoColumnsInXML").prop("disabled", checked_value);
       $("#moveLeftBlocksInXML").prop("disabled", checked_value);
       $("#moveRightBlocksInXML").prop("disabled", checked_value);
       $("#moveUpBlocksInXML").prop("disabled", checked_value);
@@ -132,10 +133,10 @@
       $("#xmlcode").val("");
     });
 
-    $("#alignFirstColumInXML").click(function () {
+    $("#alignTwoColumnsInXML").click(function () {
       if (testEmptyXML()) return;
       var actual_xml = $("#xmlcode").val();
-      $("#xmlcode").val(alignFirstColumnBlocksInXML(actual_xml)).trigger("change");
+      $("#xmlcode").val(alignTwoColumnsInXML(actual_xml)).trigger("change");
     });
 
     $("#moveLeftBlocksInXML").click(function () {
