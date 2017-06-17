@@ -30,10 +30,10 @@
     <select id="blockTask" type="text" value="concepts_task2">
       <option value="concepts_task2">concepts_task2</option>
       <option value="concepts_task4">concepts_task4</option>
-      </select> resultId=
-    <select id="result_number" type="text" value="-"><option value="-">-</option></select>
+      </select> resultIndex=
+    <select id="resultIndex" type="text" value="-"><option value="-">-</option></select>
     <br><br>
-    <button id="changes" class="btn">show changes</button>
+    <button id="showChanges" class="btn">showChanges</button>
     <br>
   </div>
   <table style="width:100%;height:100%;">
@@ -65,12 +65,12 @@
     $.get("http://dxsurvey.com/api/MySurveys/getSurveyResults/59bd2657-93ac-492c-8dd5-134a10ebd69a?accessKey=d72526e70b814a3d8f918b60b94dafe4", function (data) {
       _results_data = data.Data;
       for (var i = 0; i < _results_data.length; i++) {
-        $("#result_number").append($('<option>').attr("value", i).html(i));
+        $("#resultIndex").append($('<option>').attr("value", i).html(i));
       }
     });
-    $("#result_number").change(function () {
+    $("#resultIndex").change(function () {
       if (_results_data == null) return;
-      var selected = $("#result_number option:selected").val();
+      var selected = $("#resultIndex option:selected").val();
       if (selected == '-') return;
       var select_index = parseInt(selected);
       _workspace.clear();
@@ -106,9 +106,9 @@
       _run_event_interval_index++;
     }
 
-    $("#changes").click(function () {
+    $("#showChanges").click(function () {
       if (_results_data == null) return;
-      var selected = $("#result_number option:selected").val();
+      var selected = $("#resultIndex option:selected").val();
       if (selected == '-') return;
       _workspace.clear();
       var index = parseInt(selected);
