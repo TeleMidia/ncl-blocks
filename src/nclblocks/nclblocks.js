@@ -198,7 +198,7 @@ function calculateWorkspaceHeight(level, height_one_block) {
     return block_padding * (1 + level) + height_one_block * level;
 }
 
-function alignFirstColumnBlocksXML(xml) {
+function alignFirstColumnBlocksInXML(xml) {
   function replaceXY(match, p1, p2) {
     var x = p1, y = p2;
     if (p1 < 300) { // first column
@@ -206,7 +206,43 @@ function alignFirstColumnBlocksXML(xml) {
     } else { // second column
       x = 550;
     }
-    return 'x="' + x + '" y="' + y + '"'
+    return 'x="' + x + '" y="' + y + '"';
+  }
+  var xml_x_aligned = xml.replace(/x=\"([0-9]*)\"\sy=\"([0-9]*)\"/g, replaceXY);
+  return xml_x_aligned;
+}
+
+function moveLeftBlocksInXML(xml) {
+  function replaceXY(match, p1, p2) {
+    var x = p1, y = p2;
+    return 'x="' + (x - 20) + '" y="' + y + '"';
+  }
+  var xml_x_aligned = xml.replace(/x=\"([0-9]*)\"\sy=\"([0-9]*)\"/g, replaceXY);
+  return xml_x_aligned;
+}
+
+function moveRightBlocksInXML(xml) {
+  function replaceXY(match, p1, p2) {
+    var x = p1, y = p2;
+    return 'x="' + (x + 20) + '" y="' + y + '"';
+  }
+  var xml_x_aligned = xml.replace(/x=\"([0-9]*)\"\sy=\"([0-9]*)\"/g, replaceXY);
+  return xml_x_aligned;
+}
+
+function moveUpBlocksInXML(xml) {
+  function replaceXY(match, p1, p2) {
+    var x = p1, y = p2;
+    return 'x="' + x + '" y="' + (y - 20) + '"';
+  }
+  var xml_x_aligned = xml.replace(/x=\"([0-9]*)\"\sy=\"([0-9]*)\"/g, replaceXY);
+  return xml_x_aligned;
+}
+
+function moveDownBlocksInXML(xml) {
+  function replaceXY(match, p1, p2) {
+    var x = p1, y = p2;
+    return 'x="' + x + '" y="' + (y + 20) + '"';
   }
   var xml_x_aligned = xml.replace(/x=\"([0-9]*)\"\sy=\"([0-9]*)\"/g, replaceXY);
   return xml_x_aligned;

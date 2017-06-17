@@ -29,6 +29,10 @@
         <button id="getXMLfromBlocks" class="btn">getXMLfromBlocks</button>
         <button id="injectBlocksFromXML" class="btn">injectBlocksFromXML</button>
         <button id="alignFirstColumInXML" class="btn">alignFirstColumInXML</button>
+        <button id="moveLeftBlocksInXML" class="btn">moveLeftBlocksInXML</button>
+        <button id="moveRightBlocksInXML" class="btn">moveRightBlocksInXML</button>
+        <button id="moveUpBlocksInXML" class="btn">moveUpBlocksInXML</button>
+        <button id="moveDownBlocksInXML" class="btn">moveDownBlocksInXML</button>
         <button id="clearXML" class="btn">clearXML</button>
       </th>
     </tr>
@@ -64,24 +68,49 @@
       $("#xmlcode").val("");
     });
 
-    $("#alignFirstColumInXML").click(function () {
+    function testEmptyXML() {
       if ($("#xmlcode").val() == "") {
         $("#xmlcode").val("empty XML");
-        return;
+        return true;
       }
+      else false;
+    }
+
+    $("#alignFirstColumInXML").click(function () {
+      if (testEmptyXML()) return;
       var actual_xml = $("#xmlcode").val();
-      $("#xmlcode").val(alignFirstColumnBlocksXML(actual_xml));
+      $("#xmlcode").val(alignFirstColumnBlocksInXML(actual_xml));
+    });
+
+    $("#moveLeftBlocksInXML").click(function () {
+      if (testEmptyXML()) return;
+      var actual_xml = $("#xmlcode").val();
+      $("#xmlcode").val(moveLeftBlocksInXML(actual_xml));
+    });
+
+    $("#moveRightBlocksInXML").click(function () {
+      if (testEmptyXML()) return;
+      var actual_xml = $("#xmlcode").val();
+      $("#xmlcode").val(moveRightBlocksInXML(actual_xml));
+    });
+
+    $("#moveUpBlocksInXML").click(function () {
+      if (testEmptyXML()) return;
+      var actual_xml = $("#xmlcode").val();
+      $("#xmlcode").val(moveUpBlocksInXML(actual_xml));
+    });
+
+    $("#moveDownBlocksInXML").click(function () {
+      if (testEmptyXML()) return;
+      var actual_xml = $("#xmlcode").val();
+      $("#xmlcode").val(moveDownBlocksInXML(actual_xml));
     });
 
     $("#injectBlocksFromXML").click(function () {
-      if ($("#xmlcode").val() == "") {
-        $("#xmlcode").val("empty XML");
-        return;
-      }
+      if (testEmptyXML()) return;
       _workspace.clear();
       console.log(Blockly.Xml.textToDom($("#xmlcode").val()));
       var workspace_xml = Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom($("#xmlcode").val()), _workspace);
-      // Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(saved_workspace_xml), _workspace);
     });
   </script>
 

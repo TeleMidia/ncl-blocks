@@ -143,7 +143,7 @@ function onRenderQuestion(target_survey, question_and_html) {
 function injectConceptsBlocks1() {
   var question_id = _survey.getQuestionByName("concepts_blocks_intro1").idValue;
   var blocks_xml = `<xml><block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="38" y="18"><field name="id">video_intro</field><value name="src"><block type="video" id="OFge%WW-~~.%rZKqZqym"><mutation length="1"></mutation><field name="id_area0">creditos0</field><field name="begin0">300s</field><field name="end0"></field></block></value></block><block type="media" id="+t:\`jo\`8XnsCt)G;2a5*" x="45" y="156"><field name="id">video_centro</field><value name="src"><block type="video" id="z4kqvt=PDc7wHJ^_4*_Y"><mutation length="1"></mutation><field name="id_area0"></field><field name="begin0"></field><field name="end0"></field></block></value></block><block type="media" id="\`@uz^*4@1j3@rz9Vn* py" x="51" y="295"><field name="id">video_praia</field><value name="src"><block type="video" id=".+S0jxJ, D, O1Sw~Z\`Uo0"><mutation length="1"></mutation><field name="id_area0"></field><field name="begin0"></field><field name="end0"></field></block></value></block></xml>`;
-  blocks_xml = alignFirstColumnBlocksXML(blocks_xml);
+  blocks_xml = alignFirstColumnBlocksInXML(blocks_xml);
   height = calculateWorkspaceHeight(3, 130);
   NclBlocks.injectInDiv(_pathToBlockly, question_id, height + 'px', blocks_xml, true);
 }
@@ -152,7 +152,7 @@ function injectConceptsBlocks2() {
   var question_id = _survey.getQuestionByName("concepts_blocks_intro2").idValue;
   var blocks_xml =
     `<xml xmlns="http://www.w3.org/1999/xhtml"><block type="media" id="DACXRk{ds*},dxviHR(c" x="20" y="0"><field name="id">video_principal</field><value name="src"><block type="video" id="CG[^N,5)TV)0_N#+|cgE"><mutation length="1"></mutation><field name="id_area0">creditos</field><field name="begin0">300s</field><field name="end0"></field></block></value></block><block type="media" id="J0=3=8AB$lViiF[SYu#!" x="20" y="140"><field name="id">video_centro</field><value name="src"><block type="video" id="]70x,I^+Yv!UsVCeeY()"><mutation length="1"></mutation><field name="id_area0"></field><field name="begin0"></field><field name="end0"></field></block></value></block><block type="media" id="PnS;4T$~ftTn7U;nWSZb" x="557" y="146"><field name="id">img_centro</field><value name="src"><block type="image" id="n8jL;6KJe-2c6B~=pPj("></block></value></block><block type="media" id="IawJU?Sm-z4If\`ixT^_p" x="20" y="281"><field name="id">video_praia</field><value name="src"><block type="video" id="S$1N4E3U+*W_\`=95FUu)"><mutation length="1"></mutation><field name="id_area0"></field><field name="begin0"></field><field name="end0"></field></block></value></block><block type="media" id="K2a)Xd1Ob5$8Ju=7i:DR" x="555" y="291"><field name="id">img_praia</field><value name="src"><block type="image" id="fQF^b?g4I,]ah26x]In~"></block></value></block><block type="port" id="+p-MtE:D*clWz(7oX7Hg" x="20" y="423"><field name="component">video_principal</field></block><block type="link" id="%6sP%0di,O*v%qS%d\`(\`" x="553" y="423"><value name="conditions"><block type="onbegin" id="(H8dBhXk6.y#]q%\`UM^D"><field name="onbegin">creditos</field></block></value><statement name="actions"><block type="start" id="UEqL{b=Ws2G#w}+xMV%m"><field name="start">img_centro</field><next><block type="start" id=".Pt;)N?Y.:xGz;dDp@+W"><field name="start">img_praia</field></block></next></block></statement></block><block type="link" id="M)^!XeQ3fwhKEwGTcoGK" x="20" y="570"><value name="conditions"><block type="onselection" id="voo~B}yCX+XML3~iOm0r"><field name="onselection">img_centro</field></block></value><statement name="actions"><block type="stop" id="4(:vxHKc1ivMD9TqKrTd"><field name="stop">video_principal</field><next><block type="start" id="Wo67TbqF5]_pN(b1R3D_"><field name="start">video_centro</field></block></next></block></statement></block><block type="link" id="BLK@~VH8\`;o!;uMR.^tZ" x="550" y="577"><value name="conditions"><block type="onselection" id="O]aL:r0KkCvhs#W\`[}El"><field name="onselection">img_praia</field></block></value><statement name="actions"><block type="stop" id="qh{EZTXTYXj5QRw:x+l#"><field name="stop">video_principal</field><next><block type="start" id="BZ#wUT/p=J}}s(q}Us7Z"><field name="start">-</field></block></next></block></statement></block></xml>`;
-  blocks_xml = alignFirstColumnBlocksXML(blocks_xml);
+  blocks_xml = alignFirstColumnBlocksInXML(blocks_xml);
   height = calculateWorkspaceHeight(5, 130);
   NclBlocks.injectInDiv(_pathToBlockly, question_id, height + 'px', blocks_xml,
     true);
@@ -162,7 +162,7 @@ function injectConceptsBlocks3() {
   var question_id = _survey.getQuestionByName("concepts_blocks_intro3").idValue;
   var blocks_xml =
     `<xml xmlns="http://www.w3.org/1999/xhtml"><block type="media" id="DACXRk{ds*},dxviHR(c" x="20" y="0"><field name="id">video_principal</field><value name="src"><block type="video" id="CG[^N,5)TV)0_N#+|cgE"><mutation length="1"></mutation><field name="id_area0">creditos</field><field name="begin0">300s</field><field name="end0"></field></block></value></block><block type="media" id="J0=3=8AB$lViiF[SYu#!" x="20" y="140"><field name="id">video_centro</field><value name="src"><block type="video" id="]70x,I^+Yv!UsVCeeY()"><mutation length="1"></mutation><field name="id_area0"></field><field name="begin0"></field><field name="end0"></field></block></value></block><block type="media" id="PnS;4T$~ftTn7U;nWSZb" x="557" y="146"><field name="id">img_centro</field><value name="src"><block type="image" id="n8jL;6KJe-2c6B~=pPj("></block></value></block><block type="media" id="IawJU?Sm-z4If\`ixT^_p" x="20" y="281"><field name="id">video_praia</field><value name="src"><block type="video" id="S$1N4E3U+*W_\`=95FUu)"><mutation length="1"></mutation><field name="id_area0"></field><field name="begin0"></field><field name="end0"></field></block></value></block><block type="media" id="K2a)Xd1Ob5$8Ju=7i:DR" x="555" y="291"><field name="id">img_praia</field><value name="src"><block type="image" id="fQF^b?g4I,]ah26x]In~"></block></value></block><block type="port" id="+p-MtE:D*clWz(7oX7Hg" x="20" y="423"><field name="component">video_principal</field></block><block type="link" id="%6sP%0di,O*v%qS%d\`(\`" x="553" y="423"><value name="conditions"><block type="onbegin" id="(H8dBhXk6.y#]q%\`UM^D"><field name="onbegin">creditos</field></block></value><statement name="actions"><block type="start" id="UEqL{b=Ws2G#w}+xMV%m"><field name="start">img_centro</field><next><block type="start" id=".Pt;)N?Y.:xGz;dDp@+W"><field name="start">img_praia</field></block></next></block></statement></block><block type="link" id="M)^!XeQ3fwhKEwGTcoGK" x="20" y="570"><value name="conditions"><block type="onselection" id="voo~B}yCX+XML3~iOm0r"><field name="onselection">img_centro</field></block></value><statement name="actions"><block type="stop" id="4(:vxHKc1ivMD9TqKrTd"><field name="stop">video_principal</field><next><block type="start" id="Wo67TbqF5]_pN(b1R3D_"><field name="start">video_centro</field></block></next></block></statement></block><block type="link" id="BLK@~VH8\`;o!;uMR.^tZ" x="550" y="577"><value name="conditions"><block type="onselection" id="O]aL:r0KkCvhs#W\`[}El"><field name="onselection">img_praia</field></block></value><statement name="actions"><block type="stop" id="qh{EZTXTYXj5QRw:x+l#"><field name="stop">video_principal</field><next><block type="start" id="BZ#wUT/p=J}}s(q}Us7Z"><field name="start">-</field></block></next></block></statement></block></xml>`;
-  blocks_xml = alignFirstColumnBlocksXML(blocks_xml);
+  blocks_xml = alignFirstColumnBlocksInXML(blocks_xml);
   height = calculateWorkspaceHeight(5, 130);
   NclBlocks.injectInDiv(_pathToBlockly, question_id, height + 'px', blocks_xml, true);
 }
@@ -173,7 +173,7 @@ function injectConceptsBlocks4() {
     `<xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="KZ[g}J_gz%iQCj#u(I:P" x="38" y="18"><value name="src"><block type="image" id="LHprn9YiDsg/Nlglks0f"></block></value></block>
     </xml>`;
-  blocks_xml = alignFirstColumnBlocksXML(blocks_xml);
+  blocks_xml = alignFirstColumnBlocksInXML(blocks_xml);
   height = calculateWorkspaceHeight(1, 80);
   NclBlocks.injectInDiv(_pathToBlockly, question_id, height + 'px', blocks_xml, true);
 }
@@ -184,7 +184,7 @@ function injectConceptsBlocks5() {
     `<xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="KZ[g}J_gz%iQCj#u(I:P" x="38" y="18"><value name="src"><block type="image" id="LHprn9YiDsg/Nlglks0f"></block></value></block>
     </xml>`;
-  blocks_xml = alignFirstColumnBlocksXML(blocks_xml);
+  blocks_xml = alignFirstColumnBlocksInXML(blocks_xml);
   height = calculateWorkspaceHeight(1, 80);
   NclBlocks.injectInDiv(_pathToBlockly, question_id, height + 'px', blocks_xml, true);
 }
