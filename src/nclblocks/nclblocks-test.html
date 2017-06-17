@@ -26,8 +26,9 @@
       </th>
       <th class="text-center">xml
         <br>
-        <button id="showXMLfromBlocks" class="btn">showXMLfromBlocks</button>
+        <button id="getXMLfromBlocks" class="btn">getXMLfromBlocks</button>
         <button id="injectBlocksFromXML" class="btn">injectBlocksFromXML</button>
+        <button id="alignFirstColumInXML" class="btn">alignFirstColumInXML</button>
         <button id="clearXML" class="btn">clearXML</button>
       </th>
     </tr>
@@ -46,7 +47,7 @@
     var _workspace = NclBlocks.injectInDiv("./", "divToInject", "800px");
     // var _workspace = NclBlocks.injectInDiv("./", "content", "800px", "", false, ["exclude_recognition", "exclude_resume_pause_set"]);
 
-    $("#showXMLfromBlocks").click(function () {
+    $("#getXMLfromBlocks").click(function () {
       var workspace_xml = Blockly.Xml.domToText(Blockly.Xml.workspaceToDom(_workspace));
       if (_workspace.getAllBlocks().length == 0) {
         $("#xmlcode").val("empty workspace");
@@ -63,8 +64,17 @@
       $("#xmlcode").val("");
     });
 
+    $("#alignFirstColumInXML").click(function () {
+      if ($("#xmlcode").val() == "") {
+        $("#xmlcode").val("empty XML");
+        return;
+      }
+      var actual_xml = $("#xmlcode").val();
+      $("#xmlcode").val(alignFirstColumnBlocksXML(actual_xml));
+    });
+
     $("#injectBlocksFromXML").click(function () {
-      if ($("#xmlcode").val() == ""){
+      if ($("#xmlcode").val() == "") {
         $("#xmlcode").val("empty XML");
         return;
       }
