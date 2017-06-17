@@ -74,9 +74,7 @@ $("#surveyPageNo").val(2).change();
 
 function onValidateQuestions(survey, options) {
   if (_survey.currentPage.name == "concepts") {
-    if (_concepts_task2_workspace.getAllBlocks().length) {
-      saveConceptsTask2Result();
-    } else {
+    if (!_concepts_task2_workspace.getAllBlocks().length) {
       var block = _survey.getQuestionByName("concepts_task2");
       var block_div_selector = "#blockly_" + block.idValue;
       var error_div_id = block.idValue + "_error";
@@ -99,24 +97,24 @@ function onRenderQuestion(target_survey, question_and_html) {
   var question_name = question_and_html.question.name;
   switch (question_name) {
     case "concepts_blocks_intro1":
-      NclBlocks.injectInDiv(_pathToBlockly, question_id, 
+      NclBlocks.injectInDiv(_pathToBlockly, question_id,
         calculateHeight(3, 130), _concepts_blocks1_xml, true);
       break;
     case "concepts_blocks_intro2":
-      NclBlocks.injectInDiv(_pathToBlockly, question_id, 
+      NclBlocks.injectInDiv(_pathToBlockly, question_id,
         calculateHeight(5, 130), _concepts_blocks2_xml,
         true);
       break;
     case "concepts_blocks_intro3":
-      NclBlocks.injectInDiv(_pathToBlockly, question_id, 
+      NclBlocks.injectInDiv(_pathToBlockly, question_id,
         calculateHeight(5, 130), _concepts_blocks3_xml, true);
       break;
     case "concepts_blocks_intro4":
-      NclBlocks.injectInDiv(_pathToBlockly, question_id, 
+      NclBlocks.injectInDiv(_pathToBlockly, question_id,
         calculateHeight(1, 80), _concepts_blocks4_xml, true);
       break;
     case "concepts_task1":
-      NclBlocks.injectInDiv(_pathToBlockly, question_id, 
+      NclBlocks.injectInDiv(_pathToBlockly, question_id,
         calculateHeight(1, 80), _concepts_task1_xml, true);
       break;
     case "concepts_task2":
@@ -125,11 +123,11 @@ function onRenderQuestion(target_survey, question_and_html) {
       _concepts_task2_workspace.addChangeListener(saveConceptsTask2Changes)
       break;
     case "concepts_task3":
-      NclBlocks.injectInDiv(_pathToBlockly, question_id, 
+      NclBlocks.injectInDiv(_pathToBlockly, question_id,
         calculateHeight(1, 80), _concepts_task3_xml, true);
       break;
     case "concepts_task4":
-      _concepts_task4_workspace = NclBlocks.injectInDiv(_pathToBlockly, 
+      _concepts_task4_workspace = NclBlocks.injectInDiv(_pathToBlockly,
         question_id, "800px");
       break;
     case "ncl_code1":
@@ -157,6 +155,7 @@ var _concepts_task2_workspace;
 var _concepts_task4_workspace;
 
 function saveConceptsTask2Changes(primaryEvent) {
+  // save conceptsTask2 change
   var saved_json_str = _survey.getQuestionByName("concepts_task2_changes").value;
   var json_from_event = primaryEvent.toJson();
   var json_to_save;
@@ -170,12 +169,10 @@ function saveConceptsTask2Changes(primaryEvent) {
   // console.log(json_from_event);
   // console.log(Blockly.Xml.workspaceToDom(_concepts_task2_workspace));
   _survey.getQuestionByName("concepts_task2_changes").value = JSON.stringify(json_to_save);
-}
-
-function saveConceptsTask2Result() {
+  
+  // save conceptsTask2 result
   var xml = Blockly.Xml.workspaceToDom(_concepts_task2_workspace);
   var xml_text = Blockly.Xml.domToText(xml);
-  // console.log(xml_text);
   _survey.getQuestionByName("concepts_task2_result").value = xml_text;
 }
 
