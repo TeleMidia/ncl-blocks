@@ -124,6 +124,12 @@ var _surveyJSON = {
           name: "concepts_task1",
         },
         {
+          type: "comment",
+          // isRequired: true,
+          name: "concepts_task1_q",
+          title: "Qual o comportamento da aplicação acima?"
+        },
+        {
           type: "html",
           name: "concepts_task2",
         },
@@ -140,6 +146,12 @@ var _surveyJSON = {
         {
           type: "html",
           name: "concepts_task3",
+        },
+        {
+          type: "comment",
+          // isRequired: true,
+          name: "concepts_task3_q",
+          title: "Qual o comportamento da aplicação acima?"
         },
         {
           type: "html",
