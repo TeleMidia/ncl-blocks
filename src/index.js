@@ -99,36 +99,38 @@ function onRenderQuestion(target_survey, question_and_html) {
   var question_name = question_and_html.question.name;
   switch (question_name) {
     case "concepts_blocks_intro1":
-      height = calculateWorkspaceHeight(3, 130);
-      NclBlocks.injectInDiv(_pathToBlockly, question_id, height + 'px', _concepts_blocks1_xml, true);
+      NclBlocks.injectInDiv(_pathToBlockly, question_id, 
+        calculateHeight(3, 130), _concepts_blocks1_xml, true);
       break;
     case "concepts_blocks_intro2":
-      height = calculateWorkspaceHeight(5, 130);
-      NclBlocks.injectInDiv(_pathToBlockly, question_id, height + 'px', _concepts_blocks2_xml,
+      NclBlocks.injectInDiv(_pathToBlockly, question_id, 
+        calculateHeight(5, 130), _concepts_blocks2_xml,
         true);
       break;
     case "concepts_blocks_intro3":
-      height = calculateWorkspaceHeight(5, 130);
-      NclBlocks.injectInDiv(_pathToBlockly, question_id, height + 'px', _concepts_blocks3_xml, true);
+      NclBlocks.injectInDiv(_pathToBlockly, question_id, 
+        calculateHeight(5, 130), _concepts_blocks3_xml, true);
       break;
     case "concepts_blocks_intro4":
-      height = calculateWorkspaceHeight(1, 80);
-      NclBlocks.injectInDiv(_pathToBlockly, question_id, height + 'px', _concepts_blocks4_xml, true);
+      NclBlocks.injectInDiv(_pathToBlockly, question_id, 
+        calculateHeight(1, 80), _concepts_blocks4_xml, true);
       break;
     case "concepts_task1":
-      height = calculateWorkspaceHeight(1, 80);
-      NclBlocks.injectInDiv(_pathToBlockly, question_id, height + 'px', _concepts_task1_xml, true);
+      NclBlocks.injectInDiv(_pathToBlockly, question_id, 
+        calculateHeight(1, 80), _concepts_task1_xml, true);
       break;
     case "concepts_task2":
-      _concepts_task2_workspace = NclBlocks.injectInDiv(_pathToBlockly, question_id, "800px");
+      _concepts_task2_workspace = NclBlocks.injectInDiv(_pathToBlockly,
+        question_id, "800px");
       _concepts_task2_workspace.addChangeListener(saveConceptsTask2Changes)
       break;
     case "concepts_task3":
-      height = calculateWorkspaceHeight(1, 80);
-      NclBlocks.injectInDiv(_pathToBlockly, question_id, height + 'px', _concepts_task3_xml, true);
+      NclBlocks.injectInDiv(_pathToBlockly, question_id, 
+        calculateHeight(1, 80), _concepts_task3_xml, true);
       break;
     case "concepts_task4":
-      _concepts_task4_workspace = NclBlocks.injectInDiv(_pathToBlockly, question_id, "800px");
+      _concepts_task4_workspace = NclBlocks.injectInDiv(_pathToBlockly, 
+        question_id, "800px");
       break;
     case "ncl_code1":
       $("#" + question_id).append(_ncl_code1);

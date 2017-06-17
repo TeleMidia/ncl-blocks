@@ -190,12 +190,12 @@ NclBlocks.useBody = function () {
 // xml blocks functions
 // ---------------------------------------- 
 
-function calculateWorkspaceHeight(level, height_one_block) {
-  var block_padding = 20;
-  if (!level)
-    return block_padding;
+function calculateHeight(num_blocks, one_block_height) {
+  var y_initial_padding = 20;
+  if (!num_blocks)
+    return y_initial_padding + 'px';
   else
-    return block_padding * (1 + level) + height_one_block * level;
+    return y_initial_padding * (1 + num_blocks) + one_block_height * num_blocks + 'px';
 }
 
 function alignTwoColumnsInXML(xml) {
