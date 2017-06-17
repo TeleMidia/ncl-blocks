@@ -187,7 +187,33 @@ NclBlocks.useBody = function () {
 }
 
 // ---------------------------------------- 
-// utils functions
+// xml blocks functions
+// ---------------------------------------- 
+
+function calculateWorkspaceHeight(level, height_one_block) {
+  var block_padding = 20;
+  if (!level)
+    return block_padding;
+  else
+    return block_padding * (1 + level) + height_one_block * level;
+}
+
+function alignFirstColumnBlocksXML(xml, height_one_block) {
+  function replaceXY(match, p1, p2) {
+    var x = p1, y = p2;
+    if (p1 < 300) { // first column
+      x = 20;
+    } else { // second column
+      x = 550;
+    }
+    return 'x="' + x + '" y="' + y + '"'
+  }
+  var xml_x_aligned = xml.replace(/x=\"([0-9]*)\"\sy=\"([0-9]*)\"/g, replaceXY);
+  return xml_x_aligned;
+}
+
+// ---------------------------------------- 
+// inject functions
 // ---------------------------------------- 
 
 NclBlocks.injectInDiv = function (pathToBlockly, parend_div_id, height, opt_workspace_xml = "", opt_static = false, opt_toolbox_options = []) {
