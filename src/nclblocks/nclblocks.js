@@ -222,7 +222,8 @@ NclBlocks.injectInDiv = function (pathToBlockly, parend_div_id, height, opt_work
     workspace = Blockly.inject(inject_div_name, {
       media: Blockly.pathToBlockly + 'media/',
       toolbox: false,
-      zoom: { controls: false },
+      zoom: { controls: true },
+      scrollbars: true,
       readOnly: true,
       sounds: true
     });
@@ -232,6 +233,7 @@ NclBlocks.injectInDiv = function (pathToBlockly, parend_div_id, height, opt_work
       media: Blockly.pathToBlockly + 'media/',
       toolbox: NclBlocks.getDefaultToolboxXML(opt_toolbox_options),
       zoom: { controls: true },
+      scrollbars: true,
       sounds: true
     });
   }
