@@ -26,7 +26,12 @@
 
 <body>
   <div class="center-block text-center">
-    <br> resultId=<select id="result_number" type="text" value="-"><option value="-">-</option></select>
+    <br>blockTask=
+    <select id="blockTask" type="text" value="concepts_task2">
+      <option value="concepts_task2">concepts_task2</option>
+      <option value="concepts_task4">concepts_task4</option>
+      </select> resultId=
+    <select id="result_number" type="text" value="-"><option value="-">-</option></select>
     <br><br>
     <button id="changes" class="btn">show changes</button>
     <br>
@@ -69,7 +74,11 @@
       if (selected == '-') return;
       var select_index = parseInt(selected);
       _workspace.clear();
-      var saved_workspace_xml = _results_data[select_index].concepts_task2_result;
+      var saved_workspace_xml;
+      if ($("#blockTask option:selected").val() == "concepts_task2")
+        saved_workspace_xml = _results_data[select_index].concepts_task2_result;
+      else if ($("#blockTask option:selected").val() == "concepts_task4")
+        saved_workspace_xml = _results_data[select_index].concepts_task4_result;
       // console.log(saved_workspace_xml);
       $("#xmlcode").text(saved_workspace_xml);
       Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(saved_workspace_xml), _workspace);
@@ -81,7 +90,11 @@
     var _run_event_frequency = 200;
     var _run_event_interval_index = 0;
     var runEventInterval = function (index) {
-      var result = JSON.parse(_results_data[index].concepts_task2_changes);
+      var result;
+      if ($("#blockTask option:selected").val() == "concepts_task2")
+        result = JSON.parse(_results_data[index].concepts_task2_changes);
+      else if ($("#blockTask option:selected").val() == "concepts_task4")
+        result = JSON.parse(_results_data[index].concepts_task4_changes);
       if (_run_event_interval_index >= result.changes.length) {
         clearInterval(runEventInterval);
         return;

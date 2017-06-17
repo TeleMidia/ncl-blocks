@@ -156,6 +156,16 @@ var _surveyJSON = {
         {
           type: "html",
           name: "concepts_task4",
+        },
+        {
+          type: "text",
+          name: "concepts_task4_changes",
+          visible: false
+        },
+        {
+          type: "text",
+          name: "concepts_task4_result",
+          visible: false
         }
       ],
       name: "concepts",

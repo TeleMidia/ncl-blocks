@@ -129,6 +129,7 @@ function onRenderQuestion(target_survey, question_and_html) {
     case "concepts_task4":
       _concepts_task4_workspace = NclBlocks.injectInDiv(_pathToBlockly,
         question_id, "800px");
+      _concepts_task4_workspace.addChangeListener(saveConceptsTask4Changes)
       break;
     case "ncl_code1":
       $("#" + question_id).append(_ncl_code1);
@@ -167,13 +168,35 @@ function saveConceptsTask2Changes(primaryEvent) {
   }
   json_to_save.changes.push(json_from_event);
   // console.log(json_from_event);
-  // console.log(Blockly.Xml.workspaceToDom(_concepts_task2_workspace));
   _survey.getQuestionByName("concepts_task2_changes").value = JSON.stringify(json_to_save);
   
   // save conceptsTask2 result
   var xml = Blockly.Xml.workspaceToDom(_concepts_task2_workspace);
+  // console.log(xml));
   var xml_text = Blockly.Xml.domToText(xml);
   _survey.getQuestionByName("concepts_task2_result").value = xml_text;
+}
+
+function saveConceptsTask4Changes(primaryEvent) {
+  // save conceptsTask2 change
+  var saved_json_str = _survey.getQuestionByName("concepts_task4_changes").value;
+  var json_from_event = primaryEvent.toJson();
+  var json_to_save;
+
+  if (saved_json_str == null) {
+    json_to_save = { "changes": [] };
+  } else {
+    json_to_save = JSON.parse(saved_json_str);
+  }
+  json_to_save.changes.push(json_from_event);
+  console.log(json_from_event);
+  _survey.getQuestionByName("concepts_task4_changes").value = JSON.stringify(json_to_save);
+  
+  // save conceptsTask2 result
+  var xml = Blockly.Xml.workspaceToDom(_concepts_task4_workspace);
+  console.log(xml);
+  var xml_text = Blockly.Xml.domToText(xml);
+  _survey.getQuestionByName("concepts_task4_result").value = xml_text;
 }
 
 // ----------------------------------------
