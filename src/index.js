@@ -72,18 +72,23 @@ $("#surveyPageNo").val(2).change();
 // survey listeners
 // ----------------------------------------
 
+function insertRequiredErrorInBlocks(block_div_id) {
+  var block_div_selector = "#blockly_" + block_div_id;
+  var error_div_id = block_div_id + "_error";
+  var error_div_selector = "#" + error_div_id;
+  if (!$(error_div_selector).length) {
+    $(block_div_selector).prepend("<div id='" + error_div_id + "' class='label label-danger'>" + _msg_empty_block_task + "</div>");
+  }
+}
+
 function onValidateQuestions(survey, options) {
-  if (_survey.currentPage.name == "concepts") {
-    if (!_concepts_task2_workspace.getAllBlocks().length) {
-      var block = _survey.getQuestionByName("concepts_task2");
-      var block_div_selector = "#blockly_" + block.idValue;
-      var error_div_id = block.idValue + "_error";
-      var error_div_selector = "#" + error_div_id;
-      if (!$(error_div_selector).length) {
-        $(block_div_selector).prepend("<div id='" + error_div_id + "' class='label label-danger'>" + _msg_empty_block_task + "</div>");
-      }
+  switch (_survey.currentPage.name) {
+    case "concepts":
+      if (!_concepts_task2_workspace.getAllBlocks().length)
+        insertRequiredErrorInBlocks(_survey.getQuestionByName("concepts_task2").idValue);
+      if (!_concepts_task4_workspace.getAllBlocks().length)
+        insertRequiredErrorInBlocks(_survey.getQuestionByName("concepts_task4").idValue);
       return true;
-    }
   }
   options.complete();
 }
@@ -169,7 +174,7 @@ function saveConceptsTask2Changes(primaryEvent) {
   json_to_save.changes.push(json_from_event);
   // console.log(json_from_event);
   _survey.getQuestionByName("concepts_task2_changes").value = JSON.stringify(json_to_save);
-  
+
   // save conceptsTask2 result
   var xml = Blockly.Xml.workspaceToDom(_concepts_task2_workspace);
   // console.log(xml));
@@ -191,7 +196,7 @@ function saveConceptsTask4Changes(primaryEvent) {
   json_to_save.changes.push(json_from_event);
   console.log(json_from_event);
   _survey.getQuestionByName("concepts_task4_changes").value = JSON.stringify(json_to_save);
-  
+
   // save conceptsTask2 result
   var xml = Blockly.Xml.workspaceToDom(_concepts_task4_workspace);
   console.log(xml);
