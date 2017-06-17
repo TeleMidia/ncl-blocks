@@ -20,16 +20,15 @@
 <body>
   <table style="width:100%;height:100%;">
     <tr>
-      <th class="text-center">blocks onChangeShowXML=
-        <select id="onChangeShowXML" type="text" value="on">
-          <option value="on">on</option>
-          <option value="off">off</option>
-        </select>
-        <button id="clear">clear</button>
+      <th class="text-center">blocks
+        <br>
+        <button id="clearBlocks" class="btn">clearBlocks</button>
       </th>
       <th class="text-center">xml
-        <button id="loadFromXML">loadFromXML</button>
-        <button id="clearxmlcode">clearXML</button>
+        <br>
+        <button id="showXMLfromBlocks" class="btn">showXMLfromBlocks</button>
+        <button id="injectBlocksFromXML" class="btn">injectBlocksFromXML</button>
+        <button id="clearXML" class="btn">clearXML</button>
       </th>
     </tr>
     <tr>
@@ -46,30 +45,30 @@
     // NclBlocks.useBody();
     var _workspace = NclBlocks.injectInDiv("./", "divToInject", "800px");
     // var _workspace = NclBlocks.injectInDiv("./", "content", "800px", "", false, ["exclude_recognition", "exclude_resume_pause_set"]);
-    var onChangeShowXML = function () {
-      var workspace_xml = Blockly.Xml.domToText(Blockly.Xml.workspaceToDom(_workspace));
-      $("#xmlcode").val(workspace_xml);
-    };
-    _workspace.addChangeListener(onChangeShowXML)
 
-    $("#onChangeShowXML").change(function () {
-      var selected = $("#onChangeShowXML option:selected").val();
-      if (selected == 'off') _workspace.removeChangeListener(onChangeShowXML);
-      else if (selected == 'on') _workspace.addChangeListener(onChangeShowXML);
+    $("#showXMLfromBlocks").click(function () {
+      var workspace_xml = Blockly.Xml.domToText(Blockly.Xml.workspaceToDom(_workspace));
+      if (_workspace.getAllBlocks().length == 0) {
+        $("#xmlcode").val("empty workspace");
+        return;
+      }
+      $("#xmlcode").val(workspace_xml);
     });
 
-    $("#clear").click(function () {
+    $("#clearBlocks").click(function () {
       _workspace.clear();
     });
 
-    $("#clearxmlcode").click(function () {
+    $("#clearXML").click(function () {
       $("#xmlcode").val("");
     });
 
-
-    $("#loadFromXML").click(function () {
+    $("#injectBlocksFromXML").click(function () {
+      if ($("#xmlcode").val() == ""){
+        $("#xmlcode").val("empty XML");
+        return;
+      }
       _workspace.clear();
-      console.log($("#xmlcode").val());
       console.log(Blockly.Xml.textToDom($("#xmlcode").val()));
       var workspace_xml = Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom($("#xmlcode").val()), _workspace);
       // Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(saved_workspace_xml), _workspace);
