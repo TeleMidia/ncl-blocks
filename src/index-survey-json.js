@@ -111,13 +111,13 @@ var _surveyJSON = {
         },  
         {
           type: "html",
-          name: "concepts_blocks_intro4",
-          html: "<div class='text-justify'>Segue o uso de uma mídia e sincronismos em condição composta como um bloco. </div>"
+          name: "concepts_blocks_intro3",
+          html: "<div class='text-justify'>Segue o uso de uma mídia, sincronismo e reconhecimento como blocos bloco. </div>"
         },  
         {
           type: "html",
-          name: "concepts_blocks_intro3",
-          html: "<div class='text-justify'>Segue o uso de uma mídia, sincronismo e reconhecimento como blocos bloco. </div>"
+          name: "concepts_blocks_intro4",
+          html: "<div class='text-justify'>Segue o uso de uma mídia e sincronismos em condição composta como um bloco. </div>"
         },  
         {
           type: "html",
