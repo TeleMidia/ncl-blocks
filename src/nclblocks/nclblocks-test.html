@@ -24,16 +24,20 @@
         <br>
         <button id="clearBlocks" class="btn">clearBlocks</button>
       </th>
-      <th class="text-center">xml
+      <th class="text-center">
+        <input type="checkbox" id="autoLoadFromBlocks" value="option1">autoLoadFromBlocks</input>
+        <br>xml load/inject
         <br>
-        <button id="getXMLfromBlocks" class="btn">getXMLfromBlocks</button>
+        <button id="loadXMLfromBlocks" class="btn">loadXMLfromBlocks</button>
         <button id="injectBlocksFromXML" class="btn">injectBlocksFromXML</button>
+        <button id="clearXML" class="btn">clearXML</button>
+        <br> xml edit
+        <br>
         <button id="alignFirstColumInXML" class="btn">alignFirstColumInXML</button>
         <button id="moveLeftBlocksInXML" class="btn">moveLeftBlocksInXML</button>
         <button id="moveRightBlocksInXML" class="btn">moveRightBlocksInXML</button>
         <button id="moveUpBlocksInXML" class="btn">moveUpBlocksInXML</button>
         <button id="moveDownBlocksInXML" class="btn">moveDownBlocksInXML</button>
-        <button id="clearXML" class="btn">clearXML</button>
       </th>
     </tr>
     <tr>
@@ -51,22 +55,17 @@
     var _workspace = NclBlocks.injectInDiv("./", "divToInject", "800px");
     // var _workspace = NclBlocks.injectInDiv("./", "content", "800px", "", false, ["exclude_recognition", "exclude_resume_pause_set"]);
 
-    $("#getXMLfromBlocks").click(function () {
-      var workspace_xml = Blockly.Xml.domToText(Blockly.Xml.workspaceToDom(_workspace));
-      if (_workspace.getAllBlocks().length == 0) {
-        $("#xmlcode").val("empty workspace");
-        return;
-      }
-      $("#xmlcode").val(workspace_xml);
-    });
+    // ---------------------------------------- 
+    // blocks buttons functions
+    // ----------------------------------------
 
     $("#clearBlocks").click(function () {
       _workspace.clear();
     });
 
-    $("#clearXML").click(function () {
-      $("#xmlcode").val("");
-    });
+    // ---------------------------------------- 
+    // xml buttons functions
+    // ----------------------------------------
 
     function testEmptyXML() {
       if ($("#xmlcode").val() == "") {
@@ -75,6 +74,47 @@
       }
       else false;
     }
+
+    $('#autoLoadFromBlocks').change(function () {
+      var checked_value = $(this).is(':checked');
+      $("#injectBlocksFromXML").prop("disabled", checked_value);
+      $("#loadXMLfromBlocks").prop("disabled", checked_value);
+      $("#clearXML").prop("disabled", checked_value);
+      $("#alignFirstColumInXML").prop("disabled", checked_value);
+      $("#moveLeftBlocksInXML").prop("disabled", checked_value);
+      $("#moveRightBlocksInXML").prop("disabled", checked_value);
+      $("#moveUpBlocksInXML").prop("disabled", checked_value);
+      $("#moveDownBlocksInXML").prop("disabled", checked_value);
+      $("#xmlcode").prop("disabled", checked_value);
+      if (checked_value) {
+        loadXMLfromBlocks();
+        _workspace.addChangeListener(loadXMLfromBlocks);
+      } else {
+        _workspace.removeChangeListener(loadXMLfromBlocks);
+      }
+    });
+
+    $("#injectBlocksFromXML").click(function () {
+      if (testEmptyXML()) return;
+      _workspace.clear();
+      console.log(Blockly.Xml.textToDom($("#xmlcode").val()));
+      var workspace_xml = Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom($("#xmlcode").val()), _workspace);
+    });
+
+    function loadXMLfromBlocks() {
+      var workspace_xml = Blockly.Xml.domToText(Blockly.Xml.workspaceToDom(_workspace));
+      if (_workspace.getAllBlocks().length == 0) {
+        $("#xmlcode").val("empty workspace");
+        return;
+      }
+      $("#xmlcode").val(workspace_xml);
+    }
+
+    $("#loadXMLfromBlocks").click(loadXMLfromBlocks);
+
+    $("#clearXML").click(function () {
+      $("#xmlcode").val("");
+    });
 
     $("#alignFirstColumInXML").click(function () {
       if (testEmptyXML()) return;
@@ -104,13 +144,6 @@
       if (testEmptyXML()) return;
       var actual_xml = $("#xmlcode").val();
       $("#xmlcode").val(moveDownBlocksInXML(actual_xml));
-    });
-
-    $("#injectBlocksFromXML").click(function () {
-      if (testEmptyXML()) return;
-      _workspace.clear();
-      console.log(Blockly.Xml.textToDom($("#xmlcode").val()));
-      var workspace_xml = Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom($("#xmlcode").val()), _workspace);
     });
   </script>
 
