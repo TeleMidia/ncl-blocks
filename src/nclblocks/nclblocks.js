@@ -420,6 +420,51 @@ InputStackMixin = {
 }
 
 // ---------------------------------------- 
+// NclBlockMixin
+// ---------------------------------------- 
+
+NclBlockMixin = {
+  sharedInit: function () {
+    this.contextMenu = false;
+    // this.setInputsInline(false);
+  },
+  mediaLikeInit: function (isSRC = false) {
+    this.sharedInit();
+    this.setColour(NclBlocks.MEDIA_COLOUR);
+    if (isSRC)
+      this.setOutput(true, NclBlocks.USE_CHECK ? 'media_src_type' : null)
+    else if (NclBlocks.USE_BODY == true)
+      this.setOutput(true, 'media_type');
+  },
+  inputLikeInit: function (isSRC = false) {
+    this.sharedInit();
+    this.setColour(NclBlocks.INPUT_COLOUR);
+    if (isSRC)
+      this.setOutput(true, NclBlocks.USE_CHECK ? 'input_src_type' : null)
+    else if (NclBlocks.USE_BODY == true)
+      this.setOutput(true, 'input_type');
+  },
+  userLikeInit: function (isSRC = false) {
+    this.sharedInit();
+    this.setColour(NclBlocks.USER_COLOUR);
+    if (isSRC)
+      this.setOutput(true, NclBlocks.USE_CHECK ? 'user_src_type' : null)
+    else if (NclBlocks.USE_BODY == true)
+      this.setOutput(true, 'user_type');
+  },
+  conditionLikeInit: function () {
+    this.setColour(NclBlocks.CONDITION_COLOUR);
+    this.setOutput(true, NclBlocks.USE_CHECK ? 'condition_type' : null);
+    if (NclBlocks.USE_BODY == true) this.setOutput(true, output_type);
+  },
+  actionLikeInit: function () {
+    this.setColour(NclBlocks.ACTION_COLOUR);
+    this.setPreviousStatement(true, NclBlocks.USE_CHECK ? 'action_type' : null);
+    this.setNextStatement(true, NclBlocks.USE_CHECK ? 'action_type' : null);
+  }
+}
+
+// ---------------------------------------- 
 // IdFieldDropdown
 // ---------------------------------------- 
 
@@ -620,17 +665,9 @@ Object.assign(Blockly.Blocks.body, InputStackMixin);
 // media block
 // ---------------------------------------- 
 
-MediaMixin = {
-  mediaInit: function () {
-    this.setColour(NclBlocks.MEDIA_COLOUR);
-    this.contextMenu = false;
-  }
-}
-
 Blockly.Blocks.media = {
   init: function () {
-    this.mediaInit();
-    if (NclBlocks.USE_BODY == true) this.setOutput(true, 'media_type');
+    this.mediaLikeInit();
 
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.media, 25, 25,
@@ -644,12 +681,11 @@ Blockly.Blocks.media = {
     this.setInputsInline(false);
   }
 };
-Object.assign(Blockly.Blocks.media, MediaMixin);
+Object.assign(Blockly.Blocks.media, NclBlockMixin);
 
 Blockly.Blocks.image = {
   init: function () {
-    this.mediaInit();
-    this.setOutput(true, NclBlocks.USE_CHECK ? 'media_src_type' : null);
+    this.mediaLikeInit(true);
 
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.image, 25, 25,
@@ -657,12 +693,11 @@ Blockly.Blocks.image = {
       .appendField('{' + NclBlocks.Msg.IMAGE + '}');
   }
 };
-Object.assign(Blockly.Blocks.image, MediaMixin);
+Object.assign(Blockly.Blocks.image, NclBlockMixin);
 
 Blockly.Blocks.video = {
   init: function () {
-    this.mediaInit();
-    this.setOutput(true, NclBlocks.USE_CHECK ? 'media_src_type' : null);
+    this.mediaLikeInit(true);
 
     // InputStackMixin config
     this.stack_size = 0;
@@ -685,13 +720,12 @@ Blockly.Blocks.video = {
     this.pushInput();
   }
 }
-Object.assign(Blockly.Blocks.video, MediaMixin);
+Object.assign(Blockly.Blocks.video, NclBlockMixin);
 Object.assign(Blockly.Blocks.video, InputStackMixin);
 
 Blockly.Blocks.audio = {
   init: function () {
-    this.mediaInit();
-    this.setOutput(true, NclBlocks.USE_CHECK ? 'media_src_type' : null);
+    this.mediaLikeInit(true);
 
     // InputStackMixin config
     this.stack_size = 0;
@@ -714,13 +748,12 @@ Blockly.Blocks.audio = {
     this.pushInput();
   }
 }
-Object.assign(Blockly.Blocks.audio, MediaMixin);
+Object.assign(Blockly.Blocks.audio, NclBlockMixin);
 Object.assign(Blockly.Blocks.audio, InputStackMixin);
 
 Blockly.Blocks.ssml = {
   init: function () {
-    this.mediaInit();
-    this.setOutput(true, NclBlocks.USE_CHECK ? 'media_src_type' : null);
+    this.mediaLikeInit(true);
 
     // InputStackMixin config
     this.stack_size = 0;
@@ -742,25 +775,16 @@ Blockly.Blocks.ssml = {
     this.pushInput();
   }
 }
-Object.assign(Blockly.Blocks.ssml, MediaMixin);
+Object.assign(Blockly.Blocks.ssml, NclBlockMixin);
 Object.assign(Blockly.Blocks.ssml, InputStackMixin);
 
 // ---------------------------------------- 
 // input blocks
 // ---------------------------------------- 
 
-InputMixin = {
-  inputInit: function () {
-    this.setColour(NclBlocks.INPUT_COLOUR);
-    this.contextMenu = false;
-    this.setInputsInline(false);
-  }
-}
-
 Blockly.Blocks.input = {
   init: function () {
-    this.inputInit();
-    if (NclBlocks.USE_BODY == true) this.setOutput(true, 'input_type');
+    this.inputLikeInit(true);
 
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.input, 25, 25,
@@ -773,13 +797,11 @@ Blockly.Blocks.input = {
       .appendField('e ' + NclBlocks.Msg.SRC);
   }
 };
-Object.assign(Blockly.Blocks.input, InputMixin);
-
+Object.assign(Blockly.Blocks.input, NclBlockMixin);
 
 Blockly.Blocks.srgs = {
   init: function () {
-    this.inputInit();
-    if (NclBlocks.USE_BODY == true) this.setOutput(true, 'input_src_type');
+    this.inputLikeInit(true);
 
     // InputStackMixin config
     this.stack_size = 0;
@@ -800,13 +822,12 @@ Blockly.Blocks.srgs = {
     this.pushInput();
   }
 }
-Object.assign(Blockly.Blocks.srgs, InputMixin);
+Object.assign(Blockly.Blocks.srgs, NclBlockMixin);
 Object.assign(Blockly.Blocks.srgs, InputStackMixin);
 
 Blockly.Blocks.hand_gesture = {
   init: function () {
-    this.inputInit();
-    if (NclBlocks.USE_BODY == true) this.setOutput(true, 'input_src_type');
+    this.inputLikeInit(true);
 
     // InputStackMixin config
     this.stack_size = 0;
@@ -827,25 +848,16 @@ Blockly.Blocks.hand_gesture = {
     this.pushInput();
   }
 }
-Object.assign(Blockly.Blocks.hand_gesture, InputMixin);
+Object.assign(Blockly.Blocks.hand_gesture, NclBlockMixin);
 Object.assign(Blockly.Blocks.hand_gesture, InputStackMixin);
 
 // ---------------------------------------- 
 // user related blocks
 // ---------------------------------------- 
 
-UserLikeMixin = {
-  userInit: function (output_type) {
-    this.setColour(NclBlocks.USER_COLOUR);
-    this.contextMenu = false;
-    this.setInputsInline(false);
-    if (NclBlocks.USE_BODY == true) this.setOutput(true, output_type);
-  }
-}
-
 Blockly.Blocks.user = {
   init: function () {
-    this.userInit('user_type');
+    this.userLikeInit();
 
     // InputStackMixin config
     this.stack_size = 0;
@@ -869,24 +881,23 @@ Blockly.Blocks.user = {
     this.pushInput();
   }
 }
-Object.assign(Blockly.Blocks.user, UserLikeMixin);
+Object.assign(Blockly.Blocks.user, NclBlockMixin);
 Object.assign(Blockly.Blocks.user, InputStackMixin);
 
 Blockly.Blocks.headset = {
   init: function () {
-    this.userInit('user_device_type');
+    this.userLikeInit(true);
 
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.microfone, 25, 25, '*'))
       .appendField('{' + NclBlocks.Msg.MICROFONE + '}');
   }
 };
-Object.assign(Blockly.Blocks.headset, UserLikeMixin);
-
+Object.assign(Blockly.Blocks.headset, NclBlockMixin);
 
 Blockly.Blocks.hand_gesture_sensor = {
   init: function () {
-    this.userInit('user_device_type');
+    this.userLikeInit(true);
 
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.hand_gesture_sensor,
@@ -894,8 +905,7 @@ Blockly.Blocks.hand_gesture_sensor = {
       .appendField('{' + NclBlocks.Msg.LEAP + '}');
   }
 };
-Object.assign(Blockly.Blocks.hand_gesture_sensor, UserLikeMixin);
-
+Object.assign(Blockly.Blocks.hand_gesture_sensor, NclBlockMixin);
 
 // ---------------------------------------- 
 // port block
@@ -944,18 +954,9 @@ Blockly.Blocks.link = {
 // condition blocks
 // ---------------------------------------- 
 
-ConditionMixin = {
-  conditionInit: function () {
-    this.setColour(NclBlocks.CONDITION_COLOUR);
-    this.contextMenu = false;
-    this.setInputsInline(false);
-    this.setOutput(true, NclBlocks.USE_CHECK ? 'condition_type' : null);
-  }
-}
-
 Blockly.Blocks.onbegin = {
   init: function () {
-    this.conditionInit();
+    this.conditionLikeInit();
 
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onbegin, 15,
@@ -964,11 +965,11 @@ Blockly.Blocks.onbegin = {
       .appendField(new IdFieldDropdown('media'), 'onbegin');
   }
 }
-Object.assign(Blockly.Blocks.onbegin, ConditionMixin);
+Object.assign(Blockly.Blocks.onbegin, NclBlockMixin);
 
 Blockly.Blocks.onend = {
   init: function () {
-    this.conditionInit();
+    this.conditionLikeInit();
 
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onend, 15, 15, '*'))
@@ -976,12 +977,11 @@ Blockly.Blocks.onend = {
       .appendField(new IdFieldDropdown('media'), 'onend');
   }
 }
-Object.assign(Blockly.Blocks.onend, ConditionMixin);
-
+Object.assign(Blockly.Blocks.onend, NclBlockMixin);
 
 Blockly.Blocks.onpause = {
   init: function () {
-    this.conditionInit();
+    this.conditionLikeInit();
 
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onpause, 15,
@@ -990,12 +990,11 @@ Blockly.Blocks.onpause = {
       .appendField(new IdFieldDropdown('media'), 'onpause');
   }
 }
-Object.assign(Blockly.Blocks.onpause, ConditionMixin);
-
+Object.assign(Blockly.Blocks.onpause, NclBlockMixin);
 
 Blockly.Blocks.onresume = {
   init: function () {
-    this.conditionInit();
+    this.conditionLikeInit();
 
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onresume,
@@ -1004,12 +1003,11 @@ Blockly.Blocks.onresume = {
       .appendField(new IdFieldDropdown('media'), 'onresume');
   }
 }
-Object.assign(Blockly.Blocks.onresume, ConditionMixin);
-
+Object.assign(Blockly.Blocks.onresume, NclBlockMixin);
 
 Blockly.Blocks.onselection = {
   init: function () {
-    this.conditionInit();
+    this.conditionLikeInit();
 
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onselection,
@@ -1018,12 +1016,11 @@ Blockly.Blocks.onselection = {
       .appendField(new IdFieldDropdown('media'), 'onselection');
   }
 }
-Object.assign(Blockly.Blocks.onselection, ConditionMixin);
-
+Object.assign(Blockly.Blocks.onselection, NclBlockMixin);
 
 Blockly.Blocks.onrecognize = {
   init: function () {
-    this.conditionInit();
+    this.conditionLikeInit();
 
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onrecognize,
@@ -1032,12 +1029,11 @@ Blockly.Blocks.onrecognize = {
       .appendField(new IdFieldDropdown('input'), 'onrecognize');
   }
 }
-Object.assign(Blockly.Blocks.onrecognize, ConditionMixin);
-
+Object.assign(Blockly.Blocks.onrecognize, NclBlockMixin);
 
 Blockly.Blocks.onrecognizeuser = {
   init: function () {
-    this.conditionInit();
+    this.conditionLikeInit();
 
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onrecognize,
@@ -1048,13 +1044,11 @@ Blockly.Blocks.onrecognizeuser = {
       .appendField(new IdFieldDropdown('user'), 'onrecognize_from_user');
   }
 }
-Object.assign(Blockly.Blocks.onrecognizeuser, ConditionMixin);
-
+Object.assign(Blockly.Blocks.onrecognizeuser, NclBlockMixin);
 
 Blockly.Blocks.compoundcondition = {
-  init:
-  function () {
-    this.conditionInit();
+  init: function () {
+    this.conditionLikeInit();
 
     // InputStackMixin config
     this.stack_size = 0;
@@ -1075,27 +1069,17 @@ Blockly.Blocks.compoundcondition = {
     this.pushInput();
   }
 }
-Object.assign(Blockly.Blocks.compoundcondition, ConditionMixin);
+Object.assign(Blockly.Blocks.compoundcondition, NclBlockMixin);
 Object.assign(Blockly.Blocks.compoundcondition, InputStackMixin);
 
 // ---------------------------------------- 
 // actions blocks
 // ---------------------------------------- 
 
-ActionMixin = {
-  actionInit: function () {
-    this.setColour(NclBlocks.ACTION_COLOUR);
-    this.contextMenu = false;
-    this.setInputsInline(false);
-    this.setPreviousStatement(true, NclBlocks.USE_CHECK ? 'action_type' : null);
-    this.setNextStatement(true, NclBlocks.USE_CHECK ? 'action_type' : null);
-  }
-}
-
 Blockly.Blocks.start = {
   init:
   function () {
-    this.actionInit();
+    this.actionLikeInit();
 
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.start, 15,
@@ -1104,11 +1088,11 @@ Blockly.Blocks.start = {
       .appendField(new IdFieldDropdown('node'), 'start');
   }
 }
-Object.assign(Blockly.Blocks.start, ActionMixin);
+Object.assign(Blockly.Blocks.start, NclBlockMixin);
 
 Blockly.Blocks.stop = {
   init: function () {
-    this.actionInit();
+    this.actionLikeInit();
 
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.stop, 15,
@@ -1117,11 +1101,11 @@ Blockly.Blocks.stop = {
       .appendField(new IdFieldDropdown('node'), 'stop');
   }
 }
-Object.assign(Blockly.Blocks.stop, ActionMixin);
+Object.assign(Blockly.Blocks.stop, NclBlockMixin);
 
 Blockly.Blocks.pause = {
   init: function () {
-    this.actionInit();
+    this.actionLikeInit();
 
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.pause, 15,
@@ -1130,12 +1114,11 @@ Blockly.Blocks.pause = {
       .appendField(new IdFieldDropdown('media'), 'pause');
   }
 }
-Object.assign(Blockly.Blocks.pause, ActionMixin);
-
+Object.assign(Blockly.Blocks.pause, NclBlockMixin);
 
 Blockly.Blocks.resume = {
   init: function () {
-    this.actionInit();
+    this.actionLikeInit();
 
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.resume, 15,
@@ -1144,11 +1127,11 @@ Blockly.Blocks.resume = {
       .appendField(new IdFieldDropdown('media'), 'resume');
   }
 }
-Object.assign(Blockly.Blocks.resume, ActionMixin);
+Object.assign(Blockly.Blocks.resume, NclBlockMixin);
 
 Blockly.Blocks.set = {
   init: function () {
-    this.actionInit();
+    this.actionLikeInit();
 
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.set, 15, 15,
@@ -1159,4 +1142,4 @@ Blockly.Blocks.set = {
       .appendField(new Blockly.FieldTextInput(''), 'value');
   }
 }
-Object.assign(Blockly.Blocks.set, ActionMixin);
+Object.assign(Blockly.Blocks.set, NclBlockMixin);
