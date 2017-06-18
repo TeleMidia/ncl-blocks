@@ -452,6 +452,11 @@ NclBlockMixin = {
     else if (NclBlocks.USE_BODY == true)
       this.setOutput(true, 'user_type');
   },
+  linkLikeInit: function(){
+    this.sharedInit();
+    this.setColour(NclBlocks.LINK_COLOUR);
+    if (NclBlocks.USE_BODY == true) this.setOutput(true, 'link_type');
+  },
   conditionLikeInit: function () {
     this.setColour(NclBlocks.CONDITION_COLOUR);
     this.setOutput(true, NclBlocks.USE_CHECK ? 'condition_type' : null);
@@ -913,10 +918,7 @@ Object.assign(Blockly.Blocks.hand_gesture_sensor, NclBlockMixin);
 
 Blockly.Blocks.port = {
   init: function () {
-    this.setColour(NclBlocks.PORT_COLOUR);
-    this.contextMenu = false;
-    this.setInputsInline(false);
-    if (NclBlocks.USE_BODY == true) this.setOutput(true, 'link_type');
+    this.linkLikeInit();
 
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.port, 25, 25, '*'))
@@ -926,6 +928,7 @@ Blockly.Blocks.port = {
       .appendField(new IdFieldDropdown('node'), 'component');
   }
 }
+Object.assign(Blockly.Blocks.port, NclBlockMixin);
 
 // ---------------------------------------- 
 // link block
@@ -933,10 +936,7 @@ Blockly.Blocks.port = {
 
 Blockly.Blocks.link = {
   init: function () {
-    this.setColour(NclBlocks.LINK_COLOUR);
-    this.contextMenu = false;
-    this.setInputsInline(false);
-    if (NclBlocks.USE_BODY == true) this.setOutput(true, 'link_type');
+    this.linkLikeInit();
 
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.link, 25, 25, '*'))
@@ -949,6 +949,7 @@ Blockly.Blocks.link = {
       .appendField(NclBlocks.Msg.DO);
   }
 };
+Object.assign(Blockly.Blocks.link, NclBlockMixin);
 
 // ---------------------------------------- 
 // condition blocks
