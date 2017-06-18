@@ -538,52 +538,39 @@ IdFieldDropdown.prototype.getBothMediaInputIds = function () {
 
 IdFieldText = function (text, id_type) {
   this.id_type = id_type;
-  opt_validator = null;
-  if (id_type == 'media')
-    opt_validator = this.validateMediaId;
-  else if (id_type == 'input')
-    opt_validator = this.validateInputId;
-  else if (id_type == 'user')
-    opt_validator = this.validateUserId;
   IdFieldText.superClass_.constructor.call(this, text,
-    opt_validator);
+    this.validateId);
 }
 goog.inherits(IdFieldText, Blockly.FieldTextInput);
 
-IdFieldText.prototype.validateMediaId = function (text) {
+IdFieldText.prototype.createIdArrays = function () {
+  if (!this.workspace_.mediaIds)
+    this.workspace_.mediaIds = [['-', '-']];
+  else if (!this.workspace_.inputIds)
+    this.workspace_.inputIds = [['-', '-']];
+  else if (!this.workspace_.userIds)
+    this.workspace_.userIds = [['-', '-']];
+}
+
+IdFieldText.prototype.validateId = function (text) {
   if (!text) return;
   // empty or at toolbox
   if (!this.workspace_) return null;
   // at workspace and no mediaIds
-  if (!this.workspace_.mediaIds)
-    this.workspace_.mediaIds = [['-', '-']];
-  for (var i in this.workspace_.mediaIds)
-    if (this.workspace_.mediaIds[i][0] === text)
-      return null;
-}
-
-IdFieldText.prototype.validateInputId = function (text) {
-  if (!text) return;
-  // empty or at toolbox
-  if (!this.workspace_) return null;
-  // at workspace and no inputIds
-  if (!this.workspace_.inputIds)
-    this.workspace_.inputIds = [['-', '-']];
-  for (var i in this.workspace_.inputIds)
-    if (this.workspace_.inputIds[i][0] === text)
-      return null;
-}
-
-IdFieldText.prototype.validateUserId = function (text) {
-  if (!text) return;
-  // empty or at toolbox 
-  if (!this.workspace_) return null;
-  // at workspace and no userIds
-  if (!this.workspace_.userIds)
-    this.workspace_.userIds = [['-', '-']];
-  for (var i in this.workspace_.userIds)
-    if (this.workspace_.userIds[i][0] === text)
-      return null;
+  this.createIdArrays();
+  if (this.id_type == "media" || this.id_type == "input") {
+    for (var i in this.workspace_.mediaIds)
+      if (this.workspace_.mediaIds[i][0] === text)
+        return null;
+    for (var i in this.workspace_.inputIds)
+      if (this.workspace_.inputIds[i][0] === text)
+        return null;
+  }
+  else if (this.id_type == "user") {
+    for (var i in this.workspace_.userIds)
+      if (this.workspace_.userIds[i][0] === text)
+        return null;
+  }
 }
 
 IdFieldText.prototype.onFinishEditing_ = function (text) {
@@ -793,7 +780,7 @@ Object.assign(Blockly.Blocks.ssml, InputStackMixin);
 
 Blockly.Blocks.input = {
   init: function () {
-    this.inputLikeInit(true);
+    this.inputLikeInit(false);
 
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.input, 25, 25,
