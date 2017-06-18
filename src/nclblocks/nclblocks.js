@@ -452,7 +452,7 @@ NclBlockMixin = {
     else if (NclBlocks.USE_BODY == true)
       this.setOutput(true, 'user_type');
   },
-  linkLikeInit: function(){
+  linkLikeInit: function () {
     this.sharedInit();
     this.setColour(NclBlocks.LINK_COLOUR);
     if (NclBlocks.USE_BODY == true) this.setOutput(true, 'link_type');
@@ -587,6 +587,20 @@ IdFieldText.prototype.validateUserId = function (text) {
 }
 
 IdFieldText.prototype.onFinishEditing_ = function (text) {
+  this.saveId(text);
+};
+
+IdFieldText.prototype.setText = function (newText) {
+  if (newText != this.text_) this.removeId();
+  IdFieldText.superClass_.setText.call(this, newText);
+}
+
+IdFieldText.prototype.dispose = function () {
+  this.removeId(this.text_);
+  IdFieldText.superClass_.dispose.call(this);
+}
+
+IdFieldText.prototype.saveId = function (text) {
   if (text == "") return;
   if (this.id_type == "media")
     this.workspace_.mediaIds.push([text, text]);
@@ -594,7 +608,7 @@ IdFieldText.prototype.onFinishEditing_ = function (text) {
     this.workspace_.inputIds.push([text, text]);
   else if (this.id_type == "user")
     this.workspace_.userIds.push([text, text]);
-};
+}
 
 IdFieldText.prototype.removeId = function () {
   if (this.workspace_) {
@@ -624,16 +638,6 @@ IdFieldText.prototype.removeId = function () {
     }
   }
 };
-
-IdFieldText.prototype.setText = function (newText) {
-  if (newText != this.text_) this.removeId();
-  IdFieldText.superClass_.setText.call(this, newText);
-}
-
-IdFieldText.prototype.dispose = function () {
-  this.removeId(this.text_);
-  IdFieldText.superClass_.dispose.call(this);
-}
 
 // ---------------------------------------- 
 // body block
