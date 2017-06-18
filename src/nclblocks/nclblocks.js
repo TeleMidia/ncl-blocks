@@ -923,7 +923,7 @@ Blockly.Blocks.link = {
       .setCheck(NclBlocks.USE_CHECK ? 'condition_type' : null)
       .appendField(NclBlocks.Msg.WHEN);
     this.appendStatementInput('actions')
-      .setCheck(NclBlocks.USE_CHECK ? 'simpleaction_type' : null)
+      .setCheck(NclBlocks.USE_CHECK ? 'action_type' : null)
       .appendField(NclBlocks.Msg.DO);
   }
 };
@@ -1075,8 +1075,8 @@ ActionMixin = {
     this.setColour(NclBlocks.ACTION_COLOUR);
     this.contextMenu = false;
     this.setInputsInline(false);
-    this.setPreviousStatement(true, NclBlocks.USE_CHECK ? 'simpleaction_type' : null);
-    this.setNextStatement(true, NclBlocks.USE_CHECK ? 'simpleaction_type' : null);
+    this.setPreviousStatement(true, NclBlocks.USE_CHECK ? 'action_type' : null);
+    this.setNextStatement(true, NclBlocks.USE_CHECK ? 'action_type' : null);
   }
 }
 
@@ -1089,7 +1089,7 @@ Blockly.Blocks.start = {
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.start, 15,
         15, '*'))
       .appendField(NclBlocks.Msg.START)
-      .appendField(new IdFieldDropdown('media'), 'start');
+      .appendField(new IdFieldDropdown('node'), 'start');
   }
 }
 Object.assign(Blockly.Blocks.start, ActionMixin);
@@ -1102,7 +1102,7 @@ Blockly.Blocks.stop = {
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.stop, 15,
         15, '*'))
       .appendField(NclBlocks.Msg.STOP)
-      .appendField(new IdFieldDropdown('media'), 'stop');
+      .appendField(new IdFieldDropdown('node'), 'stop');
   }
 }
 Object.assign(Blockly.Blocks.stop, ActionMixin);
