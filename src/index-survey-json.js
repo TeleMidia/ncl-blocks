@@ -44,16 +44,16 @@ var _surveyJSON = {
         {
           type: "radiogroup",
           isRequired: true,
-          name: "profile_q1",
+          name: "profileQuestion1",
           title: "Qual seu conhecimento no desenvolvimento em NCL?",
           choices: ["nenhum", "muito pouco", "pouco", "razoável", "alto", "muito alto", "expert"]
         },
         {
           type: "radiogroup",
           isRequired: true,
-          name: "profile_q2",
+          name: "profileQuestion2",
           title: "Quantas aplicações NCL você desenvolveu?",
-          visibleIf: "{profile_q1} != nenhum",
+          visibleIf: "{profileQuestion1} != nenhum",
           choices: ["0", "1-2", "3-4", "5-6", "7-8", "8 ou mais"]
         },
         {
@@ -66,16 +66,16 @@ var _surveyJSON = {
         {
           type: "radiogroup",
           isRequired: true,
-          name: "profile_q3",
+          name: "profileQuestion3",
           title: "Qual seu conhecimento no desenvolvimento em HTML/JavaScript?",
           choices: ["nenhum", "muito pouco", "pouco", "razoável", "alto", "muito alto", "expert"]
         },
         {
           type: "radiogroup",
           isRequired: true,
-          name: "profile_q4",
+          name: "profileQuestion4",
           title: "Quantas aplicações HTML/JavaScript você desenvolveu?",
-          visibleIf: "{profile_q3} != nenhum",
+          visibleIf: "{profileQuestion3} != nenhum",
           choices: ["0", "1-2", "3-4", "5-6", "7-8", "8 ou mais"]
         },
         {
@@ -101,70 +101,70 @@ var _surveyJSON = {
         },
         {
           type: "html",
-          name: "concepts_blocks_intro1",
+          name: "conceptsBlocksIntro1",
           html: "<div class='text-justify'>Segue o uso de duas mídia como blocos. </div>"
-        },  
+        },
         {
           type: "html",
-          name: "concepts_blocks_intro2",
+          name: "conceptsBlocksIntro2",
           html: "<div class='text-justify'>Segue o uso de um sincronismo como blocos. </div>"
-        },  
+        },
         {
           type: "html",
-          name: "concepts_blocks_intro3",
+          name: "conceptsBlocksIntro3",
           html: "<div class='text-justify'>Segue o uso de uma mídia, sincronismo e reconhecimento como blocos bloco. </div>"
-        },  
+        },
         {
           type: "html",
-          name: "concepts_blocks_intro4",
+          name: "conceptsBlocksIntro4",
           html: "<div class='text-justify'>Segue o uso de uma mídia, sincronismo, reconhecimento de usuário como blocos.</div>"
-        },  
+        },
         {
           type: "html",
-          name: "concepts_task1",
+          name: "conceptsTask1Blocks",
         },
         {
           type: "comment",
           isRequired: true,
-          name: "concepts_task1_q",
+          name: "conceptsTask1Question",
           title: "Qual o comportamento da aplicação acima?"
         },
         {
           type: "html",
-          name: "concepts_task2",
+          name: "conceptsTask2Blocks",
         },
         {
           type: "text",
-          name: "concepts_task2_changes",
+          name: "conceptsTask2Changes",
           visible: false
         },
         {
           type: "text",
-          name: "concepts_task2_result",
+          name: "conceptsTask2Result",
           visible: false
         },
         {
           type: "html",
-          name: "concepts_task3",
+          name: "conceptsTask3Blocks",
         },
         {
           type: "comment",
           isRequired: true,
-          name: "concepts_task3_q",
+          name: "conceptsTask3Question",
           title: "Qual o comportamento da aplicação acima?"
         },
         {
           type: "html",
-          name: "concepts_task4",
+          name: "conceptsTask4Blocks",
         },
         {
           type: "text",
-          name: "concepts_task4_changes",
+          name: "conceptsTask4Changes",
           visible: false
         },
         {
           type: "text",
-          name: "concepts_task4_result",
+          name: "conceptsTask4Result",
           visible: false
         }
       ],
@@ -172,7 +172,7 @@ var _surveyJSON = {
       title: "Conceitos multimodais em linguagens multimídia"
     },
     {
-      name: "concepts_feedback",
+      name: "conceptsFeedback",
       elements: [
         {
           type: "panel",
@@ -182,7 +182,7 @@ var _surveyJSON = {
             {
               type: "radiogroup",
               isRequired: true,
-              name: "concepts_feedback_q1",
+              name: "conceptsFeedbackQuestion1",
               title: "Os conceitos apresentadados permitem realizar mais facilmente o desenvolmento de aplicações multimodais",
               choices: [
                 {
@@ -226,15 +226,14 @@ var _surveyJSON = {
             {
               type: "radiogroup",
               isRequired: true,
-              name: "concepts_feedback_q2",
+              name: "conceptsFeedbackQuestion2",
               title: "Os conceitos apresentadados permitem realizar mais rapidamente o desenvolmento de aplicações multimodais?",
               choices: ["bastante improvável", "muito improvável", "pouco improvável", "indiferente", "pouco provável", "muito provável", "bastante provável"]
-
             },
             {
               type: "radiogroup",
               isRequired: true,
-              name: "concepts_feedback_q3",
+              name: "conceptsFeedbackQuestion3",
               title: "De modo geral, os conceitos apresentadados são úteis para o desenvolmento de aplicações multimodais?",
               choices: ["bastante improvável", "muito improvável", "pouco improvável", "indiferente", "pouco provável", "muito provável", "bastante provável"]
             }]
@@ -246,25 +245,23 @@ var _surveyJSON = {
             {
               type: "radiogroup",
               isRequired: true,
-              name: "concepts_feedback_q4",
+              name: "conceptsFeedbackQuestion4",
               title: "Aprender os conceitos é fácil?",
               choices: ["bastante improvável", "muito improvável", "pouco improvável", "indiferente", "pouco provável", "muito provável", "bastante provável"]
-
             },
             {
               type: "radiogroup",
               isRequired: true,
-              name: "concepts_feedback_q5",
+              name: "conceptsFeedbackQuestion5",
               title: "Os conceitos são claros e entendíveis?",
               choices: ["bastante improvável", "muito improvável", "pouco improvável", "indiferente", "pouco provável", "muito provável", "bastante provável"]
             },
             {
               type: "radiogroup",
               isRequired: true,
-              name: "concepts_feedback_q6",
+              name: "conceptsFeedbackQuestion6",
               title: "De modo geral, os conceitos apresentadados são fáceis de utilizar?",
               choices: ["bastante improvável", "muito improvável", "pouco improvável", "indiferente", "pouco provável", "muito provável", "bastante provável"]
-
             }]
         }
       ]
@@ -274,29 +271,29 @@ var _surveyJSON = {
         {
           type: "html",
           html: "A linguagem NCL possui o foco de criar apresentações multimídia interativas.Anteriormente a NCL focava no uso de mídias audiovisuais (por exemplo imagens, vídeo e áudios) e interações por meio de apontador e tecla.<br><br>O exemplo de código a seguir ilustra o uso de novas mídias e interação.<br><br>Um exemplo de mídia NCL comum é o 'mainvideo' (linhas 12-14).<br>Essa media possui um trecho definido pela ancora 'credits'(linhas 13).<br><br>Para adicionar interações multimodais sobre esse video, adicionamos os elementos 'menu' (linhas 15-17) e 'answer' (linhas 19-21).<br>O primeiro define um áudio sintetizado utilizando o arquivo SSML chamado question.ssml (linhas 2-4).<br>O segundo define um reconhecimento de vocês utilizando  o arquivo  SRGS chamado commads.srgs (linhas 7-9).<br><br>Esse áudio sintetizado é definido pelo elo das linhas 23-27.<br>Enquanto que o reconhecimento é definido pelo elo das linhas 28-31.<br>",
-          name: "ncl_intro"
+          name: "nclIntro"
         },
         {
           type: "html",
           html: "O código a seguir consiste em uma aplicação NCL sem interações multimodais.",
-          name: "ncl_code1"
+          name: "nclCode1"
         },
         {
           type: "comment",
           isRequired: true,
-          name: "ncl_q1",
+          name: "nclQuestion1",
           rows: "9",
           title: "Qual o comportamento da aplicação?"
         },
         {
           type: "html",
           html: "O aplicação NCL acima foi modificada para permitir interações multimodais. O novo código é apresentado a seguir com as modificações destacadas:",
-          name: "ncl_code2"
+          name: "nclCode2"
         },
         {
           type: "comment",
           isRequired: true,
-          name: "ncl_q2",
+          name: "nclQuestion2",
           rows: "9",
           title: "Qual o novo comportamento da aplicação?"
         }
@@ -305,7 +302,7 @@ var _surveyJSON = {
       title: "Conceitos multimodais em NCL"
     },
     {
-      name: "ncl_feedback",
+      name: "nclFeedback",
       elements: [
         {
           type: "panel",
@@ -315,40 +312,37 @@ var _surveyJSON = {
             {
               type: "radiogroup",
               isRequired: true,
-              name: "ncl_feedback_q1",
+              name: "nclFeedbackQuestion1",
               title: "A NCL estendida permite realizar mais facilmente o desenvolmento de aplicações multimodais?",
               choices: ["bastante improvável", "muito improvável", "pouco improvável", "indiferente", "pouco provável", "muito provável", "bastante provável"]
-
             },
             {
               type: "radiogroup",
               isRequired: true,
-              name: "ncl_feedback_q2",
+              name: "nclFeedbackQuestion2",
               title: "A NCL estendida permite realizar mais rapidamente o desenvolmento de aplicações multimodais?",
               choices: ["bastante improvável", "muito improvável", "pouco improvável", "indiferente", "pouco provável", "muito provável", "bastante provável"]
             },
             {
               type: "radiogroup",
               isRequired: true,
-              name: "ncl_feedback_q3",
+              name: "nclFeedbackQuestion3",
               title: "A NCL estendida aumenta a qualidade no desenvolmento de aplicações multimodais?",
               choices: ["bastante improvável", "muito improvável", "pouco improvável", "indiferente", "pouco provável", "muito provável", "bastante provável"]
-
             },
             {
               type: "radiogroup",
               isRequired: true,
-              name: "ncl_feedback_q4",
+              name: "nclFeedbackQuestion4",
               title: "A NCL estendida fornece maior controle no desenvolmento de aplicações multimodais?",
               choices: ["bastante improvável", "muito improvável", "pouco improvável", "indiferente", "pouco provável", "muito provável", "bastante provável"]
             },
             {
               type: "radiogroup",
               isRequired: true,
-              name: "ncl_feedback_q5",
+              name: "nclFeedbackQuestion5",
               title: "De modo geral, A NCL estendida é util para realizar o desenvolmento de aplicações multimodais?",
               choices: ["bastante improvável", "muito improvável", "pouco improvável", "indiferente", "pouco provável", "muito provável", "bastante provável"]
-
             }
           ]
         }, {
@@ -359,25 +353,23 @@ var _surveyJSON = {
             {
               type: "radiogroup",
               isRequired: true,
-              name: "ncl_feedback_q6",
+              name: "nclFeedbackQuestion6",
               title: "Aprender a NCL estendida é fácil?",
               choices: ["bastante improvável", "muito improvável", "pouco improvável", "indiferente", "pouco provável", "muito provável", "bastante provável"]
-
             },
             {
               type: "radiogroup",
               isRequired: true,
-              name: "ncl_feedback_q7",
+              name: "nclFeedbackQuestion7",
               title: "A NCL estendida é claro e entendível?",
               choices: ["bastante improvável", "muito improvável", "pouco improvável", "indiferente", "pouco provável", "muito provável", "bastante provável"]
             },
             {
               type: "radiogroup",
               isRequired: true,
-              name: "ncl_feedback_q8",
+              name: "nclFeedbackQuestion8",
               title: "De modo geral, a NCL estendida é fácil de utilizar?",
               choices: ["bastante improvável", "muito improvável", "pouco improvável", "indiferente", "pouco provável", "muito provável", "bastante provável"]
-
             }]
         }
       ]
@@ -386,14 +378,14 @@ var _surveyJSON = {
       elements: [
         {
           type: "html",
-          name: "html_intro"
+          name: "htmlIntro"
         }
       ],
       name: "html",
       title: "Conceitos multimodais em HTML"
     },
     {
-      name: "html_feedback",
+      name: "htmlFeedback",
       elements: [
         {
           type: "panel",
@@ -403,35 +395,35 @@ var _surveyJSON = {
             {
               type: "radiogroup",
               isRequired: true,
-              name: "html_feedback_q1",
+              name: "htmlFeedbackQuestion1",
               title: "A HTML/JavaScrip estendida permite realizar mais facilmente o desenvolmento de aplicações multimodais?",
               choices: ["bastante improvável", "muito improvável", "pouco improvável", "indiferente", "pouco provável", "muito provável", "bastante provável"]
             },
             {
               type: "radiogroup",
               isRequired: true,
-              name: "html_feedback_q2",
+              name: "htmlFeedbackQuestion2",
               title: "A HTML/JavaScrip estendida permite realizar mais rapidamente o desenvolmento de aplicações multimodais?",
               choices: ["bastante improvável", "muito improvável", "pouco improvável", "indiferente", "pouco provável", "muito provável", "bastante provável"]
             },
             {
               type: "radiogroup",
               isRequired: true,
-              name: "html_feedback_q3",
+              name: "htmlFeedbackQuestion3",
               title: "A HTML/JavaScrip estendida aumenta a qualidade no desenvolmento de aplicações multimodais?",
               choices: ["bastante improvável", "muito improvável", "pouco improvável", "indiferente", "pouco provável", "muito provável", "bastante provável"]
             },
             {
               type: "radiogroup",
               isRequired: true,
-              name: "html_feedback_q4",
+              name: "htmlFeedbackQuestion4",
               title: "A HTML/JavaScrip estendida fornece maior controle no desenvolmento de aplicações multimodais?",
               choices: ["bastante improvável", "muito improvável", "pouco improvável", "indiferente", "pouco provável", "muito provável", "bastante provável"]
             },
             {
               type: "radiogroup",
               isRequired: true,
-              name: "html_feedback_q5",
+              name: "htmlFeedbackQuestion5",
               title: "De modo geral, a HTML/JavaScript estendida é util para realizar o desenvolmento de aplicações multimodais?",
               choices: ["bastante improvável", "muito improvável", "pouco improvável", "indiferente", "pouco provável", "muito provável", "bastante provável"]
             }
@@ -444,21 +436,21 @@ var _surveyJSON = {
             {
               type: "radiogroup",
               isRequired: true,
-              name: "html_feedback_q6",
+              name: "htmlFeedbackQuestion6",
               title: "Aprender a HTML/Javascript estendida é fácil?",
               choices: ["bastante improvável", "muito improvável", "pouco improvável", "indiferente", "pouco provável", "muito provável", "bastante provável"]
             },
             {
               type: "radiogroup",
               isRequired: true,
-              name: "html_feedback_q7",
+              name: "htmlFeedbackQuestion7",
               title: "A HTML/Javascript estendida é claro e entendível?",
               choices: ["bastante improvável", "muito improvável", "pouco improvável", "indiferente", "pouco provável", "muito provável", "bastante provável"]
             },
             {
               type: "radiogroup",
               isRequired: true,
-              name: "html_feedback_q8",
+              name: "htmlFeedbackQuestion8",
               title: "De modo geral, a HTML/Javascript estendida é fácil de utilizar?",
               choices: ["bastante improvável", "muito improvável", "pouco improvável", "indiferente", "pouco provável", "muito provável", "bastante provável"]
             }
@@ -470,7 +462,7 @@ var _surveyJSON = {
       elements: [
         {
           type: "comment",
-          name: "comments_q1",
+          name: "commentsQuestion1",
           rows: "9",
           title: {
             en: "Chegamos ao fim de nosso estudo. Se desejar, deixe comentários ou sugestões relacionados ao nosso estudo."
@@ -478,7 +470,7 @@ var _surveyJSON = {
         },
         {
           type: "comment",
-          name: "comments_q2",
+          name: "commentsQuestion2",
           rows: "9",
           title: {
             en: "Adcionalmente, você poderia falar que tipos de aplicações você gostaria de desenvolver com conceitos apresentados nesse questionário."

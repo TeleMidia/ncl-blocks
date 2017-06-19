@@ -27,9 +27,9 @@
 <body>
   <div class="center-block text-center">
     <br>blockTask=
-    <select id="blockTask" type="text" value="concepts_task2">
-      <option value="concepts_task2">concepts_task2</option>
-      <option value="concepts_task4">concepts_task4</option>
+    <select id="blockTask" type="text" value="conceptsTask2Blocks">
+      <option value="conceptsTask2Blocks">conceptsTask2Blocks</option>
+      <option value="conceptsTask4Blocks">conceptsTask4Blocks</option>
       </select> resultIndex=
     <select id="resultIndex" type="text" value="-"><option value="-">-</option></select>
     <br><br>
@@ -101,10 +101,10 @@
       if (selected === '-') return
       var selectIndex = parseInt(selected)
       var savedWorkspaceXml
-      if ($('#blockTask option:selected').val() === 'concepts_task2') {
-        savedWorkspaceXml = _resultsData[selectIndex].concepts_task2_result
-      } else if ($('#blockTask option:selected').val() === 'concepts_task4') {
-        savedWorkspaceXml = _resultsData[selectIndex].concepts_task4_result
+      if ($('#blockTask option:selected').val() === 'conceptsTask2Blocks') {
+        savedWorkspaceXml = _resultsData[selectIndex].conceptsTask2Result
+      } else if ($('#blockTask option:selected').val() === 'conceptsTask4Blocks') {
+        savedWorkspaceXml = _resultsData[selectIndex].conceptsTask4Result
       }
       // console.log(savedWorkspaceXml)
       $('#xmlcode').val(savedWorkspaceXml)
@@ -119,10 +119,10 @@
     var _runEventIntervalIndex = 0
     var runEventInterval = function (index) {
       var result
-      if ($('#blockTask option:selected').val() === 'concepts_task2') {
-        result = JSON.parse(_resultsData[index].concepts_task2_changes)
-      } else if ($('#blockTask option:selected').val() === 'concepts_task4') {
-        result = JSON.parse(_resultsData[index].concepts_task4_changes)
+      if ($('#blockTask option:selected').val() === 'conceptsTask2Blocks') {
+        result = JSON.parse(_resultsData[index].conceptsTask2Changes)
+      } else if ($('#blockTask option:selected').val() === 'conceptsTask4Blocks') {
+        result = JSON.parse(_resultsData[index].conceptsTask4Changes)
       }
       if (_runEventIntervalIndex >= result.changes.length) {
         clearInterval(runEventInterval)
