@@ -544,31 +544,31 @@ IdFieldText = function (text, id_type) {
 goog.inherits(IdFieldText, Blockly.FieldTextInput);
 
 IdFieldText.prototype.createIdArrays = function () {
-  if (!this.workspace_.mediaIds)
-    this.workspace_.mediaIds = [['-', '-']];
-  else if (!this.workspace_.inputIds)
-    this.workspace_.inputIds = [['-', '-']];
-  else if (!this.workspace_.userIds)
-    this.workspace_.userIds = [['-', '-']];
+  if (!this.sourceBlock_.workspace.mediaIds)
+    this.sourceBlock_.workspace.mediaIds = [['-', '-']];
+  else if (!this.sourceBlock_.workspace.inputIds)
+    this.sourceBlock_.workspace.inputIds = [['-', '-']];
+  else if (!this.sourceBlock_.workspace.userIds)
+    this.sourceBlock_.workspace.userIds = [['-', '-']];
 }
 
 IdFieldText.prototype.validateId = function (text) {
   if (!text) return;
   // empty or at toolbox
-  if (!this.workspace_) return null;
+  if (!this.sourceBlock_.workspace) return null;
   // at workspace and no mediaIds
   this.createIdArrays();
   if (this.id_type == "media" || this.id_type == "input") {
-    for (var i in this.workspace_.mediaIds)
-      if (this.workspace_.mediaIds[i][0] === text)
+    for (var i in this.sourceBlock_.workspace.mediaIds)
+      if (this.sourceBlock_.workspace.mediaIds[i][0] === text)
         return null;
-    for (var i in this.workspace_.inputIds)
-      if (this.workspace_.inputIds[i][0] === text)
+    for (var i in this.sourceBlock_.workspace.inputIds)
+      if (this.sourceBlock_.workspace.inputIds[i][0] === text)
         return null;
   }
   else if (this.id_type == "user") {
-    for (var i in this.workspace_.userIds)
-      if (this.workspace_.userIds[i][0] === text)
+    for (var i in this.sourceBlock_.workspace.userIds)
+      if (this.sourceBlock_.workspace.userIds[i][0] === text)
         return null;
   }
 }
@@ -582,6 +582,13 @@ IdFieldText.prototype.setText = function (newText) {
   IdFieldText.superClass_.setText.call(this, newText);
 }
 
+IdFieldText.prototype.setValue = function (text) {
+  // set from xml
+  if(!this.workspace_) this.saveId(text);
+  Blockly.Field.prototype.setValue.call(this, text);
+};
+
+
 IdFieldText.prototype.dispose = function () {
   this.removeId(this.text_);
   IdFieldText.superClass_.dispose.call(this);
@@ -589,12 +596,14 @@ IdFieldText.prototype.dispose = function () {
 
 IdFieldText.prototype.saveId = function (text) {
   if (text == "") return;
+  // console.log(this);
+  this.createIdArrays();
   if (this.id_type == "media")
-    this.workspace_.mediaIds.push([text, text]);
+    this.sourceBlock_.workspace.mediaIds.push([text, text]);
   else if (this.id_type == "input")
-    this.workspace_.inputIds.push([text, text]);
+    this.sourceBlock_.workspace.inputIds.push([text, text]);
   else if (this.id_type == "user")
-    this.workspace_.userIds.push([text, text]);
+    this.sourceBlock_.workspace.userIds.push([text, text]);
 }
 
 IdFieldText.prototype.removeId = function () {
