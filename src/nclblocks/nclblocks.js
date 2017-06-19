@@ -312,7 +312,7 @@ NclBlocks.injectInDiv = function (pathToBlockly, parendDivId, height, workspaceX
 // FieldTextButton
 // ----------------------------------------
 
-FieldTextButton = function (inputname, buttontext, changeHandler) {
+var FieldTextButton = function (inputname, buttontext, changeHandler) {
   FieldTextButton.superClass_.constructor.call(this, inputname)
   this.buttontext_ = buttontext
   this.changeHandler_ = changeHandler
@@ -337,7 +337,7 @@ FieldTextButton.prototype.showEditor_ = function () {
 // InputStackMixin
 // ----------------------------------------
 
-InputStackMixin = {
+var InputStackMixin = {
   stack_of_value_input: false,
 
   pushInput: function () {
@@ -392,6 +392,7 @@ InputStackMixin = {
 
   domToMutation: function (xmlElement) {
     var newLength = xmlElement.getAttribute('length')
+    var i
     // console.log(xmlElement)
     // console.log(this)
     if (newLength - this.stack_size > 0) {
@@ -416,7 +417,7 @@ InputStackMixin = {
 // NclBlockMixin
 // ----------------------------------------
 
-NclBlockMixin = {
+var NclBlockMixin = {
   sharedInit: function () {
     this.contextMenu = false
     this.setInputsInline(false)
@@ -445,7 +446,6 @@ NclBlockMixin = {
     this.sharedInit()
     this.setColour(NclBlocks.CONDITION_COLOUR)
     this.setOutput(true, NclBlocks.USE_CHECK ? 'condition_type' : null)
-    if (NclBlocks.USE_BODY === true) this.setOutput(true, output_type)
   },
   actionLikeInit: function () {
     this.sharedInit()
@@ -461,7 +461,7 @@ NclBlockMixin = {
 
 var IdFieldDropdown = function (idType) {
   this.idType = idType
-  menuGenerator = null
+  var menuGenerator = null
   if (idType === 'media') { menuGenerator = this.getMediaIds } else if (idType === 'input') { menuGenerator = this.getInputIds } else if (idType === 'user') { menuGenerator = this.getUserIds } else if (idType === 'node') { menuGenerator = this.getBothMediaInputIds }
   IdFieldDropdown.superClass_.constructor.call(this, menuGenerator)
 }
@@ -528,6 +528,7 @@ IdFieldText.prototype.validateId = function (text) {
   if (!this.sourceBlock_.workspace) return null
   // at workspace and no mediaIds
   this.createIdArrays()
+  var i
   if (this.idType === 'media' || this.idType === 'input') {
     for (i in this.sourceBlock_.workspace.mediaIds) {
       if (this.sourceBlock_.workspace.mediaIds[i][0] === text) { return null }

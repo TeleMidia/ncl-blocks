@@ -4,5 +4,20 @@
   "repository": "github.com:alanlivio/thesis-evaluation-form",
   "version": "1.0.0",
   "author": "Alan Livio",
-  "license": "MIT"
+  "license": "MIT",
+  "eslintConfig": {
+    "env": {
+      "browser": true
+    },
+    "globals": {
+      "$": true,
+      "goog": true,
+      "Survey": true,
+      "NclBlocks": true,
+      "Blockly": true,
+      "_surveyJSON": true,
+      "calculateHeight": true,
+      "SyntaxHighlighter": true
+    }
+  }
 }
