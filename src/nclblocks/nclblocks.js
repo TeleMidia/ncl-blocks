@@ -113,9 +113,9 @@ NclBlocks.ACTION_COLOUR = 225
 // default toolbox
 // ----------------------------------------
 
-NclBlocks.getDefaultToolboxXML = function (toolbox_options) {
-  var exclude_recognition = !!toolbox_options.includes('exclude_recognition')
-  var exclude_resume_pause_set = !!toolbox_options.includes('exclude_resume_pause_set')
+NclBlocks.getDefaultToolboxXML = function (toolboxOptions) {
+  var excludeRecognition = !!toolboxOptions.includes('excludeRecognition')
+  var excludeResumePauseSet = !!toolboxOptions.includes('excludeResumePauseSet')
   var ret = `<xml id="toolbox" style="display: none">`
   ret += `<category name="` + NclBlocks.Msg.MEDIA + `">`
   ret += `  <block type="media"></block>`
@@ -124,7 +124,7 @@ NclBlocks.getDefaultToolboxXML = function (toolbox_options) {
   ret += `  <block type="video"></block>`
   ret += `  <block type="ssml"></block>`
   ret += `</category>`
-  if (!exclude_recognition) {
+  if (!excludeRecognition) {
     ret += `<category name="` + NclBlocks.Msg.INPUT + `">`
     ret += `  <block type="input"></block>`
     ret += `  <block type="srgs"></block>`
@@ -144,11 +144,11 @@ NclBlocks.getDefaultToolboxXML = function (toolbox_options) {
   ret += `  <block type="onbegin"></block>`
   ret += `  <block type="onselection"></block>`
   ret += `  <block type="onend"></block>`
-  if (!exclude_resume_pause_set) {
+  if (!excludeResumePauseSet) {
     ret += `  <block type="onpause"></block>`
     ret += `  <block type="onresume"></block>`
   }
-  if (!exclude_recognition) {
+  if (!excludeRecognition) {
     ret += `  <block type="onrecognize"></block>`
     ret += `  <block type="onrecognizeuser"></block>`
   }
@@ -157,7 +157,7 @@ NclBlocks.getDefaultToolboxXML = function (toolbox_options) {
   ret += `<category name="` + NclBlocks.Msg.ACTIONS + `">`
   ret += `  <block type="start"></block>`
   ret += `  <block type="stop"></block>`
-  if (!exclude_resume_pause_set) {
+  if (!excludeResumePauseSet) {
     ret += `  <block type="pause"></block>`
     ret += `  <block type="resume"></block>`
     ret += `  <block type="set"></block>`
@@ -188,8 +188,8 @@ NclBlocks.useBody = function () {
 // xml blocks functions
 // ----------------------------------------
 
-function calculateHeight (num_blocks, one_block_height) {
-  return 20 * (1 + num_blocks) + one_block_height * num_blocks + 'px'
+function calculateHeight (numBlocks, oneBlockHeight) {
+  return 20 * (1 + numBlocks) + oneBlockHeight * numBlocks + 'px'
 }
 
 function alignTwoColumnsInXML (xml) {
@@ -203,8 +203,8 @@ function alignTwoColumnsInXML (xml) {
     }
     return 'x="' + x + '" y="' + y + '"'
   }
-  var xml_x_aligned = xml.replace(/x="(-?[0-9]*)"\sy="(-?[0-9]*)"/g, replaceXY)
-  return xml_x_aligned
+  var xmlAligned = xml.replace(/x="(-?[0-9]*)"\sy="(-?[0-9]*)"/g, replaceXY)
+  return xmlAligned
 }
 
 function moveLeftBlocksInXML (xml) {
@@ -213,8 +213,8 @@ function moveLeftBlocksInXML (xml) {
     var y = p2
     return 'x="' + (parseInt(x) - 20) + '" y="' + y + '"'
   }
-  var xml_x_aligned = xml.replace(/x="(-?[0-9]*)"\sy="(-?[0-9]*)"/g, replaceXY)
-  return xml_x_aligned
+  var xmlAligned = xml.replace(/x="(-?[0-9]*)"\sy="(-?[0-9]*)"/g, replaceXY)
+  return xmlAligned
 }
 
 function moveRightBlocksInXML (xml) {
@@ -223,8 +223,8 @@ function moveRightBlocksInXML (xml) {
     var y = p2
     return 'x="' + (parseInt(x) + 20) + '" y="' + y + '"'
   }
-  var xml_x_aligned = xml.replace(/x="(-?[0-9]*)"\sy="(-?[0-9]*)"/g, replaceXY)
-  return xml_x_aligned
+  var xmlAligned = xml.replace(/x="(-?[0-9]*)"\sy="(-?[0-9]*)"/g, replaceXY)
+  return xmlAligned
 }
 
 function moveUpBlocksInXML (xml) {
@@ -233,8 +233,8 @@ function moveUpBlocksInXML (xml) {
     var y = p2
     return 'x="' + x + '" y="' + (parseInt(y) - 20) + '"'
   }
-  var xml_x_aligned = xml.replace(/x="(-?[0-9]*)"\sy="(-?[0-9]*)"/g, replaceXY)
-  return xml_x_aligned
+  var xmlAligned = xml.replace(/x="(-?[0-9]*)"\sy="(-?[0-9]*)"/g, replaceXY)
+  return xmlAligned
 }
 
 function moveDownBlocksInXML (xml) {
@@ -243,26 +243,26 @@ function moveDownBlocksInXML (xml) {
     var y = p2
     return 'x="' + x + '" y="' + (parseInt(y) + 20) + '"'
   }
-  var xml_x_aligned = xml.replace(/x="(-?[0-9]*)"\sy="(-?[0-9]*)"/g, replaceXY)
-  return xml_x_aligned
+  var xmlAligned = xml.replace(/x="(-?[0-9]*)"\sy="(-?[0-9]*)"/g, replaceXY)
+  return xmlAligned
 }
 
 // ----------------------------------------
 // inject functions
 // ----------------------------------------
 
-NclBlocks.injectInDiv = function (pathToBlockly, parend_div_id, height, opt_workspace_xml = '', opt_static = false, opt_toolbox_options = []) {
-  var inject_div_name = 'blockly_' + parend_div_id
+NclBlocks.injectInDiv = function (pathToBlockly, parendDivId, height, workspaceXml = '', isStatic = false, toolboxOptions = []) {
+  var injectDivName = 'blockly_' + parendDivId
   var workspace
 
   Blockly.pathToBlockly = pathToBlockly || './'
 
   // create div and configure auto resize
-  var blocklyArea = document.getElementById(parend_div_id)
-  var html_to_insert = '<div id=' + inject_div_name + " class='center-block' style='height: " + height + ";'></div>"
-  blocklyArea.innerHTML += html_to_insert
+  var blocklyArea = document.getElementById(parendDivId)
+  var htmlToInsert = '<div id=' + injectDivName + " class='center-block' style='height: " + height + ";'></div>"
+  blocklyArea.innerHTML += htmlToInsert
   var padding = window.getComputedStyle(blocklyArea, null).getPropertyValue('padding-right')
-  var blocklyDiv = document.getElementById(inject_div_name)
+  var blocklyDiv = document.getElementById(injectDivName)
   var onresize = function (e) {
     var element = blocklyArea
     var x = 0
@@ -279,8 +279,8 @@ NclBlocks.injectInDiv = function (pathToBlockly, parend_div_id, height, opt_work
   window.addEventListener('resize', onresize, false)
 
   // inject
-  if (opt_static) {
-    workspace = Blockly.inject(inject_div_name, {
+  if (isStatic) {
+    workspace = Blockly.inject(injectDivName, {
       media: Blockly.pathToBlockly + 'media/',
       toolbox: false,
       zoom: { controls: true },
@@ -289,18 +289,18 @@ NclBlocks.injectInDiv = function (pathToBlockly, parend_div_id, height, opt_work
       sounds: true
     })
   } else {
-    workspace = Blockly.inject(inject_div_name, {
+    workspace = Blockly.inject(injectDivName, {
       media: Blockly.pathToBlockly + 'media/',
-      toolbox: NclBlocks.getDefaultToolboxXML(opt_toolbox_options),
+      toolbox: NclBlocks.getDefaultToolboxXML(toolboxOptions),
       zoom: { controls: true },
       scrollbars: true,
       sounds: true
     })
   }
   if (NclBlocks.USE_BODY) {
-    opt_workspace_xml = NclBlocks.START_WORKSPACE_WITH_BODY
+    workspaceXml = NclBlocks.START_WORKSPACE_WITH_BODY
   }
-  Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(opt_workspace_xml), workspace)
+  Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(workspaceXml), workspace)
 
   onresize()
   Blockly.svgResize(workspace)
@@ -343,14 +343,14 @@ InputStackMixin = {
   pushInput: function () {
     var oldMutationDom = this.mutationToDom()
     var oldMutation = Blockly.Xml.domToText(oldMutationDom)
-    var new_input
+    var newInput
 
     // append element
-    var new_index = this.stack_size
-    // console.log("append element_" + new_index)
-    if (this.stack_of_value_input) { new_input = this.appendValueInput('element_' + new_index) } else { new_input = this.appendDummyInput('element_' + new_index) }
-    this.configureNewInput(new_input, new_index)
-    this.moveInputBefore(new_input.name, 'edit')
+    var newIndex = this.stack_size
+    // console.log("append element_" + newIndex)
+    if (this.stack_of_value_input) { newInput = this.appendValueInput('element_' + newIndex) } else { newInput = this.appendDummyInput('element_' + newIndex) }
+    this.configureNewInput(newInput, newIndex)
+    this.moveInputBefore(newInput.name, 'edit')
     this.stack_size++
     // fire mutation event
     var newMutationDom = this.mutationToDom()
@@ -358,7 +358,7 @@ InputStackMixin = {
     Blockly.Events.fire(new Blockly.Events.Change(
       this, 'mutation', null, oldMutation, newMutation))
 
-    return new_input
+    return newInput
   },
 
   popInput: function () {
@@ -366,9 +366,9 @@ InputStackMixin = {
     var oldMutation = Blockly.Xml.domToText(oldMutationDom)
 
     if (this.stack_size <= 0) return
-    var rm_index = this.stack_size - 1
-    // console.log("remove element_" + rm_index)
-    var inputNameToDelete = 'element_' + rm_index
+    var rmIndex = this.stack_size - 1
+    // console.log("remove element_" + rmIndex)
+    var inputNameToDelete = 'element_' + rmIndex
     var substructure = this.getInputTargetBlock(inputNameToDelete)
     if (substructure) {
       substructure.outputConnection.disconnect()
@@ -391,13 +391,13 @@ InputStackMixin = {
   },
 
   domToMutation: function (xmlElement) {
-    var new_length = xmlElement.getAttribute('length')
+    var newLength = xmlElement.getAttribute('length')
     // console.log(xmlElement)
     // console.log(this)
-    if (new_length - this.stack_size > 0) {
-      for (i = 0; i < new_length - this.stack_size; i++) { this.pushInput() }
+    if (newLength - this.stack_size > 0) {
+      for (i = 0; i < newLength - this.stack_size; i++) { this.pushInput() }
     } else {
-      for (i = 0; i < this.stack_size - new_length; i++) { this.popInput() }
+      for (i = 0; i < this.stack_size - newLength; i++) { this.popInput() }
     }
   },
 
@@ -459,10 +459,10 @@ NclBlockMixin = {
 // IdFieldDropdown
 // ----------------------------------------
 
-IdFieldDropdown = function (id_type) {
-  this.id_type = id_type
+IdFieldDropdown = function (idType) {
+  this.idType = idType
   menuGenerator = null
-  if (id_type == 'media') { menuGenerator = this.getMediaIds } else if (id_type == 'input') { menuGenerator = this.getInputIds } else if (id_type == 'user') { menuGenerator = this.getUserIds } else if (id_type == 'node') { menuGenerator = this.getBothMediaInputIds }
+  if (idType == 'media') { menuGenerator = this.getMediaIds } else if (idType == 'input') { menuGenerator = this.getInputIds } else if (idType == 'user') { menuGenerator = this.getUserIds } else if (idType == 'node') { menuGenerator = this.getBothMediaInputIds }
   IdFieldDropdown.superClass_.constructor.call(this, menuGenerator)
 }
 goog.inherits(IdFieldDropdown, Blockly.FieldDropdown)
@@ -511,8 +511,8 @@ IdFieldDropdown.prototype.getBothMediaInputIds = function () {
 // IdFieldText
 // ----------------------------------------
 
-IdFieldText = function (text, id_type) {
-  this.id_type = id_type
+IdFieldText = function (text, idType) {
+  this.idType = idType
   IdFieldText.superClass_.constructor.call(this, text,
     this.validateId)
 }
@@ -528,14 +528,14 @@ IdFieldText.prototype.validateId = function (text) {
   if (!this.sourceBlock_.workspace) return null
   // at workspace and no mediaIds
   this.createIdArrays()
-  if (this.id_type == 'media' || this.id_type == 'input') {
+  if (this.idType == 'media' || this.idType == 'input') {
     for (i in this.sourceBlock_.workspace.mediaIds) {
       if (this.sourceBlock_.workspace.mediaIds[i][0] === text) { return null }
     }
     for (i in this.sourceBlock_.workspace.inputIds) {
       if (this.sourceBlock_.workspace.inputIds[i][0] === text) { return null }
     }
-  } else if (this.id_type == 'user') {
+  } else if (this.idType == 'user') {
     for (i in this.sourceBlock_.workspace.userIds) {
       if (this.sourceBlock_.workspace.userIds[i][0] === text) { return null }
     }
@@ -566,23 +566,23 @@ IdFieldText.prototype.saveId = function (text) {
   if (text == '') return
   // console.log(this)
   this.createIdArrays()
-  if (this.id_type == 'media') { this.sourceBlock_.workspace.mediaIds.push([text, text]) } else if (this.id_type == 'input') { this.sourceBlock_.workspace.inputIds.push([text, text]) } else if (this.id_type == 'user') { this.sourceBlock_.workspace.userIds.push([text, text]) }
+  if (this.idType == 'media') { this.sourceBlock_.workspace.mediaIds.push([text, text]) } else if (this.idType == 'input') { this.sourceBlock_.workspace.inputIds.push([text, text]) } else if (this.idType == 'user') { this.sourceBlock_.workspace.userIds.push([text, text]) }
 }
 
 IdFieldText.prototype.removeId = function () {
   var index = -1
   if (this.workspace_) {
-    if (this.id_type == 'media' && this.workspace_.mediaIds) {
+    if (this.idType == 'media' && this.workspace_.mediaIds) {
       for (i = 0; i < this.workspace_.mediaIds.length; i++) {
         if (this.workspace_.mediaIds[i][0] == this.text_) { index = index = i }
       }
       if (index > -1) { this.workspace_.mediaIds.splice(index, 1) }
-    } else if (this.id_type == 'input' && this.workspace_.inputIds) {
+    } else if (this.idType == 'input' && this.workspace_.inputIds) {
       for (i = 0; i < this.workspace_.inputIds.length; i++) {
         if (this.workspace_.inputIds[i][0] == this.text_) { index = i }
       }
       if (index > -1) { this.workspace_.inputIds.splice(index, 1) }
-    } else if (this.id_type == 'user' && this.workspace_.userIds) {
+    } else if (this.idType == 'user' && this.workspace_.userIds) {
       for (i = 0; i < this.workspace_.userIds.length; i++) {
         if (this.workspace_.userIds[i][0] == this.text_) { index = i }
       }
@@ -604,8 +604,8 @@ Blockly.Blocks.body = {
     // InputStackMixin config
     this.stack_size = 0
     this.stack_of_value_input = true
-    this.configureNewInput = function (new_input, index) {
-      new_input.appendField()
+    this.configureNewInput = function (newInput, index) {
+      newInput.appendField()
         .setCheck(NclBlocks.USE_CHECK ? ['media_type', 'input_type', 'user_type', 'link_type'] : null)
     }
     // add name
@@ -662,8 +662,8 @@ Blockly.Blocks.video = {
     // InputStackMixin config
     this.stack_size = 0
     this.stack_of_value_input = false
-    this.configureNewInput = function (new_input, index) {
-      new_input.appendField(NclBlocks.Msg.PORTION)
+    this.configureNewInput = function (newInput, index) {
+      newInput.appendField(NclBlocks.Msg.PORTION)
         .appendField(new IdFieldText('', 'media'), 'id_area' + index)
         .appendField(NclBlocks.Msg.ANCHOR_BEGIN)
         .appendField(new Blockly.FieldTextInput(''), 'begin' + index)
@@ -690,8 +690,8 @@ Blockly.Blocks.audio = {
     // InputStackMixin config
     this.stack_size = 0
     this.stack_of_value_input = false
-    this.configureNewInput = function (new_input, index) {
-      new_input.appendField(NclBlocks.Msg.PORTION)
+    this.configureNewInput = function (newInput, index) {
+      newInput.appendField(NclBlocks.Msg.PORTION)
         .appendField(new IdFieldText('', 'media'), 'id_area' + index)
         .appendField(NclBlocks.Msg.ANCHOR_BEGIN)
         .appendField(new Blockly.FieldTextInput(''), 'begin' + index)
@@ -718,8 +718,8 @@ Blockly.Blocks.ssml = {
     // InputStackMixin config
     this.stack_size = 0
     this.stack_of_value_input = false
-    this.configureNewInput = function (new_input, index) {
-      new_input.appendField(NclBlocks.Msg.PORTION)
+    this.configureNewInput = function (newInput, index) {
+      newInput.appendField(NclBlocks.Msg.PORTION)
         .appendField(new IdFieldText('', 'media'), 'id_area' + index)
         .appendField(NclBlocks.Msg.SSML_ANCHOR)
         .appendField(new Blockly.FieldTextInput(''), 'label' + index)
@@ -766,8 +766,8 @@ Blockly.Blocks.srgs = {
     // InputStackMixin config
     this.stack_size = 0
     this.stack_of_value_input = false
-    this.configureNewInput = function (new_input, index) {
-      new_input.appendField(NclBlocks.Msg.PORTION)
+    this.configureNewInput = function (newInput, index) {
+      newInput.appendField(NclBlocks.Msg.PORTION)
         .appendField(new IdFieldText('', 'input'), 'id_area' + index)
         .appendField(NclBlocks.Msg.SRGS_ANCHOR)
         .appendField(new Blockly.FieldTextInput(''), 'label' + index)
@@ -792,8 +792,8 @@ Blockly.Blocks.hand_gesture = {
     // InputStackMixin config
     this.stack_size = 0
     this.stack_of_value_input = false
-    this.configureNewInput = function (new_input, index) {
-      new_input.appendField(NclBlocks.Msg.PORTION)
+    this.configureNewInput = function (newInput, index) {
+      newInput.appendField(NclBlocks.Msg.PORTION)
         .appendField(new IdFieldText('', 'input'), 'id_area' + index)
         .appendField(NclBlocks.Msg.HAND_GESTURE_ANCHOR)
         .appendField(new Blockly.FieldTextInput(''), 'label' + index)
@@ -822,8 +822,8 @@ Blockly.Blocks.user = {
     // InputStackMixin config
     this.stack_size = 0
     this.stack_of_value_input = true
-    this.configureNewInput = function (new_input, index) {
-      new_input.appendField(NclBlocks.Msg.WITH_DEVICE)
+    this.configureNewInput = function (newInput, index) {
+      newInput.appendField(NclBlocks.Msg.WITH_DEVICE)
         .setCheck(NclBlocks.USE_CHECK ? 'user_device_type' : null)
     }
     // add name
@@ -1009,8 +1009,8 @@ Blockly.Blocks.compoundcondition = {
     // InputStackMixin config
     this.stack_size = 0
     this.stack_of_value_input = true
-    this.configureNewInput = function (new_input, index) {
-      new_input.setCheck(NclBlocks.USE_CHECK ? 'condition_type' : null)
+    this.configureNewInput = function (newInput, index) {
+      newInput.setCheck(NclBlocks.USE_CHECK ? 'condition_type' : null)
     }
     // add name
     this.appendDummyInput()
