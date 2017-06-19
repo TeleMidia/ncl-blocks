@@ -426,7 +426,7 @@ InputStackMixin = {
 NclBlockMixin = {
   sharedInit: function () {
     this.contextMenu = false;
-    // this.setInputsInline(false);
+    this.setInputsInline(false);
   },
   mediaLikeInit: function (isSRC = false) {
     this.sharedInit();
@@ -458,11 +458,13 @@ NclBlockMixin = {
     if (NclBlocks.USE_BODY == true) this.setOutput(true, 'link_type');
   },
   conditionLikeInit: function () {
+    this.sharedInit();
     this.setColour(NclBlocks.CONDITION_COLOUR);
     this.setOutput(true, NclBlocks.USE_CHECK ? 'condition_type' : null);
     if (NclBlocks.USE_BODY == true) this.setOutput(true, output_type);
   },
   actionLikeInit: function () {
+    this.sharedInit();
     this.setColour(NclBlocks.ACTION_COLOUR);
     this.setPreviousStatement(true, NclBlocks.USE_CHECK ? 'action_type' : null);
     this.setNextStatement(true, NclBlocks.USE_CHECK ? 'action_type' : null);
