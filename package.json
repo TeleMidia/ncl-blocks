@@ -16,7 +16,6 @@
       "NclBlocks": true,
       "Blockly": true,
       "_surveyJSON": true,
-      "calculateHeight": true,
       "SyntaxHighlighter": true
     }
   }

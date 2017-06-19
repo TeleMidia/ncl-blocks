@@ -105,24 +105,24 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
   switch (questionName) {
     case 'concepts_blocks_intro1':
       NclBlocks.injectInDiv(_pathToBlockly, questionId,
-        calculateHeight(3, 130), _conceptsBlocks1Xml, true)
+        NclBlocks.calculateHeight(3, 130), _conceptsBlocks1Xml, true)
       break
     case 'concepts_blocks_intro2':
       NclBlocks.injectInDiv(_pathToBlockly, questionId,
-        calculateHeight(5, 140), _conceptsBlocks2Xml,
+        NclBlocks.calculateHeight(5, 140), _conceptsBlocks2Xml,
         true)
       break
     case 'concepts_blocks_intro3':
       NclBlocks.injectInDiv(_pathToBlockly, questionId,
-        calculateHeight(6, 150), _conceptsBlocks3Xml, true)
+        NclBlocks.calculateHeight(6, 150), _conceptsBlocks3Xml, true)
       break
     case 'concepts_blocks_intro4':
       NclBlocks.injectInDiv(_pathToBlockly, questionId,
-        calculateHeight(1, 80), _conceptsBlocks4Xml, true)
+        NclBlocks.calculateHeight(1, 80), _conceptsBlocks4Xml, true)
       break
     case 'concepts_task1':
       NclBlocks.injectInDiv(_pathToBlockly, questionId,
-        calculateHeight(1, 80), _conceptsTask1Xml, true)
+        NclBlocks.calculateHeight(1, 80), _conceptsTask1Xml, true)
       break
     case 'concepts_task2':
       _conceptsTask2Workspace = NclBlocks.injectInDiv(_pathToBlockly,
@@ -131,7 +131,7 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       break
     case 'concepts_task3':
       NclBlocks.injectInDiv(_pathToBlockly, questionId,
-        calculateHeight(1, 80), _conceptsTask3Xml, true)
+        NclBlocks.calculateHeight(1, 80), _conceptsTask3Xml, true)
       break
     case 'concepts_task4':
       _conceptsTask4Workspace = NclBlocks.injectInDiv(_pathToBlockly,

@@ -137,31 +137,31 @@
     $("#alignTwoColumnsInXML").click(function () {
       if (testEmptyXML()) return;
       var actual_xml = $("#xmlcode").val();
-      $("#xmlcode").val(alignTwoColumnsInXML(actual_xml)).trigger("change");
+      $("#xmlcode").val(NclBlocks.alignTwoColumnsInXML(actual_xml)).trigger("change");
     });
 
     $("#moveLeftBlocksInXML").click(function () {
       if (testEmptyXML()) return;
       var actual_xml = $("#xmlcode").val();
-      $("#xmlcode").val(moveLeftBlocksInXML(actual_xml)).trigger("change");
+      $("#xmlcode").val(NclBlocks.moveLeftBlocksInXML(actual_xml)).trigger("change");
     });
 
     $("#moveRightBlocksInXML").click(function () {
       if (testEmptyXML()) return;
       var actual_xml = $("#xmlcode").val();
-      $("#xmlcode").val(moveRightBlocksInXML(actual_xml)).trigger("change");
+      $("#xmlcode").val(NclBlocks.moveRightBlocksInXML(actual_xml)).trigger("change");
     });
 
     $("#moveUpBlocksInXML").click(function () {
       if (testEmptyXML()) return;
       var actual_xml = $("#xmlcode").val();
-      $("#xmlcode").val(moveUpBlocksInXML(actual_xml)).trigger("change");
+      $("#xmlcode").val(NclBlocks.moveUpBlocksInXML(actual_xml)).trigger("change");
     });
 
     $("#moveDownBlocksInXML").click(function () {
       if (testEmptyXML()) return;
       var actual_xml = $("#xmlcode").val();
-      $("#xmlcode").val(moveDownBlocksInXML(actual_xml)).trigger("change");
+      $("#xmlcode").val(NclBlocks.moveDownBlocksInXML(actual_xml)).trigger("change");
     });
   </script>
 

@@ -188,12 +188,12 @@ NclBlocks.useBody = function () {
 // xml blocks functions
 // ----------------------------------------
 
-function calculateHeight (numBlocks, oneBlockHeight) {
+NclBlocks.calculateHeight = function (numBlocks, oneBlockHeight) {
   return 20 * (1 + numBlocks) + oneBlockHeight * numBlocks + 'px'
 }
 
-function alignTwoColumnsInXML (xml) {
-  function replaceXY (match, p1, p2) {
+NclBlocks.alignTwoColumnsInXML = function (xml) {
+  var replaceXY = function (match, p1, p2) {
     var x = p1
     var y = p2
     if (p1 < 300) { // first column
@@ -207,8 +207,8 @@ function alignTwoColumnsInXML (xml) {
   return xmlAligned
 }
 
-function moveLeftBlocksInXML (xml) {
-  function replaceXY (match, p1, p2) {
+NclBlocks.moveLeftBlocksInXML = function (xml) {
+  var replaceXY = function (match, p1, p2) {
     var x = p1
     var y = p2
     return 'x="' + (parseInt(x) - 20) + '" y="' + y + '"'
@@ -217,8 +217,8 @@ function moveLeftBlocksInXML (xml) {
   return xmlAligned
 }
 
-function moveRightBlocksInXML (xml) {
-  function replaceXY (match, p1, p2) {
+NclBlocks.moveRightBlocksInXML = function (xml) {
+  var replaceXY = function (match, p1, p2) {
     var x = p1
     var y = p2
     return 'x="' + (parseInt(x) + 20) + '" y="' + y + '"'
@@ -227,8 +227,8 @@ function moveRightBlocksInXML (xml) {
   return xmlAligned
 }
 
-function moveUpBlocksInXML (xml) {
-  function replaceXY (match, p1, p2) {
+NclBlocks.moveUpBlocksInXML = function (xml) {
+  var replaceXY = function (match, p1, p2) {
     var x = p1
     var y = p2
     return 'x="' + x + '" y="' + (parseInt(y) - 20) + '"'
@@ -237,8 +237,8 @@ function moveUpBlocksInXML (xml) {
   return xmlAligned
 }
 
-function moveDownBlocksInXML (xml) {
-  function replaceXY (match, p1, p2) {
+NclBlocks.moveDownBlocksInXML = function (xml) {
+  var replaceXY = function (match, p1, p2) {
     var x = p1
     var y = p2
     return 'x="' + x + '" y="' + (parseInt(y) + 20) + '"'
