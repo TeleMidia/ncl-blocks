@@ -519,11 +519,15 @@ var IdFieldText = function (text, idType) {
 goog.inherits(IdFieldText, Blockly.FieldTextInput)
 
 IdFieldText.prototype.createIdArrays = function () {
-  if (!this.sourceBlock_.workspace.mediaIds) { this.sourceBlock_.workspace.mediaIds = [['-', '-']] } else if (!this.sourceBlock_.workspace.inputIds) { this.sourceBlock_.workspace.inputIds = [['-', '-']] } else if (!this.sourceBlock_.workspace.userIds) { this.sourceBlock_.workspace.userIds = [['-', '-']] }
+  if (!this.sourceBlock_.workspace.mediaIds) {
+    this.sourceBlock_.workspace.mediaIds = [['-', '-']]
+  } else if (!this.sourceBlock_.workspace.inputIds) {
+    this.sourceBlock_.workspace.inputIds = [['-', '-']]
+  } else if (!this.sourceBlock_.workspace.userIds) { this.sourceBlock_.workspace.userIds = [['-', '-']] }
 }
 
 IdFieldText.prototype.validateId = function (text) {
-  if (!text) return
+  if (!text) return text
   // empty or at toolbox
   if (!this.sourceBlock_.workspace) return null
   // at workspace and no mediaIds
@@ -541,6 +545,7 @@ IdFieldText.prototype.validateId = function (text) {
       if (this.sourceBlock_.workspace.userIds[i][0] === text) { return null }
     }
   }
+  return text
 }
 
 IdFieldText.prototype.onFinishEditing_ = function (text) {
@@ -554,7 +559,7 @@ IdFieldText.prototype.setText = function (newText) {
 
 IdFieldText.prototype.setValue = function (text) {
   // set from xml
-  if (!this.workspace_) this.saveId(text)
+  if (!this.workspace_ && this.validateId(text)) this.saveId(text)
   Blockly.Field.prototype.setValue.call(this, text)
 }
 
@@ -567,7 +572,13 @@ IdFieldText.prototype.saveId = function (text) {
   if (text === '') return
   // console.log(this)
   this.createIdArrays()
-  if (this.idType === 'media') { this.sourceBlock_.workspace.mediaIds.push([text, text]) } else if (this.idType === 'input') { this.sourceBlock_.workspace.inputIds.push([text, text]) } else if (this.idType === 'user') { this.sourceBlock_.workspace.userIds.push([text, text]) }
+  if (this.idType === 'media') {
+    this.sourceBlock_.workspace.mediaIds.push([text, text])
+  } else if (this.idType === 'input') {
+    this.sourceBlock_.workspace.inputIds.push([text, text])
+  } else if (this.idType === 'user') {
+    this.sourceBlock_.workspace.userIds.push([text, text])
+  }
 }
 
 IdFieldText.prototype.removeId = function () {
