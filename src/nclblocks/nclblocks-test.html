@@ -55,114 +55,114 @@
   </table>
   <script>
     Blockly.pathToBlockly = './'
-    // NclBlocks.useBody();
-    var _workspace = NclBlocks.injectInDiv("./", "divToInject", "800px");
-    // var _workspace = NclBlocks.injectInDiv("./", "content", "800px", "", false, ["excludeRecognition", "excludeResumePauseSet"]);
+    // NclBlocks.useBody()
+    var _workspace = NclBlocks.injectInDiv('./', 'divToInject', '800px')
+    // var _workspace = NclBlocks.injectInDiv('./', 'content', '800px', '', false, ['excludeRecognition', 'excludeResumePauseSet'])
 
-    // ---------------------------------------- 
+    // ----------------------------------------
     // blocks buttons functions
     // ----------------------------------------
 
-    $("#clearBlocks").click(function () {
-      _workspace.clear();
-    });
+    $('#clearBlocks').click(function () {
+      _workspace.clear()
+    })
 
-    // ---------------------------------------- 
+    // ----------------------------------------
     // xml buttons functions
     // ----------------------------------------
 
     $('#autoLoadFromBlocks').change(function () {
-      var checked_value = $(this).is(':checked');
-      $("#injectBlocksFromXML").prop("disabled", checked_value);
-      $("#loadXMLfromBlocks").prop("disabled", checked_value);
-      $("#clearXML").prop("disabled", checked_value);
-      $("#autoInjectBlocksFromXML").prop("disabled", checked_value);
-      $("#alignTwoColumnsInXML").prop("disabled", checked_value);
-      $("#moveLeftBlocksInXML").prop("disabled", checked_value);
-      $("#moveRightBlocksInXML").prop("disabled", checked_value);
-      $("#moveUpBlocksInXML").prop("disabled", checked_value);
-      $("#moveDownBlocksInXML").prop("disabled", checked_value);
-      $("#xmlcode").prop("disabled", checked_value);
-      if (checked_value) {
-        loadXMLfromBlocks();
-        _workspace.addChangeListener(loadXMLfromBlocks);
+      var checkedValue = $(this).is(':checked')
+      $('#injectBlocksFromXML').prop('disabled', checkedValue)
+      $('#loadXMLfromBlocks').prop('disabled', checkedValue)
+      $('#clearXML').prop('disabled', checkedValue)
+      $('#autoInjectBlocksFromXML').prop('disabled', checkedValue)
+      $('#alignTwoColumnsInXML').prop('disabled', checkedValue)
+      $('#moveLeftBlocksInXML').prop('disabled', checkedValue)
+      $('#moveRightBlocksInXML').prop('disabled', checkedValue)
+      $('#moveUpBlocksInXML').prop('disabled', checkedValue)
+      $('#moveDownBlocksInXML').prop('disabled', checkedValue)
+      $('#xmlcode').prop('disabled', checkedValue)
+      if (checkedValue) {
+        loadXMLfromBlocks()
+        _workspace.addChangeListener(loadXMLfromBlocks)
       } else {
-        _workspace.removeChangeListener(loadXMLfromBlocks);
+        _workspace.removeChangeListener(loadXMLfromBlocks)
       }
-    });
+    })
 
-    function testEmptyXML() {
-      if ($("#xmlcode").val() == "") {
-        $("#xmlcode").val("empty XML");
-        return true;
-      }
-      else false;
+    var testEmptyXML = function () {
+      if ($('#xmlcode').val() === '') {
+        $('#xmlcode').val('empty XML')
+        return true
+      } else return false
     }
 
-    function injectBlocksFromXML() {
-      if (testEmptyXML()) return;
-      _workspace.clear();
-      var workspace_xml = Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom($("#xmlcode").val()), _workspace);
+    var injectBlocksFromXML = function () {
+      if (testEmptyXML()) return
+      _workspace.clear()
+      Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom($('#xmlcode').val()), _workspace)
     }
 
     $('#autoInjectBlocksFromXML').change(function () {
-      var checked_value = $(this).is(':checked');
-      $("#autoLoadFromBlocks").prop("disabled", checked_value);
-      $("#loadXMLfromBlocks").prop("disabled", checked_value);
-      $("#injectBlocksFromXML").prop("disabled", checked_value);
-      $("#clearXML").prop("disabled", checked_value);
-      if ($(this).is(':checked'))
-        $("#xmlcode").change(injectBlocksFromXML);
-      else
-        $("#xmlcode").unbind("change", injectBlocksFromXML);
-    });
-
-    $("#injectBlocksFromXML").click(injectBlocksFromXML);
-
-    function loadXMLfromBlocks() {
-      var workspace_xml = Blockly.Xml.domToText(Blockly.Xml.workspaceToDom(_workspace));
-      if (_workspace.getAllBlocks().length == 0) {
-        $("#xmlcode").val("empty workspace");
-        return;
+      var checkedValue = $(this).is(':checked')
+      $('#autoLoadFromBlocks').prop('disabled', checkedValue)
+      $('#loadXMLfromBlocks').prop('disabled', checkedValue)
+      $('#injectBlocksFromXML').prop('disabled', checkedValue)
+      $('#clearXML').prop('disabled', checkedValue)
+      if ($(this).is(':checked')) {
+        $('#xmlcode').change(injectBlocksFromXML)
+      } else {
+        $('#xmlcode').unbind('change', injectBlocksFromXML)
       }
-      $("#xmlcode").val(workspace_xml);
+    })
+
+    $('#injectBlocksFromXML').click(injectBlocksFromXML)
+
+    var loadXMLfromBlocks = function () {
+      var workspaceXml = Blockly.Xml.domToText(Blockly.Xml.workspaceToDom(_workspace))
+      if (_workspace.getAllBlocks().length === 0) {
+        $('#xmlcode').val('empty workspace')
+        return
+      }
+      $('#xmlcode').val(workspaceXml)
     }
 
-    $("#loadXMLfromBlocks").click(loadXMLfromBlocks);
+    $('#loadXMLfromBlocks').click(loadXMLfromBlocks)
 
-    $("#clearXML").click(function () {
-      $("#xmlcode").val("");
-    });
+    $('#clearXML').click(function () {
+      $('#xmlcode').val('')
+    })
 
-    $("#alignTwoColumnsInXML").click(function () {
-      if (testEmptyXML()) return;
-      var actual_xml = $("#xmlcode").val();
-      $("#xmlcode").val(NclBlocks.alignTwoColumnsInXML(actual_xml)).trigger("change");
-    });
+    $('#alignTwoColumnsInXML').click(function () {
+      if (testEmptyXML()) return
+      var actualXml = $('#xmlcode').val()
+      $('#xmlcode').val(NclBlocks.alignTwoColumnsInXML(actualXml)).trigger('change')
+    })
 
-    $("#moveLeftBlocksInXML").click(function () {
-      if (testEmptyXML()) return;
-      var actual_xml = $("#xmlcode").val();
-      $("#xmlcode").val(NclBlocks.moveLeftBlocksInXML(actual_xml)).trigger("change");
-    });
+    $('#moveLeftBlocksInXML').click(function () {
+      if (testEmptyXML()) return
+      var actualXml = $('#xmlcode').val()
+      $('#xmlcode').val(NclBlocks.moveLeftBlocksInXML(actualXml)).trigger('change')
+    })
 
-    $("#moveRightBlocksInXML").click(function () {
-      if (testEmptyXML()) return;
-      var actual_xml = $("#xmlcode").val();
-      $("#xmlcode").val(NclBlocks.moveRightBlocksInXML(actual_xml)).trigger("change");
-    });
+    $('#moveRightBlocksInXML').click(function () {
+      if (testEmptyXML()) return
+      var actualXml = $('#xmlcode').val()
+      $('#xmlcode').val(NclBlocks.moveRightBlocksInXML(actualXml)).trigger('change')
+    })
 
-    $("#moveUpBlocksInXML").click(function () {
-      if (testEmptyXML()) return;
-      var actual_xml = $("#xmlcode").val();
-      $("#xmlcode").val(NclBlocks.moveUpBlocksInXML(actual_xml)).trigger("change");
-    });
+    $('#moveUpBlocksInXML').click(function () {
+      if (testEmptyXML()) return
+      var actualXml = $('#xmlcode').val()
+      $('#xmlcode').val(NclBlocks.moveUpBlocksInXML(actualXml)).trigger('change')
+    })
 
-    $("#moveDownBlocksInXML").click(function () {
-      if (testEmptyXML()) return;
-      var actual_xml = $("#xmlcode").val();
-      $("#xmlcode").val(NclBlocks.moveDownBlocksInXML(actual_xml)).trigger("change");
-    });
+    $('#moveDownBlocksInXML').click(function () {
+      if (testEmptyXML()) return
+      var actualXml = $('#xmlcode').val()
+      $('#xmlcode').val(NclBlocks.moveDownBlocksInXML(actualXml)).trigger('change')
+    })
   </script>
 
 </body>

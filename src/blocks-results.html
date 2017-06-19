@@ -51,97 +51,100 @@
     </tr>
   </table>
   <script>
-    // ---------------------------------------- 
+    // ----------------------------------------
     // blockly
-    // ---------------------------------------- 
-    var _workspace = NclBlocks.injectInDiv('nclblocks/', 'divToInject', "800px", "", true);
+    // ----------------------------------------
+    var _workspace = NclBlocks.injectInDiv('nclblocks/', 'divToInject', '800px', '', true)
 
-    // ---------------------------------------- 
+    // ----------------------------------------
     // request
-    // ---------------------------------------- 
+    // ----------------------------------------
     // wget dxsurvey.com/api/MySurveys/getSurveyResults/59bd2657-93ac-492c-8dd5-134a10ebd69a?accessKey=d72526e70b814a3d8f918b60b94dafe4 -O result.json
-    var _results_data
+    var _resultsData
 
-    $.get("http://dxsurvey.com/api/MySurveys/getSurveyResults/59bd2657-93ac-492c-8dd5-134a10ebd69a?accessKey=d72526e70b814a3d8f918b60b94dafe4", function (data) {
-      _results_data = data.Data;
-      for (var i = 0; i < _results_data.length; i++) {
-        $("#resultIndex").append($('<option>').attr("value", i).html(i));
+    $.get('http://dxsurvey.com/api/MySurveys/getSurveyResults/59bd2657-93ac-492c-8dd5-134a10ebd69a?accessKey=d72526e70b814a3d8f918b60b94dafe4', function (data) {
+      _resultsData = data.Data
+      var i
+      for (i = 0; i < _resultsData.length; i++) {
+        $('#resultIndex').append($('<option>').attr('value', i).html(i))
       }
-    });
+    })
 
-
-    // ---------------------------------------- 
+    // ----------------------------------------
     // choose result
-    // ---------------------------------------- 
+    // ----------------------------------------
 
-    function testEmptyXML() {
-      if ($("#xmlcode").val() == "") {
-        $("#xmlcode").val("empty XML");
-        return true;
+    var testEmptyXML = function () {
+      if ($('#xmlcode').val() === '') {
+        $('#xmlcode').val('empty XML')
+        return true
+      } else {
+        return false
       }
-      else false;
     }
 
-    function clearBothBlocksXml() {
-      _workspace.clear();
-      $("#xmlcode").val("");
+    var clearBothBlocksXml = function () {
+      _workspace.clear()
+      $('#xmlcode').val('')
     }
 
-    $("#blockTask").change(function () {
-      clearBothBlocksXml();
-      $("#resultIndex").val("-")
-    });
+    $('#blockTask').change(function () {
+      clearBothBlocksXml()
+      $('#resultIndex').val('-')
+    })
 
-    $("#resultIndex").change(function () {
-      if (_results_data == null) return;
-      clearBothBlocksXml();
+    $('#resultIndex').change(function () {
+      if (_resultsData == null) return
+      clearBothBlocksXml()
 
-      var selected = $("#resultIndex option:selected").val();
-      if (selected == '-') return;
-      var select_index = parseInt(selected);
-      var saved_workspace_xml;
-      if ($("#blockTask option:selected").val() == "concepts_task2")
-        saved_workspace_xml = _results_data[select_index].concepts_task2_result;
-      else if ($("#blockTask option:selected").val() == "concepts_task4")
-        saved_workspace_xml = _results_data[select_index].concepts_task4_result;
-      // console.log(saved_workspace_xml);
-      $("#xmlcode").val(saved_workspace_xml);
-      Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(saved_workspace_xml), _workspace);
-      testEmptyXML();
-    });
+      var selected = $('#resultIndex option:selected').val()
+      if (selected === '-') return
+      var selectIndex = parseInt(selected)
+      var savedWorkspaceXml
+      if ($('#blockTask option:selected').val() === 'concepts_task2') {
+        savedWorkspaceXml = _resultsData[selectIndex].concepts_task2_result
+      } else if ($('#blockTask option:selected').val() === 'concepts_task4') {
+        savedWorkspaceXml = _resultsData[selectIndex].concepts_task4_result
+      }
+      // console.log(savedWorkspaceXml)
+      $('#xmlcode').val(savedWorkspaceXml)
+      Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(savedWorkspaceXml), _workspace)
+      testEmptyXML()
+    })
 
-    // ---------------------------------------- 
+    // ----------------------------------------
     // show changes button
-    // ---------------------------------------- 
-    var _run_event_frequency = 200;
-    var _run_event_interval_index = 0;
+    // ----------------------------------------
+    var _runEventFrequency = 200
+    var _runEventIntervalIndex = 0
     var runEventInterval = function (index) {
-      var result;
-      if ($("#blockTask option:selected").val() == "concepts_task2")
-        result = JSON.parse(_results_data[index].concepts_task2_changes);
-      else if ($("#blockTask option:selected").val() == "concepts_task4")
-        result = JSON.parse(_results_data[index].concepts_task4_changes);
-      if (_run_event_interval_index >= result.changes.length) {
-        clearInterval(runEventInterval);
-        return;
+      var result
+      if ($('#blockTask option:selected').val() === 'concepts_task2') {
+        result = JSON.parse(_resultsData[index].concepts_task2_changes)
+      } else if ($('#blockTask option:selected').val() === 'concepts_task4') {
+        result = JSON.parse(_resultsData[index].concepts_task4_changes)
       }
-      var json = result.changes[_run_event_interval_index];
-      // console.log(json);
-      var event = Blockly.Events.fromJson(json, _workspace);
-      event.run(true);
-      _run_event_interval_index++;
+      if (_runEventIntervalIndex >= result.changes.length) {
+        clearInterval(runEventInterval)
+        return
+      }
+      var json = result.changes[_runEventIntervalIndex]
+      // console.log(json)
+      var event = Blockly.Events.fromJson(json, _workspace)
+      event.run(true)
+      _runEventIntervalIndex++
     }
 
-    $("#showChanges").click(function () {
-      if (_results_data == null) return;
-      var selected = $("#resultIndex option:selected").val();
-      if (selected == '-') return;
-      _workspace.clear();
-      var index = parseInt(selected);
-      _run_event_interval_index = 0;
-      clearInterval(runEventInterval);
-      setInterval(runEventInterval, _run_event_frequency, index);
-    });
+    $('#showChanges').click(function () {
+      if (_resultsData == null) return
+      var selected = $('#resultIndex option:selected').val()
+      if (selected === '-') return
+      _workspace.clear()
+      var index = parseInt(selected)
+      _runEventIntervalIndex = 0
+      clearInterval(runEventInterval)
+      setInterval(runEventInterval, _runEventFrequency, index)
+    })
   </script>
 </body>
 
