@@ -424,28 +424,28 @@ NclBlockMixin = {
   mediaLikeInit: function (isSRC = false) {
     this.sharedInit()
     this.setColour(NclBlocks.MEDIA_COLOUR)
-    if (isSRC) { this.setOutput(true, NclBlocks.USE_CHECK ? 'media_src_type' : null) } else if (NclBlocks.USE_BODY == true) { this.setOutput(true, 'media_type') }
+    if (isSRC) { this.setOutput(true, NclBlocks.USE_CHECK ? 'media_src_type' : null) } else if (NclBlocks.USE_BODY === true) { this.setOutput(true, 'media_type') }
   },
   inputLikeInit: function (isSRC = false) {
     this.sharedInit()
     this.setColour(NclBlocks.INPUT_COLOUR)
-    if (isSRC) { this.setOutput(true, NclBlocks.USE_CHECK ? 'input_src_type' : null) } else if (NclBlocks.USE_BODY == true) { this.setOutput(true, 'input_type') }
+    if (isSRC) { this.setOutput(true, NclBlocks.USE_CHECK ? 'input_src_type' : null) } else if (NclBlocks.USE_BODY === true) { this.setOutput(true, 'input_type') }
   },
   userLikeInit: function (isSRC = false) {
     this.sharedInit()
     this.setColour(NclBlocks.USER_COLOUR)
-    if (isSRC) { this.setOutput(true, NclBlocks.USE_CHECK ? 'user_src_type' : null) } else if (NclBlocks.USE_BODY == true) { this.setOutput(true, 'user_type') }
+    if (isSRC) { this.setOutput(true, NclBlocks.USE_CHECK ? 'user_src_type' : null) } else if (NclBlocks.USE_BODY === true) { this.setOutput(true, 'user_type') }
   },
   linkLikeInit: function () {
     this.sharedInit()
     this.setColour(NclBlocks.LINK_COLOUR)
-    if (NclBlocks.USE_BODY == true) this.setOutput(true, 'link_type')
+    if (NclBlocks.USE_BODY === true) this.setOutput(true, 'link_type')
   },
   conditionLikeInit: function () {
     this.sharedInit()
     this.setColour(NclBlocks.CONDITION_COLOUR)
     this.setOutput(true, NclBlocks.USE_CHECK ? 'condition_type' : null)
-    if (NclBlocks.USE_BODY == true) this.setOutput(true, output_type)
+    if (NclBlocks.USE_BODY === true) this.setOutput(true, output_type)
   },
   actionLikeInit: function () {
     this.sharedInit()
@@ -459,10 +459,10 @@ NclBlockMixin = {
 // IdFieldDropdown
 // ----------------------------------------
 
-IdFieldDropdown = function (idType) {
+var IdFieldDropdown = function (idType) {
   this.idType = idType
   menuGenerator = null
-  if (idType == 'media') { menuGenerator = this.getMediaIds } else if (idType == 'input') { menuGenerator = this.getInputIds } else if (idType == 'user') { menuGenerator = this.getUserIds } else if (idType == 'node') { menuGenerator = this.getBothMediaInputIds }
+  if (idType === 'media') { menuGenerator = this.getMediaIds } else if (idType === 'input') { menuGenerator = this.getInputIds } else if (idType === 'user') { menuGenerator = this.getUserIds } else if (idType === 'node') { menuGenerator = this.getBothMediaInputIds }
   IdFieldDropdown.superClass_.constructor.call(this, menuGenerator)
 }
 goog.inherits(IdFieldDropdown, Blockly.FieldDropdown)
@@ -503,7 +503,7 @@ IdFieldDropdown.prototype.getBothMediaInputIds = function () {
   var inputs = this.sourceBlock_.workspace.inputIds
   if (!inputs) inputs = [['-', '-']]
   var ret = medias.concat(inputs).sort()
-  if (ret[1][0] == '-') { ret.splice(1, 1) }
+  if (ret[1][0] === '-') { ret.splice(1, 1) }
   return ret
 }
 
@@ -511,7 +511,7 @@ IdFieldDropdown.prototype.getBothMediaInputIds = function () {
 // IdFieldText
 // ----------------------------------------
 
-IdFieldText = function (text, idType) {
+var IdFieldText = function (text, idType) {
   this.idType = idType
   IdFieldText.superClass_.constructor.call(this, text,
     this.validateId)
@@ -528,14 +528,14 @@ IdFieldText.prototype.validateId = function (text) {
   if (!this.sourceBlock_.workspace) return null
   // at workspace and no mediaIds
   this.createIdArrays()
-  if (this.idType == 'media' || this.idType == 'input') {
+  if (this.idType === 'media' || this.idType === 'input') {
     for (i in this.sourceBlock_.workspace.mediaIds) {
       if (this.sourceBlock_.workspace.mediaIds[i][0] === text) { return null }
     }
     for (i in this.sourceBlock_.workspace.inputIds) {
       if (this.sourceBlock_.workspace.inputIds[i][0] === text) { return null }
     }
-  } else if (this.idType == 'user') {
+  } else if (this.idType === 'user') {
     for (i in this.sourceBlock_.workspace.userIds) {
       if (this.sourceBlock_.workspace.userIds[i][0] === text) { return null }
     }
@@ -547,7 +547,7 @@ IdFieldText.prototype.onFinishEditing_ = function (text) {
 }
 
 IdFieldText.prototype.setText = function (newText) {
-  if (newText != this.text_) this.removeId()
+  if (newText !== this.text_) this.removeId()
   IdFieldText.superClass_.setText.call(this, newText)
 }
 
@@ -563,28 +563,29 @@ IdFieldText.prototype.dispose = function () {
 }
 
 IdFieldText.prototype.saveId = function (text) {
-  if (text == '') return
+  if (text === '') return
   // console.log(this)
   this.createIdArrays()
-  if (this.idType == 'media') { this.sourceBlock_.workspace.mediaIds.push([text, text]) } else if (this.idType == 'input') { this.sourceBlock_.workspace.inputIds.push([text, text]) } else if (this.idType == 'user') { this.sourceBlock_.workspace.userIds.push([text, text]) }
+  if (this.idType === 'media') { this.sourceBlock_.workspace.mediaIds.push([text, text]) } else if (this.idType === 'input') { this.sourceBlock_.workspace.inputIds.push([text, text]) } else if (this.idType === 'user') { this.sourceBlock_.workspace.userIds.push([text, text]) }
 }
 
 IdFieldText.prototype.removeId = function () {
   var index = -1
+  var i
   if (this.workspace_) {
-    if (this.idType == 'media' && this.workspace_.mediaIds) {
+    if (this.idType === 'media' && this.workspace_.mediaIds) {
       for (i = 0; i < this.workspace_.mediaIds.length; i++) {
-        if (this.workspace_.mediaIds[i][0] == this.text_) { index = index = i }
+        if (this.workspace_.mediaIds[i][0] === this.text_) { index = index = i }
       }
       if (index > -1) { this.workspace_.mediaIds.splice(index, 1) }
-    } else if (this.idType == 'input' && this.workspace_.inputIds) {
+    } else if (this.idType === 'input' && this.workspace_.inputIds) {
       for (i = 0; i < this.workspace_.inputIds.length; i++) {
-        if (this.workspace_.inputIds[i][0] == this.text_) { index = i }
+        if (this.workspace_.inputIds[i][0] === this.text_) { index = i }
       }
       if (index > -1) { this.workspace_.inputIds.splice(index, 1) }
-    } else if (this.idType == 'user' && this.workspace_.userIds) {
+    } else if (this.idType === 'user' && this.workspace_.userIds) {
       for (i = 0; i < this.workspace_.userIds.length; i++) {
-        if (this.workspace_.userIds[i][0] == this.text_) { index = i }
+        if (this.workspace_.userIds[i][0] === this.text_) { index = i }
       }
       if (index > -1) { this.workspace_.userIds.splice(this, index, 1) }
     }
