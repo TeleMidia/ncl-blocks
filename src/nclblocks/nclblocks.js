@@ -191,11 +191,7 @@ NclBlocks.useBody = function () {
 // ---------------------------------------- 
 
 function calculateHeight(num_blocks, one_block_height) {
-  var y_initial_padding = 20;
-  if (!num_blocks)
-    return y_initial_padding + 'px';
-  else
-    return y_initial_padding * (1 + num_blocks) + one_block_height * num_blocks + 'px';
+  return 20 * (1 + num_blocks) + one_block_height * num_blocks + 'px';
 }
 
 function alignTwoColumnsInXML(xml) {
@@ -586,7 +582,7 @@ IdFieldText.prototype.setText = function (newText) {
 
 IdFieldText.prototype.setValue = function (text) {
   // set from xml
-  if(!this.workspace_) this.saveId(text);
+  if (!this.workspace_) this.saveId(text);
   Blockly.Field.prototype.setValue.call(this, text);
 };
 
