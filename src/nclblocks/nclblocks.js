@@ -581,10 +581,11 @@ IdFieldText.prototype.onFinishEditing_ = function (text) {
   this.previous = text
 }
 
-IdFieldText.prototype.setText = function (text) {
-  // set from xml
+IdFieldText.prototype.setValue = function (text) {
+  // (!this.workspace_) means set from xml
   if (!this.workspace_ && this.validateId(text)) this.saveId(text)
-  Blockly.Field.prototype.setText.call(this, text)
+  if (!this.workspace_) this.previous = text
+  Blockly.Field.prototype.setValue.call(this, text)
 }
 
 IdFieldText.prototype.dispose = function () {
@@ -613,10 +614,8 @@ IdFieldText.prototype.removeId = function (text) {
   if (this.workspace_) {
     if (this.idType === 'media' && this.workspace_.mediaIds) {
       for (i = 0; i < this.workspace_.mediaIds.length; i++) {
-        // console.log(this.workspace_.mediaIds[i][0])
         if (this.workspace_.mediaIds[i][0] === text) { index = i }
       }
-      // console.log('remove index=' + index)
       if (index > -1) { this.workspace_.mediaIds.splice(index, 1) }
     } else if (this.idType === 'input' && this.workspace_.inputIds) {
       for (i = 0; i < this.workspace_.inputIds.length; i++) {
