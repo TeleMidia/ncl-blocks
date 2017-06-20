@@ -571,12 +571,10 @@ IdFieldText.prototype.validateId = function (text) {
 }
 
 IdFieldText.prototype.onFinishEditing_ = function (text) {
+  // save new
   this.saveId(text)
-}
-
-IdFieldText.prototype.setText = function (newText) {
-  if (newText !== this.text_) this.removeId()
-  IdFieldText.superClass_.setText.call(this, newText)
+  // remove old
+  if (text !== this.text_) this.removeActualId()
 }
 
 IdFieldText.prototype.setValue = function (text) {
@@ -586,7 +584,7 @@ IdFieldText.prototype.setValue = function (text) {
 }
 
 IdFieldText.prototype.dispose = function () {
-  this.removeId(this.text_)
+  this.removeActualId()
   IdFieldText.superClass_.dispose.call(this)
 }
 
@@ -603,7 +601,7 @@ IdFieldText.prototype.saveId = function (text) {
   }
 }
 
-IdFieldText.prototype.removeId = function () {
+IdFieldText.prototype.removeActualId = function () {
   var index = -1
   var i
   if (this.workspace_) {
