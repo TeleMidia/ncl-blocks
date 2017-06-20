@@ -348,7 +348,11 @@ var InputStackMixin = {
     // append element
     var newIndex = this.stack_size
     // console.log("append element_" + newIndex)
-    if (this.stack_of_value_input) { newInput = this.appendValueInput('element_' + newIndex) } else { newInput = this.appendDummyInput('element_' + newIndex) }
+    if (this.stack_of_value_input) {
+      newInput = this.appendValueInput('element_' + newIndex)
+    } else {
+      newInput = this.appendDummyInput('element_' + newIndex)
+    }
     this.configureNewInput(newInput, newIndex)
     this.moveInputBefore(newInput.name, 'edit')
     this.stack_size++
@@ -370,10 +374,7 @@ var InputStackMixin = {
     // console.log("remove element_" + rmIndex)
     var inputNameToDelete = 'element_' + rmIndex
     var substructure = this.getInputTargetBlock(inputNameToDelete)
-    if (substructure) {
-      substructure.outputConnection.disconnect()
-      // substructure.dispose(true, true)
-    }
+    if (substructure) substructure.outputConnection.disconnect()
     this.removeInput(inputNameToDelete)
     this.stack_size--
 
@@ -396,9 +397,9 @@ var InputStackMixin = {
     // console.log(xmlElement)
     // console.log(this)
     if (newLength - this.stack_size > 0) {
-      for (i = 0; i < newLength - this.stack_size; i++) { this.pushInput() }
+      for (i = 0; i < newLength - this.stack_size; i++) this.pushInput()
     } else {
-      for (i = 0; i < this.stack_size - newLength; i++) { this.popInput() }
+      for (i = 0; i < this.stack_size - newLength; i++) this.popInput()
     }
   },
 
@@ -425,17 +426,29 @@ var NclBlockMixin = {
   mediaLikeInit: function (isSRC = false) {
     this.sharedInit()
     this.setColour(NclBlocks.MEDIA_COLOUR)
-    if (isSRC) { this.setOutput(true, NclBlocks.USE_CHECK ? 'media_src_type' : null) } else if (NclBlocks.USE_BODY === true) { this.setOutput(true, 'media_type') }
+    if (isSRC) {
+      this.setOutput(true, NclBlocks.USE_CHECK ? 'media_src_type' : null)
+    } else if (NclBlocks.USE_BODY === true) {
+      this.setOutput(true, 'media_type')
+    }
   },
   inputLikeInit: function (isSRC = false) {
     this.sharedInit()
     this.setColour(NclBlocks.INPUT_COLOUR)
-    if (isSRC) { this.setOutput(true, NclBlocks.USE_CHECK ? 'input_src_type' : null) } else if (NclBlocks.USE_BODY === true) { this.setOutput(true, 'input_type') }
+    if (isSRC) {
+      this.setOutput(true, NclBlocks.USE_CHECK ? 'input_src_type' : null)
+    } else if (NclBlocks.USE_BODY === true) {
+      this.setOutput(true, 'input_type')
+    }
   },
   userLikeInit: function (isSRC = false) {
     this.sharedInit()
     this.setColour(NclBlocks.USER_COLOUR)
-    if (isSRC) { this.setOutput(true, NclBlocks.USE_CHECK ? 'user_src_type' : null) } else if (NclBlocks.USE_BODY === true) { this.setOutput(true, 'user_type') }
+    if (isSRC) {
+      this.setOutput(true, NclBlocks.USE_CHECK ? 'user_src_type' : null)
+    } else if (NclBlocks.USE_BODY === true) {
+      this.setOutput(true, 'user_type')
+    }
   },
   linkLikeInit: function () {
     this.sharedInit()
@@ -462,7 +475,10 @@ var NclBlockMixin = {
 var IdFieldDropdown = function (idType) {
   this.idType = idType
   var menuGenerator = null
-  if (idType === 'media') { menuGenerator = this.getMediaIds } else if (idType === 'input') { menuGenerator = this.getInputIds } else if (idType === 'user') { menuGenerator = this.getUserIds } else if (idType === 'node') { menuGenerator = this.getBothMediaInputIds }
+  if (idType === 'media') menuGenerator = this.getMediaIds
+  else if (idType === 'input') menuGenerator = this.getInputIds
+  else if (idType === 'user') menuGenerator = this.getUserIds
+  else if (idType === 'node') menuGenerator = this.getBothMediaInputIds
   IdFieldDropdown.superClass_.constructor.call(this, menuGenerator)
 }
 goog.inherits(IdFieldDropdown, Blockly.FieldDropdown)
@@ -480,7 +496,9 @@ IdFieldDropdown.prototype.getInputIds = function () {
   // at toolbox
   if (!this.sourceBlock_) return [['-', '-']]
   // at workspace and no inputIds
-  if (!this.sourceBlock_.workspace.inputIds) { this.sourceBlock_.workspace.inputIds = [['-', '-']] }
+  if (!this.sourceBlock_.workspace.inputIds) {
+    this.sourceBlock_.workspace.inputIds = [['-', '-']]
+  }
   // at workspace
   return this.sourceBlock_.workspace.inputIds
 }
@@ -489,7 +507,9 @@ IdFieldDropdown.prototype.getUserIds = function () {
   // at toolbox
   if (!this.sourceBlock_) return [['-', '-']]
   // at workspace and no userIds
-  if (!this.sourceBlock_.workspace.userIds) { this.sourceBlock_.workspace.userIds = [['-', '-']] }
+  if (!this.sourceBlock_.workspace.userIds) {
+    this.sourceBlock_.workspace.userIds = [['-', '-']]
+  }
   // at workspace
   return this.sourceBlock_.workspace.userIds
 }
@@ -503,7 +523,7 @@ IdFieldDropdown.prototype.getBothMediaInputIds = function () {
   var inputs = this.sourceBlock_.workspace.inputIds
   if (!inputs) inputs = [['-', '-']]
   var ret = medias.concat(inputs).sort()
-  if (ret[1][0] === '-') { ret.splice(1, 1) }
+  if (ret[1][0] === '-') ret.splice(1, 1)
   return ret
 }
 
@@ -523,7 +543,9 @@ IdFieldText.prototype.createIdArrays = function () {
     this.sourceBlock_.workspace.mediaIds = [['-', '-']]
   } else if (!this.sourceBlock_.workspace.inputIds) {
     this.sourceBlock_.workspace.inputIds = [['-', '-']]
-  } else if (!this.sourceBlock_.workspace.userIds) { this.sourceBlock_.workspace.userIds = [['-', '-']] }
+  } else if (!this.sourceBlock_.workspace.userIds) {
+    this.sourceBlock_.workspace.userIds = [['-', '-']]
+  }
 }
 
 IdFieldText.prototype.validateId = function (text) {
@@ -535,14 +557,14 @@ IdFieldText.prototype.validateId = function (text) {
   var i
   if (this.idType === 'media' || this.idType === 'input') {
     for (i in this.sourceBlock_.workspace.mediaIds) {
-      if (this.sourceBlock_.workspace.mediaIds[i][0] === text) { return null }
+      if (this.sourceBlock_.workspace.mediaIds[i][0] === text) return null
     }
     for (i in this.sourceBlock_.workspace.inputIds) {
-      if (this.sourceBlock_.workspace.inputIds[i][0] === text) { return null }
+      if (this.sourceBlock_.workspace.inputIds[i][0] === text) return null
     }
   } else if (this.idType === 'user') {
     for (i in this.sourceBlock_.workspace.userIds) {
-      if (this.sourceBlock_.workspace.userIds[i][0] === text) { return null }
+      if (this.sourceBlock_.workspace.userIds[i][0] === text) return null
     }
   }
   return text
@@ -629,7 +651,7 @@ Blockly.Blocks.body = {
     // add edit buttons
     this.addMinusPlusDummyInput()
     // add initial inputs
-    for (var i = 0; i < 5; i++) { this.pushInput() }
+    for (var i = 0; i < 5; i++) this.pushInput()
   }
 }
 Object.assign(Blockly.Blocks.body, InputStackMixin)
