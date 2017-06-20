@@ -589,7 +589,7 @@ IdFieldText.prototype.dispose = function () {
 }
 
 IdFieldText.prototype.saveId = function (text) {
-  if (text === '') return
+  if (!text) return
   this.createIdArrays()
   if (this.idType === 'media') {
     this.sourceBlock_.workspace.mediaIds.push([text, text])
@@ -601,7 +601,7 @@ IdFieldText.prototype.saveId = function (text) {
 }
 
 IdFieldText.prototype.removeActualId = function () {
-  if (this.text_ === '') return
+  if (!this.text_) return
   var index = -1
   var i
   if (this.workspace_) {
