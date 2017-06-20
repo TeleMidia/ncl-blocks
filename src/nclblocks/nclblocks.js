@@ -7,6 +7,7 @@ NclBlocks.Icons = {}
 // ----------------------------------------
 // messsages
 // ----------------------------------------
+NclBlocks.Msg.AND = 'e'
 
 NclBlocks.Msg.BODY = 'app'
 NclBlocks.Msg.PORT = 'início da app'
@@ -37,10 +38,11 @@ NclBlocks.Msg.LINKS = 'sincronismos'
 NclBlocks.Msg.WHEN = 'quando'
 NclBlocks.Msg.DO = 'faça'
 NclBlocks.Msg.USER = 'usuário'
-NclBlocks.Msg.USERS = 'tipo de usuários'
+NclBlocks.Msg.USERS = 'usuários'
+NclBlocks.Msg.USERCLASS = 'tipo de usuários'
 NclBlocks.Msg.MAX_USERS = 'máximo de ususários'
 NclBlocks.Msg.DEVICE = 'dispositivo'
-NclBlocks.Msg.WITH_DEVICE = 'com dispositivo'
+NclBlocks.Msg.WITH_DEVICE = 'utilizam dispositivo'
 NclBlocks.Msg.DEVICES = 'dispositivos'
 NclBlocks.Msg.LEAP = 'sensor de gestos de mão'
 NclBlocks.Msg.MICROFONE = 'microfone'
@@ -54,9 +56,9 @@ NclBlocks.Msg.ONEND = 'terminar'
 NclBlocks.Msg.ONPAUSE = 'pausar'
 NclBlocks.Msg.ONRESUME = 'resumir'
 NclBlocks.Msg.ONSELECTION = 'selecionar'
-NclBlocks.Msg.SEQ = 'em sequencia'
-NclBlocks.Msg.AND = 'todos entre'
-NclBlocks.Msg.OR = 'um entre'
+NclBlocks.Msg.COMPOUND_CONDITION_SEQ = 'em sequencia'
+NclBlocks.Msg.COMPOUND_CONDITION_AND = 'todos entre'
+NclBlocks.Msg.COMPOUND_CONDITION_OR = 'um entre'
 NclBlocks.Msg.ACTION = 'ação'
 NclBlocks.Msg.ACTIONS = 'ações'
 NclBlocks.Msg.START = 'inicie'
@@ -862,12 +864,13 @@ Blockly.Blocks.user = {
     // add name
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.user, 25, 25, '*'))
-      .appendField('{' + NclBlocks.Msg.USERS + '}')
+      .appendField('{' + NclBlocks.Msg.USERCLASS + '}')
     this.appendDummyInput()
       .appendField('id')
       .appendField(new IdFieldText('', 'user'), 'id')
-      .appendField(NclBlocks.Msg.MAX_USERS)
+      .appendField(NclBlocks.Msg.AND)
       .appendField(new Blockly.FieldTextInput('2'))
+      .appendField(NclBlocks.Msg.USERS)
     // add edit buttons
     this.addMinusPlusDummyInput()
     // add one device
@@ -1048,8 +1051,8 @@ Blockly.Blocks.compoundcondition = {
     // add name
     this.appendDummyInput()
       .appendField(new Blockly.FieldDropdown([
-        [NclBlocks.Msg.SEQ, 'seq'], [NclBlocks.Msg.AND, 'and'],
-        [NclBlocks.Msg.OR, 'or']
+        [NclBlocks.Msg.COMPOUND_CONDITION_SEQ, 'seq'], [NclBlocks.Msg.COMPOUND_CONDITION_AND, 'and'],
+        [NclBlocks.Msg.COMPOUND_CONDITION_OR, 'or']
       ]), 'operator')
     // add plus button
     this.addMinusPlusDummyInput()
