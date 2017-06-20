@@ -573,10 +573,12 @@ IdFieldText.prototype.validateId = function (text) {
 }
 
 IdFieldText.prototype.onFinishEditing_ = function (text) {
-  // save new
-  this.saveId(text)
+  // console.log('this.previous=' + this.previous + ',text=' + text)
   // remove old
-  if (text !== this.text_) this.removeActualId()
+  if (this.previous) this.removeId(this.previous)
+  // save new
+  this.saveId(this.text_)
+  this.previous = text
 }
 
 IdFieldText.prototype.setText = function (text) {
@@ -586,12 +588,13 @@ IdFieldText.prototype.setText = function (text) {
 }
 
 IdFieldText.prototype.dispose = function () {
-  this.removeActualId()
+  this.removeId(this.text_)
   IdFieldText.superClass_.dispose.call(this)
 }
 
 IdFieldText.prototype.saveId = function (text) {
   if (!text) return
+  // console.log('saveId=' + text)
   this.createIdArrays()
   if (this.idType === 'media') {
     this.sourceBlock_.workspace.mediaIds.push([text, text])
@@ -602,24 +605,27 @@ IdFieldText.prototype.saveId = function (text) {
   }
 }
 
-IdFieldText.prototype.removeActualId = function () {
-  if (!this.text_) return
+IdFieldText.prototype.removeId = function (text) {
+  if (!text) return
+  // console.log('removeId=' + text)
   var index = -1
   var i
   if (this.workspace_) {
     if (this.idType === 'media' && this.workspace_.mediaIds) {
       for (i = 0; i < this.workspace_.mediaIds.length; i++) {
-        if (this.workspace_.mediaIds[i][0] === this.text_) { index = index = i }
+        // console.log(this.workspace_.mediaIds[i][0])
+        if (this.workspace_.mediaIds[i][0] === text) { index = i }
       }
+      // console.log('remove index=' + index)
       if (index > -1) { this.workspace_.mediaIds.splice(index, 1) }
     } else if (this.idType === 'input' && this.workspace_.inputIds) {
       for (i = 0; i < this.workspace_.inputIds.length; i++) {
-        if (this.workspace_.inputIds[i][0] === this.text_) { index = i }
+        if (this.workspace_.inputIds[i][0] === text) { index = i }
       }
       if (index > -1) { this.workspace_.inputIds.splice(index, 1) }
     } else if (this.idType === 'user' && this.workspace_.userIds) {
       for (i = 0; i < this.workspace_.userIds.length; i++) {
-        if (this.workspace_.userIds[i][0] === this.text_) { index = i }
+        if (this.workspace_.userIds[i][0] === text) { index = i }
       }
       if (index > -1) { this.workspace_.userIds.splice(this, index, 1) }
     }
