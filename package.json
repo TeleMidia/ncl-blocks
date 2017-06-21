@@ -9,6 +9,11 @@
     "env": {
       "browser": true
     },
+    "extends": "standard",
+    "plugins": [
+      "html",
+      "import"
+    ],
     "globals": {
       "$": true,
       "goog": true,
