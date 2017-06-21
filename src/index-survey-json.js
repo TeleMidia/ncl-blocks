@@ -125,7 +125,7 @@ var _surveyJSON = {
           Oviatt [2] define que interação multimodal visa o reconhecimento de interações baseadas em formas naturais de linguagem e comportamento humano.<br>
           Esse tipo de interação foi apoiado pelos recentes avanços nas tecnologias, especialmente no reconhecimento de fala, gestos de mão e corporais. Ilustrados a seguir, exemplos de <b>dispositivos de interação multimodal</b> são o LeapMotion para gestos de mão e Microsoft Kinect para reconhecimento de gestos coporais.<br><br>
           
-          <div class='text-center'><img class='img-thumbnail' style='height: 200px' src='assets/leap.jpg'><img class='img-thumbnail' style='height: 200px' src='assets/kinect.jpg'></div><br><br>
+          <div class='text-center'><img class='img-thumbnail' style='height: 200px' src='assets/voice.jpg'><img class='img-thumbnail' style='height: 200px' src='assets/leap.jpg'><img class='img-thumbnail' style='height: 200px' src='assets/kinect.jpg'></div><br><br>
           
           Modificamos a figura anterior, sobre criação e apresentação de um documento multimídia, para uso de interações multimodais. <br>
           Nessa nova figura, o autor do documento defini também <b>reconhecimentos de interações multimodais</b>, além das mídias e sincronismo.<br>
