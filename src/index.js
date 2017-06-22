@@ -15,7 +15,7 @@ Survey.surveyLocalization.locales['en'] = {
 }
 Survey.Survey.cssType = 'bootstrap'
 
-var _survey = new Survey.Model(_surveyJSON)
+var _survey = new Survey.Model(_data.surveyJSON)
 var _surveyCss = {
   // root
   'root': 'h4 panel panel-default',
@@ -105,24 +105,24 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
   switch (questionName) {
     case 'conceptsBlocksIntro1':
       NclBlocks.injectInDiv(_pathToBlockly, questionId,
-        NclBlocks.calculateHeight(3, 130), _conceptsBlocks1Xml, true)
+        NclBlocks.calculateHeight(3, 130), _data.conceptsBlocks1Xml, true)
       break
     case 'conceptsBlocksIntro2':
       NclBlocks.injectInDiv(_pathToBlockly, questionId,
-        NclBlocks.calculateHeight(5, 140), _conceptsBlocks2Xml,
+        NclBlocks.calculateHeight(5, 140), _data.conceptsBlocks2Xml,
         true)
       break
     case 'conceptsBlocksIntro3':
       NclBlocks.injectInDiv(_pathToBlockly, questionId,
-        NclBlocks.calculateHeight(6, 150), _conceptsBlocks3Xml, true)
+        NclBlocks.calculateHeight(6, 150), _data.conceptsBlocks3Xml, true)
       break
     case 'conceptsBlocksIntro4':
       NclBlocks.injectInDiv(_pathToBlockly, questionId,
-        NclBlocks.calculateHeight(1, 80), _conceptsBlocks4Xml, true)
+        NclBlocks.calculateHeight(1, 80), _data.conceptsBlocks4Xml, true)
       break
     case 'conceptsTask1Blocks':
       NclBlocks.injectInDiv(_pathToBlockly, questionId,
-        NclBlocks.calculateHeight(1, 80), _conceptsTask1Xml, true)
+        NclBlocks.calculateHeight(1, 80), _data.conceptsTask1Xml, true)
       break
     case 'conceptsTask2Blocks':
       _conceptsTask2Workspace = NclBlocks.injectInDiv(_pathToBlockly,
@@ -131,7 +131,7 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       break
     case 'conceptsTask3Blocks':
       NclBlocks.injectInDiv(_pathToBlockly, questionId,
-        NclBlocks.calculateHeight(1, 80), _conceptsTask3Xml, true)
+        NclBlocks.calculateHeight(1, 80), _data.conceptsTask3Xml, true)
       break
     case 'conceptsTask4Blocks':
       _conceptsTask4Workspace = NclBlocks.injectInDiv(_pathToBlockly,
@@ -139,361 +139,15 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       _conceptsTask4Workspace.addChangeListener(saveConceptsTask4Changes)
       break
     case 'nclCode1':
-      $('#' + questionId).append(_nclCode1)
+      $('#' + questionId).append(_data.nclCode1)
       SyntaxHighlighter.highlight()
       break
     case 'nclCode2':
-      $('#' + questionId).append(_nclCode2)
+      $('#' + questionId).append(_data.nclCode2)
       SyntaxHighlighter.highlight()
       break
   }
 }
-
-// ----------------------------------------
-// concepts page
-// ----------------------------------------
-
-var _conceptsBlocks1Xml = `
-  <xml xmlns="http://www.w3.org/1999/xhtml">
-    <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
-      <field name="id">video_intro</field>
-      <value name="src">
-        <block type="video" id="OFge%WW-~~.%rZKqZqym">
-          <mutation length="1"></mutation>
-          <field name="id_area0">creditos</field>
-          <field name="begin0">300s</field>
-          <field name="end0"></field>
-        </block>
-      </value>
-    </block>
-    <block type="media" id="+t:\`jo\`8XnsCt)G;2a5*" x="20" y="156">
-      <field name="id">video_centro</field>
-      <value name="src">
-        <block type="video" id="z4kqvt=PDc7wHJ^_4*_Y">
-          <mutation length="1"></mutation>
-          <field name="id_area0"></field>
-          <field name="begin0"></field>
-          <field name="end0"></field>
-        </block>
-      </value>
-    </block>
-    <block type="media" id="\`@uz^*4@1j3@rz9Vn* py" x="20" y="295">
-      <field name="id">video_praia</field>
-      <value name="src">
-        <block type="video" id=".+S0jxJ, D, O1Sw~Z\`Uo0">
-          <mutation length="1"></mutation>
-          <field name="id_area0"></field>
-          <field name="begin0"></field>
-          <field name="end0"></field>
-        </block>
-      </value>
-    </block>
-    <block type="media" id="PnS;4T$~ftTn7U;nWSZb" x="550" y="208">
-      <field name="id">img_centro</field>
-      <value name="src">
-        <block type="image" id="n8jL;6KJe-2c6B~=pPj(">
-        </block>
-      </value>
-    </block>
-    <block type="media" id="IawJU?Sm-z4If\`ixT^_p" x="20" y="301">
-      <field name="id">video_praia</field>
-      <value name="src">
-        <block type="video" id="S$1N4E3U+*W_\`=95FUu)">
-          <mutation length="1"></mutation>
-          <field name="id_area0"></field>
-          <field name="begin0"></field>
-          <field name="end0"></field>
-        </block>
-      </value>
-    </block>
-    <block type="media" id="K2a)Xd1Ob5$8Ju=7i:DR" x="550" y="353">
-      <field name="id">img_praia</field>
-      <value name="src">
-        <block type="image" id="fQF^b?g4I,]ah26x]In~">
-        </block>
-      </value>
-    </block>
-  </xml>`
-var _conceptsBlocks2Xml = `
-  <xml xmlns="http://www.w3.org/1999/xhtml">
-    <block type="media" id="DACXRk{ds*},dxviHR(c" x="20" y="20">
-      <field name="id">video_principal</field>
-      <value name="src">
-        <block type="video" id="CG[^N,5)TV)0_N#+|cgE">
-          <mutation length="1"></mutation>
-          <field name="id_area0">creditos</field>
-          <field name="begin0">300s</field>
-          <field name="end0"></field>
-        </block>
-      </value>
-    </block>
-    <block type="media" id="J0=3=8AB$lViiF[SYu#!" x="20" y="160">
-      <field name="id">video_centro</field>
-      <value name="src">
-        <block type="video" id="]70x,I^+Yv!UsVCeeY()">
-          <mutation length="1"></mutation>
-          <field name="id_area0"></field>
-          <field name="begin0"></field>
-          <field name="end0"></field>
-        </block>
-      </value>
-    </block>
-    <block type="media" id="PnS;4T$~ftTn7U;nWSZb" x="550" y="208">
-      <field name="id">img_centro</field>
-      <value name="src">
-        <block type="image" id="n8jL;6KJe-2c6B~=pPj("></block>
-      </value>
-    </block>
-    <block type="media" id="IawJU?Sm-z4If\`ixT^_p" x="20" y="301">
-      <field name="id">video_praia</field>
-      <value name="src">
-        <block type="video" id="S$1N4E3U+*W_\`=95FUu)">
-          <mutation length="1"></mutation>
-          <field name="id_area0"></field>
-          <field name="begin0"></field>
-          <field name="end0"></field>
-        </block>
-      </value>
-    </block>
-    <block type="media" id="K2a)Xd1Ob5$8Ju=7i:DR" x="550" y="353">
-      <field name="id">img_praia</field>
-      <value name="src">
-        <block type="image" id="fQF^b?g4I,]ah26x]In~"></block>
-      </value>
-    </block>
-    <block type="port" id="+p-MtE:D*clWz(7oX7Hg" x="20" y="443">
-      <field name="component">video_principal</field>
-    </block>
-    <block type="link" id="%6sP%0di,O*v%qS%d\`(\`" x="550" y="443">
-      <value name="conditions">
-        <block type="onbegin" id="(H8dBhXk6.y#]q%\`UM^D">
-          <field name="onbegin">creditos</field>
-        </block>
-      </value>
-      <statement name="actions">
-        <block type="start" id="UEqL{b=Ws2G#w}+xMV%m">
-          <field name="start">img_centro</field>
-          <next>
-            <block type="start" id=".Pt;)N?Y.:xGz;dDp@+W">
-              <field name="start">img_praia</field>
-            </block>
-          </next>
-        </block>
-      </statement>
-    </block>
-    <block type="link" id="M)^!XeQ3fwhKEwGTcoGK" x="20" y="590">
-      <value name="conditions">
-        <block type="onselection" id="voo~B}yCX+XML3~iOm0r">
-          <field name="onselection">img_centro</field>
-        </block>
-      </value>
-      <statement name="actions">
-        <block type="stop" id="4(:vxHKc1ivMD9TqKrTd">
-          <field name="stop">video_principal</field>
-          <next>
-            <block type="stop" id="9Eb$H9^oR7Z)o_g^A7r?">
-              <field name="stop">img_centro</field>
-              <next>
-                <block type="stop" id="xz194KXLw:HdJABl^)[9">
-                  <field name="stop">img_praia</field>
-                  <next>
-                    <block type="start" id="Wo67TbqF5]_pN(b1R3D_">
-                      <field name="start">video_centro</field>
-                    </block>
-                  </next>
-                </block>
-              </next>
-            </block>
-          </next>
-        </block>
-      </statement>
-    </block>
-    <block type="link" id="BLK@~VH8\`;o!;uMR.^tZ" x="550" y="597">
-      <value name="conditions">
-        <block type="onselection" id="O]aL:r0KkCvhs#W\`[}El">
-          <field name="onselection">img_praia</field>
-        </block>
-      </value>
-      <statement name="actions">
-        <block type="stop" id="qh{EZTXTYXj5QRw:x+l#">
-          <field name="stop">video_principal</field>
-          <next>
-            <block type="stop" id="=6LVnQ^v7.gTbQiBB2rM">
-              <field name="stop">img_centro</field>
-              <next>
-                <block type="stop" id="1UR0{9!iy~vJx~m2prd4">
-                  <field name="stop">video_praia</field>
-                  <next>
-                    <block type="start" id="BZ#wUT/p=J}}s(q}Us7Z">
-                      <field name="start">video_praia</field>
-                    </block>
-                  </next>
-                </block>
-              </next>
-            </block>
-          </next>
-        </block>
-      </statement>
-    </block>
-  </xml>`
-var _conceptsBlocks3Xml = `
-  <xml xmlns="http://www.w3.org/1999/xhtml">
-    <block type="media" id="DACXRk{ds*},dxviHR(c" x="20" y="20">
-      <field name="id">video_principal</field>
-      <value name="src">
-        <block type="video" id="CG[^N,5)TV)0_N#+|cgE">
-          <mutation length="1"></mutation>
-          <field name="id_area0">creditos</field>
-          <field name="begin0">300s</field>
-          <field name="end0"></field>
-        </block>
-      </value>
-    </block>
-    <block type="media" id="J0=3=8AB$lViiF[SYu#!" x="20" y="160">
-      <field name="id">video_centro</field>
-      <value name="src">
-        <block type="video" id="]70x,I^+Yv!UsVCeeY()">
-          <mutation length="1"></mutation>
-          <field name="id_area0"></field>
-          <field name="begin0"></field>
-          <field name="end0"></field>
-        </block>
-      </value>
-    </block>
-    <block type="media" id="PnS;4T$~ftTn7U;nWSZb" x="550" y="208">
-      <field name="id">img_centro</field>
-      <value name="src">
-        <block type="image" id="n8jL;6KJe-2c6B~=pPj("></block>
-      </value>
-    </block>
-    <block type="media" id="IawJU?Sm-z4If\`ixT^_p" x="20" y="301">
-      <field name="id">video_praia</field>
-      <value name="src">
-        <block type="video" id="S$1N4E3U+*W_\`=95FUu)">
-          <mutation length="1"></mutation>
-          <field name="id_area0"></field>
-          <field name="begin0"></field>
-          <field name="end0"></field>
-        </block>
-      </value>
-    </block>
-    <block type="media" id="K2a)Xd1Ob5$8Ju=7i:DR" x="550" y="353">
-      <field name="id">img_praia</field>
-      <value name="src">
-        <block type="image" id="fQF^b?g4I,]ah26x]In~"></block>
-      </value>
-    </block>
-    <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="20" y="446">
-      <field name="id">voz</field>
-      <value name="src">
-        <block type="srgs" id="N5Lu5_J\`hn-e3lm60 |^3">
-          <mutation length="2"></mutation>
-          <field name="id_area0">voz_centro</field>
-          <field name="label0">mostre centro</field>
-          <field name="id_area1">voz_praia</field>
-          <field name="label1">mostre praia</field>
-        </block>
-      </value>
-    </block>
-    <block type="port" id="+ p - MtE:D * clWz(7oX7Hg" x="20" y="622">
-      <field name="component">video_principal</field>
-    </block>
-    <block type="link" id="% 6sP% 0di, O * v % qS % d\`(\`" x="550" y="636">
-      <value name="conditions">
-        <block type="onbegin" id="(H8dBhXk6.y#]q%\`UM^D">
-          <field name="onbegin">creditos</field>
-        </block>
-      </value>
-      <statement name="actions">
-        <block type="start" id="UEqL{b=Ws2G#w}+xMV%m">
-          <field name="start">img_centro</field>
-          <next>
-            <block type="start" id=".Pt;)N?Y.:xGz;dDp@+W">
-              <field name="start">img_praia</field>
-            </block>
-          </next>
-        </block>
-      </statement>
-    </block>
-    <block type="port" id="kj!MgSL@c5_TE,IF#xe$" x="20" y="707">
-      <field name="component">voz</field>
-    </block>
-    <block type="link" id="M)^!XeQ3fwhKEwGTcoGK" x="20" y="795">
-      <value name="conditions">
-        <block type="onrecognize" id="IokIu//km+7L0Y@Nioi[">
-          <field name="onrecognize">voz_centro</field>
-        </block>
-      </value>
-      <statement name="actions">
-        <block type="stop" id="4(:vxHKc1ivMD9TqKrTd">
-          <field name="stop">video_principal</field>
-          <next>
-            <block type="stop" id="9Eb$H9^oR7Z)o_g^A7r?">
-              <field name="stop">img_centro</field>
-              <next>
-                <block type="stop" id="xz194KXLw:HdJABl^)[9">
-                  <field name="stop">img_praia</field>
-                  <next>
-                    <block type="start" id="Wo67TbqF5]_pN(b1R3D_">
-                      <field name="start">video_centro</field>
-                    </block>
-                  </next>
-                </block>
-              </next>
-            </block>
-          </next>
-        </block>
-      </statement>
-    </block>
-    <block type="link" id="BLK@~VH8\`;o!;uMR.^tZ" x="549" y="805">
-      <value name="conditions">
-        <block type="onrecognize" id="[SfTF*!(*0N7]Hv9.tNh">
-          <field name="onrecognize">voz_praia</field>
-        </block>
-      </value>
-      <statement name="actions">
-        <block type="stop" id="qh{EZTXTYXj5QRw:x+l#">
-          <field name="stop">video_principal</field>
-          <next>
-            <block type="stop" id="=6LVnQ^v7.gTbQiBB2rM">
-              <field name="stop">img_centro</field>
-              <next>
-                <block type="stop" id="1UR0{9!iy~vJx~m2prd4">
-                  <field name="stop">video_praia</field>
-                  <next>
-                    <block type="start" id="BZ#wUT/p=J}}s(q}Us7Z">
-                      <field name="start">video_praia</field>
-                    </block>
-                  </next>
-                </block>
-              </next>
-            </block>
-          </next>
-        </block>
-      </statement>
-    </block>
-  </xml>`
-var _conceptsBlocks4Xml = `<xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="media" id="KZ[g}J_gz%iQCj#u(I:P" x="0" y="20">
-    <value name="src">
-      <block type="image" id="LHprn9YiDsg/Nlglks0f"></block>
-    </value>
-  </block>
-</xml>`
-var _conceptsTask1Xml = `<xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="media" id="KZ[g}J_gz%iQCj#u(I:P" x="0" y="20">
-    <value name="src">
-      <block type="image" id="LHprn9YiDsg/Nlglks0f"></block>
-    </value>
-  </block>
-</xml>`
-var _conceptsTask3Xml = `<xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="media" id="KZ[g}J_gz%iQCj#u(I:P" x="0" y="20">
-    <value name="src">
-      <block type="image" id="LHprn9YiDsg/Nlglks0f"></block>
-    </value>
-  </block>
-</xml>`
 var _conceptsTask2Workspace
 var _conceptsTask4Workspace
 
@@ -540,95 +194,3 @@ function saveConceptsTask4Changes (primaryEvent) {
   var xmlText = Blockly.Xml.domToText(xml)
   _survey.getQuestionByName('conceptsTask4Result').value = xmlText
 }
-
-// ----------------------------------------
-//  ncl page
-// ----------------------------------------
-
-var _nclCode1 = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;"><![CDATA[
-  <ncl>
-    <head>
-      <connectorBase>
-        <causalConnector id="onKeySelectionStart">
-          <connectorParam name="var"/>
-          <connectorParam name="keyCode"/>
-          <simpleCondition role="onSelection" key="$keyCode"/>
-          <simpleAction role="start" max="unbounded"/>
-        </causalConnector>
-      </connectorBase>
-    </head>
-    <body>
-      <port component="mainvideo"/>
-      <media id="mainvideo" type="video/mp4" src="video.mp4">
-        <property name="width" value="100%"/>
-        <property name="height" value="100%"/>
-        <area label="credits" begin="300s" end="360s" />
-      </media>
-      <link xconnector="onKeySelectionStart">
-        <bind role="onSelection" component="mainvideo" interface="credits">
-          <bindParam name="keyCode" value="RED"/>
-        </bind>
-        <bind role="start" component="mainvideo"/>
-      </link>
-    </body>
-  </ncl>
-  ]]></script>`
-
-var _nclCode2 = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false; highlight: [11,12,13,14,15,16,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48]"><![CDATA[
-  <?xml version="1.0" encoding="ISO-8859-1"?>
-  <ncl>
-    <head>
-      <connectorBase>
-        <causalConnector id="onKeySelectionStart">
-          <connectorParam name="var"/>
-          <connectorParam name="keyCode"/>
-          <simpleCondition role="onSelection" key="$keyCode"/>
-          <simpleAction role="start" max="unbounded"/>
-        </causalConnector>
-        <!-- begin modification-->
-        <causalConnector id="onRecognizeStart">
-          <simpleCondition role="onRecognize" max="unbounded"/>
-          <simpleAction role="start" max="unbounded"/>
-        </causalConnector>
-        <!-- end modification-->
-      </connectorBase>
-    </head>
-    <body>
-      <port component="mainvideo"/>
-      <media id="mainvideo" type="video/mp4" src="video.mp4">
-        <property name="width" value="100%"/>
-        <property name="height" value="100%"/>
-        <area label="credits" begin="300s" end="360s" />
-      </media>
-      <link xconnector="onKeySelectionStart">
-        <bind role="onSelection" component="mainvideo" interface="credits">
-          <bindParam name="keyCode" value="RED"/>
-        </bind>
-        <bind role="start" component="mainvideo"/>
-      </link>
-      <!-- begin modification-->
-      <media id="tts" type="application/ssml+xml" src="question.ssml">
-        <area label="repeat_question"/>
-      </media>
-      <input id="asr" type="application/srgs+xml" src="repeat.srgs">
-        <area label="repeat_command"/>
-      </input>
-      <link xconnector="onBeginStart">
-        <bind role="onBegin" component="mainvideo" interface="credits"/>
-        <bind role="start" component="tts" interface="repeat_question"/>
-        <bind role="start" component="answer"/>
-      </link>
-      <link xconnector="onRecognizeStart">
-        <bind role="onRecognize" component="asr" interface="repeat_command"/>
-        <bind role="start" component="mainvideo"/>
-      </link>
-      <!-- end modification-->
-    </body>
-  </ncl>
-  ]]></script>`
-
-// ----------------------------------------
-// html page functions
-// ----------------------------------------

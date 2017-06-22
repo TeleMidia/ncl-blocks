@@ -20,7 +20,7 @@
       "Survey": true,
       "NclBlocks": true,
       "Blockly": true,
-      "_surveyJSON": true,
+      "_data": true,
       "SyntaxHighlighter": true
     }
   }
