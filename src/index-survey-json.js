@@ -126,35 +126,42 @@ var _surveyJSON = {
           Esse tipo de interação foi apoiada pelos recentes avanços em tecnologias de reconhecimento e <b>dispositivos de interação multimodal</b>. 
           Ilustrados a seguir, citamos o uso de microfones para reconhecimento de voz, e dispostivos como LeapMotion e e Microsoft Kinect para reconhecimento de gestos de mão e corpo, respectivamente.<br><br>
            
-          <div class='text-center'><img class='img-thumbnail' style='height: 200px' src='assets/voice.jpg'><img class='img-thumbnail' style='height: 200px' src='assets/leap.jpg'><img class='img-thumbnail' style='height: 200px' src='assets/kinect.jpg'></div><br><br>
+          <div class='text-center'>
+          <img class='img-thumbnail' style='height: 200px' src='assets/voice.jpg'>
+          <img class='img-thumbnail' style='height: 200px' src='assets/leap.jpg'>
+          <img class='img-thumbnail' style='height: 200px' src='assets/kinect.jpg'>
+          </div><br><br>
 
           Um <b>sistema multimídia com interações multimodais</b> deve não apenas apresentar as midias ao usuário como também reconhecer interações multimodais.<br>
-          Logo, um <b>documento multimídia com interações multimodais</b> deve conter também sincronismos baseados no reconhecimento de interações multimodais.<br><br>
+          Logo, um <b>documento multimídia com interações multimodais</b> deve conter também sincronismos baseados no reconhecimento de interações multimodais.<br><br> Para o reconhecimento dessas interações, o documento multimedia pode se utilziar de descrições multimodais que atraves de uma sintaxe própria definem como reconhcer determinada interação. Por exemplo, uma descrição pode ser em SRGS (Speech Recognition Grammar Specification) para definir o reconhecimento de comandos de voz.<br><br>
           
           Modificamos a figura anterior, sobre criação e apresentação de um documento multimídia, para considerar agora interações multimodais.<br>
           Nessa nova figura, o autor do documento defini <b>reconhecimentos de interações multimodais</b>, além das mídias e sincronismo.<br>
-          Além dos dispositivos audiovisuais para exibição de mídias, o sistema multimídia deve utilizar também <b>dispositivos de interação multimodal</b> rara receonhecimentos.<br><br>
+          Além dos dispositivos audiovisuais para exibição de mídias, o sistema multimídia deve utilizar também <b>dispositivos de interação multimodal</b> para receonhecimentos.<br><br>
                     
           <img class='center-block img-thumbnail' style='height: 500px' src='assets/overview2.svg'><br><br>
           
-          [2] <a href='http://dx.doi.org/10.1201/9781410615862.ch21'>Oviatt, S. 2007. Multimodal Interfaces. Human Computer Interact Handbook. CRC Press, 413–432</a>
+          [2] <a href='http://dx.doi.org/10.1201/9781410615862.ch21'>Oviatt, S. 2007. Multimodal Interfaces. Human Computer Interact Handbook. CRC Press, 413–432</a><br>
+          [3] <a href='#'> https://www.w3.org/TR/speech-grammar <a>
+          </div>`
+        },
+        {
+          type: "html",
+          html: `
+          <div class='text-justify'>
+          
+          Para melhor ilustrar o desenvolvimento de aplicações multimídia com interações multimodais, utilizaremos a seguir aplicações descritas através da abstração de blocos. <br>
+          O desenvolvimento de software baseado em blocos foi popularizado por ferramentas como o MIT Scratch [4] para criar aplicações na web e o MIT App Inventor[5] para criar aplicações moveis<br><br>
+
+          [4] <a href='#'>scratch.mit.edu </a><br>
+          [5] <a href='#'>appinventor.mit.edu</a><br>
           
           </div>`
         },
         {
           type: "html",
           name: "conceptsBlocksIntro1",
-          html: `
-          <div class='text-justify'>
-          
-          Para melhor ilustrar o desenvolvimento de aplicações multimídia com interações multimodais, ilustraremos a seguir aplicações utilizando um abordagem baseada em blocos. Segue o uso de duas mídias como blocos.<br><br>
-          
-          O desenvolvimento de software baseado em blocos foi popularizado por ferramentas como o MIT Scratch para criar aplicações na web e o MIT App Invento para criar aplicações moveis<br><br>
-
-          [4] <a href='#'>scratch.mit.edu </a><br>
-          [3] <a href='#'>appinventor.mit.edu</a><br>
-          
-          </div>`
+          html: "<div class='text-justify'>Segue o uso de um sincronismo como blocos.</div>"
         },
         {
           type: "html",
