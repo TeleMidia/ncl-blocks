@@ -101,15 +101,15 @@ var _surveyJSON = {
           <b>Mídias discretas</b> são aquelas que não mudam sua exibição no decorrer do tempo. Logo, elas também são chamadas de mídias independente de tempo.Exemplos de mídias discretas são textos, imagens e gráficos.<br>
           <b>Mídias contínuas</b> são aquelas que mudam sua exbição no decorrer do tempo. Logo, elas também são chamdas de mídias dependentes de tempo. Exemplos de mídias contínuas são áudios e vídeos.<br><br>
 
-          Também segundo Steinmentz, um <b>documento multimídia</b> define como um sistema multímida deve exibir um conjunto de mídias (discretas e contínuas) na forma de uma <b>apresentação multimídia</b>.<br>
+          Também segundo Steinmentz, um <b>documento multimídia</b> é aquele que define como um sistema multímida deve exibir um conjunto de mídias (discretas e contínuas) na forma de uma <b>apresentação multimídia</b>.<br>
           O criador de um documento multímidia é usualmente chamado de <b>autor</b>.<br>        
           Entre outros aspectos, o autor de um documento multimídia defini o <b>sincronismo</b> entre as mídias. Ou seja, ele define o comportamento da exbição das mídias no decorrer do tempo da apresentação.<br>
           O sincronismo é geralmente baseado na apresentação de <b>trechos de mídia</b> contínua ou na interação do usuário. <br>Considere, por exemplo, que a parte de créditos de vídeo inicie no segundo 600. Um sincronimo pode ser definido para que ao iniciar o trecho dos creditos (o vídeo alcance o segundo 600) uma uma imagen de patrocínio seja exibida.<br><br>
           
           A figura a seguir ilustra a criação e apresentação de um documento multimídia.<br>
           Na <b>criação do documento multimídia</b>, o autor defini as mídias utilizadas e o sincronismo entre elas.<br>
-          Na <b>apresentação documento multimídia</b>, um sistema multimídia intepreta esse documento e apresenta ao usuário de acordo com o sincronismo definido pelo autor. Na figura, por exemplo, uma imagem e um audio são apresentação em determinado trecho de um video.<br>
-          Traidicionalmente, o sistema multimídia utiliza de dispositivos audiovisuais, para exibição de mídias, e dispositivos de entrata como teclado e mouse para receber interações de usuário.<br><br>
+          Na <b>apresentação documento multimídia</b>, um sistema multimídia rcebe o documento multimídia os arquivos de mídia necessários para  realizar a apresentação de acordo com o sincronismo definido pelo autor. Na figura, por exemplo, uma imagem e um audio são apresentação em determinado trecho da apresentação de um video.<br>
+         A interface entre o sistema e o usuário é feitas por <b>dispositivos audiovisuais</b>, que apreentam conteúdos das mídias(som e frases) e <b>dispositivos apontador e tecla</b>, que capituram interações de usuário.<br><br>
           
           <img class='center-block img-thumbnail' style='height: 500px' src='assets/overview1.svg'><br><br>
           
@@ -120,17 +120,21 @@ var _surveyJSON = {
           html: `
           <div class='text-justify'>
           
-          Agora, vamos introduzir o conceito de <b>interações multimodais</b>.<br><br>
+          Agora, devemos introduzir o conceito de <b>interações multimodais</b>.<br><br>
           
-          Oviatt [2] define que interação multimodal visa o reconhecimento de interações baseadas em formas naturais de linguagem e comportamento humano.<br>
-          Esse tipo de interação foi apoiado pelos recentes avanços nas tecnologias, especialmente no reconhecimento de fala, gestos de mão e corporais. Ilustrados a seguir, exemplos de <b>dispositivos de interação multimodal</b> são o LeapMotion para gestos de mão e Microsoft Kinect para reconhecimento de gestos coporais.<br><br>
-          
+          Oviatt [2] define que interação multimodals visa reconhecer interações nas as formas naturais da linguagem humana e comportamento, como fala e gestos.<br>
+          Esse tipo de interação foi apoiada pelos recentes avanços em tecnologias de reconhecimento e <b>dispositivos de interação multimodal</b>. 
+          Ilustrados a seguir, citamos o uso de microfones para reconhecimento de voz, e dispostivos como LeapMotion e e Microsoft Kinect para reconhecimento de gestos de mão e corpo, respectivamente.<br><br>
+           
           <div class='text-center'><img class='img-thumbnail' style='height: 200px' src='assets/voice.jpg'><img class='img-thumbnail' style='height: 200px' src='assets/leap.jpg'><img class='img-thumbnail' style='height: 200px' src='assets/kinect.jpg'></div><br><br>
+
+          Um <b>sistema multimídia com interações multimodais</b> deve não apenas apresentar as midias ao usuário como também reconhecer interações multimodais.<br>
+          Logo, um <b>documento multimídia com interações multimodais</b> deve conter também sincronismos baseados no reconhecimento de interações multimodais.<br><br>
           
-          Modificamos a figura anterior, sobre criação e apresentação de um documento multimídia, para uso de interações multimodais. <br>
-          Nessa nova figura, o autor do documento defini também <b>reconhecimentos de interações multimodais</b>, além das mídias e sincronismo.<br>
-          Logo, um sistema multimídia que interpreta esse tipo de documento deve não apenas apresentar as midias ao usuário como também reconhecer interações multimodais. Além dos dispositivos audiovisuais para exibição de mídias, o sistema multimídia deve utilizar também dispositivos de interação multimodal Para o receonhecimento.<br><br>
-          
+          Modificamos a figura anterior, sobre criação e apresentação de um documento multimídia, para considerar agora interações multimodais.<br>
+          Nessa nova figura, o autor do documento defini <b>reconhecimentos de interações multimodais</b>, além das mídias e sincronismo.<br>
+          Além dos dispositivos audiovisuais para exibição de mídias, o sistema multimídia deve utilizar também <b>dispositivos de interação multimodal</b> rara receonhecimentos.<br><br>
+                    
           <img class='center-block img-thumbnail' style='height: 500px' src='assets/overview2.svg'><br><br>
           
           [2] <a href='http://dx.doi.org/10.1201/9781410615862.ch21'>Oviatt, S. 2007. Multimodal Interfaces. Human Computer Interact Handbook. CRC Press, 413–432</a>
