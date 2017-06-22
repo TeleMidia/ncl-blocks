@@ -90,10 +90,16 @@ var _surveyJSON = {
       title: "Dados do Usuário"
     },
     {
+      name: "concepts",
       elements: [
         {
-          type: "html",
-          html: `<div class='text-justify'></div>
+          type: "panel",
+          innerIndent: 1,
+          title: "Introdução de conceitos multimodais",
+          elements: [
+            {
+              type: "html",
+              html: `<div class='text-justify'></div>
           
           Primeiro devemos introduzir os conceitos de sistema multimídia e documento multimídia.<br><br> 
           
@@ -114,10 +120,10 @@ var _surveyJSON = {
           <img class='center-block img-thumbnail' style='height: 500px' src='assets/overview1.svg'><br><br>
           
           [1] <a href='https://www.pearson.com/us/higher-education/product/Steinmetz-Multimedia-Computing-Communications-and-Applications/9780133244359.html'> Steinmetz, R. and Nahrstedt, K. 1995. Multimedia: Computing, Communications and Applications. Prentice Hall.</a></div>`
-        },
-        {
-          type: "html",
-          html: `
+            },
+            {
+              type: "html",
+              html: `
           <div class='text-justify'>
           
           Agora, devemos introduzir o conceito de <b>interações multimodais</b>.<br><br>
@@ -144,10 +150,17 @@ var _surveyJSON = {
           [2] <a href='http://dx.doi.org/10.1201/9781410615862.ch21'>Oviatt, S. 2007. Multimodal Interfaces. Human Computer Interact Handbook. CRC Press, 413–432</a><br>
           [3] <a href='#'> https://www.w3.org/TR/speech-grammar <a>
           </div>`
+            }
+          ],
         },
         {
-          type: "html",
-          html: `
+          type: "panel",
+          innerIndent: 1,
+          title: "Conceitos multimodais usando abstração de blocos",
+          elements: [
+            {
+              type: "html",
+              html: `
           <div class='text-justify'>
           
           Para melhor ilustrar o desenvolvimento de aplicações multimídia com interações multimodais, utilizaremos a seguir aplicações descritas através da abstração de blocos. <br>
@@ -164,78 +177,78 @@ var _surveyJSON = {
           [5] <a href='#'>appinventor.mit.edu</a><br>
           
           </div>`
-        },
-        {
-          type: "html",
-          name: "conceptsBlocksIntro1",
-          html: "<div class='text-justify'>Segue o uso de um sincronismo como blocos.</div>"
-        },
-        {
-          type: "html",
-          name: "conceptsBlocksIntro2",
-          html: "<div class='text-justify'>Segue o uso de um sincronismo como blocos.</div>"
-        },
-        {
-          type: "html",
-          name: "conceptsBlocksIntro3",
-          html: "<div class='text-justify'>Segue o uso de uma mídia, sincronismo e reconhecimento como blocos bloco.</div>"
-        },
-        {
-          type: "html",
-          name: "conceptsBlocksIntro4",
-          html: "<div class='text-justify'>Segue o uso de uma mídia, sincronismo, reconhecimento de usuário como blocos.</div>"
-        },
-        {
-          type: "html",
-          name: "conceptsTask1Blocks",
-        },
-        {
-          type: "comment",
-          isRequired: true,
-          name: "conceptsTask1Question",
-          title: "Qual o comportamento da aplicação acima?"
-        },
-        {
-          type: "html",
-          name: "conceptsTask2Blocks",
-        },
-        {
-          type: "text",
-          name: "conceptsTask2Changes",
-          visible: false
-        },
-        {
-          type: "text",
-          name: "conceptsTask2Result",
-          visible: false
-        },
-        {
-          type: "html",
-          name: "conceptsTask3Blocks",
-        },
-        {
-          type: "comment",
-          isRequired: true,
-          name: "conceptsTask3Question",
-          title: "Qual o comportamento da aplicação acima?"
-        },
-        {
-          type: "html",
-          name: "conceptsTask4Blocks",
-        },
-        {
-          type: "text",
-          name: "conceptsTask4Changes",
-          visible: false
-        },
-        {
-          type: "text",
-          name: "conceptsTask4Result",
-          visible: false
+            },
+            {
+              type: "html",
+              name: "conceptsBlocksIntro1",
+              html: "<div class='text-justify'>Segue o uso de um sincronismo como blocos.</div>"
+            },
+            {
+              type: "html",
+              name: "conceptsBlocksIntro2",
+              html: "<div class='text-justify'>Segue o uso de um sincronismo como blocos.</div>"
+            },
+            {
+              type: "html",
+              name: "conceptsBlocksIntro3",
+              html: "<div class='text-justify'>Segue o uso de uma mídia, sincronismo e reconhecimento como blocos bloco.</div>"
+            },
+            {
+              type: "html",
+              name: "conceptsBlocksIntro4",
+              html: "<div class='text-justify'>Segue o uso de uma mídia, sincronismo, reconhecimento de usuário como blocos.</div>"
+            },
+            {
+              type: "html",
+              name: "conceptsTask1Blocks",
+            },
+            {
+              type: "comment",
+              isRequired: true,
+              name: "conceptsTask1Question",
+              title: "Qual o comportamento da aplicação acima?"
+            },
+            {
+              type: "html",
+              name: "conceptsTask2Blocks",
+            },
+            {
+              type: "text",
+              name: "conceptsTask2Changes",
+              visible: false
+            },
+            {
+              type: "text",
+              name: "conceptsTask2Result",
+              visible: false
+            },
+            {
+              type: "html",
+              name: "conceptsTask3Blocks",
+            },
+            {
+              type: "comment",
+              isRequired: true,
+              name: "conceptsTask3Question",
+              title: "Qual o comportamento da aplicação acima?"
+            },
+            {
+              type: "html",
+              name: "conceptsTask4Blocks",
+            },
+            {
+              type: "text",
+              name: "conceptsTask4Changes",
+              visible: false
+            },
+            {
+              type: "text",
+              name: "conceptsTask4Result",
+              visible: false
+            }
+          ],
         }
-      ],
-      name: "concepts",
-      title: "Conceitos multimodais em linguagens multimídia"
+      ]
     },
     {
       name: "conceptsFeedback",
