@@ -161,8 +161,8 @@ var _surveyJSON = {
             {
               type: "html",
               html: `<div class='text-justify'>
-                    Para melhor ilustrar o desenvolvimento de aplicações multimídia com interações multimodais, utilizaremos a seguir aplicações descritas através da abstração de blocos. <br>
-                    O desenvolvimento de software baseado em blocos foi popularizado por ferramentas como o MIT Scratch [4] para criar aplicações na web e o MIT App Inventor[5] para criar aplicações moveis<br><br>
+                    Para melhor ilustrar o desenvolvimento de aplicações multimídia com interações multimodais, utilizaremos a seguir uma <b>descrição aplicações através da abstração de blocos</b>.<br>
+                    O desenvolvimento de aplicações baseado em blocos foi popularizado por ferramentas como o <b>MIT Scratch</b>[4] e <b>MIT App Inventor</b>[5]. O primeiro é utilizado para para criar aplicações web, especialmente jogos, e o segundo utilizado para criar aplicações moveis, ambos são ilustratos a seguir.<br><br>
 
                     <div class='text-center'>
                     <img class='img-thumbnail' style='height: 270px' src='assets/scratch.jpg'>
