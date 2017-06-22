@@ -5,19 +5,40 @@ var _surveyJSON = {
   locale: "en",
   pageNextText: "seguir",
   pagePrevText: "voltar",
+  requiredText: "",
+  showProgressBar: "top",
+  showQuestionNumbers: "off",
+  surveyPostId: "51d57b85-3813-4a08-801b-4b7e077c1660",
+  // title: "Estudo sobre interações multimodais em linguagens multimídia",
   pages: [
     {
+      name: "termo",
+      title: "Termo de consentimento para o estudo",
       elements: [
         {
           type: "html",
-          html: "O TeleMídia é um grupo de pesquisa do departamento de Informática da PUC-Rio que desenvolve pesquisas nas áreas de Sistemas Multimídia e Redes de Computadores. Em particular, Sistemas de TV Digital, terrestre e IPTV, têm sido foco de pesquisa e inovação do laboratório nos últimos anos.<br><br>Convidamos a você a participar de um de nosso estudo sobre<i>Interações multimodais em linguagens multimídia</i>.<br><br><b>Ressaltamos que esse estudo NÃO se destinar a avaliar seus conhecimentos acerca dos conceitos apresentados, mas sim capturar evidências de nossa pesquisa.</b><br><br>Para prosseguirmos, pedimos seu consentimento para realizarmos esse estudo e informamos que:<ul><li>Os dados coletados destinam-se estritamente a atividades de pesquisa e desenvolvimento, e somente os pesquisadores do TeleMídia têm acesso à integra do material resultante da avaliação.</li><li>A divulgação dos resultados de nossa pesquisa em foros científicos e/ou pedagógicos pauta-se no respeito à privacidade, e o anonimato dos participantes é preservado em qualquer material publicado.</li></ul><br>Caso esteja de acordo, prossiga.<br>",
-          name: "termo"
+          html: `
+          O TeleMídia é um grupo de pesquisa do departamento de Informática da PUC-Rio que desenvolve pesquisas nas áreas de Sistemas Multimídia e Redes de Computadores. Em particular, Sistemas de TV Digital, terrestre e IPTV, têm sido foco de pesquisa e inovação do laboratório nos últimos anos.<br><br>
+          
+          Convidamos a você a participar de um de nosso estudo sobre<i>Interações multimodais em linguagens multimídia</i>.<br><br>
+          
+          <b>Ressaltamos que esse estudo NÃO se destina à avaliar seus conhecimentos acerca dos conceitos apresentados, mas sim capturar evidências de nossa pesquisa.</b><br><br>
+          
+          Para prosseguirmos, pedimos seu consentimento para realizarmos esse estudo e informamos que:
+          <ul>
+          <li>Os dados coletados destinam-se estritamente a atividades de pesquisa e desenvolvimento, e somente os pesquisadores do TeleMídia têm acesso à integra do material resultante da avaliação.</li>
+          <li>A divulgação dos resultados de nossa pesquisa em foros científicos e/ou pedagógicos pauta-se no respeito à privacidade, e o anonimato dos participantes é preservado em qualquer material publicado.</li>
+          </ul>`
+        },
+        {
+          type: "html",
+          html: "Caso esteja de acordo, prossiga.<br>"
         }
-      ],
-      name: "termo",
-      title: "Termo de consentimento"
+      ]
     },
     {
+      name: "perfil",
+      title: "Dados do entrevistado",
       elements: [
         {
           type: "text",
@@ -85,21 +106,15 @@ var _surveyJSON = {
           title: "Você acredida que o desenvolvimento em HTML/JavaScript requisita necessáriamente o uso de bibliotecas de manipulção DOM como jQuery, Zepto e Prototype?",
           choices: ["bastante improvável", "muito improvável", "pouco improvável", "indiferente", "pouco provável", "muito provável", "bastante provável"]
         }
-      ],
-      name: "perfil",
-      title: "Dados do Usuário"
+      ]
     },
     {
-      name: "concepts",
+      name: "intro",
+      title: "Introdução à conceitos multimodais",
       elements: [
         {
-          type: "panel",
-          innerIndent: 1,
-          title: "Introdução de conceitos multimodais",
-          elements: [
-            {
-              type: "html",
-              html: `
+          type: "html",
+          html: `
               <div class='text-justify'></div>          
               Primeiro devemos introduzir os conceitos de sistema multimídia e documento multimídia.<br><br> 
 
@@ -120,10 +135,10 @@ var _surveyJSON = {
               <img class='center-block img-thumbnail' style='height: 500px' src='assets/overview1.svg'><br><br>
 
               [1] <a href='https://www.pearson.com/us/higher-education/product/Steinmetz-Multimedia-Computing-Communications-and-Applications/9780133244359.html'> Steinmetz, R. and Nahrstedt, K. 1995. Multimedia: Computing, Communications and Applications. Prentice Hall.</a></div>`
-            },
-            {
-              type: "html",
-              html: `
+        },
+        {
+          type: "html",
+          html: `
               <div class='text-justify'>
 
               Agora, devemos introduzir o conceito de <b>interações multimodais</b>.<br><br>
@@ -150,17 +165,20 @@ var _surveyJSON = {
               [2] <a href='http://dx.doi.org/10.1201/9781410615862.ch21'>Oviatt, S. 2007. Multimodal Interfaces. Human Computer Interact Handbook. CRC Press, 413–432</a><br>
               [3] <a href='#'> https://www.w3.org/TR/speech-grammar <a>
               </div>`
-            }
-          ],
         },
         {
-          type: "panel",
-          innerIndent: 1,
-          title: "Conceitos multimodais usando abstração de blocos",
-          elements: [
-            {
-              type: "html",
-              html: `<div class='text-justify'>
+          type: "html",
+          html: "Caso esteja de acordo, prossiga.<br>"
+        }
+      ]
+    },
+    {
+      name: "blocks",
+      title: "Conceitos multimodais usando abstração de blocos",
+      elements: [
+        {
+          type: "html",
+          html: `<div class='text-justify'>
                     Para melhor ilustrar o desenvolvimento de aplicações multimídia com interações multimodais, utilizaremos a seguir uma <b>descrição aplicações através da abstração de blocos</b>.<br>
                     O desenvolvimento de aplicações baseado em blocos foi popularizado por ferramentas como o <b>MIT Scratch</b>[4] e <b>MIT App Inventor</b>[5]. O primeiro é utilizado para para criar aplicações web, especialmente jogos, e o segundo utilizado para criar aplicações moveis, ambos são ilustratos a seguir.<br><br>
 
@@ -174,81 +192,79 @@ var _surveyJSON = {
                     [5] <a href='#'>appinventor.mit.edu</a><br>
 
                     </div>`
-            },
-            {
-              type: "html",
-              name: "conceptsBlocksIntro1",
-              html: "<div class='text-justify'>Segue o uso de um sincronismo como blocos.</div>"
-            },
-            {
-              type: "html",
-              name: "conceptsBlocksIntro2",
-              html: "<div class='text-justify'>Segue o uso de um sincronismo como blocos.</div>"
-            },
-            {
-              type: "html",
-              name: "conceptsBlocksIntro3",
-              html: "<div class='text-justify'>Segue o uso de uma mídia, sincronismo e reconhecimento como blocos bloco.</div>"
-            },
-            {
-              type: "html",
-              name: "conceptsBlocksIntro4",
-              html: "<div class='text-justify'>Segue o uso de uma mídia, sincronismo, reconhecimento de usuário como blocos.</div>"
-            },
-            {
-              type: "html",
-              name: "conceptsTask1Blocks",
-            },
-            {
-              type: "comment",
-              isRequired: true,
-              name: "conceptsTask1Question",
-              title: "Qual o comportamento da aplicação acima?"
-            },
-            {
-              type: "html",
-              name: "conceptsTask2Blocks",
-            },
-            {
-              type: "text",
-              name: "conceptsTask2Changes",
-              visible: false
-            },
-            {
-              type: "text",
-              name: "conceptsTask2Result",
-              visible: false
-            },
-            {
-              type: "html",
-              name: "conceptsTask3Blocks",
-            },
-            {
-              type: "comment",
-              isRequired: true,
-              name: "conceptsTask3Question",
-              title: "Qual o comportamento da aplicação acima?"
-            },
-            {
-              type: "html",
-              name: "conceptsTask4Blocks",
-            },
-            {
-              type: "text",
-              name: "conceptsTask4Changes",
-              visible: false
-            },
-            {
-              type: "text",
-              name: "conceptsTask4Result",
-              visible: false
-            }
-          ],
+        },
+        {
+          type: "html",
+          name: "conceptsBlocksIntro1",
+          html: "<div class='text-justify'>Segue o uso de um sincronismo como blocos.</div>"
+        },
+        {
+          type: "html",
+          name: "conceptsBlocksIntro2",
+          html: "<div class='text-justify'>Segue o uso de um sincronismo como blocos.</div>"
+        },
+        {
+          type: "html",
+          name: "conceptsBlocksIntro3",
+          html: "<div class='text-justify'>Segue o uso de uma mídia, sincronismo e reconhecimento como blocos bloco.</div>"
+        },
+        {
+          type: "html",
+          name: "conceptsBlocksIntro4",
+          html: "<div class='text-justify'>Segue o uso de uma mídia, sincronismo, reconhecimento de usuário como blocos.</div>"
+        },
+        {
+          type: "html",
+          name: "conceptsTask1Blocks",
+        },
+        {
+          type: "comment",
+          isRequired: true,
+          name: "conceptsTask1Question",
+          title: "Qual o comportamento da aplicação acima?"
+        },
+        {
+          type: "html",
+          name: "conceptsTask2Blocks",
+        },
+        {
+          type: "text",
+          name: "conceptsTask2Changes",
+          visible: false
+        },
+        {
+          type: "text",
+          name: "conceptsTask2Result",
+          visible: false
+        },
+        {
+          type: "html",
+          name: "conceptsTask3Blocks",
+        },
+        {
+          type: "comment",
+          isRequired: true,
+          name: "conceptsTask3Question",
+          title: "Qual o comportamento da aplicação acima?"
+        },
+        {
+          type: "html",
+          name: "conceptsTask4Blocks",
+        },
+        {
+          type: "text",
+          name: "conceptsTask4Changes",
+          visible: false
+        },
+        {
+          type: "text",
+          name: "conceptsTask4Result",
+          visible: false
         }
-      ]
+      ],
     },
     {
-      name: "conceptsFeedback",
+      name: "blocksFeedback",
       elements: [
         {
           type: "panel",
@@ -343,6 +359,8 @@ var _surveyJSON = {
       ]
     },
     {
+      name: "ncl",
+      title: "Conceitos multimodais em NCL",
       elements: [
         {
           type: "html",
@@ -373,9 +391,7 @@ var _surveyJSON = {
           rows: "9",
           title: "Qual o novo comportamento da aplicação?"
         }
-      ],
-      name: "ncl",
-      title: "Conceitos multimodais em NCL"
+      ]
     },
     {
       name: "nclFeedback",
@@ -451,14 +467,14 @@ var _surveyJSON = {
       ]
     },
     {
+      name: "html",
+      title: "Conceitos multimodais em HTML",
       elements: [
         {
           type: "html",
           name: "htmlIntro"
         }
-      ],
-      name: "html",
-      title: "Conceitos multimodais em HTML"
+      ]
     },
     {
       name: "htmlFeedback",
@@ -535,6 +551,8 @@ var _surveyJSON = {
       ]
     },
     {
+      name: "comments",
+      title: "Comentários adicionais do entrevistado",
       elements: [
         {
           type: "comment",
@@ -552,14 +570,7 @@ var _surveyJSON = {
             en: "Adcionalmente, você poderia falar que tipos de aplicações você gostaria de desenvolver com conceitos apresentados nesse questionário."
           }
         }
-      ],
-      name: "comments",
-      title: "Comentários adicionais"
+      ]
     }
-  ],
-  requiredText: "",
-  showProgressBar: "top",
-  showQuestionNumbers: "off",
-  surveyPostId: "51d57b85-3813-4a08-801b-4b7e077c1660",
-  title: "Estudo sobre interações multimodais em linguagens multimídia"
+  ]
 }
