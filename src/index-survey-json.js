@@ -99,57 +99,57 @@ var _surveyJSON = {
           elements: [
             {
               type: "html",
-              html: `<div class='text-justify'></div>
-          
-          Primeiro devemos introduzir os conceitos de sistema multimídia e documento multimídia.<br><br> 
-          
-          Steinmetz [1] caracteriza um <b>sistem multimídia</b> como aquele que utiliza um conjunto mídias, que ao menos uma mídia seja discreta e uma seja contínua.<br>
-          <b>Mídias discretas</b> são aquelas que não mudam sua exibição no decorrer do tempo. Logo, elas também são chamadas de mídias independente de tempo.Exemplos de mídias discretas são textos, imagens e gráficos.<br>
-          <b>Mídias contínuas</b> são aquelas que mudam sua exbição no decorrer do tempo. Logo, elas também são chamdas de mídias dependentes de tempo. Exemplos de mídias contínuas são áudios e vídeos.<br><br>
+              html: `
+              <div class='text-justify'></div>          
+              Primeiro devemos introduzir os conceitos de sistema multimídia e documento multimídia.<br><br> 
 
-          Também segundo Steinmentz, um <b>documento multimídia</b> é aquele que define como um sistema multímida deve exibir um conjunto de mídias (discretas e contínuas) na forma de uma <b>apresentação multimídia</b>.<br>
-          O criador de um documento multímidia é usualmente chamado de <b>autor</b>.<br>        
-          Entre outros aspectos, o autor de um documento multimídia defini o <b>sincronismo</b> entre as mídias. Ou seja, ele define o comportamento da exbição das mídias no decorrer do tempo da apresentação.<br>
-          O sincronismo é geralmente baseado na apresentação de <b>trechos de mídia</b> contínua ou na interação do usuário. <br>Considere, por exemplo, que a parte de créditos de vídeo inicie no segundo 600. Um sincronimo pode ser definido para que ao iniciar o trecho dos creditos (o vídeo alcance o segundo 600) uma uma imagen de patrocínio seja exibida.<br><br>
-          
-          A figura a seguir ilustra a criação e apresentação de um documento multimídia.<br>
-          Na <b>criação do documento multimídia</b>, o autor defini as mídias utilizadas e o sincronismo entre elas.<br>
-          Na <b>apresentação documento multimídia</b>, um sistema multimídia rcebe o documento multimídia os arquivos de mídia necessários para  realizar a apresentação de acordo com o sincronismo definido pelo autor. Na figura, por exemplo, uma imagem e um audio são apresentação em determinado trecho da apresentação de um video.<br>
-         A interface entre o sistema e o usuário é feitas por <b>dispositivos audiovisuais</b>, que apreentam conteúdos das mídias(som e frases) e <b>dispositivos apontador e tecla</b>, que capituram interações de usuário.<br><br>
-          
-          <img class='center-block img-thumbnail' style='height: 500px' src='assets/overview1.svg'><br><br>
-          
-          [1] <a href='https://www.pearson.com/us/higher-education/product/Steinmetz-Multimedia-Computing-Communications-and-Applications/9780133244359.html'> Steinmetz, R. and Nahrstedt, K. 1995. Multimedia: Computing, Communications and Applications. Prentice Hall.</a></div>`
+              Steinmetz [1] caracteriza um <b>sistem multimídia</b> como aquele que utiliza um conjunto mídias, que ao menos uma mídia seja discreta e uma seja contínua.<br>
+              <b>Mídias discretas</b> são aquelas que não mudam sua exibição no decorrer do tempo. Logo, elas também são chamadas de mídias independente de tempo.Exemplos de mídias discretas são textos, imagens e gráficos.<br>
+              <b>Mídias contínuas</b> são aquelas que mudam sua exbição no decorrer do tempo. Logo, elas também são chamdas de mídias dependentes de tempo. Exemplos de mídias contínuas são áudios e vídeos.<br><br>
+
+              Também segundo Steinmentz, um <b>documento multimídia</b> é aquele que define como um sistema multímida deve exibir um conjunto de mídias (discretas e contínuas) na forma de uma <b>apresentação multimídia</b>.<br>
+              O criador de um documento multímidia é usualmente chamado de <b>autor</b>.<br>        
+              Entre outros aspectos, o autor de um documento multimídia defini o <b>sincronismo</b> entre as mídias. Ou seja, ele define o comportamento da exbição das mídias no decorrer do tempo da apresentação.<br>
+              O sincronismo é geralmente baseado na apresentação de <b>trechos de mídia</b> contínua ou na interação do usuário. <br>Considere, por exemplo, que a parte de créditos de vídeo inicie no segundo 600. Um sincronimo pode ser definido para que ao iniciar o trecho dos creditos (o vídeo alcance o segundo 600) uma uma imagen de patrocínio seja exibida.<br><br>
+
+              A figura a seguir ilustra a criação e apresentação de um documento multimídia.<br>
+              Na <b>criação do documento multimídia</b>, o autor defini as mídias utilizadas e o sincronismo entre elas.<br>
+              Na <b>apresentação documento multimídia</b>, um sistema multimídia rcebe o documento multimídia os arquivos de mídia necessários para  realizar a apresentação de acordo com o sincronismo definido pelo autor. Na figura, por exemplo, uma imagem e um audio são apresentação em determinado trecho da apresentação de um video.<br>
+              A interface entre o sistema e o usuário é feitas por <b>dispositivos audiovisuais</b>, que apreentam conteúdos das mídias(som e frases) e <b>dispositivos apontador e tecla</b>, que capituram interações de usuário.<br><br>
+
+              <img class='center-block img-thumbnail' style='height: 500px' src='assets/overview1.svg'><br><br>
+
+              [1] <a href='https://www.pearson.com/us/higher-education/product/Steinmetz-Multimedia-Computing-Communications-and-Applications/9780133244359.html'> Steinmetz, R. and Nahrstedt, K. 1995. Multimedia: Computing, Communications and Applications. Prentice Hall.</a></div>`
             },
             {
               type: "html",
               html: `
-          <div class='text-justify'>
-          
-          Agora, devemos introduzir o conceito de <b>interações multimodais</b>.<br><br>
-          
-          Oviatt [2] define que interação multimodals visa reconhecer interações nas as formas naturais da linguagem humana e comportamento, como fala e gestos.<br>
-          Esse tipo de interação foi apoiada pelos recentes avanços em tecnologias de reconhecimento e <b>dispositivos de interação multimodal</b>. 
-          Ilustrados a seguir, citamos o uso de microfones para reconhecimento de voz, e dispostivos como LeapMotion e e Microsoft Kinect para reconhecimento de gestos de mão e corpo, respectivamente.<br><br>
-           
-          <div class='text-center'>
-          <img class='img-thumbnail' style='height: 200px' src='assets/voice.jpg'>
-          <img class='img-thumbnail' style='height: 200px' src='assets/leap.jpg'>
-          <img class='img-thumbnail' style='height: 200px' src='assets/kinect.jpg'>
-          </div><br><br>
+              <div class='text-justify'>
 
-          Um <b>sistema multimídia com interações multimodais</b> deve não apenas apresentar as midias ao usuário como também reconhecer interações multimodais.<br>
-          Logo, um <b>documento multimídia com interações multimodais</b> deve conter também sincronismos baseados no reconhecimento de interações multimodais.<br><br> Para o reconhecimento dessas interações, o documento multimedia pode se utilziar de descrições multimodais que atraves de uma sintaxe própria definem como reconhcer determinada interação. Por exemplo, uma descrição pode ser em SRGS (Speech Recognition Grammar Specification) para definir o reconhecimento de comandos de voz.<br><br>
-          
-          Modificamos a figura anterior, sobre criação e apresentação de um documento multimídia, para considerar agora interações multimodais.<br>
-          Nessa nova figura, o autor do documento defini <b>reconhecimentos de interações multimodais</b>, além das mídias e sincronismo.<br>
-          Além dos dispositivos audiovisuais para exibição de mídias, o sistema multimídia deve utilizar também <b>dispositivos de interação multimodal</b> para receonhecimentos.<br><br>
-                    
-          <img class='center-block img-thumbnail' style='height: 500px' src='assets/overview2.svg'><br><br>
-          
-          [2] <a href='http://dx.doi.org/10.1201/9781410615862.ch21'>Oviatt, S. 2007. Multimodal Interfaces. Human Computer Interact Handbook. CRC Press, 413–432</a><br>
-          [3] <a href='#'> https://www.w3.org/TR/speech-grammar <a>
-          </div>`
+              Agora, devemos introduzir o conceito de <b>interações multimodais</b>.<br><br>
+
+              Oviatt [2] define que interação multimodals visa reconhecer interações nas as formas naturais da linguagem humana e comportamento, como fala e gestos.<br>
+              Esse tipo de interação foi apoiada pelos recentes avanços em tecnologias de reconhecimento e <b>dispositivos de interação multimodal</b>. 
+              Ilustrados a seguir, citamos o uso de microfones para reconhecimento de voz, e dispostivos como LeapMotion e e Microsoft Kinect para reconhecimento de gestos de mão e corpo, respectivamente.<br><br>
+
+              <div class='text-center'>
+              <img class='img-thumbnail' style='height: 200px' src='assets/voice.jpg'>
+              <img class='img-thumbnail' style='height: 200px' src='assets/leap.jpg'>
+              <img class='img-thumbnail' style='height: 200px' src='assets/kinect.jpg'>
+              </div><br><br>
+
+              Um <b>sistema multimídia com interações multimodais</b> deve não apenas apresentar as midias ao usuário como também reconhecer interações multimodais.<br>
+              Logo, um <b>documento multimídia com interações multimodais</b> deve conter também sincronismos baseados no reconhecimento de interações multimodais.<br><br> Para o reconhecimento dessas interações, o documento multimedia pode se utilziar de descrições multimodais que atraves de uma sintaxe própria definem como reconhcer determinada interação. Por exemplo, uma descrição pode ser em SRGS (Speech Recognition Grammar Specification) para definir o reconhecimento de comandos de voz.<br><br>
+
+              Modificamos a figura anterior, sobre criação e apresentação de um documento multimídia, para considerar agora interações multimodais.<br>
+              Nessa nova figura, o autor do documento defini <b>reconhecimentos de interações multimodais</b>, além das mídias e sincronismo.<br>
+              Além dos dispositivos audiovisuais para exibição de mídias, o sistema multimídia deve utilizar também <b>dispositivos de interação multimodal</b> para receonhecimentos.<br><br>
+
+              <img class='center-block img-thumbnail' style='height: 500px' src='assets/overview2.svg'><br><br>
+
+              [2] <a href='http://dx.doi.org/10.1201/9781410615862.ch21'>Oviatt, S. 2007. Multimodal Interfaces. Human Computer Interact Handbook. CRC Press, 413–432</a><br>
+              [3] <a href='#'> https://www.w3.org/TR/speech-grammar <a>
+              </div>`
             }
           ],
         },
@@ -160,23 +160,20 @@ var _surveyJSON = {
           elements: [
             {
               type: "html",
-              html: `
-          <div class='text-justify'>
-          
-          Para melhor ilustrar o desenvolvimento de aplicações multimídia com interações multimodais, utilizaremos a seguir aplicações descritas através da abstração de blocos. <br>
-          O desenvolvimento de software baseado em blocos foi popularizado por ferramentas como o MIT Scratch [4] para criar aplicações na web e o MIT App Inventor[5] para criar aplicações moveis<br><br>
+              html: `<div class='text-justify'>
+                    Para melhor ilustrar o desenvolvimento de aplicações multimídia com interações multimodais, utilizaremos a seguir aplicações descritas através da abstração de blocos. <br>
+                    O desenvolvimento de software baseado em blocos foi popularizado por ferramentas como o MIT Scratch [4] para criar aplicações na web e o MIT App Inventor[5] para criar aplicações moveis<br><br>
 
-          <div class='text-center'>
-          <img class='img-thumbnail' style='height: 270px' src='assets/scratch.jpg'>
-          <span style="margin-left:40px"></span>  
-          <img class='img-thumbnail' style='height: 270px' src='assets/appinventor.jpg'>
-          </div><br><br>
+                    <div class='text-center'>
+                    <img class='img-thumbnail' style='height: 270px' src='assets/scratch.jpg'>
+                    <span style="margin-left:40px"></span>  
+                    <img class='img-thumbnail' style='height: 270px' src='assets/appinventor.jpg'>
+                    </div><br><br>
 
+                    [4] <a href='#'>scratch.mit.edu </a><br>
+                    [5] <a href='#'>appinventor.mit.edu</a><br>
 
-          [4] <a href='#'>scratch.mit.edu </a><br>
-          [5] <a href='#'>appinventor.mit.edu</a><br>
-          
-          </div>`
+                    </div>`
             },
             {
               type: "html",
