@@ -21,7 +21,7 @@ _data.surveyJSON = {
   showProgressBar: 'top',
   showQuestionNumbers: 'off',
   surveyPostId: '51d57b85-3813-4a08-801b-4b7e077c1660',
-  // title: "Estudo sobre interações multimodais em linguagens multimídia",
+  // title: 'Estudo sobre interações multimodais em linguagens multimídia',
   pages: [
     {
       name: 'termo',
@@ -30,17 +30,18 @@ _data.surveyJSON = {
         {
           type: 'html',
           html: `
-          O TeleMídia é um grupo de pesquisa do departamento de Informática da PUC-Rio que desenvolve pesquisas nas áreas de Sistemas Multimídia e Redes de Computadores. Em particular, Sistemas de TV Digital, terrestre e IPTV, têm sido foco de pesquisa e inovação do laboratório nos últimos anos.<br><br>
-          
-          Convidamos a você a participar de um de nosso estudo sobre<i>Interações multimodais em linguagens multimídia</i>.<br><br>
-          
-          <b>Ressaltamos que esse estudo NÃO se destina à avaliar seus conhecimentos acerca dos conceitos apresentados, mas sim capturar evidências de nossa pesquisa.</b><br><br>
-          
-          Para prosseguirmos, pedimos seu consentimento para realizarmos esse estudo e informamos que:
-          <ul>
-          <li>Os dados coletados destinam-se estritamente a atividades de pesquisa e desenvolvimento, e somente os pesquisadores do TeleMídia têm acesso à integra do material resultante da avaliação.</li>
-          <li>A divulgação dos resultados de nossa pesquisa em foros científicos e/ou pedagógicos pauta-se no respeito à privacidade, e o anonimato dos participantes é preservado em qualquer material publicado.</li>
-          </ul>`
+            O TeleMídia é um grupo de pesquisa do departamento de Informática da PUC-Rio que desenvolve pesquisas nas áreas de Sistemas Multimídia e Redes de Computadores. Em particular, Sistemas de TV Digital, terrestre e IPTV, têm sido foco de pesquisa e inovação do laboratório nos últimos anos.<br><br>
+            
+            Convidamos a você a participar de um de nosso estudo sobre<i>Interações multimodais em linguagens multimídia</i>.<br><br>
+            
+            <strong>Ressaltamos que esse estudo NÃO se destina à avaliar seus conhecimentos acerca dos conceitos apresentados, mas sim capturar evidências de nossa pesquisa.</strong><br><br>
+            
+            Para prosseguirmos, pedimos seu consentimento para realizarmos esse estudo e informamos que:
+            <ul>
+            <li>Os dados coletados destinam-se estritamente a atividades de pesquisa e desenvolvimento, e somente os pesquisadores do TeleMídia têm acesso à integra do material resultante da avaliação.</li>
+            <li>A divulgação dos resultados de nossa pesquisa em foros científicos e/ou pedagógicos pauta-se no respeito à privacidade, e o anonimato dos participantes é preservado em qualquer material publicado.</li>
+            </ul>
+          `
         },
         {
           type: 'html',
@@ -122,65 +123,73 @@ _data.surveyJSON = {
     },
     {
       name: 'intro',
-      title: 'Introdução à conceitos multimodais',
+      title: 'Introdução à linguagens multimídia com interações multimodais',
       elements: [
         {
           type: 'html',
-          html: `
-              <div class='text-justify'></div>          
-              Primeiro devemos introduzir os conceitos de sistema multimídia e documento multimídia.<br><br> 
-
-              Steinmetz [1] caracteriza um <b>sistem multimídia</b> como aquele que utiliza um conjunto mídias, que ao menos uma mídia seja discreta e uma seja contínua.<br>
-              <b>Mídias discretas</b> são aquelas que não mudam sua exibição no decorrer do tempo. Logo, elas também são chamadas de mídias independente de tempo.Exemplos de mídias discretas são textos, imagens e gráficos.<br>
-              <b>Mídias contínuas</b> são aquelas que mudam sua exbição no decorrer do tempo. Logo, elas também são chamdas de mídias dependentes de tempo. Exemplos de mídias contínuas são áudios e vídeos.<br><br>
-
-              Também segundo Steinmentz, um <b>documento multimídia</b> é aquele que define como um sistema multímida deve exibir um conjunto de mídias (discretas e contínuas) na forma de uma <b>apresentação multimídia</b>.<br>
-              O criador de um documento multímidia é usualmente chamado de <b>autor</b>.<br>        
-              Entre outros aspectos, o autor de um documento multimídia defini o <b>sincronismo</b> entre as mídias. Ou seja, ele define o comportamento da exbição das mídias no decorrer do tempo da apresentação.<br>
-              O sincronismo é geralmente baseado na apresentação de <b>trechos de mídia</b> contínua ou na interação do usuário. <br>Considere, por exemplo, que a parte de créditos de vídeo inicie no segundo 600. Um sincronimo pode ser definido para que ao iniciar o trecho dos creditos (o vídeo alcance o segundo 600) uma uma imagen de patrocínio seja exibida.<br><br>
-
-              A figura a seguir ilustra a criação e apresentação de um documento multimídia.<br>
-              Na <b>criação do documento multimídia</b>, o autor defini as mídias utilizadas e o sincronismo entre elas.<br>
-              Na <b>apresentação documento multimídia</b>, um sistema multimídia rcebe o documento multimídia os arquivos de mídia necessários para  realizar a apresentação de acordo com o sincronismo definido pelo autor. Na figura, por exemplo, uma imagem e um audio são apresentação em determinado trecho da apresentação de um video.<br>
-              A interface entre o sistema e o usuário é feitas por <b>dispositivos audiovisuais</b>, que apreentam conteúdos das mídias(som e frases) e <b>dispositivos apontador e tecla</b>, que capituram interações de usuário.<br><br>
-
-              <img class='center-block img-thumbnail' style='height: 500px' src='assets/overview1.svg'><br><br>
-
-              [1] <a href='https://www.pearson.com/us/higher-education/product/Steinmetz-Multimedia-Computing-Communications-and-Applications/9780133244359.html'> Steinmetz, R. and Nahrstedt, K. 1995. Multimedia: Computing, Communications and Applications. Prentice Hall.</a></div>`
+          html:
+            `<p>O objetivo dessa seção do estudo é oferecer uma introdução sobre o conceito de <strong>linguagens multimídias com interações multimodais</strong>, proposto em nossa pesquisa.</p>`
         },
         {
           type: 'html',
-          html: `
-              <div class='text-justify'>
+          html:
+            `<p>Primeiro devemos introduzir o que é um linguagem multimídia, que é intimamente documento multimídia.</p>
+            <br>
 
-              Agora, devemos introduzir o conceito de <b>interações multimodais</b>.<br><br>
+            <p>Steinmetz [1] caracteriza um <strong>sistema multimídia</strong> como aquele que utiliza um conjunto de mídias, que ao menos uma mídia seja discreta e uma seja contínua. As <strong>mídias discretas</strong> são aquelas que não mudam durante sua exibição, como imagens e textos. Elas também são chamadas de mídias independente de tempo. Enquanto, as <strong>mídias contínuas</strong> são aquelas que mudam durante sua exbição, como áudios e vídeos. Elas também são chamdas de mídias dependentes de tempo.</p>
+            <br>
 
-              Oviatt [2] define que interação multimodals visa reconhecer interações nas as formas naturais da linguagem humana e comportamento, como fala e gestos.<br>
-              Esse tipo de interação foi apoiada pelos recentes avanços em tecnologias de reconhecimento e <b>dispositivos de interação multimodal</b>. 
-              Ilustrados a seguir, citamos o uso de microfones para reconhecimento de voz, e dispostivos como LeapMotion e e Microsoft Kinect para reconhecimento de gestos de mão e corpo, respectivamente.<br><br>
+            <p>Um <strong>documento multimídia</strong>, também segundo Steinmentz, é aquele que define como um sistema multímida deve exibir um conjunto de mídias (discretas e contínuas) na forma de uma apresentação multimídia. O criador de um documento multímidia é usualmente chamado de autor.</p>
+            <br>
 
-              <div class='text-center'>
-              <img class='img-thumbnail' style='height: 200px' src='assets/voice.jpg'>
-              <img class='img-thumbnail' style='height: 200px' src='assets/leap.jpg'>
-              <img class='img-thumbnail' style='height: 200px' src='assets/kinect.jpg'>
-              </div><br><br>
+            <p>A figura a seguir ilustra a criação e apresentação de um documento multimídia.</p>
+            <p>Na <strong>criação do documento multimídia</strong>, o autor defini as mídias utilizadas e o sincronismo entre elas.</p>
+            <p>O sincronismo define o comportamento da exbição das mídias no decorrer do tempo da apresentação. Ele é geralmente baseado em momentos de apresentação de <strong>trechos de mídia</strong> contínua. Considere, por exemplo, que a parte de créditos de vídeo inicie no segundo 600. Um sincronimo pode ser definido para que ao iniciar o trecho dos creditos (o vídeo alcance o segundo 600) uma uma imagen de patrocínio seja exibida.</p>
+            <p>Na <strong>apresentação documento multimídia</strong>, um sistema multimídia recebe o documento multimídia e os arquivos de mídia necessários para  realizar o sincronismo definido pelo autor. Na figura, por exemplo, uma imagem e um audio são apresentação em determinado trecho da apresentação de um video. Por fim, o sistema utiliza <strong>dispositivos audiovisuais</strong> para apresentar conteúdos das mídias (som e frames) e <strong>dispositivos apontador e tecla</strong> para capiturar interações de usuário.</p>
+            <img class='center-block img-thumbnail' style='height: 500px' src='assets/overview1.svg'><br>
 
-              Um <b>sistema multimídia com interações multimodais</b> deve não apenas apresentar as midias ao usuário como também reconhecer interações multimodais.<br>
-              Logo, um <b>documento multimídia com interações multimodais</b> deve conter também sincronismos baseados no reconhecimento de interações multimodais.<br><br> Para o reconhecimento dessas interações, o documento multimedia pode se utilziar de descrições multimodais que atraves de uma sintaxe própria definem como reconhcer determinada interação. Por exemplo, uma descrição pode ser em SRGS (Speech Recognition Grammar Specification) para definir o reconhecimento de comandos de voz.<br><br>
+            <p>A <strong>linguagem multídmidia</strong> é na verdade o formato que permite um autor definir um documento multimídia. Ela define uma sintaxe e elementos de linguagem. Exemplos atuais de linguagens multímidia são a NCL (Nested Context Language)[2] e a HTML[3].</p>
+            <br>
 
-              Modificamos a figura anterior, sobre criação e apresentação de um documento multimídia, para considerar agora interações multimodais.<br>
-              Nessa nova figura, o autor do documento defini <b>reconhecimentos de interações multimodais</b>, além das mídias e sincronismo.<br>
-              Além dos dispositivos audiovisuais para exibição de mídias, o sistema multimídia deve utilizar também <b>dispositivos de interação multimodal</b> para receonhecimentos.<br><br>
-
-              <img class='center-block img-thumbnail' style='height: 500px' src='assets/overview2.svg'><br><br>
-
-              [2] <a href='http://dx.doi.org/10.1201/9781410615862.ch21'>Oviatt, S. 2007. Multimodal Interfaces. Human Computer Interact Handbook. CRC Press, 413–432</a><br>
-              [3] <a href='#'> https://www.w3.org/TR/speech-grammar <a>
-              </div>`
+            [1] <a href='https://www.pearson.com/us/higher-education/product/Steinmetz-Multimedia-Computing-Communications-and-Applications/9780133244359.html'> Steinmetz, R. and Nahrstedt, K. 1995. Multimedia: Computing, Communications and Applications. Prentice Hall.</a> <br>
+            [2] <a href='#'>https://www.itu.int/rec/T-REC-H.761</a><br>
+            [3] <a href='#'>https://www.w3.org/TR/html5</a><br>
+          `
         },
         {
           type: 'html',
-          html: 'Caso esteja de acordo, prossiga.<br>'
+          html:
+            `<p>Agora, devemos introduzir o conceito de <strong>linguagens multimídia com interações multimodais</strong>, que intimamente relacionado com interfaces multimodais.</p>
+            <br>
+
+            <p>Oviatt [4] define que <strong>interfaces multimodais</strong> como aquelas que reconhecerem  interações em formas mais naturais da linguagem humana e comportamento, como fala e gestos. Esse tipo de interface foi apoiada pelos recentes avanços em tecnologias de reconhecimento e <strong>dispositivos de interação multimodal</strong>. Ilustrados a seguir, citamos o uso de microfones para reconhecimento de voz, e dispostivos como LeapMotion e e Microsoft Kinect para reconhecimento de gestos de mão e corpo, respectivamente.</p>
+            <br>
+
+            <div class='text-center'>
+            <img class='img-thumbnail' style='height: 180px' src='assets/voice.jpg'>
+            <img class='img-thumbnail' style='height: 180px' src='assets/leap.jpg'>
+            <img class='img-thumbnail' style='height: 180px' src='assets/kinect.jpg'>
+            </div><p><br>
+
+            <p>Modificamos a primeira figura para ilustrar a criação e apresentação de um documento multimídia com suporte a interações multimodais. Nessa nova figura, o autor não apenas midias e sincronismo, como também o reconhecimento de interações multimodais. 
+            <p>Para definir receonhecimentos, o autor utiliza de descrições auxiliares para reconhcer determinada interação. Essas descrição tem sintaxe própria que defini características de interação. Por exemplo, uma descrição pode ser em SRGS (Speech Recognition Grammar Specification) [5] para definir o reconhecimento de comandos de voz.</p>
+            <br>
+            
+            <p>Na apresentação, esse sistema multimídia recebe o documento multimídia, arquivos de mídia e descrições multimodais necessparios para realziar o sincronismo e reconhecimentos definido pelo autor. Esse sistema  utiliza dispositivos de interação multimodal para receonhecimento, além de dispositivos audiovisuais.</p>
+            <br>
+
+            <img class='center-block img-thumbnail' style='height: 500px' src='assets/overview2.svg'>
+            <br>
+
+            <p>Por fim, uma <strong>linguagem multimídia com interações multimodais</strong> é aquele formato que permite definir um documento multimída com não apenas sincroniza mídias, mas também reconhecimento de interações multimodais.</p>
+
+            [4] <a href='http://dx.doi.org/10.1201/9781410615862.ch21'>Oviatt, S. 2007. Multimodal Interfaces. Human Computer Interact Handbook. CRC Press, 413–432</a><br>
+            [5] <a href='#'>https://www.w3.org/TR/speech-grammar<a>
+          `
+        },
+        {
+          type: 'html',
+          html: '<p>Esperamos que esta introdução tenha sido útil no seu entendimento acerca de linguagens multimídia com interações multimodais. Favor prossiga.</p>'
         }
       ]
     },
@@ -190,40 +199,43 @@ _data.surveyJSON = {
       elements: [
         {
           type: 'html',
-          html: `<div class='text-justify'>
-                    Para melhor ilustrar o desenvolvimento de aplicações multimídia com interações multimodais, utilizaremos a seguir uma <b>descrição aplicações através da abstração de blocos</b>.<br>
-                    O desenvolvimento de aplicações baseado em blocos foi popularizado por ferramentas como o <b>MIT Scratch</b>[4] e <b>MIT App Inventor</b>[5]. O primeiro é utilizado para para criar aplicações web, especialmente jogos, e o segundo utilizado para criar aplicações moveis, ambos são ilustratos a seguir.<br><br>
+          html:
+            `<p>Para ilustrar e capiturar de forma simples o seu entendimento sobre uma linguagem multimídia com interações multimodais, utilizaremos a seguir abordagem de desenvolvimento de aplicações através de uma <strong> abstração de blocos</strong>.</p>
+            <p>O desenvolvimento de aplicações através de blocos foi popularizado por ferramentas como o <strong>MIT Scratch</strong>[4] e <strong>MIT App Inventor</strong>[5]. O primeiro é utilizado para criar aplicações web, especialmente jogos, e o segundo utilizado para criar aplicações moveis. Ambos são ilustratos a seguir.</p>
+            <br>
 
-                    <div class='text-center'>
-                    <img class='img-thumbnail' style='height: 270px' src='assets/scratch.jpg'>
-                    <span style="margin-left:40px"></span>  
-                    <img class='img-thumbnail' style='height: 270px' src='assets/appinventor.jpg'>
-                    </div><br><br>
+            <div class='text-center'>
+            <img class='img-thumbnail' style='height: 270px' src='assets/scratch.jpg'>
+            <span style="margin-left:10px"></span>  
+            <img class='img-thumbnail' style='height: 270px' src='assets/appinventor.jpg'>
+            </div><br>
 
-                    [4] <a href='#'>scratch.mit.edu </a><br>
-                    [5] <a href='#'>appinventor.mit.edu</a><br>
-
-                    </div>`
+            [4] <a href='#'>scratch.mit.edu</a><br>
+            [5] <a href='#'>appinventor.mit.edu</a><br>`
         },
         {
           type: 'html',
           name: 'conceptsBlocksIntro1',
-          html: "<div class='text-justify'>Segue o uso de um sincronismo como blocos.</div>"
+          html:
+            `<p>Os blocos defini cinco mídias sem sincronismos. Três mídias tem um conteúdo de vídeo e duas tem conteúdo de imagem.</p>`
         },
         {
           type: 'html',
           name: 'conceptsBlocksIntro2',
-          html: "<div class='text-justify'>Segue o uso de um sincronismo como blocos.</div>"
+          html:
+            `<p>Segue o uso de um sincronismo como blocos.</p>`
         },
         {
           type: 'html',
           name: 'conceptsBlocksIntro3',
-          html: "<div class='text-justify'>Segue o uso de uma mídia, sincronismo e reconhecimento como blocos bloco.</div>"
+          html:
+            `<p>Segue o uso de uma mídia, sincronismo e reconhecimento como blocos bloco.</p>`
         },
         {
           type: 'html',
           name: 'conceptsBlocksIntro4',
-          html: "<div class='text-justify'>Segue o uso de uma mídia, sincronismo, reconhecimento de usuário como blocos.</div>"
+          html:
+            `<p>Segue o uso de uma mídia, sincronismo, reconhecimento de usuário como blocos.</p>`
         },
         {
           type: 'html',
@@ -376,7 +388,19 @@ _data.surveyJSON = {
       elements: [
         {
           type: 'html',
-          html: "A linguagem NCL possui o foco de criar apresentações multimídia interativas.Anteriormente a NCL focava no uso de mídias audiovisuais (por exemplo imagens, vídeo e áudios) e interações por meio de apontador e tecla.<br><br>O exemplo de código a seguir ilustra o uso de novas mídias e interação.<br><br>Um exemplo de mídia NCL comum é o 'mainvideo' (linhas 12-14).<br>Essa media possui um trecho definido pela ancora 'credits'(linhas 13).<br><br>Para adicionar interações multimodais sobre esse video, adicionamos os elementos 'menu' (linhas 15-17) e 'answer' (linhas 19-21).<br>O primeiro define um áudio sintetizado utilizando o arquivo SSML chamado question.ssml (linhas 2-4).<br>O segundo define um reconhecimento de vocês utilizando  o arquivo  SRGS chamado commads.srgs (linhas 7-9).<br><br>Esse áudio sintetizado é definido pelo elo das linhas 23-27.<br>Enquanto que o reconhecimento é definido pelo elo das linhas 28-31.<br>",
+          html:
+            `<p>A linguagem NCL possui o foco de criar apresentações multimídia interativas. Anteriormente a NCL focava no uso de mídias audiovisuais (por exemplo imagens, vídeo e áudios) e interações por meio de apontador e tecla.</p>
+            <br>
+
+            <p>O exemplo de código a seguir ilustra o uso de novas mídias e interação.<br><br>Um exemplo de mídia NCL comum é o 'mainvideo' (linhas 12-14).<br>Essa media possui um trecho definido pela ancora 'credits'(linhas 13).</p>
+            <br>
+            
+            <p>Para adicionar interações multimodais sobre esse video, adicionamos os elementos 'menu' (linhas 15-17) e 'answer' (linhas 19-21).<br>
+            O primeiro define um áudio sintetizado utilizando o arquivo SSML chamado question.ssml (linhas 2-4).<br>O segundo define um reconhecimento de vocês utilizando  o arquivo  SRGS chamado commads.srgs (linhas 7-9).</p>
+            <br>
+            
+            <p>Esse áudio sintetizado é definido pelo elo das linhas 23-27.<br>
+            Enquanto que o reconhecimento é definido pelo elo das linhas 28-31.</p>`,
           name: 'nclIntro'
         },
         {
@@ -579,7 +603,7 @@ _data.surveyJSON = {
           name: 'commentsQuestion2',
           rows: '9',
           title: {
-            en: 'Adcionalmente, você poderia falar que tipos de aplicações você gostaria de desenvolver com conceitos apresentados nesse questionário.'
+            en: 'Adcionalmente, se desejar, você fale sobre que tipos de aplicações você gostaria de desenvolver com conceitos apresentados nesse estudo.'
           }
         }
       ]

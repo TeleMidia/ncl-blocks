@@ -18,7 +18,7 @@ Survey.Survey.cssType = 'bootstrap'
 var _survey = new Survey.Model(_data.surveyJSON)
 var _surveyCss = {
   // root
-  'root': 'h4 panel panel-default',
+  'root': 'panel panel-default',
   'header': 'h3 text-center breadcrumb',
   'body': 'panel-body',
   'footer': 'panel-footer text-center ',
@@ -66,7 +66,7 @@ if ($('#surveyPageNo').length) {
 $('#surveyPageNo').change(function () {
   _survey.currentPageNo = this.value
 })
-$('#surveyPageNo').val(2).change()
+$('#surveyPageNo').val(3).change()
 
 // ----------------------------------------
 // survey listeners
