@@ -85,10 +85,10 @@ function onValidateQuestions (survey, options) {
   switch (_survey.currentPage.name) {
     case 'concepts':
       if (!_conceptsTask2Workspace.getAllBlocks().length) {
-        insertRequiredErrorInBlocks(_survey.getQuestionByName('conceptsTask2Blocks').idValue)
+        insertRequiredErrorInBlocks(_survey.getQuestionByName('conceptsTask2').idValue)
       }
       if (!_conceptsTask4Workspace.getAllBlocks().length) {
-        insertRequiredErrorInBlocks(_survey.getQuestionByName('conceptsTask4Blocks').idValue)
+        insertRequiredErrorInBlocks(_survey.getQuestionByName('conceptsTask4').idValue)
       }
       return true
   }
@@ -96,35 +96,35 @@ function onValidateQuestions (survey, options) {
 }
 
 function onRenderPage (targetSurvey, pageAndHtml) {
-  window.scrollTo(0, 0)
+  // window.scrollTo(0, 0)
 }
 
 function onRenderQuestion (targetSurvey, questionAndHtml) {
   var questionId = questionAndHtml.question.idValue
   var questionName = questionAndHtml.question.name
   switch (questionName) {
-    case 'conceptsBlocksIntro1':
+    case 'conceptsIntro1':
       NclBlocks.injectInDiv(_pathToBlockly, questionId,
-        NclBlocks.calculateHeight(3, 130), _data.conceptsBlocks1Xml, true)
+        NclBlocks.calculateHeight(3, 130), _data.conceptsIntro1Xml, true)
       break
-    case 'conceptsBlocksIntro2':
+    case 'conceptsIntro2':
       NclBlocks.injectInDiv(_pathToBlockly, questionId,
-        NclBlocks.calculateHeight(5, 140), _data.conceptsBlocks2Xml,
+        NclBlocks.calculateHeight(5, 140), _data.conceptsIntro2Xml,
         true)
       break
-    case 'conceptsBlocksIntro3':
+    case 'conceptsIntro3':
       NclBlocks.injectInDiv(_pathToBlockly, questionId,
-        NclBlocks.calculateHeight(6, 150), _data.conceptsBlocks3Xml, true)
+        NclBlocks.calculateHeight(6, 150), _data.conceptsIntro3Xml, true)
       break
-    case 'conceptsBlocksIntro4':
+    case 'conceptsIntro4':
       NclBlocks.injectInDiv(_pathToBlockly, questionId,
-        NclBlocks.calculateHeight(1, 80), _data.conceptsBlocks4Xml, true)
+        NclBlocks.calculateHeight(1, 80), _data.conceptsIntro4Xml, true)
       break
-    case 'conceptsTask1Blocks':
+    case 'conceptsTask1':
       NclBlocks.injectInDiv(_pathToBlockly, questionId,
         NclBlocks.calculateHeight(1, 80), _data.conceptsTask1Xml, true)
       break
-    case 'conceptsTask2Blocks':
+    case 'conceptsTask2':
       _conceptsTask2Workspace = NclBlocks.injectInDiv(_pathToBlockly,
         questionId, '800px')
       _conceptsTask2Workspace.addChangeListener(saveConceptsTask2Changes)
@@ -133,7 +133,7 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       NclBlocks.injectInDiv(_pathToBlockly, questionId,
         NclBlocks.calculateHeight(1, 80), _data.conceptsTask3Xml, true)
       break
-    case 'conceptsTask4Blocks':
+    case 'conceptsTask4':
       _conceptsTask4Workspace = NclBlocks.injectInDiv(_pathToBlockly,
         questionId, '800px')
       _conceptsTask4Workspace.addChangeListener(saveConceptsTask4Changes)
@@ -147,6 +147,7 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       SyntaxHighlighter.highlight()
       break
   }
+  window.scrollTo(0, 0)
 }
 var _conceptsTask2Workspace
 var _conceptsTask4Workspace

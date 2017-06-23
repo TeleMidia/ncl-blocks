@@ -223,14 +223,14 @@ _data.surveyJSON = {
         },
         {
           type: 'html',
-          name: 'conceptsBlocksIntro1',
+          name: 'conceptsIntro1',
           html:
           `<p>O grupo de de blocos a seguir defini cinco mídias, mas nenhum  sincronismos. Três mídias possuem conteúdo de vídeo e são chamadas de <em>video_intro</em>, <em>video_centro</em> e e <em>video_praia</em>, respectivamente. As outras duas possem conteúdo de imagem e são chamdas de <em>img_centro</em> e <em>img_praia</em>.</p>
             <br>`
         },
         {
           type: 'html',
-          name: 'conceptsBlocksIntro2',
+          name: 'conceptsIntro2',
           html:
           `<p>Esse segundo grupo de blocos estende o anterior ao adcionar  quatro blocos de sincronismo. </p>
             <p>O primeiro sincronismo define que quando a aplicação inicia, a mídia chamada <em>video_principal</em> também é iniciada. Outro sincronismo, ao lado desse primiro, defini que as duas imagens <em>img_centro</em> e <em>img_praia</em> iniciam no monmento em que o trecho <em>creditos</em> da mídia <em>video_principal</em> é alcançado.</p>
@@ -238,19 +238,19 @@ _data.surveyJSON = {
         },
         {
           type: 'html',
-          name: 'conceptsBlocksIntro3',
+          name: 'conceptsIntro3',
           html:
           `<p>Segue o uso de uma mídia, sincronismo e reconhecimento como blocos bloco.</p><br>`
         },
         {
           type: 'html',
-          name: 'conceptsBlocksIntro4',
+          name: 'conceptsIntro4',
           html:
           `<p>Segue o uso de uma mídia, sincronismo, reconhecimento de usuário como blocos.</p>`
         },
         {
           type: 'html',
-          name: 'conceptsTask1Blocks'
+          name: 'conceptsTask1'
         },
         {
           type: 'comment',
@@ -260,7 +260,7 @@ _data.surveyJSON = {
         },
         {
           type: 'html',
-          name: 'conceptsTask2Blocks'
+          name: 'conceptsTask2'
         },
         {
           type: 'text',
@@ -284,7 +284,7 @@ _data.surveyJSON = {
         },
         {
           type: 'html',
-          name: 'conceptsTask4Blocks'
+          name: 'conceptsTask4'
         },
         {
           type: 'text',
@@ -626,7 +626,7 @@ _data.surveyJSON = {
 // intro page
 // ----------------------------------------
 
-_data.conceptsBlocks1Xml = `
+_data.conceptsIntro1Xml = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
       <field name="id">video_intro</field>
@@ -676,7 +676,7 @@ _data.conceptsBlocks1Xml = `
       </value>
     </block>
   </xml>`
-_data.conceptsBlocks2Xml = `
+_data.conceptsIntro2Xml = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="DACXRk{ds*},dxviHR(c" x="20" y="20">
       <field name="id">video_principal</field>
@@ -798,7 +798,7 @@ _data.conceptsBlocks2Xml = `
       </statement>
     </block>
   </xml>`
-_data.conceptsBlocks3Xml = `
+_data.conceptsIntro3Xml = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="DACXRk{ds*},dxviHR(c" x="20" y="20">
       <field name="id">video_principal</field>
@@ -935,7 +935,7 @@ _data.conceptsBlocks3Xml = `
       </statement>
     </block>
   </xml>`
-_data.conceptsBlocks4Xml = `<xml xmlns="http://www.w3.org/1999/xhtml">
+_data.conceptsIntro4Xml = `<xml xmlns="http://www.w3.org/1999/xhtml">
   <block type="media" id="KZ[g}J_gz%iQCj#u(I:P" x="0" y="20">
     <value name="src">
       <block type="image" id="LHprn9YiDsg/Nlglks0f"></block>

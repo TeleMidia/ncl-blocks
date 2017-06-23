@@ -27,9 +27,9 @@
 <body>
   <div class="center-block text-center">
     <br>blockTask=
-    <select id="blockTask" type="text" value="conceptsTask2Blocks">
-      <option value="conceptsTask2Blocks">conceptsTask2Blocks</option>
-      <option value="conceptsTask4Blocks">conceptsTask4Blocks</option>
+    <select id="blockTask" type="text" value="conceptsTask2">
+      <option value="conceptsTask2">conceptsTask2</option>
+      <option value="conceptsTask4">conceptsTask4</option>
       </select> resultIndex=
     <select id="resultIndex" type="text" value="-"><option value="-">-</option></select>
     <br><br>
@@ -101,9 +101,9 @@
       if (selected === '-') return
       var selectIndex = parseInt(selected)
       var savedWorkspaceXml
-      if ($('#blockTask option:selected').val() === 'conceptsTask2Blocks') {
+      if ($('#blockTask option:selected').val() === 'conceptsTask2') {
         savedWorkspaceXml = _resultsData[selectIndex].conceptsTask2Result
-      } else if ($('#blockTask option:selected').val() === 'conceptsTask4Blocks') {
+      } else if ($('#blockTask option:selected').val() === 'conceptsTask4') {
         savedWorkspaceXml = _resultsData[selectIndex].conceptsTask4Result
       }
       // console.log(savedWorkspaceXml)
@@ -119,9 +119,9 @@
     var _runEventIntervalIndex = 0
     var runEventInterval = function (index) {
       var result
-      if ($('#blockTask option:selected').val() === 'conceptsTask2Blocks') {
+      if ($('#blockTask option:selected').val() === 'conceptsTask2') {
         result = JSON.parse(_resultsData[index].conceptsTask2Changes)
-      } else if ($('#blockTask option:selected').val() === 'conceptsTask4Blocks') {
+      } else if ($('#blockTask option:selected').val() === 'conceptsTask4') {
         result = JSON.parse(_resultsData[index].conceptsTask4Changes)
       }
       if (_runEventIntervalIndex >= result.changes.length) {
