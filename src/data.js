@@ -128,12 +128,12 @@ _data.surveyJSON = {
         {
           type: 'html',
           html:
-            `<p>O objetivo dessa seção do estudo é oferecer uma introdução sobre o conceito de <strong>linguagens multimídias com interações multimodais</strong>, proposto em nossa pesquisa.</p>`
+          `<p>O objetivo dessa seção do estudo é oferecer uma introdução sobre o conceito de <strong>linguagens multimídias com interações multimodais</strong>, proposto em nossa pesquisa.</p>`
         },
         {
           type: 'html',
           html:
-            `<p>Primeiro devemos introduzir o que é um linguagem multimídia, que é intimamente documento multimídia.</p>
+          `<p>Primeiro devemos introduzir o que é um linguagem multimídia, que é intimamente documento multimídia.</p>
             <br>
 
             <p>Steinmetz [1] caracteriza um <strong>sistema multimídia</strong> como aquele que utiliza um conjunto de mídias, que ao menos uma mídia seja discreta e uma seja contínua. As <strong>mídias discretas</strong> são aquelas que não mudam durante sua exibição, como imagens e textos. Elas também são chamadas de mídias independente de tempo. Enquanto, as <strong>mídias contínuas</strong> são aquelas que mudam durante sua exbição, como áudios e vídeos. Elas também são chamdas de mídias dependentes de tempo.</p>
@@ -146,7 +146,11 @@ _data.surveyJSON = {
             <p>Na <strong>criação do documento multimídia</strong>, o autor defini as mídias utilizadas e o sincronismo entre elas.</p>
             <p>O sincronismo define o comportamento da exbição das mídias no decorrer do tempo da apresentação. Ele é geralmente baseado em momentos de apresentação de <strong>trechos de mídia</strong> contínua. Considere, por exemplo, que a parte de créditos de vídeo inicie no segundo 600. Um sincronimo pode ser definido para que ao iniciar o trecho dos creditos (o vídeo alcance o segundo 600) uma uma imagen de patrocínio seja exibida.</p>
             <p>Na <strong>apresentação documento multimídia</strong>, um sistema multimídia recebe o documento multimídia e os arquivos de mídia necessários para  realizar o sincronismo definido pelo autor. Na figura, por exemplo, uma imagem e um audio são apresentação em determinado trecho da apresentação de um video. Por fim, o sistema utiliza <strong>dispositivos audiovisuais</strong> para apresentar conteúdos das mídias (som e frames) e <strong>dispositivos apontador e tecla</strong> para capiturar interações de usuário.</p>
-            <img class='center-block img-thumbnail' style='height: 500px' src='assets/overview1.svg'><br>
+            
+            <div class='text-center'>
+              <img class='center-block img-thumbnail' style='height: 500px' src='assets/overview1.svg'>
+            </div>
+            <br>
 
             <p>A <strong>linguagem multídmidia</strong> é na verdade o formato que permite um autor definir um documento multimídia. Ela define uma sintaxe e elementos de linguagem. Exemplos atuais de linguagens multímidia são a NCL (Nested Context Language)[2] e a HTML[3].</p>
             <br>
@@ -159,17 +163,18 @@ _data.surveyJSON = {
         {
           type: 'html',
           html:
-            `<p>Agora, devemos introduzir o conceito de <strong>linguagens multimídia com interações multimodais</strong>, que intimamente relacionado com interfaces multimodais.</p>
+          `<p>Agora, devemos introduzir o conceito de <strong>linguagens multimídia com interações multimodais</strong>, que intimamente relacionado com interfaces multimodais.</p>
             <br>
 
             <p>Oviatt [4] define que <strong>interfaces multimodais</strong> como aquelas que reconhecerem  interações em formas mais naturais da linguagem humana e comportamento, como fala e gestos. Esse tipo de interface foi apoiada pelos recentes avanços em tecnologias de reconhecimento e <strong>dispositivos de interação multimodal</strong>. Ilustrados a seguir, citamos o uso de microfones para reconhecimento de voz, e dispostivos como LeapMotion e e Microsoft Kinect para reconhecimento de gestos de mão e corpo, respectivamente.</p>
             <br>
 
             <div class='text-center'>
-            <img class='img-thumbnail' style='height: 180px' src='assets/voice.jpg'>
-            <img class='img-thumbnail' style='height: 180px' src='assets/leap.jpg'>
-            <img class='img-thumbnail' style='height: 180px' src='assets/kinect.jpg'>
-            </div><p><br>
+              <img class='img-thumbnail' style='height: 180px' src='assets/voice.jpg'>
+              <img class='img-thumbnail' style='height: 180px' src='assets/leap.jpg'>
+              <img class='img-thumbnail' style='height: 180px' src='assets/kinect.jpg'>
+            </div>
+            <br>
 
             <p>Modificamos a primeira figura para ilustrar a criação e apresentação de um documento multimídia com suporte a interações multimodais. Nessa nova figura, o autor não apenas midias e sincronismo, como também o reconhecimento de interações multimodais. 
             <p>Para definir receonhecimentos, o autor utiliza de descrições auxiliares para reconhcer determinada interação. Essas descrição tem sintaxe própria que defini características de interação. Por exemplo, uma descrição pode ser em SRGS (Speech Recognition Grammar Specification) [5] para definir o reconhecimento de comandos de voz.</p>
@@ -178,7 +183,9 @@ _data.surveyJSON = {
             <p>Na apresentação, esse sistema multimídia recebe o documento multimídia, arquivos de mídia e descrições multimodais necessparios para realziar o sincronismo e reconhecimentos definido pelo autor. Esse sistema  utiliza dispositivos de interação multimodal para receonhecimento, além de dispositivos audiovisuais.</p>
             <br>
 
-            <img class='center-block img-thumbnail' style='height: 500px' src='assets/overview2.svg'>
+            <div class='text-center'>
+              <img class='img-thumbnail' style='height: 500px' src='assets/overview2.svg'>
+            </div>
             <br>
 
             <p>Por fim, uma <strong>linguagem multimídia com interações multimodais</strong> é aquele formato que permite definir um documento multimída com não apenas sincroniza mídias, mas também reconhecimento de interações multimodais.</p>
@@ -200,15 +207,16 @@ _data.surveyJSON = {
         {
           type: 'html',
           html:
-            `<p>Para ilustrar e capiturar de forma simples o seu entendimento sobre uma linguagem multimídia com interações multimodais, utilizaremos a seguir abordagem de desenvolvimento de aplicações através de uma <strong> abstração de blocos</strong>.</p>
+          `<p>Para ilustrar e capiturar de forma simples o seu entendimento sobre uma linguagem multimídia com interações multimodais, utilizaremos a seguir abordagem de desenvolvimento de aplicações através de uma <strong> abstração de blocos</strong>.</p>
             <p>O desenvolvimento de aplicações através de blocos foi popularizado por ferramentas como o <strong>MIT Scratch</strong>[4] e <strong>MIT App Inventor</strong>[5]. O primeiro é utilizado para criar aplicações web, especialmente jogos, e o segundo utilizado para criar aplicações moveis. Ambos são ilustratos a seguir.</p>
             <br>
 
             <div class='text-center'>
-            <img class='img-thumbnail' style='height: 270px' src='assets/scratch.jpg'>
-            <span style="margin-left:10px"></span>  
-            <img class='img-thumbnail' style='height: 270px' src='assets/appinventor.jpg'>
-            </div><br>
+              <img class='img-thumbnail' style='height: 270px' src='assets/scratch.jpg'>
+              <span style="margin-left:10px"></span>  
+              <img class='img-thumbnail' style='height: 270px' src='assets/appinventor.jpg'>
+            </div>
+            <br>
 
             [4] <a href='#'>scratch.mit.edu</a><br>
             [5] <a href='#'>appinventor.mit.edu</a><br>`
@@ -217,14 +225,14 @@ _data.surveyJSON = {
           type: 'html',
           name: 'conceptsBlocksIntro1',
           html:
-            `<p>O grupo de de blocos a seguir defini cinco mídias, mas nenhum  sincronismos. Três mídias possuem conteúdo de vídeo e são chamadas de <em>video_intro</em>, <em>video_centro</em> e e <em>video_praia</em>, respectivamente. As outras duas possem conteúdo de imagem e são chamdas de <em>img_centro</em> e <em>img_praia</em>.</p>
+          `<p>O grupo de de blocos a seguir defini cinco mídias, mas nenhum  sincronismos. Três mídias possuem conteúdo de vídeo e são chamadas de <em>video_intro</em>, <em>video_centro</em> e e <em>video_praia</em>, respectivamente. As outras duas possem conteúdo de imagem e são chamdas de <em>img_centro</em> e <em>img_praia</em>.</p>
             <br>`
         },
         {
           type: 'html',
           name: 'conceptsBlocksIntro2',
           html:
-            `<p>Esse segundo grupo de blocos estende o anterior ao adcionar  quatro blocos de sincronismo. </p>
+          `<p>Esse segundo grupo de blocos estende o anterior ao adcionar  quatro blocos de sincronismo. </p>
             <p>O primeiro sincronismo define que quando a aplicação inicia, a mídia chamada <em>video_principal</em> também é iniciada. Outro sincronismo, ao lado desse primiro, defini que as duas imagens <em>img_centro</em> e <em>img_praia</em> iniciam no monmento em que o trecho <em>creditos</em> da mídia <em>video_principal</em> é alcançado.</p>
             <p>Por fim, os outros dois sincronismos definem o que ocorre quando cada imagem é selecionada. Quando <em>img_centro</em> é selecionda todos as mídias em apresentação (<em>video_principal</em>,  em>img_centro</em> e <em>img_praia</em>) são paradas e a mídia <em>video_centro</em> é iniciada. De modo analago, quando a mídia <em>img_praia</em> é selecionada todoas as mídias em apresentação são paradas e a mídia <em>video_praia</em> é inicada</p><br>`
         },
@@ -232,13 +240,13 @@ _data.surveyJSON = {
           type: 'html',
           name: 'conceptsBlocksIntro3',
           html:
-            `<p>Segue o uso de uma mídia, sincronismo e reconhecimento como blocos bloco.</p><br>`
+          `<p>Segue o uso de uma mídia, sincronismo e reconhecimento como blocos bloco.</p><br>`
         },
         {
           type: 'html',
           name: 'conceptsBlocksIntro4',
           html:
-            `<p>Segue o uso de uma mídia, sincronismo, reconhecimento de usuário como blocos.</p>`
+          `<p>Segue o uso de uma mídia, sincronismo, reconhecimento de usuário como blocos.</p>`
         },
         {
           type: 'html',
@@ -392,7 +400,7 @@ _data.surveyJSON = {
         {
           type: 'html',
           html:
-            `<p>A linguagem NCL possui o foco de criar apresentações multimídia interativas. Anteriormente a NCL focava no uso de mídias audiovisuais (por exemplo imagens, vídeo e áudios) e interações por meio de apontador e tecla.</p>
+          `<p>A linguagem NCL possui o foco de criar apresentações multimídia interativas. Anteriormente a NCL focava no uso de mídias audiovisuais (por exemplo imagens, vídeo e áudios) e interações por meio de apontador e tecla.</p>
             <br>
 
             <p>O exemplo de código a seguir ilustra o uso de novas mídias e interação.<br><br>Um exemplo de mídia NCL comum é o 'mainvideo' (linhas 12-14).<br>Essa media possui um trecho definido pela ancora 'credits'(linhas 13).</p>
