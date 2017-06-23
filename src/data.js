@@ -217,19 +217,22 @@ _data.surveyJSON = {
           type: 'html',
           name: 'conceptsBlocksIntro1',
           html:
-            `<p>Os blocos defini cinco mídias sem sincronismos. Três mídias tem um conteúdo de vídeo e duas tem conteúdo de imagem.</p>`
+            `<p>O grupo de de blocos a seguir defini cinco mídias, mas nenhum  sincronismos. Três mídias possuem conteúdo de vídeo e são chamadas de <em>video_intro</em>, <em>video_centro</em> e e <em>video_praia</em>, respectivamente. As outras duas possem conteúdo de imagem e são chamdas de <em>img_centro</em> e <em>img_praia</em>.</p>
+            <br>`
         },
         {
           type: 'html',
           name: 'conceptsBlocksIntro2',
           html:
-            `<p>Segue o uso de um sincronismo como blocos.</p>`
+            `<p>Esse segundo grupo de blocos estende o anterior ao adcionar  quatro blocos de sincronismo. </p>
+            <p>O primeiro sincronismo define que quando a aplicação inicia, a mídia chamada <em>video_principal</em> também é iniciada. Outro sincronismo, ao lado desse primiro, defini que as duas imagens <em>img_centro</em> e <em>img_praia</em> iniciam no monmento em que o trecho <em>creditos</em> da mídia <em>video_principal</em> é alcançado.</p>
+            <p>Por fim, os outros dois sincronismos definem o que ocorre quando cada imagem é selecionada. Quando <em>img_centro</em> é selecionda todos as mídias em apresentação (<em>video_principal</em>,  em>img_centro</em> e <em>img_praia</em>) são paradas e a mídia <em>video_centro</em> é iniciada. De modo analago, quando a mídia <em>img_praia</em> é selecionada todoas as mídias em apresentação são paradas e a mídia <em>video_praia</em> é inicada</p><br>`
         },
         {
           type: 'html',
           name: 'conceptsBlocksIntro3',
           html:
-            `<p>Segue o uso de uma mídia, sincronismo e reconhecimento como blocos bloco.</p>`
+            `<p>Segue o uso de uma mídia, sincronismo e reconhecimento como blocos bloco.</p><br>`
         },
         {
           type: 'html',
@@ -632,17 +635,6 @@ _data.conceptsBlocks1Xml = `
       <field name="id">video_centro</field>
       <value name="src">
         <block type="video" id="z4kqvt=PDc7wHJ^_4*_Y">
-          <mutation length="1"></mutation>
-          <field name="id_area0"></field>
-          <field name="begin0"></field>
-          <field name="end0"></field>
-        </block>
-      </value>
-    </block>
-    <block type="media" id="\`@uz^*4@1j3@rz9Vn* py" x="20" y="295">
-      <field name="id">video_praia</field>
-      <value name="src">
-        <block type="video" id=".+S0jxJ, D, O1Sw~Z\`Uo0">
           <mutation length="1"></mutation>
           <field name="id_area0"></field>
           <field name="begin0"></field>
