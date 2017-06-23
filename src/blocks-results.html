@@ -26,12 +26,12 @@
 
 <body>
   <div class="center-block text-center">
-    <br>blockTask=
+    <br> resultIndex=
+    <select id="resultIndex" type="text" value="-"><option value="-">-</option></select> blockTask=
     <select id="blockTask" type="text" value="conceptsTask2">
       <option value="conceptsTask2">conceptsTask2</option>
       <option value="conceptsTask4">conceptsTask4</option>
-      </select> resultIndex=
-    <select id="resultIndex" type="text" value="-"><option value="-">-</option></select>
+      </select>
     <br><br>
     <button id="showChanges" class="btn">showChanges</button>
     <br>
@@ -83,19 +83,9 @@
       }
     }
 
-    var clearBothBlocksXml = function () {
+    var showBlocksXML = function () {
       _workspace.clear()
       $('#xmlcode').val('')
-    }
-
-    $('#blockTask').change(function () {
-      clearBothBlocksXml()
-      $('#resultIndex').val('-')
-    })
-
-    $('#resultIndex').change(function () {
-      if (_resultsData == null) return
-      clearBothBlocksXml()
 
       var selected = $('#resultIndex option:selected').val()
       if (selected === '-') return
@@ -110,6 +100,16 @@
       $('#xmlcode').val(savedWorkspaceXml)
       Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(savedWorkspaceXml), _workspace)
       testEmptyXML()
+    }
+
+    $('#resultIndex').change(function () {
+      if (_resultsData == null) return
+      $('#blockTask').val('conceptsTask2')
+      showBlocksXML()
+    })
+
+    $('#blockTask').change(function () {
+      showBlocksXML()
     })
 
     // ----------------------------------------
