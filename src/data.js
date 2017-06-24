@@ -232,15 +232,17 @@ _data.surveyJSON = {
           type: 'html',
           name: 'conceptsIntro2',
           html:
-          `<p>Esse segundo grupo de blocos estende o anterior ao adcionar  quatro blocos de sincronismo. </p>
+          `<p>O segundo grupo de blocos a seguir estende o anterior. As cinco mídias são reutilizadas e quatro blocos de sincronismo são adcionados.</p>
             <p>O primeiro sincronismo define que quando a aplicação inicia, a mídia chamada <em>video_principal</em> também é iniciada. Outro sincronismo, ao lado desse primiro, defini que as duas imagens <em>img_centro</em> e <em>img_praia</em> iniciam no monmento em que o trecho <em>creditos</em> da mídia <em>video_principal</em> é alcançado.</p>
-            <p>Por fim, os outros dois sincronismos definem o que ocorre quando cada imagem é selecionada. Quando <em>img_centro</em> é selecionda todos as mídias em apresentação (<em>video_principal</em>,  em>img_centro</em> e <em>img_praia</em>) são paradas e a mídia <em>video_centro</em> é iniciada. De modo analago, quando a mídia <em>img_praia</em> é selecionada todoas as mídias em apresentação são paradas e a mídia <em>video_praia</em> é inicada</p><br>`
+            <p>Por fim, os outros dois sincronismos definem o que ocorre quando cada imagem é selecionada. Quando <em>img_centro</em> é selecionda todos as mídias em apresentação (<em>video_principal</em>, <em>img_centro</em> e <em>img_praia</em>) são paradas e a mídia <em>video_centro</em> é iniciada. De modo analago, quando a mídia <em>img_praia</em> é selecionada todoas as mídias em apresentação são paradas e a mídia <em>video_praia</em> é inicada</p><br>`
         },
         {
           type: 'html',
           name: 'conceptsIntro3',
           html:
-          `<p>Segue o uso de uma mídia, sincronismo e reconhecimento como blocos bloco.</p><br>`
+          `<p>Editamos grupo de blocos anterior. Neste grupo, adcipnamos  um reconhecer e editamos os três ultimos sincrinonismos.</p>
+          <p> O reconhecedor adcionar utiliza uma descrição voz que reconhece duas frases, "mostre centro" e "mostre praia".</p>
+          <p>O sincronismo que iniciava as imagens, agora também inicia o reconhecer quando <em>video_principal</em> chega no parte de creditos. E os dois ultimos sincronismos substituem a seleção de mídia por reconhecimento de voz para iniciar o video relacionado. O vídeo <em>video_centro</em> é iniciado ao ususário falar "mostre centro". Enquanto o vídeo <em>video_praia</em> é iniciado ao ususário falar "mostre praia".</p><br>`
         },
         {
           type: 'html',
@@ -800,141 +802,149 @@ _data.conceptsIntro2Xml = `
   </xml>`
 _data.conceptsIntro3Xml = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
-    <block type="media" id="DACXRk{ds*},dxviHR(c" x="20" y="20">
-      <field name="id">video_principal</field>
-      <value name="src">
-        <block type="video" id="CG[^N,5)TV)0_N#+|cgE">
-          <mutation length="1"></mutation>
-          <field name="id_area0">creditos</field>
-          <field name="begin0">300s</field>
-          <field name="end0"></field>
-        </block>
-      </value>
-    </block>
-    <block type="media" id="J0=3=8AB$lViiF[SYu#!" x="20" y="160">
-      <field name="id">video_centro</field>
-      <value name="src">
-        <block type="video" id="]70x,I^+Yv!UsVCeeY()">
-          <mutation length="1"></mutation>
-          <field name="id_area0"></field>
-          <field name="begin0"></field>
-          <field name="end0"></field>
-        </block>
-      </value>
-    </block>
-    <block type="media" id="PnS;4T$~ftTn7U;nWSZb" x="550" y="208">
-      <field name="id">img_centro</field>
-      <value name="src">
-        <block type="image" id="n8jL;6KJe-2c6B~=pPj("></block>
-      </value>
-    </block>
-    <block type="media" id="IawJU?Sm-z4If\`ixT^_p" x="20" y="301">
-      <field name="id">video_praia</field>
-      <value name="src">
-        <block type="video" id="S$1N4E3U+*W_\`=95FUu)">
-          <mutation length="1"></mutation>
-          <field name="id_area0"></field>
-          <field name="begin0"></field>
-          <field name="end0"></field>
-        </block>
-      </value>
-    </block>
-    <block type="media" id="K2a)Xd1Ob5$8Ju=7i:DR" x="550" y="353">
-      <field name="id">img_praia</field>
-      <value name="src">
-        <block type="image" id="fQF^b?g4I,]ah26x]In~"></block>
-      </value>
-    </block>
-    <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="20" y="446">
-      <field name="id">voz</field>
-      <value name="src">
-        <block type="srgs" id="N5Lu5_J\`hn-e3lm60 |^3">
-          <mutation length="2"></mutation>
-          <field name="id_area0">voz_centro</field>
-          <field name="label0">mostre centro</field>
-          <field name="id_area1">voz_praia</field>
-          <field name="label1">mostre praia</field>
-        </block>
-      </value>
-    </block>
-    <block type="port" id="+ p - MtE:D * clWz(7oX7Hg" x="20" y="622">
-      <field name="component">video_principal</field>
-    </block>
-    <block type="link" id="% 6sP% 0di, O * v % qS % d\`(\`" x="550" y="636">
-      <value name="conditions">
-        <block type="onbegin" id="(H8dBhXk6.y#]q%\`UM^D">
-          <field name="onbegin">creditos</field>
-        </block>
-      </value>
-      <statement name="actions">
-        <block type="start" id="UEqL{b=Ws2G#w}+xMV%m">
-          <field name="start">img_centro</field>
-          <next>
-            <block type="start" id=".Pt;)N?Y.:xGz;dDp@+W">
-              <field name="start">img_praia</field>
-            </block>
-          </next>
-        </block>
-      </statement>
-    </block>
-    <block type="port" id="kj!MgSL@c5_TE,IF#xe$" x="20" y="707">
-      <field name="component">voz</field>
-    </block>
-    <block type="link" id="M)^!XeQ3fwhKEwGTcoGK" x="20" y="795">
-      <value name="conditions">
-        <block type="onrecognize" id="IokIu//km+7L0Y@Nioi[">
-          <field name="onrecognize">voz_centro</field>
-        </block>
-      </value>
-      <statement name="actions">
-        <block type="stop" id="4(:vxHKc1ivMD9TqKrTd">
-          <field name="stop">video_principal</field>
-          <next>
-            <block type="stop" id="9Eb$H9^oR7Z)o_g^A7r?">
-              <field name="stop">img_centro</field>
-              <next>
-                <block type="stop" id="xz194KXLw:HdJABl^)[9">
-                  <field name="stop">img_praia</field>
-                  <next>
-                    <block type="start" id="Wo67TbqF5]_pN(b1R3D_">
-                      <field name="start">video_centro</field>
-                    </block>
-                  </next>
-                </block>
-              </next>
-            </block>
-          </next>
-        </block>
-      </statement>
-    </block>
-    <block type="link" id="BLK@~VH8\`;o!;uMR.^tZ" x="549" y="805">
-      <value name="conditions">
-        <block type="onrecognize" id="[SfTF*!(*0N7]Hv9.tNh">
-          <field name="onrecognize">voz_praia</field>
-        </block>
-      </value>
-      <statement name="actions">
-        <block type="stop" id="qh{EZTXTYXj5QRw:x+l#">
-          <field name="stop">video_principal</field>
-          <next>
-            <block type="stop" id="=6LVnQ^v7.gTbQiBB2rM">
-              <field name="stop">img_centro</field>
-              <next>
-                <block type="stop" id="1UR0{9!iy~vJx~m2prd4">
-                  <field name="stop">video_praia</field>
-                  <next>
-                    <block type="start" id="BZ#wUT/p=J}}s(q}Us7Z">
-                      <field name="start">video_praia</field>
-                    </block>
-                  </next>
-                </block>
-              </next>
-            </block>
-          </next>
-        </block>
-      </statement>
-    </block>
-  </xml>`
+  <block type="media" id="DACXRk{ds*},dxviHR(c" x="20" y="20">
+    <field name="id">video_principal</field>
+    <value name="src">
+      <block type="video" id="CG[^N,5)TV)0_N#+|cgE">
+        <mutation length="1">
+        </mutation>
+        <field name="id_area0">creditos</field>
+        <field name="begin0">300s</field>
+        <field name="end0"></field>
+      </block>
+    </value>
+  </block>
+  <block type="media" id="J0=3=8AB$lViiF[SYu#!" x="20" y="160">
+    <field name="id">video_centro</field>
+    <value name="src">
+      <block type="video" id="]70x,I^+Yv!UsVCeeY()">
+        <mutation length="1">
+        </mutation>
+        <field name="id_area0"></field>
+        <field name="begin0"></field>
+        <field name="end0"></field>
+      </block>
+    </value>
+  </block>
+  <block type="media" id="PnS;4T$~ftTn7U;nWSZb" x="550" y="208">
+    <field name="id">img_centro</field>
+    <value name="src">
+      <block type="image" id="n8jL;6KJe-2c6B~=pPj(">
+      </block>
+    </value>
+  </block>
+  <block type="media" id="IawJU?Sm-z4If\`ixT^_p" x="20" y="301">
+    <field name="id">video_praia</field>
+    <value name="src">
+      <block type="video" id="S$1N4E3U+*W_\`=95FUu)">
+        <mutation length="1">
+        </mutation>
+        <field name="id_area0"></field>
+        <field name="begin0"></field>
+        <field name="end0"></field>
+      </block>
+    </value>
+  </block>
+  <block type="media" id="K2a)Xd1Ob5$8Ju=7i:DR" x="550" y="353">
+    <field name="id">img_praia</field>
+    <value name="src">
+      <block type="image" id="fQF^b?g4I,]ah26x]In~">
+      </block>
+    </value>
+  </block>
+  <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="20" y="446">
+    <field name="id">voz</field>
+    <value name="src">
+      <block type="srgs" id="N5Lu5_J\`hn-e3lm60 |^3">
+        <mutation length="2">
+        </mutation>
+        <field name="id_area0">voz_centro</field>
+        <field name="label0">mostre centro</field>
+        <field name="id_area1">voz_praia</field>
+        <field name="label1">mostre praia</field>
+      </block>
+    </value>
+  </block>
+  <block type="port" id="+ p - MtE:D * clWz(7oX7Hg" x="20" y="622">
+    <field name="component">video_principal</field>
+  </block>
+  <block type="link" id="% 6sP% 0di, O * v % qS % d\`(\`" x="550" y="627">
+    <value name="conditions">
+      <block type="onbegin" id="(H8dBhXk6.y#]q%\`UM^D">
+        <field name="onbegin">creditos</field>
+      </block>
+    </value>
+    <statement name="actions">
+      <block type="start" id="UEqL{b=Ws2G#w}+xMV%m">
+        <field name="start">img_centro</field>
+        <next>
+          <block type="start" id=".Pt;)N?Y.:xGz;dDp@+W">
+            <field name="start">img_praia</field>
+            <next>
+              <block type="start" id="q$s76Wl6nUee_vRx9F(3">
+                <field name="start">voz</field>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="link" id="M)^!XeQ3fwhKEwGTcoGK" x="20" y="795">
+    <value name="conditions">
+      <block type="onrecognize" id="IokIu//km+7L0Y@Nioi[">
+        <field name="onrecognize">voz_centro</field>
+      </block>
+    </value>
+    <statement name="actions">
+      <block type="stop" id="4(:vxHKc1ivMD9TqKrTd">
+        <field name="stop">video_principal</field>
+        <next>
+          <block type="stop" id="9Eb$H9^oR7Z)o_g^A7r?">
+            <field name="stop">img_centro</field>
+            <next>
+              <block type="stop" id="xz194KXLw:HdJABl^)[9">
+                <field name="stop">img_praia</field>
+                <next>
+                  <block type="start" id="Wo67TbqF5]_pN(b1R3D_">
+                    <field name="start">video_centro</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="link" id="BLK@~VH8\`;o!;uMR.^tZ" x="549" y="805">
+    <value name="conditions">
+      <block type="onrecognize" id="[SfTF*!(*0N7]Hv9.tNh">
+        <field name="onrecognize">voz_praia</field>
+      </block>
+    </value>
+    <statement name="actions">
+      <block type="stop" id="qh{EZTXTYXj5QRw:x+l#">
+        <field name="stop">video_principal</field>
+        <next>
+          <block type="stop" id="=6LVnQ^v7.gTbQiBB2rM">
+            <field name="stop">img_centro</field>
+            <next>
+              <block type="stop" id="1UR0{9!iy~vJx~m2prd4">
+                <field name="stop">video_praia</field>
+                <next>
+                  <block type="start" id="BZ#wUT/p=J}}s(q}Us7Z">
+                    <field name="start">video_praia</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>`
 _data.conceptsIntro4Xml = `<xml xmlns="http://www.w3.org/1999/xhtml">
   <block type="media" id="KZ[g}J_gz%iQCj#u(I:P" x="0" y="20">
     <value name="src">
