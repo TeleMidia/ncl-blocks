@@ -285,8 +285,8 @@ NclBlocks.injectInDiv = function (pathToBlockly, parendDivId, height, workspaceX
     workspace = Blockly.inject(injectDivName, {
       media: Blockly.pathToBlockly + 'media/',
       toolbox: false,
-      zoom: { controls: true },
-      scrollbars: true,
+      zoom: { controls: false },
+      scrollbars: false,
       readOnly: true,
       sounds: true
     })
