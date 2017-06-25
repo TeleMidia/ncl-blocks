@@ -127,13 +127,14 @@ _data.surveyJSON = {
       elements: [
         {
           type: 'html',
-          html:
-          `<p>O objetivo dessa seção do estudo é oferecer uma introdução sobre o conceito de <strong>linguagens multimídias com interações multimodais</strong>, proposto em nossa pesquisa.</p>`
+          html: `
+            <p>O objetivo dessa seção do estudo é oferecer uma introdução sobre o conceito de <strong>linguagens multimídias com interações multimodais</strong>, proposto em nossa pesquisa.</p>
+          `
         },
         {
           type: 'html',
-          html:
-          `<p>Primeiro devemos introduzir o que é um linguagem multimídia, que é intimamente documento multimídia.</p>
+          html: `
+            <p>Primeiro devemos introduzir o que é um linguagem multimídia, que é intimamente documento multimídia.</p>
             <br>
 
             <p>Steinmetz [1] caracteriza um <strong>sistema multimídia</strong> como aquele que utiliza um conjunto de mídias, que ao menos uma mídia seja discreta e uma seja contínua. As <strong>mídias discretas</strong> são aquelas que não mudam durante sua exibição, como imagens e textos. Elas também são chamadas de mídias independente de tempo. Enquanto, as <strong>mídias contínuas</strong> são aquelas que mudam durante sua exbição, como áudios e vídeos. Elas também são chamdas de mídias dependentes de tempo.</p>
@@ -162,8 +163,8 @@ _data.surveyJSON = {
         },
         {
           type: 'html',
-          html:
-          `<p>Agora, devemos introduzir o conceito de <strong>linguagens multimídia com interações multimodais</strong>, que intimamente relacionado com interfaces multimodais.</p>
+          html: `
+            <p>Agora, devemos introduzir o conceito de <strong>linguagens multimídia com interações multimodais</strong>, que intimamente relacionado com interfaces multimodais.</p>
             <br>
 
             <p>Oviatt [4] define que <strong>interfaces multimodais</strong> como aquelas que reconhecerem  interações em formas mais naturais da linguagem humana e comportamento, como fala e gestos. Esse tipo de interface foi apoiada pelos recentes avanços em tecnologias de reconhecimento e <strong>dispositivos de interação multimodal</strong>. Ilustrados a seguir, citamos o uso de microfones para reconhecimento de voz, e dispostivos como LeapMotion e e Microsoft Kinect para reconhecimento de gestos de mão e corpo, respectivamente.</p>
@@ -202,13 +203,16 @@ _data.surveyJSON = {
     },
     {
       name: 'blocks',
-      title: 'Conceitos multimodais usando abstração de blocos',
+      title: 'Proposta de conceitos para linguagens multimídia com interações multimodais',
       elements: [
         {
           type: 'html',
-          html:
-          `<p>Para ilustrar e capiturar de forma simples o seu entendimento sobre uma linguagem multimídia com interações multimodais, utilizaremos a seguir abordagem de desenvolvimento de aplicações através de uma <strong> abstração de blocos</strong>.</p>
-            <p>O desenvolvimento de aplicações através de blocos foi popularizado por ferramentas como o <strong>MIT Scratch</strong>[4] e <strong>MIT App Inventor</strong>[5]. O primeiro é utilizado para criar aplicações web, especialmente jogos, e o segundo utilizado para criar aplicações moveis. Ambos são ilustratos a seguir.</p>
+          html: `
+            <p>As linguagens multímidia atuais não suportam adequadamente interações multimodais. Em nosso estudo nos propomos um conjunto de conceitos a serem adionados nessas linguagens para oferecer tal suporte. Mais precisamente esses conceitos são os de <em>Mídia, Reconhecedor, Sincronismo</em> e <em>Usuário</em>.
+            </p>
+            <p>Esta seção tem o objetivo de detalhar esses conceitos e capturar o entendimento do entrevistado.</p>
+            <p> Entretanto, para evitar possiveis dificuldades dado a sintaxe de linguagens, apresentaremos esses conceitos utilizando uma abordagem de <strong>desenvolvimento de aplicações através  blocos</strong>.</p>
+            <p>Esse tipo de abordagem é bastante utilizado para o ensino de programação ou para ferramentes de geração de código. Em especial, esset tipo de desenvolvimento foi popularizado por ferramentas como o <strong>MIT Scratch</strong>[4] e <strong>MIT App Inventor</strong>[5]. O primeiro é utilizado para criar aplicações web, especialmente jogos, e o segundo utilizado para criar aplicações moveis. Ambos são ilustratos a seguir.</p>
             <br>
 
             <div class='text-center'>
@@ -219,36 +223,67 @@ _data.surveyJSON = {
             <br>
 
             [4] <a href='#'>scratch.mit.edu</a><br>
-            [5] <a href='#'>appinventor.mit.edu</a><br>`
+            [5] <a href='#'>appinventor.mit.edu</a><br>
+          `
         },
         {
           type: 'html',
           name: 'blocksIntro1',
-          html:
-          `<p>O grupo de de blocos a seguir defini cinco mídias, mas nenhum  sincronismos. Três mídias possuem conteúdo de vídeo e são chamadas de <em>video_intro</em>, <em>video_centro</em> e e <em>video_praia</em>, respectivamente. As outras duas possem conteúdo de imagem e são chamdas de <em>img_centro</em> e <em>img_praia</em>.</p>
-            <br>`
+          html: `
+            <p> Primeiro, vamos discutir o elemento <em>Mídia</em> e uso de <em>Sincronimo</em>s sobre elementos de <em>Mídia</em>.</p>
+            <br>
+            <p> O elemento <em>Mídia</em> é definido por um identificador e por seu conteúdo, este último pode ter porções identificáveis como  trechos de um video ou áudio. Por exemplo, os blocos a seguir definim duas mídias com identificadores <em>midia_principal</em> e <em>icone</em>, mas elas não possuem conteúdo.</p>
+            <div id='blocksIntro1a'></div>
+            <br>
+
+            <p>Ações de iniciar sobre as mídias acima não apresentaram resultados, pois elas não possuem conteúdo.</p>
+            <p>Os blocos a seguir definem mesmas mídias mas com conteúdos de áudio e imagem, respectivamente. Em especial, a mídia de <em>midia_principal</em> tem definido um trecho chamado de <em>creditos</em> que inicia aos 300 e termina aos 360  segundos.</p>
+            <div id='blocksIntro1b'></div>
+            <br>
+
+            <p>O elemento de <em>Sincronimo</em> permite definir o comportamento das aplicações. Ele deve permitr quando mídias devem ser apresentadas.</p>
+            <p>O <em>Sincronimo</em> é baseado em causalidade, ou seja, quando um condição é satisfeita, ações são realizadas. Exemplos de condições são inicio ou fim de uma midia ou trecho de midia, ou a seleção de ususário sobre um mídia. Exemplos de ações são inicar ou parar uma mídia.</p>
+            <p>Os blocos a seguir definem novamente as mídias <em>midia_principal</em> e <em>icone</em> e dois sincronismos. Nesse exemplo, entretanto, nos alteramos o conteúdo da <em>midia_principal</em> para um conteúdo de vído. O primeiro sicroniso defini que <em>midia_principal</em> deve ser iniciada quando a aplicação for iniciada. O segundo sincronismo defini que quando o <em>midia_principal</em> atingir o trecho de <em>credito</em> ele deve terminar e a mídia <em>icone</em> deve ser finalizada.</p>
+            <div id='blocksIntro1c'></div>
+            <br>
+            
+            <p>É importante ressaltar que a mudança de conteúdo da mídia <em>midia_principal</em> para a versão com áudio não afetaria o compartamento da aplicação. Pois os sincrinismos são definidos indepente do conteúdo das mídia.</p>
+            <br>
+
+            <p>O elemento <m>Reconhecedor</em> é também definido por um identificador e por seu conteúdo. Entrentato diferente de <em>Mídia</em> o conteúdo de um <em>Reconhecedor</em> deve ser uma descrição de reconhecimento, por exemplo, de voz ou gesto. Logo, as porções identificáveis de um <em>Reconhecedor</em> são porções de um descrição de reconhecimentos.</p>
+            
+            <p>Os blocos a seguir definim dois reconhecedores com identificadores <em>voz</em> e <em>gestos</em>.</p>
+            <div id='blocksIntro1d'></div>
+
+            <p>A seguir um reconhecedor com sincronismo</p>
+            <div id='blocksIntro1e'></div>
+            <br>
+          `
         },
         {
           type: 'html',
           name: 'blocksIntro2',
-          html:
-          `<p>O segundo grupo de blocos a seguir estende o anterior. As cinco mídias são reutilizadas e quatro blocos de sincronismo são adcionados.</p>
+          html: `
+            <p> O grupo de de blocos a seguir defini cinco mídias e quatro blocos de sincronismo.</p>
+            <p> Três mídias possuem conteúdos de vídeo e são chamadas de <em>video_intro</em>, <em>video_centro</em> e e <em>video_praia</em>, respectivamente. As outras duas possem conteúdo de imagem e são chamdas de <em>img_centro</em> e <em>img_praia</em>.</p>
             <p>O primeiro sincronismo define que quando a aplicação inicia, a mídia chamada <em>video_principal</em> também é iniciada. Outro sincronismo, ao lado desse primiro, defini que as duas imagens <em>img_centro</em> e <em>img_praia</em> iniciam no monmento em que o trecho <em>creditos</em> da mídia <em>video_principal</em> é alcançado.</p>
-            <p>Por fim, os outros dois sincronismos definem o que ocorre quando cada imagem é selecionada. Quando <em>img_centro</em> é selecionda todos as mídias em apresentação (<em>video_principal</em>, <em>img_centro</em> e <em>img_praia</em>) são paradas e a mídia <em>video_centro</em> é iniciada. De modo analago, quando a mídia <em>img_praia</em> é selecionada todoas as mídias em apresentação são paradas e a mídia <em>video_praia</em> é inicada</p><br>`
+            <p>Por fim, os outros dois sincronismos definem o que ocorre quando cada imagem é selecionada. Quando <em>img_centro</em> é selecionda todos as mídias em apresentação (<em>video_principal</em>, <em>img_centro</em> e <em>img_praia</em>) são paradas e a mídia <em>video_centro</em> é iniciada. De modo analago, quando a mídia <em>img_praia</em> é selecionada todoas as mídias em apresentação são paradas e a mídia <em>video_praia</em> é inicada</p><br>
+          `
         },
         {
           type: 'html',
           name: 'blocksIntro3',
-          html:
-          `<p>Editamos grupo de blocos anterior. Neste grupo, adcipnamos  um reconhecer e editamos os três ultimos sincrinonismos.</p>
-          <p> O reconhecedor adcionar utiliza uma descrição voz que reconhece duas frases, "mostre centro" e "mostre praia".</p>
-          <p>O sincronismo que iniciava as imagens, agora também inicia o reconhecer quando <em>video_principal</em> chega no parte de creditos. E os dois ultimos sincronismos substituem a seleção de mídia por reconhecimento de voz para iniciar o video relacionado. O vídeo <em>video_centro</em> é iniciado ao ususário falar "mostre centro". Enquanto o vídeo <em>video_praia</em> é iniciado ao ususário falar "mostre praia".</p><br>`
+          html: `
+            <p>Editamos grupo de blocos anterior. Neste grupo, adcipnamos  um reconhecer e editamos os três ultimos sincrinonismos.</p>
+            <p> O reconhecedor adcionar utiliza uma descrição voz que reconhece duas frases, "mostre centro" e "mostre praia".</p>
+            <p>O sincronismo que iniciava as imagens, agora também inicia o reconhecer quando <em>video_principal</em> chega no parte de creditos. E os dois ultimos sincronismos substituem a seleção de mídia por reconhecimento de voz para iniciar o video relacionado. O vídeo <em>video_centro</em> é iniciado ao ususário falar "mostre centro". Enquanto o vídeo <em>video_praia</em> é iniciado ao ususário falar "mostre praia".</p>
+            <br>
+          `
         },
         {
           type: 'html',
           name: 'blocksIntro4',
-          html:
-          `<p>Segue o uso de uma mídia, sincronismo, reconhecimento de usuário como blocos.</p>`
+          html: '<p>Segue o uso de uma mídia, sincronismo, reconhecimento de usuário como blocos.</p>'
         },
         {
           type: 'html',
@@ -306,7 +341,7 @@ _data.surveyJSON = {
         {
           type: 'panel',
           innerIndent: 1,
-          title: 'Por favor, nos ajude a compreender a utilidade dos conceitos apresentados',
+          title: 'Por favor, nos ajude agora a capturar a usa perceção sobre utilidade dos conceitos apresentados.',
           elements: [
             {
               type: 'radiogroup',
@@ -369,7 +404,7 @@ _data.surveyJSON = {
         }, {
           type: 'panel',
           innerIndent: 1,
-          title: 'Por favor, nos ajude a compreender a facilidade dos conceitos apresentados',
+          title: 'Por favor, nos ajude agora a capturar a usa perceção sobre a facilidade dos conceitos apresentados.',
           elements: [
             {
               type: 'radiogroup',
@@ -401,8 +436,8 @@ _data.surveyJSON = {
       elements: [
         {
           type: 'html',
-          html:
-          `<p>A linguagem NCL possui o foco de criar apresentações multimídia interativas. Anteriormente a NCL focava no uso de mídias audiovisuais (por exemplo imagens, vídeo e áudios) e interações por meio de apontador e tecla.</p>
+          html: `
+            <p>A linguagem NCL possui o foco de criar apresentações multimídia interativas. Anteriormente a NCL focava no uso de mídias audiovisuais (por exemplo imagens, vídeo e áudios) e interações por meio de apontador e tecla.</p>
             <br>
 
             <p>O exemplo de código a seguir ilustra o uso de novas mídias e interação.<br><br>Um exemplo de mídia NCL comum é o 'mainvideo' (linhas 12-14).<br>Essa media possui um trecho definido pela ancora 'credits'(linhas 13).</p>
@@ -413,7 +448,8 @@ _data.surveyJSON = {
             <br>
             
             <p>Esse áudio sintetizado é definido pelo elo das linhas 23-27.<br>
-            Enquanto que o reconhecimento é definido pelo elo das linhas 28-31.</p>`,
+            Enquanto que o reconhecimento é definido pelo elo das linhas 28-31.</p>
+          `,
           name: 'nclIntro'
         },
         {
@@ -627,11 +663,43 @@ _data.surveyJSON = {
 // ----------------------------------------
 // intro page
 // ----------------------------------------
-
-_data.blocksIntro1Xml = `
+_data.blocksIntro1aXml = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
-      <field name="id">video_intro</field>
+      <field name="id">midia_principal</field>
+    </block>
+    <block type="media" id="PnS;4T$~ftTn7U;nWSZb" x="594" y="20">
+      <field name="id">icone</field>
+    </block>
+  </xml>  
+`
+
+_data.blocksIntro1bXml = `
+  <xml xmlns="http://www.w3.org/1999/xhtml">
+    <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
+      <field name="id">midia_principal</field>
+      <value name="src">
+        <block type="audio" id="OFge%WW-~~.%rZKqZqym">
+          <mutation length="1"></mutation>
+          <field name="id_area0">creditos</field>
+          <field name="begin0">300s</field>
+          <field name="end0">360s</field>
+        </block>
+      </value>
+    </block>
+    <block type="media" id="PnS;4T$~ftTn7U;nWSZb" x="594" y="71">
+      <field name="id">icone</field>
+      <value name="src">
+        <block type="image" id="n8jL;6KJe-2c6B~=pPj("></block>
+      </value>
+    </block>
+  </xml>
+`
+
+_data.blocksIntro1cXml = `
+  <xml xmlns="http://www.w3.org/1999/xhtml">
+    <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
+      <field name="id">midia_principal</field>
       <value name="src">
         <block type="video" id="OFge%WW-~~.%rZKqZqym">
           <mutation length="1"></mutation>
@@ -641,43 +709,79 @@ _data.blocksIntro1Xml = `
         </block>
       </value>
     </block>
-    <block type="media" id="+t:\`jo\`8XnsCt)G;2a5*" x="20" y="156">
-      <field name="id">video_centro</field>
+    <block type="media" id="PnS;4T$~ftTn7U;nWSZb" x="594" y="71">
+      <field name="id">icone</field>
       <value name="src">
-        <block type="video" id="z4kqvt=PDc7wHJ^_4*_Y">
+        <block type="image" id="n8jL;6KJe-2c6B~=pPj("></block>
+      </value>
+    </block>
+    <block type="port" id="+p-MtE:D*clWz(7oX7Hg" x="20" y="170">
+      <field name="component">midia_principal</field>
+    </block>
+    <block type="link" id="%6sP%0di,O*v%qS%d\`(\`" x="594" y="170">
+      <value name="conditions">
+        <block type="onbegin" id="(H8dBhXk6.y#]q%\`UM^D">
+          <field name="onbegin">creditos</field>
+        </block>
+      </value>
+      <statement name="actions">
+        <block type="stop" id="UEqL{b=Ws2G#w}+xMV%m">
+          <field name="stop">midia_principal</field>
+          <next>
+            <block type="start" id=".Pt;)N?Y.:xGz;dDp@+W">
+              <field name="start">icone</field>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+  </xml>
+`
+
+_data.blocksIntro1dXml = `
+  <xml xmlns="http://www.w3.org/1999/xhtml">
+    <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
+      <field name="id">midia_principal</field>
+      <value name="src">
+        <block type="video" id="OFge%WW-~~.%rZKqZqym">
           <mutation length="1"></mutation>
-          <field name="id_area0"></field>
-          <field name="begin0"></field>
+          <field name="id_area0">creditos</field>
+          <field name="begin0">300s</field>
           <field name="end0"></field>
         </block>
       </value>
     </block>
-    <block type="media" id="PnS;4T$~ftTn7U;nWSZb" x="550" y="208">
-      <field name="id">img_centro</field>
+    <block type="media" id="PnS;4T$~ftTn7U;nWSZb" x="594" y="71">
+      <field name="id">icone</field>
       <value name="src">
-        <block type="image" id="n8jL;6KJe-2c6B~=pPj(">
-        </block>
+        <block type="image" id="n8jL;6KJe-2c6B~=pPj("></block>
       </value>
     </block>
-    <block type="media" id="IawJU?Sm-z4If\`ixT^_p" x="20" y="301">
-      <field name="id">video_praia</field>
+  </xml>
+`
+
+_data.blocksIntro1eXml = `
+  <xml xmlns="http://www.w3.org/1999/xhtml">
+    <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
+      <field name="id">midia_principal</field>
       <value name="src">
-        <block type="video" id="S$1N4E3U+*W_\`=95FUu)">
+        <block type="video" id="OFge%WW-~~.%rZKqZqym">
           <mutation length="1"></mutation>
-          <field name="id_area0"></field>
-          <field name="begin0"></field>
+          <field name="id_area0">creditos</field>
+          <field name="begin0">300s</field>
           <field name="end0"></field>
         </block>
       </value>
     </block>
-    <block type="media" id="K2a)Xd1Ob5$8Ju=7i:DR" x="550" y="353">
-      <field name="id">img_praia</field>
+    <block type="media" id="PnS;4T$~ftTn7U;nWSZb" x="594" y="71">
+      <field name="id">icone</field>
       <value name="src">
-        <block type="image" id="fQF^b?g4I,]ah26x]In~">
-        </block>
+        <block type="image" id="n8jL;6KJe-2c6B~=pPj("></block>
       </value>
     </block>
-  </xml>`
+  </xml>
+`
+
 _data.blocksIntro2Xml = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="DACXRk{ds*},dxviHR(c" x="20" y="20">
@@ -799,7 +903,9 @@ _data.blocksIntro2Xml = `
         </block>
       </statement>
     </block>
-  </xml>`
+  </xml>
+`
+
 _data.blocksIntro3Xml = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
   <block type="media" id="DACXRk{ds*},dxviHR(c" x="20" y="20">
@@ -944,35 +1050,47 @@ _data.blocksIntro3Xml = `
       </block>
     </statement>
   </block>
-</xml>`
-_data.blocksIntro4Xml = `<xml xmlns="http://www.w3.org/1999/xhtml">
+  </xml>
+`
+
+_data.blocksIntro4Xml = `
+  <xml xmlns="http://www.w3.org/1999/xhtml">
   <block type="media" id="KZ[g}J_gz%iQCj#u(I:P" x="0" y="20">
     <value name="src">
       <block type="image" id="LHprn9YiDsg/Nlglks0f"></block>
     </value>
   </block>
-</xml>`
-_data.blocksTask1Xml = `<xml xmlns="http://www.w3.org/1999/xhtml">
+  </xml>
+`
+
+_data.blocksTask1Xml = `
+  <xml xmlns="http://www.w3.org/1999/xhtml">
   <block type="media" id="KZ[g}J_gz%iQCj#u(I:P" x="0" y="20">
     <value name="src">
       <block type="image" id="LHprn9YiDsg/Nlglks0f"></block>
     </value>
   </block>
-</xml>`
-_data.blocksTask3Xml = `<xml xmlns="http://www.w3.org/1999/xhtml">
+  </xml>
+`
+
+_data.blocksTask3Xml = `
+  <xml xmlns="http://www.w3.org/1999/xhtml">
   <block type="media" id="KZ[g}J_gz%iQCj#u(I:P" x="0" y="20">
     <value name="src">
       <block type="image" id="LHprn9YiDsg/Nlglks0f"></block>
     </value>
   </block>
-</xml>`
+  </xml>
+`
 
 // ----------------------------------------
 //  ncl page
 // ----------------------------------------
 
 _data.nclCode1 = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;"><![CDATA[
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;">
+  <![CDATA[
+  <?xml version="1.0" encoding="ISO-8859-1"?>
   <ncl>
     <head>
       <connectorBase>
@@ -999,10 +1117,13 @@ _data.nclCode1 = `
       </link>
     </body>
   </ncl>
-  ]]></script>`
+  ]]>
+  </script>
+`
 
 _data.nclCode2 = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false; highlight: [11,12,13,14,15,16,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48]"><![CDATA[
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false; highlight: [11,12,13,14,15,16,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48]">
+  <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <ncl>
     <head>
@@ -1052,8 +1173,9 @@ _data.nclCode2 = `
       </link>
       <!-- end modification-->
     </body>
-  </ncl>
-  ]]></script>`
+  </ncl>]]>
+  </script>
+`
 
 // ----------------------------------------
 // html page functions

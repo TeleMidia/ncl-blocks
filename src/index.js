@@ -104,8 +104,16 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
   var questionName = questionAndHtml.question.name
   switch (questionName) {
     case 'blocksIntro1':
-      NclBlocks.injectInDiv(_pathToBlockly, questionId,
-        NclBlocks.calculateHeight(3, 130), _data.blocksIntro1Xml, true)
+      NclBlocks.injectInDiv(_pathToBlockly, 'blocksIntro1a',
+        NclBlocks.calculateHeight(1, 80), _data.blocksIntro1aXml, true)
+      NclBlocks.injectInDiv(_pathToBlockly, 'blocksIntro1b',
+        NclBlocks.calculateHeight(1, 130), _data.blocksIntro1bXml, true)
+      NclBlocks.injectInDiv(_pathToBlockly, 'blocksIntro1c',
+        NclBlocks.calculateHeight(2, 130), _data.blocksIntro1cXml, true)
+      NclBlocks.injectInDiv(_pathToBlockly, 'blocksIntro1d',
+        NclBlocks.calculateHeight(1, 130), _data.blocksIntro1dXml, true)
+      NclBlocks.injectInDiv(_pathToBlockly, 'blocksIntro1e',
+        NclBlocks.calculateHeight(1, 130), _data.blocksIntro1eXml, true)
       break
     case 'blocksIntro2':
       NclBlocks.injectInDiv(_pathToBlockly, questionId,
