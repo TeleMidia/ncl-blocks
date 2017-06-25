@@ -84,11 +84,11 @@ function insertRequiredErrorInBlocks (blockDivId) {
 function onValidateQuestions (survey, options) {
   switch (_survey.currentPage.name) {
     case 'concepts':
-      if (!_conceptsTask2Workspace.getAllBlocks().length) {
-        insertRequiredErrorInBlocks(_survey.getQuestionByName('conceptsTask2').idValue)
+      if (!_blocksTask2Workspace.getAllBlocks().length) {
+        insertRequiredErrorInBlocks(_survey.getQuestionByName('blocksTask2').idValue)
       }
-      if (!_conceptsTask4Workspace.getAllBlocks().length) {
-        insertRequiredErrorInBlocks(_survey.getQuestionByName('conceptsTask4').idValue)
+      if (!_blocksTask4Workspace.getAllBlocks().length) {
+        insertRequiredErrorInBlocks(_survey.getQuestionByName('blocksTask4').idValue)
       }
       return true
   }
@@ -103,40 +103,40 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
   var questionId = questionAndHtml.question.idValue
   var questionName = questionAndHtml.question.name
   switch (questionName) {
-    case 'conceptsIntro1':
+    case 'blocksIntro1':
       NclBlocks.injectInDiv(_pathToBlockly, questionId,
-        NclBlocks.calculateHeight(3, 130), _data.conceptsIntro1Xml, true)
+        NclBlocks.calculateHeight(3, 130), _data.blocksIntro1Xml, true)
       break
-    case 'conceptsIntro2':
+    case 'blocksIntro2':
       NclBlocks.injectInDiv(_pathToBlockly, questionId,
-        NclBlocks.calculateHeight(5, 140), _data.conceptsIntro2Xml,
+        NclBlocks.calculateHeight(5, 140), _data.blocksIntro2Xml,
         true)
       break
-    case 'conceptsIntro3':
+    case 'blocksIntro3':
       NclBlocks.injectInDiv(_pathToBlockly, questionId,
-        NclBlocks.calculateHeight(6, 150), _data.conceptsIntro3Xml, true)
+        NclBlocks.calculateHeight(6, 150), _data.blocksIntro3Xml, true)
       break
-    case 'conceptsIntro4':
+    case 'blocksIntro4':
       NclBlocks.injectInDiv(_pathToBlockly, questionId,
-        NclBlocks.calculateHeight(1, 80), _data.conceptsIntro4Xml, true)
+        NclBlocks.calculateHeight(1, 80), _data.blocksIntro4Xml, true)
       break
-    case 'conceptsTask1':
+    case 'blocksTask1':
       NclBlocks.injectInDiv(_pathToBlockly, questionId,
-        NclBlocks.calculateHeight(1, 80), _data.conceptsTask1Xml, true)
+        NclBlocks.calculateHeight(1, 80), _data.blocksTask1Xml, true)
       break
-    case 'conceptsTask2':
-      _conceptsTask2Workspace = NclBlocks.injectInDiv(_pathToBlockly,
+    case 'blocksTask2':
+      _blocksTask2Workspace = NclBlocks.injectInDiv(_pathToBlockly,
         questionId, '800px')
-      _conceptsTask2Workspace.addChangeListener(saveConceptsTask2Changes)
+      _blocksTask2Workspace.addChangeListener(saveblocksTask2Changes)
       break
-    case 'conceptsTask3Blocks':
+    case 'blocksTask3':
       NclBlocks.injectInDiv(_pathToBlockly, questionId,
-        NclBlocks.calculateHeight(1, 80), _data.conceptsTask3Xml, true)
+        NclBlocks.calculateHeight(1, 80), _data.blocksTask3Xml, true)
       break
-    case 'conceptsTask4':
-      _conceptsTask4Workspace = NclBlocks.injectInDiv(_pathToBlockly,
+    case 'blocksTask4':
+      _blocksTask4Workspace = NclBlocks.injectInDiv(_pathToBlockly,
         questionId, '800px')
-      _conceptsTask4Workspace.addChangeListener(saveConceptsTask4Changes)
+      _blocksTask4Workspace.addChangeListener(saveblocksTask4Changes)
       break
     case 'nclCode1':
       $('#' + questionId).append(_data.nclCode1)
@@ -149,12 +149,12 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
   }
   window.scrollTo(0, 0)
 }
-var _conceptsTask2Workspace
-var _conceptsTask4Workspace
+var _blocksTask2Workspace
+var _blocksTask4Workspace
 
-function saveConceptsTask2Changes (primaryEvent) {
-  // save conceptsTask2 change
-  var savedJsonStr = _survey.getQuestionByName('conceptsTask2Changes').value
+function saveblocksTask2Changes (primaryEvent) {
+  // save blocksTask2 change
+  var savedJsonStr = _survey.getQuestionByName('blocksTask2Changes').value
   var jsonFromEvent = primaryEvent.toJson()
   var jsonToSave
 
@@ -165,18 +165,18 @@ function saveConceptsTask2Changes (primaryEvent) {
   }
   jsonToSave.changes.push(jsonFromEvent)
   // console.log(jsonFromEvent);
-  _survey.getQuestionByName('conceptsTask2Changes').value = JSON.stringify(jsonToSave)
+  _survey.getQuestionByName('blocksTask2Changes').value = JSON.stringify(jsonToSave)
 
-  // save conceptsTask2 result
-  var xml = Blockly.Xml.workspaceToDom(_conceptsTask2Workspace)
+  // save blocksTask2 result
+  var xml = Blockly.Xml.workspaceToDom(_blocksTask2Workspace)
   // console.log(xml));
   var xmlText = Blockly.Xml.domToText(xml)
-  _survey.getQuestionByName('conceptsTask2Result').value = xmlText
+  _survey.getQuestionByName('blocksTask2Result').value = xmlText
 }
 
-function saveConceptsTask4Changes (primaryEvent) {
-  // save conceptsTask2 change
-  var savedJsonStr = _survey.getQuestionByName('conceptsTask4Changes').value
+function saveblocksTask4Changes (primaryEvent) {
+  // save blocksTask2 change
+  var savedJsonStr = _survey.getQuestionByName('blocksTask4Changes').value
   var jsonFromEvent = primaryEvent.toJson()
   var jsonToSave
 
@@ -187,11 +187,11 @@ function saveConceptsTask4Changes (primaryEvent) {
   }
   jsonToSave.changes.push(jsonFromEvent)
   console.log(jsonFromEvent)
-  _survey.getQuestionByName('conceptsTask4Changes').value = JSON.stringify(jsonToSave)
+  _survey.getQuestionByName('blocksTask4Changes').value = JSON.stringify(jsonToSave)
 
-  // save conceptsTask2 result
-  var xml = Blockly.Xml.workspaceToDom(_conceptsTask4Workspace)
+  // save blocksTask2 result
+  var xml = Blockly.Xml.workspaceToDom(_blocksTask4Workspace)
   console.log(xml)
   var xmlText = Blockly.Xml.domToText(xml)
-  _survey.getQuestionByName('conceptsTask4Result').value = xmlText
+  _survey.getQuestionByName('blocksTask4Result').value = xmlText
 }
