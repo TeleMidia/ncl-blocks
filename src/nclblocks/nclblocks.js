@@ -921,7 +921,7 @@ Blockly.Blocks.port = {
       .appendField('{' + NclBlocks.Msg.LINK + '}')
     this.appendDummyInput()
       .appendField(NclBlocks.Msg.PORT_LABEL)
-      .appendField(new IdFieldDropdown('node'), 'component')
+      .appendField(new IdFieldDropdown('node'), 'id')
   }
 }
 Object.assign(Blockly.Blocks.port, NclBlockMixin)
@@ -959,7 +959,7 @@ Blockly.Blocks.onbegin = {
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onbegin, 15,
         15, '*'))
       .appendField(NclBlocks.Msg.ONBEGIN)
-      .appendField(new IdFieldDropdown('media'), 'onbegin')
+      .appendField(new IdFieldDropdown('media'), 'id')
   }
 }
 Object.assign(Blockly.Blocks.onbegin, NclBlockMixin)
@@ -971,7 +971,7 @@ Blockly.Blocks.onend = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onend, 15, 15, '*'))
       .appendField(NclBlocks.Msg.ONEND)
-      .appendField(new IdFieldDropdown('media'), 'onend')
+      .appendField(new IdFieldDropdown('media'), 'id')
   }
 }
 Object.assign(Blockly.Blocks.onend, NclBlockMixin)
@@ -984,7 +984,7 @@ Blockly.Blocks.onpause = {
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onpause, 15,
         15, '*'))
       .appendField(NclBlocks.Msg.ONPAUSE)
-      .appendField(new IdFieldDropdown('media'), 'onpause')
+      .appendField(new IdFieldDropdown('media'), 'id')
   }
 }
 Object.assign(Blockly.Blocks.onpause, NclBlockMixin)
@@ -997,7 +997,7 @@ Blockly.Blocks.onresume = {
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onresume,
         15, 15, '*'))
       .appendField(NclBlocks.Msg.ONRESUME)
-      .appendField(new IdFieldDropdown('media'), 'onresume')
+      .appendField(new IdFieldDropdown('media'), 'id')
   }
 }
 Object.assign(Blockly.Blocks.onresume, NclBlockMixin)
@@ -1010,7 +1010,7 @@ Blockly.Blocks.onselection = {
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onselection,
         15, 15, '*'))
       .appendField(NclBlocks.Msg.ONSELECTION)
-      .appendField(new IdFieldDropdown('media'), 'onselection')
+      .appendField(new IdFieldDropdown('media'), 'id')
   }
 }
 Object.assign(Blockly.Blocks.onselection, NclBlockMixin)
@@ -1023,7 +1023,7 @@ Blockly.Blocks.onrecognize = {
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onrecognize,
         15, 15, '*'))
       .appendField(NclBlocks.Msg.ONRECOGNIZE)
-      .appendField(new IdFieldDropdown('input'), 'onrecognize')
+      .appendField(new IdFieldDropdown('input'), 'id')
   }
 }
 Object.assign(Blockly.Blocks.onrecognize, NclBlockMixin)
@@ -1036,9 +1036,9 @@ Blockly.Blocks.onrecognizeuser = {
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.onrecognize,
         15, 15, '*'))
       .appendField(NclBlocks.Msg.ONRECOGNIZE)
-      .appendField(new IdFieldDropdown('input'), 'onrecognize')
+      .appendField(new IdFieldDropdown('input'), 'id')
       .appendField(NclBlocks.Msg.ONRECOGNIZE_FROM_USER)
-      .appendField(new IdFieldDropdown('user'), 'onrecognize_from_user')
+      .appendField(new IdFieldDropdown('user'), 'user_id')
   }
 }
 Object.assign(Blockly.Blocks.onrecognizeuser, NclBlockMixin)
@@ -1082,7 +1082,7 @@ Blockly.Blocks.start = {
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.start, 15,
         15, '*'))
       .appendField(NclBlocks.Msg.START)
-      .appendField(new IdFieldDropdown('node'), 'start')
+      .appendField(new IdFieldDropdown('node'), 'id')
   }
 }
 Object.assign(Blockly.Blocks.start, NclBlockMixin)
@@ -1095,7 +1095,7 @@ Blockly.Blocks.stop = {
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.stop, 15,
         15, '*'))
       .appendField(NclBlocks.Msg.STOP)
-      .appendField(new IdFieldDropdown('node'), 'stop')
+      .appendField(new IdFieldDropdown('node'), 'id')
   }
 }
 Object.assign(Blockly.Blocks.stop, NclBlockMixin)
@@ -1108,7 +1108,7 @@ Blockly.Blocks.pause = {
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.pause, 15,
         15, '*'))
       .appendField(NclBlocks.Msg.PAUSE)
-      .appendField(new IdFieldDropdown('media'), 'pause')
+      .appendField(new IdFieldDropdown('media'), 'id')
   }
 }
 Object.assign(Blockly.Blocks.pause, NclBlockMixin)
@@ -1121,7 +1121,7 @@ Blockly.Blocks.resume = {
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.resume, 15,
         15, '*'))
       .appendField(NclBlocks.Msg.RESUME)
-      .appendField(new IdFieldDropdown('media'), 'resume')
+      .appendField(new IdFieldDropdown('media'), 'id')
   }
 }
 Object.assign(Blockly.Blocks.resume, NclBlockMixin)
@@ -1134,7 +1134,7 @@ Blockly.Blocks.set = {
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.set, 15, 15,
         '*'))
       .appendField(NclBlocks.Msg.SET)
-      .appendField(new IdFieldDropdown('media'), 'set')
+      .appendField(new IdFieldDropdown('media'), 'id')
       .appendField(NclBlocks.Msg.SET_TO)
       .appendField(new Blockly.FieldTextInput(''), 'value')
   }

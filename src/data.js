@@ -716,20 +716,20 @@ _data.blocksIntro1cXml = `
       </value>
     </block>
     <block type="port" id="+p-MtE:D*clWz(7oX7Hg" x="20" y="170">
-      <field name="component">midia_principal</field>
+      <field name="id">midia_principal</field>
     </block>
     <block type="link" id="%6sP%0di,O*v%qS%d\`(\`" x="594" y="170">
       <value name="conditions">
         <block type="onbegin" id="(H8dBhXk6.y#]q%\`UM^D">
-          <field name="onbegin">creditos</field>
+          <field name="id">creditos</field>
         </block>
       </value>
       <statement name="actions">
         <block type="stop" id="UEqL{b=Ws2G#w}+xMV%m">
-          <field name="stop">midia_principal</field>
+          <field name="id">midia_principal</field>
           <next>
             <block type="start" id=".Pt;)N?Y.:xGz;dDp@+W">
-              <field name="start">icone</field>
+              <field name="id">icone</field>
             </block>
           </next>
         </block>
@@ -830,20 +830,20 @@ _data.blocksIntro2Xml = `
       </value>
     </block>
     <block type="port" id="+p-MtE:D*clWz(7oX7Hg" x="20" y="443">
-      <field name="component">video_principal</field>
+      <field name="id">video_principal</field>
     </block>
     <block type="link" id="%6sP%0di,O*v%qS%d\`(\`" x="550" y="443">
       <value name="conditions">
         <block type="onbegin" id="(H8dBhXk6.y#]q%\`UM^D">
-          <field name="onbegin">creditos</field>
+          <field name="id">creditos</field>
         </block>
       </value>
       <statement name="actions">
         <block type="start" id="UEqL{b=Ws2G#w}+xMV%m">
-          <field name="start">img_centro</field>
+          <field name="id">img_centro</field>
           <next>
             <block type="start" id=".Pt;)N?Y.:xGz;dDp@+W">
-              <field name="start">img_praia</field>
+              <field name="id">img_praia</field>
             </block>
           </next>
         </block>
@@ -852,21 +852,21 @@ _data.blocksIntro2Xml = `
     <block type="link" id="M)^!XeQ3fwhKEwGTcoGK" x="20" y="590">
       <value name="conditions">
         <block type="onselection" id="voo~B}yCX+XML3~iOm0r">
-          <field name="onselection">img_centro</field>
+          <field name="id">img_centro</field>
         </block>
       </value>
       <statement name="actions">
         <block type="stop" id="4(:vxHKc1ivMD9TqKrTd">
-          <field name="stop">video_principal</field>
+          <field name="id">video_principal</field>
           <next>
             <block type="stop" id="9Eb$H9^oR7Z)o_g^A7r?">
-              <field name="stop">img_centro</field>
+              <field name="id">img_centro</field>
               <next>
                 <block type="stop" id="xz194KXLw:HdJABl^)[9">
-                  <field name="stop">img_praia</field>
+                  <field name="id">img_praia</field>
                   <next>
                     <block type="start" id="Wo67TbqF5]_pN(b1R3D_">
-                      <field name="start">video_centro</field>
+                      <field name="id">video_centro</field>
                     </block>
                   </next>
                 </block>
@@ -879,21 +879,21 @@ _data.blocksIntro2Xml = `
     <block type="link" id="BLK@~VH8\`;o!;uMR.^tZ" x="550" y="597">
       <value name="conditions">
         <block type="onselection" id="O]aL:r0KkCvhs#W\`[}El">
-          <field name="onselection">img_praia</field>
+          <field name="id">img_praia</field>
         </block>
       </value>
       <statement name="actions">
         <block type="stop" id="qh{EZTXTYXj5QRw:x+l#">
-          <field name="stop">video_principal</field>
+          <field name="id">video_principal</field>
           <next>
             <block type="stop" id="=6LVnQ^v7.gTbQiBB2rM">
-              <field name="stop">img_centro</field>
+              <field name="id">img_centro</field>
               <next>
                 <block type="stop" id="1UR0{9!iy~vJx~m2prd4">
-                  <field name="stop">video_praia</field>
+                  <field name="id">video_praia</field>
                   <next>
                     <block type="start" id="BZ#wUT/p=J}}s(q}Us7Z">
-                      <field name="start">video_praia</field>
+                      <field name="id">video_praia</field>
                     </block>
                   </next>
                 </block>
@@ -972,23 +972,23 @@ _data.blocksIntro3Xml = `
     </value>
   </block>
   <block type="port" id="+ p - MtE:D * clWz(7oX7Hg" x="20" y="622">
-    <field name="component">video_principal</field>
+    <field name="id">video_principal</field>
   </block>
   <block type="link" id="% 6sP% 0di, O * v % qS % d\`(\`" x="550" y="627">
     <value name="conditions">
       <block type="onbegin" id="(H8dBhXk6.y#]q%\`UM^D">
-        <field name="onbegin">creditos</field>
+        <field name="id">creditos</field>
       </block>
     </value>
     <statement name="actions">
       <block type="start" id="UEqL{b=Ws2G#w}+xMV%m">
-        <field name="start">img_centro</field>
+        <field name="id">img_centro</field>
         <next>
           <block type="start" id=".Pt;)N?Y.:xGz;dDp@+W">
-            <field name="start">img_praia</field>
+            <field name="id">img_praia</field>
             <next>
               <block type="start" id="q$s76Wl6nUee_vRx9F(3">
-                <field name="start">voz</field>
+                <field name="id">voz</field>
               </block>
             </next>
           </block>
@@ -999,21 +999,21 @@ _data.blocksIntro3Xml = `
   <block type="link" id="M)^!XeQ3fwhKEwGTcoGK" x="20" y="795">
     <value name="conditions">
       <block type="onrecognize" id="IokIu//km+7L0Y@Nioi[">
-        <field name="onrecognize">voz_centro</field>
+        <field name="id">voz_centro</field>
       </block>
     </value>
     <statement name="actions">
       <block type="stop" id="4(:vxHKc1ivMD9TqKrTd">
-        <field name="stop">video_principal</field>
+        <field name="id">video_principal</field>
         <next>
           <block type="stop" id="9Eb$H9^oR7Z)o_g^A7r?">
-            <field name="stop">img_centro</field>
+            <field name="id">img_centro</field>
             <next>
               <block type="stop" id="xz194KXLw:HdJABl^)[9">
-                <field name="stop">img_praia</field>
+                <field name="id">img_praia</field>
                 <next>
                   <block type="start" id="Wo67TbqF5]_pN(b1R3D_">
-                    <field name="start">video_centro</field>
+                    <field name="id">video_centro</field>
                   </block>
                 </next>
               </block>
@@ -1026,21 +1026,21 @@ _data.blocksIntro3Xml = `
   <block type="link" id="BLK@~VH8\`;o!;uMR.^tZ" x="549" y="805">
     <value name="conditions">
       <block type="onrecognize" id="[SfTF*!(*0N7]Hv9.tNh">
-        <field name="onrecognize">voz_praia</field>
+        <field name="id">voz_praia</field>
       </block>
     </value>
     <statement name="actions">
       <block type="stop" id="qh{EZTXTYXj5QRw:x+l#">
-        <field name="stop">video_principal</field>
+        <field name="id">video_principal</field>
         <next>
           <block type="stop" id="=6LVnQ^v7.gTbQiBB2rM">
-            <field name="stop">img_centro</field>
+            <field name="id">img_centro</field>
             <next>
               <block type="stop" id="1UR0{9!iy~vJx~m2prd4">
-                <field name="stop">video_praia</field>
+                <field name="id">video_praia</field>
                 <next>
                   <block type="start" id="BZ#wUT/p=J}}s(q}Us7Z">
-                    <field name="start">video_praia</field>
+                    <field name="id">video_praia</field>
                   </block>
                 </next>
               </block>
