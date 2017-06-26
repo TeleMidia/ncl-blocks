@@ -22,14 +22,20 @@ _data.surveyJSON = {
   showQuestionNumbers: 'off',
   surveyPostId: '51d57b85-3813-4a08-801b-4b7e077c1660',
   // title: 'Estudo sobre interações multimodais em linguagens multimídia',
-  pages: [
+  pages: []
+}
+
+// ----------------------------------------
+// termo page texts
+// ----------------------------------------
+
+_data.surveyJSON.pages.push({
+  name: 'termo',
+  title: 'Termo de consentimento para o estudo',
+  elements: [
     {
-      name: 'termo',
-      title: 'Termo de consentimento para o estudo',
-      elements: [
-        {
-          type: 'html',
-          html: `
+      type: 'html',
+      html: `
             O TeleMídia é um grupo de pesquisa do departamento de Informática da PUC-Rio que desenvolve pesquisas nas áreas de Sistemas Multimídia e Redes de Computadores. Em particular, Sistemas de TV Digital, terrestre e IPTV, têm sido foco de pesquisa e inovação do laboratório nos últimos anos.<br><br>
             
             Convidamos a você a participar de um de nosso estudo sobre<i>Interações multimodais em linguagens multimídia</i>.<br><br>
@@ -42,602 +48,294 @@ _data.surveyJSON = {
             <li>A divulgação dos resultados de nossa pesquisa em foros científicos e/ou pedagógicos pauta-se no respeito à privacidade, e o anonimato dos participantes é preservado em qualquer material publicado.</li>
             </ul>
           `
-        },
-        {
-          type: 'html',
-          html: 'Caso esteja de acordo, prossiga.<br>'
-        }
-      ]
     },
     {
-      name: 'perfil',
-      title: 'Dados do entrevistado',
-      elements: [
-        {
-          type: 'text',
-          isRequired: true,
-          name: 'name',
-          title: 'Qual seu nome?'
-        },
-        {
-          type: 'text',
-          isRequired: true,
-          name: 'email',
-          title: 'Qual seu e-mail de contato?',
-          validators: [{ type: 'email' }]
-        },
-        {
-          type: 'radiogroup',
-          isRequired: true,
-          name: 'formations',
-          title: 'Qual sua formação (e.g. comptuação, design, pós-gradução informática)?',
-          choices: ['gradução em comptuação', 'graduação em design', 'pós-gradução em computação', 'pós-gradução em design'],
-          hasOther: true,
-          otherText: 'outra'
-        },
-        {
-          type: 'radiogroup',
-          isRequired: true,
-          name: 'profileQuestion1',
-          title: 'Qual seu conhecimento no desenvolvimento em NCL?',
-          choices: ['nenhum', 'muito pouco', 'pouco', 'razoável', 'alto', 'muito alto', 'expert']
-        },
-        {
-          type: 'radiogroup',
-          isRequired: true,
-          name: 'profileQuestion2',
-          title: 'Quantas aplicações NCL você desenvolveu?',
-          visibleIf: '{profileQuestion1} != nenhum',
-          choices: ['0', '1-2', '3-4', '5-6', '7-8', '8 ou mais']
-        },
-        {
-          type: 'radiogroup',
-          isRequired: true,
-          name: 'sintax',
-          title: 'Você acredida que a sintaxe da NCL atrapalha ao desenvolver aplicações?',
-          choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
-        },
-        {
-          type: 'radiogroup',
-          isRequired: true,
-          name: 'profileQuestion3',
-          title: 'Qual seu conhecimento no desenvolvimento em HTML/JavaScript?',
-          choices: ['nenhum', 'muito pouco', 'pouco', 'razoável', 'alto', 'muito alto', 'expert']
-        },
-        {
-          type: 'radiogroup',
-          isRequired: true,
-          name: 'profileQuestion4',
-          title: 'Quantas aplicações HTML/JavaScript você desenvolveu?',
-          visibleIf: '{profileQuestion3} != nenhum',
-          choices: ['0', '1-2', '3-4', '5-6', '7-8', '8 ou mais']
-        },
-        {
-          type: 'radiogroup',
-          isRequired: true,
-          name: 'sintax',
-          title: 'Você acredida que o desenvolvimento em HTML/JavaScript requisita necessáriamente o uso de bibliotecas de manipulção DOM como jQuery, Zepto e Prototype?',
-          choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
-        }
-      ]
-    },
-    {
-      name: 'intro',
-      title: 'Introdução à linguagens multimídia com interações multimodais',
-      elements: [
-        {
-          type: 'html',
-          html: `
-            <p>O objetivo dessa seção do estudo é oferecer uma introdução sobre o conceito de <strong>linguagens multimídias com interações multimodais</strong>, proposto em nossa pesquisa.</p>
-          `
-        },
-        {
-          type: 'html',
-          html: `
-            <p>Primeiro devemos introduzir o que é um linguagem multimídia, que é intimamente documento multimídia.</p>
-            <br>
-
-            <p>Steinmetz [1] caracteriza um <strong>sistema multimídia</strong> como aquele que utiliza um conjunto de mídias, que ao menos uma mídia seja discreta e uma seja contínua. As <strong>mídias discretas</strong> são aquelas que não mudam durante sua exibição, como imagens e textos. Elas também são chamadas de mídias independente de tempo. Enquanto, as <strong>mídias contínuas</strong> são aquelas que mudam durante sua exbição, como áudios e vídeos. Elas também são chamdas de mídias dependentes de tempo.</p>
-            <br>
-
-            <p>Um <strong>documento multimídia</strong>, também segundo Steinmentz, é aquele que define como um sistema multímida deve exibir um conjunto de mídias (discretas e contínuas) na forma de uma apresentação multimídia. O criador de um documento multímidia é usualmente chamado de autor.</p>
-            <br>
-
-            <p>A figura a seguir ilustra a criação e apresentação de um documento multimídia.</p>
-            <p>Na <strong>criação do documento multimídia</strong>, o autor defini as mídias utilizadas e o sincronismo entre elas.</p>
-            <p>O sincronismo define o comportamento da exbição das mídias no decorrer do tempo da apresentação. Ele é geralmente baseado em momentos de apresentação de <strong>trechos de mídia</strong> contínua. Considere, por exemplo, que a parte de créditos de vídeo inicie no segundo 600. Um sincronimo pode ser definido para que ao iniciar o trecho dos creditos (o vídeo alcance o segundo 600) uma uma imagen de patrocínio seja exibida.</p>
-            <p>Na <strong>apresentação documento multimídia</strong>, um sistema multimídia recebe o documento multimídia e os arquivos de mídia necessários para  realizar o sincronismo definido pelo autor. Na figura, por exemplo, uma imagem e um audio são apresentação em determinado trecho da apresentação de um video. Por fim, o sistema utiliza <strong>dispositivos audiovisuais</strong> para apresentar conteúdos das mídias (som e frames) e <strong>dispositivos apontador e tecla</strong> para capiturar interações de usuário.</p>
-            
-            <div class='text-center'>
-              <img class='center-block img-thumbnail' style='height: 500px' src='assets/overview1.svg'>
-            </div>
-            <br>
-
-            <p>A <strong>linguagem multídmidia</strong> é na verdade o formato que permite um autor definir um documento multimídia. Ela define uma sintaxe e elementos de linguagem. Exemplos atuais de linguagens multímidia são a NCL (Nested Context Language)[2] e a HTML[3].</p>
-            <br>
-
-            [1] <a href='https://www.pearson.com/us/higher-education/product/Steinmetz-Multimedia-Computing-Communications-and-Applications/9780133244359.html'> Steinmetz, R. and Nahrstedt, K. 1995. Multimedia: Computing, Communications and Applications. Prentice Hall.</a> <br>
-            [2] <a href='#'>https://www.itu.int/rec/T-REC-H.761</a><br>
-            [3] <a href='#'>https://www.w3.org/TR/html5</a><br>
-          `
-        },
-        {
-          type: 'html',
-          html: `
-            <p>Agora, devemos introduzir o conceito de <strong>linguagens multimídia com interações multimodais</strong>, que intimamente relacionado com interfaces multimodais.</p>
-            <br>
-
-            <p>Oviatt [4] define que <strong>interfaces multimodais</strong> como aquelas que reconhecerem  interações em formas mais naturais da linguagem humana e comportamento, como fala e gestos. Esse tipo de interface foi apoiada pelos recentes avanços em tecnologias de reconhecimento e <strong>dispositivos de interação multimodal</strong>. Ilustrados a seguir, citamos o uso de microfones para reconhecimento de voz, e dispostivos como LeapMotion e e Microsoft Kinect para reconhecimento de gestos de mão e corpo, respectivamente.</p>
-            <br>
-
-            <div class='text-center'>
-              <img class='img-thumbnail' style='height: 180px' src='assets/voice.jpg'>
-              <img class='img-thumbnail' style='height: 180px' src='assets/leap.jpg'>
-              <img class='img-thumbnail' style='height: 180px' src='assets/kinect.jpg'>
-            </div>
-            <br>
-
-            <p>Modificamos a primeira figura para ilustrar a criação e apresentação de um documento multimídia com suporte a interações multimodais. Nessa nova figura, o autor não apenas midias e sincronismo, como também o reconhecimento de interações multimodais. 
-            <p>Para definir receonhecimentos, o autor utiliza de descrições auxiliares para reconhcer determinada interação. Essas descrição tem sintaxe própria que defini características de interação. Por exemplo, uma descrição pode ser em SRGS (Speech Recognition Grammar Specification) [5] para definir o reconhecimento de comandos de voz.</p>
-            <br>
-            
-            <p>Na apresentação, esse sistema multimídia recebe o documento multimídia, arquivos de mídia e descrições multimodais necessparios para realziar o sincronismo e reconhecimentos definido pelo autor. Esse sistema utiliza dispositivos de interação multimodal para receonhecimento, além de dispositivos audiovisuais.</p>
-            <br>
-
-            <div class='text-center'>
-              <img class='img-thumbnail' style='height: 500px' src='assets/overview2.svg'>
-            </div>
-            <br>
-
-            <p>Por fim, uma <strong>linguagem multimídia com interações multimodais</strong> é aquele formato que permite definir um documento multimída com não apenas sincroniza mídias, mas também reconhecimento de interações multimodais.</p>
-
-            [4] <a href='http://dx.doi.org/10.1201/9781410615862.ch21'>Oviatt, S. 2007. Multimodal Interfaces. Human Computer Interact Handbook. CRC Press, 413–432</a><br>
-            [5] <a href='#'>https://www.w3.org/TR/speech-grammar<a>
-          `
-        },
-        {
-          type: 'html',
-          html: '<p>Esperamos que esta introdução tenha sido útil no seu entendimento acerca de linguagens multimídia com interações multimodais. Favor prossiga.</p>'
-        }
-      ]
-    },
-    {
-      name: 'blocks',
-      title: 'Proposta de conceitos',
-      elements: [
-        {
-          type: 'html',
-          html: `
-            <p>As linguagens multímidia atuais não suportam adequadamente interações multimodais. Em nosso estudo nos propomos um conjunto de conceitos a serem adionados nessas linguagens para oferecer tal suporte. Mais precisamente esses conceitos são os de <em>Mídia, Reconhecedor, Sincronismo</em> e <em>Usuário</em>.
-            </p>
-            <p>Esta seção tem o objetivo de detalhar esses conceitos e capturar o entendimento do entrevistado.</p>
-            <p>Entretanto, para evitar possiveis dificuldades dado a sintaxe de linguagens, apresentaremos esses conceitos utilizando uma abordagem de <strong>desenvolvimento de aplicações através blocos</strong>.</p>
-            <p>Esse tipo de abordagem é bastante utilizado para o ensino de programação ou para ferramentes de geração de código. Em especial, esset tipo de desenvolvimento foi popularizado por ferramentas como o <strong>MIT Scratch</strong>[4] e <strong>MIT App Inventor</strong>[5]. O primeiro é utilizado para criar aplicações web, especialmente jogos, e o segundo utilizado para criar aplicações moveis. Ambos são ilustratos a seguir.</p>
-            <br>
-
-            <div class='text-center'>
-              <img class='img-thumbnail' style='height: 270px' src='assets/scratch.jpg'>
-              <span style="margin-left:10px"></span>  
-              <img class='img-thumbnail' style='height: 270px' src='assets/appinventor.jpg'>
-            </div>
-            <br>
-
-            [4] <a href='#'>scratch.mit.edu</a><br>
-            [5] <a href='#'>appinventor.mit.edu</a><br>
-          `
-        },
-        {
-          type: 'html',
-          name: 'blocksIntro1',
-          html: `
-            <p>Primeiro, vamos discutir o elemento <em>Mídia</em> e uso de <em>Sincronimo</em>s sobre elementos de <em>Mídia</em>.</p>
-            <br>
-            <p>O elemento <em>Mídia</em> é definido por um identificador e por seu conteúdo, este último pode ter porções identificáveis como trechos de um video ou áudio. Por exemplo, os blocos a seguir definim duas mídias com identificadores <em>midia_principal</em> e <em>icone</em>, mas elas não possuem conteúdo.</p>
-            <div id='blocksIntro1a'></div>
-            <br>
-
-            <p>Ações de iniciar sobre as mídias acima não apresentaram resultados, pois elas não possuem conteúdo.</p>
-            <p>Os blocos a seguir definem mesmas mídias mas com conteúdos de áudio e imagem, respectivamente. Em especial, a mídia de <em>midia_principal</em> tem definido um trecho chamado de <em>creditos</em> que inicia aos 300 e termina aos 360 segundos.</p>
-            <div id='blocksIntro1b'></div>
-            <br>
-
-            <p>O elemento de <em>Sincronimo</em> permite definir o comportamento das aplicações. Ele deve permitr quando mídias devem ser apresentadas.</p>
-            <p>O <em>Sincronimo</em> é baseado em causalidade, ou seja, quando um condição é satisfeita, ações são realizadas. Exemplos de condições são inicio ou fim de uma midia ou trecho de midia, ou a seleção de ususário sobre um mídia. Exemplos de ações são inicar ou parar uma mídia.</p>
-            <p>Os blocos a seguir definem novamente as mídias <em>midia_principal</em> e <em>icone</em> e dois sincronismos. Nesse exemplo, entretanto, nos alteramos o conteúdo da <em>midia_principal</em> para um conteúdo de vído. O primeiro sicroniso defini que <em>midia_principal</em> deve ser iniciada quando a aplicação for iniciada. O segundo sincronismo defini que quando o <em>midia_principal</em> atingir o trecho de <em>credito</em> ele deve terminar e a mídia <em>icone</em> deve ser finalizada.</p>
-            <div id='blocksIntro1c'></div>
-            <br>
-            
-            <p>É importante ressaltar que a mudança de conteúdo de <em>midia_principal</em> para a versão com áudio não afetaria o compartamento da aplicação. Pois os sincrinismos são definidos indepente do conteúdo das mídia.</p>
-            <br>
-
-            <p>O elemento <em>Reconhecedor</em> é também definido por um identificador e por seu conteúdo. Entrentato diferente de <em>Mídia</em> o conteúdo de um <em>Reconhecedor</em> deve ser uma descrição de reconhecimento, por exemplo, de voz ou gesto. Logo, as porções identificáveis de um <em>Reconhecedor</em> são porções de um descrição de reconhecimentos.</p>
-            
-            <p>Os blocos a seguir definim dois reconhecedores com identificadores <em>voz</em> e <em>gestos</em>.</p>
-            <div id='blocksIntro1d'></div>
-
-            <p>A seguir um reconhecedor com sincronismo</p>
-            <div id='blocksIntro1e'></div>
-            <br>
-          `
-        },
-        {
-          type: 'html',
-          name: 'blocksReadTask1'
-        },
-        {
-          type: 'comment',
-          isRequired: true,
-          name: 'blocksReadTask1Question',
-          title: 'Qual o comportamento da aplicação acima?'
-        },
-        {
-          type: 'html',
-          name: 'blocksReadTask2'
-        },
-        {
-          type: 'comment',
-          isRequired: true,
-          name: 'blocksReadTask2Question',
-          title: 'Qual o comportamento da aplicação acima?'
-        },
-        {
-          type: 'html',
-          name: 'blocksEditTask1'
-        },
-        {
-          type: 'text',
-          name: 'blocksEditTask1Changes',
-          visible: false
-        },
-        {
-          type: 'text',
-          name: 'blocksEditTask1Result',
-          visible: false
-        },
-        {
-          type: 'html',
-          name: 'blocksEditTask2'
-        },
-        {
-          type: 'text',
-          name: 'blocksEditTask2Changes',
-          visible: false
-        },
-        {
-          type: 'text',
-          name: 'blocksEditTask2Result',
-          visible: false
-        }
-      ]
-    },
-    {
-      name: 'blocksFeedback',
-      elements: [
-        {
-          type: 'panel',
-          innerIndent: 1,
-          title: 'Por favor, nos ajude agora a capturar a usa perceção sobre utilidade dos conceitos apresentados.',
-          elements: [
-            {
-              type: 'radiogroup',
-              isRequired: true,
-              name: 'conceptsFeedbackQuestion1',
-              title: 'Os conceitos apresentadados permitem realizar mais facilmente o desenvolmento de aplicações multimodais',
-              choices: [
-                {
-                  value: '0',
-                  text: {
-                    en: 'bastante improvável'
-                  }
-                }, {
-                  value: '1',
-                  text: {
-                    en: 'muito improvável'
-                  }
-                }, {
-                  value: '2',
-                  text: {
-                    en: 'pouco improvável'
-                  }
-                }, {
-                  value: '3',
-                  text: {
-                    en: 'indiferente'
-                  }
-                }, {
-                  value: '4',
-                  text: {
-                    en: 'pouco provável'
-                  }
-                }, {
-                  value: '5',
-                  text: {
-                    en: 'muito provável'
-                  }
-                }, {
-                  value: '6',
-                  text: {
-                    en: 'bastante provável'
-                  }
-                }
-              ]
-            },
-            {
-              type: 'radiogroup',
-              isRequired: true,
-              name: 'conceptsFeedbackQuestion2',
-              title: 'Os conceitos apresentadados permitem realizar mais rapidamente o desenvolmento de aplicações multimodais?',
-              choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
-            },
-            {
-              type: 'radiogroup',
-              isRequired: true,
-              name: 'conceptsFeedbackQuestion3',
-              title: 'De modo geral, os conceitos apresentadados são úteis para o desenvolmento de aplicações multimodais?',
-              choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
-            }]
-        }, {
-          type: 'panel',
-          innerIndent: 1,
-          title: 'Por favor, nos ajude agora a capturar a usa perceção sobre a facilidade dos conceitos apresentados.',
-          elements: [
-            {
-              type: 'radiogroup',
-              isRequired: true,
-              name: 'conceptsFeedbackQuestion4',
-              title: 'Aprender os conceitos é fácil?',
-              choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
-            },
-            {
-              type: 'radiogroup',
-              isRequired: true,
-              name: 'conceptsFeedbackQuestion5',
-              title: 'Os conceitos são claros e entendíveis?',
-              choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
-            },
-            {
-              type: 'radiogroup',
-              isRequired: true,
-              name: 'conceptsFeedbackQuestion6',
-              title: 'De modo geral, os conceitos apresentadados são fáceis de utilizar?',
-              choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
-            }]
-        }
-      ]
-    },
-    {
-      name: 'ncl',
-      title: 'Conceitos multimodais em NCL',
-      elements: [
-        {
-          type: 'html',
-          html: `
-            <p>A linguagem NCL possui o foco de criar apresentações multimídia interativas. Anteriormente a NCL focava no uso de mídias audiovisuais (por exemplo imagens, vídeo e áudios) e interações por meio de apontador e tecla.</p>
-            <br>
-
-            <p>O exemplo de código a seguir ilustra o uso de novas mídias e interação.<br><br>Um exemplo de mídia NCL comum é o 'mainvideo' (linhas 12-14).<br>Essa media possui um trecho definido pela ancora 'credits'(linhas 13).</p>
-            <br>
-            
-            <p>Para adicionar interações multimodais sobre esse video, adicionamos os elementos 'menu' (linhas 15-17) e 'answer' (linhas 19-21).<br>
-            <p>O primeiro define um áudio sintetizado utilizando o arquivo SSML chamado question.ssml (linhas 2-4).<br>O segundo define um reconhecimento de vocês utilizando o arquivo SRGS chamado commads.srgs (linhas 7-9).</p>
-            <br>
-            
-            <p>Esse áudio sintetizado é definido pelo elo das linhas 23-27.<br>
-            Enquanto que o reconhecimento é definido pelo elo das linhas 28-31.</p>
-          `,
-          name: 'nclIntro'
-        },
-        {
-          type: 'html',
-          html: 'O código a seguir consiste em uma aplicação NCL sem interações multimodais.',
-          name: 'nclCode1'
-        },
-        {
-          type: 'comment',
-          isRequired: true,
-          name: 'nclQuestion1',
-          rows: '9',
-          title: 'Qual o comportamento da aplicação?'
-        },
-        {
-          type: 'html',
-          html: 'O aplicação NCL acima foi modificada para permitir interações multimodais. O novo código é apresentado a seguir com as modificações destacadas:',
-          name: 'nclCode2'
-        },
-        {
-          type: 'comment',
-          isRequired: true,
-          name: 'nclQuestion2',
-          rows: '9',
-          title: 'Qual o novo comportamento da aplicação?'
-        }
-      ]
-    },
-    {
-      name: 'nclFeedback',
-      elements: [
-        {
-          type: 'panel',
-          innerIndent: 1,
-          title: 'Por favor, nos ajude a compreender a utilidade da NCL estendida com conceitos multimodais.',
-          elements: [
-            {
-              type: 'radiogroup',
-              isRequired: true,
-              name: 'nclFeedbackQuestion1',
-              title: 'A NCL estendida permite realizar mais facilmente o desenvolmento de aplicações multimodais?',
-              choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
-            },
-            {
-              type: 'radiogroup',
-              isRequired: true,
-              name: 'nclFeedbackQuestion2',
-              title: 'A NCL estendida permite realizar mais rapidamente o desenvolmento de aplicações multimodais?',
-              choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
-            },
-            {
-              type: 'radiogroup',
-              isRequired: true,
-              name: 'nclFeedbackQuestion3',
-              title: 'A NCL estendida aumenta a qualidade no desenvolmento de aplicações multimodais?',
-              choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
-            },
-            {
-              type: 'radiogroup',
-              isRequired: true,
-              name: 'nclFeedbackQuestion4',
-              title: 'A NCL estendida fornece maior controle no desenvolmento de aplicações multimodais?',
-              choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
-            },
-            {
-              type: 'radiogroup',
-              isRequired: true,
-              name: 'nclFeedbackQuestion5',
-              title: 'De modo geral, A NCL estendida é util para realizar o desenvolmento de aplicações multimodais?',
-              choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
-            }
-          ]
-        }, {
-          type: 'panel',
-          innerIndent: 1,
-          title: 'Por favor, nos ajude a compreender a facilidade do uso da NCL estendida',
-          elements: [
-            {
-              type: 'radiogroup',
-              isRequired: true,
-              name: 'nclFeedbackQuestion6',
-              title: 'Aprender a NCL estendida é fácil?',
-              choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
-            },
-            {
-              type: 'radiogroup',
-              isRequired: true,
-              name: 'nclFeedbackQuestion7',
-              title: 'A NCL estendida é claro e entendível?',
-              choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
-            },
-            {
-              type: 'radiogroup',
-              isRequired: true,
-              name: 'nclFeedbackQuestion8',
-              title: 'De modo geral, a NCL estendida é fácil de utilizar?',
-              choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
-            }]
-        }
-      ]
-    },
-    {
-      name: 'html',
-      title: 'Conceitos multimodais em HTML',
-      elements: [
-        {
-          type: 'html',
-          name: 'htmlIntro'
-        }
-      ]
-    },
-    {
-      name: 'htmlFeedback',
-      elements: [
-        {
-          type: 'panel',
-          innerIndent: 1,
-          title: 'Por favor, nos ajude a compreender a utilidade da HTML/JavaScrip estendida com conceitos multimodais.',
-          elements: [
-            {
-              type: 'radiogroup',
-              isRequired: true,
-              name: 'htmlFeedbackQuestion1',
-              title: 'A HTML/JavaScrip estendida permite realizar mais facilmente o desenvolmento de aplicações multimodais?',
-              choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
-            },
-            {
-              type: 'radiogroup',
-              isRequired: true,
-              name: 'htmlFeedbackQuestion2',
-              title: 'A HTML/JavaScrip estendida permite realizar mais rapidamente o desenvolmento de aplicações multimodais?',
-              choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
-            },
-            {
-              type: 'radiogroup',
-              isRequired: true,
-              name: 'htmlFeedbackQuestion3',
-              title: 'A HTML/JavaScrip estendida aumenta a qualidade no desenvolmento de aplicações multimodais?',
-              choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
-            },
-            {
-              type: 'radiogroup',
-              isRequired: true,
-              name: 'htmlFeedbackQuestion4',
-              title: 'A HTML/JavaScrip estendida fornece maior controle no desenvolmento de aplicações multimodais?',
-              choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
-            },
-            {
-              type: 'radiogroup',
-              isRequired: true,
-              name: 'htmlFeedbackQuestion5',
-              title: 'De modo geral, a HTML/JavaScript estendida é util para realizar o desenvolmento de aplicações multimodais?',
-              choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
-            }
-          ]
-        }, {
-          type: 'panel',
-          innerIndent: 1,
-          title: 'Por favor, nos ajude a compreender a facilidade do uso de HTML/Javascript estendida',
-          elements: [
-            {
-              type: 'radiogroup',
-              isRequired: true,
-              name: 'htmlFeedbackQuestion6',
-              title: 'Aprender a HTML/Javascript estendida é fácil?',
-              choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
-            },
-            {
-              type: 'radiogroup',
-              isRequired: true,
-              name: 'htmlFeedbackQuestion7',
-              title: 'A HTML/Javascript estendida é claro e entendível?',
-              choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
-            },
-            {
-              type: 'radiogroup',
-              isRequired: true,
-              name: 'htmlFeedbackQuestion8',
-              title: 'De modo geral, a HTML/Javascript estendida é fácil de utilizar?',
-              choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
-            }
-          ]
-        }
-      ]
-    },
-    {
-      name: 'comments',
-      title: 'Comentários adicionais do entrevistado',
-      elements: [
-        {
-          type: 'comment',
-          name: 'commentsQuestion1',
-          rows: '9',
-          title: {
-            en: 'Chegamos ao fim de nosso estudo. Se desejar, deixe comentários ou sugestões relacionados ao nosso estudo.'
-          }
-        },
-        {
-          type: 'comment',
-          name: 'commentsQuestion2',
-          rows: '9',
-          title: {
-            en: 'Adcionalmente, se desejar, você fale sobre que tipos de aplicações você gostaria de desenvolver com conceitos apresentados nesse estudo.'
-          }
-        }
-      ]
+      type: 'html',
+      html: 'Caso esteja de acordo, prossiga.<br>'
     }
   ]
-}
+})
 
 // ----------------------------------------
-// intro page
+// profile page texts
 // ----------------------------------------
+
+_data.surveyJSON.pages.push({
+  name: 'perfil',
+  title: 'Dados do entrevistado',
+  elements: [
+    {
+      type: 'text',
+      isRequired: true,
+      name: 'name',
+      title: 'Qual seu nome?'
+    },
+    {
+      type: 'text',
+      isRequired: true,
+      name: 'email',
+      title: 'Qual seu e-mail de contato?',
+      validators: [{ type: 'email' }]
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'formations',
+      title: 'Qual sua formação (e.g. comptuação, design, pós-gradução informática)?',
+      choices: ['gradução em comptuação', 'graduação em design', 'pós-gradução em computação', 'pós-gradução em design'],
+      hasOther: true,
+      otherText: 'outra'
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'profileQuestion1',
+      title: 'Qual seu conhecimento no desenvolvimento em NCL?',
+      choices: ['nenhum', 'muito pouco', 'pouco', 'razoável', 'alto', 'muito alto', 'expert']
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'profileQuestion2',
+      title: 'Quantas aplicações NCL você desenvolveu?',
+      visibleIf: '{profileQuestion1} != nenhum',
+      choices: ['0', '1-2', '3-4', '5-6', '7-8', '8 ou mais']
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'sintax',
+      title: 'Você acredida que a sintaxe da NCL atrapalha ao desenvolver aplicações?',
+      choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'profileQuestion3',
+      title: 'Qual seu conhecimento no desenvolvimento em HTML/JavaScript?',
+      choices: ['nenhum', 'muito pouco', 'pouco', 'razoável', 'alto', 'muito alto', 'expert']
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'profileQuestion4',
+      title: 'Quantas aplicações HTML/JavaScript você desenvolveu?',
+      visibleIf: '{profileQuestion3} != nenhum',
+      choices: ['0', '1-2', '3-4', '5-6', '7-8', '8 ou mais']
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'sintax',
+      title: 'Você acredida que o desenvolvimento em HTML/JavaScript requisita necessáriamente o uso de bibliotecas de manipulção DOM como jQuery, Zepto e Prototype?',
+      choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
+    }
+  ]
+})
+
+// ----------------------------------------
+// intro page texts
+// ----------------------------------------
+
+_data.surveyJSON.pages.push({
+  name: 'intro',
+  title: 'Introdução à linguagens multimídia com interações multimodais',
+  elements: [
+    {
+      type: 'html',
+      html: `
+        <p>O objetivo dessa seção do estudo é oferecer uma introdução sobre o conceito de <strong>linguagens multimídias com interações multimodais</strong>, proposto em nossa pesquisa.</p>
+      `
+    },
+    {
+      type: 'html',
+      html: `
+        <p>Primeiro devemos introduzir o que é um linguagem multimídia, que é intimamente documento multimídia.</p>
+        <br>
+
+        <p>Steinmetz [1] caracteriza um <strong>sistema multimídia</strong> como aquele que utiliza um conjunto de mídias, que ao menos uma mídia seja discreta e uma seja contínua. As <strong>mídias discretas</strong> são aquelas que não mudam durante sua exibição, como imagens e textos. Elas também são chamadas de mídias independente de tempo. Enquanto, as <strong>mídias contínuas</strong> são aquelas que mudam durante sua exbição, como áudios e vídeos. Elas também são chamdas de mídias dependentes de tempo.</p>
+        <br>
+
+        <p>Um <strong>documento multimídia</strong>, também segundo Steinmentz, é aquele que define como um sistema multímida deve exibir um conjunto de mídias (discretas e contínuas) na forma de uma apresentação multimídia. O criador de um documento multímidia é usualmente chamado de autor.</p>
+        <br>
+
+        <p>A figura a seguir ilustra a criação e apresentação de um documento multimídia.</p>
+        <p>Na <strong>criação do documento multimídia</strong>, o autor defini as mídias utilizadas e o sincronismo entre elas.</p>
+        <p>O sincronismo define o comportamento da exbição das mídias no decorrer do tempo da apresentação. Ele é geralmente baseado em momentos de apresentação de <strong>trechos de mídia</strong> contínua. Considere, por exemplo, que a parte de créditos de vídeo inicie no segundo 600. Um sincronimo pode ser definido para que ao iniciar o trecho dos creditos (o vídeo alcance o segundo 600) uma uma imagen de patrocínio seja exibida.</p>
+        <p>Na <strong>apresentação documento multimídia</strong>, um sistema multimídia recebe o documento multimídia e os arquivos de mídia necessários para  realizar o sincronismo definido pelo autor. Na figura, por exemplo, uma imagem e um audio são apresentação em determinado trecho da apresentação de um video. Por fim, o sistema utiliza <strong>dispositivos audiovisuais</strong> para apresentar conteúdos das mídias (som e frames) e <strong>dispositivos apontador e tecla</strong> para capiturar interações de usuário.</p>
+
+        <div class='text-center'>
+          <img class='center-block img-thumbnail' style='height: 500px' src='assets/overview1.svg'>
+        </div>
+        <br>
+
+        <p>A <strong>linguagem multídmidia</strong> é na verdade o formato que permite um autor definir um documento multimídia. Ela define uma sintaxe e elementos de linguagem. Exemplos atuais de linguagens multímidia são a NCL (Nested Context Language)[2] e a HTML[3].</p>
+        <br>
+
+        [1] <a href='https://www.pearson.com/us/higher-education/product/Steinmetz-Multimedia-Computing-Communications-and-Applications/9780133244359.html'> Steinmetz, R. and Nahrstedt, K. 1995. Multimedia: Computing, Communications and Applications. Prentice Hall.</a> <br>
+        [2] <a href='#'>https://www.itu.int/rec/T-REC-H.761</a><br>
+        [3] <a href='#'>https://www.w3.org/TR/html5</a><br>
+      `
+    },
+    {
+      type: 'html',
+      html: `
+        <p>Agora, devemos introduzir o conceito de <strong>linguagens multimídia com interações multimodais</strong>, que intimamente relacionado com interfaces multimodais.</p>
+        <br>
+
+        <p>Oviatt [4] define que <strong>interfaces multimodais</strong> como aquelas que reconhecerem  interações em formas mais naturais da linguagem humana e comportamento, como fala e gestos. Esse tipo de interface foi apoiada pelos recentes avanços em tecnologias de reconhecimento e <strong>dispositivos de interação multimodal</strong>. Ilustrados a seguir, citamos o uso de microfones para reconhecimento de voz, e dispostivos como LeapMotion e e Microsoft Kinect para reconhecimento de gestos de mão e corpo, respectivamente.</p>
+        <br>
+
+        <div class='text-center'>
+          <img class='img-thumbnail' style='height: 180px' src='assets/voice.jpg'>
+          <img class='img-thumbnail' style='height: 180px' src='assets/leap.jpg'>
+          <img class='img-thumbnail' style='height: 180px' src='assets/kinect.jpg'>
+        </div>
+        <br>
+
+        <p>Modificamos a primeira figura para ilustrar a criação e apresentação de um documento multimídia com suporte a interações multimodais. Nessa nova figura, o autor não apenas midias e sincronismo, como também o reconhecimento de interações multimodais.
+        <p>Para definir receonhecimentos, o autor utiliza de descrições auxiliares para reconhcer determinada interação. Essas descrição tem sintaxe própria que defini características de interação. Por exemplo, uma descrição pode ser em SRGS (Speech Recognition Grammar Specification) [5] para definir o reconhecimento de comandos de voz.</p>
+        <br>
+
+        <p>Na apresentação, esse sistema multimídia recebe o documento multimídia, arquivos de mídia e descrições multimodais necessparios para realziar o sincronismo e reconhecimentos definido pelo autor. Esse sistema utiliza dispositivos de interação multimodal para receonhecimento, além de dispositivos audiovisuais.</p>
+        <br>
+
+        <div class='text-center'>
+          <img class='img-thumbnail' style='height: 500px' src='assets/overview2.svg'>
+        </div>
+        <br>
+
+        <p>Por fim, uma <strong>linguagem multimídia com interações multimodais</strong> é aquele formato que permite definir um documento multimída com não apenas sincroniza mídias, mas também reconhecimento de interações multimodais.</p>
+
+        [4] <a href='http://dx.doi.org/10.1201/9781410615862.ch21'>Oviatt, S. 2007. Multimodal Interfaces. Human Computer Interact Handbook. CRC Press, 413–432</a><br>
+        [5] <a href='#'>https://www.w3.org/TR/speech-grammar<a>
+      `
+    },
+    {
+      type: 'html',
+      html: '<p>Esperamos que esta introdução tenha sido útil no seu entendimento acerca de linguagens multimídia com interações multimodais. Favor prossiga.</p>'
+    }
+  ]
+})
+
+// ----------------------------------------
+// concepts page texts
+// ----------------------------------------
+
+_data.surveyJSON.pages.push({
+  name: 'blocks',
+  title: 'Proposta de conceitos',
+  elements: [
+    {
+      type: 'html',
+      html: `
+        <p>As linguagens multímidia atuais não suportam adequadamente interações multimodais. Em nosso estudo nos propomos um conjunto de conceitos a serem adionados nessas linguagens para oferecer tal suporte. Mais precisamente esses conceitos são os de <em>Mídia, Reconhecedor, Sincronismo</em> e <em>Usuário</em>.
+        </p>
+        <p>Esta seção tem o objetivo de detalhar esses conceitos e capturar o entendimento do entrevistado.</p>
+        <p>Entretanto, para evitar possiveis dificuldades dado a sintaxe de linguagens, apresentaremos esses conceitos utilizando uma abordagem de <strong>desenvolvimento de aplicações através blocos</strong>.</p>
+        <p>Esse tipo de abordagem é bastante utilizado para o ensino de programação ou para ferramentes de geração de código. Em especial, esset tipo de desenvolvimento foi popularizado por ferramentas como o <strong>MIT Scratch</strong>[4] e <strong>MIT App Inventor</strong>[5]. O primeiro é utilizado para criar aplicações web, especialmente jogos, e o segundo utilizado para criar aplicações moveis. Ambos são ilustratos a seguir.</p>
+        <br>
+
+        <div class='text-center'>
+          <img class='img-thumbnail' style='height: 270px' src='assets/scratch.jpg'>
+          <span style="margin-left:10px"></span>
+          <img class='img-thumbnail' style='height: 270px' src='assets/appinventor.jpg'>
+        </div>
+        <br>
+
+        [4] <a href='#'>scratch.mit.edu</a><br>
+        [5] <a href='#'>appinventor.mit.edu</a><br>
+      `
+    },
+    {
+      type: 'html',
+      name: 'blocksIntro1',
+      html: `
+        <p>Primeiro, vamos discutir o elemento <em>Mídia</em> e uso de <em>Sincronimo</em>s sobre elementos de <em>Mídia</em>.</p>
+        <br>
+        <p>O elemento <em>Mídia</em> é definido por um identificador e por seu conteúdo, este último pode ter porções identificáveis como trechos de um video ou áudio. Por exemplo, os blocos a seguir definim duas mídias com identificadores <em>midia_principal</em> e <em>icone</em>, mas elas não possuem conteúdo.</p>
+        <div id='blocksIntro1a'></div>
+        <br>
+
+        <p>Ações de iniciar sobre as mídias acima não apresentaram resultados, pois elas não possuem conteúdo.</p>
+        <p>Os blocos a seguir definem mesmas mídias mas com conteúdos de áudio e imagem, respectivamente. Em especial, a mídia de <em>midia_principal</em> tem definido um trecho chamado de <em>creditos</em> que inicia aos 300 e termina aos 360 segundos.</p>
+        <div id='blocksIntro1b'></div>
+        <br>
+
+        <p>O elemento de <em>Sincronimo</em> permite definir o comportamento das aplicações. Ele deve permitr quando mídias devem ser apresentadas.</p>
+        <p>O <em>Sincronimo</em> é baseado em causalidade, ou seja, quando um condição é satisfeita, ações são realizadas. Exemplos de condições são inicio ou fim de uma midia ou trecho de midia, ou a seleção de ususário sobre um mídia. Exemplos de ações são inicar ou parar uma mídia.</p>
+        <p>Os blocos a seguir definem novamente as mídias <em>midia_principal</em> e <em>icone</em> e dois sincronismos. Nesse exemplo, entretanto, nos alteramos o conteúdo da <em>midia_principal</em> para um conteúdo de vído. O primeiro sicroniso defini que <em>midia_principal</em> deve ser iniciada quando a aplicação for iniciada. O segundo sincronismo defini que quando o <em>midia_principal</em> atingir o trecho de <em>credito</em> ele deve terminar e a mídia <em>icone</em> deve ser finalizada.</p>
+        <div id='blocksIntro1c'></div>
+        <br>
+
+        <p>É importante ressaltar que a mudança de conteúdo de <em>midia_principal</em> para a versão com áudio não afetaria o compartamento da aplicação. Pois os sincrinismos são definidos indepente do conteúdo das mídia.</p>
+        <br>
+
+        <p>O elemento <em>Reconhecedor</em> é também definido por um identificador e por seu conteúdo. Entrentato diferente de <em>Mídia</em> o conteúdo de um <em>Reconhecedor</em> deve ser uma descrição de reconhecimento, por exemplo, de voz ou gesto. Logo, as porções identificáveis de um <em>Reconhecedor</em> são porções de um descrição de reconhecimentos.</p>
+
+        <p>Os blocos a seguir definim dois reconhecedores com identificadores <em>voz</em> e <em>gestos</em>.</p>
+        <div id='blocksIntro1d'></div>
+
+        <p>A seguir um reconhecedor com sincronismo</p>
+        <div id='blocksIntro1e'></div>
+        <br>
+      `
+    },
+    {
+      type: 'html',
+      name: 'blocksReadTask1'
+    },
+    {
+      type: 'comment',
+      isRequired: true,
+      name: 'blocksReadTask1Question',
+      title: 'Qual o comportamento da aplicação acima?'
+    },
+    {
+      type: 'html',
+      name: 'blocksReadTask2'
+    },
+    {
+      type: 'comment',
+      isRequired: true,
+      name: 'blocksReadTask2Question',
+      title: 'Qual o comportamento da aplicação acima?'
+    },
+    {
+      type: 'html',
+      name: 'blocksEditTask1'
+    },
+    {
+      type: 'text',
+      name: 'blocksEditTask1Changes',
+      visible: false
+    },
+    {
+      type: 'text',
+      name: 'blocksEditTask1Result',
+      visible: false
+    },
+    {
+      type: 'html',
+      name: 'blocksEditTask2'
+    },
+    {
+      type: 'text',
+      name: 'blocksEditTask2Changes',
+      visible: false
+    },
+    {
+      type: 'text',
+      name: 'blocksEditTask2Result',
+      visible: false
+    }
+  ]
+})
+
+// ----------------------------------------
+// concepts page blocks
+// ----------------------------------------
+
 _data.blocksIntro1aXml = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
@@ -1038,7 +736,160 @@ _data.blocksReadTask2Xml = `
 `
 
 // ----------------------------------------
-//  ncl page
+// concepts feedback page texts
+// ----------------------------------------
+
+_data.surveyJSON.pages.push({
+  name: 'blocksFeedback',
+  elements: [
+    {
+      type: 'panel',
+      innerIndent: 1,
+      title: 'Por favor, nos ajude agora a capturar a usa perceção sobre utilidade dos conceitos apresentados.',
+      elements: [
+        {
+          type: 'radiogroup',
+          isRequired: true,
+          name: 'conceptsFeedbackQuestion1',
+          title: 'Os conceitos apresentadados permitem realizar mais facilmente o desenvolmento de aplicações multimodais',
+          choices: [
+            {
+              value: '0',
+              text: {
+                en: 'bastante improvável'
+              }
+            }, {
+              value: '1',
+              text: {
+                en: 'muito improvável'
+              }
+            }, {
+              value: '2',
+              text: {
+                en: 'pouco improvável'
+              }
+            }, {
+              value: '3',
+              text: {
+                en: 'indiferente'
+              }
+            }, {
+              value: '4',
+              text: {
+                en: 'pouco provável'
+              }
+            }, {
+              value: '5',
+              text: {
+                en: 'muito provável'
+              }
+            }, {
+              value: '6',
+              text: {
+                en: 'bastante provável'
+              }
+            }
+          ]
+        },
+        {
+          type: 'radiogroup',
+          isRequired: true,
+          name: 'conceptsFeedbackQuestion2',
+          title: 'Os conceitos apresentadados permitem realizar mais rapidamente o desenvolmento de aplicações multimodais?',
+          choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
+        },
+        {
+          type: 'radiogroup',
+          isRequired: true,
+          name: 'conceptsFeedbackQuestion3',
+          title: 'De modo geral, os conceitos apresentadados são úteis para o desenvolmento de aplicações multimodais?',
+          choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
+        }]
+    }, {
+      type: 'panel',
+      innerIndent: 1,
+      title: 'Por favor, nos ajude agora a capturar a usa perceção sobre a facilidade dos conceitos apresentados.',
+      elements: [
+        {
+          type: 'radiogroup',
+          isRequired: true,
+          name: 'conceptsFeedbackQuestion4',
+          title: 'Aprender os conceitos é fácil?',
+          choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
+        },
+        {
+          type: 'radiogroup',
+          isRequired: true,
+          name: 'conceptsFeedbackQuestion5',
+          title: 'Os conceitos são claros e entendíveis?',
+          choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
+        },
+        {
+          type: 'radiogroup',
+          isRequired: true,
+          name: 'conceptsFeedbackQuestion6',
+          title: 'De modo geral, os conceitos apresentadados são fáceis de utilizar?',
+          choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
+        }]
+    }
+  ]
+})
+
+// ----------------------------------------
+// ncl page texts
+// ----------------------------------------
+
+_data.surveyJSON.pages.push({
+  name: 'ncl',
+  title: 'Conceitos multimodais em NCL',
+  elements: [
+    {
+      type: 'html',
+      html: `
+        <p>A linguagem NCL possui o foco de criar apresentações multimídia interativas. Anteriormente a NCL focava no uso de mídias audiovisuais (por exemplo imagens, vídeo e áudios) e interações por meio de apontador e tecla.</p>
+        <br>
+
+        <p>O exemplo de código a seguir ilustra o uso de novas mídias e interação.<br><br>Um exemplo de mídia NCL comum é o 'mainvideo' (linhas 12-14).<br>Essa media possui um trecho definido pela ancora 'credits'(linhas 13).</p>
+        <br>
+
+        <p>Para adicionar interações multimodais sobre esse video, adicionamos os elementos 'menu' (linhas 15-17) e 'answer' (linhas 19-21).<br>
+        <p>O primeiro define um áudio sintetizado utilizando o arquivo SSML chamado question.ssml (linhas 2-4).<br>O segundo define um reconhecimento de vocês utilizando o arquivo SRGS chamado commads.srgs (linhas 7-9).</p>
+        <br>
+
+        <p>Esse áudio sintetizado é definido pelo elo das linhas 23-27.<br>
+        Enquanto que o reconhecimento é definido pelo elo das linhas 28-31.</p>
+      `,
+      name: 'nclIntro'
+    },
+    {
+      type: 'html',
+      html: 'O código a seguir consiste em uma aplicação NCL sem interações multimodais.',
+      name: 'nclCode1'
+    },
+    {
+      type: 'comment',
+      isRequired: true,
+      name: 'nclQuestion1',
+      rows: '9',
+      title: 'Qual o comportamento da aplicação?'
+    },
+    {
+      type: 'html',
+      html: 'O aplicação NCL acima foi modificada para permitir interações multimodais. O novo código é apresentado a seguir com as modificações destacadas:',
+      name: 'nclCode2'
+    },
+    {
+      type: 'comment',
+      isRequired: true,
+      name: 'nclQuestion2',
+      rows: '9',
+      title: 'Qual o novo comportamento da aplicação?'
+    }
+  ]
+})
+
+// ----------------------------------------
+//  ncl page codes
 // ----------------------------------------
 
 _data.nclCode1 = `
@@ -1132,5 +983,204 @@ _data.nclCode2 = `
 `
 
 // ----------------------------------------
-// html page functions
+// ncl feedback page texts
 // ----------------------------------------
+
+_data.surveyJSON.pages.push({
+  name: 'nclFeedback',
+  elements: [
+    {
+      type: 'panel',
+      innerIndent: 1,
+      title: 'Por favor, nos ajude a compreender a utilidade da NCL estendida com conceitos multimodais.',
+      elements: [
+        {
+          type: 'radiogroup',
+          isRequired: true,
+          name: 'nclFeedbackQuestion1',
+          title: 'A NCL estendida permite realizar mais facilmente o desenvolmento de aplicações multimodais?',
+          choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
+        },
+        {
+          type: 'radiogroup',
+          isRequired: true,
+          name: 'nclFeedbackQuestion2',
+          title: 'A NCL estendida permite realizar mais rapidamente o desenvolmento de aplicações multimodais?',
+          choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
+        },
+        {
+          type: 'radiogroup',
+          isRequired: true,
+          name: 'nclFeedbackQuestion3',
+          title: 'A NCL estendida aumenta a qualidade no desenvolmento de aplicações multimodais?',
+          choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
+        },
+        {
+          type: 'radiogroup',
+          isRequired: true,
+          name: 'nclFeedbackQuestion4',
+          title: 'A NCL estendida fornece maior controle no desenvolmento de aplicações multimodais?',
+          choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
+        },
+        {
+          type: 'radiogroup',
+          isRequired: true,
+          name: 'nclFeedbackQuestion5',
+          title: 'De modo geral, A NCL estendida é util para realizar o desenvolmento de aplicações multimodais?',
+          choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
+        }
+      ]
+    }, {
+      type: 'panel',
+      innerIndent: 1,
+      title: 'Por favor, nos ajude a compreender a facilidade do uso da NCL estendida',
+      elements: [
+        {
+          type: 'radiogroup',
+          isRequired: true,
+          name: 'nclFeedbackQuestion6',
+          title: 'Aprender a NCL estendida é fácil?',
+          choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
+        },
+        {
+          type: 'radiogroup',
+          isRequired: true,
+          name: 'nclFeedbackQuestion7',
+          title: 'A NCL estendida é claro e entendível?',
+          choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
+        },
+        {
+          type: 'radiogroup',
+          isRequired: true,
+          name: 'nclFeedbackQuestion8',
+          title: 'De modo geral, a NCL estendida é fácil de utilizar?',
+          choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
+        }]
+    }
+  ]
+})
+
+// ----------------------------------------
+// html page texts
+// ----------------------------------------
+
+_data.surveyJSON.pages.push({
+  name: 'html',
+  title: 'Conceitos multimodais em HTML',
+  elements: [
+    {
+      type: 'html',
+      name: 'htmlIntro'
+    }
+  ]
+})
+
+// ----------------------------------------
+// html page codes
+// ----------------------------------------
+
+// ----------------------------------------
+// html feedback page texts
+// ----------------------------------------
+
+_data.surveyJSON.pages.push({
+  name: 'htmlFeedback',
+  elements: [
+    {
+      type: 'panel',
+      innerIndent: 1,
+      title: 'Por favor, nos ajude a compreender a utilidade da HTML/JavaScrip estendida com conceitos multimodais.',
+      elements: [
+        {
+          type: 'radiogroup',
+          isRequired: true,
+          name: 'htmlFeedbackQuestion1',
+          title: 'A HTML/JavaScrip estendida permite realizar mais facilmente o desenvolmento de aplicações multimodais?',
+          choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
+        },
+        {
+          type: 'radiogroup',
+          isRequired: true,
+          name: 'htmlFeedbackQuestion2',
+          title: 'A HTML/JavaScrip estendida permite realizar mais rapidamente o desenvolmento de aplicações multimodais?',
+          choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
+        },
+        {
+          type: 'radiogroup',
+          isRequired: true,
+          name: 'htmlFeedbackQuestion3',
+          title: 'A HTML/JavaScrip estendida aumenta a qualidade no desenvolmento de aplicações multimodais?',
+          choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
+        },
+        {
+          type: 'radiogroup',
+          isRequired: true,
+          name: 'htmlFeedbackQuestion4',
+          title: 'A HTML/JavaScrip estendida fornece maior controle no desenvolmento de aplicações multimodais?',
+          choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
+        },
+        {
+          type: 'radiogroup',
+          isRequired: true,
+          name: 'htmlFeedbackQuestion5',
+          title: 'De modo geral, a HTML/JavaScript estendida é util para realizar o desenvolmento de aplicações multimodais?',
+          choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
+        }
+      ]
+    }, {
+      type: 'panel',
+      innerIndent: 1,
+      title: 'Por favor, nos ajude a compreender a facilidade do uso de HTML/Javascript estendida',
+      elements: [
+        {
+          type: 'radiogroup',
+          isRequired: true,
+          name: 'htmlFeedbackQuestion6',
+          title: 'Aprender a HTML/Javascript estendida é fácil?',
+          choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
+        },
+        {
+          type: 'radiogroup',
+          isRequired: true,
+          name: 'htmlFeedbackQuestion7',
+          title: 'A HTML/Javascript estendida é claro e entendível?',
+          choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
+        },
+        {
+          type: 'radiogroup',
+          isRequired: true,
+          name: 'htmlFeedbackQuestion8',
+          title: 'De modo geral, a HTML/Javascript estendida é fácil de utilizar?',
+          choices: ['bastante improvável', 'muito improvável', 'pouco improvável', 'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
+        }
+      ]
+    }
+  ]
+})
+
+// ----------------------------------------
+// comments feedback page texts
+// ----------------------------------------
+
+_data.surveyJSON.pages.push({
+  name: 'comments',
+  title: 'Comentários adicionais do entrevistado',
+  elements: [
+    {
+      type: 'comment',
+      name: 'commentsQuestion1',
+      rows: '9',
+      title: {
+        en: 'Chegamos ao fim de nosso estudo. Se desejar, deixe comentários ou sugestões relacionados ao nosso estudo.'
+      }
+    },
+    {
+      type: 'comment',
+      name: 'commentsQuestion2',
+      rows: '9',
+      title: {
+        en: 'Adcionalmente, se desejar, você fale sobre que tipos de aplicações você gostaria de desenvolver com conceitos apresentados nesse estudo.'
+      }
+    }
+  ]
+})
