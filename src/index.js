@@ -19,10 +19,10 @@ var _survey = new Survey.Model(_data.surveyJSON)
 var _surveyCss = {
   // root
   'root': 'panel panel-default',
-  'header': 'h3 text-center breadcrumb',
+  'header': 'h3 text-center breadcrumb page-header',
   'body': 'panel-body',
   'footer': 'panel-footer text-center ',
-  'pageTitle': 'h3 text-center breadcrumb',
+  'pageTitle': 'h3 text-center breadcrumb page-header',
   // row
   'row': '',
   'question': { root: 'h4 panel-body panel panel-default', title: 'h4 breadcrumb' },

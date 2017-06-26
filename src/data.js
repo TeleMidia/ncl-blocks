@@ -224,110 +224,123 @@ _data.surveyJSON.pages.push({
 
 _data.surveyJSON.pages.push({
   name: 'blocks',
-  title: 'Proposta de conceitos',
   elements: [
     {
-      type: 'html',
-      html: `
-        <p>As linguagens multímidia atuais não suportam adequadamente interações multimodais. Em nosso estudo nos propomos um conjunto de conceitos a serem adionados nessas linguagens para oferecer tal suporte. Mais precisamente esses conceitos são os de <em>Mídia, Reconhecedor, Sincronismo</em> e <em>Usuário</em>.
-        </p>
-        <p>Esta seção tem o objetivo de detalhar esses conceitos e capturar o entendimento do entrevistado.</p>
-        <p>Entretanto, para evitar possiveis dificuldades dado a sintaxe de linguagens, apresentaremos esses conceitos utilizando uma abordagem de <strong>desenvolvimento de aplicações através blocos</strong>.</p>
-        <p>Esse tipo de abordagem é bastante utilizado para o ensino de programação ou para ferramentes de geração de código. Em especial, esset tipo de desenvolvimento foi popularizado por ferramentas como o <strong>MIT Scratch</strong>[4] e <strong>MIT App Inventor</strong>[5]. O primeiro é utilizado para criar aplicações web, especialmente jogos, e o segundo utilizado para criar aplicações moveis. Ambos são ilustratos a seguir.</p>
-        <br>
+      type: 'panel',
+      title: 'Proposta de conceitos',
+      innerIndent: 1,
+      elements: [
+        {
+          type: 'html',
+          html: `
+            <p>As linguagens multímidia atuais não suportam adequadamente interações multimodais. Em nosso estudo nos propomos um conjunto de conceitos a serem adionados nessas linguagens para oferecer tal suporte. Mais precisamente esses conceitos são os de <em>Mídia, Reconhecedor, Sincronismo</em> e <em>Usuário</em>.
+            </p>
+            <p>Esta seção tem o objetivo de detalhar esses conceitos e capturar o entendimento do entrevistado.</p>
+            <p>Entretanto, para evitar possiveis dificuldades dado a sintaxe de linguagens, apresentaremos esses conceitos utilizando uma abordagem de <strong>desenvolvimento de aplicações através blocos</strong>.</p>
+            <p>Esse tipo de abordagem é bastante utilizado para o ensino de programação ou para ferramentes de geração de código. Em especial, esse tipo de desenvolvimento foi popularizado por ferramentas como o <strong>MIT Scratch</strong>[4] e <strong>MIT App Inventor</strong>[5]. O primeiro é utilizado para criar aplicações web, especialmente jogos, e o segundo utilizado para criar aplicações moveis. Ambos são ilustratos a seguir.</p>
+            <br>
 
-        <div class='text-center'>
-          <img class='img-thumbnail' style='height: 270px' src='assets/scratch.jpg'>
-          <span style="margin-left:10px"></span>
-          <img class='img-thumbnail' style='height: 270px' src='assets/appinventor.jpg'>
-        </div>
-        <br>
+            <div class='text-center'>
+              <img class='img-thumbnail' style='height: 270px' src='assets/scratch.jpg'>
+              <span style="margin-left:10px"></span>
+              <img class='img-thumbnail' style='height: 270px' src='assets/appinventor.jpg'>
+            </div>
+            <br>
 
-        [4] <a href='#'>scratch.mit.edu</a><br>
-        [5] <a href='#'>appinventor.mit.edu</a><br>
-      `
-    },
-    {
-      type: 'html',
-      name: 'blocksIntro1',
-      html: `
-        <p>Primeiro, vamos discutir o elemento <em>Mídia</em> e uso de <em>Sincronimo</em>s sobre elementos de <em>Mídia</em>.</p>
-        <br>
-        <p>O elemento <em>Mídia</em> é definido por um identificador e por seu conteúdo, este último pode ter porções identificáveis como trechos de um video ou áudio. Por exemplo, os blocos a seguir definim duas mídias com identificadores <em>midia_principal</em> e <em>icone</em>, mas elas não possuem conteúdo.</p>
-        <div id='blocksIntro1a'></div>
-        <br>
+            [4] <a href='#'>scratch.mit.edu</a><br>
+            [5] <a href='#'>appinventor.mit.edu</a><br>
+          `
+        },
+        {
+          type: 'html',
+          name: 'blocksIntro1',
+          html: `
+            <p>Primeiro, vamos discutir o elemento <em>Mídia</em> e uso de <em>Sincronimo</em>s sobre elementos de <em>Mídia</em>.</p>
+            <br>
+            <p>O elemento <em>Mídia</em> é definido por um identificador e por seu conteúdo. O contéudo de uma <em>Mídia</em> ter porções identificáveis como trechos de um video ou áudio. Por exemplo, os blocos a seguir definem duas mídias com identificadores <em>midia_principal</em> e <em>icone</em>, mas elas não possuem conteúdo.</p>
+            <div id='blocksIntro1a'></div>
+            <br>
 
-        <p>Ações de iniciar sobre as mídias acima não apresentaram resultados, pois elas não possuem conteúdo.</p>
-        <p>Os blocos a seguir definem mesmas mídias mas com conteúdos de áudio e imagem, respectivamente. Em especial, a mídia de <em>midia_principal</em> tem definido um trecho chamado de <em>creditos</em> que inicia aos 300 e termina aos 360 segundos.</p>
-        <div id='blocksIntro1b'></div>
-        <br>
+            <p>Ações de iniciar sobre as mídias acima não apresentaram resultados, pois elas não possuem conteúdo.</p>
+            <p>Os blocos a seguir definem as mesmas mídias, mas com conteúdos de áudio e imagem respectivamente. Em especial, a mídia de <em>midia_principal</em> tem definido um trecho chamado de <em>creditos</em> que inicia aos 300 e termina aos 360 segundos.</p>
+            <div id='blocksIntro1b'></div>
+            <br>
 
-        <p>O elemento de <em>Sincronimo</em> permite definir o comportamento das aplicações. Ele deve permitr quando mídias devem ser apresentadas.</p>
-        <p>O <em>Sincronimo</em> é baseado em causalidade, ou seja, quando um condição é satisfeita, ações são realizadas. Exemplos de condições são inicio ou fim de uma midia ou trecho de midia, ou a seleção de ususário sobre um mídia. Exemplos de ações são inicar ou parar uma mídia.</p>
-        <p>Os blocos a seguir definem novamente as mídias <em>midia_principal</em> e <em>icone</em> e dois sincronismos. Nesse exemplo, entretanto, nos alteramos o conteúdo da <em>midia_principal</em> para um conteúdo de vído. O primeiro sicroniso defini que <em>midia_principal</em> deve ser iniciada quando a aplicação for iniciada. O segundo sincronismo defini que quando o <em>midia_principal</em> atingir o trecho de <em>credito</em> ele deve terminar e a mídia <em>icone</em> deve ser finalizada.</p>
-        <div id='blocksIntro1c'></div>
-        <br>
+            <p>O elemento de <em>Sincronimo</em> permite definir o comportamento das aplicações. Ele deve permitr quando mídias devem ser apresentadas.</p>
+            <p>O <em>Sincronimo</em> é baseado em causalidade, ou seja, quando um condição é satisfeita, ações são realizadas. Exemplos de condições são inicio ou fim de uma midia ou trecho de midia, ou a seleção de ususário sobre um mídia. Exemplos de ações são inicar ou parar uma mídia.</p>
+            <p>Os blocos a seguir definem novamente as mídias <em>midia_principal</em> e <em>icone</em> e dois sincronismos. Nesse exemplo, entretanto, nos alteramos o conteúdo da <em>midia_principal</em> para um conteúdo de vído. O primeiro sicroniso defini que <em>midia_principal</em> deve ser iniciada quando a aplicação for iniciada. O segundo sincronismo defini que quando o <em>midia_principal</em> atingir o trecho de <em>credito</em> ele deve terminar e a mídia <em>icone</em> deve ser finalizada.</p>
+            <div id='blocksIntro1c'></div>
+            <br>
 
-        <p>É importante ressaltar que a mudança de conteúdo de <em>midia_principal</em> para a versão com áudio não afetaria o compartamento da aplicação. Pois os sincrinismos são definidos indepente do conteúdo das mídia.</p>
-        <br>
+            <p>É importante ressaltar que a mudança de conteúdo de <em>midia_principal</em> para a versão com áudio não afetaria o compartamento da aplicação. Pois os sincrinismos são definidos indepente do conteúdo das mídia.</p>
+            <br>
 
-        <p>O elemento <em>Reconhecedor</em> é também definido por um identificador e por seu conteúdo. Entrentato diferente de <em>Mídia</em> o conteúdo de um <em>Reconhecedor</em> deve ser uma descrição de reconhecimento, por exemplo, de voz ou gesto. Logo, as porções identificáveis de um <em>Reconhecedor</em> são porções de um descrição de reconhecimentos.</p>
+            <p>O elemento <em>Reconhecedor</em> é também definido por um identificador e por seu conteúdo. Entrentato diferente de <em>Mídia</em> o conteúdo de um <em>Reconhecedor</em> deve ser uma descrição de reconhecimento, por exemplo, de voz ou gesto. Logo, as porções identificáveis de um <em>Reconhecedor</em> são porções de um descrição de reconhecimentos.</p>
 
-        <p>Os blocos a seguir definim dois reconhecedores com identificadores <em>voz</em> e <em>gestos</em>.</p>
-        <div id='blocksIntro1d'></div>
+            <p>Os blocos a seguir definem dois reconhecedores com identificadores <em>voz</em> e <em>gestos</em>.</p>
+            <div id='blocksIntro1d'></div>
 
-        <p>A seguir um reconhecedor com sincronismo</p>
-        <div id='blocksIntro1e'></div>
-        <br>
-      `
+            <p>A seguir um reconhecedor com sincronismo</p>
+            <div id='blocksIntro1e'></div>
+            <br>
+          `
+        }
+      ]
     },
     {
-      type: 'html',
-      name: 'blocksReadTask1'
-    },
-    {
-      type: 'comment',
-      isRequired: true,
-      name: 'blocksReadTask1Question',
-      title: 'Qual o comportamento da aplicação acima?'
-    },
-    {
-      type: 'html',
-      name: 'blocksReadTask2'
-    },
-    {
-      type: 'comment',
-      isRequired: true,
-      name: 'blocksReadTask2Question',
-      title: 'Qual o comportamento da aplicação acima?'
-    },
-    {
-      type: 'html',
-      name: 'blocksEditTask1'
-    },
-    {
-      type: 'text',
-      name: 'blocksEditTask1Changes',
-      visible: false
-    },
-    {
-      type: 'text',
-      name: 'blocksEditTask1Result',
-      visible: false
-    },
-    {
-      type: 'html',
-      name: 'blocksEditTask2'
-    },
-    {
-      type: 'text',
-      name: 'blocksEditTask2Changes',
-      visible: false
-    },
-    {
-      type: 'text',
-      name: 'blocksEditTask2Result',
-      visible: false
+      type: 'panel',
+      title: 'Entendimento dos conceitos',
+      innerIndent: 1,
+      elements: [
+        {
+          type: 'html',
+          name: 'blocksReadTask1'
+        },
+        {
+          type: 'comment',
+          isRequired: true,
+          name: 'blocksReadTask1Question',
+          title: 'Qual o comportamento da aplicação acima?'
+        },
+        {
+          type: 'html',
+          name: 'blocksReadTask2'
+        },
+        {
+          type: 'comment',
+          isRequired: true,
+          name: 'blocksReadTask2Question',
+          title: 'Qual o comportamento da aplicação acima?'
+        },
+        {
+          type: 'html',
+          name: 'blocksEditTask1'
+        },
+        {
+          type: 'text',
+          name: 'blocksEditTask1Changes',
+          visible: false
+        },
+        {
+          type: 'text',
+          name: 'blocksEditTask1Result',
+          visible: false
+        },
+        {
+          type: 'html',
+          name: 'blocksEditTask2'
+        },
+        {
+          type: 'text',
+          name: 'blocksEditTask2Changes',
+          visible: false
+        },
+        {
+          type: 'text',
+          name: 'blocksEditTask2Result',
+          visible: false
+        }
+      ]
     }
   ]
 })
