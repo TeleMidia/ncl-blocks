@@ -181,7 +181,7 @@ _data.surveyJSON = {
             <p>Para definir receonhecimentos, o autor utiliza de descrições auxiliares para reconhcer determinada interação. Essas descrição tem sintaxe própria que defini características de interação. Por exemplo, uma descrição pode ser em SRGS (Speech Recognition Grammar Specification) [5] para definir o reconhecimento de comandos de voz.</p>
             <br>
             
-            <p>Na apresentação, esse sistema multimídia recebe o documento multimídia, arquivos de mídia e descrições multimodais necessparios para realziar o sincronismo e reconhecimentos definido pelo autor. Esse sistema  utiliza dispositivos de interação multimodal para receonhecimento, além de dispositivos audiovisuais.</p>
+            <p>Na apresentação, esse sistema multimídia recebe o documento multimídia, arquivos de mídia e descrições multimodais necessparios para realziar o sincronismo e reconhecimentos definido pelo autor. Esse sistema utiliza dispositivos de interação multimodal para receonhecimento, além de dispositivos audiovisuais.</p>
             <br>
 
             <div class='text-center'>
@@ -203,7 +203,7 @@ _data.surveyJSON = {
     },
     {
       name: 'blocks',
-      title: 'Proposta de conceitos para linguagens multimídia com interações multimodais',
+      title: 'Proposta de conceitos',
       elements: [
         {
           type: 'html',
@@ -211,7 +211,7 @@ _data.surveyJSON = {
             <p>As linguagens multímidia atuais não suportam adequadamente interações multimodais. Em nosso estudo nos propomos um conjunto de conceitos a serem adionados nessas linguagens para oferecer tal suporte. Mais precisamente esses conceitos são os de <em>Mídia, Reconhecedor, Sincronismo</em> e <em>Usuário</em>.
             </p>
             <p>Esta seção tem o objetivo de detalhar esses conceitos e capturar o entendimento do entrevistado.</p>
-            <p> Entretanto, para evitar possiveis dificuldades dado a sintaxe de linguagens, apresentaremos esses conceitos utilizando uma abordagem de <strong>desenvolvimento de aplicações através  blocos</strong>.</p>
+            <p>Entretanto, para evitar possiveis dificuldades dado a sintaxe de linguagens, apresentaremos esses conceitos utilizando uma abordagem de <strong>desenvolvimento de aplicações através blocos</strong>.</p>
             <p>Esse tipo de abordagem é bastante utilizado para o ensino de programação ou para ferramentes de geração de código. Em especial, esset tipo de desenvolvimento foi popularizado por ferramentas como o <strong>MIT Scratch</strong>[4] e <strong>MIT App Inventor</strong>[5]. O primeiro é utilizado para criar aplicações web, especialmente jogos, e o segundo utilizado para criar aplicações moveis. Ambos são ilustratos a seguir.</p>
             <br>
 
@@ -230,14 +230,14 @@ _data.surveyJSON = {
           type: 'html',
           name: 'blocksIntro1',
           html: `
-            <p> Primeiro, vamos discutir o elemento <em>Mídia</em> e uso de <em>Sincronimo</em>s sobre elementos de <em>Mídia</em>.</p>
+            <p>Primeiro, vamos discutir o elemento <em>Mídia</em> e uso de <em>Sincronimo</em>s sobre elementos de <em>Mídia</em>.</p>
             <br>
-            <p> O elemento <em>Mídia</em> é definido por um identificador e por seu conteúdo, este último pode ter porções identificáveis como  trechos de um video ou áudio. Por exemplo, os blocos a seguir definim duas mídias com identificadores <em>midia_principal</em> e <em>icone</em>, mas elas não possuem conteúdo.</p>
+            <p>O elemento <em>Mídia</em> é definido por um identificador e por seu conteúdo, este último pode ter porções identificáveis como trechos de um video ou áudio. Por exemplo, os blocos a seguir definim duas mídias com identificadores <em>midia_principal</em> e <em>icone</em>, mas elas não possuem conteúdo.</p>
             <div id='blocksIntro1a'></div>
             <br>
 
             <p>Ações de iniciar sobre as mídias acima não apresentaram resultados, pois elas não possuem conteúdo.</p>
-            <p>Os blocos a seguir definem mesmas mídias mas com conteúdos de áudio e imagem, respectivamente. Em especial, a mídia de <em>midia_principal</em> tem definido um trecho chamado de <em>creditos</em> que inicia aos 300 e termina aos 360  segundos.</p>
+            <p>Os blocos a seguir definem mesmas mídias mas com conteúdos de áudio e imagem, respectivamente. Em especial, a mídia de <em>midia_principal</em> tem definido um trecho chamado de <em>creditos</em> que inicia aos 300 e termina aos 360 segundos.</p>
             <div id='blocksIntro1b'></div>
             <br>
 
@@ -247,10 +247,10 @@ _data.surveyJSON = {
             <div id='blocksIntro1c'></div>
             <br>
             
-            <p>É importante ressaltar que a mudança de conteúdo da mídia <em>midia_principal</em> para a versão com áudio não afetaria o compartamento da aplicação. Pois os sincrinismos são definidos indepente do conteúdo das mídia.</p>
+            <p>É importante ressaltar que a mudança de conteúdo de <em>midia_principal</em> para a versão com áudio não afetaria o compartamento da aplicação. Pois os sincrinismos são definidos indepente do conteúdo das mídia.</p>
             <br>
 
-            <p>O elemento <m>Reconhecedor</em> é também definido por um identificador e por seu conteúdo. Entrentato diferente de <em>Mídia</em> o conteúdo de um <em>Reconhecedor</em> deve ser uma descrição de reconhecimento, por exemplo, de voz ou gesto. Logo, as porções identificáveis de um <em>Reconhecedor</em> são porções de um descrição de reconhecimentos.</p>
+            <p>O elemento <em>Reconhecedor</em> é também definido por um identificador e por seu conteúdo. Entrentato diferente de <em>Mídia</em> o conteúdo de um <em>Reconhecedor</em> deve ser uma descrição de reconhecimento, por exemplo, de voz ou gesto. Logo, as porções identificáveis de um <em>Reconhecedor</em> são porções de um descrição de reconhecimentos.</p>
             
             <p>Os blocos a seguir definim dois reconhecedores com identificadores <em>voz</em> e <em>gestos</em>.</p>
             <div id='blocksIntro1d'></div>
@@ -262,75 +262,50 @@ _data.surveyJSON = {
         },
         {
           type: 'html',
-          name: 'blocksIntro2',
-          html: `
-            <p> O grupo de de blocos a seguir defini cinco mídias e quatro blocos de sincronismo.</p>
-            <p> Três mídias possuem conteúdos de vídeo e são chamadas de <em>video_intro</em>, <em>video_centro</em> e e <em>video_praia</em>, respectivamente. As outras duas possem conteúdo de imagem e são chamdas de <em>img_centro</em> e <em>img_praia</em>.</p>
-            <p>O primeiro sincronismo define que quando a aplicação inicia, a mídia chamada <em>video_principal</em> também é iniciada. Outro sincronismo, ao lado desse primiro, defini que as duas imagens <em>img_centro</em> e <em>img_praia</em> iniciam no monmento em que o trecho <em>creditos</em> da mídia <em>video_principal</em> é alcançado.</p>
-            <p>Por fim, os outros dois sincronismos definem o que ocorre quando cada imagem é selecionada. Quando <em>img_centro</em> é selecionda todos as mídias em apresentação (<em>video_principal</em>, <em>img_centro</em> e <em>img_praia</em>) são paradas e a mídia <em>video_centro</em> é iniciada. De modo analago, quando a mídia <em>img_praia</em> é selecionada todoas as mídias em apresentação são paradas e a mídia <em>video_praia</em> é inicada</p><br>
-          `
-        },
-        {
-          type: 'html',
-          name: 'blocksIntro3',
-          html: `
-            <p>Editamos grupo de blocos anterior. Neste grupo, adcipnamos  um reconhecer e editamos os três ultimos sincrinonismos.</p>
-            <p> O reconhecedor adcionar utiliza uma descrição voz que reconhece duas frases, "mostre centro" e "mostre praia".</p>
-            <p>O sincronismo que iniciava as imagens, agora também inicia o reconhecer quando <em>video_principal</em> chega no parte de creditos. E os dois ultimos sincronismos substituem a seleção de mídia por reconhecimento de voz para iniciar o video relacionado. O vídeo <em>video_centro</em> é iniciado ao ususário falar "mostre centro". Enquanto o vídeo <em>video_praia</em> é iniciado ao ususário falar "mostre praia".</p>
-            <br>
-          `
-        },
-        {
-          type: 'html',
-          name: 'blocksIntro4',
-          html: '<p>Segue o uso de uma mídia, sincronismo, reconhecimento de usuário como blocos.</p>'
-        },
-        {
-          type: 'html',
-          name: 'blocksTask1'
+          name: 'blocksReadTask1'
         },
         {
           type: 'comment',
           isRequired: true,
-          name: 'blocksTask1Question',
+          name: 'blocksReadTask1Question',
           title: 'Qual o comportamento da aplicação acima?'
         },
         {
           type: 'html',
-          name: 'blocksTask2'
-        },
-        {
-          type: 'text',
-          name: 'blocksTask2Changes',
-          visible: false
-        },
-        {
-          type: 'text',
-          name: 'blocksTask2Result',
-          visible: false
-        },
-        {
-          type: 'html',
-          name: 'blocksTask3'
+          name: 'blocksReadTask2'
         },
         {
           type: 'comment',
           isRequired: true,
-          name: 'blocksTask3Question',
+          name: 'blocksReadTask2Question',
           title: 'Qual o comportamento da aplicação acima?'
         },
         {
           type: 'html',
-          name: 'blocksTask4'
+          name: 'blocksEditTask1'
         },
         {
           type: 'text',
-          name: 'blocksTask4Changes',
+          name: 'blocksEditTask1Changes',
           visible: false
         },
         {
           type: 'text',
-          name: 'blocksTask4Result',
+          name: 'blocksEditTask1Result',
+          visible: false
+        },
+        {
+          type: 'html',
+          name: 'blocksEditTask2'
+        },
+        {
+          type: 'text',
+          name: 'blocksEditTask2Changes',
+          visible: false
+        },
+        {
+          type: 'text',
+          name: 'blocksEditTask2Result',
           visible: false
         }
       ]
@@ -444,7 +419,7 @@ _data.surveyJSON = {
             <br>
             
             <p>Para adicionar interações multimodais sobre esse video, adicionamos os elementos 'menu' (linhas 15-17) e 'answer' (linhas 19-21).<br>
-            O primeiro define um áudio sintetizado utilizando o arquivo SSML chamado question.ssml (linhas 2-4).<br>O segundo define um reconhecimento de vocês utilizando  o arquivo  SRGS chamado commads.srgs (linhas 7-9).</p>
+            <p>O primeiro define um áudio sintetizado utilizando o arquivo SSML chamado question.ssml (linhas 2-4).<br>O segundo define um reconhecimento de vocês utilizando o arquivo SRGS chamado commads.srgs (linhas 7-9).</p>
             <br>
             
             <p>Esse áudio sintetizado é definido pelo elo das linhas 23-27.<br>
@@ -740,21 +715,30 @@ _data.blocksIntro1cXml = `
 
 _data.blocksIntro1dXml = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
-    <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
-      <field name="id">midia_principal</field>
+    <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="20" y="20">
+      <field name="id">voz</field>
       <value name="src">
-        <block type="video" id="OFge%WW-~~.%rZKqZqym">
-          <mutation length="1"></mutation>
-          <field name="id_area0">creditos</field>
-          <field name="begin0">300s</field>
-          <field name="end0"></field>
+        <block type="srgs" id="N5Lu5_J\`hn-e3lm60 |^3">
+          <mutation length="2">
+          </mutation>
+          <field name="id_area0">voz_centro</field>
+          <field name="label0">mostre centro</field>
+          <field name="id_area1">voz_praia</field>
+          <field name="label1">mostre praia</field>
         </block>
       </value>
     </block>
-    <block type="media" id="PnS;4T$~ftTn7U;nWSZb" x="594" y="71">
-      <field name="id">icone</field>
+    <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="594" y="20">
+      <field name="id">gestos</field>
       <value name="src">
-        <block type="image" id="n8jL;6KJe-2c6B~=pPj("></block>
+        <block type="hand_gesture" id="N5Lu5_J\`hn-e3lm60 |^3">
+          <mutation length="2">
+          </mutation>
+          <field name="id_area0">gesto_centro</field>
+          <field name="label0">aceno_esquerda</field>
+          <field name="id_area1">gesto_praia</field>
+          <field name="label1">eceno_direta</field>
+        </block>
       </value>
     </block>
   </xml>
@@ -782,7 +766,7 @@ _data.blocksIntro1eXml = `
   </xml>
 `
 
-_data.blocksIntro2Xml = `
+_data.blocksReadTask1Xml = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="DACXRk{ds*},dxviHR(c" x="20" y="20">
       <field name="id">video_principal</field>
@@ -906,7 +890,7 @@ _data.blocksIntro2Xml = `
   </xml>
 `
 
-_data.blocksIntro3Xml = `
+_data.blocksReadTask2Xml = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
   <block type="media" id="DACXRk{ds*},dxviHR(c" x="20" y="20">
     <field name="id">video_principal</field>
@@ -1049,36 +1033,6 @@ _data.blocksIntro3Xml = `
         </next>
       </block>
     </statement>
-  </block>
-  </xml>
-`
-
-_data.blocksIntro4Xml = `
-  <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="media" id="KZ[g}J_gz%iQCj#u(I:P" x="0" y="20">
-    <value name="src">
-      <block type="image" id="LHprn9YiDsg/Nlglks0f"></block>
-    </value>
-  </block>
-  </xml>
-`
-
-_data.blocksTask1Xml = `
-  <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="media" id="KZ[g}J_gz%iQCj#u(I:P" x="0" y="20">
-    <value name="src">
-      <block type="image" id="LHprn9YiDsg/Nlglks0f"></block>
-    </value>
-  </block>
-  </xml>
-`
-
-_data.blocksTask3Xml = `
-  <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="media" id="KZ[g}J_gz%iQCj#u(I:P" x="0" y="20">
-    <value name="src">
-      <block type="image" id="LHprn9YiDsg/Nlglks0f"></block>
-    </value>
   </block>
   </xml>
 `
