@@ -617,62 +617,71 @@ _data.blocksIntro4aXml = `
 `
 
 _data.blocksIntro4bXml = `
-  <xml xmlns="http://www.w3.org/1999/xhtml">
-    <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
-      <field name="id">midia_principal</field>
-      <value name="src">
-        <block type="video" id="OFge%WW-~~.%rZKqZqym">
-          <mutation length="1"></mutation>
-          <field name="id_area0">creditos</field>
-          <field name="begin0">300s</field>
-          <field name="end0"></field>
-        </block>
-      </value>
-    </block>
-    <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="594" y="20">
-      <field name="id">voz</field>
-      <value name="src">
-        <block type="srgs" id="N5Lu5_J\`hn-e3lm60 |^3">
-          <mutation length="2">
-          </mutation>
-          <field name="id_area0">repetir</field>
-          <field name="label0">repetir video</field>
-        </block>
-      </value>
-    </block>
-    <block type="port" id="+p-MtE:D*clWz(7oX7Hg" x="20" y="180">
-      <field name="id">midia_principal</field>
-    </block>
-     <block type="link" id="%6ew%0di,O*v%qS%d\`(\`" x="20" y="300">
-      <value name="conditions">
-        <block type="onbegin" id="(H8xxhXk6.y#]q%\`UM^D">
-          <field name="id">creditos</field>
-        </block>
-      </value>
-      <statement name="actions">
-        <block type="start" id="UEqL{b=Ws2G#w}+xMV%m">
-          <field name="id">voz</field>
-        </block>
-      </statement>
-    </block>
-    <block type="link" id="%6sP%0di,O*v%qS%d\`(\`" x="594" y="270">
-      <value name="conditions">
-        <block type="onrecognize" id="(H8dBhXk6.y#]q%\`UM^D">
-          <field name="id">repetir</field>
-        </block>
-      </value>
-      <statement name="actions">
-        <block type="stop" id="UEqL{b=Ws2G#w}+xMV%m">
-          <field name="id">midia_principal</field>
-          <next>
-            <block type="start" id=".Pt;)N?s.:xGz;dDp@+W">
-              <field name="id">midia_principal</field>
-            </block>
-          </next>
-        </block>
-      </statement>
-    </block>
-  </xml>
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
+    <field name="id">midia_principal</field>
+    <value name="src">
+      <block type="video" id="OFge%WW-~~.%rZKqZqym">
+        <mutation length="1"></mutation>
+        <field name="id_area0">creditos</field>
+        <field name="begin0">300s</field>
+        <field name="end0"></field>
+      </block>
+    </value>
+  </block>
+  <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="594" y="20">
+    <field name="id">voz</field>
+    <value name="src">
+      <block type="srgs" id="N5Lu5_J\`hn-e3lm60 |^3">
+        <mutation length="2"></mutation>
+        <field name="id_area0">repetir</field>
+        <field name="label0">repetir video</field>
+        <field name="id_area1"></field>
+        <field name="label1"></field>
+      </block>
+    </value>
+  </block>
+  <block type="port" id="+p-MtE:D*clWz(7oX7Hg" x="20" y="230">
+    <field name="id">midia_principal</field>
+  </block>
+  <block type="user" id="IPnvWeecZqr2WM|RGxm|" x="594" y="200">
+    <mutation length="1"></mutation>
+    <field name="id">gu_gestos</field>
+    <value name="element_0">
+      <block type="hand_gesture_sensor" id="yU[{24F}.5IJtyI;VB5k"></block>
+    </value>
+  </block>
+  <block type="link" id="%6ew%0di,O*v%qS%d\`(\`" x="20" y="370">
+    <value name="conditions">
+      <block type="onbegin" id="(H8xxhXk6.y#]q%\`UM^D">
+        <field name="id">creditos</field>
+      </block>
+    </value>
+    <statement name="actions">
+      <block type="start" id="UEqL{b=Ws2G#w}+xMV%m">
+        <field name="id">voz</field>
+      </block>
+    </statement>
+  </block>
+  <block type="link" id="%6sP%0di,O*v%qS%d\`(\`" x="594" y="350">
+    <value name="conditions">
+      <block type="onrecognizeuser" id="y/zz?q?8ebd@?9llBV[0">
+        <field name="id">repetir</field>
+        <field name="user_id">gu_gestos</field>
+      </block>
+    </value>
+    <statement name="actions">
+      <block type="stop" id="xx.sU]l9id:W4@6M~nOY">
+        <field name="id">midia_principal</field>
+        <next>
+          <block type="start" id=".Pt;)N?s.:xGz;dDp@+W">
+            <field name="id">midia_principal</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
 `
 
 _data.blocksReadTask1Xml = `

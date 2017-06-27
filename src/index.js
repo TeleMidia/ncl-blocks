@@ -125,7 +125,7 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       NclBlocks.injectInDiv(_pathToBlockly, 'blocksIntro4a',
         NclBlocks.calculateHeight(1, 130), _data.blocksIntro4aXml, true)
       NclBlocks.injectInDiv(_pathToBlockly, 'blocksIntro4b',
-        NclBlocks.calculateHeight(3, 110), _data.blocksIntro4bXml, true)
+        NclBlocks.calculateHeight(3, 140), _data.blocksIntro4bXml, true)
       break
     case 'blocksReadTask1':
       NclBlocks.injectInDiv(_pathToBlockly, questionId,
