@@ -123,7 +123,7 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       break
     case 'blocksIntro4':
       NclBlocks.injectInDiv(_pathToBlockly, 'blocksIntro4a',
-        NclBlocks.calculateHeight(1, 140), _data.blocksIntro4aXml, true)
+        NclBlocks.calculateHeight(1, 130), _data.blocksIntro4aXml, true)
       NclBlocks.injectInDiv(_pathToBlockly, 'blocksIntro4b',
         NclBlocks.calculateHeight(3, 110), _data.blocksIntro4bXml, true)
       break

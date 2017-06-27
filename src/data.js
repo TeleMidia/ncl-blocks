@@ -275,11 +275,11 @@ _data.surveyJSON.pages.push({
 
             <p>O elemento de <em>Sincronimo</em> permite definir o comportamento das aplicações. O uso de elementos de <em>Sincronimo</em>s sobre elementos de <em>Mídia</em> define quando mídias são apresentadas. O <em>Sincronimo</em> é baseado em causalidade, ou seja, quando um condição é satisfeita, ações são realizadas. Exemplos de condições são inicio ou fim de uma mídia ou trecho de midia, ou a seleção de ususário sobre um mídia. Exemplos de ações são inicar ou parar uma mídia.</p>
 
-            <p>Os blocos a seguir definem a mídia <em>midia_principal</em> e um sincronismo que inicia mídia no início aplicação. Nesse exemplo, entretanto, alteramos o conteúdo da <em>midia_principal</em> para um conteúdo de vídeo. É importante ressaltar que a mudanças no conteúdo de <em>midia_principal</em> não afetariam o compartamento da aplicação, desde que eleas contem o mesmos trechos. Pois os sincrinismos são definidos indepente do conteúdo das mídia.</p>
+            <p>Os blocos a seguir definem a mídia <em>midia_principal</em> e um sincronismo que inicia mídia no início aplicação. Nesse exemplo, entretanto, alteramos o conteúdo da <em>midia_principal</em> para um conteúdo de vídeo. É importante ressaltar que mudança no conteúdo de <em>midia_principal</em> não afetam o compartamento da aplicação, desde que a mídia definia o mesmos trechos. Pois os sincrinismos são definidos indepente do conteúdo.</p>
             <div id='blocksIntro2a'></div>
             <br>
 
-            <p>Os blocos a seguir definem novamente a mídia <em>midia_principal</em> e sincronismo de início com a aplicação. Mas esses blocos adcionam a mídia <em>icone</em> e mais dois sincronismos.</p>
+            <p>Agora, os blocos a seguir definem uma aplicação que aprsenta um video, que um icone durante os creditos. Ao selecionar o icone, o video é reiniciado. Mais precismanete, os blocos definem novamente  <em>midia_principal</em> e sincronismo do bloco anterior, mas adcionam a mídia <em>icone</em> e mais dois sincronismos.</p>
             <p>O primeiro sicronismo adcionado defini que quando a <em>midia_principal</em> alcançar o seu trecho de <em>credito</em> a mídia <em>icone_repetir</em> deve ser inciada.</p>
             <p>O segundo sincronimos adcionado defini que quando a mídia <em>icone_repetir</em> for seleciona, esta deve terminar e o a <em>midia_principal</em> deve ser reiniciada (terminada e inciada)</p>
             <div id='blocksIntro2b'></div>
@@ -293,8 +293,8 @@ _data.surveyJSON.pages.push({
             <p>Agora, devemos detalhar o elemento <em>Reconhecedor</em>.</p>
             <br>
 
-            <p> Ele também é definido por um identificador e por seu conteúdo. Entrentato diferente de <em>Mídia</em> o conteúdo de um <em>Reconhecedor</em> deve ser uma descrição de reconhecimento, por exemplo, de voz ou gesto. Logo, as porções identificáveis de um <em>Reconhecedor</em> são porções de um descrição de reconhecimentos.</p>
-            <p>Os blocos a seguir definem dois reconhecedores com os  identificadores <em>voz</em> e <em>gestos</em>, respectivamente.</p>
+            <p> Ele também é definido por um identificador e por seu conteúdo. Entrentato, diferente de <em>Mídia</em>, o conteúdo de um <em>Reconhecedor</em> deve ser uma descrição de reconhecimento. Exemplos dessas descrições definim commandos de voz ou gestos de mão. Logo, as porções identificáveis de um <em>Reconhecedor</em> são porções de um descrição de reconhecimentos.
+            <p>Os blocos a seguir definem os dois reconhecedores <em>voz</em> e <em>gestos</em>, respectivamente.</p>
             <div id='blocksIntro3a'></div>
             <br>
             <p>A seguir um reconhecedor com <em>Sincronimo</em></p>
@@ -309,13 +309,13 @@ _data.surveyJSON.pages.push({
             <p>Agora, devemos detalhar o elemento <em>Usuário</em>.</p>
             <br>
 
-            <p> O elemento <em>Usuário</em> é definido por um identificador, pelo número de membros do grupo e pelos dispositivos que devem possuim para participar da aplicação.</p>
-            <p>Os blocos a seguir definem um grupo de ususário.
+            <p> O elemento <em>Usuário</em> é definido por um identificador, pelo número de membros que podem participar do grupo e pelos dispositivos que devem possuim para participar da aplicação.</p>
+            <p>Os blocos a seguir definem um grupo de usuário <em>gu_gestos</em>que possuem 3 membros e cada um reconhecedor de gestos.
             <br>
             <p>A seguir um <em>Usuário</em></p>
             <div id='blocksIntro4a'></div>
             <br>
-            <p>A seguir um <em>Usuário</em> com sincronismo</p>
+            <p>A seguir um <em>Usuário</em> com sincronismo.</p>
             <div id='blocksIntro4b'></div>
             <br>
           `
@@ -364,7 +364,7 @@ _data.surveyJSON.pages.push({
           type: 'html',
           name: 'blocksEditTask1',
           html: `
-            <p>Tarefa 3: Agora, pedimos que edite os blocos a seguir.</p>
+            <p>Tarefa 3: Agora, pedimos que edite os blocos a seguir para utilizar um interação por gestos inves de uma interação por comandos de voz.</p>
           `
         },
         {
@@ -381,7 +381,7 @@ _data.surveyJSON.pages.push({
           type: 'html',
           name: 'blocksEditTask2',
           html: `
-            <p>Tarefa 4: Agora, pedimos que edite os blocos a seguir.</p>
+            <p>Tarefa 4: Agora, pedimos que edite os blocos a seguir para que apenas o segundo usuário de um grupo de usuário possa realizar a interação.</p>
           `
         },
         {
@@ -447,12 +447,6 @@ _data.blocksIntro2aXml = `
           <field name="begin0">300s</field>
           <field name="end0"></field>
         </block>
-      </value>
-    </block>
-    <block type="media" id="PnS;4T$~ftTn7U;nWSZb" x="594" y="71">
-      <field name="id">icone_repetir</field>
-      <value name="src">
-        <block type="image" id="n8jL;6KJe-2c6B~=pPj("></block>
       </value>
     </block>
     <block type="port" id="+p-MtE:D*clWz(7oX7Hg" x="20" y="170">
@@ -611,30 +605,12 @@ _data.blocksIntro3bXml = `
 `
 _data.blocksIntro4aXml = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
-    <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="20" y="20">
-      <field name="id">voz</field>
-      <value name="src">
-        <block type="srgs" id="N5Lu5_J\`hn-e3lm60 |^3">
-          <mutation length="2">
-          </mutation>
-          <field name="id_area0">voz_centro</field>
-          <field name="label0">mostre centro</field>
-          <field name="id_area1">voz_praia</field>
-          <field name="label1">mostre praia</field>
-        </block>
-      </value>
-    </block>
-    <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="570" y="20">
-      <field name="id">gestos</field>
-      <value name="src">
-        <block type="hand_gesture" id="N5Lu5_J\`hn-e3lm60 |^3">
-          <mutation length="2">
-          </mutation>
-          <field name="id_area0">gesto_centro</field>
-          <field name="label0">aceno_esquerda</field>
-          <field name="id_area1">gesto_praia</field>
-          <field name="label1">eceno_direta</field>
-        </block>
+    <block type="user" id="IPnvWeecZqr2WM|RGxm|" x="20" y="20">
+      <mutation length="1"></mutation>
+      <field name="id"></field>
+      <field name="id">gu_gestos</field>
+      <value name="element_0">
+        <block type="hand_gesture_sensor" id="yU[{24F}.5IJtyI;VB5k"></block>
       </value>
     </block>
   </xml>

@@ -543,9 +543,11 @@ goog.inherits(IdFieldText, Blockly.FieldTextInput)
 IdFieldText.prototype.createIdArrays = function () {
   if (!this.sourceBlock_.workspace.mediaIds) {
     this.sourceBlock_.workspace.mediaIds = [['-', '-']]
-  } else if (!this.sourceBlock_.workspace.inputIds) {
+  }
+  if (!this.sourceBlock_.workspace.inputIds) {
     this.sourceBlock_.workspace.inputIds = [['-', '-']]
-  } else if (!this.sourceBlock_.workspace.userIds) {
+  }
+  if (!this.sourceBlock_.workspace.userIds) {
     this.sourceBlock_.workspace.userIds = [['-', '-']]
   }
 }
@@ -874,7 +876,7 @@ Blockly.Blocks.user = {
       .appendField('id')
       .appendField(new IdFieldText('', 'user'), 'id')
       .appendField(NclBlocks.Msg.AND)
-      .appendField(new Blockly.FieldTextInput('2'))
+      .appendField(new Blockly.FieldTextInput('2'), 'max')
       .appendField(NclBlocks.Msg.USERS)
     // add edit buttons
     this.addMinusPlusDummyInput()
