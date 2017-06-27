@@ -137,12 +137,12 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       break
     case 'blocksEditTask1':
       _blocksEditTask1Workspace = NclBlocks.injectInDiv(_pathToBlockly,
-        questionId, NclBlocks.calculateHeight(6, 145), _data.blocksReadTask2Xml)
+        questionId, NclBlocks.calculateHeight(6, 145), _data.blocksReadTask2Xml, false, ['excludeResumePauseSet'])
       _blocksEditTask1Workspace.addChangeListener(saveblocksEditTask1Changes)
       break
     case 'blocksEditTask2':
       _blocksEditTask2Workspace = NclBlocks.injectInDiv(_pathToBlockly,
-        questionId, NclBlocks.calculateHeight(6, 145), _data.blocksReadTask2Xml)
+        questionId, NclBlocks.calculateHeight(6, 145), _data.blocksReadTask2Xml, false, ['excludeResumePauseSet'])
       _blocksEditTask2Workspace.addChangeListener(saveblocksEditTask2Changes)
       break
     case 'nclCode1':
