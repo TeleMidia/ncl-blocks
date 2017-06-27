@@ -235,8 +235,7 @@ _data.surveyJSON.pages.push({
           html: `
             <p>As linguagens multímidia atuais não suportam adequadamente interações multimodais. Em nosso estudo nos propomos um conjunto de conceitos a serem adionados nessas linguagens para oferecer tal suporte. Mais precisamente esses conceitos são os de <em>Mídia, Reconhecedor, Sincronismo</em> e <em>Usuário</em>.
             </p>
-            <p>Esta seção tem o objetivo de detalhar esses conceitos e capturar o entendimento do entrevistado.</p>
-            <p>Entretanto, para evitar possiveis dificuldades dado a sintaxe de linguagens, apresentaremos esses conceitos utilizando uma abordagem de <strong>desenvolvimento de aplicações através blocos</strong>.</p>
+            <p>Esta seção tem o objetivo de detalhar esses conceitos e capturar o entendimento do entrevistado. Entretanto, para evitar possiveis dificuldades dado a sintaxe de linguagens, apresentaremos esses conceitos utilizando uma abordagem de <strong>desenvolvimento de aplicações através blocos</strong>.</p>
             <p>Esse tipo de abordagem é bastante utilizado para o ensino de programação ou para ferramentes de geração de código. Em especial, esse tipo de desenvolvimento foi popularizado por ferramentas como o <strong>MIT Scratch</strong>[4] e <strong>MIT App Inventor</strong>[5]. O primeiro é utilizado para criar aplicações web, especialmente jogos, e o segundo utilizado para criar aplicações moveis. Ambos são ilustratos a seguir.</p>
             <br>
 
@@ -255,7 +254,7 @@ _data.surveyJSON.pages.push({
           type: 'html',
           name: 'blocksIntro1',
           html: `
-            <p>Primeiro, vamos discutir o elemento <em>Mídia</em> e uso de <em>Sincronimo</em>s sobre elementos de <em>Mídia</em>.</p>
+            <p>Primeiro, vamos discutir o elemento <em>Mídia</em>.</p>
             <br>
             <p>O elemento <em>Mídia</em> é definido por um identificador e por seu conteúdo. O contéudo de uma <em>Mídia</em> ter porções identificáveis como trechos de um video ou áudio. Por exemplo, os blocos a seguir definem duas mídias com identificadores <em>midia_principal</em> e <em>icone</em>, mas elas não possuem conteúdo.</p>
             <div id='blocksIntro1a'></div>
@@ -265,23 +264,59 @@ _data.surveyJSON.pages.push({
             <p>Os blocos a seguir definem as mesmas mídias, mas com conteúdos de áudio e imagem respectivamente. Em especial, a mídia de <em>midia_principal</em> tem definido um trecho chamado de <em>creditos</em> que inicia aos 300 e termina aos 360 segundos.</p>
             <div id='blocksIntro1b'></div>
             <br>
-
-            <p>O elemento de <em>Sincronimo</em> permite definir o comportamento das aplicações. Ele deve permitr quando mídias devem ser apresentadas.</p>
-            <p>O <em>Sincronimo</em> é baseado em causalidade, ou seja, quando um condição é satisfeita, ações são realizadas. Exemplos de condições são inicio ou fim de uma midia ou trecho de midia, ou a seleção de ususário sobre um mídia. Exemplos de ações são inicar ou parar uma mídia.</p>
-            <p>Os blocos a seguir definem novamente as mídias <em>midia_principal</em> e <em>icone</em> e dois sincronismos. Nesse exemplo, entretanto, nos alteramos o conteúdo da <em>midia_principal</em> para um conteúdo de vído. O primeiro sicroniso defini que <em>midia_principal</em> deve ser iniciada quando a aplicação for iniciada. O segundo sincronismo defini que quando o <em>midia_principal</em> atingir o trecho de <em>credito</em> ele deve terminar e a mídia <em>icone</em> deve ser finalizada.</p>
-            <div id='blocksIntro1c'></div>
+          `
+        },
+        {
+          type: 'html',
+          name: 'blocksIntro2',
+          html: `
+            <p>Em em segundo, vamos discutir o elemento <em>Sincronimo</em>.</p>
             <br>
 
-            <p>É importante ressaltar que a mudança de conteúdo de <em>midia_principal</em> para a versão com áudio não afetaria o compartamento da aplicação. Pois os sincrinismos são definidos indepente do conteúdo das mídia.</p>
+            <p>O elemento de <em>Sincronimo</em> permite definir o comportamento das aplicações. O uso de elementos de <em>Sincronimo</em>s sobre elementos de <em>Mídia</em> define quando mídias são apresentadas. O <em>Sincronimo</em> é baseado em causalidade, ou seja, quando um condição é satisfeita, ações são realizadas. Exemplos de condições são inicio ou fim de uma mídia ou trecho de midia, ou a seleção de ususário sobre um mídia. Exemplos de ações são inicar ou parar uma mídia.</p>
+
+            <p>Os blocos a seguir definem a mídia <em>midia_principal</em> e um sincronismo que inicia mídia no início aplicação. Nesse exemplo, entretanto, alteramos o conteúdo da <em>midia_principal</em> para um conteúdo de vídeo. É importante ressaltar que a mudanças no conteúdo de <em>midia_principal</em> não afetariam o compartamento da aplicação, desde que eleas contem o mesmos trechos. Pois os sincrinismos são definidos indepente do conteúdo das mídia.</p>
+            <div id='blocksIntro2a'></div>
             <br>
 
-            <p>O elemento <em>Reconhecedor</em> é também definido por um identificador e por seu conteúdo. Entrentato diferente de <em>Mídia</em> o conteúdo de um <em>Reconhecedor</em> deve ser uma descrição de reconhecimento, por exemplo, de voz ou gesto. Logo, as porções identificáveis de um <em>Reconhecedor</em> são porções de um descrição de reconhecimentos.</p>
+            <p>Os blocos a seguir definem novamente a mídia <em>midia_principal</em> e sincronismo de início com a aplicação. Mas esses blocos adcionam a mídia <em>icone</em> e mais dois sincronismos.</p>
+            <p>O primeiro sicronismo adcionado defini que quando a <em>midia_principal</em> alcançar o seu trecho de <em>credito</em> a mídia <em>icone_repetir</em> deve ser inciada.</p>
+            <p>O segundo sincronimos adcionado defini que quando a mídia <em>icone_repetir</em> for seleciona, esta deve terminar e o a <em>midia_principal</em> deve ser reiniciada (terminada e inciada)</p>
+            <div id='blocksIntro2b'></div>
+            <br>
+          `
+        },
+        {
+          type: 'html',
+          name: 'blocksIntro3',
+          html: `
+            <p>Agora, devemos detalhar o elemento <em>Reconhecedor</em>.</p>
+            <br>
 
-            <p>Os blocos a seguir definem dois reconhecedores com identificadores <em>voz</em> e <em>gestos</em>.</p>
-            <div id='blocksIntro1d'></div>
+            <p> Ele também é definido por um identificador e por seu conteúdo. Entrentato diferente de <em>Mídia</em> o conteúdo de um <em>Reconhecedor</em> deve ser uma descrição de reconhecimento, por exemplo, de voz ou gesto. Logo, as porções identificáveis de um <em>Reconhecedor</em> são porções de um descrição de reconhecimentos.</p>
+            <p>Os blocos a seguir definem dois reconhecedores com os  identificadores <em>voz</em> e <em>gestos</em>, respectivamente.</p>
+            <div id='blocksIntro3a'></div>
+            <br>
+            <p>A seguir um reconhecedor com <em>Sincronimo</em></p>
+            <div id='blocksIntro3b'></div>
+            <br>
+          `
+        },
+        {
+          type: 'html',
+          name: 'blocksIntro4',
+          html: `
+            <p>Agora, devemos detalhar o elemento <em>Usuário</em>.</p>
+            <br>
 
-            <p>A seguir um reconhecedor com sincronismo</p>
-            <div id='blocksIntro1e'></div>
+            <p> O elemento <em>Usuário</em> é definido por um identificador, pelo número de membros do grupo e pelos dispositivos que devem possuim para participar da aplicação.</p>
+            <p>Os blocos a seguir definem um grupo de ususário.
+            <br>
+            <p>A seguir um <em>Usuário</em></p>
+            <div id='blocksIntro4a'></div>
+            <br>
+            <p>A seguir um <em>Usuário</em> com sincronismo</p>
+            <div id='blocksIntro4b'></div>
             <br>
           `
         }
@@ -357,7 +392,7 @@ _data.blocksIntro1aXml = `
     <block type="media" id="PnS;4T$~ftTn7U;nWSZb" x="594" y="20">
       <field name="id">icone</field>
     </block>
-  </xml>  
+  </xml>
 `
 
 _data.blocksIntro1bXml = `
@@ -382,7 +417,7 @@ _data.blocksIntro1bXml = `
   </xml>
 `
 
-_data.blocksIntro1cXml = `
+_data.blocksIntro2aXml = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
       <field name="id">midia_principal</field>
@@ -396,7 +431,7 @@ _data.blocksIntro1cXml = `
       </value>
     </block>
     <block type="media" id="PnS;4T$~ftTn7U;nWSZb" x="594" y="71">
-      <field name="id">icone</field>
+      <field name="id">icone_repetir</field>
       <value name="src">
         <block type="image" id="n8jL;6KJe-2c6B~=pPj("></block>
       </value>
@@ -404,18 +439,60 @@ _data.blocksIntro1cXml = `
     <block type="port" id="+p-MtE:D*clWz(7oX7Hg" x="20" y="170">
       <field name="id">midia_principal</field>
     </block>
-    <block type="link" id="%6sP%0di,O*v%qS%d\`(\`" x="594" y="170">
+  </xml>
+`
+
+_data.blocksIntro2bXml = `
+  <xml xmlns="http://www.w3.org/1999/xhtml">
+    <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
+      <field name="id">midia_principal</field>
+      <value name="src">
+        <block type="video" id="OFge%WW-~~.%rZKqZqym">
+          <mutation length="1"></mutation>
+          <field name="id_area0">creditos</field>
+          <field name="begin0">300s</field>
+          <field name="end0"></field>
+        </block>
+      </value>
+    </block>
+    <block type="media" id="PnS;4T$~ftTn7U;nWSZb" x="594" y="71">
+      <field name="id">icone_repetir</field>
+      <value name="src">
+        <block type="image" id="n8jL;6KJe-2c6B~=pPj("></block>
+      </value>
+    </block>
+    <block type="port" id="+p-MtE:D*clWz(7oX7Hg" x="20" y="170">
+      <field name="id">midia_principal</field>
+    </block>
+     <block type="link" id="%6ew%0di,O*v%qS%d\`(\`" x="20" y="270">
+      <value name="conditions">
+        <block type="onbegin" id="(H8xxhXk6.y#]q%\`UM^D">
+          <field name="id">creditos</field>
+        </block>
+      </value>
+      <statement name="actions">
+        <block type="start" id="UEqL{b=Ws2G#w}+xMV%m">
+          <field name="id">icone_repetir</field>
+        </block>
+      </statement>
+    </block>
+    <block type="link" id="%6sP%0di,O*v%qS%d\`(\`" x="594" y="250">
       <value name="conditions">
         <block type="onbegin" id="(H8dBhXk6.y#]q%\`UM^D">
           <field name="id">creditos</field>
         </block>
       </value>
       <statement name="actions">
-        <block type="stop" id="UEqL{b=Ws2G#w}+xMV%m">
-          <field name="id">midia_principal</field>
+        <block type="stop" id="UEqL{b=Ws2G#w}+xMs%m">
+          <field name="id">icone_repetir</field>
           <next>
-            <block type="start" id=".Pt;)N?Y.:xGz;dDp@+W">
-              <field name="id">icone</field>
+           <block type="stop" id="UEqL{b=Ws2G#w}+xMa%m">
+              <field name="id">midia_principal</field>
+              <next>
+                <block type="start" id=".Pt;)N?s.:xGz;dDp@+W">
+                  <field name="id">midia_principal</field>
+                </block>
+              </next>
             </block>
           </next>
         </block>
@@ -424,7 +501,7 @@ _data.blocksIntro1cXml = `
   </xml>
 `
 
-_data.blocksIntro1dXml = `
+_data.blocksIntro3aXml = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="20" y="20">
       <field name="id">voz</field>
@@ -439,7 +516,7 @@ _data.blocksIntro1dXml = `
         </block>
       </value>
     </block>
-    <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="594" y="20">
+    <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="570" y="20">
       <field name="id">gestos</field>
       <value name="src">
         <block type="hand_gesture" id="N5Lu5_J\`hn-e3lm60 |^3">
@@ -455,7 +532,7 @@ _data.blocksIntro1dXml = `
   </xml>
 `
 
-_data.blocksIntro1eXml = `
+_data.blocksIntro3bXml = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
       <field name="id">midia_principal</field>
@@ -468,11 +545,137 @@ _data.blocksIntro1eXml = `
         </block>
       </value>
     </block>
-    <block type="media" id="PnS;4T$~ftTn7U;nWSZb" x="594" y="71">
-      <field name="id">icone</field>
+    <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="594" y="20">
+      <field name="id">voz</field>
       <value name="src">
-        <block type="image" id="n8jL;6KJe-2c6B~=pPj("></block>
+        <block type="srgs" id="N5Lu5_J\`hn-e3lm60 |^3">
+          <mutation length="2">
+          </mutation>
+          <field name="id_area0">repetir</field>
+          <field name="label0">repetir video</field>
+        </block>
       </value>
+    </block>
+    <block type="port" id="+p-MtE:D*clWz(7oX7Hg" x="20" y="180">
+      <field name="id">midia_principal</field>
+    </block>
+     <block type="link" id="%6ew%0di,O*v%qS%d\`(\`" x="20" y="300">
+      <value name="conditions">
+        <block type="onbegin" id="(H8xxhXk6.y#]q%\`UM^D">
+          <field name="id">creditos</field>
+        </block>
+      </value>
+      <statement name="actions">
+        <block type="start" id="UEqL{b=Ws2G#w}+xMV%m">
+          <field name="id">voz</field>
+        </block>
+      </statement>
+    </block>
+    <block type="link" id="%6sP%0di,O*v%qS%d\`(\`" x="594" y="270">
+      <value name="conditions">
+        <block type="onrecognize" id="(H8dBhXk6.y#]q%\`UM^D">
+          <field name="id">repetir</field>
+        </block>
+      </value>
+      <statement name="actions">
+        <block type="stop" id="UEqL{b=Ws2G#w}+xMV%m">
+          <field name="id">midia_principal</field>
+          <next>
+            <block type="start" id=".Pt;)N?s.:xGz;dDp@+W">
+              <field name="id">midia_principal</field>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+  </xml>
+`
+_data.blocksIntro4aXml = `
+  <xml xmlns="http://www.w3.org/1999/xhtml">
+    <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="20" y="20">
+      <field name="id">voz</field>
+      <value name="src">
+        <block type="srgs" id="N5Lu5_J\`hn-e3lm60 |^3">
+          <mutation length="2">
+          </mutation>
+          <field name="id_area0">voz_centro</field>
+          <field name="label0">mostre centro</field>
+          <field name="id_area1">voz_praia</field>
+          <field name="label1">mostre praia</field>
+        </block>
+      </value>
+    </block>
+    <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="570" y="20">
+      <field name="id">gestos</field>
+      <value name="src">
+        <block type="hand_gesture" id="N5Lu5_J\`hn-e3lm60 |^3">
+          <mutation length="2">
+          </mutation>
+          <field name="id_area0">gesto_centro</field>
+          <field name="label0">aceno_esquerda</field>
+          <field name="id_area1">gesto_praia</field>
+          <field name="label1">eceno_direta</field>
+        </block>
+      </value>
+    </block>
+  </xml>
+`
+
+_data.blocksIntro4bXml = `
+  <xml xmlns="http://www.w3.org/1999/xhtml">
+    <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
+      <field name="id">midia_principal</field>
+      <value name="src">
+        <block type="video" id="OFge%WW-~~.%rZKqZqym">
+          <mutation length="1"></mutation>
+          <field name="id_area0">creditos</field>
+          <field name="begin0">300s</field>
+          <field name="end0"></field>
+        </block>
+      </value>
+    </block>
+    <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="594" y="20">
+      <field name="id">voz</field>
+      <value name="src">
+        <block type="srgs" id="N5Lu5_J\`hn-e3lm60 |^3">
+          <mutation length="2">
+          </mutation>
+          <field name="id_area0">repetir</field>
+          <field name="label0">repetir video</field>
+        </block>
+      </value>
+    </block>
+    <block type="port" id="+p-MtE:D*clWz(7oX7Hg" x="20" y="180">
+      <field name="id">midia_principal</field>
+    </block>
+     <block type="link" id="%6ew%0di,O*v%qS%d\`(\`" x="20" y="300">
+      <value name="conditions">
+        <block type="onbegin" id="(H8xxhXk6.y#]q%\`UM^D">
+          <field name="id">creditos</field>
+        </block>
+      </value>
+      <statement name="actions">
+        <block type="start" id="UEqL{b=Ws2G#w}+xMV%m">
+          <field name="id">voz</field>
+        </block>
+      </statement>
+    </block>
+    <block type="link" id="%6sP%0di,O*v%qS%d\`(\`" x="594" y="270">
+      <value name="conditions">
+        <block type="onrecognize" id="(H8dBhXk6.y#]q%\`UM^D">
+          <field name="id">repetir</field>
+        </block>
+      </value>
+      <statement name="actions">
+        <block type="stop" id="UEqL{b=Ws2G#w}+xMV%m">
+          <field name="id">midia_principal</field>
+          <next>
+            <block type="start" id=".Pt;)N?s.:xGz;dDp@+W">
+              <field name="id">midia_principal</field>
+            </block>
+          </next>
+        </block>
+      </statement>
     </block>
   </xml>
 `

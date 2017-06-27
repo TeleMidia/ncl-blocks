@@ -105,15 +105,27 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
   switch (questionName) {
     case 'blocksIntro1':
       NclBlocks.injectInDiv(_pathToBlockly, 'blocksIntro1a',
-        NclBlocks.calculateHeight(1, 80), _data.blocksIntro1aXml, true)
+        NclBlocks.calculateHeight(1, 60), _data.blocksIntro1aXml, true)
       NclBlocks.injectInDiv(_pathToBlockly, 'blocksIntro1b',
-        NclBlocks.calculateHeight(1, 130), _data.blocksIntro1bXml, true)
-      NclBlocks.injectInDiv(_pathToBlockly, 'blocksIntro1c',
-        NclBlocks.calculateHeight(2, 130), _data.blocksIntro1cXml, true)
-      NclBlocks.injectInDiv(_pathToBlockly, 'blocksIntro1d',
-        NclBlocks.calculateHeight(1, 130), _data.blocksIntro1dXml, true)
-      NclBlocks.injectInDiv(_pathToBlockly, 'blocksIntro1e',
-        NclBlocks.calculateHeight(1, 130), _data.blocksIntro1eXml, true)
+        NclBlocks.calculateHeight(1, 110), _data.blocksIntro1bXml, true)
+      break
+    case 'blocksIntro2':
+      NclBlocks.injectInDiv(_pathToBlockly, 'blocksIntro2a',
+        NclBlocks.calculateHeight(2, 100), _data.blocksIntro2aXml, true)
+      NclBlocks.injectInDiv(_pathToBlockly, 'blocksIntro2b',
+        NclBlocks.calculateHeight(3, 110), _data.blocksIntro2bXml, true)
+      break
+    case 'blocksIntro3':
+      NclBlocks.injectInDiv(_pathToBlockly, 'blocksIntro3a',
+        NclBlocks.calculateHeight(1, 140), _data.blocksIntro3aXml, true)
+      NclBlocks.injectInDiv(_pathToBlockly, 'blocksIntro3b',
+        NclBlocks.calculateHeight(3, 110), _data.blocksIntro3bXml, true)
+      break
+    case 'blocksIntro4':
+      NclBlocks.injectInDiv(_pathToBlockly, 'blocksIntro4a',
+        NclBlocks.calculateHeight(1, 140), _data.blocksIntro4aXml, true)
+      NclBlocks.injectInDiv(_pathToBlockly, 'blocksIntro4b',
+        NclBlocks.calculateHeight(3, 110), _data.blocksIntro4bXml, true)
       break
     case 'blocksReadTask1':
       NclBlocks.injectInDiv(_pathToBlockly, questionId,
@@ -181,12 +193,12 @@ function saveblocksEditTask2Changes (primaryEvent) {
     jsonToSave = JSON.parse(savedJsonStr)
   }
   jsonToSave.changes.push(jsonFromEvent)
-  console.log(jsonFromEvent)
+  // console.log(jsonFromEvent)
   _survey.getQuestionByName('blocksEditTask2Changes').value = JSON.stringify(jsonToSave)
 
   // save blocksEditTask1 result
   var xml = Blockly.Xml.workspaceToDom(_blocksEditTask2Workspace)
-  console.log(xml)
+  // console.log(xml)
   var xmlText = Blockly.Xml.domToText(xml)
   _survey.getQuestionByName('blocksEditTask2Result').value = xmlText
 }
