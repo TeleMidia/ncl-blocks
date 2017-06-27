@@ -329,27 +329,43 @@ _data.surveyJSON.pages.push({
       elements: [
         {
           type: 'html',
-          name: 'blocksReadTask1'
+          html: `
+            <p>Agora, desejamos <strong>capturar</strong> seu entendimento dos conceitos apresentados. Para isso, pedimos que você realize as quatro tarefas a seguir. Duas tarefas consistem em interpretar blocos já existem e outros dois editar blocos existentes.</p>            
+            </p><strong>Ressaltamos que essas tarefas NÃO se destinam à avaliar seus conhecimentos, mas sim capturar evidências de nossa pesquisa.</strong><br><br>
+          `
+        },
+        {
+          type: 'html',
+          name: 'blocksReadTask1',
+          html: `
+            <p>Tarefa 1: Por favor, analise com cuidado os blocos aseguir.</p>
+          `
         },
         {
           type: 'comment',
           isRequired: true,
           name: 'blocksReadTask1Question',
-          title: 'Qual o comportamento da aplicação acima?'
+          title: 'Qual o comportamento da aplicação que corresponde os blocos acima?'
         },
         {
           type: 'html',
-          name: 'blocksReadTask2'
+          name: 'blocksReadTask2',
+          html: `
+            <p>Tarefa 2: Os blocos a seguir são um versão motificada do imediatamente anterior. Por favor, analise com cuidado essa versão modificada.</p>
+          `
         },
         {
           type: 'comment',
           isRequired: true,
           name: 'blocksReadTask2Question',
-          title: 'Qual o comportamento da aplicação acima?'
+          title: 'Qual a mudança no comportamento da aplicação anterior?'
         },
         {
           type: 'html',
-          name: 'blocksEditTask1'
+          name: 'blocksEditTask1',
+          html: `
+            <p>Tarefa 3: Agora, pedimos que edite os blocos a seguir.</p>
+          `
         },
         {
           type: 'text',
@@ -363,7 +379,10 @@ _data.surveyJSON.pages.push({
         },
         {
           type: 'html',
-          name: 'blocksEditTask2'
+          name: 'blocksEditTask2',
+          html: `
+            <p>Tarefa 4: Agora, pedimos que edite os blocos a seguir.</p>
+          `
         },
         {
           type: 'text',
