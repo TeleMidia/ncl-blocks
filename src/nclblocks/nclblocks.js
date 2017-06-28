@@ -340,7 +340,7 @@ FieldTextButton.prototype.showEditor_ = function () {
 // ----------------------------------------
 
 var InputStackMixin = {
-  stack_of_value_input: false,
+  isInputValue: false,
 
   pushInput: function () {
     var oldMutationDom = this.mutationToDom()
@@ -348,15 +348,15 @@ var InputStackMixin = {
     var newInput
 
     // append element
-    var newIndex = this.stack_size
-    if (this.stack_of_value_input) {
+    var newIndex = this.stackSize
+    if (this.isInputValue) {
       newInput = this.appendValueInput('element_' + newIndex)
     } else {
       newInput = this.appendDummyInput('element_' + newIndex)
     }
     this.configureNewInput(newInput, newIndex)
     this.moveInputBefore(newInput.name, 'edit')
-    this.stack_size++
+    this.stackSize++
     // fire mutation event
     var newMutationDom = this.mutationToDom()
     var newMutation = Blockly.Xml.domToText(newMutationDom)
@@ -370,13 +370,13 @@ var InputStackMixin = {
     var oldMutationDom = this.mutationToDom()
     var oldMutation = Blockly.Xml.domToText(oldMutationDom)
 
-    if (this.stack_size <= 0) return
-    var rmIndex = this.stack_size - 1
+    if (this.stackSize <= 0) return
+    var rmIndex = this.stackSize - 1
     var inputNameToDelete = 'element_' + rmIndex
-    var substructure = this.getInputTargetBlock(inputNameToDelete)
-    if (substructure) substructure.outputConnection.disconnect()
+    var subStructure = this.getInputTargetBlock(inputNameToDelete)
+    if (subStructure) subStructure.outputConnection.disconnect()
     this.removeInput(inputNameToDelete)
-    this.stack_size--
+    this.stackSize--
 
     // fire mutation event
     var newMutationDom = this.mutationToDom()
@@ -387,17 +387,17 @@ var InputStackMixin = {
 
   mutationToDom: function () {
     var container = document.createElement('mutation')
-    container.setAttribute('length', this.stack_size)
+    container.setAttribute('length', this.stackSize)
     return container
   },
 
   domToMutation: function (xmlElement) {
     var newLength = xmlElement.getAttribute('length')
     var i
-    if (newLength - this.stack_size > 0) {
-      for (i = 0; i < newLength - this.stack_size; i++) this.pushInput()
+    if (newLength - this.stackSize > 0) {
+      for (i = 0; i < newLength - this.stackSize; i++) this.pushInput()
     } else {
-      for (i = 0; i < this.stack_size - newLength; i++) this.popInput()
+      for (i = 0; i < this.stackSize - newLength; i++) this.popInput()
     }
   },
 
@@ -703,8 +703,8 @@ Blockly.Blocks.body = {
     this.setDeletable(false)
 
     // InputStackMixin config
-    this.stack_size = 0
-    this.stack_of_value_input = true
+    this.stackSize = 0
+    this.isInputValue = true
     this.configureNewInput = function (newInput, index) {
       newInput.appendField()
         .setCheck(NclBlocks.USE_CHECK ? ['media_type', 'input_type', 'user_type', 'link_type'] : null)
@@ -761,8 +761,8 @@ Blockly.Blocks.video = {
     this.mediaLikeInit(true)
 
     // InputStackMixin config
-    this.stack_size = 0
-    this.stack_of_value_input = false
+    this.stackSize = 0
+    this.isInputValue = false
     this.configureNewInput = function (newInput, index) {
       newInput.appendField(NclBlocks.Msg.PORTION)
         .appendField(new IdFieldText('', 'media'), 'id_area' + index)
@@ -789,8 +789,8 @@ Blockly.Blocks.audio = {
     this.mediaLikeInit(true)
 
     // InputStackMixin config
-    this.stack_size = 0
-    this.stack_of_value_input = false
+    this.stackSize = 0
+    this.isInputValue = false
     this.configureNewInput = function (newInput, index) {
       newInput.appendField(NclBlocks.Msg.PORTION)
         .appendField(new IdFieldText('', 'media'), 'id_area' + index)
@@ -817,8 +817,8 @@ Blockly.Blocks.ssml = {
     this.mediaLikeInit(true)
 
     // InputStackMixin config
-    this.stack_size = 0
-    this.stack_of_value_input = false
+    this.stackSize = 0
+    this.isInputValue = false
     this.configureNewInput = function (newInput, index) {
       newInput.appendField(NclBlocks.Msg.PORTION)
         .appendField(new IdFieldText('', 'media'), 'id_area' + index)
@@ -829,7 +829,7 @@ Blockly.Blocks.ssml = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.ssml, 25, 25, '*'))
       .appendField('{' + NclBlocks.Msg.SSML + '}')
-    this.stack_size++
+    this.stackSize++
     // add plus button
     this.addMinusPlusDummyInput()
     // add one area
@@ -865,8 +865,8 @@ Blockly.Blocks.srgs = {
     this.inputLikeInit(true)
 
     // InputStackMixin config
-    this.stack_size = 0
-    this.stack_of_value_input = false
+    this.stackSize = 0
+    this.isInputValue = false
     this.configureNewInput = function (newInput, index) {
       newInput.appendField(NclBlocks.Msg.PORTION)
         .appendField(new IdFieldText('', 'input'), 'id_area' + index)
@@ -891,8 +891,8 @@ Blockly.Blocks.hand_gesture = {
     this.inputLikeInit(true)
 
     // InputStackMixin config
-    this.stack_size = 0
-    this.stack_of_value_input = false
+    this.stackSize = 0
+    this.isInputValue = false
     this.configureNewInput = function (newInput, index) {
       newInput.appendField(NclBlocks.Msg.PORTION)
         .appendField(new IdFieldText('', 'input'), 'id_area' + index)
@@ -921,8 +921,8 @@ Blockly.Blocks.user = {
     this.userLikeInit()
 
     // InputStackMixin config
-    this.stack_size = 0
-    this.stack_of_value_input = true
+    this.stackSize = 0
+    this.isInputValue = true
     this.configureNewInput = function (newInput, index) {
       newInput.appendField(NclBlocks.Msg.WITH_DEVICE)
         .setCheck(NclBlocks.USE_CHECK ? 'user_device_type' : null)
@@ -1110,8 +1110,8 @@ Blockly.Blocks.compoundcondition = {
     this.conditionLikeInit()
 
     // InputStackMixin config
-    this.stack_size = 0
-    this.stack_of_value_input = true
+    this.stackSize = 0
+    this.isInputValue = true
     this.configureNewInput = function (newInput, index) {
       newInput.setCheck(NclBlocks.USE_CHECK ? 'condition_type' : null)
     }
