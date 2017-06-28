@@ -349,7 +349,6 @@ var InputStackMixin = {
 
     // append element
     var newIndex = this.stack_size
-    // console.log("append element_" + newIndex)
     if (this.stack_of_value_input) {
       newInput = this.appendValueInput('element_' + newIndex)
     } else {
@@ -373,7 +372,6 @@ var InputStackMixin = {
 
     if (this.stack_size <= 0) return
     var rmIndex = this.stack_size - 1
-    // console.log("remove element_" + rmIndex)
     var inputNameToDelete = 'element_' + rmIndex
     var substructure = this.getInputTargetBlock(inputNameToDelete)
     if (substructure) substructure.outputConnection.disconnect()
@@ -396,8 +394,6 @@ var InputStackMixin = {
   domToMutation: function (xmlElement) {
     var newLength = xmlElement.getAttribute('length')
     var i
-    // console.log(xmlElement)
-    // console.log(this)
     if (newLength - this.stack_size > 0) {
       for (i = 0; i < newLength - this.stack_size; i++) this.pushInput()
     } else {
@@ -572,7 +568,6 @@ IdFieldText.prototype.validateId = function (text) {
 }
 
 IdFieldText.prototype.onFinishEditing_ = function (text) {
-  // console.log('this.previous=' + this.previous + ',text=' + text)
   // remove old
   if (this.previous) this.removeId(this.previous)
   // save new
@@ -594,7 +589,6 @@ IdFieldText.prototype.dispose = function () {
 
 IdFieldText.prototype.saveId = function (text) {
   if (!text) return
-  // console.log('saveId=' + text)
   this.createIdArrays()
   if (this.idType === 'media') {
     this.sourceBlock_.workspace.idArrayMedia.push([text, text])
@@ -603,7 +597,6 @@ IdFieldText.prototype.saveId = function (text) {
   } else if (this.idType === 'user') {
     this.sourceBlock_.workspace.idArrayUser.push([text, text])
     var maxUsers = this.sourceBlock_.inputList[1].fieldRow[3].text_
-    // console.log('maxUsers=' + maxUsers)
     if (maxUsers) {
       for (var i = 1; i <= maxUsers; i++) {
         this.sourceBlock_.workspace.idArrayUser.push([text + i, text + i])
@@ -635,7 +628,6 @@ IdFieldText.prototype.removeId = function (text) {
       }
       if (index > -1) {
         var maxUsers = this.sourceBlock_.inputList[1].fieldRow[3].text_
-        // console.log('removeIds ' + (1 + parseInt(maxUsers)) + 'from ' + index)
         this.workspace_.idArrayUser.splice(index, 1 + maxUsers)
       }
     }
@@ -655,13 +647,11 @@ goog.inherits(UserMaxFieldNumber, Blockly.FieldNumber)
 UserMaxFieldNumber.prototype.createIdArrays = createIdArrays
 
 UserMaxFieldNumber.prototype.onFinishEditing_ = function (text) {
-  // console.log('this.previous=' + this.previous + ',text=' + text)
   this.updateIds(text)
   this.previous = text
 }
 
 UserMaxFieldNumber.prototype.setValue = function (text) {
-  console.log('setValue() this.previous=' + this.previous + ',text=' + text)
   // means set from xml
   if (!this.workspace_) {
     this.updateIds(text)
@@ -671,7 +661,6 @@ UserMaxFieldNumber.prototype.setValue = function (text) {
 }
 
 UserMaxFieldNumber.prototype.updateIds = function (text) {
-  // console.log('updateIds() this.previous=' + this.previous + ',text=' + text)
   // at toolbox
   if (!text) return
   if (text === this.previous) return
