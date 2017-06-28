@@ -475,7 +475,7 @@ var NclBlockMixin = {
 // ----------------------------------------
 
 var createIdArrays = function () {
-  if (!this.sourceBlock_.workspace.idArraysFlag) {
+  if (this.sourceBlock_ && !this.sourceBlock_.workspace.idArraysFlag) {
     this.sourceBlock_.workspace.idArrayMedia = [['-', '-']]
     this.sourceBlock_.workspace.idArrayInput = [['-', '-']]
     this.sourceBlock_.workspace.idArrayUser = [['-', '-']]
@@ -581,7 +581,7 @@ IdFieldText.prototype.onFinishEditing_ = function (text) {
 }
 
 IdFieldText.prototype.setValue = function (text) {
-  // (!this.workspace_) means set from xml
+  // means set from xml
   if (!this.workspace_ && this.validateId(text)) this.saveId(text)
   if (!this.workspace_) this.previous = text
   Blockly.Field.prototype.setValue.call(this, text)
@@ -602,12 +602,20 @@ IdFieldText.prototype.saveId = function (text) {
     this.sourceBlock_.workspace.idArrayInput.push([text, text])
   } else if (this.idType === 'user') {
     this.sourceBlock_.workspace.idArrayUser.push([text, text])
+    var maxUsers = this.sourceBlock_.inputList[1].fieldRow[3].text_
+    // console.log('maxUsers=' + maxUsers)
+    if (maxUsers) {
+      for (var i = 1; i <= maxUsers; i++) {
+        this.sourceBlock_.workspace.idArrayUser.push([text + i, text + i])
+      }
+    }
   }
 }
 
 IdFieldText.prototype.removeId = function (text) {
+  // at toolbox
   if (!text) return
-  // console.log('removeId=' + text)
+  // at worksapce
   var index = -1
   var i
   if (this.workspace_) {
@@ -625,7 +633,72 @@ IdFieldText.prototype.removeId = function (text) {
       for (i = 0; i < this.workspace_.idArrayUser.length; i++) {
         if (this.workspace_.idArrayUser[i][0] === text) { index = i }
       }
-      if (index > -1) { this.workspace_.idArrayUser.splice(this, index, 1) }
+      if (index > -1) {
+        var maxUsers = this.sourceBlock_.inputList[1].fieldRow[3].text_
+        // console.log('removeIds ' + (1 + parseInt(maxUsers)) + 'from ' + index)
+        this.workspace_.idArrayUser.splice(index, 1 + maxUsers)
+      }
+    }
+  }
+}
+
+// ----------------------------------------
+// UserMaxFieldNumber
+// ----------------------------------------
+
+var UserMaxFieldNumber = function (initialValue) {
+  this.previous = initialValue || 2
+  UserMaxFieldNumber.superClass_.constructor.call(this, initialValue, 2, 10, 1)
+}
+goog.inherits(UserMaxFieldNumber, Blockly.FieldNumber)
+
+UserMaxFieldNumber.prototype.createIdArrays = createIdArrays
+
+UserMaxFieldNumber.prototype.onFinishEditing_ = function (text) {
+  // console.log('this.previous=' + this.previous + ',text=' + text)
+  this.updateIds(text)
+  this.previous = text
+}
+
+UserMaxFieldNumber.prototype.setValue = function (text) {
+  console.log('setValue() this.previous=' + this.previous + ',text=' + text)
+  // means set from xml
+  if (!this.workspace_) {
+    this.updateIds(text)
+    this.previous = text
+  }
+  Blockly.Field.prototype.setValue.call(this, text)
+}
+
+UserMaxFieldNumber.prototype.updateIds = function (text) {
+  // console.log('updateIds() this.previous=' + this.previous + ',text=' + text)
+  // at toolbox
+  if (!text) return
+  if (text === this.previous) return
+  if (!this.sourceBlock_) return
+  // at workspace
+  this.createIdArrays()
+  var i
+  var diff = text - parseInt(this.previous)
+  var userId = this.sourceBlock_.inputList[1].fieldRow[1].text_
+
+  if (diff > 0) {
+    if (userId) {
+      for (i = parseInt(this.previous) + 1; i <= text; i++) {
+        this.sourceBlock_.workspace.idArrayUser.push([userId + i, userId + i])
+      }
+    }
+  } else {
+    var numDel = Math.abs(diff)
+    var index = -1
+    for (i = 0; i < this.workspace_.idArrayUser.length; i++) {
+      if (this.workspace_.idArrayUser[i][0] === userId) {
+        index = i
+        break
+      }
+    }
+    if (index > 0) {
+      this.workspace_.idArrayUser.splice(index + 1 + parseInt(text), numDel)
     }
   }
 }
@@ -874,7 +947,7 @@ Blockly.Blocks.user = {
       .appendField(new IdFieldText('', 'user'), 'id')
       .appendField(NclBlocks.Msg.AND)
       // .appendField(new IdFieldText('2'), 'usermax', 'usermax')
-      .appendField(new Blockly.FieldTextInput('2'), 'max')
+      .appendField(new UserMaxFieldNumber(), 'usermax')
       .appendField(NclBlocks.Msg.USERS)
     // add edit buttons
     this.addMinusPlusDummyInput()
