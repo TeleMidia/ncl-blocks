@@ -31,8 +31,12 @@ NclBlocks.Msg.SRGS = 'descrição de voz'
 NclBlocks.Msg.SRGS_ANCHOR = 'reconhece frase'
 NclBlocks.Msg.SRGS_ITEM = 'frase a reconhecer'
 NclBlocks.Msg.HAND_GESTURE = 'descrição de gestos'
-NclBlocks.Msg.HAND_GESTURE_ANCHOR = 'reconhece gesto'
+NclBlocks.Msg.HAND_GESTURE_ANCHOR = 'reconhece gesto de mão para'
 NclBlocks.Msg.HAND_GESTURE_ITEM = 'gesto a reconhecer'
+NclBlocks.Msg.HAND_UP = 'cima'
+NclBlocks.Msg.HAND_DOWN = 'baixo'
+NclBlocks.Msg.HAND_LEFT = 'esquerda'
+NclBlocks.Msg.HAND_RIGHT = 'direita'
 NclBlocks.Msg.LINK = 'sincronismo'
 NclBlocks.Msg.LINKS = 'sincronismos'
 NclBlocks.Msg.WHEN = 'quando'
@@ -882,7 +886,13 @@ Blockly.Blocks.hand_gesture = {
       newInput.appendField(NclBlocks.Msg.PORTION)
         .appendField(new IdFieldText('', 'input'), 'id_area' + index)
         .appendField(NclBlocks.Msg.HAND_GESTURE_ANCHOR)
-        .appendField(new Blockly.FieldTextInput(''), 'label' + index)
+        .appendField(new Blockly.FieldDropdown(
+          [
+            [NclBlocks.Msg.HAND_UP, 'up'],
+            [NclBlocks.Msg.HAND_DOWN, 'down'],
+            [NclBlocks.Msg.HAND_LEFT, 'left'],
+            [NclBlocks.Msg.HAND_RIGHT, 'right']
+          ]), 'label' + index)
     }
     // add name
     this.appendDummyInput()
