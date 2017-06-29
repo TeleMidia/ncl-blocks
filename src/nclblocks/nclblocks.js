@@ -607,7 +607,10 @@ IdFieldText.prototype.removeId = function (text) {
   var index = -1
   var i
   for (i in this.idArray) {
-    if (this.idArray[i][0] === text) { index = i }
+    if (this.idArray[i][0] === text) {
+      index = i
+      break
+    }
   }
   if (index > -1) { this.idArray.splice(index, 1) }
   if (this.idType === 'user') {
