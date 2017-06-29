@@ -25,7 +25,8 @@ var _surveyCss = {
   'pageTitle': 'h3 text-center breadcrumb page-header',
   // row
   'row': '',
-  'question': { root: 'h4 panel-body panel panel-default', title: 'h4 breadcrumb' },
+  'question': { root: 'h4 panel-body panel panel-default',
+    title: 'h4 breadcrumb' },
   'error': {
     'root': '',
     'icon': 'glyphicon glyphicon-exclamation-sign',
@@ -77,7 +78,8 @@ function insertRequiredErrorInBlocks (blockDivId) {
   var errorDivId = blockDivId + '_error'
   var errorDivSelector = '#' + errorDivId
   if (!$(errorDivSelector).length) {
-    $(blockDivSelector).prepend("<div id='" + errorDivId + "' class='label label-danger'>" + _msgEmptyBlockTask + '</div>')
+    $(blockDivSelector).prepend("<div id='" + errorDivId +
+      "' class='label label-danger'>" + _msgEmptyBlockTask + '</div>')
   }
 }
 
@@ -85,10 +87,12 @@ function onValidateQuestions (survey, options) {
   switch (_survey.currentPage.name) {
     case 'concepts':
       if (!_blocksEditTask1Workspace.getAllBlocks().length) {
-        insertRequiredErrorInBlocks(_survey.getQuestionByName('blocksEditTask1').idValue)
+        insertRequiredErrorInBlocks(_survey
+          .getQuestionByName('blocksEditTask1').idValue)
       }
       if (!_blocksEditTask2Workspace.getAllBlocks().length) {
-        insertRequiredErrorInBlocks(_survey.getQuestionByName('blocksEditTask2').idValue)
+        insertRequiredErrorInBlocks(_survey
+          .getQuestionByName('blocksEditTask2').idValue)
       }
       return true
   }
@@ -137,12 +141,14 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       break
     case 'blocksEditTask1':
       _blocksEditTask1Workspace = NclBlocks.injectInDiv(_pathToBlockly,
-        questionId, NclBlocks.calculateHeight(6, 145), _data.blocksReadTask2Xml, false, ['excludeResumePauseSet'])
+        questionId, NclBlocks.calculateHeight(6, 145), _data.blocksReadTask2Xml,
+        false, ['excludeResumePauseSet'])
       _blocksEditTask1Workspace.addChangeListener(saveblocksEditTask1Changes)
       break
     case 'blocksEditTask2':
       _blocksEditTask2Workspace = NclBlocks.injectInDiv(_pathToBlockly,
-        questionId, NclBlocks.calculateHeight(6, 145), _data.blocksReadTask2Xml, false, ['excludeResumePauseSet'])
+        questionId, NclBlocks.calculateHeight(6, 145), _data.blocksReadTask2Xml,
+        false, ['excludeResumePauseSet'])
       _blocksEditTask2Workspace.addChangeListener(saveblocksEditTask2Changes)
       break
     case 'nclCode1':
@@ -172,7 +178,8 @@ function saveblocksEditTask1Changes (primaryEvent) {
   }
   jsonToSave.changes.push(jsonFromEvent)
   // console.log(jsonFromEvent);
-  _survey.getQuestionByName('blocksEditTask1Changes').value = JSON.stringify(jsonToSave)
+  _survey.getQuestionByName('blocksEditTask1Changes').value =
+    JSON.stringify(jsonToSave)
 
   // save blocksEditTask1 result
   var xml = Blockly.Xml.workspaceToDom(_blocksEditTask1Workspace)
@@ -194,7 +201,8 @@ function saveblocksEditTask2Changes (primaryEvent) {
   }
   jsonToSave.changes.push(jsonFromEvent)
   // console.log(jsonFromEvent)
-  _survey.getQuestionByName('blocksEditTask2Changes').value = JSON.stringify(jsonToSave)
+  _survey.getQuestionByName('blocksEditTask2Changes').value =
+    JSON.stringify(jsonToSave)
 
   // save blocksEditTask1 result
   var xml = Blockly.Xml.workspaceToDom(_blocksEditTask2Workspace)
