@@ -470,19 +470,21 @@ var NclBlockMixin = {
 // createIdArrays function
 // ----------------------------------------
 
-var createIdArrays = function () {
-  if (this.sourceBlock_ && !this.sourceBlock_.workspace.idArraysFlag) {
-    this.sourceBlock_.workspace.idArrayMedia = [['-', '-']]
-    this.sourceBlock_.workspace.idArrayInput = [['-', '-']]
-    this.sourceBlock_.workspace.idArrayUser = [['-', '-']]
-    this.sourceBlock_.workspace.idArraysFlag = true
-  }
-  if (this.idType === 'media') {
-    this.idArray = this.sourceBlock_.workspace.idArrayMedia
-  } else if (this.idType === 'input') {
-    this.idArray = this.sourceBlock_.workspace.idArrayInput
-  } else if (this.idType === 'user') {
-    this.idArray = this.sourceBlock_.workspace.idArrayUser
+var NclIdHandlerMixin = {
+  createIdArrays: function () {
+    if (this.sourceBlock_ && !this.sourceBlock_.workspace.idArraysFlag) {
+      this.sourceBlock_.workspace.idArrayMedia = [['-', '-']]
+      this.sourceBlock_.workspace.idArrayInput = [['-', '-']]
+      this.sourceBlock_.workspace.idArrayUser = [['-', '-']]
+      this.sourceBlock_.workspace.idArraysFlag = true
+    }
+    if (this.idType === 'media') {
+      this.idArray = this.sourceBlock_.workspace.idArrayMedia
+    } else if (this.idType === 'input') {
+      this.idArray = this.sourceBlock_.workspace.idArrayInput
+    } else if (this.idType === 'user') {
+      this.idArray = this.sourceBlock_.workspace.idArrayUser
+    }
   }
 }
 
@@ -502,8 +504,7 @@ var IdFieldDropdown = function (idType) {
   IdFieldDropdown.superClass_.constructor.call(this, menuGenerator)
 }
 goog.inherits(IdFieldDropdown, Blockly.FieldDropdown)
-
-IdFieldDropdown.prototype.createIdArrays = createIdArrays
+Object.assign(IdFieldDropdown.prototype, NclIdHandlerMixin)
 
 IdFieldDropdown.prototype.getIdArray = function () {
   // at toolbox
@@ -535,8 +536,7 @@ var IdFieldText = function (text, idType) {
     this.validateId)
 }
 goog.inherits(IdFieldText, Blockly.FieldTextInput)
-
-IdFieldText.prototype.createIdArrays = createIdArrays
+Object.assign(IdFieldText.prototype, NclIdHandlerMixin)
 
 IdFieldText.prototype.setSourceBlock = function (block) {
   this.workspaceSaved = block.workspace
@@ -606,8 +606,6 @@ IdFieldText.prototype.removeId = function (text) {
   // at worksapce
   var index = -1
   var i
-  // TODO: review this
-  if (!this.workspace_) this.workspace_ = this.workspaceSaved
   for (i = 0; i < this.idArray.length; i++) {
     if (this.idArray[i][0] === text) { index = i }
   }
@@ -628,8 +626,7 @@ var UserMaxFieldNumber = function (initialValue) {
   UserMaxFieldNumber.superClass_.constructor.call(this, initialValue, 2, 10, 1)
 }
 goog.inherits(UserMaxFieldNumber, Blockly.FieldNumber)
-
-UserMaxFieldNumber.prototype.createIdArrays = createIdArrays
+Object.assign(UserMaxFieldNumber.prototype, NclIdHandlerMixin)
 
 UserMaxFieldNumber.prototype.onFinishEditing_ = function (text) {
   this.updateIds(text)
