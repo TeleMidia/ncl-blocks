@@ -1,15 +1,15 @@
 {
-  "name": "thesis-evaluation-form",
-  "description": "thesis-evaluation-form",
-  "repository": "github.com:alanlivio/thesis-evaluation-form",
-  "version": "1.0.0",
+  "name": "nclblocks",
+  "description": "nclblocks",
+  "repository": "github.com:alanlivio/nclblocks",
+  "version": "0.1",
   "author": "Alan Livio",
   "license": "MIT",
   "eslintConfig": {
     "env": {
       "browser": true
     },
-    "extends": "standard",
+    "extends": "standard", 
     "plugins": [
       "html",
       "import"
