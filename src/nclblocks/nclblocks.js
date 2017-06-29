@@ -545,6 +545,13 @@ goog.inherits(IdFieldText, Blockly.FieldTextInput)
 
 IdFieldText.prototype.createIdArrays = createIdArrays
 
+IdFieldText.prototype.setSourceBlock = function (block) {
+  this.workspaceSaved = block.workspace
+  this.sourceBlock_ = block
+  // Blockly.FieldTextInput.prototype.setSourceBlock.call(block)
+  IdFieldText.superClass_.setSourceBlock.call(block)
+}
+
 IdFieldText.prototype.validateId = function (text) {
   if (!text) return text
   // empty or at toolbox
@@ -579,12 +586,13 @@ IdFieldText.prototype.setValue = function (text) {
   // means set from xml
   if (!this.workspace_ && this.validateId(text)) this.saveId(text)
   if (!this.workspace_) this.previous = text
-  Blockly.Field.prototype.setValue.call(this, text)
+  Blockly.FieldTextInput.prototype.setValue.call(this, text)
 }
 
 IdFieldText.prototype.dispose = function () {
   this.removeId(this.text_)
-  IdFieldText.superClass_.dispose.call(this)
+  Blockly.FieldTextInput.prototype.dispose.call(this)
+  // IdFieldText.superClass_.dispose.call(this)
 }
 
 IdFieldText.prototype.saveId = function (text) {
@@ -611,25 +619,25 @@ IdFieldText.prototype.removeId = function (text) {
   // at worksapce
   var index = -1
   var i
-  if (this.workspace_) {
-    if (this.idType === 'media' && this.workspace_.idArrayMedia) {
-      for (i = 0; i < this.workspace_.idArrayMedia.length; i++) {
-        if (this.workspace_.idArrayMedia[i][0] === text) { index = i }
-      }
-      if (index > -1) { this.workspace_.idArrayMedia.splice(index, 1) }
-    } else if (this.idType === 'input' && this.workspace_.idArrayInput) {
-      for (i = 0; i < this.workspace_.idArrayInput.length; i++) {
-        if (this.workspace_.idArrayInput[i][0] === text) { index = i }
-      }
-      if (index > -1) { this.workspace_.idArrayInput.splice(index, 1) }
-    } else if (this.idType === 'user' && this.workspace_.idArrayUser) {
-      for (i = 0; i < this.workspace_.idArrayUser.length; i++) {
-        if (this.workspace_.idArrayUser[i][0] === text) { index = i }
-      }
-      if (index > -1) {
-        var maxUsers = this.sourceBlock_.inputList[1].fieldRow[3].text_
-        this.workspace_.idArrayUser.splice(index, 1 + maxUsers)
-      }
+  // TODO: review this
+  if (!this.workspace_) this.workspace_ = this.workspaceSaved
+  if (this.idType === 'media' && this.workspace_.idArrayMedia) {
+    for (i = 0; i < this.workspace_.idArrayMedia.length; i++) {
+      if (this.workspace_.idArrayMedia[i][0] === text) { index = i }
+    }
+    if (index > -1) { this.workspace_.idArrayMedia.splice(index, 1) }
+  } else if (this.idType === 'input' && this.workspace_.idArrayInput) {
+    for (i = 0; i < this.workspace_.idArrayInput.length; i++) {
+      if (this.workspace_.idArrayInput[i][0] === text) { index = i }
+    }
+    if (index > -1) { this.workspace_.idArrayInput.splice(index, 1) }
+  } else if (this.idType === 'user' && this.workspace_.idArrayUser) {
+    for (i = 0; i < this.workspace_.idArrayUser.length; i++) {
+      if (this.workspace_.idArrayUser[i][0] === text) { index = i }
+    }
+    if (index > -1) {
+      var maxUsers = this.sourceBlock_.inputList[1].fieldRow[3].text_
+      this.workspace_.idArrayUser.splice(index, 1 + maxUsers)
     }
   }
 }
