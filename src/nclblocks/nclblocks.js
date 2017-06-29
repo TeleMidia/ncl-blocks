@@ -477,64 +477,57 @@ var createIdArrays = function () {
     this.sourceBlock_.workspace.idArrayUser = [['-', '-']]
     this.sourceBlock_.workspace.idArraysFlag = true
   }
+  if (this.idType === 'media') {
+    this.idArray = this.sourceBlock_.workspace.idArrayMedia
+  } else if (this.idType === 'input') {
+    this.idArray = this.sourceBlock_.workspace.idArrayInput
+  } else if (this.idType === 'user') {
+    this.idArray = this.sourceBlock_.workspace.idArrayUser
+  }
 }
 
 // ----------------------------------------
 // IdFieldDropdown
 // ----------------------------------------
 
+/**
+ * @constructor
+ * @param {string} idType = media | input | user | node
+ */
+
 var IdFieldDropdown = function (idType) {
   this.idType = idType
   var menuGenerator = null
-  if (idType === 'media') menuGenerator = this.getMediaIds
-  else if (idType === 'input') menuGenerator = this.getInputIds
-  else if (idType === 'user') menuGenerator = this.getUserIds
-  else if (idType === 'node') menuGenerator = this.getBothMediaInputIds
+  menuGenerator = this.getIdArray
   IdFieldDropdown.superClass_.constructor.call(this, menuGenerator)
 }
 goog.inherits(IdFieldDropdown, Blockly.FieldDropdown)
 
 IdFieldDropdown.prototype.createIdArrays = createIdArrays
 
-IdFieldDropdown.prototype.getMediaIds = function () {
+IdFieldDropdown.prototype.getIdArray = function () {
   // at toolbox
   if (!this.sourceBlock_) return [['-', '-']]
   // at workspace
   this.createIdArrays()
-  return this.sourceBlock_.workspace.idArrayMedia
-}
-
-IdFieldDropdown.prototype.getInputIds = function () {
-  // at toolbox
-  if (!this.sourceBlock_) return [['-', '-']]
-  // at workspace
-  this.createIdArrays()
-  return this.sourceBlock_.workspace.idArrayInput
-}
-
-IdFieldDropdown.prototype.getUserIds = function () {
-  // at toolbox
-  if (!this.sourceBlock_) return [['-', '-']]
-  // at workspace
-  this.createIdArrays()
-  return this.sourceBlock_.workspace.idArrayUser
-}
-
-IdFieldDropdown.prototype.getBothMediaInputIds = function () {
-  // at toolbox
-  if (!this.sourceBlock_) return [['-', '-']]
-  // at workspace
-  this.createIdArrays()
-  var medias = this.sourceBlock_.workspace.idArrayMedia
-  var inputs = this.sourceBlock_.workspace.idArrayInput
-  var ret = medias.concat(inputs).sort()
-  if (ret[1][0] === '-') ret.splice(1, 1)
-  return ret
+  if (this.idType === 'node') {
+    var medias = this.sourceBlock_.workspace.idArrayMedia
+    var inputs = this.sourceBlock_.workspace.idArrayInput
+    var ret = medias.concat(inputs).sort()
+    if (ret[1][0] === '-') ret.splice(1, 1)
+    return ret
+  }
+  return this.idArray
 }
 
 // ----------------------------------------
 // IdFieldText
 // ----------------------------------------
+
+/**
+ * @constructor
+ * @param {string} idType = media | input | user
+ */
 
 var IdFieldText = function (text, idType) {
   this.idType = idType
@@ -548,7 +541,6 @@ IdFieldText.prototype.createIdArrays = createIdArrays
 IdFieldText.prototype.setSourceBlock = function (block) {
   this.workspaceSaved = block.workspace
   this.sourceBlock_ = block
-  // Blockly.FieldTextInput.prototype.setSourceBlock.call(block)
   IdFieldText.superClass_.setSourceBlock.call(block)
 }
 
@@ -592,22 +584,17 @@ IdFieldText.prototype.setValue = function (text) {
 IdFieldText.prototype.dispose = function () {
   this.removeId(this.text_)
   Blockly.FieldTextInput.prototype.dispose.call(this)
-  // IdFieldText.superClass_.dispose.call(this)
 }
 
 IdFieldText.prototype.saveId = function (text) {
   if (!text) return
   this.createIdArrays()
-  if (this.idType === 'media') {
-    this.sourceBlock_.workspace.idArrayMedia.push([text, text])
-  } else if (this.idType === 'input') {
-    this.sourceBlock_.workspace.idArrayInput.push([text, text])
-  } else if (this.idType === 'user') {
-    this.sourceBlock_.workspace.idArrayUser.push([text, text])
+  this.idArray.push([text, text])
+  if (this.idType === 'user') {
     var maxUsers = this.sourceBlock_.inputList[1].fieldRow[3].text_
     if (maxUsers) {
       for (var i = 1; i <= maxUsers; i++) {
-        this.sourceBlock_.workspace.idArrayUser.push([text + '.' + i, text + '.' + i])
+        this.idArray.push([text + '.' + i, text + '.' + i])
       }
     }
   }
@@ -621,24 +608,13 @@ IdFieldText.prototype.removeId = function (text) {
   var i
   // TODO: review this
   if (!this.workspace_) this.workspace_ = this.workspaceSaved
-  if (this.idType === 'media' && this.workspace_.idArrayMedia) {
-    for (i = 0; i < this.workspace_.idArrayMedia.length; i++) {
-      if (this.workspace_.idArrayMedia[i][0] === text) { index = i }
-    }
-    if (index > -1) { this.workspace_.idArrayMedia.splice(index, 1) }
-  } else if (this.idType === 'input' && this.workspace_.idArrayInput) {
-    for (i = 0; i < this.workspace_.idArrayInput.length; i++) {
-      if (this.workspace_.idArrayInput[i][0] === text) { index = i }
-    }
-    if (index > -1) { this.workspace_.idArrayInput.splice(index, 1) }
-  } else if (this.idType === 'user' && this.workspace_.idArrayUser) {
-    for (i = 0; i < this.workspace_.idArrayUser.length; i++) {
-      if (this.workspace_.idArrayUser[i][0] === text) { index = i }
-    }
-    if (index > -1) {
-      var maxUsers = this.sourceBlock_.inputList[1].fieldRow[3].text_
-      this.workspace_.idArrayUser.splice(index, 1 + maxUsers)
-    }
+  for (i = 0; i < this.idArray.length; i++) {
+    if (this.idArray[i][0] === text) { index = i }
+  }
+  if (index > -1) { this.idArray.splice(index, 1) }
+  if (this.idType === 'user') {
+    var maxUsers = this.sourceBlock_.inputList[1].fieldRow[3].text_
+    this.idArray.splice(index, 1 + maxUsers)
   }
 }
 
@@ -648,6 +624,7 @@ IdFieldText.prototype.removeId = function (text) {
 
 var UserMaxFieldNumber = function (initialValue) {
   this.previous = initialValue || 2
+  this.idType = 'user'
   UserMaxFieldNumber.superClass_.constructor.call(this, initialValue, 2, 10, 1)
 }
 goog.inherits(UserMaxFieldNumber, Blockly.FieldNumber)
@@ -682,20 +659,20 @@ UserMaxFieldNumber.prototype.updateIds = function (text) {
   if (diff > 0) {
     if (userId) {
       for (i = parseInt(this.previous) + 1; i <= text; i++) {
-        this.sourceBlock_.workspace.idArrayUser.push([userId + '.' + i, userId + '.' + i])
+        this.idArray.push([userId + '.' + i, userId + '.' + i])
       }
     }
   } else {
     var numDel = Math.abs(diff)
     var index = -1
-    for (i = 0; i < this.workspace_.idArrayUser.length; i++) {
-      if (this.workspace_.idArrayUser[i][0] === userId) {
+    for (i = 0; i < this.idArray.length; i++) {
+      if (this.idArray[i][0] === userId) {
         index = i
         break
       }
     }
     if (index > 0) {
-      this.workspace_.idArrayUser.splice(index + 1 + parseInt(text), numDel)
+      this.idArray.splice(index + 1 + parseInt(text), numDel)
     }
   }
 }
