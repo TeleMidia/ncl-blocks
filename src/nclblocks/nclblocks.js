@@ -607,7 +607,7 @@ IdFieldText.prototype.saveId = function (text) {
     var maxUsers = this.sourceBlock_.inputList[1].fieldRow[3].text_
     if (maxUsers) {
       for (var i = 1; i <= maxUsers; i++) {
-        this.sourceBlock_.workspace.idArrayUser.push([text + i, text + i])
+        this.sourceBlock_.workspace.idArrayUser.push([text + '.' + i, text + '.' + i])
       }
     }
   }
@@ -682,7 +682,7 @@ UserMaxFieldNumber.prototype.updateIds = function (text) {
   if (diff > 0) {
     if (userId) {
       for (i = parseInt(this.previous) + 1; i <= text; i++) {
-        this.sourceBlock_.workspace.idArrayUser.push([userId + i, userId + i])
+        this.sourceBlock_.workspace.idArrayUser.push([userId + '.' + i, userId + '.' + i])
       }
     }
   } else {
