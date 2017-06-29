@@ -2,7 +2,7 @@
 // nclblocks config
 // ----------------------------------------
 
-var _pathToBlockly = 'nclblocks/'
+var _pathToBlockly = '../../src/'
 
 // ----------------------------------------
 // survey config
