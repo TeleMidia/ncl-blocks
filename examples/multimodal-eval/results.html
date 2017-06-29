@@ -2,24 +2,25 @@
 <html>
 
 <head>
-  <title>thesis questionario view block result</title>
+  <title>multimodal evaluation results</title>
   <meta charset="utf-8">
   <!-- nclblocks-->
-  <script src="nclblocks/blockly_compressed.js"></script>
-  <script src="nclblocks/blocks_compressed.js"></script>
-  <script src="nclblocks/pt-br.js"></script>
-  <script src="nclblocks/nclblocks.js"></script>
+  <script src="../../src/blockly_compressed.js"></script>
+  <script src="../../src/blocks_compressed.js"></script>
+  <script src="../../src/pt-br.js"></script>
+  <script src="../../src/nclblocks.js"></script>
+  <!-- syntaxhighlighter_v3.js -->
+  <link type="text/css" rel="stylesheet" href="../../src/syntaxhighlighter_v3/shCore.css">
+  <link type="text/css" rel="stylesheet" href="../../src/syntaxhighlighter_v3/shThemeDefault.css">
+  <script type="text/javascript" src="../../src/syntaxhighlighter_v3/shCore.js"></script>
+  <script type="text/javascript" src="../../src/syntaxhighlighter_v3/shBrushXml.js"></script>
+
   <!-- bootstrap-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
   <!-- jquery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js">
-
   </script>
-  <!-- syntaxhighlighter_v3.js -->
-  <link type="text/css" rel="stylesheet" href="syntaxhighlighter_v3/shCore.css">
-  <link type="text/css" rel="stylesheet" href="syntaxhighlighter_v3/shThemeDefault.css">
-  <script type="text/javascript" src="syntaxhighlighter_v3/shCore.js"></script>
-  <script type="text/javascript" src="syntaxhighlighter_v3/shBrushXml.js"></script>
+
   <!-- survey.js -->
   <script src="https://surveyjs.azureedge.net/0.12.7/survey.jquery.min.js"></script>
 </head>
@@ -54,7 +55,7 @@
     // ----------------------------------------
     // blockly
     // ----------------------------------------
-    var _workspace = NclBlocks.injectInDiv('nclblocks/', 'divToInject', '800px', '', true)
+    var _workspace = NclBlocks.injectInDiv('../../src/', 'divToInject', '800px', '', true)
 
     // ----------------------------------------
     // request
