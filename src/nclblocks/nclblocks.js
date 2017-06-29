@@ -417,12 +417,12 @@ var InputStackMixin = {
 // ----------------------------------------
 
 var NclBlockMixin = {
-  sharedInit: function () {
+  initShared: function () {
     this.contextMenu = false
     this.setInputsInline(false)
   },
-  mediaLikeInit: function (isSRC = false) {
-    this.sharedInit()
+  initAsMedia: function (isSRC = false) {
+    this.initShared()
     this.setColour(NclBlocks.MEDIA_COLOUR)
     if (isSRC) {
       this.setOutput(true, NclBlocks.USE_CHECK ? 'media_src_type' : null)
@@ -430,8 +430,8 @@ var NclBlockMixin = {
       this.setOutput(true, 'media_type')
     }
   },
-  inputLikeInit: function (isSRC = false) {
-    this.sharedInit()
+  initAsInput: function (isSRC = false) {
+    this.initShared()
     this.setColour(NclBlocks.INPUT_COLOUR)
     if (isSRC) {
       this.setOutput(true, NclBlocks.USE_CHECK ? 'input_src_type' : null)
@@ -439,8 +439,8 @@ var NclBlockMixin = {
       this.setOutput(true, 'input_type')
     }
   },
-  userLikeInit: function (isSRC = false) {
-    this.sharedInit()
+  initAsUser: function (isSRC = false) {
+    this.initShared()
     this.setColour(NclBlocks.USER_COLOUR)
     if (isSRC) {
       this.setOutput(true, NclBlocks.USE_CHECK ? 'user_src_type' : null)
@@ -448,18 +448,18 @@ var NclBlockMixin = {
       this.setOutput(true, 'user_type')
     }
   },
-  linkLikeInit: function () {
-    this.sharedInit()
+  initAsLink: function () {
+    this.initShared()
     this.setColour(NclBlocks.LINK_COLOUR)
     if (NclBlocks.USE_BODY === true) this.setOutput(true, 'link_type')
   },
   conditionLikeInit: function () {
-    this.sharedInit()
+    this.initShared()
     this.setColour(NclBlocks.CONDITION_COLOUR)
     this.setOutput(true, NclBlocks.USE_CHECK ? 'condition_type' : null)
   },
   actionLikeInit: function () {
-    this.sharedInit()
+    this.initShared()
     this.setColour(NclBlocks.ACTION_COLOUR)
     this.setPreviousStatement(true, NclBlocks.USE_CHECK ? 'action_type' : null)
     this.setNextStatement(true, NclBlocks.USE_CHECK ? 'action_type' : null)
@@ -713,7 +713,7 @@ Object.assign(Blockly.Blocks.body, InputStackMixin)
 
 Blockly.Blocks.media = {
   init: function () {
-    this.mediaLikeInit()
+    this.initAsMedia()
 
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.media, 25, 25,
@@ -731,7 +731,7 @@ Object.assign(Blockly.Blocks.media, NclBlockMixin)
 
 Blockly.Blocks.image = {
   init: function () {
-    this.mediaLikeInit(true)
+    this.initAsMedia(true)
 
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.image, 25, 25,
@@ -743,7 +743,7 @@ Object.assign(Blockly.Blocks.image, NclBlockMixin)
 
 Blockly.Blocks.video = {
   init: function () {
-    this.mediaLikeInit(true)
+    this.initAsMedia(true)
 
     // InputStackMixin config
     this.stackSize = 0
@@ -771,7 +771,7 @@ Object.assign(Blockly.Blocks.video, InputStackMixin)
 
 Blockly.Blocks.audio = {
   init: function () {
-    this.mediaLikeInit(true)
+    this.initAsMedia(true)
 
     // InputStackMixin config
     this.stackSize = 0
@@ -799,7 +799,7 @@ Object.assign(Blockly.Blocks.audio, InputStackMixin)
 
 Blockly.Blocks.ssml = {
   init: function () {
-    this.mediaLikeInit(true)
+    this.initAsMedia(true)
 
     // InputStackMixin config
     this.stackSize = 0
@@ -830,7 +830,7 @@ Object.assign(Blockly.Blocks.ssml, InputStackMixin)
 
 Blockly.Blocks.input = {
   init: function () {
-    this.inputLikeInit(false)
+    this.initAsInput(false)
 
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.input, 25, 25,
@@ -847,7 +847,7 @@ Object.assign(Blockly.Blocks.input, NclBlockMixin)
 
 Blockly.Blocks.srgs = {
   init: function () {
-    this.inputLikeInit(true)
+    this.initAsInput(true)
 
     // InputStackMixin config
     this.stackSize = 0
@@ -873,7 +873,7 @@ Object.assign(Blockly.Blocks.srgs, InputStackMixin)
 
 Blockly.Blocks.hand_gesture = {
   init: function () {
-    this.inputLikeInit(true)
+    this.initAsInput(true)
 
     // InputStackMixin config
     this.stackSize = 0
@@ -903,7 +903,7 @@ Object.assign(Blockly.Blocks.hand_gesture, InputStackMixin)
 
 Blockly.Blocks.user = {
   init: function () {
-    this.userLikeInit()
+    this.initAsUser()
 
     // InputStackMixin config
     this.stackSize = 0
@@ -934,7 +934,7 @@ Object.assign(Blockly.Blocks.user, InputStackMixin)
 
 Blockly.Blocks.headset = {
   init: function () {
-    this.userLikeInit(true)
+    this.initAsUser(true)
 
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.microfone, 25, 25, '*'))
@@ -945,7 +945,7 @@ Object.assign(Blockly.Blocks.headset, NclBlockMixin)
 
 Blockly.Blocks.hand_gesture_sensor = {
   init: function () {
-    this.userLikeInit(true)
+    this.initAsUser(true)
 
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.hand_gesture_sensor,
@@ -961,7 +961,7 @@ Object.assign(Blockly.Blocks.hand_gesture_sensor, NclBlockMixin)
 
 Blockly.Blocks.port = {
   init: function () {
-    this.linkLikeInit()
+    this.initAsLink()
 
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.port, 25, 25, '*'))
@@ -979,7 +979,7 @@ Object.assign(Blockly.Blocks.port, NclBlockMixin)
 
 Blockly.Blocks.link = {
   init: function () {
-    this.linkLikeInit()
+    this.initAsLink()
 
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.link, 25, 25, '*'))
