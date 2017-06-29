@@ -3,12 +3,23 @@ goog.require('Blockly.Blocks')
 NclBlocks = {}
 NclBlocks.Msg = {}
 NclBlocks.Icons = {}
+NclBlocks.types = {
+  NODE: 'node',
+  MEDIA: 'media',
+  MEDIA_SRC: 'media_src',
+  INPUT: 'input',
+  INPUT_SRC: 'input_src',
+  USER: 'user',
+  USER_DEVICE: 'user_device',
+  LINK: 'link',
+  CONDITION: 'condition',
+  ACTION: 'action'
+}
 
 // ----------------------------------------
 // messsages
 // ----------------------------------------
 NclBlocks.Msg.AND = 'e'
-
 NclBlocks.Msg.BODY = 'app'
 NclBlocks.Msg.PORT = 'início da app'
 NclBlocks.Msg.PORT_LABEL = 'quando iniciar app inicie'
@@ -429,44 +440,44 @@ var NclBlockMixin = {
     this.initShared()
     this.setColour(NclBlocks.MEDIA_COLOUR)
     if (isSRC) {
-      this.setOutput(true, NclBlocks.USE_CHECK ? 'media_src_type' : null)
+      this.setOutput(true, NclBlocks.USE_CHECK ? NclBlocks.types.MEDIA_SRC : null)
     } else if (NclBlocks.USE_BODY === true) {
-      this.setOutput(true, 'media_type')
+      this.setOutput(true, NclBlocks.types.MEDIA)
     }
   },
   initAsInput: function (isSRC = false) {
     this.initShared()
     this.setColour(NclBlocks.INPUT_COLOUR)
     if (isSRC) {
-      this.setOutput(true, NclBlocks.USE_CHECK ? 'input_src_type' : null)
+      this.setOutput(true, NclBlocks.USE_CHECK ? NclBlocks.types.INPUT_SRC : null)
     } else if (NclBlocks.USE_BODY === true) {
-      this.setOutput(true, 'input_type')
+      this.setOutput(true, NclBlocks.types.INPUT)
     }
   },
   initAsUser: function (isSRC = false) {
     this.initShared()
     this.setColour(NclBlocks.USER_COLOUR)
     if (isSRC) {
-      this.setOutput(true, NclBlocks.USE_CHECK ? 'user_src_type' : null)
+      this.setOutput(true, NclBlocks.USE_CHECK ? NclBlocks.types.USER_SRC : null)
     } else if (NclBlocks.USE_BODY === true) {
-      this.setOutput(true, 'user_type')
+      this.setOutput(true, NclBlocks.types.USER)
     }
   },
   initAsLink: function () {
     this.initShared()
     this.setColour(NclBlocks.LINK_COLOUR)
-    if (NclBlocks.USE_BODY === true) this.setOutput(true, 'link_type')
+    if (NclBlocks.USE_BODY === true) this.setOutput(true, NclBlocks.types.LINK)
   },
   conditionLikeInit: function () {
     this.initShared()
     this.setColour(NclBlocks.CONDITION_COLOUR)
-    this.setOutput(true, NclBlocks.USE_CHECK ? 'condition_type' : null)
+    this.setOutput(true, NclBlocks.USE_CHECK ? NclBlocks.types.CONDITION : null)
   },
   actionLikeInit: function () {
     this.initShared()
     this.setColour(NclBlocks.ACTION_COLOUR)
-    this.setPreviousStatement(true, NclBlocks.USE_CHECK ? 'action_type' : null)
-    this.setNextStatement(true, NclBlocks.USE_CHECK ? 'action_type' : null)
+    this.setPreviousStatement(true, NclBlocks.USE_CHECK ? NclBlocks.types.ACTION : null)
+    this.setNextStatement(true, NclBlocks.USE_CHECK ? NclBlocks.types.ACTION : null)
   }
 }
 
@@ -696,7 +707,7 @@ Blockly.Blocks.body = {
     this.isInputValue = true
     this.configureNewInput = function (newInput, index) {
       newInput.appendField()
-        .setCheck(NclBlocks.USE_CHECK ? ['media_type', 'input_type', 'user_type', 'link_type'] : null)
+        .setCheck(NclBlocks.USE_CHECK ? [NclBlocks.types.MEDIA, NclBlocks.types.INPUT, NclBlocks.types.USER, NclBlocks.types.LINK] : null)
     }
     // add name
     this.appendDummyInput()
@@ -724,7 +735,7 @@ Blockly.Blocks.media = {
         '*'))
       .appendField('{' + NclBlocks.Msg.MEDIA + '}')
     this.appendValueInput('src')
-      .setCheck(NclBlocks.USE_CHECK ? 'media_src_type' : null)
+      .setCheck(NclBlocks.USE_CHECK ? NclBlocks.types.MEDIA_SRC : null)
       .appendField('id')
       .appendField(new IdFieldText('', 'media'), 'id')
       .appendField('e ' + NclBlocks.Msg.SRC)
@@ -841,7 +852,7 @@ Blockly.Blocks.input = {
         '*'))
       .appendField('{' + NclBlocks.Msg.INPUT + '}')
     this.appendValueInput('src')
-      .setCheck(NclBlocks.USE_CHECK ? 'input_src_type' : null)
+      .setCheck(NclBlocks.USE_CHECK ? NclBlocks.types.INPUT_SRC : null)
       .appendField('id')
       .appendField(new IdFieldText('', 'input'), 'id')
       .appendField('e ' + NclBlocks.Msg.SRC)
@@ -920,7 +931,7 @@ Blockly.Blocks.user = {
     this.isInputValue = true
     this.configureNewInput = function (newInput, index) {
       newInput.appendField(NclBlocks.Msg.WITH_DEVICE)
-        .setCheck(NclBlocks.USE_CHECK ? 'user_device_type' : null)
+        .setCheck(NclBlocks.USE_CHECK ? NclBlocks.types.USER_DEVICE : null)
     }
     // add name
     this.appendDummyInput()
@@ -995,10 +1006,10 @@ Blockly.Blocks.link = {
       .appendField(new Blockly.FieldImage(Blockly.pathToBlockly + NclBlocks.Icons.link, 25, 25, '*'))
       .appendField('{' + NclBlocks.Msg.LINK + '}')
     this.appendValueInput('conditions')
-      .setCheck(NclBlocks.USE_CHECK ? 'condition_type' : null)
+      .setCheck(NclBlocks.USE_CHECK ? NclBlocks.types.CONDITION : null)
       .appendField(NclBlocks.Msg.WHEN)
     this.appendStatementInput('actions')
-      .setCheck(NclBlocks.USE_CHECK ? 'action_type' : null)
+      .setCheck(NclBlocks.USE_CHECK ? NclBlocks.types.ACTION : null)
       .appendField(NclBlocks.Msg.DO)
   }
 }
@@ -1108,7 +1119,7 @@ Blockly.Blocks.compoundcondition = {
     this.stackSize = 0
     this.isInputValue = true
     this.configureNewInput = function (newInput, index) {
-      newInput.setCheck(NclBlocks.USE_CHECK ? 'condition_type' : null)
+      newInput.setCheck(NclBlocks.USE_CHECK ? NclBlocks.types.CONDITION : null)
     }
     // add name
     this.appendDummyInput()
