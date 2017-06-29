@@ -5,10 +5,10 @@
   <meta charset="utf-8">
   <title>Blockly Demo: Fixed Blockly</title>
   <!-- nclblocks-->
-  <script src="blockly_compressed.js"></script>
-  <script src="blocks_compressed.js"></script>
-  <script src="pt-br.js"></script>
-  <script src="nclblocks.js"></script>
+  <script src="../src/blockly_compressed.js"></script>
+  <script src="../src/blocks_compressed.js"></script>
+  <script src="../src/pt-br.js"></script>
+  <script src="../src/nclblocks.js"></script>
   <!-- bootstrap-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
   <!-- jquery -->
@@ -54,11 +54,11 @@
     </tr>
   </table>
   <script>
-    Blockly.pathToBlockly = './'
+    Blockly.pathToBlockly = '../src/'
     // NclBlocks.enableBody()
     // NclBlocks.enableTypeCheck()
-    var _workspace = NclBlocks.injectInDiv('./', 'divToInject', '800px')
-    // var _workspace = NclBlocks.injectInDiv('./', 'divToInject', '800px', '', false, ['excludeRecognition', 'excludeResumePauseSet'])
+    var _workspace = NclBlocks.injectInDiv(Blockly.pathToBlockly, 'divToInject', '800px')
+    // var _workspace = NclBlocks.injectInDiv(Blockly.pathToBlockly, 'divToInject', '800px', '', false, ['excludeRecognition', 'excludeResumePauseSet'])
 
     // ----------------------------------------
     // blocks buttons functions
