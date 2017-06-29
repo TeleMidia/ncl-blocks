@@ -1,8 +1,11 @@
 goog.require('Blockly.Blocks')
 
 NclBlocks = {}
-NclBlocks.Msg = {}
-NclBlocks.Icons = {}
+
+// ----------------------------------------
+// types
+// ----------------------------------------
+
 NclBlocks.types = {
   NODE: 'node',
   MEDIA: 'media',
@@ -19,6 +22,8 @@ NclBlocks.types = {
 // ----------------------------------------
 // messsages
 // ----------------------------------------
+
+NclBlocks.Msg = {}
 NclBlocks.Msg.AND = 'e'
 NclBlocks.Msg.BODY = 'app'
 NclBlocks.Msg.PORT = 'início da app'
@@ -87,6 +92,7 @@ NclBlocks.Msg.SET_TO = 'com valor'
 // icons
 // ----------------------------------------
 
+NclBlocks.Icons = {}
 NclBlocks.Icons.context = 'media/icon-context.png'
 NclBlocks.Icons.media = 'media/icon-media.png'
 NclBlocks.Icons.video = 'media/icon-media-video.png'
@@ -117,14 +123,15 @@ NclBlocks.Icons.set = 'media/icon-bind-set.png'
 // colours
 // ----------------------------------------
 
-NclBlocks.BODY_COLOUR = 20
-NclBlocks.MEDIA_COLOUR = 100
-NclBlocks.INPUT_COLOUR = 150
-NclBlocks.USER_COLOUR = 40
-NclBlocks.LINK_COLOUR = 260
-NclBlocks.PORT_COLOUR = 260
-NclBlocks.CONDITION_COLOUR = 280
-NclBlocks.ACTION_COLOUR = 225
+NclBlocks.colours = {}
+NclBlocks.colours.BODY = 20
+NclBlocks.colours.MEDIA = 100
+NclBlocks.colours.INPUT = 150
+NclBlocks.colours.USER = 40
+NclBlocks.colours.LINK = 260
+NclBlocks.colours.PORT = 260
+NclBlocks.colours.CONDITION = 280
+NclBlocks.colours.ACTION = 225
 
 // ----------------------------------------
 // default toolbox
@@ -275,7 +282,7 @@ NclBlocks.moveDownBlocksInXML = function (xml) {
 }
 
 // ----------------------------------------
-// inject functions
+// block inject function
 // ----------------------------------------
 
 NclBlocks.injectInDiv = function (pathToBlockly, parendDivId, height, workspaceXml = '', isStatic = false, toolboxOptions = []) {
@@ -448,7 +455,7 @@ var NclBlockMixin = {
   },
   initAsMedia: function (isSRC = false) {
     this.initShared()
-    this.setColour(NclBlocks.MEDIA_COLOUR)
+    this.setColour(NclBlocks.colours.MEDIA)
     if (isSRC) {
       this.setOutput(true, NclBlocks.USE_CHECK ? NclBlocks.types.MEDIA_SRC : null)
     } else if (NclBlocks.USE_BODY === true) {
@@ -457,7 +464,7 @@ var NclBlockMixin = {
   },
   initAsInput: function (isSRC = false) {
     this.initShared()
-    this.setColour(NclBlocks.INPUT_COLOUR)
+    this.setColour(NclBlocks.colours.INPUT)
     if (isSRC) {
       this.setOutput(true, NclBlocks.USE_CHECK ? NclBlocks.types.INPUT_SRC : null)
     } else if (NclBlocks.USE_BODY === true) {
@@ -466,7 +473,7 @@ var NclBlockMixin = {
   },
   initAsUser: function (isSRC = false) {
     this.initShared()
-    this.setColour(NclBlocks.USER_COLOUR)
+    this.setColour(NclBlocks.colours.USER)
     if (isSRC) {
       this.setOutput(true, NclBlocks.USE_CHECK ? NclBlocks.types.USER_SRC : null)
     } else if (NclBlocks.USE_BODY === true) {
@@ -475,17 +482,17 @@ var NclBlockMixin = {
   },
   initAsLink: function () {
     this.initShared()
-    this.setColour(NclBlocks.LINK_COLOUR)
+    this.setColour(NclBlocks.colours.LINK)
     if (NclBlocks.USE_BODY === true) this.setOutput(true, NclBlocks.types.LINK)
   },
   conditionLikeInit: function () {
     this.initShared()
-    this.setColour(NclBlocks.CONDITION_COLOUR)
+    this.setColour(NclBlocks.colours.CONDITION)
     this.setOutput(true, NclBlocks.USE_CHECK ? NclBlocks.types.CONDITION : null)
   },
   actionLikeInit: function () {
     this.initShared()
-    this.setColour(NclBlocks.ACTION_COLOUR)
+    this.setColour(NclBlocks.colours.ACTION)
     this.setPreviousStatement(true, NclBlocks.USE_CHECK ? NclBlocks.types.ACTION : null)
     this.setNextStatement(true, NclBlocks.USE_CHECK ? NclBlocks.types.ACTION : null)
   }
@@ -708,7 +715,7 @@ UserMaxFieldNumber.prototype.updateIds = function (text) {
 
 Blockly.Blocks.body = {
   init: function () {
-    this.setColour(NclBlocks.BODY_COLOUR)
+    this.setColour(NclBlocks.colours.BODY)
     this.contextMenu = false
     this.setDeletable(false)
 
