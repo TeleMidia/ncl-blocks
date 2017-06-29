@@ -606,7 +606,7 @@ IdFieldText.prototype.removeId = function (text) {
   // at worksapce
   var index = -1
   var i
-  for (i = 0; i < this.idArray.length; i++) {
+  for (i in this.idArray) {
     if (this.idArray[i][0] === text) { index = i }
   }
   if (index > -1) { this.idArray.splice(index, 1) }
@@ -662,7 +662,7 @@ UserMaxFieldNumber.prototype.updateIds = function (text) {
   } else {
     var numDel = Math.abs(diff)
     var index = -1
-    for (i = 0; i < this.idArray.length; i++) {
+    for (i in this.idArray) {
       if (this.idArray[i][0] === userId) {
         index = i
         break

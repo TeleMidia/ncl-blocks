@@ -64,8 +64,7 @@
 
     $.get('http://dxsurvey.com/api/MySurveys/getSurveyResults/59bd2657-93ac-492c-8dd5-134a10ebd69a?accessKey=d72526e70b814a3d8f918b60b94dafe4', function (data) {
       _resultsData = data.Data
-      var i
-      for (i = 0; i < _resultsData.length; i++) {
+      for (var i in _resultsData) {
         $('#resultIndex').append($('<option>').attr('value', i).html(i))
       }
     })

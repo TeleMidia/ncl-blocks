@@ -56,7 +56,7 @@ $('#complete-btn').click(function () {
   _survey.doComplete()
 })
 if ($('#surveyPageNo').length) {
-  for (var i = 0; i < _survey.pages.length; i++) {
+  for (var i in _survey.pages) {
     $('<option />')
       .attr('value', i)
       .html(_survey.pages[i].name)
