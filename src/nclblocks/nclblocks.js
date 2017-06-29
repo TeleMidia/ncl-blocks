@@ -189,16 +189,26 @@ NclBlocks.START_WORKSPACE_WITH_BODY =
     </xml>`
 
 // ----------------------------------------
-// flags
+// flags functions
 // ----------------------------------------
 
 Blockly.BlockSvg.START_HAT = true
 NclBlocks.USE_BODY = false
 NclBlocks.USE_CHECK = false
 
-NclBlocks.useBody = function () {
+NclBlocks.enableBody = function () {
   Blockly.BlockSvg.START_HAT = false
   NclBlocks.USE_BODY = true
+}
+NclBlocks.disableBody = function () {
+  Blockly.BlockSvg.START_HAT = true
+  NclBlocks.USE_BODY = false
+}
+NclBlocks.enableTypeCheck = function () {
+  NclBlocks.USE_CHECK = true
+}
+NclBlocks.disableTypeCheck = function () {
+  NclBlocks.USE_CHECK = false
 }
 
 // ----------------------------------------
