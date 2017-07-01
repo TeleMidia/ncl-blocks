@@ -2,7 +2,7 @@
 
 ![](http://www.ncl.org.br/sites/ncl.org.br/files/newsflash_logo.png)
 
-A tool developed with Google Blocks to enable a block-based development of NCL applications.
+A tool, based in Google Blocks, to enable a block-oriented development of NCL applications.
 
 **The project page is <https://github.com/alanlivio/nclblocks>**
 
