@@ -177,13 +177,11 @@ function saveblocksEditTask1Changes (primaryEvent) {
     jsonToSave = JSON.parse(savedJsonStr)
   }
   jsonToSave.changes.push(jsonFromEvent)
-  // console.log(jsonFromEvent);
   _survey.getQuestionByName('blocksEditTask1Changes').value =
     JSON.stringify(jsonToSave)
 
   // save blocksEditTask1 result
   var xml = Blockly.Xml.workspaceToDom(_blocksEditTask1Workspace)
-  // console.log(xml));
   var xmlText = Blockly.Xml.domToText(xml)
   _survey.getQuestionByName('blocksEditTask1Result').value = xmlText
 }
@@ -200,13 +198,11 @@ function saveblocksEditTask2Changes (primaryEvent) {
     jsonToSave = JSON.parse(savedJsonStr)
   }
   jsonToSave.changes.push(jsonFromEvent)
-  // console.log(jsonFromEvent)
   _survey.getQuestionByName('blocksEditTask2Changes').value =
     JSON.stringify(jsonToSave)
 
   // save blocksEditTask1 result
   var xml = Blockly.Xml.workspaceToDom(_blocksEditTask2Workspace)
-  // console.log(xml)
   var xmlText = Blockly.Xml.domToText(xml)
   _survey.getQuestionByName('blocksEditTask2Result').value = xmlText
 }

@@ -96,7 +96,6 @@
       } else if ($('#blockTask option:selected').val() === 'blocksEditTask2') {
         savedWorkspaceXml = _resultsData[selectIndex].blocksEditTask2Result
       }
-      // console.log(savedWorkspaceXml)
       $('#xmlcode').val(savedWorkspaceXml)
       Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(savedWorkspaceXml), _workspace)
       testEmptyXML()
@@ -129,7 +128,6 @@
         return
       }
       var json = result.changes[_runEventIntervalIndex]
-      // console.log(json)
       var event = Blockly.Events.fromJson(json, _workspace)
       event.run(true)
       _runEventIntervalIndex++
