@@ -47,7 +47,7 @@ NclBlocks.Msg.SRGS = 'descrição de voz'
 NclBlocks.Msg.SRGS_ANCHOR = 'reconhece frase'
 NclBlocks.Msg.SRGS_ITEM = 'frase a reconhecer'
 NclBlocks.Msg.HAND_GESTURE = 'descrição de gestos'
-NclBlocks.Msg.HAND_GESTURE_ANCHOR = 'reconhece gesto de mão para'
+NclBlocks.Msg.HAND_GESTURE_ANCHOR = 'reconhece gesto de mão'
 NclBlocks.Msg.HAND_GESTURE_ITEM = 'gesto a reconhecer'
 NclBlocks.Msg.HAND_UP = 'cima'
 NclBlocks.Msg.HAND_DOWN = 'baixo'
@@ -102,6 +102,10 @@ NclBlocks.Icons.input = 'media/icon-recognition.png'
 NclBlocks.Icons.ssml = 'media/ssml.png'
 NclBlocks.Icons.srgs = 'media/srgs.png'
 NclBlocks.Icons.hand_gesture = 'media/hand-gesture.png'
+NclBlocks.Icons.hand_gesture_scroll_down = 'media/gesture_scroll_down.png'
+NclBlocks.Icons.hand_gesture_scroll_up = 'media/gesture_scroll_up.png'
+NclBlocks.Icons.hand_gesture_swipe_left = 'media/gesture_swipe_left.png'
+NclBlocks.Icons.hand_gesture_swipe_right = 'media/gesture_swipe_right.png'
 NclBlocks.Icons.port = 'media/icon-link.png'
 NclBlocks.Icons.link = 'media/icon-link.png'
 NclBlocks.Icons.user = 'media/icon-user-class.png'
@@ -796,7 +800,7 @@ Blockly.Blocks.video = {
     this.configureNewInput = function (newInput, index) {
       newInput.appendField(NclBlocks.Msg.PORTION)
         .appendField(new IdFieldText('', NclBlocks.types.MEDIA), 'id_area' +
-          index)
+        index)
         .appendField(NclBlocks.Msg.ANCHOR_BEGIN)
         .appendField(new Blockly.FieldTextInput(''), 'begin' + index)
         .appendField(NclBlocks.Msg.ANCHOR_END)
@@ -826,7 +830,7 @@ Blockly.Blocks.audio = {
     this.configureNewInput = function (newInput, index) {
       newInput.appendField(NclBlocks.Msg.PORTION)
         .appendField(new IdFieldText('', NclBlocks.types.MEDIA), 'id_area' +
-          index)
+        index)
         .appendField(NclBlocks.Msg.ANCHOR_BEGIN)
         .appendField(new Blockly.FieldTextInput(''), 'begin' + index)
         .appendField(NclBlocks.Msg.ANCHOR_END)
@@ -856,7 +860,7 @@ Blockly.Blocks.ssml = {
     this.configureNewInput = function (newInput, index) {
       newInput.appendField(NclBlocks.Msg.PORTION)
         .appendField(new IdFieldText('', NclBlocks.types.MEDIA), 'id_area' +
-          index)
+        index)
         .appendField(NclBlocks.Msg.SSML_ANCHOR)
         .appendField(new Blockly.FieldTextInput(''), 'label' + index)
     }
@@ -906,7 +910,7 @@ Blockly.Blocks.srgs = {
     this.configureNewInput = function (newInput, index) {
       newInput.appendField(NclBlocks.Msg.PORTION)
         .appendField(new IdFieldText('', NclBlocks.types.INPUT), 'id_area' +
-          index)
+        index)
         .appendField(NclBlocks.Msg.SRGS_ANCHOR)
         .appendField(new Blockly.FieldTextInput(''), 'label' + index)
     }
@@ -934,14 +938,16 @@ Blockly.Blocks.hand_gesture = {
     this.configureNewInput = function (newInput, index) {
       newInput.appendField(NclBlocks.Msg.PORTION)
         .appendField(new IdFieldText('', NclBlocks.types.INPUT), 'id_area' +
-          index)
+        index)
         .appendField(NclBlocks.Msg.HAND_GESTURE_ANCHOR)
         .appendField(new Blockly.FieldDropdown(
           [
-            [NclBlocks.Msg.HAND_UP, 'up'],
-            [NclBlocks.Msg.HAND_DOWN, 'down'],
-            [NclBlocks.Msg.HAND_LEFT, 'left'],
-            [NclBlocks.Msg.HAND_RIGHT, 'right']
+            ['-', '-'],
+            [{
+              'src': Blockly.pathToBlockly + NclBlocks.Icons.hand_gesture_scroll_down, 'width': 70, 'height': 70, 'alt': NclBlocks.Msg.HAND_DOWN }, 'CANADA'],
+            [{ 'src': Blockly.pathToBlockly + NclBlocks.Icons.hand_gesture_scroll_up, 'width': 70, 'height': 70, 'alt': NclBlocks.Msg.HAND_UP }, NclBlocks.Msg.HAND_UP],
+            [{ 'src': Blockly.pathToBlockly + NclBlocks.Icons.hand_gesture_swipe_left, 'width': 70, 'height': 70, 'alt': NclBlocks.Msg.HAND_LEFT }, NclBlocks.Msg.HAND_LEFT],
+            [{ 'src': Blockly.pathToBlockly + NclBlocks.Icons.hand_gesture_swipe_right, 'width': 70, 'height': 70, 'alt': NclBlocks.Msg.HAND_RIGHT }, NclBlocks.Msg.HAND_RIGHT]
           ]), 'label' + index)
     }
     // add name
