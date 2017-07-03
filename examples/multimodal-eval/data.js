@@ -695,9 +695,9 @@ _data.blocksIntro3aXml = `
           <mutation length="2">
           </mutation>
           <field name="id_area0">gesto_centro</field>
-          <field name="label0">aceno_esquerda</field>
+          <field name="label0">esquerda</field>
           <field name="id_area1">gesto_praia</field>
-          <field name="label1">eceno_direta</field>
+          <field name="label1">direta</field>
         </block>
       </value>
     </block>
