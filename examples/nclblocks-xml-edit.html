@@ -62,11 +62,9 @@
     </tr>
   </table>
   <script>
-    Blockly.pathToBlockly = '../src/'
     // NclBlocks.enableBody()
     // NclBlocks.enableTypeCheck()
-    var _workspace = NclBlocks.injectInDiv(Blockly.pathToBlockly,
-      'divToInject', '800px')
+    var _workspace = NclBlocks.injectInDiv('../src/', 'divToInject', '800px')
     // var _workspace = NclBlocks.injectInDiv(Blockly.pathToBlockly,
     // 'divToInject', '800px', '', false, ['excludeRecognition',
     // 'excludeResumePauseSet'])
