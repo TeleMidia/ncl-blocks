@@ -5,15 +5,7 @@ var _data = {}
 // ----------------------------------------
 
 _data.surveyJSON = {
-  completeText: 'Finalizar estudo',
-  completedHtml: `
-    <br><br><br><br><br><br><br><br><br><br><br><br>
-    <div class='alert alert-success' role='alert' style='text-align:center;'>
-      <h2>Muito bem!!! Terminamos a nossa entrevista.<br>
-      Obrigado por sua participação em nosso estudo.</h2>
-      <span class='glyphicon glyphicon-thumbs-up' style='font-size: 75px;'
-        aria-hidden='true'></span>
-    </div>`,
+  completeText: 'Finalizar entrevista',
   focusFirstQuestionAutomatic: false,
   locale: 'en',
   pageNextText: 'seguir',
@@ -22,7 +14,6 @@ _data.surveyJSON = {
   showProgressBar: 'top',
   showQuestionNumbers: 'off',
   surveyPostId: '51d57b85-3813-4a08-801b-4b7e077c1660',
-  // title: 'Estudo sobre interações multimodais em linguagens multimídia',
   pages: []
 }
 var pageIndex
@@ -33,40 +24,38 @@ var pageIndex
 
 _data.surveyJSON.pages.push({
   name: 'termo',
-  title: 'Termo de consentimento para o estudo',
+  title: 'Termo de consentimento para o entrevista',
   elements: [
     {
       type: 'html',
       html: `
-            O TeleMídia é um grupo de pesquisa do departamento de Informática
+            <p>O TeleMídia é um grupo de pesquisa do departamento de Informática
             da PUC-Rio que desenvolve pesquisas nas áreas de Sistemas 
             Multimídia e Redes de Computadores. Em particular, Sistemas de TV 
-            Digital, terrestre e IPTV, têm sido foco de pesquisa e inovação do 
-            laboratório nos últimos anos.<br><br>
+            Digital terrestre e IPTV, têm sido foco de pesquisa e inovação do 
+            laboratório nos últimos anos.</p><br>
             
-            Convidamos a você a participar de um de nosso estudo 
-            sobre<i>Interações multimodais em linguagens multimídia</i>.<br><br>
+            <p>Convidamos a você a fazer uma entrevista sobre nosso estudo
+            chamado de <i>Interações multimodais em linguagens
+            multimídia</i>.</p><br>
             
-            <strong>Ressaltamos que esse estudo NÃO se destina à avaliar seus 
-            conhecimentos acerca dos conceitos apresentados, mas sim capturar 
-            evidências de nossa pesquisa.</strong><br><br>
+            <p><strong>Ressaltamos que essa entrevista NÃO se destina à avaliar
+            seus conhecimentos acerca dos conceitos apresentados, mas sim
+            capturar evidências de nosso estudo.</strong></p><br>
             
-            Para prosseguirmos, pedimos seu consentimento para realizarmos esse 
-            estudo e informamos que:
-            <ul>
-            <li>Os dados coletados destinam-se estritamente a atividades de 
-            pesquisa e desenvolvimento, e somente os pesquisadores do TeleMídia 
-            têm acesso à integra do material resultante da avaliação.</li>
-            <li>A divulgação dos resultados de nossa pesquisa em foros 
-            científicos e/ou pedagógicos pauta-se no respeito à privacidade, e 
-            o anonimato dos participantes é preservado em qualquer material 
-            publicado.</li>
-            </ul>
+            <p>Para prosseguirmos, pedimos seu consentimento para realizarmos
+            essa entrevista e informamos que:</p> <ul> <li>Os dados coletados
+            destinam-se estritamente a atividades de pesquisa e desenvolvimento,
+            e somente os pesquisadores do TeleMídia têm acesso à integra do
+            material resultante da avaliação.</li> <li>A divulgação dos
+            resultados de nossa pesquisa em foros científicos e/ou pedagógicos
+            pauta-se no respeito à privacidade, e o anonimato dos participantes
+            é preservado em qualquer material publicado.</li> </ul>
           `
     },
     {
       type: 'html',
-      html: 'Caso esteja de acordo, prossiga.<br>'
+      html: 'Caso esteja de acordo, prossiga.'
     }
   ]
 })
@@ -1759,8 +1748,7 @@ _data.surveyJSON.pages.push({
       name: 'commentsQuestion1',
       rows: '9',
       title: {
-        en: `Chegamos ao fim de nosso estudo. Se desejar, deixe comentários ou 
-          sugestões relacionados ao nosso estudo.`
+        en: `Chegamos ao fim de nosso entrevista. Se desejar, deixe comentários ou sugestões relacionados ao nosso estudo.`
       }
     },
     {
@@ -1769,8 +1757,22 @@ _data.surveyJSON.pages.push({
       rows: '9',
       title: {
         en: `Adcionalmente, se desejar, você fale sobre que tipos de aplicações 
-          você gostaria de desenvolver com conceitos apresentados nesse estudo.`
+          você gostaria de desenvolver com conceitos apresentados nessa
+          entrevista.`
       }
     }
   ]
 })
+
+// ----------------------------------------
+// final page
+// ----------------------------------------
+
+_data.surveyJSON.completedHtml = `
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class='alert alert-success' role='alert' style='text-align:center;'>
+      <h2>Muito bem!!! Terminamos a nossa entrevista.<br>
+      Obrigado por sua participação em nosso estudo.</h2>
+      <span class='glyphicon glyphicon-thumbs-up' style='font-size: 75px;'
+        aria-hidden='true'></span>
+    </div>`
