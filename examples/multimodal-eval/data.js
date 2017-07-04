@@ -25,9 +25,10 @@ _data.surveyJSON = {
   // title: 'Estudo sobre interações multimodais em linguagens multimídia',
   pages: []
 }
+var pageIndex
 
 // ----------------------------------------
-// termo page texts
+// termo page
 // ----------------------------------------
 
 _data.surveyJSON.pages.push({
@@ -71,7 +72,7 @@ _data.surveyJSON.pages.push({
 })
 
 // ----------------------------------------
-// profile page texts
+// profile page
 // ----------------------------------------
 
 _data.surveyJSON.pages.push({
@@ -156,7 +157,7 @@ _data.surveyJSON.pages.push({
 })
 
 // ----------------------------------------
-// intro page texts
+// intro page
 // ----------------------------------------
 
 _data.surveyJSON.pages.push({
@@ -309,20 +310,26 @@ _data.surveyJSON.pages.push({
 })
 
 // ----------------------------------------
-// concepts page texts
+// concepts page
 // ----------------------------------------
 
-_data.surveyJSON.pages.push({
+pageIndex = _data.surveyJSON.pages.push({
   name: 'blocks',
+  elements: []
+}) - 1
+
+// ----------------------------------------
+// concepts page - intro section
+// ----------------------------------------
+
+_data.surveyJSON.pages[pageIndex].elements.push({
+  type: 'panel',
+  title: 'Proposta de conceitos',
+  innerIndent: 1,
   elements: [
     {
-      type: 'panel',
-      title: 'Proposta de conceitos',
-      innerIndent: 1,
-      elements: [
-        {
-          type: 'html',
-          html: `
+      type: 'html',
+      html: `
             <p>As linguagens multímidia atuais não suportam adequadamente
             interações multimodais. Em nosso estudo nos propomos um conjunto de
             conceitos a serem adionados nessas linguagens para oferecer tal
@@ -356,11 +363,11 @@ _data.surveyJSON.pages.push({
             [4] <a href='#'>scratch.mit.edu</a><br>
             [5] <a href='#'>appinventor.mit.edu</a><br>
           `
-        },
-        {
-          type: 'html',
-          name: 'blocksIntro1',
-          html: `
+    },
+    {
+      type: 'html',
+      name: 'blocksIntro1',
+      html: `
             <p>Primeiro, vamos detalhar o elemento <em>Mídia</em>.</p><br>
 
             <p>O elemento <em>Mídia</em> é definido por um identificador e por
@@ -379,11 +386,11 @@ _data.surveyJSON.pages.push({
             <em>creditos</em> que inicia aos 300 e termina aos 360 segundos.</p>
             <div id='blocksIntro1b'></div></p><br>
           `
-        },
-        {
-          type: 'html',
-          name: 'blocksIntro2',
-          html: `
+    },
+    {
+      type: 'html',
+      name: 'blocksIntro2',
+      html: `
             <p></p>Em em seguida, vamos detalhar o elemento <em>Sincronimo</em>.
             </p><br>
 
@@ -423,11 +430,11 @@ _data.surveyJSON.pages.push({
             <div id='blocksIntro2b'></div>
             <br>
           `
-        },
-        {
-          type: 'html',
-          name: 'blocksIntro3',
-          html: `
+    },
+    {
+      type: 'html',
+      name: 'blocksIntro3',
+      html: `
             <p>Agora, detalhamos a seguir o elemento <em>Reconhecedor</em>.</p>
             <br>
 
@@ -466,11 +473,11 @@ _data.surveyJSON.pages.push({
             
             <div id='blocksIntro3b'></div><br>
           `
-        },
-        {
-          type: 'html',
-          name: 'blocksIntro4',
-          html: `
+    },
+    {
+      type: 'html',
+      name: 'blocksIntro4',
+      html: `
             <p>Por fim, vamos detalhar o elemento <em>Grupo de
             usuários</em>.</p><br>
 
@@ -504,100 +511,9 @@ _data.surveyJSON.pages.push({
             
             <div id='blocksIntro4b'></div><br>
           `
-        }
-      ]
-    },
-    {
-      type: 'panel',
-      title: 'Entendimento dos conceitos',
-      innerIndent: 1,
-      elements: [
-        {
-          type: 'html',
-          html: `
-            <p>Agora, desejamos <strong>capturar</strong> seu entendimento dos
-            conceitos apresentados. Para isso, pedimos que você realize as
-            quatro tarefas a seguir. Duas tarefas consistem em interpretar
-                
-            </p><strong>Ressaltamos que essas tarefas NÃO se destinam à avaliar
-            seus conhecimentos, mas sim capturar evidências de nossa
-            pesquisa.</strong>.</p><br>
-          `
-        },
-        {
-          type: 'html',
-          name: 'blocksReadTask1',
-          html: `
-            <p>Tarefa 1: Por favor, analise com cuidado os blocos aseguir.</p>
-          `
-        },
-        {
-          type: 'comment',
-          isRequired: true,
-          name: 'blocksReadTask1Question',
-          title: 'Qual o comportamento da aplicação que corresponde os blocos acima?'
-        },
-        {
-          type: 'html',
-          name: 'blocksReadTask2',
-          html: `
-            <p>Tarefa 2: Os blocos a seguir são um versão motificada do 
-            imediatamente anterior. Por favor, analise com cuidado essa versão 
-            modificada.</p>
-          `
-        },
-        {
-          type: 'comment',
-          isRequired: true,
-          name: 'blocksReadTask2Question',
-          title: 'Qual a mudança no comportamento da aplicação anterior?'
-        },
-        {
-          type: 'html',
-          name: 'blocksEditTask1',
-          html: `
-            <p>Tarefa 3: Agora, pedimos que edite os blocos a seguir para 
-            utilizar um interação por gestos inves de uma interação por 
-            comandos de voz.</p>
-          `
-        },
-        {
-          type: 'text',
-          name: 'blocksEditTask1Changes',
-          visible: false
-        },
-        {
-          type: 'text',
-          name: 'blocksEditTask1Result',
-          visible: false
-        },
-        {
-          type: 'html',
-          name: 'blocksEditTask2',
-          html: `
-            <p>Tarefa 4: Agora, pedimos que edite os blocos a seguir para que 
-            apenas o segundo usuário de um grupo de usuário possa realizar a 
-            interação.</p>
-          `
-        },
-        {
-          type: 'text',
-          name: 'blocksEditTask2Changes',
-          visible: false
-        },
-        {
-          type: 'text',
-          name: 'blocksEditTask2Result',
-          visible: false
-        }
-      ]
     }
   ]
 })
-
-// ----------------------------------------
-// concepts page blocks
-// ----------------------------------------
 
 _data.blocksIntro1aXml = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
@@ -877,6 +793,97 @@ _data.blocksIntro4bXml = `
 </xml>
 `
 
+// ----------------------------------------
+// concepts page - questions section
+// ----------------------------------------
+
+_data.surveyJSON.pages[pageIndex].elements.push({
+  type: 'panel',
+  title: 'Entendimento dos conceitos',
+  innerIndent: 1,
+  elements: [
+    {
+      type: 'html',
+      html: `
+            <p>Agora, desejamos <strong>capturar</strong> seu entendimento dos
+            conceitos apresentados. Para isso, pedimos que você realize as
+            quatro tarefas a seguir. Duas tarefas consistem em interpretar
+
+            </p><strong>Ressaltamos que essas tarefas NÃO se destinam à avaliar
+            seus conhecimentos, mas sim capturar evidências de nossa
+            pesquisa.</strong>.</p><br>
+          `
+    },
+    {
+      type: 'html',
+      name: 'blocksReadTask1',
+      html: `
+            <p>Tarefa 1: Por favor, analise com cuidado os blocos aseguir.</p>
+          `
+    },
+    {
+      type: 'comment',
+      isRequired: true,
+      name: 'blocksReadTask1Question',
+      title: 'Qual o comportamento da aplicação que corresponde os blocos acima?'
+    },
+    {
+      type: 'html',
+      name: 'blocksReadTask2',
+      html: `
+            <p>Tarefa 2: Os blocos a seguir são um versão motificada do
+            imediatamente anterior. Por favor, analise com cuidado essa versão
+            modificada.</p>
+          `
+    },
+    {
+      type: 'comment',
+      isRequired: true,
+      name: 'blocksReadTask2Question',
+      title: 'Qual a mudança no comportamento da aplicação anterior?'
+    },
+    {
+      type: 'html',
+      name: 'blocksEditTask1',
+      html: `
+            <p>Tarefa 3: Agora, pedimos que edite os blocos a seguir para
+            utilizar um interação por gestos inves de uma interação por
+            comandos de voz.</p>
+          `
+    },
+    {
+      type: 'text',
+      name: 'blocksEditTask1Changes',
+      visible: false
+    },
+    {
+      type: 'text',
+      name: 'blocksEditTask1Result',
+      visible: false
+    },
+    {
+      type: 'html',
+      name: 'blocksEditTask2',
+      html: `
+            <p>Tarefa 4: Agora, pedimos que edite os blocos a seguir para que
+            apenas o segundo usuário de um grupo de usuário possa realizar a
+            interação.</p>
+          `
+    },
+    {
+      type: 'text',
+      name: 'blocksEditTask2Changes',
+      visible: false
+    },
+    {
+      type: 'text',
+
+      name: 'blocksEditTask2Result',
+      visible: false
+    }
+  ]
+})
+
 _data.blocksReadTask1Xml = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="DACXRk{ds*},dxviHR(c" x="20" y="20">
@@ -1149,7 +1156,7 @@ _data.blocksReadTask2Xml = `
 `
 
 // ----------------------------------------
-// concepts feedback page texts
+// concepts feedback page
 // ----------------------------------------
 
 _data.surveyJSON.pages.push({
@@ -1265,7 +1272,7 @@ _data.surveyJSON.pages.push({
 })
 
 // ----------------------------------------
-// ncl page texts
+// ncl page
 // ----------------------------------------
 
 _data.surveyJSON.pages.push({
@@ -1440,7 +1447,7 @@ _data.nclCode2 = `
 `
 
 // ----------------------------------------
-// ncl feedback page texts
+// ncl feedback page
 // ----------------------------------------
 
 _data.surveyJSON.pages.push({
@@ -1541,7 +1548,7 @@ _data.surveyJSON.pages.push({
 })
 
 // ----------------------------------------
-// html page texts
+// html page
 // ----------------------------------------
 
 _data.surveyJSON.pages.push({
@@ -1560,7 +1567,7 @@ _data.surveyJSON.pages.push({
 // ----------------------------------------
 
 // ----------------------------------------
-// html feedback page texts
+// html feedback page
 // ----------------------------------------
 
 _data.surveyJSON.pages.push({
@@ -1663,7 +1670,7 @@ _data.surveyJSON.pages.push({
 })
 
 // ----------------------------------------
-// comments feedback page texts
+// comments feedback page
 // ----------------------------------------
 
 _data.surveyJSON.pages.push({
