@@ -159,6 +159,14 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       $('#' + questionId).append(_data.nclCode2)
       SyntaxHighlighter.highlight()
       break
+    case 'htmlCode1':
+      $('#' + questionId).append(_data.htmlCode1)
+      SyntaxHighlighter.highlight()
+      break
+    case 'htmlCode2':
+      $('#' + questionId).append(_data.htmlCode2)
+      SyntaxHighlighter.highlight()
+      break
   }
   window.scrollTo(0, 0)
 }

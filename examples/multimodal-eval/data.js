@@ -1277,7 +1277,6 @@ _data.surveyJSON.pages.push({
 
 pageIndex = _data.surveyJSON.pages.push({
   name: 'ncl',
-  title: 'Conceitos multimodais em NCL',
   elements: []
 }) - 1
 
@@ -1556,20 +1555,93 @@ _data.surveyJSON.pages.push({
 // html page
 // ----------------------------------------
 
-_data.surveyJSON.pages.push({
+pageIndex = _data.surveyJSON.pages.push({
   name: 'html',
-  title: 'Conceitos multimodais em HTML',
+  elements: []
+}) - 1
+
+// ----------------------------------------
+// html page - intro
+// ----------------------------------------
+
+_data.surveyJSON.pages[pageIndex].elements.push({
+  type: 'panel',
+  title: 'Proposta de conceitos multimodais em HTML',
+  innerIndent: 1,
   elements: [
     {
+      name: 'htmlIntro',
       type: 'html',
-      name: 'htmlIntro'
+      html: ` HTML intro
+      `
     }
   ]
 })
 
 // ----------------------------------------
-// html page
+// html page - questions
 // ----------------------------------------
+
+_data.surveyJSON.pages[pageIndex].elements.push({
+  type: 'panel',
+  title: 'Entendimento dos conceitos',
+  innerIndent: 1,
+  elements: [
+    {
+      type: 'html',
+      html: `O código a seguir consiste em uma aplicação HTML sem interações 
+      multimodais.`,
+      name: 'htmlCode1'
+    },
+    {
+      type: 'comment',
+      isRequired: true,
+      name: 'htmlQuestion1',
+      rows: '9',
+      title: 'Qual o comportamento da aplicação?'
+    },
+    {
+      type: 'html',
+      html: `O aplicação HTML acima foi modificada para permitir interações 
+      multimodais. O novo código é apresentado a seguir com as modificações 
+      destacadas:`,
+      name: 'htmlCode2'
+    },
+    {
+      type: 'comment',
+      isRequired: true,
+      name: 'htmlQuestion2',
+      rows: '9',
+      title: 'Qual o novo comportamento da aplicação?'
+    }
+  ]
+})
+
+_data.htmlCode1 = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;">
+  <![CDATA[
+  <?xml version="1.0" encoding="ISO-8859-1"?>
+  <html>
+    <head>
+    </head>
+    <body>
+    </body>
+  </html>]]>
+  </script>
+`
+
+_data.htmlCode2 = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;">
+  <![CDATA[
+  <?xml version="1.0" encoding="ISO-8859-1"?>
+  <html>
+    <head>
+    </head>
+    <body>
+    </body>
+  </html>]]>
+  </script>
+`
 
 // ----------------------------------------
 // html feedback page
