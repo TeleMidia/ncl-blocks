@@ -327,21 +327,22 @@ _data.surveyJSON.pages.push({
             interações multimodais. Em nosso estudo nos propomos um conjunto de
             conceitos a serem adionados nessas linguagens para oferecer tal
             suporte. Mais precisamente esses conceitos são os de <em>Mídia,
-            Reconhecedor, Sincronismo</em> e <em>Usuário</em>.</p> 
+            Reconhecedor, Sincronismo</em> e <em>Grupo de Usuários</em>.</p>
             <br>
             
             <p>Esta seção tem o objetivo de detalhar esses conceitos e capturar
             o entendimento do entrevistado. Entretanto, para evitar possiveis
             dificuldades dado a sintaxe de linguagens, apresentaremos esses
             conceitos utilizando uma abordagem de <strong>desenvolvimento de
-            aplicações através blocos</strong>.</p> <p>Esse tipo de abordagem é
-            bastante utilizado para o ensino de programação ou para ferramentes
-            de geração de código. Em especial, esse tipo de desenvolvimento foi
-            popularizado por ferramentas como o <strong>MIT Scratch</strong>[4]
-            e <strong>MIT App Inventor</strong>[5]. O primeiro é utilizado para
-            criar aplicações web, especialmente jogos, e o segundo utilizado
-            para criar aplicações moveis. Ambos são ilustratos a seguir.</p>
-            <br>
+            aplicações através blocos</strong>.</p> <br>
+            
+            <p>Esse tipo de abordagem é bastante utilizado para o ensino de
+            programação ou para ferramentes de geração de código. Em especial,
+            esse tipo de desenvolvimento foi popularizado por ferramentas como o
+            <strong>MIT Scratch</strong>[4] e <strong>MIT App
+            Inventor</strong>[5]. O primeiro é utilizado para criar aplicações
+            web, especialmente jogos, e o segundo utilizado para criar
+            aplicações moveis. Ambos são ilustratos a seguir.</p><br>
 
             <div class='text-center'>
               <img class='img-thumbnail' style='height: 270px' 
@@ -360,8 +361,7 @@ _data.surveyJSON.pages.push({
           type: 'html',
           name: 'blocksIntro1',
           html: `
-            <p>Primeiro, vamos detalhar o elemento <em>Mídia</em>.</p>
-            <br>
+            <p>Primeiro, vamos detalhar o elemento <em>Mídia</em>.</p><br>
 
             <p>O elemento <em>Mídia</em> é definido por um identificador e por
             seu conteúdo. O contéudo de uma <em>Mídia</em> ter porções
@@ -369,34 +369,32 @@ _data.surveyJSON.pages.push({
             blocos a seguir definem duas mídias com identificadores
             <em>midia_principal</em> e <em>icone</em>, mas elas não possuem
             conteúdo. Por não terem conteúdo, ações de iniciar sobre as mídias
-            acima não apresentaram resultados.</p> <div
-            id='blocksIntro1a'></div>
-            <br>
+            acima não apresentaram resultados.</p><br>
 
-            <p>Os blocos a seguir definem as mesmas mídias, mas com conteúdos
-            de áudio e imagem respectivamente. Em especial, a mídia de
+            <div id='blocksIntro1a'></div><br>
+
+            <p>Os blocos a seguir definem as mesmas mídias, mas com conteúdos de
+            áudio e imagem respectivamente. Em especial, a mídia de
             <em>midia_principal</em> tem definido um trecho chamado de
-            <em>creditos</em> que inicia aos 300 e termina aos 360
-            segundos.</p> <div id='blocksIntro1b'></div></p>
-
-            <br>
+            <em>creditos</em> que inicia aos 300 e termina aos 360 segundos.</p>
+            <div id='blocksIntro1b'></div></p><br>
           `
         },
         {
           type: 'html',
           name: 'blocksIntro2',
           html: `
-            <p>Em em seguida, vamos detalhar o elemento <em>Sincronimo</em>.</p>
-            <br>
+            <p></p>Em em seguida, vamos detalhar o elemento <em>Sincronimo</em>.
+            </p><br>
 
-            <p>O elemento de <em>Sincronimo</em> permite definir o 
-            comportamento das aplicações. O uso de elementos de 
-            <em>Sincronimo</em>s sobre elementos de <em>Mídia</em> define 
-            quando mídias são apresentadas. O <em>Sincronimo</em> é baseado em 
-            causalidade, ou seja, quando um condição é satisfeita, ações são 
-            realizadas. Exemplos de condições são inicio ou fim de uma mídia ou 
-            trecho de midia, ou a seleção de ususário sobre um mídia. Exemplos 
-            de ações são inicar ou parar uma mídia.</p>
+            <p>O elemento de <em>Sincronimo</em> permite definir o comportamento
+            das aplicações. O uso de elementos de <em>Sincronimo</em>s sobre
+            elementos de <em>Mídia</em> define quando mídias são apresentadas. O
+            <em>Sincronimo</em> é baseado em causalidade, ou seja, quando um
+            condição é satisfeita, ações são realizadas. Exemplos de condições
+            são inicio ou fim de uma mídia ou trecho de midia, ou a seleção de
+            ususário sobre um mídia. Exemplos de ações são inicar ou parar uma
+            mídia.</p><br>
 
             <p>Os blocos a seguir definem a mídia <em>midia_principal</em> e um 
             sincronismo que inicia mídia no início aplicação. Nesse exemplo, 
@@ -405,27 +403,22 @@ _data.surveyJSON.pages.push({
             conteúdo de <em>midia_principal</em> não afetam o compartamento da 
             aplicação, desde que a mídia definia o mesmos trechos. Pois os 
             <em>Sincronimo</em>s são definidos indepente do conteúdo.</p>
-            <div id='blocksIntro2a'></div>
-            <br>
+            <div id='blocksIntro2a'></div><p><br>
 
-            <p>Os blocos a seguir definem uma aplicação que apresenta um video,
+            <p>Para ilustrar o uso do elemento de <em>Sincronismo</em>, os blocos a seguir definem uma aplicação que apresenta um video,
             que um icone durante os creditos. Ao selecionar o icone, o video é
-            reiniciado.</p>
+            reiniciado.</p><br> 
             
             <p>Mais precismanete, os blocos definem novamente
-            <em>midia_principal</em> e sincronismo do bloco anterior, mas
-            adcionam a mídia <em>icone</em> e mais dois <em>Sincronimo</em>s. O
-            primeiro <em>Sincronimo</em> adcionado defini que quando a
-            <em>midia_principal</em> alcançar o seu trecho de <em>credito</em> a
-            mídia <em>icone_repetir</em> deve ser inciada. O segundo
-            <em>Sincronimo</em> adcionado defini que quando a mídia
-            <em>icone_repetir</em> for sel adcionam a mídia <em>icone</em> e
-            mais dois <em>Sincronimo</em>s. O primeiro <em>Sincronimo</em>
-            adcionado defini que quando a <em>midia_principal</em> alcançar o
-            seu trecho de <em>credito</em> a mídia <em>icone_repetir</em> deve
-            ser inciada. O segundo <em>Sincronimo</em> adcionado defini que
-            quando a mídia <em>icone_repetir</em> for seleciona, esta deve
-            reciniciar a <em>midia_principal</em> (terminada e inciada)</p> <br>
+            <em>midia_principal</em> e um <em>Sincronismo<em> do bloco anterior,
+            mas adcionam a mídia <em>icone</em> e mais dois
+            <em>Sincronimo</em>s. O primeiro <em>Sincronimo</em> adcionado
+            defini que quando a <em>midia_principal</em> alcançar o seu trecho
+            de <em>credito</em> a mídia <em>icone_repetir</em> deve ser inciada.
+            O segundo <em>Sincronimo</em> adcionado defini que quando a mídia
+            <em>icone_repetir</em> for seleciona, esta <em>midia_principal</em>
+            deve reciniciar a <em>midia_principal</em> (terminada e
+            inciada)</p><br>
 
             <div id='blocksIntro2b'></div>
             <br>
@@ -443,57 +436,73 @@ _data.surveyJSON.pages.push({
             conteúdo de um <em>Reconhecedor</em> deve ser uma descrição de
             reconhecimento. Exemplos dessas descrições são aquelam commandos de
             voz ou gestos de mão. Logo, porções de um <em>Reconhecedor</em> são
-            porções de um descrição de reconhecimento.</p> <br>
+            porções de um descrição de reconhecimento.</p><br>
 
-            <p>Os blocos a seguir definem os reconhecedores
-            <em>rec_voz</em> e <em>rec_gestos</em>. O <em>rec_voz</em> tem uma
-            reconhecimento de voz como conteúdo. Essa descrição tem o trecho
-            <em>repetir</em> que reconhece o comando de voz "repetir video". O
-            <rec_gestos> tem uma descrição de reconhecimento de gestos como
-            conteúdo. Esse trecho utiliza dois trechos esquerda e direita para
-            definir gestos de mão nessas direções.</p> 
+            <p>Os blocos a seguir definem os reconhecedores <em>rec_voz</em> e
+            <em>rec_gestos</em>. O <em>rec_voz</em> tem uma reconhecimento de
+            voz como conteúdo. Essa descrição tem o trecho <em>repetir</em> que
+            reconhece o comando de voz "repetir video". O <rec_gestos> tem uma
+            descrição de reconhecimento de gestos como conteúdo. Esse trecho
+            utiliza dois trechos esquerda e direita para definir gestos de mão
+            nessas direções.</p><br> 
             
-            <div id='blocksIntro3a'></div> <br> 
+            <div id='blocksIntro3a'></div><br> 
             
-
-            <p>Os blocos a seguir redefine a aplicação que reinicia um video dado uma interação. Mas nessa versão, ao inves de clicar, o vídeo é reiniciado ao usuário falar "repetir video".</p> 
-            <br>
+            <p>Para ilustrar o uso de um <em>Reconhecedor</em>, os blocos a
+            seguir são uma nova versão da aplicação que reinicia um video dado
+            uma interação. Mas nessa versão, ao inves de clicar, o vídeo é
+            reiniciado ao usuário falar "repetir video".</p><br>
             
-            <p>Mais precismanete, os blocos definem uma
-            a <em>Midia</em>, chamada <em>midia_principal</em>, um <em>Reconhecedor</em>, chamado <em>rec_voz</em> e três
-            <em>Sincronimo</em>s. O primeiro <em>Sincronimo</em> define que
-            <em>midia_principal</em>  é iniciado com a aplicação. O segundo
-            <em>Sincronimo</em> defini quando a <em>midia_principal</em>
-            alcançar o seu trecho de <em>creditos</em>, o <em>Reconhecedor</em>
-            <em>rec_voz</em> deve ser iniciado. O <em>Sincronimo</em> último
-            define que quando o trecho <em>repetir</em> for reconhecido a
-            <em>midia_principal</em> (terminada e inciada)
+            <p>Mais precismanete, os blocos definem uma a <em>Mídia</em>
+            (chamada <em>midia_principal</em>), um <em>Reconhecedor</em>
+            (chamado <em>rec_voz</em>) e três <em>Sincronimo</em>s. O primeiro
+            <em>Sincronimo</em> define que <em>midia_principal</em>  é iniciado
+            com a aplicação. O segundo <em>Sincronimo</em> defini quando a
+            <em>midia_principal</em> alcançar o seu trecho de <em>creditos</em>,
+            o <em>Reconhecedor</em> <em>rec_voz</em> deve ser iniciado. O
+            <em>Sincronimo</em> último define que quando o trecho
+            <em>repetir</em> for reconhecido a <em>midia_principal</em>
+            (terminada e inciada).</p><br>
             
-            <div id='blocksIntro3b'></div>
-            <br>
+            <div id='blocksIntro3b'></div><br>
           `
         },
         {
           type: 'html',
           name: 'blocksIntro4',
           html: `
-            <p>Por fim, vamos detalhar o elemento <em>Usuário</em>.</p>
-            <br>
+            <p>Por fim, vamos detalhar o elemento <em>Grupo de
+            usuários</em>.</p><br>
 
-            <p> O elemento <em>Usuário</em> é definido por um identificador,
-            pelo número de membros que podem participar do grupo e pelos
-            dispositivos que devem possuim para participar da aplicação.</p><br>
+            <p> O elemento <em>Grupo de Usuários</em> é definido por um
+            identificador, pelo número de membros que podem participar do grupo
+            e pelos dispositivos que um ususário necessita possuir para
+            participar do grupo.</p><br>
             
             <p>Os blocos a seguir definem um grupo de usuário <em>gu_gestos</em>
-            que possuem 3 membros e cada um reconhecedor de gestos. <br>
+            que pode ter até 3 membros e cada um com reconhecedor de gestos
+            (e.g. LeapMotion).</p><br>
 
-            <p>A seguir um <em>Usuário</em></p>
-            <div id='blocksIntro4a'></div>
-            <br>
+            <div id='blocksIntro4a'></div><br>
 
-            <p>A seguir um <em>Usuário</em> com sincronismo.</p>
-            <div id='blocksIntro4b'></div>
-            <br>
+            <p>Para ilustrar o uso de um <em>Grupo de Usuários</em>, os blocos a
+            seguir são uma nova versão da aplicação que reinicia um video dado
+            uma interação. Mas nessa versão, o vídeo é reiniciado apenas quando
+            o segundo usuário falar "repetir video".</p> <br>
+
+            <p>Mais precismanete, os blocos definem uma <em>Mídia</em> (chamada
+            <em>midia_principal</em>), um <em>Reconhecedor</em> (chamado
+            <em>rec_voz</em>), um <em>Grupo de Usuário</em> (chamado
+            <em>gu_voz</em>) e três <em>Sincronimo</em>s. O primeiro
+            <em>Sincronimo</em> define que <em>midia_principal</em>  é iniciado
+            com a aplicação. O segundo <em>Sincronimo</em> defini quando a
+            <em>midia_principal</em> alcançar o seu trecho de <em>creditos</em>,
+            o <em>Reconhecedor</em> <em>rec_voz</em> deve ser iniciado. O
+            <em>Sincronimo</em> último define que quando o trecho
+            <em>repetir</em> for reconhecido a <em>midia_principal</em>
+            (terminada e inciada).</p><br>
+            
+            <div id='blocksIntro4b'></div><br>
           `
         }
       ]
@@ -506,14 +515,13 @@ _data.surveyJSON.pages.push({
         {
           type: 'html',
           html: `
-            <p>Agora, desejamos <strong>capturar</strong> seu entendimento dos 
-            conceitos apresentados. Para isso, pedimos que você realize as 
-            quatro tarefas a seguir. Duas tarefas consistem em interpretar 
-            blocos já existem e outros dois editar blocos existentes.</p>       
+            <p>Agora, desejamos <strong>capturar</strong> seu entendimento dos
+            conceitos apresentados. Para isso, pedimos que você realize as
+            quatro tarefas a seguir. Duas tarefas consistem em interpretar
                 
-            </p><strong>Ressaltamos que essas tarefas NÃO se destinam à avaliar 
-            seus conhecimentos, mas sim capturar evidências de nossa 
-            pesquisa.</strong><br>
+            </p><strong>Ressaltamos que essas tarefas NÃO se destinam à avaliar
+            seus conhecimentos, mas sim capturar evidências de nossa
+            pesquisa.</strong>.</p><br>
           `
         },
         {
@@ -747,7 +755,7 @@ _data.blocksIntro3bXml = `
       <field name="id">rec_voz</field>
       <value name="src">
         <block type="srgs" id="N5Lu5_J\`hn-e3lm60 |^3">
-          <mutation length="2">
+          <mutation length="1">
           </mutation>
           <field name="id_area0">repetir</field>
           <field name="label0">repetir video</field>
@@ -818,7 +826,7 @@ _data.blocksIntro4bXml = `
     <field name="id">rec_voz</field>
     <value name="src">
       <block type="srgs" id="N5Lu5_J\`hn-e3lm60 |^3">
-        <mutation length="2"></mutation>
+        <mutation length="1"></mutation>
         <field name="id_area0">repetir</field>
         <field name="label0">repetir video</field>
         <field name="id_area1"></field>
@@ -831,9 +839,9 @@ _data.blocksIntro4bXml = `
   </block>
   <block type="user" id="IPnvWeecZqr2WM|RGxm|" x="594" y="200">
     <mutation length="1"></mutation>
-    <field name="id">gu_gestos</field>
+    <field name="id">gu_voz</field>
     <value name="element_0">
-      <block type="hand_gesture_sensor" id="yU[{24F}.5IJtyI;VB5k"></block>
+      <block type="headset" id="yU[{24F}.5IJtyI;VB5k"></block>
     </value>
   </block>
   <block type="link" id="%6ew%0di,O*v%qS%d\`(\`" x="20" y="370">
@@ -852,7 +860,7 @@ _data.blocksIntro4bXml = `
     <value name="conditions">
       <block type="onrecognizeuser" id="y/zz?q?8ebd@?9llBV[0">
         <field name="id">repetir</field>
-        <field name="user_id">gu_gestos</field>
+        <field name="user_id">gu_gestos.2</field>
       </block>
     </value>
     <statement name="actions">
