@@ -404,22 +404,29 @@ _data.surveyJSON.pages.push({
             um conteúdo de vídeo. É importante ressaltar que mudança no 
             conteúdo de <em>midia_principal</em> não afetam o compartamento da 
             aplicação, desde que a mídia definia o mesmos trechos. Pois os 
-            sincrinismos são definidos indepente do conteúdo.</p>
+            <em>Sincronimo</em>s são definidos indepente do conteúdo.</p>
             <div id='blocksIntro2a'></div>
             <br>
 
-            <p>Os blocos a seguir definem uma aplicação que aprsenta um
-            video, que um icone durante os creditos. Ao selecionar o icone, o
-            video é reiniciado. Mais precismanete, os blocos definem novamente
+            <p>Os blocos a seguir definem uma aplicação que apresenta um video,
+            que um icone durante os creditos. Ao selecionar o icone, o video é
+            reiniciado.</p>
+            
+            <p>Mais precismanete, os blocos definem novamente
             <em>midia_principal</em> e sincronismo do bloco anterior, mas
-            adcionam a mídia <em>icone</em> e mais dois sincronismos.</p> <p>O
-            primeiro sicronismo adcionado defini que quando a
-            <em>midia_principal</em> alcançar o seu trecho de <em>credito</em>
-            a mídia <em>icone_repetir</em> deve ser inciada. O segundo
-            sincronimos adcionado defini que quando a mídia
-            <em>icone_repetir</em> for seleciona, esta deve terminar e o a
-            <em>midia_principal</em> deve ser reiniciada (terminada e inciada)
-            </p>
+            adcionam a mídia <em>icone</em> e mais dois <em>Sincronimo</em>s. O
+            primeiro <em>Sincronimo</em> adcionado defini que quando a
+            <em>midia_principal</em> alcançar o seu trecho de <em>credito</em> a
+            mídia <em>icone_repetir</em> deve ser inciada. O segundo
+            <em>Sincronimo</em> adcionado defini que quando a mídia
+            <em>icone_repetir</em> for sel adcionam a mídia <em>icone</em> e
+            mais dois <em>Sincronimo</em>s. O primeiro <em>Sincronimo</em>
+            adcionado defini que quando a <em>midia_principal</em> alcançar o
+            seu trecho de <em>credito</em> a mídia <em>icone_repetir</em> deve
+            ser inciada. O segundo <em>Sincronimo</em> adcionado defini que
+            quando a mídia <em>icone_repetir</em> for seleciona, esta deve
+            reciniciar a <em>midia_principal</em> (terminada e inciada)</p> <br>
+
             <div id='blocksIntro2b'></div>
             <br>
           `
@@ -431,24 +438,38 @@ _data.surveyJSON.pages.push({
             <p>Agora, detalhamos a seguir o elemento <em>Reconhecedor</em>.</p>
             <br>
 
-            <p> O <em>Reconhecedor</em> também é definido por um identificador
-            e por seu conteúdo. Entrentato, diferente de <em>Mídia</em>, o
+            <p> O <em>Reconhecedor</em> também é definido por um identificador e
+            por seu conteúdo. Entrentato, diferente de <em>Mídia</em>, o
             conteúdo de um <em>Reconhecedor</em> deve ser uma descrição de
-            reconhecimento. Exemplos dessas descrições definim commandos de voz
-            ou gestos de mão. Logo, as porções identificáveis de um
-            <em>Reconhecedor</em> são porções de um descrição de
-            reconhecimentos.</p>
-            <br>
+            reconhecimento. Exemplos dessas descrições são aquelam commandos de
+            voz ou gestos de mão. Logo, porções de um <em>Reconhecedor</em> são
+            porções de um descrição de reconhecimento.</p> <br>
 
-            <p>Os blocos a seguir definem os dois reconhecedores
+            <p>Os blocos a seguir definem os reconhecedores
             <em>rec_voz</em> e <em>rec_gestos</em>. O <em>rec_voz</em> tem uma
             reconhecimento de voz como conteúdo. Essa descrição tem o trecho
             <em>repetir</em> que reconhece o comando de voz "repetir video". O
             <rec_gestos> tem uma descrição de reconhecimento de gestos como
             conteúdo. Esse trecho utiliza dois trechos esquerda e direita para
-            definir gestos de mão nessas direções.</p> <div
-            id='blocksIntro3a'></div> <br> <p>A seguir um reconhecedor com
-            <em>Sincronimo</em></p> <div id='blocksIntro3b'></div>
+            definir gestos de mão nessas direções.</p> 
+            
+            <div id='blocksIntro3a'></div> <br> 
+            
+
+            <p>Os blocos a seguir redefine a aplicação que reinicia um video dado uma interação. Mas nessa versão, ao inves de clicar, o vídeo é reiniciado ao usuário falar "repetir video".</p> 
+            <br>
+            
+            <p>Mais precismanete, os blocos definem uma
+            a <em>Midia</em>, chamada <em>midia_principal</em>, um <em>Reconhecedor</em>, chamado <em>rec_voz</em> e três
+            <em>Sincronimo</em>s. O primeiro <em>Sincronimo</em> define que
+            <em>midia_principal</em>  é iniciado com a aplicação. O segundo
+            <em>Sincronimo</em> defini quando a <em>midia_principal</em>
+            alcançar o seu trecho de <em>creditos</em>, o <em>Reconhecedor</em>
+            <em>rec_voz</em> deve ser iniciado. O <em>Sincronimo</em> último
+            define que quando o trecho <em>repetir</em> for reconhecido a
+            <em>midia_principal</em> (terminada e inciada)
+            
+            <div id='blocksIntro3b'></div>
             <br>
           `
         },
@@ -459,13 +480,12 @@ _data.surveyJSON.pages.push({
             <p>Por fim, vamos detalhar o elemento <em>Usuário</em>.</p>
             <br>
 
-            <p> O elemento <em>Usuário</em> é definido por um identificador, 
-            pelo número de membros que podem participar do grupo e pelos 
-            dispositivos que devem possuim para participar da aplicação.</p>
-            <p>Os blocos a seguir definem um grupo de usuário 
-            <em>gu_gestos</em>que possuem 3 membros e cada um reconhecedor de 
-            gestos.
-            <br>
+            <p> O elemento <em>Usuário</em> é definido por um identificador,
+            pelo número de membros que podem participar do grupo e pelos
+            dispositivos que devem possuim para participar da aplicação.</p><br>
+            
+            <p>Os blocos a seguir definem um grupo de usuário <em>gu_gestos</em>
+            que possuem 3 membros e cada um reconhecedor de gestos. <br>
 
             <p>A seguir um <em>Usuário</em></p>
             <div id='blocksIntro4a'></div>
