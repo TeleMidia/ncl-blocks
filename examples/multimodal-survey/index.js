@@ -151,12 +151,17 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
         false, ['excludeResumePauseSet'])
       _blocksEditTask2Workspace.addChangeListener(saveblocksEditTask2Changes)
       break
-    case 'nclCode1':
-      $('#' + questionId).append(_data.nclCode1)
+    case 'nclIntro2':
+      $('#nclIntro2aCode').append(_data.nclIntro1Code)
+      $('#nclIntro2bCode').append(_data.nclIntro2Code)
       SyntaxHighlighter.highlight()
       break
-    case 'nclCode2':
-      $('#' + questionId).append(_data.nclCode2)
+    case 'nclTask1Code':
+      $('#' + questionId).append(_data.nclIntro1Code)
+      SyntaxHighlighter.highlight()
+      break
+    case 'nclTask2Code':
+      $('#' + questionId).append(_data.nclIntro2Code)
       SyntaxHighlighter.highlight()
       break
     case 'htmlCode1':

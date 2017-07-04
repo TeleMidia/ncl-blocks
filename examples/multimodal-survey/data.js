@@ -715,71 +715,71 @@ _data.blocksIntro4aXml = `
 `
 
 _data.blocksIntro4bXml = `
-<xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
-    <field name="id">midia_principal</field>
-    <value name="src">
-      <block type="video" id="OFge%WW-~~.%rZKqZqym">
-        <mutation length="1"></mutation>
-        <field name="id_area0">creditos</field>
-        <field name="begin0">300s</field>
-        <field name="end0"></field>
-      </block>
-    </value>
-  </block>
-  <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="594" y="20">
-    <field name="id">rec_voz</field>
-    <value name="src">
-      <block type="srgs" id="N5Lu5_J\`hn-e3lm60 |^3">
-        <mutation length="1"></mutation>
-        <field name="id_area0">repetir</field>
-        <field name="label0">repetir video</field>
-        <field name="id_area1"></field>
-        <field name="label1"></field>
-      </block>
-    </value>
-  </block>
-  <block type="port" id="+p-MtE:D*clWz(7oX7Hg" x="20" y="230">
-    <field name="id">midia_principal</field>
-  </block>
-  <block type="user" id="IPnvWeecZqr2WM|RGxm|" x="594" y="200">
-    <mutation length="1"></mutation>
-    <field name="id">gu_voz</field>
-    <value name="element_0">
-      <block type="headset" id="yU[{24F}.5IJtyI;VB5k"></block>
-    </value>
-  </block>
-  <block type="link" id="%6ew%0di,O*v%qS%d\`(\`" x="20" y="370">
-    <value name="conditions">
-      <block type="onbegin" id="(H8xxhXk6.y#]q%\`UM^D">
-        <field name="id">creditos</field>
-      </block>
-    </value>
-    <statement name="actions">
-      <block type="start" id="UEqL{b=Ws2G#w}+xMV%m">
-        <field name="id">rec_voz</field>
-      </block>
-    </statement>
-  </block>
-  <block type="link" id="%6sP%0di,O*v%qS%d\`(\`" x="594" y="350">
-    <value name="conditions">
-      <block type="onrecognizeuser" id="y/zz?q?8ebd@?9llBV[0">
-        <field name="id">repetir</field>
-        <field name="user_id">gu_gestos.2</field>
-      </block>
-    </value>
-    <statement name="actions">
-      <block type="stop" id="xx.sU]l9id:W4@6M~nOY">
-        <field name="id">midia_principal</field>
-        <next>
-          <block type="start" id=".Pt;)N?s.:xGz;dDp@+W">
-            <field name="id">midia_principal</field>
-          </block>
-        </next>
-      </block>
-    </statement>
-  </block>
-</xml>
+  <xml xmlns="http://www.w3.org/1999/xhtml">
+    <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
+      <field name="id">midia_principal</field>
+      <value name="src">
+        <block type="video" id="OFge%WW-~~.%rZKqZqym">
+          <mutation length="1"></mutation>
+          <field name="id_area0">creditos</field>
+          <field name="begin0">300s</field>
+          <field name="end0"></field>
+        </block>
+      </value>
+    </block>
+    <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="594" y="20">
+      <field name="id">rec_voz</field>
+      <value name="src">
+        <block type="srgs" id="N5Lu5_J\`hn-e3lm60 |^3">
+          <mutation length="1"></mutation>
+          <field name="id_area0">repetir</field>
+          <field name="label0">repetir video</field>
+          <field name="id_area1"></field>
+          <field name="label1"></field>
+        </block>
+      </value>
+    </block>
+    <block type="port" id="+p-MtE:D*clWz(7oX7Hg" x="20" y="230">
+      <field name="id">midia_principal</field>
+    </block>
+    <block type="user" id="IPnvWeecZqr2WM|RGxm|" x="594" y="200">
+      <mutation length="1"></mutation>
+      <field name="id">gu_voz</field>
+      <value name="element_0">
+        <block type="headset" id="yU[{24F}.5IJtyI;VB5k"></block>
+      </value>
+    </block>
+    <block type="link" id="%6ew%0di,O*v%qS%d\`(\`" x="20" y="370">
+      <value name="conditions">
+        <block type="onbegin" id="(H8xxhXk6.y#]q%\`UM^D">
+          <field name="id">creditos</field>
+        </block>
+      </value>
+      <statement name="actions">
+        <block type="start" id="UEqL{b=Ws2G#w}+xMV%m">
+          <field name="id">rec_voz</field>
+        </block>
+      </statement>
+    </block>
+    <block type="link" id="%6sP%0di,O*v%qS%d\`(\`" x="594" y="350">
+      <value name="conditions">
+        <block type="onrecognizeuser" id="y/zz?q?8ebd@?9llBV[0">
+          <field name="id">repetir</field>
+          <field name="user_id">gu_gestos.2</field>
+        </block>
+      </value>
+      <statement name="actions">
+        <block type="stop" id="xx.sU]l9id:W4@6M~nOY">
+          <field name="id">midia_principal</field>
+          <next>
+            <block type="start" id=".Pt;)N?s.:xGz;dDp@+W">
+              <field name="id">midia_principal</field>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+  </xml>
 `
 
 // ----------------------------------------
@@ -1314,61 +1314,23 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         precisamente, a aplicação utiliza dois elementos <em>&ltmedia></em>
         mídias e um elemento <em><port></em> e um <em>&ltlink></em> . Um
         exemplo de mídia NCL comum é o 'mainvideo' (linhas 12-14). Essa media
-        possui um trecho definido pela ancora 'credits' (linhas 13).</p > <br>
+        possui um trecho definido pela ancora 'credits' (linhas 13).</p ><br>
+        <div id='nclIntro2aCode'></div><br>
       
         <p>Para adicionar interações multimodais sobre esse video, adicionamos
         os elementos 'menu' (linhas 15-17) e 'answer' (linhas 19-21). O primeiro
         define um áudio sintetizado utilizando o arquivo SSML chamado
         question.ssml (linhas 2-4).O segundo define um reconhecimento de vocês
         utilizando o arquivo SRGS chamado commads.srgs (linhas 7-9).</p> <br>
-      
         Enquanto que o reconhecimento é definido pelo elo das linhas 28-31.</p>
         <p>Esse áudio sintetizado é definido pelo elo das linhas 23-27.
+        <div id='nclIntro2bCode'></div><br>
       `
     }
   ]
 })
 
-// ----------------------------------------
-//  ncl page - questions
-// ----------------------------------------
-
-_data.surveyJSON.pages[pageIndex].elements.push({
-  type: 'panel',
-  title: 'Entendimento dos conceitos',
-  innerIndent: 1,
-  elements: [
-    {
-      type: 'html',
-      html: `O código a seguir consiste em uma aplicação NCL sem interações 
-      multimodais.`,
-      name: 'nclCode1'
-    },
-    {
-      type: 'comment',
-      isRequired: true,
-      name: 'nclQuestion1',
-      rows: '9',
-      title: 'Qual o comportamento da aplicação?'
-    },
-    {
-      type: 'html',
-      html: `O aplicação NCL acima foi modificada para permitir interações 
-      multimodais. O novo código é apresentado a seguir com as modificações 
-      destacadas:`,
-      name: 'nclCode2'
-    },
-    {
-      type: 'comment',
-      isRequired: true,
-      name: 'nclQuestion2',
-      rows: '9',
-      title: 'Qual o novo comportamento da aplicação?'
-    }
-  ]
-})
-
-_data.nclCode1 = `
+_data.nclIntro1Code = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;">
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
@@ -1402,7 +1364,7 @@ _data.nclCode1 = `
   </script>
 `
 
-_data.nclCode2 = `
+_data.nclIntro2Code = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false; 
   highlight: [11,12,13,14,15,16,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,
   48]">
@@ -1458,6 +1420,156 @@ _data.nclCode2 = `
     </body>
   </ncl>]]>
   </script>
+`
+
+// ----------------------------------------
+//  ncl page - questions
+// ----------------------------------------
+
+_data.surveyJSON.pages[pageIndex].elements.push({
+  type: 'panel',
+  title: 'Entendimento dos conceitos',
+  innerIndent: 1,
+  elements: [
+    {
+      type: 'html',
+      html: `O código a seguir consiste em uma aplicação NCL sem interações 
+      multimodais.`,
+      name: 'nclTask1Code'
+    },
+    {
+      type: 'comment',
+      isRequired: true,
+      name: 'nclTask1Question',
+      rows: '9',
+      title: 'Qual o comportamento da aplicação?'
+    },
+    {
+      type: 'html',
+      html: `O aplicação NCL acima foi modificada para permitir interações 
+      multimodais. O novo código é apresentado a seguir com as modificações 
+      destacadas:`,
+      name: 'nclTask2Code'
+    },
+    {
+      type: 'comment',
+      isRequired: true,
+      name: 'nclTask2Question',
+      rows: '9',
+      title: 'Qual o novo comportamento da aplicação?'
+    }
+  ]
+})
+
+_data.nclTask1Code = `
+  <?xml version= "1.0" encoding= "ISO-8859-1" ?>
+  <!--### original sightseeing ###-->
+    <ncl xmlns="http://www.ncl.org.br/NCL3.0/EDTVProfile">
+      <head>
+        <connectorBase>
+          <causalConnector id="onKeySelectionStart">
+            <connectorParam name="var" />
+            <connectorParam name="keyCode" />
+            <simpleCondition role="onSelection" key="$keyCode" />
+            <simpleAction role="start" max="unbounded" />
+          </causalConnector>
+        </connectorBase>
+      </head>
+      <body>
+        <port component="intro" />
+        <media id="intro" src="intro.mp4">
+          <area label="choice_moment" begin="40s" />
+        </media>
+        <media id="videoDowntown" src="downtown.mp4" />
+        <media id="videoBeach" src="beach.mp4" />
+        <media id="menu_choice" src="menu_downtown_or_beach.png" />
+        <link xconnector="onBeginStart">
+          <bind role="onBegin" component="intro" interface="choice_moment" />
+          <bind role="start" component="menu_choice" />
+        </link>
+        <link xconnector="onKeySelectionStart">
+          <bind role="onKeySelection" component="choice">
+            <bindParam name="keyCode" value="RED" />
+          </bind>
+          <bind role="start" component="videoDowntown" />
+        </link>
+        <link xconnector="onKeySelectionStart">
+          <bind role="onKeySelection" component="choice">
+            <bindParam name="keyCode" value="GREEN" />
+          </bind>
+          <bind role="start" component="videoBeach" />
+        </link>
+        ...
+    </body>
+    </ncl>
+`
+_data.nclTask2Code = `
+  <?xml version= "1.0" encoding= "ISO-8859-1" ?>
+  <!--### original sightseeing ###-->
+  <ncl xmlns="http://www.ncl.org.br/NCL3.0/EDTVProfile">
+    <head>
+      <connectorBase>
+        <causalConnector id="onKeySelectionStart">
+          <connectorParam name="var" />
+          <connectorParam name="keyCode" />
+          <simpleCondition role="onSelection" key="$keyCode" />
+          <simpleAction role="start" max="unbounded" />
+        </causalConnector>
+
+        <!-- begin modification-->
+      <causalConnector id="onRecognizeStart">
+          <simpleCondition role="onRecognize" max="unbounded" />
+          <simpleAction role="start" max="unbounded" />
+        </causalConnector>
+        <!-- end modification-->
+    </connectorBase>
+    </head>
+    <body>
+      <port component="intro" />
+      <media id="intro" src="intro.mp4">
+        <area label="choice_moment" begin="40s" />
+      </media>
+      <media id="videoDowntown" src="downtown.mp4" />
+      <media id="videoBeach" src="beach.mp4" />
+      <media id="menu_choice" src="menu_downtown_or_beach.png" />
+      <link xconnector="onBeginStart">
+        <bind role="onBegin" component="intro" interface="choice_moment" />
+        <bind role="start" component="menu_choice" />
+      </link>
+      <link xconnector="onKeySelectionStart">
+        <bind role="onKeySelection" component="choice">
+          <bindParam name="keyCode" value="RED" />
+        </bind>
+        <bind role="start" component="videoDowntown" />
+      </link>
+      <link xconnector="onKeySelectionStart">
+        <bind role="onKeySelection" component="choice">
+          <bindParam name="keyCode" value="GREEN" />
+        </bind>
+        <bind role="start" component="videoBeach" />
+      </link>
+
+      <!-- begin modification-->
+      <media id="audio_choice" src="audio_downtown_or_beach.ssml" />
+      <link xconnector="onBeginStart">
+        <bind role="onBegin" component="intro" interface="choice_moment" />
+        <bind role="start" component="audio_choice" />
+      </link>
+      <input id="asr_places" type="application/srgs+xml" src="places.sgrs">
+        <area label="downtown" />
+        <area label="beach" />
+      </input>
+      <link xconnector="onRecognizeStart">
+        <bind role="onRecognize" component="asr_places" interface="beach" />
+        <bind role="start" component="videoBeach" />
+      </link>
+      <link xconnector="onRecognizeStart">
+        <bind role="onRecognize" component="asr_places" interface="downtown" />
+        <bind role="start" component="videoDowntown" />
+      </link>
+      <!-- end modification-->
+  </body>
+  </ncl>
 `
 
 // ----------------------------------------
