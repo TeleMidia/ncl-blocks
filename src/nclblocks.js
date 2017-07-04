@@ -290,6 +290,17 @@ NclBlocks.moveDownBlocksInXML = function (xml) {
 // ----------------------------------------
 
 var _updateMediaIcons = true
+
+/**
+ * @brief Inject a NclBlocks workspace at the end of a div.
+ * @param {string} pathToBlockly path to NclBlocks folder.
+ * @param {string} parendDivId div to inject into
+ * @param {string} height hight of injected the workspace
+ * @param {string=} workspaceXml initial blocks in the workspace
+ * @param {string=} isStatic worpsace withouth toolbox and read only
+ * @param {string=} toolboxOptions configure toolbox
+ */
+
 NclBlocks.injectInDiv = function (pathToBlockly, parendDivId, height,
   workspaceXml = '', isStatic = false, toolboxOptions = []) {
   var injectDivName = 'blockly_' + parendDivId
