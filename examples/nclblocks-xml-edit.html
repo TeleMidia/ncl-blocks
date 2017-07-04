@@ -62,10 +62,10 @@
     </tr>
   </table>
   <script>
-    // NclBlocks.enableBody()
-    // NclBlocks.enableTypeCheck()
-    var _workspace = NclBlocks.injectInDiv('../src/', 'divToInject', '800px')
-    // var _workspace = NclBlocks.injectInDiv(Blockly.pathToBlockly,
+    // NCLBlocks.enableBody()
+    // NCLBlocks.enableTypeCheck()
+    var _workspace = NCLBlocks.injectInDiv('../src/', 'divToInject', '800px')
+    // var _workspace = NCLBlocks.injectInDiv(Blockly.pathToBlockly,
     // 'divToInject', '800px', '', false, ['excludeRecognition',
     // 'excludeResumePauseSet'])
 
@@ -149,35 +149,35 @@
     $('#alignTwoColumnsInXML').click(function () {
       if (testEmptyXML()) return
       var actualXml = $('#xmlcode').val()
-      $('#xmlcode').val(NclBlocks.alignTwoColumnsInXML(actualXml))
+      $('#xmlcode').val(NCLBlocks.alignTwoColumnsInXML(actualXml))
         .trigger('change')
     })
 
     $('#moveLeftBlocksInXML').click(function () {
       if (testEmptyXML()) return
       var actualXml = $('#xmlcode').val()
-      $('#xmlcode').val(NclBlocks.moveLeftBlocksInXML(actualXml))
+      $('#xmlcode').val(NCLBlocks.moveLeftBlocksInXML(actualXml))
         .trigger('change')
     })
 
     $('#moveRightBlocksInXML').click(function () {
       if (testEmptyXML()) return
       var actualXml = $('#xmlcode').val()
-      $('#xmlcode').val(NclBlocks.moveRightBlocksInXML(actualXml))
+      $('#xmlcode').val(NCLBlocks.moveRightBlocksInXML(actualXml))
         .trigger('change')
     })
 
     $('#moveUpBlocksInXML').click(function () {
       if (testEmptyXML()) return
       var actualXml = $('#xmlcode').val()
-      $('#xmlcode').val(NclBlocks.moveUpBlocksInXML(actualXml))
+      $('#xmlcode').val(NCLBlocks.moveUpBlocksInXML(actualXml))
         .trigger('change')
     })
 
     $('#moveDownBlocksInXML').click(function () {
       if (testEmptyXML()) return
       var actualXml = $('#xmlcode').val()
-      $('#xmlcode').val(NclBlocks.moveDownBlocksInXML(actualXml))
+      $('#xmlcode').val(NCLBlocks.moveDownBlocksInXML(actualXml))
         .trigger('change')
     })
   </script>

@@ -1,5 +1,5 @@
 // ----------------------------------------
-// nclblocks config
+// NCLBlocks config
 // ----------------------------------------
 
 var _pathToBlockly = '../../src/'
@@ -108,46 +108,46 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
   var questionName = questionAndHtml.question.name
   switch (questionName) {
     case 'blocksIntro1':
-      NclBlocks.injectInDiv(_pathToBlockly, 'blocksIntro1a',
-        NclBlocks.calculateHeight(1, 60), _data.blocksIntro1aXml, true)
-      NclBlocks.injectInDiv(_pathToBlockly, 'blocksIntro1b',
-        NclBlocks.calculateHeight(1, 110), _data.blocksIntro1bXml, true)
+      NCLBlocks.injectInDiv(_pathToBlockly, 'blocksIntro1a',
+        NCLBlocks.calculateHeight(1, 60), _data.blocksIntro1aXml, true)
+      NCLBlocks.injectInDiv(_pathToBlockly, 'blocksIntro1b',
+        NCLBlocks.calculateHeight(1, 110), _data.blocksIntro1bXml, true)
       break
     case 'blocksIntro2':
-      NclBlocks.injectInDiv(_pathToBlockly, 'blocksIntro2a',
-        NclBlocks.calculateHeight(2, 100), _data.blocksIntro2aXml, true)
-      NclBlocks.injectInDiv(_pathToBlockly, 'blocksIntro2b',
-        NclBlocks.calculateHeight(3, 110), _data.blocksIntro2bXml, true)
+      NCLBlocks.injectInDiv(_pathToBlockly, 'blocksIntro2a',
+        NCLBlocks.calculateHeight(2, 100), _data.blocksIntro2aXml, true)
+      NCLBlocks.injectInDiv(_pathToBlockly, 'blocksIntro2b',
+        NCLBlocks.calculateHeight(3, 110), _data.blocksIntro2bXml, true)
       break
     case 'blocksIntro3':
-      NclBlocks.injectInDiv(_pathToBlockly, 'blocksIntro3a',
-        NclBlocks.calculateHeight(2, 200), _data.blocksIntro3aXml, true)
-      NclBlocks.injectInDiv(_pathToBlockly, 'blocksIntro3b',
-        NclBlocks.calculateHeight(3, 110), _data.blocksIntro3bXml, true)
+      NCLBlocks.injectInDiv(_pathToBlockly, 'blocksIntro3a',
+        NCLBlocks.calculateHeight(2, 200), _data.blocksIntro3aXml, true)
+      NCLBlocks.injectInDiv(_pathToBlockly, 'blocksIntro3b',
+        NCLBlocks.calculateHeight(3, 110), _data.blocksIntro3bXml, true)
       break
     case 'blocksIntro4':
-      NclBlocks.injectInDiv(_pathToBlockly, 'blocksIntro4a',
-        NclBlocks.calculateHeight(1, 130), _data.blocksIntro4aXml, true)
-      NclBlocks.injectInDiv(_pathToBlockly, 'blocksIntro4b',
-        NclBlocks.calculateHeight(3, 140), _data.blocksIntro4bXml, true)
+      NCLBlocks.injectInDiv(_pathToBlockly, 'blocksIntro4a',
+        NCLBlocks.calculateHeight(1, 130), _data.blocksIntro4aXml, true)
+      NCLBlocks.injectInDiv(_pathToBlockly, 'blocksIntro4b',
+        NCLBlocks.calculateHeight(3, 140), _data.blocksIntro4bXml, true)
       break
     case 'blocksTask1':
-      NclBlocks.injectInDiv(_pathToBlockly, questionId,
-        NclBlocks.calculateHeight(5, 145), _data.blocksTask1Xml, true)
+      NCLBlocks.injectInDiv(_pathToBlockly, questionId,
+        NCLBlocks.calculateHeight(5, 145), _data.blocksTask1Xml, true)
       break
     case 'blocksTask2':
-      NclBlocks.injectInDiv(_pathToBlockly, questionId,
-        NclBlocks.calculateHeight(6, 145), _data.blocksTask2Xml, true)
+      NCLBlocks.injectInDiv(_pathToBlockly, questionId,
+        NCLBlocks.calculateHeight(6, 145), _data.blocksTask2Xml, true)
       break
     case 'blocksTask3':
-      _blocksTask3Workspace = NclBlocks.injectInDiv(_pathToBlockly,
-        questionId, NclBlocks.calculateHeight(6, 145), _data.blocksTask2Xml,
+      _blocksTask3Workspace = NCLBlocks.injectInDiv(_pathToBlockly,
+        questionId, NCLBlocks.calculateHeight(6, 145), _data.blocksTask2Xml,
         false, ['excludeResumePauseSet'])
       _blocksTask3Workspace.addChangeListener(saveblocksTask3Changes)
       break
     case 'blocksTask4':
-      _blocksTask4Workspace = NclBlocks.injectInDiv(_pathToBlockly,
-        questionId, NclBlocks.calculateHeight(6, 145), _data.blocksTask2Xml,
+      _blocksTask4Workspace = NCLBlocks.injectInDiv(_pathToBlockly,
+        questionId, NCLBlocks.calculateHeight(6, 145), _data.blocksTask2Xml,
         false, ['excludeResumePauseSet'])
       _blocksTask4Workspace.addChangeListener(saveblocksTask4Changes)
       break

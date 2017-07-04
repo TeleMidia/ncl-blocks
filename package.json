@@ -1,6 +1,6 @@
 {
-  "name": "nclblocks",
-  "description": "nclblocks",
+  "name": "NCLBlocks",
+  "description": "NCLBlocks",
   "repository": "github.com/alanlivio/nclblocks",
   "version": "0.1",
   "author": "Alan Livio",
@@ -18,7 +18,7 @@
       "$": true,
       "goog": true,
       "Survey": true,
-      "NclBlocks": true,
+      "NCLBlocks": true,
       "Blockly": true,
       "_data": true,
       "SyntaxHighlighter": true

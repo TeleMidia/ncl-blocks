@@ -1,12 +1,12 @@
 goog.require('Blockly.Blocks')
 
-NclBlocks = {}
+NCLBlocks = {}
 
 // ----------------------------------------
 // Types
 // ----------------------------------------
 
-NclBlocks.Types = {
+NCLBlocks.Types = {
   NODE: 'node',
   MEDIA: 'media',
   MEDIA_SRC: 'media_src',
@@ -23,129 +23,129 @@ NclBlocks.Types = {
 // Messsages
 // ----------------------------------------
 
-NclBlocks.Msg = {}
-NclBlocks.Msg.AND = 'e'
-NclBlocks.Msg.BODY = 'app'
-NclBlocks.Msg.PORT = 'início da app'
-NclBlocks.Msg.PORT_LABEL = 'quando iniciar app inicie'
-NclBlocks.Msg.MEDIA = 'mídia'
-NclBlocks.Msg.SRC = 'conteúdo'
-NclBlocks.Msg.MEDIAS = 'mídias'
-NclBlocks.Msg.INPUT = 'reconhecedor'
-NclBlocks.Msg.INPUTS = 'reconhecedores'
-NclBlocks.Msg.VIDEO = 'vídeo'
-NclBlocks.Msg.PORTION = 'trecho'
-NclBlocks.Msg.ANCHOR_BEGIN = 'tem inicio'
-NclBlocks.Msg.ANCHOR_END = 'e fim'
-NclBlocks.Msg.VIDEO_ITEM = 'trecho do vídeo'
-NclBlocks.Msg.AUDIO = 'áudio'
-NclBlocks.Msg.IMAGE = 'imagem'
-NclBlocks.Msg.SSML = 'texto para sintetização'
-NclBlocks.Msg.SSML_ANCHOR = 'sintetiza frase'
-NclBlocks.Msg.SSML_ITEM = 'frase a sintetizar'
-NclBlocks.Msg.SRGS = 'descrição de voz'
-NclBlocks.Msg.SRGS_ANCHOR = 'reconhece frase'
-NclBlocks.Msg.SRGS_ITEM = 'frase a reconhecer'
-NclBlocks.Msg.HAND_GESTURE = 'descrição de gestos'
-NclBlocks.Msg.HAND_GESTURE_ANCHOR = 'reconhece gesto de mão'
-NclBlocks.Msg.HAND_GESTURE_ITEM = 'gesto a reconhecer'
-NclBlocks.Msg.HAND_UP = 'cima'
-NclBlocks.Msg.HAND_DOWN = 'baixo'
-NclBlocks.Msg.HAND_LEFT = 'esquerda'
-NclBlocks.Msg.HAND_RIGHT = 'direita'
-NclBlocks.Msg.LINK = 'sincronismo'
-NclBlocks.Msg.LINKS = 'sincronismos'
-NclBlocks.Msg.WHEN = 'quando'
-NclBlocks.Msg.DO = 'faça'
-NclBlocks.Msg.USER = 'usuário'
-NclBlocks.Msg.USERS = 'usuários'
-NclBlocks.Msg.USERCLASS = 'grupo de usuários'
-NclBlocks.Msg.MAX_USERS = 'máximo de ususários'
-NclBlocks.Msg.DEVICE = 'dispositivo'
-NclBlocks.Msg.WITH_DEVICE = 'utilizam dispositivo'
-NclBlocks.Msg.DEVICES = 'dispositivos'
-NclBlocks.Msg.LEAP = 'sensor de gestos de mão'
-NclBlocks.Msg.MICROFONE = 'microfone'
-NclBlocks.Msg.CONDITION = 'condição'
-NclBlocks.Msg.CONDITION_SIMPLE = 'condição simples'
-NclBlocks.Msg.CONDITIONS = 'condições'
-NclBlocks.Msg.ONRECOGNIZE = 'reconhecer'
-NclBlocks.Msg.ONRECOGNIZE_FROM_USER = 'do usuário'
-NclBlocks.Msg.ONBEGIN = 'iniciar'
-NclBlocks.Msg.ONEND = 'terminar'
-NclBlocks.Msg.ONPAUSE = 'pausar'
-NclBlocks.Msg.ONRESUME = 'resumir'
-NclBlocks.Msg.ONSELECTION = 'selecionar'
-NclBlocks.Msg.COMPOUND_CONDITION_SEQ = 'em sequencia'
-NclBlocks.Msg.COMPOUND_CONDITION_AND = 'todos entre'
-NclBlocks.Msg.COMPOUND_CONDITION_OR = 'um entre'
-NclBlocks.Msg.ACTION = 'ação'
-NclBlocks.Msg.ACTIONS = 'ações'
-NclBlocks.Msg.START = 'inicie'
-NclBlocks.Msg.STOP = 'termine'
-NclBlocks.Msg.PAUSE = 'pause'
-NclBlocks.Msg.RESUME = 'resuma'
-NclBlocks.Msg.SET = 'atribua'
-NclBlocks.Msg.SET_TO = 'com valor'
+NCLBlocks.Msg = {}
+NCLBlocks.Msg.AND = 'e'
+NCLBlocks.Msg.BODY = 'app'
+NCLBlocks.Msg.PORT = 'início da app'
+NCLBlocks.Msg.PORT_LABEL = 'quando iniciar app inicie'
+NCLBlocks.Msg.MEDIA = 'mídia'
+NCLBlocks.Msg.SRC = 'conteúdo'
+NCLBlocks.Msg.MEDIAS = 'mídias'
+NCLBlocks.Msg.INPUT = 'reconhecedor'
+NCLBlocks.Msg.INPUTS = 'reconhecedores'
+NCLBlocks.Msg.VIDEO = 'vídeo'
+NCLBlocks.Msg.PORTION = 'trecho'
+NCLBlocks.Msg.ANCHOR_BEGIN = 'tem inicio'
+NCLBlocks.Msg.ANCHOR_END = 'e fim'
+NCLBlocks.Msg.VIDEO_ITEM = 'trecho do vídeo'
+NCLBlocks.Msg.AUDIO = 'áudio'
+NCLBlocks.Msg.IMAGE = 'imagem'
+NCLBlocks.Msg.SSML = 'texto para sintetização'
+NCLBlocks.Msg.SSML_ANCHOR = 'sintetiza frase'
+NCLBlocks.Msg.SSML_ITEM = 'frase a sintetizar'
+NCLBlocks.Msg.SRGS = 'descrição de voz'
+NCLBlocks.Msg.SRGS_ANCHOR = 'reconhece frase'
+NCLBlocks.Msg.SRGS_ITEM = 'frase a reconhecer'
+NCLBlocks.Msg.HAND_GESTURE = 'descrição de gestos'
+NCLBlocks.Msg.HAND_GESTURE_ANCHOR = 'reconhece gesto de mão'
+NCLBlocks.Msg.HAND_GESTURE_ITEM = 'gesto a reconhecer'
+NCLBlocks.Msg.HAND_UP = 'cima'
+NCLBlocks.Msg.HAND_DOWN = 'baixo'
+NCLBlocks.Msg.HAND_LEFT = 'esquerda'
+NCLBlocks.Msg.HAND_RIGHT = 'direita'
+NCLBlocks.Msg.LINK = 'sincronismo'
+NCLBlocks.Msg.LINKS = 'sincronismos'
+NCLBlocks.Msg.WHEN = 'quando'
+NCLBlocks.Msg.DO = 'faça'
+NCLBlocks.Msg.USER = 'usuário'
+NCLBlocks.Msg.USERS = 'usuários'
+NCLBlocks.Msg.USERCLASS = 'grupo de usuários'
+NCLBlocks.Msg.MAX_USERS = 'máximo de ususários'
+NCLBlocks.Msg.DEVICE = 'dispositivo'
+NCLBlocks.Msg.WITH_DEVICE = 'utilizam dispositivo'
+NCLBlocks.Msg.DEVICES = 'dispositivos'
+NCLBlocks.Msg.LEAP = 'sensor de gestos de mão'
+NCLBlocks.Msg.MICROFONE = 'microfone'
+NCLBlocks.Msg.CONDITION = 'condição'
+NCLBlocks.Msg.CONDITION_SIMPLE = 'condição simples'
+NCLBlocks.Msg.CONDITIONS = 'condições'
+NCLBlocks.Msg.ONRECOGNIZE = 'reconhecer'
+NCLBlocks.Msg.ONRECOGNIZE_FROM_USER = 'do usuário'
+NCLBlocks.Msg.ONBEGIN = 'iniciar'
+NCLBlocks.Msg.ONEND = 'terminar'
+NCLBlocks.Msg.ONPAUSE = 'pausar'
+NCLBlocks.Msg.ONRESUME = 'resumir'
+NCLBlocks.Msg.ONSELECTION = 'selecionar'
+NCLBlocks.Msg.COMPOUND_CONDITION_SEQ = 'em sequencia'
+NCLBlocks.Msg.COMPOUND_CONDITION_AND = 'todos entre'
+NCLBlocks.Msg.COMPOUND_CONDITION_OR = 'um entre'
+NCLBlocks.Msg.ACTION = 'ação'
+NCLBlocks.Msg.ACTIONS = 'ações'
+NCLBlocks.Msg.START = 'inicie'
+NCLBlocks.Msg.STOP = 'termine'
+NCLBlocks.Msg.PAUSE = 'pause'
+NCLBlocks.Msg.RESUME = 'resuma'
+NCLBlocks.Msg.SET = 'atribua'
+NCLBlocks.Msg.SET_TO = 'com valor'
 
 // ----------------------------------------
 // Icons
 // ----------------------------------------
 
-NclBlocks.Icons = {}
-NclBlocks.Icons.CONTEXT = 'media/ncl/icon-context.png'
-NclBlocks.Icons.MEDIA = 'media/ncl/icon-media.png'
-NclBlocks.Icons.VIDEO = 'media/ncl/icon-media-video.png'
-NclBlocks.Icons.IMAGE = 'media/ncl/icon-media-image.png'
-NclBlocks.Icons.AUDIO = 'media/ncl/icon-media-audio.png'
-NclBlocks.Icons.INPUT = 'media/ncl/icon-recognition.png'
-NclBlocks.Icons.SSML = 'media/ncl/ssml.png'
-NclBlocks.Icons.SRGS = 'media/ncl/srgs.png'
-NclBlocks.Icons.HAND_GESTURE = 'media/ncl/hand-gesture.png'
-NclBlocks.Icons.HAND_GESTURE_SCROLL_DOWN = 'media/ncl/gesture_scroll_down.png'
-NclBlocks.Icons.HAND_GESTURE_SCROLL_UP = 'media/ncl/gesture_scroll_up.png'
-NclBlocks.Icons.HAND_GESTURE_SWIPE_LEFT = 'media/ncl/gesture_swipe_left.png'
-NclBlocks.Icons.HAND_GESTURE_SWIPE_RIGHT = 'media/ncl/gesture_swipe_right.png'
-NclBlocks.Icons.PORT = 'media/ncl/icon-link.png'
-NclBlocks.Icons.LINK = 'media/ncl/icon-link.png'
-NclBlocks.Icons.USER = 'media/ncl/icon-user-class.png'
-NclBlocks.Icons.HAND_GESTURE_SENSOR = 'media/ncl/hand-gesture-sensor.png'
-NclBlocks.Icons.MICROFONE = 'media/ncl/headset.png'
-NclBlocks.Icons.ONRECOGNIZE = 'media/ncl/icon-bind-onselection.png'
-NclBlocks.Icons.ONBEGIN = 'media/ncl/icon-bind-onbegin.png'
-NclBlocks.Icons.ONEND = 'media/ncl/icon-bind-onend.png'
-NclBlocks.Icons.ONPAUSE = 'media/ncl/icon-bind-onpause.png'
-NclBlocks.Icons.ONRESUME = 'media/ncl/icon-bind-onresume.png'
-NclBlocks.Icons.ONSELECTION = 'media/ncl/icon-bind-onselection.png'
-NclBlocks.Icons.START = 'media/ncl/icon-bind-start.png'
-NclBlocks.Icons.STOP = 'media/ncl/icon-bind-stop.png'
-NclBlocks.Icons.PAUSE = 'media/ncl/icon-bind-pause.png'
-NclBlocks.Icons.RESUME = 'media/ncl/icon-bind-resume.png'
-NclBlocks.Icons.SET = 'media/ncl/icon-bind-set.png'
+NCLBlocks.Icons = {}
+NCLBlocks.Icons.CONTEXT = 'media/ncl/icon-context.png'
+NCLBlocks.Icons.MEDIA = 'media/ncl/icon-media.png'
+NCLBlocks.Icons.VIDEO = 'media/ncl/icon-media-video.png'
+NCLBlocks.Icons.IMAGE = 'media/ncl/icon-media-image.png'
+NCLBlocks.Icons.AUDIO = 'media/ncl/icon-media-audio.png'
+NCLBlocks.Icons.INPUT = 'media/ncl/icon-recognition.png'
+NCLBlocks.Icons.SSML = 'media/ncl/ssml.png'
+NCLBlocks.Icons.SRGS = 'media/ncl/srgs.png'
+NCLBlocks.Icons.HAND_GESTURE = 'media/ncl/hand-gesture.png'
+NCLBlocks.Icons.HAND_GESTURE_SCROLL_DOWN = 'media/ncl/gesture_scroll_down.png'
+NCLBlocks.Icons.HAND_GESTURE_SCROLL_UP = 'media/ncl/gesture_scroll_up.png'
+NCLBlocks.Icons.HAND_GESTURE_SWIPE_LEFT = 'media/ncl/gesture_swipe_left.png'
+NCLBlocks.Icons.HAND_GESTURE_SWIPE_RIGHT = 'media/ncl/gesture_swipe_right.png'
+NCLBlocks.Icons.PORT = 'media/ncl/icon-link.png'
+NCLBlocks.Icons.LINK = 'media/ncl/icon-link.png'
+NCLBlocks.Icons.USER = 'media/ncl/icon-user-class.png'
+NCLBlocks.Icons.HAND_GESTURE_SENSOR = 'media/ncl/hand-gesture-sensor.png'
+NCLBlocks.Icons.MICROFONE = 'media/ncl/headset.png'
+NCLBlocks.Icons.ONRECOGNIZE = 'media/ncl/icon-bind-onselection.png'
+NCLBlocks.Icons.ONBEGIN = 'media/ncl/icon-bind-onbegin.png'
+NCLBlocks.Icons.ONEND = 'media/ncl/icon-bind-onend.png'
+NCLBlocks.Icons.ONPAUSE = 'media/ncl/icon-bind-onpause.png'
+NCLBlocks.Icons.ONRESUME = 'media/ncl/icon-bind-onresume.png'
+NCLBlocks.Icons.ONSELECTION = 'media/ncl/icon-bind-onselection.png'
+NCLBlocks.Icons.START = 'media/ncl/icon-bind-start.png'
+NCLBlocks.Icons.STOP = 'media/ncl/icon-bind-stop.png'
+NCLBlocks.Icons.PAUSE = 'media/ncl/icon-bind-pause.png'
+NCLBlocks.Icons.RESUME = 'media/ncl/icon-bind-resume.png'
+NCLBlocks.Icons.SET = 'media/ncl/icon-bind-set.png'
 
 // ----------------------------------------
 // Colours
 // ----------------------------------------
 
-NclBlocks.Colours = {}
-NclBlocks.Colours.BODY = 20
-NclBlocks.Colours.MEDIA = 100
-NclBlocks.Colours.INPUT = 150
-NclBlocks.Colours.USER = 40
-NclBlocks.Colours.LINK = 260
-NclBlocks.Colours.PORT = 260
-NclBlocks.Colours.CONDITION = 280
-NclBlocks.Colours.ACTION = 225
+NCLBlocks.Colours = {}
+NCLBlocks.Colours.BODY = 20
+NCLBlocks.Colours.MEDIA = 100
+NCLBlocks.Colours.INPUT = 150
+NCLBlocks.Colours.USER = 40
+NCLBlocks.Colours.LINK = 260
+NCLBlocks.Colours.PORT = 260
+NCLBlocks.Colours.CONDITION = 280
+NCLBlocks.Colours.ACTION = 225
 
 // ----------------------------------------
 // default toolbox
 // ----------------------------------------
 
-NclBlocks.getDefaultToolboxXML = function (toolboxOptions) {
+NCLBlocks.getDefaultToolboxXML = function (toolboxOptions) {
   var excludeRecognition = !!toolboxOptions.includes('excludeRecognition')
   var excludeResumePauseSet = !!toolboxOptions.includes('excludeResumePauseSet')
   var ret = `<xml id="toolbox" style="display: none">`
-  ret += `<category name="` + NclBlocks.Msg.MEDIA + `">`
+  ret += `<category name="` + NCLBlocks.Msg.MEDIA + `">`
   ret += `  <block type="media"></block>`
   ret += `  <block type="image"></block>`
   ret += `  <block type="audio"></block>`
@@ -153,22 +153,22 @@ NclBlocks.getDefaultToolboxXML = function (toolboxOptions) {
   ret += `  <block type="ssml"></block>`
   ret += `</category>`
   if (!excludeRecognition) {
-    ret += `<category name="` + NclBlocks.Msg.INPUT + `">`
+    ret += `<category name="` + NCLBlocks.Msg.INPUT + `">`
     ret += `  <block type="input"></block>`
     ret += `  <block type="srgs"></block>`
     ret += `  <block type="hand_gesture"></block>`
     ret += `</category>`
-    ret += `<category name="` + NclBlocks.Msg.USER + `">`
+    ret += `<category name="` + NCLBlocks.Msg.USER + `">`
     ret += `  <block type="user"></block>`
     ret += `  <block type="headset"></block>`
     ret += `  <block type="hand_gesture_sensor"></block>`
     ret += `</category>`
   }
-  ret += `<category name="` + NclBlocks.Msg.LINK + `">`
+  ret += `<category name="` + NCLBlocks.Msg.LINK + `">`
   ret += `  <block type="port"></block>`
   ret += `  <block type="link"></block>`
   ret += `</category>`
-  ret += `<category name="` + NclBlocks.Msg.CONDITIONS + `">`
+  ret += `<category name="` + NCLBlocks.Msg.CONDITIONS + `">`
   ret += `  <block type="onbegin"></block>`
   ret += `  <block type="onselection"></block>`
   ret += `  <block type="onend"></block>`
@@ -182,7 +182,7 @@ NclBlocks.getDefaultToolboxXML = function (toolboxOptions) {
   }
   ret += `  <block type="compoundcondition"></block>`
   ret += `</category>`
-  ret += `<category name="` + NclBlocks.Msg.ACTIONS + `">`
+  ret += `<category name="` + NCLBlocks.Msg.ACTIONS + `">`
   ret += `  <block type="start"></block>`
   ret += `  <block type="stop"></block>`
   if (!excludeResumePauseSet) {
@@ -194,7 +194,7 @@ NclBlocks.getDefaultToolboxXML = function (toolboxOptions) {
   ret += `</xml>`
   return ret
 }
-NclBlocks.START_WORKSPACE_WITH_BODY =
+NCLBlocks.START_WORKSPACE_WITH_BODY =
   `<xml id="startBlocks" style="display: none">
     <block type="body" inline="false" x="20" y="20"></block>
     </xml>`
@@ -204,33 +204,33 @@ NclBlocks.START_WORKSPACE_WITH_BODY =
 // ----------------------------------------
 
 Blockly.BlockSvg.START_HAT = true
-NclBlocks.USE_BODY = false
-NclBlocks.USE_CHECK = false
+NCLBlocks.USE_BODY = false
+NCLBlocks.USE_CHECK = false
 
-NclBlocks.enableBody = function () {
+NCLBlocks.enableBody = function () {
   Blockly.BlockSvg.START_HAT = false
-  NclBlocks.USE_BODY = true
+  NCLBlocks.USE_BODY = true
 }
-NclBlocks.disableBody = function () {
+NCLBlocks.disableBody = function () {
   Blockly.BlockSvg.START_HAT = true
-  NclBlocks.USE_BODY = false
+  NCLBlocks.USE_BODY = false
 }
-NclBlocks.enableTypeCheck = function () {
-  NclBlocks.USE_CHECK = true
+NCLBlocks.enableTypeCheck = function () {
+  NCLBlocks.USE_CHECK = true
 }
-NclBlocks.disableTypeCheck = function () {
-  NclBlocks.USE_CHECK = false
+NCLBlocks.disableTypeCheck = function () {
+  NCLBlocks.USE_CHECK = false
 }
 
 // ----------------------------------------
 // xml blocks functions
 // ----------------------------------------
 
-NclBlocks.calculateHeight = function (numBlocks, oneBlockHeight) {
+NCLBlocks.calculateHeight = function (numBlocks, oneBlockHeight) {
   return 20 * (1 + numBlocks) + oneBlockHeight * numBlocks + 'px'
 }
 
-NclBlocks.alignTwoColumnsInXML = function (xml) {
+NCLBlocks.alignTwoColumnsInXML = function (xml) {
   var replaceXY = function (match, p1, p2) {
     var x = p1
     var y = p2
@@ -245,7 +245,7 @@ NclBlocks.alignTwoColumnsInXML = function (xml) {
   return xmlAligned
 }
 
-NclBlocks.moveLeftBlocksInXML = function (xml) {
+NCLBlocks.moveLeftBlocksInXML = function (xml) {
   var replaceXY = function (match, p1, p2) {
     var x = p1
     var y = p2
@@ -255,7 +255,7 @@ NclBlocks.moveLeftBlocksInXML = function (xml) {
   return xmlAligned
 }
 
-NclBlocks.moveRightBlocksInXML = function (xml) {
+NCLBlocks.moveRightBlocksInXML = function (xml) {
   var replaceXY = function (match, p1, p2) {
     var x = p1
     var y = p2
@@ -265,7 +265,7 @@ NclBlocks.moveRightBlocksInXML = function (xml) {
   return xmlAligned
 }
 
-NclBlocks.moveUpBlocksInXML = function (xml) {
+NCLBlocks.moveUpBlocksInXML = function (xml) {
   var replaceXY = function (match, p1, p2) {
     var x = p1
     var y = p2
@@ -275,7 +275,7 @@ NclBlocks.moveUpBlocksInXML = function (xml) {
   return xmlAligned
 }
 
-NclBlocks.moveDownBlocksInXML = function (xml) {
+NCLBlocks.moveDownBlocksInXML = function (xml) {
   var replaceXY = function (match, p1, p2) {
     var x = p1
     var y = p2
@@ -292,8 +292,8 @@ NclBlocks.moveDownBlocksInXML = function (xml) {
 var _updateMediaIcons = true
 
 /**
- * @brief Inject a NclBlocks workspace at the end of a div.
- * @param {string} pathToBlockly path to NclBlocks folder.
+ * @brief Inject a NCLBlocks workspace at the end of a div.
+ * @param {string} pathToBlockly path to NCLBlocks folder.
  * @param {string} parendDivId div to inject into
  * @param {string} height hight of injected the workspace
  * @param {string=} workspaceXml initial blocks in the workspace
@@ -301,15 +301,15 @@ var _updateMediaIcons = true
  * @param {string=} toolboxOptions configure toolbox
  */
 
-NclBlocks.injectInDiv = function (pathToBlockly, parendDivId, height,
+NCLBlocks.injectInDiv = function (pathToBlockly, parendDivId, height,
   workspaceXml = '', isStatic = false, toolboxOptions = []) {
   var injectDivName = 'blockly_' + parendDivId
   var workspace
 
   Blockly.pathToBlockly = pathToBlockly || './'
   if (_updateMediaIcons) {
-    for (var i in NclBlocks.Icons) {
-      NclBlocks.Icons[i] = Blockly.pathToBlockly + NclBlocks.Icons[i]
+    for (var i in NCLBlocks.Icons) {
+      NCLBlocks.Icons[i] = Blockly.pathToBlockly + NCLBlocks.Icons[i]
     }
     _updateMediaIcons = false
   }
@@ -350,14 +350,14 @@ NclBlocks.injectInDiv = function (pathToBlockly, parendDivId, height,
   } else {
     workspace = Blockly.inject(injectDivName, {
       media: Blockly.pathToBlockly + 'media/',
-      toolbox: NclBlocks.getDefaultToolboxXML(toolboxOptions),
+      toolbox: NCLBlocks.getDefaultToolboxXML(toolboxOptions),
       zoom: { controls: true },
       scrollbars: true,
       sounds: true
     })
   }
-  if (NclBlocks.USE_BODY) {
-    workspaceXml = NclBlocks.START_WORKSPACE_WITH_BODY
+  if (NCLBlocks.USE_BODY) {
+    workspaceXml = NCLBlocks.START_WORKSPACE_WITH_BODY
   }
   Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(workspaceXml), workspace)
 
@@ -480,52 +480,52 @@ var NclBlockMixin = {
   },
   initAsMedia: function (isSRC = false) {
     this.initShared()
-    this.setColour(NclBlocks.Colours.MEDIA)
+    this.setColour(NCLBlocks.Colours.MEDIA)
     if (isSRC) {
       this.setOutput(true,
-        NclBlocks.USE_CHECK ? NclBlocks.Types.MEDIA_SRC : null)
-    } else if (NclBlocks.USE_BODY === true) {
-      this.setOutput(true, NclBlocks.Types.MEDIA)
+        NCLBlocks.USE_CHECK ? NCLBlocks.Types.MEDIA_SRC : null)
+    } else if (NCLBlocks.USE_BODY === true) {
+      this.setOutput(true, NCLBlocks.Types.MEDIA)
     }
   },
   initAsInput: function (isSRC = false) {
     this.initShared()
-    this.setColour(NclBlocks.Colours.INPUT)
+    this.setColour(NCLBlocks.Colours.INPUT)
     if (isSRC) {
       this.setOutput(true,
-        NclBlocks.USE_CHECK ? NclBlocks.Types.INPUT_SRC : null)
-    } else if (NclBlocks.USE_BODY === true) {
-      this.setOutput(true, NclBlocks.Types.INPUT)
+        NCLBlocks.USE_CHECK ? NCLBlocks.Types.INPUT_SRC : null)
+    } else if (NCLBlocks.USE_BODY === true) {
+      this.setOutput(true, NCLBlocks.Types.INPUT)
     }
   },
   initAsUser: function (isSRC = false) {
     this.initShared()
-    this.setColour(NclBlocks.Colours.USER)
+    this.setColour(NCLBlocks.Colours.USER)
     if (isSRC) {
       this.setOutput(true,
-        NclBlocks.USE_CHECK ? NclBlocks.Types.USER_SRC : null)
-    } else if (NclBlocks.USE_BODY === true) {
-      this.setOutput(true, NclBlocks.Types.USER)
+        NCLBlocks.USE_CHECK ? NCLBlocks.Types.USER_SRC : null)
+    } else if (NCLBlocks.USE_BODY === true) {
+      this.setOutput(true, NCLBlocks.Types.USER)
     }
   },
   initAsLink: function () {
     this.initShared()
-    this.setColour(NclBlocks.Colours.LINK)
-    if (NclBlocks.USE_BODY === true) this.setOutput(true, NclBlocks.Types.LINK)
+    this.setColour(NCLBlocks.Colours.LINK)
+    if (NCLBlocks.USE_BODY === true) this.setOutput(true, NCLBlocks.Types.LINK)
   },
   conditionLikeInit: function () {
     this.initShared()
-    this.setColour(NclBlocks.Colours.CONDITION)
+    this.setColour(NCLBlocks.Colours.CONDITION)
     this.setOutput(true,
-      NclBlocks.USE_CHECK ? NclBlocks.Types.CONDITION : null)
+      NCLBlocks.USE_CHECK ? NCLBlocks.Types.CONDITION : null)
   },
   actionLikeInit: function () {
     this.initShared()
-    this.setColour(NclBlocks.Colours.ACTION)
-    this.setPreviousStatement(true, NclBlocks.USE_CHECK
-      ? NclBlocks.Types.ACTION : null)
+    this.setColour(NCLBlocks.Colours.ACTION)
+    this.setPreviousStatement(true, NCLBlocks.USE_CHECK
+      ? NCLBlocks.Types.ACTION : null)
     this.setNextStatement(true,
-      NclBlocks.USE_CHECK ? NclBlocks.Types.ACTION : null)
+      NCLBlocks.USE_CHECK ? NCLBlocks.Types.ACTION : null)
   }
 }
 
@@ -541,11 +541,11 @@ var NclIdHandlerMixin = {
       this.sourceBlock_.workspace.idArrayUser = [['-', '-']]
       this.sourceBlock_.workspace.idArraysFlag = true
     }
-    if (this.idType === NclBlocks.Types.MEDIA) {
+    if (this.idType === NCLBlocks.Types.MEDIA) {
       this.idArray = this.sourceBlock_.workspace.idArrayMedia
-    } else if (this.idType === NclBlocks.Types.INPUT) {
+    } else if (this.idType === NCLBlocks.Types.INPUT) {
       this.idArray = this.sourceBlock_.workspace.idArrayInput
-    } else if (this.idType === NclBlocks.Types.USER) {
+    } else if (this.idType === NCLBlocks.Types.USER) {
       this.idArray = this.sourceBlock_.workspace.idArrayUser
     }
   }
@@ -574,7 +574,7 @@ IdFieldDropdown.prototype.getIdArray = function () {
   if (!this.sourceBlock_) return [['-', '-']]
   // at workspace
   this.createIdArrays()
-  if (this.idType === NclBlocks.Types.NODE) {
+  if (this.idType === NCLBlocks.Types.NODE) {
     var medias = this.sourceBlock_.workspace.idArrayMedia
     var inputs = this.sourceBlock_.workspace.idArrayInput
     var ret = medias.concat(inputs).sort()
@@ -614,15 +614,15 @@ IdFieldText.prototype.validateId = function (text) {
   // at workspace and no idArrayMedia
   this.createIdArrays()
   var i
-  if (this.idType === NclBlocks.Types.MEDIA ||
-    this.idType === NclBlocks.Types.INPUT) {
+  if (this.idType === NCLBlocks.Types.MEDIA ||
+    this.idType === NCLBlocks.Types.INPUT) {
     for (i in this.sourceBlock_.workspace.idArrayMedia) {
       if (this.sourceBlock_.workspace.idArrayMedia[i][0] === text) return null
     }
     for (i in this.sourceBlock_.workspace.idArrayInput) {
       if (this.sourceBlock_.workspace.idArrayInput[i][0] === text) return null
     }
-  } else if (this.idType === NclBlocks.Types.USER) {
+  } else if (this.idType === NCLBlocks.Types.USER) {
     for (i in this.sourceBlock_.workspace.idArrayUser) {
       if (this.sourceBlock_.workspace.idArrayUser[i][0] === text) return null
     }
@@ -654,7 +654,7 @@ IdFieldText.prototype.saveId = function (text) {
   if (!text) return
   this.createIdArrays()
   this.idArray.push([text, text])
-  if (this.idType === NclBlocks.Types.USER) {
+  if (this.idType === NCLBlocks.Types.USER) {
     var maxUsers = this.sourceBlock_.inputList[1].fieldRow[3].text_
     if (maxUsers) {
       for (var i = 1; i <= maxUsers; i++) {
@@ -677,7 +677,7 @@ IdFieldText.prototype.removeId = function (text) {
     }
   }
   if (index > -1) { this.idArray.splice(index, 1) }
-  if (this.idType === NclBlocks.Types.USER) {
+  if (this.idType === NCLBlocks.Types.USER) {
     var maxUsers = this.sourceBlock_.inputList[1].fieldRow[3].text_
     this.idArray.splice(index, 1 + maxUsers)
   }
@@ -689,7 +689,7 @@ IdFieldText.prototype.removeId = function (text) {
 
 var UserMaxFieldNumber = function (initialValue) {
   this.previous = initialValue || 2
-  this.idType = NclBlocks.Types.USER
+  this.idType = NCLBlocks.Types.USER
   UserMaxFieldNumber.superClass_.constructor.call(this, initialValue, 2, 10, 1)
 }
 goog.inherits(UserMaxFieldNumber, Blockly.FieldNumber)
@@ -747,7 +747,7 @@ UserMaxFieldNumber.prototype.updateIds = function (text) {
 
 Blockly.Blocks.body = {
   init: function () {
-    this.setColour(NclBlocks.Colours.BODY)
+    this.setColour(NCLBlocks.Colours.BODY)
     this.contextMenu = false
     this.setDeletable(false)
 
@@ -756,15 +756,15 @@ Blockly.Blocks.body = {
     this.isInputValue = true
     this.configureNewInput = function (newInput, index) {
       newInput.appendField()
-        .setCheck(NclBlocks.USE_CHECK
-          ? [NclBlocks.Types.MEDIA, NclBlocks.Types.INPUT, NclBlocks.Types.USER,
-            NclBlocks.Types.LINK]
+        .setCheck(NCLBlocks.USE_CHECK
+          ? [NCLBlocks.Types.MEDIA, NCLBlocks.Types.INPUT, NCLBlocks.Types.USER,
+            NCLBlocks.Types.LINK]
           : null)
     }
     // add name
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(NclBlocks.Icons.CONTEXT, 20, 20, '*'))
-      .appendField('{' + NclBlocks.Msg.BODY + '}')
+      .appendField(new Blockly.FieldImage(NCLBlocks.Icons.CONTEXT, 20, 20, '*'))
+      .appendField('{' + NCLBlocks.Msg.BODY + '}')
     // add edit buttons
     this.addMinusPlusDummyInput()
     // add initial inputs
@@ -783,13 +783,13 @@ Blockly.Blocks.media = {
 
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(
-        NclBlocks.Icons.MEDIA, 25, 25, '*'))
-      .appendField('{' + NclBlocks.Msg.MEDIA + '}')
+        NCLBlocks.Icons.MEDIA, 25, 25, '*'))
+      .appendField('{' + NCLBlocks.Msg.MEDIA + '}')
     this.appendValueInput('src')
-      .setCheck(NclBlocks.USE_CHECK ? NclBlocks.Types.MEDIA_SRC : null)
+      .setCheck(NCLBlocks.USE_CHECK ? NCLBlocks.Types.MEDIA_SRC : null)
       .appendField('id')
-      .appendField(new IdFieldText('', NclBlocks.Types.MEDIA), 'id')
-      .appendField('e ' + NclBlocks.Msg.SRC)
+      .appendField(new IdFieldText('', NCLBlocks.Types.MEDIA), 'id')
+      .appendField('e ' + NCLBlocks.Msg.SRC)
     this.setInputsInline(false)
   }
 }
@@ -800,8 +800,8 @@ Blockly.Blocks.image = {
     this.initAsMedia(true)
 
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(NclBlocks.Icons.IMAGE, 25, 25, '*'))
-      .appendField('{' + NclBlocks.Msg.IMAGE + '}')
+      .appendField(new Blockly.FieldImage(NCLBlocks.Icons.IMAGE, 25, 25, '*'))
+      .appendField('{' + NCLBlocks.Msg.IMAGE + '}')
   }
 }
 Object.assign(Blockly.Blocks.image, NclBlockMixin)
@@ -814,18 +814,18 @@ Blockly.Blocks.video = {
     this.stackSize = 0
     this.isInputValue = false
     this.configureNewInput = function (newInput, index) {
-      newInput.appendField(NclBlocks.Msg.PORTION)
-        .appendField(new IdFieldText('', NclBlocks.Types.MEDIA), 'id_area' +
+      newInput.appendField(NCLBlocks.Msg.PORTION)
+        .appendField(new IdFieldText('', NCLBlocks.Types.MEDIA), 'id_area' +
         index)
-        .appendField(NclBlocks.Msg.ANCHOR_BEGIN)
+        .appendField(NCLBlocks.Msg.ANCHOR_BEGIN)
         .appendField(new Blockly.FieldTextInput(''), 'begin' + index)
-        .appendField(NclBlocks.Msg.ANCHOR_END)
+        .appendField(NCLBlocks.Msg.ANCHOR_END)
         .appendField(new Blockly.FieldTextInput(''), 'end' + index)
     }
     // add name
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(NclBlocks.Icons.VIDEO, 25, 25, '*'))
-      .appendField('{' + NclBlocks.Msg.VIDEO + '}')
+      .appendField(new Blockly.FieldImage(NCLBlocks.Icons.VIDEO, 25, 25, '*'))
+      .appendField('{' + NCLBlocks.Msg.VIDEO + '}')
     // add edit buttons
     this.addMinusPlusDummyInput()
     // add one area
@@ -843,18 +843,18 @@ Blockly.Blocks.audio = {
     this.stackSize = 0
     this.isInputValue = false
     this.configureNewInput = function (newInput, index) {
-      newInput.appendField(NclBlocks.Msg.PORTION)
-        .appendField(new IdFieldText('', NclBlocks.Types.MEDIA), 'id_area' +
+      newInput.appendField(NCLBlocks.Msg.PORTION)
+        .appendField(new IdFieldText('', NCLBlocks.Types.MEDIA), 'id_area' +
         index)
-        .appendField(NclBlocks.Msg.ANCHOR_BEGIN)
+        .appendField(NCLBlocks.Msg.ANCHOR_BEGIN)
         .appendField(new Blockly.FieldTextInput(''), 'begin' + index)
-        .appendField(NclBlocks.Msg.ANCHOR_END)
+        .appendField(NCLBlocks.Msg.ANCHOR_END)
         .appendField(new Blockly.FieldTextInput(''), 'end' + index)
     }
     // add name
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(NclBlocks.Icons.AUDIO, 25, 25, '*'))
-      .appendField('{' + NclBlocks.Msg.AUDIO + '}')
+      .appendField(new Blockly.FieldImage(NCLBlocks.Icons.AUDIO, 25, 25, '*'))
+      .appendField('{' + NCLBlocks.Msg.AUDIO + '}')
     // add edit buttons
     this.addMinusPlusDummyInput()
     // add one area
@@ -872,16 +872,16 @@ Blockly.Blocks.ssml = {
     this.stackSize = 0
     this.isInputValue = false
     this.configureNewInput = function (newInput, index) {
-      newInput.appendField(NclBlocks.Msg.PORTION)
-        .appendField(new IdFieldText('', NclBlocks.Types.MEDIA), 'id_area' +
+      newInput.appendField(NCLBlocks.Msg.PORTION)
+        .appendField(new IdFieldText('', NCLBlocks.Types.MEDIA), 'id_area' +
         index)
-        .appendField(NclBlocks.Msg.SSML_ANCHOR)
+        .appendField(NCLBlocks.Msg.SSML_ANCHOR)
         .appendField(new Blockly.FieldTextInput(''), 'label' + index)
     }
     // add name
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(NclBlocks.Icons.SSML, 25, 25, '*'))
-      .appendField('{' + NclBlocks.Msg.SSML + '}')
+      .appendField(new Blockly.FieldImage(NCLBlocks.Icons.SSML, 25, 25, '*'))
+      .appendField('{' + NCLBlocks.Msg.SSML + '}')
     this.stackSize++
     // add plus button
     this.addMinusPlusDummyInput()
@@ -902,13 +902,13 @@ Blockly.Blocks.input = {
 
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(
-        NclBlocks.Icons.INPUT, 25, 25, '*'))
-      .appendField('{' + NclBlocks.Msg.INPUT + '}')
+        NCLBlocks.Icons.INPUT, 25, 25, '*'))
+      .appendField('{' + NCLBlocks.Msg.INPUT + '}')
     this.appendValueInput('src')
-      .setCheck(NclBlocks.USE_CHECK ? NclBlocks.Types.INPUT_SRC : null)
+      .setCheck(NCLBlocks.USE_CHECK ? NCLBlocks.Types.INPUT_SRC : null)
       .appendField('id')
-      .appendField(new IdFieldText('', NclBlocks.Types.INPUT), 'id')
-      .appendField('e ' + NclBlocks.Msg.SRC)
+      .appendField(new IdFieldText('', NCLBlocks.Types.INPUT), 'id')
+      .appendField('e ' + NCLBlocks.Msg.SRC)
   }
 }
 Object.assign(Blockly.Blocks.input, NclBlockMixin)
@@ -921,16 +921,16 @@ Blockly.Blocks.srgs = {
     this.stackSize = 0
     this.isInputValue = false
     this.configureNewInput = function (newInput, index) {
-      newInput.appendField(NclBlocks.Msg.PORTION)
-        .appendField(new IdFieldText('', NclBlocks.Types.INPUT), 'id_area' +
+      newInput.appendField(NCLBlocks.Msg.PORTION)
+        .appendField(new IdFieldText('', NCLBlocks.Types.INPUT), 'id_area' +
         index)
-        .appendField(NclBlocks.Msg.SRGS_ANCHOR)
+        .appendField(NCLBlocks.Msg.SRGS_ANCHOR)
         .appendField(new Blockly.FieldTextInput(''), 'label' + index)
     }
     // add name
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(NclBlocks.Icons.SRGS, 25, 25, '*'))
-      .appendField('{' + NclBlocks.Msg.SRGS + '}')
+      .appendField(new Blockly.FieldImage(NCLBlocks.Icons.SRGS, 25, 25, '*'))
+      .appendField('{' + NCLBlocks.Msg.SRGS + '}')
     // add edit buttons
     this.addMinusPlusDummyInput()
     // add one area
@@ -951,25 +951,25 @@ Blockly.Blocks.hand_gesture = {
       var dropdown = new Blockly.FieldDropdown(
         [
           ['-', '-'],
-          [{ 'src': NclBlocks.Icons.HAND_GESTURE_SCROLL_DOWN, 'width': 70, 'height': 70, 'alt': NclBlocks.Msg.HAND_DOWN },
-            NclBlocks.Msg.HAND_DOWN],
-          [{ 'src': NclBlocks.Icons.HAND_GESTURE_SCROLL_UP, 'width': 70, 'height': 70, 'alt': NclBlocks.Msg.HAND_UP },
-            NclBlocks.Msg.HAND_UP],
-          [{ 'src': NclBlocks.Icons.HAND_GESTURE_SWIPE_LEFT, 'width': 70, 'height': 70, 'alt': NclBlocks.Msg.HAND_LEFT },
-            NclBlocks.Msg.HAND_LEFT],
-          [{ 'src': NclBlocks.Icons.HAND_GESTURE_SWIPE_RIGHT, 'width': 70, 'height': 70, 'alt': NclBlocks.Msg.HAND_RIGHT }, NclBlocks.Msg.HAND_RIGHT]
+          [{ 'src': NCLBlocks.Icons.HAND_GESTURE_SCROLL_DOWN, 'width': 70, 'height': 70, 'alt': NCLBlocks.Msg.HAND_DOWN },
+            NCLBlocks.Msg.HAND_DOWN],
+          [{ 'src': NCLBlocks.Icons.HAND_GESTURE_SCROLL_UP, 'width': 70, 'height': 70, 'alt': NCLBlocks.Msg.HAND_UP },
+            NCLBlocks.Msg.HAND_UP],
+          [{ 'src': NCLBlocks.Icons.HAND_GESTURE_SWIPE_LEFT, 'width': 70, 'height': 70, 'alt': NCLBlocks.Msg.HAND_LEFT },
+            NCLBlocks.Msg.HAND_LEFT],
+          [{ 'src': NCLBlocks.Icons.HAND_GESTURE_SWIPE_RIGHT, 'width': 70, 'height': 70, 'alt': NCLBlocks.Msg.HAND_RIGHT }, NCLBlocks.Msg.HAND_RIGHT]
         ])
-      newInput.appendField(NclBlocks.Msg.PORTION)
-        .appendField(new IdFieldText('', NclBlocks.Types.INPUT), 'id_area' +
+      newInput.appendField(NCLBlocks.Msg.PORTION)
+        .appendField(new IdFieldText('', NCLBlocks.Types.INPUT), 'id_area' +
         index)
-        .appendField(NclBlocks.Msg.HAND_GESTURE_ANCHOR)
+        .appendField(NCLBlocks.Msg.HAND_GESTURE_ANCHOR)
         .appendField(dropdown, 'label' + index)
     }
     // add name
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(
-        NclBlocks.Icons.HAND_GESTURE, 25, 25, '*'))
-      .appendField('{' + NclBlocks.Msg.HAND_GESTURE + '}')
+        NCLBlocks.Icons.HAND_GESTURE, 25, 25, '*'))
+      .appendField('{' + NCLBlocks.Msg.HAND_GESTURE + '}')
     // add edit buttons
     this.addMinusPlusDummyInput()
     // add one area
@@ -991,20 +991,20 @@ Blockly.Blocks.user = {
     this.stackSize = 0
     this.isInputValue = true
     this.configureNewInput = function (newInput, index) {
-      newInput.appendField(NclBlocks.Msg.WITH_DEVICE)
-        .setCheck(NclBlocks.USE_CHECK ? NclBlocks.Types.USER_DEVICE : null)
+      newInput.appendField(NCLBlocks.Msg.WITH_DEVICE)
+        .setCheck(NCLBlocks.USE_CHECK ? NCLBlocks.Types.USER_DEVICE : null)
     }
     // add name
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(NclBlocks.Icons.USER, 25, 25, '*'))
-      .appendField('{' + NclBlocks.Msg.USERCLASS + '}')
+      .appendField(new Blockly.FieldImage(NCLBlocks.Icons.USER, 25, 25, '*'))
+      .appendField('{' + NCLBlocks.Msg.USERCLASS + '}')
     this.appendDummyInput()
       .appendField('id')
-      .appendField(new IdFieldText('', NclBlocks.Types.USER), 'id')
-      .appendField(NclBlocks.Msg.AND)
+      .appendField(new IdFieldText('', NCLBlocks.Types.USER), 'id')
+      .appendField(NCLBlocks.Msg.AND)
       // .appendField(new IdFieldText('2'), 'usermax', 'usermax')
       .appendField(new UserMaxFieldNumber(), 'usermax')
-      .appendField(NclBlocks.Msg.USERS)
+      .appendField(NCLBlocks.Msg.USERS)
     // add edit buttons
     this.addMinusPlusDummyInput()
     // add one device
@@ -1019,9 +1019,9 @@ Blockly.Blocks.headset = {
     this.initAsUser(true)
 
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(NclBlocks.Icons.MICROFONE,
+      .appendField(new Blockly.FieldImage(NCLBlocks.Icons.MICROFONE,
         25, 25, '*'))
-      .appendField('{' + NclBlocks.Msg.MICROFONE + '}')
+      .appendField('{' + NCLBlocks.Msg.MICROFONE + '}')
   }
 }
 Object.assign(Blockly.Blocks.headset, NclBlockMixin)
@@ -1031,9 +1031,9 @@ Blockly.Blocks.hand_gesture_sensor = {
     this.initAsUser(true)
 
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(NclBlocks.Icons.HAND_GESTURE_SENSOR,
+      .appendField(new Blockly.FieldImage(NCLBlocks.Icons.HAND_GESTURE_SENSOR,
         25, 25, '*'))
-      .appendField('{' + NclBlocks.Msg.LEAP + '}')
+      .appendField('{' + NCLBlocks.Msg.LEAP + '}')
   }
 }
 Object.assign(Blockly.Blocks.hand_gesture_sensor, NclBlockMixin)
@@ -1047,11 +1047,11 @@ Blockly.Blocks.port = {
     this.initAsLink()
 
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(NclBlocks.Icons.PORT, 25, 25, '*'))
-      .appendField('{' + NclBlocks.Msg.LINK + '}')
+      .appendField(new Blockly.FieldImage(NCLBlocks.Icons.PORT, 25, 25, '*'))
+      .appendField('{' + NCLBlocks.Msg.LINK + '}')
     this.appendDummyInput()
-      .appendField(NclBlocks.Msg.PORT_LABEL)
-      .appendField(new IdFieldDropdown(NclBlocks.Types.NODE), 'id')
+      .appendField(NCLBlocks.Msg.PORT_LABEL)
+      .appendField(new IdFieldDropdown(NCLBlocks.Types.NODE), 'id')
   }
 }
 Object.assign(Blockly.Blocks.port, NclBlockMixin)
@@ -1065,14 +1065,14 @@ Blockly.Blocks.link = {
     this.initAsLink()
 
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(NclBlocks.Icons.LINK, 25, 25, '*'))
-      .appendField('{' + NclBlocks.Msg.LINK + '}')
+      .appendField(new Blockly.FieldImage(NCLBlocks.Icons.LINK, 25, 25, '*'))
+      .appendField('{' + NCLBlocks.Msg.LINK + '}')
     this.appendValueInput('conditions')
-      .setCheck(NclBlocks.USE_CHECK ? NclBlocks.Types.CONDITION : null)
-      .appendField(NclBlocks.Msg.WHEN)
+      .setCheck(NCLBlocks.USE_CHECK ? NCLBlocks.Types.CONDITION : null)
+      .appendField(NCLBlocks.Msg.WHEN)
     this.appendStatementInput('actions')
-      .setCheck(NclBlocks.USE_CHECK ? NclBlocks.Types.ACTION : null)
-      .appendField(NclBlocks.Msg.DO)
+      .setCheck(NCLBlocks.USE_CHECK ? NCLBlocks.Types.ACTION : null)
+      .appendField(NCLBlocks.Msg.DO)
   }
 }
 Object.assign(Blockly.Blocks.link, NclBlockMixin)
@@ -1086,10 +1086,10 @@ Blockly.Blocks.onbegin = {
     this.conditionLikeInit()
 
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(NclBlocks.Icons.ONBEGIN,
+      .appendField(new Blockly.FieldImage(NCLBlocks.Icons.ONBEGIN,
         15, 15, '*'))
-      .appendField(NclBlocks.Msg.ONBEGIN)
-      .appendField(new IdFieldDropdown(NclBlocks.Types.MEDIA), 'id')
+      .appendField(NCLBlocks.Msg.ONBEGIN)
+      .appendField(new IdFieldDropdown(NCLBlocks.Types.MEDIA), 'id')
   }
 }
 Object.assign(Blockly.Blocks.onbegin, NclBlockMixin)
@@ -1099,9 +1099,9 @@ Blockly.Blocks.onend = {
     this.conditionLikeInit()
 
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(NclBlocks.Icons.ONEND, 15, 15, '*'))
-      .appendField(NclBlocks.Msg.ONEND)
-      .appendField(new IdFieldDropdown(NclBlocks.Types.MEDIA), 'id')
+      .appendField(new Blockly.FieldImage(NCLBlocks.Icons.ONEND, 15, 15, '*'))
+      .appendField(NCLBlocks.Msg.ONEND)
+      .appendField(new IdFieldDropdown(NCLBlocks.Types.MEDIA), 'id')
   }
 }
 Object.assign(Blockly.Blocks.onend, NclBlockMixin)
@@ -1111,10 +1111,10 @@ Blockly.Blocks.onpause = {
     this.conditionLikeInit()
 
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(NclBlocks.Icons.ONPAUSE,
+      .appendField(new Blockly.FieldImage(NCLBlocks.Icons.ONPAUSE,
         15, 15, '*'))
-      .appendField(NclBlocks.Msg.ONPAUSE)
-      .appendField(new IdFieldDropdown(NclBlocks.Types.MEDIA), 'id')
+      .appendField(NCLBlocks.Msg.ONPAUSE)
+      .appendField(new IdFieldDropdown(NCLBlocks.Types.MEDIA), 'id')
   }
 }
 Object.assign(Blockly.Blocks.onpause, NclBlockMixin)
@@ -1124,10 +1124,10 @@ Blockly.Blocks.onresume = {
     this.conditionLikeInit()
 
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(NclBlocks.Icons.ONRESUME,
+      .appendField(new Blockly.FieldImage(NCLBlocks.Icons.ONRESUME,
         15, 15, '*'))
-      .appendField(NclBlocks.Msg.ONRESUME)
-      .appendField(new IdFieldDropdown(NclBlocks.Types.MEDIA), 'id')
+      .appendField(NCLBlocks.Msg.ONRESUME)
+      .appendField(new IdFieldDropdown(NCLBlocks.Types.MEDIA), 'id')
   }
 }
 Object.assign(Blockly.Blocks.onresume, NclBlockMixin)
@@ -1137,10 +1137,10 @@ Blockly.Blocks.onselection = {
     this.conditionLikeInit()
 
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(NclBlocks.Icons.ONSELECTION,
+      .appendField(new Blockly.FieldImage(NCLBlocks.Icons.ONSELECTION,
         15, 15, '*'))
-      .appendField(NclBlocks.Msg.ONSELECTION)
-      .appendField(new IdFieldDropdown(NclBlocks.Types.MEDIA), 'id')
+      .appendField(NCLBlocks.Msg.ONSELECTION)
+      .appendField(new IdFieldDropdown(NCLBlocks.Types.MEDIA), 'id')
   }
 }
 Object.assign(Blockly.Blocks.onselection, NclBlockMixin)
@@ -1150,10 +1150,10 @@ Blockly.Blocks.onrecognize = {
     this.conditionLikeInit()
 
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(NclBlocks.Icons.ONRECOGNIZE,
+      .appendField(new Blockly.FieldImage(NCLBlocks.Icons.ONRECOGNIZE,
         15, 15, '*'))
-      .appendField(NclBlocks.Msg.ONRECOGNIZE)
-      .appendField(new IdFieldDropdown(NclBlocks.Types.INPUT), 'id')
+      .appendField(NCLBlocks.Msg.ONRECOGNIZE)
+      .appendField(new IdFieldDropdown(NCLBlocks.Types.INPUT), 'id')
   }
 }
 Object.assign(Blockly.Blocks.onrecognize, NclBlockMixin)
@@ -1163,12 +1163,12 @@ Blockly.Blocks.onrecognizeuser = {
     this.conditionLikeInit()
 
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(NclBlocks.Icons.ONRECOGNIZE,
+      .appendField(new Blockly.FieldImage(NCLBlocks.Icons.ONRECOGNIZE,
         15, 15, '*'))
-      .appendField(NclBlocks.Msg.ONRECOGNIZE)
-      .appendField(new IdFieldDropdown(NclBlocks.Types.INPUT), 'id')
-      .appendField(NclBlocks.Msg.ONRECOGNIZE_FROM_USER)
-      .appendField(new IdFieldDropdown(NclBlocks.Types.USER), 'user_id')
+      .appendField(NCLBlocks.Msg.ONRECOGNIZE)
+      .appendField(new IdFieldDropdown(NCLBlocks.Types.INPUT), 'id')
+      .appendField(NCLBlocks.Msg.ONRECOGNIZE_FROM_USER)
+      .appendField(new IdFieldDropdown(NCLBlocks.Types.USER), 'user_id')
   }
 }
 Object.assign(Blockly.Blocks.onrecognizeuser, NclBlockMixin)
@@ -1181,13 +1181,13 @@ Blockly.Blocks.compoundcondition = {
     this.stackSize = 0
     this.isInputValue = true
     this.configureNewInput = function (newInput, index) {
-      newInput.setCheck(NclBlocks.USE_CHECK ? NclBlocks.Types.CONDITION : null)
+      newInput.setCheck(NCLBlocks.USE_CHECK ? NCLBlocks.Types.CONDITION : null)
     }
     // add name
     var dropdown = new Blockly.FieldDropdown([
-      [NclBlocks.Msg.COMPOUND_CONDITION_SEQ, 'seq'],
-      [NclBlocks.Msg.COMPOUND_CONDITION_AND, 'and'],
-      [NclBlocks.Msg.COMPOUND_CONDITION_OR, 'or']
+      [NCLBlocks.Msg.COMPOUND_CONDITION_SEQ, 'seq'],
+      [NCLBlocks.Msg.COMPOUND_CONDITION_AND, 'and'],
+      [NCLBlocks.Msg.COMPOUND_CONDITION_OR, 'or']
     ])
     this.appendDummyInput().appendField(dropdown, 'operator')
     // add plus button
@@ -1210,9 +1210,9 @@ Blockly.Blocks.start = {
     this.actionLikeInit()
 
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(NclBlocks.Icons.START, 15, 15, '*'))
-      .appendField(NclBlocks.Msg.START)
-      .appendField(new IdFieldDropdown(NclBlocks.Types.NODE), 'id')
+      .appendField(new Blockly.FieldImage(NCLBlocks.Icons.START, 15, 15, '*'))
+      .appendField(NCLBlocks.Msg.START)
+      .appendField(new IdFieldDropdown(NCLBlocks.Types.NODE), 'id')
   }
 }
 Object.assign(Blockly.Blocks.start, NclBlockMixin)
@@ -1222,9 +1222,9 @@ Blockly.Blocks.stop = {
     this.actionLikeInit()
 
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(NclBlocks.Icons.STOP, 15, 15, '*'))
-      .appendField(NclBlocks.Msg.STOP)
-      .appendField(new IdFieldDropdown(NclBlocks.Types.NODE), 'id')
+      .appendField(new Blockly.FieldImage(NCLBlocks.Icons.STOP, 15, 15, '*'))
+      .appendField(NCLBlocks.Msg.STOP)
+      .appendField(new IdFieldDropdown(NCLBlocks.Types.NODE), 'id')
   }
 }
 Object.assign(Blockly.Blocks.stop, NclBlockMixin)
@@ -1234,9 +1234,9 @@ Blockly.Blocks.pause = {
     this.actionLikeInit()
 
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(NclBlocks.Icons.PAUSE, 15, 15, '*'))
-      .appendField(NclBlocks.Msg.PAUSE)
-      .appendField(new IdFieldDropdown(NclBlocks.Types.MEDIA), 'id')
+      .appendField(new Blockly.FieldImage(NCLBlocks.Icons.PAUSE, 15, 15, '*'))
+      .appendField(NCLBlocks.Msg.PAUSE)
+      .appendField(new IdFieldDropdown(NCLBlocks.Types.MEDIA), 'id')
   }
 }
 Object.assign(Blockly.Blocks.pause, NclBlockMixin)
@@ -1246,9 +1246,9 @@ Blockly.Blocks.resume = {
     this.actionLikeInit()
 
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(NclBlocks.Icons.RESUME, 15, 15, '*'))
-      .appendField(NclBlocks.Msg.RESUME)
-      .appendField(new IdFieldDropdown(NclBlocks.Types.MEDIA), 'id')
+      .appendField(new Blockly.FieldImage(NCLBlocks.Icons.RESUME, 15, 15, '*'))
+      .appendField(NCLBlocks.Msg.RESUME)
+      .appendField(new IdFieldDropdown(NCLBlocks.Types.MEDIA), 'id')
   }
 }
 Object.assign(Blockly.Blocks.resume, NclBlockMixin)
@@ -1258,10 +1258,10 @@ Blockly.Blocks.set = {
     this.actionLikeInit()
 
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(NclBlocks.Icons.SET, 15, 15, '*'))
-      .appendField(NclBlocks.Msg.SET)
-      .appendField(new IdFieldDropdown(NclBlocks.Types.MEDIA), 'id')
-      .appendField(NclBlocks.Msg.SET_TO)
+      .appendField(new Blockly.FieldImage(NCLBlocks.Icons.SET, 15, 15, '*'))
+      .appendField(NCLBlocks.Msg.SET)
+      .appendField(new IdFieldDropdown(NCLBlocks.Types.MEDIA), 'id')
+      .appendField(NCLBlocks.Msg.SET_TO)
       .appendField(new Blockly.FieldTextInput(''), 'value')
   }
 }
