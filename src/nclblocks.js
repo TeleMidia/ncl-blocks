@@ -1089,7 +1089,7 @@ Blockly.Blocks.onbegin = {
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.ONBEGIN,
         15, 15, '*'))
       .appendField(NCLBlocks.Msg.ONBEGIN)
-      .appendField(new IdFieldDropdown(NCLBlocks.Types.MEDIA), 'id')
+      .appendField(new IdFieldDropdown(NCLBlocks.Types.NODE), 'id')
   }
 }
 Object.assign(Blockly.Blocks.onbegin, NclBlockMixin)
@@ -1101,7 +1101,7 @@ Blockly.Blocks.onend = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.ONEND, 15, 15, '*'))
       .appendField(NCLBlocks.Msg.ONEND)
-      .appendField(new IdFieldDropdown(NCLBlocks.Types.MEDIA), 'id')
+      .appendField(new IdFieldDropdown(NCLBlocks.Types.NODE), 'id')
   }
 }
 Object.assign(Blockly.Blocks.onend, NclBlockMixin)
@@ -1114,7 +1114,7 @@ Blockly.Blocks.onpause = {
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.ONPAUSE,
         15, 15, '*'))
       .appendField(NCLBlocks.Msg.ONPAUSE)
-      .appendField(new IdFieldDropdown(NCLBlocks.Types.MEDIA), 'id')
+      .appendField(new IdFieldDropdown(NCLBlocks.Types.NODE), 'id')
   }
 }
 Object.assign(Blockly.Blocks.onpause, NclBlockMixin)
@@ -1127,7 +1127,7 @@ Blockly.Blocks.onresume = {
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.ONRESUME,
         15, 15, '*'))
       .appendField(NCLBlocks.Msg.ONRESUME)
-      .appendField(new IdFieldDropdown(NCLBlocks.Types.MEDIA), 'id')
+      .appendField(new IdFieldDropdown(NCLBlocks.Types.NODE), 'id')
   }
 }
 Object.assign(Blockly.Blocks.onresume, NclBlockMixin)
@@ -1236,7 +1236,7 @@ Blockly.Blocks.pause = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.PAUSE, 15, 15, '*'))
       .appendField(NCLBlocks.Msg.PAUSE)
-      .appendField(new IdFieldDropdown(NCLBlocks.Types.MEDIA), 'id')
+      .appendField(new IdFieldDropdown(NCLBlocks.Types.NODE), 'id')
   }
 }
 Object.assign(Blockly.Blocks.pause, NclBlockMixin)
@@ -1248,7 +1248,7 @@ Blockly.Blocks.resume = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.RESUME, 15, 15, '*'))
       .appendField(NCLBlocks.Msg.RESUME)
-      .appendField(new IdFieldDropdown(NCLBlocks.Types.MEDIA), 'id')
+      .appendField(new IdFieldDropdown(NCLBlocks.Types.NODE), 'id')
   }
 }
 Object.assign(Blockly.Blocks.resume, NclBlockMixin)
@@ -1260,7 +1260,7 @@ Blockly.Blocks.set = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.SET, 15, 15, '*'))
       .appendField(NCLBlocks.Msg.SET)
-      .appendField(new IdFieldDropdown(NCLBlocks.Types.MEDIA), 'id')
+      .appendField(new IdFieldDropdown(NCLBlocks.Types.NODE), 'id')
       .appendField(NCLBlocks.Msg.SET_TO)
       .appendField(new Blockly.FieldTextInput(''), 'value')
   }
