@@ -1582,7 +1582,34 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     {
       name: 'htmlIntro',
       type: 'html',
-      html: ` HTML intro
+      html: ` 
+     
+        <p>Essa fase da entrevista não tem o objetivo de detalhar a linguagem
+        HTML. Na verdade, temos o objetivo de apresentar como os conceitos de
+        interação multimodal podem ser instanciados na linguagem HTML.</p> 
+
+        <p>A linguagem HTML tem o foco de criar apresentações multimídia
+        interativas na web. Sua versão atual oferece, entre outros, os elementos
+        <em>&ltimg></em>, <em>&ltvideo></em> e <em>&ltaudio></em>. Esses
+        elementos permitem apresentar respectivamente imagens, vídeo e áudios.
+        Para criar sincronismos, entretanto, o HTML recorre a um a JavaScript
+        como linguagem auxiliar atraves do elemento <em>&ltscript></em>.
+        Elementos JavaScript podem criar sincronismos de mídias e sincronismos
+        baseados em interações de tecla e mouse.</p>
+        
+        <p>A tabela seguir analisa quais dos conceitos propostos em nossos
+        estudos estão presentes e qual o elemento da HTML que
+        implementa.</p><br>
+
+        <table align="center" class="table-bordered table-striped
+        table-condensed">
+          <tr><th>Conceito</th><th>Elemento da HTML</th></tr>
+          <tr><td><em>Mídia</em></td><td><em>&ltimg></em>, <em>&ltvideo></em>,
+          <em>&ltaudio></em></td></tr>
+          <tr><td><em>Sincronimo</em></td><td><em>&ltscript></em></td></tr>
+          <tr><td><em>Reconhecedor</em></td><td><em>não presente</em></td></tr>
+          <tr><td><em>Grupo de Usuários</em></td><td>não presente</td></tr>
+        </table><br>
       `
     }
   ]
