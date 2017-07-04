@@ -1273,58 +1273,72 @@ _data.surveyJSON.pages.push({
   title: 'Conceitos multimodais em NCL',
   elements: [
     {
-      type: 'html',
-      html: `
-      <p>A linguagem NCL possui o foco de criar apresentações multimídia
-      interativas. Anteriormente a NCL focava no uso de mídias audiovisuais
-      (por exemplo imagens, vídeo e áudios) e interações por meio de
-      apontador e tecla.</p> 
-      <br>
-    
-      <p>O exemplo de código a seguir ilustra o uso de novas mídias e
-      interação. Um exemplo de mídia NCL comum é o 'mainvideo' (linhas
-      12-14). Essa media possui um trecho definido pela ancora 'credits'
-      (linhas 13).</p> 
-      <br>
-    
-      <p>Para adicionar interações multimodais sobre esse video, adicionamos
-      os elementos 'menu' (linhas 15-17) e 'answer' (linhas 19-21). O
-      primeiro define um áudio sintetizado utilizando o arquivo SSML chamado
-      question.ssml (linhas 2-4).O segundo define um reconhecimento de vocês
-      utilizando o arquivo SRGS chamado commads.srgs (linhas 7-9).</p> 
-      <br>
-    
-      <p>Esse áudio sintetizado é definido pelo elo das linhas 23-27.
-      Enquanto que o reconhecimento é definido pelo elo das linhas 28-31.</p>
+      type: 'panel',
+      title: 'Proposta de conceitos multimodais em NCL',
+      innerIndent: 1,
+      elements: [
+        {
+          type: 'html',
+          html: `
+
+        <p>A verão atual (3.0) da linguagem NCL possui o foco de criar
+        apresentações multimídia sem interações multimodais. Ela oferece 
+        suporte ao uso de elementos audiovisuais (por exemplo imagens, vídeo e
+        áudios) e interações por meio de apontador e tecla.</p><br>
+      
+        <p>O trecho de código a seguir ilustra uma aplicação que apresenta um vídeo que pode ser reiniciado com a selação de usuário.</p><br>
+        
+        <p>Mais precisamente, a aplicação utiliza dois elementos <em><media></em> mídias e um elemento <em><port></em> e um <em><link></em>
+        . Um exemplo de mídia NCL comum é o 'mainvideo' (linhas
+        12-14). Essa media possui um trecho definido pela ancora 'credits'
+        (linhas 13).</p> <br>
+      
+        <p>Para adicionar interações multimodais sobre esse video, adicionamos
+        os elementos 'menu' (linhas 15-17) e 'answer' (linhas 19-21). O
+        primeiro define um áudio sintetizado utilizando o arquivo SSML chamado
+        question.ssml (linhas 2-4).O segundo define um reconhecimento de vocês
+        utilizando o arquivo SRGS chamado commads.srgs (linhas 7-9).</p> <br>
+      
+        <p>Esse áudio sintetizado é definido pelo elo das linhas 23-27.
+        Enquanto que o reconhecimento é definido pelo elo das linhas 28-31.</p>
       `,
-      name: 'nclIntro'
+          name: 'nclIntro'
+        }
+      ]
     },
     {
-      type: 'html',
-      html: `O código a seguir consiste em uma aplicação NCL sem interações 
-        multimodais.`,
-      name: 'nclCode1'
-    },
-    {
-      type: 'comment',
-      isRequired: true,
-      name: 'nclQuestion1',
-      rows: '9',
-      title: 'Qual o comportamento da aplicação?'
-    },
-    {
-      type: 'html',
-      html: `O aplicação NCL acima foi modificada para permitir interações 
-        multimodais. O novo código é apresentado a seguir com as modificações 
-        destacadas:`,
-      name: 'nclCode2'
-    },
-    {
-      type: 'comment',
-      isRequired: true,
-      name: 'nclQuestion2',
-      rows: '9',
-      title: 'Qual o novo comportamento da aplicação?'
+      type: 'panel',
+      title: 'Entendimento dos conceitos',
+      innerIndent: 1,
+      elements: [
+        {
+          type: 'html',
+          html: `O código a seguir consiste em uma aplicação NCL sem interações 
+      multimodais.`,
+          name: 'nclCode1'
+        },
+        {
+          type: 'comment',
+          isRequired: true,
+          name: 'nclQuestion1',
+          rows: '9',
+          title: 'Qual o comportamento da aplicação?'
+        },
+        {
+          type: 'html',
+          html: `O aplicação NCL acima foi modificada para permitir interações 
+      multimodais. O novo código é apresentado a seguir com as modificações 
+      destacadas:`,
+          name: 'nclCode2'
+        },
+        {
+          type: 'comment',
+          isRequired: true,
+          name: 'nclQuestion2',
+          rows: '9',
+          title: 'Qual o novo comportamento da aplicação?'
+        }
+      ]
     }
   ]
 })
