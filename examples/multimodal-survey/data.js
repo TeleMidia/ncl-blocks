@@ -1279,31 +1279,52 @@ _data.surveyJSON.pages[pageIndex].elements.push({
   innerIndent: 1,
   elements: [
     {
+      name: 'nclIntro1',
       type: 'html',
       html: `
+        <p>Essa fase da entrevista não tem o objetivo de detalhar a linguagem NCL. Na verdade, temos o objetivo de apresentar como os conceitos de interação multimodal podem ser instanciados na linguagem NCL.</p> 
 
-        <p>A verão atual (3.0) da linguagem NCL possui o foco de criar
-        apresentações multimídia sem interações multimodais. Ela oferece 
-        suporte ao uso de elementos audiovisuais (por exemplo imagens, vídeo e
-        áudios) e interações por meio de apontador e tecla.</p><br>
-      
-        <p>O trecho de código a seguir ilustra uma aplicação que apresenta um vídeo que pode ser reiniciado com a selação de usuário.</p><br>
+        <p>A linguagem NCL tem o foco de criar apresentações multimídia
+        interativas. Sua versão atual oferece, entre outros, os elementos
+        <em>&ltmedia></em> e <em>&ltlink></em>. O <em>&ltmedia></em> permite
+        apresentar conteúdo audiovisual como imagens, vídeo e áudios. Enquanto
+        <em>&ltlink></em> permite criar sincronismos entre mídias e sincronismos
+        baseados em interações de tecla e mouse.</p>
         
-        <p>Mais precisamente, a aplicação utiliza dois elementos <em><media></em> mídias e um elemento <em><port></em> e um <em><link></em>
-        . Um exemplo de mídia NCL comum é o 'mainvideo' (linhas
-        12-14). Essa media possui um trecho definido pela ancora 'credits'
-        (linhas 13).</p> <br>
+        <p>A tabela seguir analisa quais dos conceitos propostos em nossos
+        estudos estão presentes e qual o elemento da NCL que implementa.</p><br>
+
+        <table align="center" class="table-bordered table-striped
+        table-condensed">
+          <tr><th>Conceito</th><th>Elemento da NCL</th></tr>
+          <tr><td><em>Mídia</em></td><td><em>&ltmedia></em></td></tr>
+          <tr><td><em>Sincronimo</em></td><td><em>&ltlink></em></td></tr>
+          <tr><td><em>Reconhecedor</em></td><td><em>não 
+          presente</em></td></tr> 
+          <tr><td><em>Grupo de Usuários</em></td><td>não presente</td></tr>
+        </table><br>
+        `
+    },
+    {
+      name: 'nclIntro2',
+      type: 'html',
+      html: `
+        <p>O trecho de código a seguir ilustra uma aplicação que apresenta um
+        vídeo que pode ser reiniciado com a selação de usuário.</p><br <p>Mais
+        precisamente, a aplicação utiliza dois elementos <em>&ltmedia></em>
+        mídias e um elemento <em><port></em> e um <em>&ltlink></em> . Um
+        exemplo de mídia NCL comum é o 'mainvideo' (linhas 12-14). Essa media
+        possui um trecho definido pela ancora 'credits' (linhas 13).</p > <br>
       
         <p>Para adicionar interações multimodais sobre esse video, adicionamos
-        os elementos 'menu' (linhas 15-17) e 'answer' (linhas 19-21). O
-        primeiro define um áudio sintetizado utilizando o arquivo SSML chamado
+        os elementos 'menu' (linhas 15-17) e 'answer' (linhas 19-21). O primeiro
+        define um áudio sintetizado utilizando o arquivo SSML chamado
         question.ssml (linhas 2-4).O segundo define um reconhecimento de vocês
         utilizando o arquivo SRGS chamado commads.srgs (linhas 7-9).</p> <br>
       
-        <p>Esse áudio sintetizado é definido pelo elo das linhas 23-27.
         Enquanto que o reconhecimento é definido pelo elo das linhas 28-31.</p>
-      `,
-      name: 'nclIntro'
+        <p>Esse áudio sintetizado é definido pelo elo das linhas 23-27.
+      `
     }
   ]
 })
