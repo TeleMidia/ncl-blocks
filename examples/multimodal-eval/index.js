@@ -22,7 +22,7 @@ var _surveyCss = {
   'header': 'h3 text-center breadcrumb page-header',
   'body': 'panel-body',
   'footer': 'panel-footer text-center ',
-  'pageTitle': 'h3 text-center breadcrumb page-header',
+  'pageTitle': 'h3 text-center bg-info page-header',
   // row
   'row': '',
   'question': { root: 'h4 panel-body panel panel-default',
