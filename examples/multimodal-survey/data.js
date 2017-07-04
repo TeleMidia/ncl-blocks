@@ -30,7 +30,7 @@ _data.surveyJSON.pages.push({
       type: 'html',
       html: `
             <p>O TeleMídia é um grupo de pesquisa do departamento de Informática
-            da PUC-Rio que desenvolve pesquisas nas áreas de Sistemas 
+            da PUC-Rio. O TeleMídia desenvolve pesquisas nas áreas de Sistemas 
             Multimídia e Redes de Computadores. Em particular, Sistemas de TV 
             Digital terrestre e IPTV, têm sido foco de pesquisa e inovação do 
             laboratório nos últimos anos.</p><br>
@@ -44,13 +44,17 @@ _data.surveyJSON.pages.push({
             capturar evidências de nosso estudo.</strong></p><br>
             
             <p>Para prosseguirmos, pedimos seu consentimento para realizarmos
-            essa entrevista e informamos que:</p> <ul> <li>Os dados coletados
-            destinam-se estritamente a atividades de pesquisa e desenvolvimento,
-            e somente os pesquisadores do TeleMídia têm acesso à integra do
-            material resultante da avaliação.</li> <li>A divulgação dos
-            resultados de nossa pesquisa em foros científicos e/ou pedagógicos
-            pauta-se no respeito à privacidade, e o anonimato dos participantes
-            é preservado em qualquer material publicado.</li> </ul>
+            essa entrevista e informamos que:</p> 
+            <ul> 
+            <li>Os dados coletados destinam-se estritamente a atividades de
+            pesquisa e desenvolvimento, e somente os pesquisadores do TeleMídia
+            têm acesso à integra do material resultante da avaliação.</li> 
+            <li>A divulgação dos resultados de nossa pesquisa em foros
+            científicos e/ou pedagógicos pauta-se no respeito à privacidade, e o
+            anonimato dos participantes é preservado em qualquer material
+            publicado.</li> 
+            </ul>
+
           `
     },
     {
@@ -734,8 +738,6 @@ _data.blocksIntro4bXml = `
           <mutation length="1"></mutation>
           <field name="id_area0">repetir</field>
           <field name="label0">repetir video</field>
-          <field name="id_area1"></field>
-          <field name="label1"></field>
         </block>
       </value>
     </block>
@@ -1282,7 +1284,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'nclIntro1',
       type: 'html',
       html: `
-        <p>Essa fase da entrevista não tem o objetivo de detalhar a linguagem NCL. Na verdade, temos o objetivo de apresentar como os conceitos de interação multimodal podem ser instanciados na linguagem NCL.</p> 
+        <p>Essa seção da entrevista não tem o objetivo de detalhar a linguagem
+        NCL. Essa seção tem o objetivo de apresentar como os conceitos de
+        interação multimodal podem ser instanciados na linguagem NCL.</p> 
 
         <p>A linguagem NCL tem o foco de criar apresentações multimídia
         interativas. Sua versão atual oferece, entre outros, os elementos
@@ -1696,8 +1700,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: ` 
      
-        <p>Essa fase da entrevista não tem o objetivo de detalhar a linguagem
-        HTML. Na verdade, temos o objetivo de apresentar como os conceitos de
+        <p>Essa seção da entrevista não tem o objetivo de detalhar a linguagem
+        HTML. Essa seção tem o objetivo de apresentar como os conceitos de
         interação multimodal podem ser instanciados na linguagem HTML.</p> 
 
         <p>A linguagem HTML tem o foco de criar apresentações multimídia
