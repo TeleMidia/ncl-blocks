@@ -1275,18 +1275,24 @@ _data.surveyJSON.pages.push({
 // ncl page
 // ----------------------------------------
 
-_data.surveyJSON.pages.push({
+pageIndex = _data.surveyJSON.pages.push({
   name: 'ncl',
   title: 'Conceitos multimodais em NCL',
+  elements: []
+}) - 1
+
+// ----------------------------------------
+// ncl page - intro
+// ----------------------------------------
+
+_data.surveyJSON.pages[pageIndex].elements.push({
+  type: 'panel',
+  title: 'Proposta de conceitos multimodais em NCL',
+  innerIndent: 1,
   elements: [
     {
-      type: 'panel',
-      title: 'Proposta de conceitos multimodais em NCL',
-      innerIndent: 1,
-      elements: [
-        {
-          type: 'html',
-          html: `
+      type: 'html',
+      html: `
 
         <p>A verão atual (3.0) da linguagem NCL possui o foco de criar
         apresentações multimídia sem interações multimodais. Ela oferece 
@@ -1309,50 +1315,49 @@ _data.surveyJSON.pages.push({
         <p>Esse áudio sintetizado é definido pelo elo das linhas 23-27.
         Enquanto que o reconhecimento é definido pelo elo das linhas 28-31.</p>
       `,
-          name: 'nclIntro'
-        }
-      ]
-    },
-    {
-      type: 'panel',
-      title: 'Entendimento dos conceitos',
-      innerIndent: 1,
-      elements: [
-        {
-          type: 'html',
-          html: `O código a seguir consiste em uma aplicação NCL sem interações 
-      multimodais.`,
-          name: 'nclCode1'
-        },
-        {
-          type: 'comment',
-          isRequired: true,
-          name: 'nclQuestion1',
-          rows: '9',
-          title: 'Qual o comportamento da aplicação?'
-        },
-        {
-          type: 'html',
-          html: `O aplicação NCL acima foi modificada para permitir interações 
-      multimodais. O novo código é apresentado a seguir com as modificações 
-      destacadas:`,
-          name: 'nclCode2'
-        },
-        {
-          type: 'comment',
-          isRequired: true,
-          name: 'nclQuestion2',
-          rows: '9',
-          title: 'Qual o novo comportamento da aplicação?'
-        }
-      ]
+      name: 'nclIntro'
     }
   ]
 })
 
 // ----------------------------------------
-//  ncl page codes
+//  ncl page - questions
 // ----------------------------------------
+
+_data.surveyJSON.pages[pageIndex].elements.push({
+  type: 'panel',
+  title: 'Entendimento dos conceitos',
+  innerIndent: 1,
+  elements: [
+    {
+      type: 'html',
+      html: `O código a seguir consiste em uma aplicação NCL sem interações 
+      multimodais.`,
+      name: 'nclCode1'
+    },
+    {
+      type: 'comment',
+      isRequired: true,
+      name: 'nclQuestion1',
+      rows: '9',
+      title: 'Qual o comportamento da aplicação?'
+    },
+    {
+      type: 'html',
+      html: `O aplicação NCL acima foi modificada para permitir interações 
+      multimodais. O novo código é apresentado a seguir com as modificações 
+      destacadas:`,
+      name: 'nclCode2'
+    },
+    {
+      type: 'comment',
+      isRequired: true,
+      name: 'nclQuestion2',
+      rows: '9',
+      title: 'Qual o novo comportamento da aplicação?'
+    }
+  ]
+})
 
 _data.nclCode1 = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;">
@@ -1563,7 +1568,7 @@ _data.surveyJSON.pages.push({
 })
 
 // ----------------------------------------
-// html page codes
+// html page
 // ----------------------------------------
 
 // ----------------------------------------
