@@ -805,7 +805,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     },
     {
       type: 'html',
-      name: 'blocksReadTask1',
+      name: 'blocksTask1',
       html: `
             <p>Tarefa 1: Por favor, analise com cuidado os blocos aseguir.</p>
           `
@@ -813,12 +813,12 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     {
       type: 'comment',
       isRequired: true,
-      name: 'blocksReadTask1Question',
+      name: 'blocksTask1Question',
       title: 'Qual o comportamento da aplicação que corresponde os blocos acima?'
     },
     {
       type: 'html',
-      name: 'blocksReadTask2',
+      name: 'blocksTask2',
       html: `
             <p>Tarefa 2: Os blocos a seguir são um versão motificada do
             imediatamente anterior. Por favor, analise com cuidado essa versão
@@ -828,12 +828,12 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     {
       type: 'comment',
       isRequired: true,
-      name: 'blocksReadTask2Question',
+      name: 'blocksTask2Question',
       title: 'Qual a mudança no comportamento da aplicação anterior?'
     },
     {
       type: 'html',
-      name: 'blocksEditTask1',
+      name: 'blocksTask3',
       html: `
             <p>Tarefa 3: Agora, pedimos que edite os blocos a seguir para
             utilizar um interação por gestos inves de uma interação por
@@ -842,17 +842,17 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     },
     {
       type: 'text',
-      name: 'blocksEditTask1Changes',
+      name: 'blocksTask3Changes',
       visible: false
     },
     {
       type: 'text',
-      name: 'blocksEditTask1Result',
+      name: 'blocksTask3Result',
       visible: false
     },
     {
       type: 'html',
-      name: 'blocksEditTask2',
+      name: 'blocksTask4',
       html: `
             <p>Tarefa 4: Agora, pedimos que edite os blocos a seguir para que
             apenas o segundo usuário de um grupo de usuário possa realizar a
@@ -861,19 +861,19 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     },
     {
       type: 'text',
-      name: 'blocksEditTask2Changes',
+      name: 'blocksTask4Changes',
       visible: false
     },
     {
       type: 'text',
 
-      name: 'blocksEditTask2Result',
+      name: 'blocksTask4Result',
       visible: false
     }
   ]
 })
 
-_data.blocksReadTask1Xml = `
+_data.blocksTask1Xml = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="DACXRk{ds*},dxviHR(c" x="20" y="20">
       <field name="id">video_principal</field>
@@ -997,7 +997,7 @@ _data.blocksReadTask1Xml = `
   </xml>
 `
 
-_data.blocksReadTask2Xml = `
+_data.blocksTask2Xml = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
   <block type="media" id="DACXRk{ds*},dxviHR(c" x="20" y="20">
     <field name="id">video_principal</field>
