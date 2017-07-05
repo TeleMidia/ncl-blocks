@@ -1,11 +1,5 @@
 // ----------------------------------------
-// NCLBlocks config
-// ----------------------------------------
-
-var _pathToBlockly = '../../src/'
-
-// ----------------------------------------
-// survey config
+// survey data
 // ----------------------------------------
 
 Survey.surveyLocalization.locales['en'] = {
@@ -39,6 +33,12 @@ var _surveyCss = {
 
 var _msgEmptyBlockTask = 'Por favor, preencha com blocos.'
 
+var _pathToBlockly = '../../src/'
+var _blocksTask3Workspace
+var _blocksTask3WorkspaceEdited = false
+var _blocksTask4Workspace
+var _blocksTask4WorkspaceEdited = false
+
 // ----------------------------------------
 // survey create
 // ----------------------------------------
@@ -46,9 +46,9 @@ var _msgEmptyBlockTask = 'Por favor, preencha com blocos.'
 $('#surveyContainer').Survey({
   model: _survey,
   css: _surveyCss,
+  onServerValidateQuestions: onValidateQuestions,
   onCurrentPageChanged: onCurrentPageChanged,
-  onAfterRenderQuestion: onRenderQuestion,
-  onServerValidateQuestions: onValidateQuestions
+  onAfterRenderQuestion: onRenderQuestion
 })
 
 // ----------------------------------------
@@ -69,7 +69,7 @@ if ($('#surveyPageNo').length) {
 $('#surveyPageNo').change(function () {
   _survey.currentPageNo = this.value
 })
-$('#surveyPageNo').val(5).change()
+$('#surveyPageNo').val(3).change()
 
 // ----------------------------------------
 // survey listeners
@@ -86,18 +86,19 @@ function insertRequiredErrorInBlocks (blockDivId) {
 }
 
 function onValidateQuestions (survey, options) {
-  // switch (_survey.currentPage.name) {
-  // case 'concepts':
-  //   if (!_blocksTask3Workspace.getAllBlocks().length) {
-  //     insertRequiredErrorInBlocks(_survey
-  //       .getQuestionByName('conceptsTask3').idValue)
-  //   }
-  //   if (!_blocksTask4Workspace.getAllBlocks().length) {
-  //     insertRequiredErrorInBlocks(_survey
-  //       .getQuestionByName('conceptsTask4').idValue)
-  //   }
-  //     return true
-  // }
+  if (_survey.currentPage.name === 'concepts') {
+    if (!_blocksTask3WorkspaceEdited) {
+      insertRequiredErrorInBlocks(_survey.getQuestionByName('conceptsTask3')
+        .idValue)
+    }
+    if (!_blocksTask4WorkspaceEdited) {
+      insertRequiredErrorInBlocks(_survey.getQuestionByName('conceptsTask4')
+        .idValue)
+    }
+    if (!_blocksTask3WorkspaceEdited || !_blocksTask4WorkspaceEdited) {
+      return true
+    }
+  }
   options.complete()
 }
 
@@ -108,7 +109,7 @@ function onCurrentPageChanged (targetSurvey, data) {
 function onRenderQuestion (targetSurvey, questionAndHtml) {
   var questionId = questionAndHtml.question.idValue
   var questionName = questionAndHtml.question.name
-  var result, i, event
+  var result, i, event, setNotEdited
   switch (questionName) {
     case 'conceptsIntro1':
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro1a',
@@ -143,8 +144,8 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
         NCLBlocks.calculateHeight(6, 145), _data.blocksTask2Xml, true)
       break
     case 'conceptsTask3':
-      //  conceptsTask3Changes exist, apply it
       if (_survey.getQuestionByName('conceptsTask3Changes').value) {
+        // after first inject
         result = JSON.parse(_survey.getQuestionByName('conceptsTask3Changes').value)
         _survey.getQuestionByName('conceptsTask3Changes').value = ''
         _blocksTask3Workspace = NCLBlocks.injectInDiv(_pathToBlockly,
@@ -154,16 +155,21 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
             _blocksTask3Workspace)
           event.run(true)
         }
-      } else { //  conceptsTask3Changes empty
+      } else {
+        // first inject
         _blocksTask3Workspace = NCLBlocks.injectInDiv(_pathToBlockly,
           questionId, NCLBlocks.calculateHeight(6, 145), _data.blocksTask2Xml,
           false, ['excludeResumePauseSet'])
+        setNotEdited = function () {
+          _blocksTask3WorkspaceEdited = false
+        }
+        setTimeout(setNotEdited, 500)
       }
       _blocksTask3Workspace.addChangeListener(saveblocksTask3Changes)
       break
     case 'conceptsTask4':
-      //  conceptsTask3Changes exist, apply it
       if (_survey.getQuestionByName('conceptsTask4Changes').value) {
+        // after first inject
         result = JSON.parse(_survey.getQuestionByName('conceptsTask4Changes').value)
         _survey.getQuestionByName('conceptsTask4Changes').value = ''
         _blocksTask4Workspace = NCLBlocks.injectInDiv(_pathToBlockly,
@@ -173,10 +179,15 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
             _blocksTask4Workspace)
           event.run(true)
         }
-      } else { //  conceptsTask3Changes empty,
+      } else {
+        // first inject
         _blocksTask4Workspace = NCLBlocks.injectInDiv(_pathToBlockly,
           questionId, NCLBlocks.calculateHeight(6, 145), _data.blocksTask2Xml,
           false, ['excludeResumePauseSet'])
+        setNotEdited = function () {
+          _blocksTask4WorkspaceEdited = false
+        }
+        setTimeout(setNotEdited, 500)
       }
       _blocksTask4Workspace.addChangeListener(saveblocksTask4Changes)
       break
@@ -204,13 +215,11 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
   }
   window.scrollTo(0, 0)
 }
-var _blocksTask3Workspace
-var _blocksTask4Workspace
 
-function saveblocksTask3Changes (primaryEvent) {
-  // save blocksTask3 change
+function saveblocksTask3Changes (event) {
+  _blocksTask3WorkspaceEdited = true
   var savedJsonStr = _survey.getQuestionByName('conceptsTask3Changes').value
-  var jsonFromEvent = primaryEvent.toJson()
+  var jsonFromEvent = event.toJson()
   var jsonToSave
 
   if (savedJsonStr == null) {
@@ -228,10 +237,10 @@ function saveblocksTask3Changes (primaryEvent) {
   _survey.getQuestionByName('conceptsTask3Result').value = xmlText
 }
 
-function saveblocksTask4Changes (primaryEvent) {
-  // save blocksTask3 change
+function saveblocksTask4Changes (event) {
+  _blocksTask4WorkspaceEdited = true
   var savedJsonStr = _survey.getQuestionByName('conceptsTask4Changes').value
-  var jsonFromEvent = primaryEvent.toJson()
+  var jsonFromEvent = event.toJson()
   var jsonToSave
 
   if (savedJsonStr == null) {
@@ -241,9 +250,8 @@ function saveblocksTask4Changes (primaryEvent) {
   }
   jsonToSave.changes.push(jsonFromEvent)
   _survey.getQuestionByName('conceptsTask4Changes').value =
-    JSON.stringify(jsonToSave)
+  JSON.stringify(jsonToSave)
 
-  // save blocksTask3 result
   var xml = Blockly.Xml.workspaceToDom(_blocksTask4Workspace)
   var xmlText = Blockly.Xml.domToText(xml)
   _survey.getQuestionByName('conceptsTask4Result').value = xmlText

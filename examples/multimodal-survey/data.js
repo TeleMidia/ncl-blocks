@@ -814,7 +814,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     },
     {
       type: 'comment',
-      isRequired: true,
+      // isRequired: true,
       name: 'conceptsTask1Question',
       title: 'Qual o comportamento da aplicação que corresponde os blocos acima?'
     },
@@ -829,7 +829,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     },
     {
       type: 'comment',
-      isRequired: true,
+      // isRequired: true,
       name: 'conceptsTask2Question',
       title: 'Qual a mudança no comportamento da aplicação anterior?'
     },
