@@ -25,8 +25,10 @@ var _surveyCss = {
   'pageTitle': 'h3 text-center bg-info page-header',
   // row
   'row': '',
-  'question': { root: 'h4 panel-body panel panel-default',
-    title: 'h4 breadcrumb' },
+  'question': {
+    root: 'h4 panel-body panel panel-default',
+    title: 'h4 breadcrumb'
+  },
   'error': {
     'root': '',
     'icon': 'glyphicon glyphicon-exclamation-sign',
@@ -106,6 +108,7 @@ function onCurrentPageChanged (targetSurvey, data) {
 function onRenderQuestion (targetSurvey, questionAndHtml) {
   var questionId = questionAndHtml.question.idValue
   var questionName = questionAndHtml.question.name
+  var result, i, event
   switch (questionName) {
     case 'conceptsIntro1':
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro1a',
@@ -140,15 +143,41 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
         NCLBlocks.calculateHeight(6, 145), _data.blocksTask2Xml, true)
       break
     case 'conceptsTask3':
-      _blocksTask3Workspace = NCLBlocks.injectInDiv(_pathToBlockly,
-        questionId, NCLBlocks.calculateHeight(6, 145), _data.blocksTask2Xml,
-        false, ['excludeResumePauseSet'])
+      //  conceptsTask3Changes exist, apply it
+      if (_survey.getQuestionByName('conceptsTask3Changes').value) {
+        result = JSON.parse(_survey.getQuestionByName('conceptsTask3Changes').value)
+        _survey.getQuestionByName('conceptsTask3Changes').value = ''
+        _blocksTask3Workspace = NCLBlocks.injectInDiv(_pathToBlockly,
+          questionId, NCLBlocks.calculateHeight(6, 145), '', false, ['excludeResumePauseSet'])
+        for (i in result.changes) {
+          event = Blockly.Events.fromJson(result.changes[i],
+            _blocksTask3Workspace)
+          event.run(true)
+        }
+      } else { //  conceptsTask3Changes empty
+        _blocksTask3Workspace = NCLBlocks.injectInDiv(_pathToBlockly,
+          questionId, NCLBlocks.calculateHeight(6, 145), _data.blocksTask2Xml,
+          false, ['excludeResumePauseSet'])
+      }
       _blocksTask3Workspace.addChangeListener(saveblocksTask3Changes)
       break
     case 'conceptsTask4':
-      _blocksTask4Workspace = NCLBlocks.injectInDiv(_pathToBlockly,
-        questionId, NCLBlocks.calculateHeight(6, 145), _data.blocksTask2Xml,
-        false, ['excludeResumePauseSet'])
+      //  conceptsTask3Changes exist, apply it
+      if (_survey.getQuestionByName('conceptsTask4Changes').value) {
+        result = JSON.parse(_survey.getQuestionByName('conceptsTask4Changes').value)
+        _survey.getQuestionByName('conceptsTask4Changes').value = ''
+        _blocksTask4Workspace = NCLBlocks.injectInDiv(_pathToBlockly,
+          questionId, NCLBlocks.calculateHeight(6, 145), '', false, ['excludeResumePauseSet'])
+        for (i in result.changes) {
+          event = Blockly.Events.fromJson(result.changes[i],
+            _blocksTask4Workspace)
+          event.run(true)
+        }
+      } else { //  conceptsTask3Changes empty,
+        _blocksTask4Workspace = NCLBlocks.injectInDiv(_pathToBlockly,
+          questionId, NCLBlocks.calculateHeight(6, 145), _data.blocksTask2Xml,
+          false, ['excludeResumePauseSet'])
+      }
       _blocksTask4Workspace.addChangeListener(saveblocksTask4Changes)
       break
     case 'nclIntro2':
@@ -188,8 +217,8 @@ function saveblocksTask3Changes (primaryEvent) {
     jsonToSave = { 'changes': [] }
   } else {
     jsonToSave = JSON.parse(savedJsonStr)
-  }
-  jsonToSave.changes.push(jsonFromEvent)
+  } jsonToSave.changes.push(jsonFromEvent)
+
   _survey.getQuestionByName('conceptsTask3Changes').value =
     JSON.stringify(jsonToSave)
 
