@@ -44,7 +44,7 @@ var _msgEmptyBlockTask = 'Por favor, preencha com blocos.'
 $('#surveyContainer').Survey({
   model: _survey,
   css: _surveyCss,
-  onAfterRenderPage: onRenderPage,
+  onCurrentPageChanged: onCurrentPageChanged,
   onAfterRenderQuestion: onRenderQuestion,
   onServerValidateQuestions: onValidateQuestions
 })
@@ -99,8 +99,8 @@ function onValidateQuestions (survey, options) {
   options.complete()
 }
 
-function onRenderPage (targetSurvey, pageAndHtml) {
-  // window.scrollTo(0, 0)
+function onCurrentPageChanged (targetSurvey, data) {
+  window.scrollTo(0, 0)
 }
 
 function onRenderQuestion (targetSurvey, questionAndHtml) {
