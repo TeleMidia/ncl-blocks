@@ -843,14 +843,16 @@ _data.surveyJSON.pages[pageIndex].elements.push({
           `
     },
     {
-      type: 'text',
+      type: 'comment',
       name: 'blocksTask3Changes',
-      visible: false
+      visible: true
+      // visible: false
     },
     {
-      type: 'text',
+      type: 'comment',
       name: 'blocksTask3Result',
-      visible: false
+      visible: true
+      // visible: false
     },
     {
       type: 'html',
@@ -864,13 +866,14 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     {
       type: 'text',
       name: 'blocksTask4Changes',
-      visible: false
+      visible: true
+      // visible: false
     },
     {
       type: 'text',
-
       name: 'blocksTask4Result',
-      visible: false
+      visible: true
+      // visible: false
     }
   ]
 })
