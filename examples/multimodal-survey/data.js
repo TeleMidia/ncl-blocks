@@ -307,7 +307,7 @@ _data.surveyJSON.pages.push({
 // ----------------------------------------
 
 pageIndex = _data.surveyJSON.pages.push({
-  name: 'blocks',
+  name: 'concepts',
   elements: []
 }) - 1
 
@@ -359,7 +359,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     },
     {
       type: 'html',
-      name: 'blocksIntro1',
+      name: 'conceptsIntro1',
       html: `
             <p>Primeiro, vamos detalhar o elemento <em>Mídia</em>.</p><br>
 
@@ -371,18 +371,18 @@ _data.surveyJSON.pages[pageIndex].elements.push({
             conteúdo. Por não terem conteúdo, ações de iniciar sobre as mídias
             acima não apresentaram resultados.</p><br>
 
-            <div id='blocksIntro1a'></div><br>
+            <div id='conceptsIntro1a'></div><br>
 
             <p>Os blocos a seguir definem as mesmas mídias, mas com conteúdos de
             áudio e imagem respectivamente. Em especial, a mídia de
             <em>midia_principal</em> tem definido um trecho chamado de
             <em>creditos</em> que inicia aos 300 e termina aos 360 segundos.</p>
-            <div id='blocksIntro1b'></div></p><br>
+            <div id='conceptsIntro1b'></div></p><br>
           `
     },
     {
       type: 'html',
-      name: 'blocksIntro2',
+      name: 'conceptsIntro2',
       html: `
             <p></p>Em em seguida, vamos detalhar o elemento <em>Sincronimo</em>.
             </p><br>
@@ -403,7 +403,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
             conteúdo de <em>midia_principal</em> não afetam o compartamento da 
             aplicação, desde que a mídia definia o mesmos trechos. Pois os 
             <em>Sincronimo</em>s são definidos indepente do conteúdo.</p>
-            <div id='blocksIntro2a'></div><p><br>
+            <div id='conceptsIntro2a'></div><p><br>
 
             <p>Para ilustrar o uso do elemento de <em>Sincronismo</em>, os blocos a seguir definem uma aplicação que apresenta um video,
             que um icone durante os creditos. Ao selecionar o icone, o video é
@@ -420,13 +420,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
             deve reciniciar a <em>midia_principal</em> (terminada e
             inciada)</p><br>
 
-            <div id='blocksIntro2b'></div>
+            <div id='conceptsIntro2b'></div>
             <br>
           `
     },
     {
       type: 'html',
-      name: 'blocksIntro3',
+      name: 'conceptsIntro3',
       html: `
             <p>Agora, detalhamos a seguir o elemento <em>Reconhecedor</em>.</p>
             <br>
@@ -446,7 +446,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
             utiliza dois trechos esquerda e direita para definir gestos de mão
             nessas direções.</p><br> 
             
-            <div id='blocksIntro3a'></div><br> 
+            <div id='conceptsIntro3a'></div><br> 
             
             <p>Para ilustrar o uso de um <em>Reconhecedor</em>, os blocos a
             seguir são uma nova versão da aplicação que reinicia um video dado
@@ -464,12 +464,12 @@ _data.surveyJSON.pages[pageIndex].elements.push({
             <em>repetir</em> for reconhecido a <em>midia_principal</em>
             (terminada e inciada).</p><br>
             
-            <div id='blocksIntro3b'></div><br>
+            <div id='conceptsIntro3b'></div><br>
           `
     },
     {
       type: 'html',
-      name: 'blocksIntro4',
+      name: 'conceptsIntro4',
       html: `
             <p>Por fim, vamos detalhar o elemento <em>Grupo de
             usuários</em>.</p><br>
@@ -483,7 +483,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
             que pode ter até 3 membros e cada um com reconhecedor de gestos
             (e.g. LeapMotion).</p><br>
 
-            <div id='blocksIntro4a'></div><br>
+            <div id='conceptsIntro4a'></div><br>
 
             <p>Para ilustrar o uso de um <em>Grupo de Usuários</em>, os blocos a
             seguir são uma nova versão da aplicação que reinicia um video dado
@@ -502,7 +502,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
             <em>repetir</em> for reconhecido a <em>midia_principal</em>
             (terminada e inciada).</p><br>
             
-            <div id='blocksIntro4b'></div><br>
+            <div id='conceptsIntro4b'></div><br>
           `
     }
   ]
@@ -807,7 +807,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     },
     {
       type: 'html',
-      name: 'blocksTask1',
+      name: 'conceptsTask1',
       html: `
             <p>Tarefa 1: Por favor, analise com cuidado os blocos aseguir.</p>
           `
@@ -815,12 +815,12 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     {
       type: 'comment',
       isRequired: true,
-      name: 'blocksTask1Question',
+      name: 'conceptsTask1Question',
       title: 'Qual o comportamento da aplicação que corresponde os blocos acima?'
     },
     {
       type: 'html',
-      name: 'blocksTask2',
+      name: 'conceptsTask2',
       html: `
             <p>Tarefa 2: Os blocos a seguir são um versão motificada do
             imediatamente anterior. Por favor, analise com cuidado essa versão
@@ -830,12 +830,12 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     {
       type: 'comment',
       isRequired: true,
-      name: 'blocksTask2Question',
+      name: 'conceptsTask2Question',
       title: 'Qual a mudança no comportamento da aplicação anterior?'
     },
     {
       type: 'html',
-      name: 'blocksTask3',
+      name: 'conceptsTask3',
       html: `
             <p>Tarefa 3: Agora, pedimos que edite os blocos a seguir para
             utilizar um interação por gestos inves de uma interação por
@@ -844,19 +844,19 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     },
     {
       type: 'comment',
-      name: 'blocksTask3Changes',
+      name: 'conceptsTask3Changes',
       visible: true
       // visible: false
     },
     {
       type: 'comment',
-      name: 'blocksTask3Result',
+      name: 'conceptsTask3Result',
       visible: true
       // visible: false
     },
     {
       type: 'html',
-      name: 'blocksTask4',
+      name: 'conceptsTask4',
       html: `
             <p>Tarefa 4: Agora, pedimos que edite os blocos a seguir para que
             apenas o segundo usuário de um grupo de usuário possa realizar a
@@ -865,13 +865,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     },
     {
       type: 'text',
-      name: 'blocksTask4Changes',
+      name: 'conceptsTask4Changes',
       visible: true
       // visible: false
     },
     {
       type: 'text',
-      name: 'blocksTask4Result',
+      name: 'conceptsTask4Result',
       visible: true
       // visible: false
     }
@@ -1154,7 +1154,7 @@ _data.blocksTask2Xml = `
 // ----------------------------------------
 
 _data.surveyJSON.pages.push({
-  name: 'blocksFeedback',
+  name: 'conceptsFeedback',
   elements: [
     {
       type: 'panel',

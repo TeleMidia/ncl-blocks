@@ -91,9 +91,9 @@
       if (selected === '-') return
       var selectIndex = parseInt(selected)
       var savedWorkspaceXml
-      if ($('#blockTask option:selected').val() === 'blocksTask3') {
+      if ($('#blockTask option:selected').val() === 'conceptsTask3') {
         savedWorkspaceXml = _resultsData[selectIndex].blocksTask3Result
-      } else if ($('#blockTask option:selected').val() === 'blocksTask4') {
+      } else if ($('#blockTask option:selected').val() === 'conceptsTask4') {
         savedWorkspaceXml = _resultsData[selectIndex].blocksTask4Result
       }
       $('#xmlcode').val(savedWorkspaceXml)
@@ -103,7 +103,7 @@
 
     $('#resultIndex').change(function () {
       if (_resultsData == null) return
-      $('#blockTask').val('blocksTask3')
+      $('#blockTask').val('conceptsTask3')
       showBlocksXML()
     })
 
@@ -118,9 +118,9 @@
     var _runEventIntervalIndex = 0
     var runEventInterval = function (index) {
       var result
-      if ($('#blockTask option:selected').val() === 'blocksTask3') {
+      if ($('#blockTask option:selected').val() === 'conceptsTask3') {
         result = JSON.parse(_resultsData[index].blocksTask3Changes)
-      } else if ($('#blockTask option:selected').val() === 'blocksTask4') {
+      } else if ($('#blockTask option:selected').val() === 'conceptsTask4') {
         result = JSON.parse(_resultsData[index].blocksTask4Changes)
       }
       if (_runEventIntervalIndex >= result.changes.length) {
