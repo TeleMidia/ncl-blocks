@@ -1310,7 +1310,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         table-condensed">
           <tr><th>Conceito</th><th>Elemento da NCL</th></tr>
           <tr><td><em>Mídia</em></td><td><em>&ltmedia></em></td></tr>
-          <tr><td><em>Sincronimo</em></td><td><em>&ltlink></em></td></tr>
+          <tr><td><em>Sincronimo</em></td><td><em>&ltport> e <em>&ltlink></em></td></tr>
           <tr><td><em>Reconhecedor</em></td><td><em>não 
           presente</em></td></tr> 
           <tr><td><em>Grupo de Usuários</em></td><td>não presente</td></tr>
@@ -1321,22 +1321,47 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'nclIntro2',
       type: 'html',
       html: `
-        <p>O trecho de código a seguir ilustra uma aplicação que apresenta um
-        vídeo que pode ser reiniciado com a selação de usuário.</p><br <p>Mais
-        precisamente, a aplicação utiliza dois elementos <em>&ltmedia></em>
-        mídias e um elemento <em><port></em> e um <em>&ltlink></em> . Um
-        exemplo de mídia NCL comum é o 'mainvideo' (linhas 12-14). Essa media
-        possui um trecho definido pela ancora 'credits' (linhas 13).</p ><br>
+        <p>Primeiro, vamos detalhar o conceito de <em>Reconhecedor</em> em NCL.
+        Para implementar esse <em>Reconhecedor</em> propomos o elemento de
+        <em>&ltinput></em></p><br>
+
+        <p>O trecho de código a seguir apresente o arquivo
+        <em>rec_voz.srgs</em>. Esse arquivo é uma descrição de reconhecimento de
+        voz no formato SRGS. Em particular, ele define uma porção chamada
+        <em>repete</em> que define o reconhecimento de voz "repita vídeo"</p
+        ><br>
+        
         <div id='nclIntro2aCode'></div><br>
-      
-        <p>Para adicionar interações multimodais sobre esse video, adicionamos
-        os elementos 'menu' (linhas 15-17) e 'answer' (linhas 19-21). O primeiro
-        define um áudio sintetizado utilizando o arquivo SSML chamado
-        question.ssml (linhas 2-4).O segundo define um reconhecimento de vocês
-        utilizando o arquivo SRGS chamado commads.srgs (linhas 7-9).</p> <br>
-        Enquanto que o reconhecimento é definido pelo elo das linhas 28-31.</p>
-        <p>Esse áudio sintetizado é definido pelo elo das linhas 23-27.
+
+        <p>O trecho de código a seguir ilustra uma aplicação que apresenta um
+        vídeo, ao qual pode ser reniciado em sua portão de creditos por comandos
+        de voz. Mais precisamente, a aplicação utiliza um elemento
+        <em>&ltmedia></em> mídias, um elemento de <em>&ltinput></em>, um
+        <em><port></em> e dois <em>&ltlink></em>s.</p><br>
+
+        <p>O elemento de <em>&ltmedia></em> chamado de
+        <em>video_principal</em> (linhas 17-19) que define um trecho chamado
+        creditos que inicia aos 300s. O elemento <em>&ltinput></em>, chamado de
+        <em>rec</em>é definito utilizando utilizando o arquivo SRGS
+        <em>rec_voz.srgs</em> (linhas 20-22). O elemento <em>&ltport></em>
+        (linha 16) defini que o <em>video_principal</em> é iniciado com
+        aplicação. O primeiro <em>&ltlink></em> (linhas 23-26) defini que quando
+        o <em>video_principal</em> alançar a sua porção de creditos (300s) o
+        reconhecedor <em>rec</em> inicia seu reconhecimento. O segundo
+        <em>&ltlink></em>(linhas 27-30) defique que o <em>video_principal</em>
+        deve ser reiniciado (stop e start) quando for reconhecido o trecho
+        <em>repete</em></p><br>
+
         <div id='nclIntro2bCode'></div><br>
+      `
+    },
+    {
+      name: 'nclIntro3',
+      type: 'html',
+      html: `
+        <p>Agora, vamos detalhar o elemento <em>Grupo de Usuários</em> em NCL.
+        Para implementar esse Reconhecedor propomos o elemento de
+        <em>&ltuserClass></em></p><br>
       `
     }
   ]
@@ -1345,90 +1370,48 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 _data.nclIntro2aCode = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;">
   <![CDATA[
-  <?xml version="1.0" encoding="ISO-8859-1"?>
-  <ncl>
-    <head>
-      <connectorBase>
-        <causalConnector id="onKeySelectionStart">
-          <connectorParam name="var"/>
-          <connectorParam name="keyCode"/>
-          <simpleCondition role="onSelection" key="$keyCode"/>
-          <simpleAction role="start" max="unbounded"/>
-        </causalConnector>
-      </connectorBase>
-    </head>
-    <body>
-      <port component="mainvideo"/>
-      <media id="mainvideo" type="video/mp4" src="video.mp4">
-        <property name="width" value="100%"/>
-        <property name="height" value="100%"/>
-        <area label="credits" begin="300s" end="360s" />
-      </media>
-      <link xconnector="onKeySelectionStart">
-        <bind role="onSelection" component="mainvideo" interface="credits">
-          <bindParam name="keyCode" value="RED"/>
-        </bind>
-        <bind role="start" component="mainvideo"/>
-      </link>
-    </body>
-  </ncl>
+  <grammar xmlns="http://www.w3.org/2001/06/grammar">
+    <rule id="repete">repita video</rule>
+  </grammar>
   ]]>
   </script>
 `
 
 _data.nclIntro2bCode = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false; 
-  highlight: [11,12,13,14,15,16,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,
-  48]">
+  highlight:">
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <ncl>
     <head>
       <connectorBase>
-        <causalConnector id="onKeySelectionStart">
-          <connectorParam name="var"/>
-          <connectorParam name="keyCode"/>
-          <simpleCondition role="onSelection" key="$keyCode"/>
-          <simpleAction role="start" max="unbounded"/>
-        </causalConnector>
-        <!-- begin modification-->
-        <causalConnector id="onRecognizeStart">
+        <causalConnector id="onRecognizeStopStart">
           <simpleCondition role="onRecognize" max="unbounded"/>
-          <simpleAction role="start" max="unbounded"/>
+          <compoundAction>
+            <simpleAction role="stop" max="unbounded"/>
+            <simpleAction role="start" max="unbounded"/>
+          </compoundAction>
         </causalConnector>
-        <!-- end modification-->
       </connectorBase>
+      <descriptorBase documentURI="desc.ncl" alias="desEx"/>
     </head>
     <body>
-      <port component="mainvideo"/>
-      <media id="mainvideo" type="video/mp4" src="video.mp4">
-        <property name="width" value="100%"/>
-        <property name="height" value="100%"/>
+      <port component="video_principal"/>
+      <media id="video_principal" src="video.mp4" descriptor="desEx#video">
         <area label="credits" begin="300s" end="360s" />
       </media>
-      <link xconnector="onKeySelectionStart">
-        <bind role="onSelection" component="mainvideo" interface="credits">
-          <bindParam name="keyCode" value="RED"/>
-        </bind>
-        <bind role="start" component="mainvideo"/>
-      </link>
-      <!-- begin modification-->
-      <media id="tts" type="application/ssml+xml" src="question.ssml">
-        <area label="repeat_question"/>
-      </media>
-      <input id="asr" type="application/srgs+xml" src="repeat.srgs">
-        <area label="repeat_command"/>
+      <input id="rec"src="rec_voz.srgs">
+        <area label="repete"/>
       </input>
       <link xconnector="onBeginStart">
-        <bind role="onBegin" component="mainvideo" interface="credits"/>
-        <bind role="start" component="tts" interface="repeat_question"/>
-        <bind role="start" component="answer"/>
+        <bind role="onBegin" component="video_principal" interface="credits"/>
+        <bind role="start" component="rec"/>
       </link>
       <link xconnector="onRecognizeStart">
-        <bind role="onRecognize" component="asr" interface="repeat_command"/>
-        <bind role="start" component="mainvideo"/>
+        <bind role="onRecognize" component="rec_voz" interface="repete"/>
+        <bind role="stop" component="video_principal"/>
+        <bind role="start" component="video_principal"/>
       </link>
-      <!-- end modification-->
     </body>
   </ncl>]]>
   </script>
@@ -1474,114 +1457,107 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 })
 
 _data.nclTask1Code = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;">
+  <![CDATA[
   <?xml version= "1.0" encoding= "ISO-8859-1" ?>
-  <!--### original sightseeing ###-->
-    <ncl xmlns="http://www.ncl.org.br/NCL3.0/EDTVProfile">
-      <head>
-        <connectorBase>
-          <causalConnector id="onKeySelectionStart">
-            <connectorParam name="var" />
-            <connectorParam name="keyCode" />
-            <simpleCondition role="onSelection" key="$keyCode" />
-            <simpleAction role="start" max="unbounded" />
-          </causalConnector>
-        </connectorBase>
-      </head>
-      <body>
-        <port component="intro" />
-        <media id="intro" src="intro.mp4">
-          <area label="choice_moment" begin="40s" />
-        </media>
-        <media id="videoDowntown" src="downtown.mp4" />
-        <media id="videoBeach" src="beach.mp4" />
-        <media id="menu_choice" src="menu_downtown_or_beach.png" />
-        <link xconnector="onBeginStart">
-          <bind role="onBegin" component="intro" interface="choice_moment" />
-          <bind role="start" component="menu_choice" />
-        </link>
-        <link xconnector="onKeySelectionStart">
-          <bind role="onKeySelection" component="choice">
-            <bindParam name="keyCode" value="RED" />
-          </bind>
-          <bind role="start" component="videoDowntown" />
-        </link>
-        <link xconnector="onKeySelectionStart">
-          <bind role="onKeySelection" component="choice">
-            <bindParam name="keyCode" value="GREEN" />
-          </bind>
-          <bind role="start" component="videoBeach" />
-        </link>
-        ...
-    </body>
-    </ncl>
-`
-_data.nclTask2Code = `
-  <?xml version= "1.0" encoding= "ISO-8859-1" ?>
-  <!--### original sightseeing ###-->
   <ncl xmlns="http://www.ncl.org.br/NCL3.0/EDTVProfile">
     <head>
       <connectorBase>
-        <causalConnector id="onKeySelectionStart">
-          <connectorParam name="var" />
-          <connectorParam name="keyCode" />
-          <simpleCondition role="onSelection" key="$keyCode" />
-          <simpleAction role="start" max="unbounded" />
+        <causalConnector id="onBeginStart">
+          <simpleCondition role="onBegin"/>
+          <simpleAction role="start" max="unbounded" qualifier="par"/>
         </causalConnector>
-
-        <!-- begin modification-->
-      <causalConnector id="onRecognizeStart">
-          <simpleCondition role="onRecognize" max="unbounded" />
-          <simpleAction role="start" max="unbounded" />
+        <causalConnector id="onSelectionStopStart">
+          <simpleCondition role="onSelection" />
+          <compoundAction>
+            <simpleAction role="stop" ax="unbounded"/>
+            <simpleAction role="start" max="unbounded" />
+          </compoundAction>
         </causalConnector>
-        <!-- end modification-->
-    </connectorBase>
+      </connectorBase>
+      <descriptorBase documentURI="desc.ncl" alias="desEx"/>
     </head>
     <body>
-      <port component="intro" />
-      <media id="intro" src="intro.mp4">
-        <area label="choice_moment" begin="40s" />
+      <port component="video_principal" />
+      <media id="video_principal" src="video_principal.mp4" descriptor="desEx#video">
+        <area label="creditos" begin="300s" />
       </media>
-      <media id="videoDowntown" src="downtown.mp4" />
-      <media id="videoBeach" src="beach.mp4" />
-      <media id="menu_choice" src="menu_downtown_or_beach.png" />
+      <media id="video_centro" src="centro.mp4" descriptor="desEx#video"/>
+      <media id="video_praia" src="praia.mp4" descriptor="desEx#video"/>
+      <media id="img_centro" src="img_centro.png" descriptor="desEx#icon1"/>
+      <media id="img_praia" src="img_praia.png" descriptor="desEx#icon2"/>
       <link xconnector="onBeginStart">
-        <bind role="onBegin" component="intro" interface="choice_moment" />
-        <bind role="start" component="menu_choice" />
+        <bind role="onBegin" component="video_principal" interface="creditos" />
+        <bind role="start" component="img_centro" />
+        <bind role="start" component="img_praia" />
       </link>
-      <link xconnector="onKeySelectionStart">
-        <bind role="onKeySelection" component="choice">
-          <bindParam name="keyCode" value="RED" />
-        </bind>
-        <bind role="start" component="videoDowntown" />
+      <link xconnector="onSelectionStopStart">
+        <bind role="onSelection" component="img_centro" />
+        <bind role="stop" component="img_centro" />
+        <bind role="stop" component="img_praia" />
+        <bind role="stop" component="video_principal" />
+        <bind role="start" component="video_principal" />
       </link>
-      <link xconnector="onKeySelectionStart">
-        <bind role="onKeySelection" component="choice">
-          <bindParam name="keyCode" value="GREEN" />
-        </bind>
-        <bind role="start" component="videoBeach" />
+      <link xconnector="onSelectionStopStart">
+        <bind role="onSelection" component="img_praia" />
+        <bind role="stop" component="img_centro" />
+        <bind role="stop" component="img_praia" />
+        <bind role="stop" component="video_principal" />
+        <bind role="start" component="video_principal" />
       </link>
-
-      <!-- begin modification-->
-      <media id="audio_choice" src="audio_downtown_or_beach.ssml" />
-      <link xconnector="onBeginStart">
-        <bind role="onBegin" component="intro" interface="choice_moment" />
-        <bind role="start" component="audio_choice" />
-      </link>
-      <input id="asr_places" type="application/srgs+xml" src="places.sgrs">
-        <area label="downtown" />
-        <area label="beach" />
+    </body>
+  </ncl>]]>
+  </script>
+`
+_data.nclTask2Code = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;">
+  <![CDATA[
+  <?xml version= "1.0" encoding= "ISO-8859-1" ?>
+  <ncl xmlns="http://www.ncl.org.br/NCL3.0/EDTVProfile">
+    <head>
+      <connectorBase>
+        <causalConnector id="onBeginStart">
+          <simpleCondition role="onBegin"/>
+          <simpleAction role="start" max="unbounded" qualifier="par"/>
+        </causalConnector>
+        <causalConnector id="onRecognizeStopStart">
+          <simpleCondition role="onRecognize" max="unbounded" />
+          <compoundAction>
+            <simpleAction role="stop" ax="unbounded"/>
+            <simpleAction role="start" max="unbounded" />
+          </compoundAction>
+        </causalConnector>
+      </connectorBase>
+    <descriptorBase documentURI="desc.ncl" alias="desEx"/>
+    </head>
+    <body>
+      <port component="video_principal" />
+      <media id="video_principal" src="video_principal.mp4" descriptor="desEx#video">
+        <area label="creditos" begin="300s" />
+      </media>
+      <media id="video_centro" src="centro.mp4" descriptor="desEx#video"/>
+      <media id="video_praia" src="praia.mp4" descriptor="desEx#video"/>
+      <input id="rec" src="rec_voz.sgrs">
+        <area label="centro" />
+        <area label="praia" />
       </input>
-      <link xconnector="onRecognizeStart">
-        <bind role="onRecognize" component="asr_places" interface="beach" />
-        <bind role="start" component="videoBeach" />
+      <link xconnector="onBeginStart">
+        <bind role="onBegin" component="video_principal" interface="creditos" />
+        <bind role="start" component="rec_voz" />
       </link>
-      <link xconnector="onRecognizeStart">
-        <bind role="onRecognize" component="asr_places" interface="downtown" />
-        <bind role="start" component="videoDowntown" />
+      <link xconnector="onRecognizeStopStart">
+        <bind role="onRecognize" component="rec" interface="centro" />
+        <bind role="stop" component="video_principal" />
+        <bind role="start" component="video_centro" />
       </link>
-      <!-- end modification-->
-  </body>
-  </ncl>
+      <link xconnector="onRecognizeStopStart">
+        <bind role="onRecognize" component="rec" interface="praia" />
+        <bind role="stop" component="video_principal" />
+        <bind role="start" component="video_praia" />
+      </link>
+    </body>
+  </ncl>]]>
+  </script>
 `
 
 // ----------------------------------------

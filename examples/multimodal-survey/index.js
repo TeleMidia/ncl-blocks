@@ -199,11 +199,11 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       SyntaxHighlighter.highlight()
       break
     case 'nclTask1':
-      $('#' + questionId).append(_data.nclIntro2aCode)
+      $('#' + questionId).append(_data.nclTask1Code)
       SyntaxHighlighter.highlight()
       break
     case 'nclTask2':
-      $('#' + questionId).append(_data.nclIntro2bCode)
+      $('#' + questionId).append(_data.nclTask2Code)
       SyntaxHighlighter.highlight()
       break
     case 'htmlCode1':
