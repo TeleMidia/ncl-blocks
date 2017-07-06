@@ -354,12 +354,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     {
       type: 'html',
       html: `
-        <div style="text-align: justify; width: 70%;">
-        <p>As linguagens multímidia atuais não suportam adequadamente
-        interações multimodais. Em nossa pesquisa propomos um conjunto de
-        conceitos a serem instanciados nessas linguagens para oferecer tal
-        suporte. Mais precisamente esses conceitos são os de <em>Mídia,
-        Reconhecedor, Sincronismo</em> e <em>Grupo de Usuários</em>.</p>
+        <div style="text-align: justify; width: 70%;"> <p>As linguagens
+        multímidia atuais não suportam adequadamente interações multimodais.
+        Elas podem ser consideradas 'out-oriented' pois focam em conteúdos para
+        apresentação, como imagens, vídeo e áudios. Em nossa pesquisa propomos
+        um conjunto de conceitos a serem instanciados nessas linguagens para
+        oferecer tal suporte. Mais precisamente esses conceitos são os de
+        <em>Mídia, Reconhecedor, Sincronismo</em> e <em>Grupo de Usuários</em>.
         <br>
         
         <p>Esta seção tem o objetivo de detalhar esses conceitos para o
@@ -488,7 +489,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Os blocos a seguir definem os reconhecedores <em>rec_voz</em> e
         <em>rec_gestos</em>. O <em>rec_voz</em> tem um reconhecimento de
         voz como conteúdo. Essa descrição tem o trecho <em>repetir</em> que
-        reconhece o comando de voz "repetir vídeo". O <rec_gestos> tem uma
+        reconhece o comando de voz "repita vídeo". O <rec_gestos> tem uma
         descrição de reconhecimento de gestos como conteúdo. Esse conteúdo
         utiliza dois trechos, esquerda e direita, para definir gestos de mão
         nessas direções.</p><br> 
@@ -500,7 +501,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Para ilustrar o uso de um <em>Reconhecedor</em>, os blocos a
         seguir são uma nova versão da aplicação que reinicia um vídeo dada
         uma interação. Mas nessa versão, ao invés de clicar, o vídeo é
-        reiniciado ao usuário falar "repetir vídeo".</p><br>
+        reiniciado ao usuário falar "repita vídeo".</p><br>
         
         <p>Mais precisamente, os blocos definem uma <em>Mídia</em>
         (<em>midia_principal</em>), um <em>Reconhecedor</em>
@@ -543,7 +544,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em>, os blocos a
         seguir são uma nova versão da aplicação que reinicia um vídeo dado]a
         uma interação. Mas nessa versão, o vídeo é reiniciado apenas quando
-        o segundo usuário falar "repetir video".</p> <br>
+        o segundo usuário falar "repita vídeo".</p> <br>
 
         <p>Mais precisamente, os blocos definem uma <em>Mídia</em>
         (<em>midia_principal</em>), um <em>Reconhecedor</em>
@@ -683,7 +684,7 @@ _data.blocksIntro3aXml = `
         <block type="srgs" id="N5Lu5_J\`hn-e3lm60 |^3">
           <mutation length="1"></mutation>
           <field name="id_area0">repetir</field>
-          <field name="label0">repetir video</field>
+          <field name="label0">repita vídeo</field>
         </block>
       </value>
     </block>
@@ -723,7 +724,7 @@ _data.blocksIntro3bXml = `
           <mutation length="1">
           </mutation>
           <field name="id_area0">repetir</field>
-          <field name="label0">repetir video</field>
+          <field name="label0">repita vídeo</field>
         </block>
       </value>
     </block>
@@ -793,7 +794,7 @@ _data.blocksIntro4bXml = `
         <block type="srgs" id="N5Lu5_J\`hn-e3lm60 |^3">
           <mutation length="1"></mutation>
           <field name="id_area0">repetir</field>
-          <field name="label0">repetir video</field>
+          <field name="label0">repita vídeo</field>
         </block>
       </value>
     </block>
@@ -1400,9 +1401,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div id='nclIntro2bCode'></div><br>
 
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em NCL, o código
-        a seguir são uma nova versão da aplicação que reinicia um video dado uma
+        a seguir são uma nova versão da aplicação que reinicia um vídeo dado uma
         interação. Mas nessa versão, ao inves de clicar, o vídeo é reiniciado ao
-        usuário falar "repetir video".</p> <p>Mais precisamente, a aplicação
+        usuário falar "repita vídeo".</p> <p>Mais precisamente, a aplicação
         utiliza um elemento <em>&ltmedia></em> mídias, um elemento de
         <em>&ltinput></em>, um <em><port></em> e dois
         <em>&ltlink></em>s.</p><br>
@@ -1435,7 +1436,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <div id='nclIntro3aCode'></div><br>
 
-        <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em NCL, o código a seguir são uma nova versão da aplicação que reinicia um video dado uma interação. Mas nessa versão, ao inves de clicar, o vídeo é reiniciado ao usuário falar "repetir video".</p><br>
+        <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em NCL, o código a seguir são uma nova versão da aplicação que reinicia um vídeo dado uma interação. Mas nessa versão, ao inves de clicar, o vídeo é reiniciado ao usuário falar "repita vídeo".</p><br>
 
         <div id='nclIntro3bCode'></div><br>
         </div>
@@ -1448,7 +1449,7 @@ _data.nclIntro2aCode = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false; highlight: [2]">
   <![CDATA[
   <grammar xmlns="http://www.w3.org/2001/06/grammar">
-    <rule id="repete">repita video</rule>
+    <rule id="repete">repita vídeo</rule>
   </grammar>
   ]]>
   </script>
@@ -2013,7 +2014,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em HTML, o
         código a seguir são uma nova versão da aplicação que reinicia um video
         dado uma interação. Mas nessa versão, ao inves de clicar, o vídeo é
-        reiniciado ao usuário falar "repetir video".</p> <p>Mais precisamente, a
+        reiniciado ao usuário falar "repita vídeo".</p> <p>Mais precisamente, a
         aplicação utiliza um elemento <em>&ltmedia></em> mídias, um elemento de
         <em>&ltinput></em>, um <em><port></em> e dois
         <em>&ltlink></em>s.</p><br>
