@@ -361,11 +361,11 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         Reconhecedor, Sincronismo</em> e <em>Grupo de Usuários</em>.</p>
         <br>
         
-        <p>Esta seção tem o objetivo de detalhar esses conceitos e capturar
-        o entendimento do entrevistado. Para evitar possíveis dificuldades
-        dada a sintaxe de linguagens, apresentaremos esses conceitos
-        utilizando uma abordagem de <strong>desenvolvimento de aplicações
-        através de blocos</strong>.</p> <br>
+        <p>Esta seção tem o objetivo de detalhar esses conceitos para o
+        participante e capturar evidências de nossa pesquisa. Para evitar
+        possíveis dificuldades dada a sintaxe de linguagens, apresentaremos
+        esses conceitos utilizando uma abordagem de <strong>desenvolvimento de
+        aplicações através de blocos</strong>.</p> <br>
         
         <p>Esse tipo de abordagem é bastante utilizado para o ensino de
         programação ou para ferramentes de geração de código. Em especial,
@@ -853,7 +853,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         <div style="text-align: justify; width: 70%;">
         <p>Agora, pedimos que você realize as quatro tarefas a seguir. Duas
-        tarefas consistem em interpretar aplicações e duas em modificar.<;p>
+        tarefas consistem em interpretar aplicações e duas em modificar.</p>
 
         </p><strong>Ressaltamos que essas tarefas NÃO se destinam à avaliar
         seus conhecimentos, mas sim capturar evidências de nossa
@@ -1330,8 +1330,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Essa seção da entrevista não tem o objetivo de detalhar a linguagem
-        NCL. Essa seção tem o objetivo de apresentar como os conceitos de
+        <p>Esta seção não tem o objetivo de detalhar a linguagem
+        NCL. Esta seção tem sim o objetivo de apresentar como os conceitos de
         interação multimodal podem ser instanciados na linguagem NCL.</p> 
 
         <p>A linguagem NCL tem o foco de criar apresentações multimídia
@@ -1903,8 +1903,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: ` 
         <div style="text-align: justify; width: 70%;">
-        <p>Essa seção da entrevista não tem o objetivo de detalhar a linguagem
-        HTML. Essa seção tem o objetivo de apresentar como os conceitos de
+        <p>Esta seção não tem o objetivo de detalhar a linguagem
+        HTML. Esta seção tem sim o objetivo de apresentar como os conceitos de
         interação multimodal podem ser instanciados na linguagem HTML.</p> 
 
         <p>A linguagem HTML tem o foco de criar apresentações multimídia
@@ -2290,7 +2290,7 @@ _data.surveyJSON.pages.push({
 
 _data.surveyJSON.pages.push({
   name: 'comments',
-  title: 'Comentários adicionais do entrevistado',
+  title: 'Comentários adicionais do participante',
   elements: [
     {
       type: 'comment',
