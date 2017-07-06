@@ -64,7 +64,7 @@ _data.surveyJSON.pages.push({
       html: `<div style="text-align: justify; width: 70%;">
             <p>Caso esteja de acordo, prossiga.</p><br>
 
-            OBS: Este estudo é feita em uma única página dinâmica. Caso deseje
+            OBS: Este estudo é feito em uma única página web. Caso deseje
             navegar entre as seções do estudo, <strong>NÃO</strong> utilize
             os botões de navegação do seu browser, e sim use os botôes
             <em>voltar</em> e <em>prosseguir</em> no final de cada seção da
@@ -355,7 +355,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         <div style="text-align: justify; width: 70%;">
         <p>As linguagens multímidia atuais não suportam adequadamente
-        interações multimodais. Em nosso estudo propomos um conjunto de
+        interações multimodais. Em nossa pesquisa propomos um conjunto de
         conceitos a serem instanciados nessas linguagens para oferecer tal
         suporte. Mais precisamente esses conceitos são os de <em>Mídia,
         Reconhecedor, Sincronismo</em> e <em>Grupo de Usuários</em>.</p>
@@ -1341,8 +1341,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>&ltlink></em> permite criar sincronismos entre mídias e sincronismos
         baseados em interações de tecla e mouse.</p>
         
-        <p>A tabela seguir analisa quais dos conceitos propostos em nossos
-        estudos estão presentes e qual o elemento da NCL que implementa.</p><br>
+        <p>A tabela seguir analisa quais dos conceitos propostos em nossa
+        pesquisa estão presentes e qual o elemento da NCL que
+        implementa.</p><br>
 
         <table align="center" class="table-bordered table-striped
         table-condensed">
@@ -1916,8 +1917,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         Elementos JavaScript podem criar sincronismos de mídias e sincronismos
         baseados em interações de tecla e mouse.</p>
         
-        <p>A tabela seguir analisa quais dos conceitos propostos em nossos
-        estudos estão presentes e qual o elemento da HTML que
+        <p>A tabela seguir analisa quais dos conceitos propostos em nossa
+        pesquisa estão presentes e qual o elemento da HTML que
         implementa.</p><br>
 
         <table align="center" class="table-bordered table-striped
