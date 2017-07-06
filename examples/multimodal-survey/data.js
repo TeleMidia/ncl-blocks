@@ -1429,11 +1429,10 @@ _data.nclIntro2aCode = `
 `
 _data.nclIntro2bCode = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false; highlight:
-  [4,23]">
+  [3,21]">
   <![CDATA[
   <?xml version="1.0" encoding="UTF-8"?>
   <GestureMarkupLanguage>
-
     <Gesture id="swipe_esquerda" type="swipe">
       <match><action><initial>
         <event touch_event="touchEnd"/>
@@ -1452,7 +1451,6 @@ _data.nclIntro2bCode = `
         <gesture_event type="custom"></gesture_event>
       </update></mapping>
     </Gesture>
-
     <Gesture id="swipe_direta" type="swipe">
       <match><action><initial>
         <event touch_event="touchEnd"/>
@@ -1471,7 +1469,6 @@ _data.nclIntro2bCode = `
         <gesture_event type="custom"></gesture_event>
       </update></mapping>
     </Gesture>
-    
   </GestureMarkupLanguage>
   ]]></script>
 `
