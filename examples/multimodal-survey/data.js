@@ -1212,110 +1212,97 @@ _data.surveyJSON.pages.push({
   name: 'conceptsFeedback',
   elements: [
     {
-      type: 'panel',
-      innerIndent: 1,
-      title: `Por favor, nos ajude agora a capturar a usa perceção sobre 
-        utilidade dos conceitos apresentados.`,
-      elements: [
-        {
-          type: 'radiogroup',
-          isRequired: true,
-          name: 'conceptsFeedbackQuestion1',
-          title: `Os conceitos apresentadados permitem realizar mais facilmente 
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'conceptsFeedbackQuestion1',
+      title: `Os conceitos apresentadados permitem realizar mais facilmente 
             o desenvolmento de aplicações multimodais`,
-          choices: [
-            {
-              value: '0',
-              text: {
-                en: 'bastante improvável'
-              }
-            }, {
-              value: '1',
-              text: {
-                en: 'muito improvável'
-              }
-            }, {
-              value: '2',
-              text: {
-                en: 'pouco improvável'
-              }
-            }, {
-              value: '3',
-              text: {
-                en: 'indiferente'
-              }
-            }, {
-              value: '4',
-              text: {
-                en: 'pouco provável'
-              }
-            }, {
-              value: '5',
-              text: {
-                en: 'muito provável'
-              }
-            }, {
-              value: '6',
-              text: {
-                en: 'bastante provável'
-              }
-            }
-          ]
-        },
+      choices: [
         {
-          type: 'radiogroup',
-          isRequired: true,
-          name: 'conceptsFeedbackQuestion2',
-          title: `Os conceitos apresentadados permitem realizar mais 
+          value: '0',
+          text: {
+            en: 'bastante improvável'
+          }
+        }, {
+          value: '1',
+          text: {
+            en: 'muito improvável'
+          }
+        }, {
+          value: '2',
+          text: {
+            en: 'pouco improvável'
+          }
+        }, {
+          value: '3',
+          text: {
+            en: 'indiferente'
+          }
+        }, {
+          value: '4',
+          text: {
+            en: 'pouco provável'
+          }
+        }, {
+          value: '5',
+          text: {
+            en: 'muito provável'
+          }
+        }, {
+          value: '6',
+          text: {
+            en: 'bastante provável'
+          }
+        }
+      ]
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'conceptsFeedbackQuestion2',
+      title: `Os conceitos apresentadados permitem realizar mais 
             rapidamente o desenvolmento de aplicações multimodais?`,
-          choices: ['bastante improvável', 'muito improvável',
-            'pouco improvável', 'indiferente', 'pouco provável',
-            'muito provável', 'bastante provável']
-        },
-        {
-          type: 'radiogroup',
-          isRequired: true,
-          name: 'conceptsFeedbackQuestion3',
-          title: `De modo geral, os conceitos apresentadados são úteis para o 
+      choices: ['bastante improvável', 'muito improvável',
+        'pouco improvável', 'indiferente', 'pouco provável',
+        'muito provável', 'bastante provável']
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'conceptsFeedbackQuestion3',
+      title: `De modo geral, os conceitos apresentadados são úteis para o 
             desenvolmento de aplicações multimodais?`,
-          choices: ['bastante improvável', 'muito improvável',
-            'pouco improvável', 'indiferente', 'pouco provável',
-            'muito provável', 'bastante provável']
-        }]
-    }, {
-      type: 'panel',
-      innerIndent: 1,
-      title: `Por favor, nos ajude agora a capturar a usa perceção sobre a 
-        facilidade dos conceitos apresentados.`,
-      elements: [
-        {
-          type: 'radiogroup',
-          isRequired: true,
-          name: 'conceptsFeedbackQuestion4',
-          title: 'Aprender os conceitos é fácil?',
-          choices: ['bastante improvável', 'muito improvável',
-            'pouco improvável', 'indiferente', 'pouco provável',
-            'muito provável', 'bastante provável']
-        },
-        {
-          type: 'radiogroup',
-          isRequired: true,
-          name: 'conceptsFeedbackQuestion5',
-          title: 'Os conceitos são claros e entendíveis?',
-          choices: ['bastante improvável', 'muito improvável',
-            'pouco improvável', 'indiferente', 'pouco provável',
-            'muito provável', 'bastante provável']
-        },
-        {
-          type: 'radiogroup',
-          isRequired: true,
-          name: 'conceptsFeedbackQuestion6',
-          title: `De modo geral, os conceitos apresentadados são fáceis de 
+      choices: ['bastante improvável', 'muito improvável',
+        'pouco improvável', 'indiferente', 'pouco provável',
+        'muito provável', 'bastante provável']
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'conceptsFeedbackQuestion4',
+      title: 'Aprender os conceitos é fácil?',
+      choices: ['bastante improvável', 'muito improvável',
+        'pouco improvável', 'indiferente', 'pouco provável',
+        'muito provável', 'bastante provável']
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'conceptsFeedbackQuestion5',
+      title: 'Os conceitos são claros e entendíveis?',
+      choices: ['bastante improvável', 'muito improvável',
+        'pouco improvável', 'indiferente', 'pouco provável',
+        'muito provável', 'bastante provável']
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'conceptsFeedbackQuestion6',
+      title: `De modo geral, os conceitos apresentadados são fáceis de 
             utilizar?`,
-          choices: ['bastante improvável', 'muito improvável',
-            'pouco improvável', 'indiferente', 'pouco provável',
-            'muito provável', 'bastante provável']
-        }]
+      choices: ['bastante improvável', 'muito improvável',
+        'pouco improvável', 'indiferente', 'pouco provável',
+        'muito provável', 'bastante provável']
     }
   ]
 })
@@ -1801,7 +1788,10 @@ _data.nclTask2CodeOnly = `
 `
 
 _data.nclTask2Code = `
-<script type="syntaxhighlighter" class="brush: xml; toolbar: false; highlight: [9,10,11,12,13,14,15,30,32,34,35,39,40]"> <![CDATA[` + _data.nclTask2CodeOnly + ` ]]></script>`
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false; 
+  highlight: [9,10,11,12,13,14,15,30,32,34,35,39,40]"> <![CDATA[` +
+  _data.nclTask2CodeOnly + ` ]]></script>
+`
 
 // ----------------------------------------
 // ncl feedback page
@@ -1811,95 +1801,81 @@ _data.surveyJSON.pages.push({
   name: 'nclFeedback',
   elements: [
     {
-      type: 'panel',
-      innerIndent: 1,
-      title: `Por favor, nos ajude a compreender a utilidade da NCL estendida 
-        com conceitos multimodais.`,
-      elements: [
-        {
-          type: 'radiogroup',
-          isRequired: true,
-          name: 'nclFeedbackQuestion1',
-          title: `A NCL estendida permite realizar mais facilmente o 
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'nclFeedbackQuestion1',
+      title: `A NCL estendida permite realizar mais facilmente o 
             desenvolmento de aplicações multimodais?`,
-          choices: ['bastante improvável', 'muito improvável',
-            'pouco improvável', 'indiferente', 'pouco provável',
-            'muito provável', 'bastante provável']
-        },
-        {
-          type: 'radiogroup',
-          isRequired: true,
-          name: 'nclFeedbackQuestion2',
-          title: `A NCL estendida permite realizar mais rapidamente o 
+      choices: ['bastante improvável', 'muito improvável',
+        'pouco improvável', 'indiferente', 'pouco provável',
+        'muito provável', 'bastante provável']
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'nclFeedbackQuestion2',
+      title: `A NCL estendida permite realizar mais rapidamente o 
             desenvolmento de aplicações multimodais?`,
-          choices: ['bastante improvável', 'muito improvável',
-            'pouco improvável', 'indiferente', 'pouco provável',
-            'muito provável', 'bastante provável']
-        },
-        {
-          type: 'radiogroup',
-          isRequired: true,
-          name: 'nclFeedbackQuestion3',
-          title: `A NCL estendida aumenta a qualidade no desenvolmento de   
+      choices: ['bastante improvável', 'muito improvável',
+        'pouco improvável', 'indiferente', 'pouco provável',
+        'muito provável', 'bastante provável']
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'nclFeedbackQuestion3',
+      title: `A NCL estendida aumenta a qualidade no desenvolmento de   
             aplicações multimodais?`,
-          choices: ['bastante improvável', 'muito improvável',
-            'pouco improvável', 'indiferente', 'pouco provável',
-            'muito provável', 'bastante provável']
-        },
-        {
-          type: 'radiogroup',
-          isRequired: true,
-          name: 'nclFeedbackQuestion4',
-          title: `A NCL estendida fornece maior controle no desenvolmento de 
+      choices: ['bastante improvável', 'muito improvável',
+        'pouco improvável', 'indiferente', 'pouco provável',
+        'muito provável', 'bastante provável']
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'nclFeedbackQuestion4',
+      title: `A NCL estendida fornece maior controle no desenvolmento de 
             aplicações multimodais?`,
-          choices: ['bastante improvável', 'muito improvável',
-            'pouco improvável', 'indiferente', 'pouco provável',
-            'muito provável', 'bastante provável']
-        },
-        {
-          type: 'radiogroup',
-          isRequired: true,
-          name: 'nclFeedbackQuestion5',
-          title: `De modo geral, A NCL estendida é util para realizar o 
+      choices: ['bastante improvável', 'muito improvável',
+        'pouco improvável', 'indiferente', 'pouco provável',
+        'muito provável', 'bastante provável']
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'nclFeedbackQuestion5',
+      title: `De modo geral, A NCL estendida é util para realizar o 
             desenvolmento de aplicações multimodais?`,
-          choices: ['bastante improvável', 'muito improvável',
-            'pouco improvável', 'indiferente', 'pouco provável',
-            'muito provável', 'bastante provável']
-        }
-      ]
-    }, {
-      type: 'panel',
-      innerIndent: 1,
-      title: `Por favor, nos ajude a compreender a facilidade do uso da NCL 
-        estendida`,
-      elements: [
-        {
-          type: 'radiogroup',
-          isRequired: true,
-          name: 'nclFeedbackQuestion6',
-          title: 'Aprender a NCL estendida é fácil?',
-          choices: ['bastante improvável', 'muito improvável',
-            'pouco improvável', 'indiferente', 'pouco provável',
-            'muito provável', 'bastante provável']
-        },
-        {
-          type: 'radiogroup',
-          isRequired: true,
-          name: 'nclFeedbackQuestion7',
-          title: 'A NCL estendida é claro e entendível?',
-          choices: ['bastante improvável', 'muito improvável',
-            'pouco improvável', 'indiferente', 'pouco provável',
-            'muito provável', 'bastante provável']
-        },
-        {
-          type: 'radiogroup',
-          isRequired: true,
-          name: 'nclFeedbackQuestion8',
-          title: 'De modo geral, a NCL estendida é fácil de utilizar?',
-          choices: ['bastante improvável', 'muito improvável',
-            'pouco improvável', 'indiferente', 'pouco provável',
-            'muito provável', 'bastante provável']
-        }]
+      choices: ['bastante improvável', 'muito improvável',
+        'pouco improvável', 'indiferente', 'pouco provável',
+        'muito provável', 'bastante provável']
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'nclFeedbackQuestion6',
+      title: 'Aprender a NCL estendida é fácil?',
+      choices: ['bastante improvável', 'muito improvável',
+        'pouco improvável', 'indiferente', 'pouco provável',
+        'muito provável', 'bastante provável']
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'nclFeedbackQuestion7',
+      title: 'A NCL estendida é claro e entendível?',
+      choices: ['bastante improvável', 'muito improvável',
+        'pouco improvável', 'indiferente', 'pouco provável',
+        'muito provável', 'bastante provável']
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'nclFeedbackQuestion8',
+      title: 'De modo geral, a NCL estendida é fácil de utilizar?',
+      choices: ['bastante improvável', 'muito improvável',
+        'pouco improvável', 'indiferente', 'pouco provável',
+        'muito provável', 'bastante provável']
     }
   ]
 })
@@ -2228,97 +2204,82 @@ _data.surveyJSON.pages.push({
   name: 'htmlFeedback',
   elements: [
     {
-      type: 'panel',
-      innerIndent: 1,
-      title: `Por favor, nos ajude a compreender a utilidade da HTML/JavaScrip 
-        estendida com conceitos multimodais.`,
-      elements: [
-        {
-          type: 'radiogroup',
-          isRequired: true,
-          name: 'htmlFeedbackQuestion1',
-          title: `A HTML/JavaScrip estendida permite realizar mais facilmente o 
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'htmlFeedbackQuestion1',
+      title: `A HTML/JavaScrip estendida permite realizar mais facilmente o 
             desenvolmento de aplicações multimodais?`,
-          choices: ['bastante improvável', 'muito improvável',
-            'pouco improvável', 'indiferente', 'pouco provável',
-            'muito provável', 'bastante provável']
-        },
-        {
-          type: 'radiogroup',
-          isRequired: true,
-          name: 'htmlFeedbackQuestion2',
-          title: `A HTML/JavaScrip estendida permite realizar mais rapidamente 
+      choices: ['bastante improvável', 'muito improvável',
+        'pouco improvável', 'indiferente', 'pouco provável',
+        'muito provável', 'bastante provável']
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'htmlFeedbackQuestion2',
+      title: `A HTML/JavaScrip estendida permite realizar mais rapidamente 
             o desenvolmento de aplicações multimodais?`,
-          choices: ['bastante improvável', 'muito improvável',
-            'pouco improvável', 'indiferente', 'pouco provável',
-            'muito provável', 'bastante provável']
-        },
-        {
-          type: 'radiogroup',
-          isRequired: true,
-          name: 'htmlFeedbackQuestion3',
-          title: `A HTML/JavaScrip estendida aumenta a qualidade no 
+      choices: ['bastante improvável', 'muito improvável',
+        'pouco improvável', 'indiferente', 'pouco provável',
+        'muito provável', 'bastante provável']
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'htmlFeedbackQuestion3',
+      title: `A HTML/JavaScrip estendida aumenta a qualidade no 
             desenvolmento de aplicações multimodais?`,
-          choices: ['bastante improvável', 'muito improvável',
-            'pouco improvável', 'indiferente', 'pouco provável',
-            'muito provável', 'bastante provável']
-        },
-        {
-          type: 'radiogroup',
-          isRequired: true,
-          name: 'htmlFeedbackQuestion4',
-          title: `A HTML/JavaScrip estendida fornece maior controle no  
+      choices: ['bastante improvável', 'muito improvável',
+        'pouco improvável', 'indiferente', 'pouco provável',
+        'muito provável', 'bastante provável']
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'htmlFeedbackQuestion4',
+      title: `A HTML/JavaScrip estendida fornece maior controle no  
             desenvolmento de aplicações multimodais?`,
-          choices: ['bastante improvável', 'muito improvável',
-            'pouco improvável', 'indiferente', 'pouco provável',
-            'muito provável', 'bastante provável']
-        },
-        {
-          type: 'radiogroup',
-          isRequired: true,
-          name: 'htmlFeedbackQuestion5',
-          title: `De modo geral, a HTML/JavaScript estendida é util para 
+      choices: ['bastante improvável', 'muito improvável',
+        'pouco improvável', 'indiferente', 'pouco provável',
+        'muito provável', 'bastante provável']
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'htmlFeedbackQuestion5',
+      title: `De modo geral, a HTML/JavaScript estendida é util para 
             realizar o desenvolmento de aplicações multimodais?`,
-          choices: ['bastante improvável', 'muito improvável',
-            'pouco improvável', 'indiferente', 'pouco provável',
-            'muito provável', 'bastante provável']
-        }
-      ]
-    }, {
-      type: 'panel',
-      innerIndent: 1,
-      title: `Por favor, nos ajude a compreender a facilidade do uso de   
-        HTML/Javascript estendida`,
-      elements: [
-        {
-          type: 'radiogroup',
-          isRequired: true,
-          name: 'htmlFeedbackQuestion6',
-          title: 'Aprender a HTML/Javascript estendida é fácil?',
-          choices: ['bastante improvável', 'muito improvável',
-            'pouco improvável', 'indiferente', 'pouco provável',
-            'muito provável', 'bastante provável']
-        },
-        {
-          type: 'radiogroup',
-          isRequired: true,
-          name: 'htmlFeedbackQuestion7',
-          title: 'A HTML/Javascript estendida é claro e entendível?',
-          choices: ['bastante improvável', 'muito improvável',
-            'pouco improvável', 'indiferente', 'pouco provável',
-            'muito provável', 'bastante provável']
-        },
-        {
-          type: 'radiogroup',
-          isRequired: true,
-          name: 'htmlFeedbackQuestion8',
-          title: `De modo geral, a HTML/Javascript estendida é fácil de 
+      choices: ['bastante improvável', 'muito improvável',
+        'pouco improvável', 'indiferente', 'pouco provável',
+        'muito provável', 'bastante provável']
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'htmlFeedbackQuestion6',
+      title: 'Aprender a HTML/Javascript estendida é fácil?',
+      choices: ['bastante improvável', 'muito improvável',
+        'pouco improvável', 'indiferente', 'pouco provável',
+        'muito provável', 'bastante provável']
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'htmlFeedbackQuestion7',
+      title: 'A HTML/Javascript estendida é claro e entendível?',
+      choices: ['bastante improvável', 'muito improvável',
+        'pouco improvável', 'indiferente', 'pouco provável',
+        'muito provável', 'bastante provável']
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'htmlFeedbackQuestion8',
+      title: `De modo geral, a HTML/Javascript estendida é fácil de 
             utilizar?`,
-          choices: ['bastante improvável', 'muito improvável',
-            'pouco improvável', 'indiferente', 'pouco provável',
-            'muito provável', 'bastante provável']
-        }
-      ]
+      choices: ['bastante improvável', 'muito improvável',
+        'pouco improvável', 'indiferente', 'pouco provável',
+        'muito provável', 'bastante provável']
     }
   ]
 })
