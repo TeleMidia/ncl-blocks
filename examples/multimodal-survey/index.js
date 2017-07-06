@@ -31,7 +31,7 @@ var _surveyCss = {
   'navigationButton': 'h4 btn btn-primary'
 }
 
-var _msgEmptyBlockTask = 'Por favor, preencha com blocos.'
+var _msgEmptyBlockTask = 'Por favor, edit os blocos.'
 
 var _pathToBlockly = '../../src/'
 var _blocksTask3Workspace

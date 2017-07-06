@@ -814,7 +814,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     },
     {
       type: 'comment',
-      // isRequired: true,
+      isRequired: true,
       name: 'conceptsTask1Question',
       title: 'Qual o comportamento da aplicação que corresponde os blocos acima?'
     },
@@ -829,7 +829,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     },
     {
       type: 'comment',
-      // isRequired: true,
+      isRequired: true,
       name: 'conceptsTask2Question',
       title: 'Qual a mudança no comportamento da aplicação anterior?'
     },
@@ -845,14 +845,14 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     {
       type: 'comment',
       name: 'conceptsTask3Changes',
-      visible: true
-      // visible: false
+      // visible: true
+      visible: false
     },
     {
       type: 'comment',
       name: 'conceptsTask3Result',
-      visible: true
-      // visible: false
+      // visible: true
+      visible: false
     },
     {
       type: 'html',
@@ -866,14 +866,14 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     {
       type: 'text',
       name: 'conceptsTask4Changes',
-      visible: true
-      // visible: false
+      // visible: true
+      visible: false
     },
     {
       type: 'text',
       name: 'conceptsTask4Result',
-      visible: true
-      // visible: false
+      // visible: true
+      visible: false
     }
   ]
 })
