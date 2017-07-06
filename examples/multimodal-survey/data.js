@@ -24,31 +24,31 @@ var pageIndex
 
 _data.surveyJSON.pages.push({
   name: 'termo',
-  title: 'Termo de consentimento para o entrevista',
+  title: 'Termo de consentimento livre e esclarecido',
   elements: [
     {
       type: 'html',
       html: `
-            <p>O TeleMídia é um grupo de pesquisa do departamento de Informática
+            <p>O TeleMídia é um grupo de pesquisa do Departamento de Informática
             da PUC-Rio. O TeleMídia desenvolve pesquisas nas áreas de Sistemas 
             Multimídia e Redes de Computadores. Em particular, Sistemas de TV 
             Digital terrestre e IPTV, têm sido foco de pesquisa e inovação do 
             laboratório nos últimos anos.</p><br>
             
-            <p>Convidamos a você a fazer uma entrevista sobre nosso estudo
-            chamado de <i>Interações multimodais em linguagens
+            <p>Convidamos a você a participar de uma estudo sobre nossa pesquisa
+            sobre <i>Interações multimodais em linguagens
             multimídia</i>.</p><br>
             
-            <p><strong>Ressaltamos que essa entrevista NÃO se destina à avaliar
-            seus conhecimentos acerca dos conceitos apresentados, mas sim
-            capturar evidências de nosso estudo.</strong></p><br>
+            <p><strong>Ressaltamos que este estudo NÃO se destina a avaliar
+            você, mas sim capturar evidências para nossa
+            pesquisa.</strong></p><br>
             
             <p>Para prosseguirmos, pedimos seu consentimento para realizarmos
-            essa entrevista e informamos que:</p> 
+            este estudo e informamos que:</p> 
             <ul> 
             <li>Os dados coletados destinam-se estritamente a atividades de
             pesquisa e desenvolvimento, e somente os pesquisadores do TeleMídia
-            têm acesso à integra do material resultante da avaliação.</li> 
+            têm acesso à integra do material resultante do estudo .</li> 
             <li>A divulgação dos resultados de nossa pesquisa em foros
             científicos e/ou pedagógicos pauta-se no respeito à privacidade, e o
             anonimato dos participantes é preservado em qualquer material
@@ -60,10 +60,11 @@ _data.surveyJSON.pages.push({
     {
       type: 'html',
       html: `<p>Caso esteja de acordo, prossiga.</p><br>
-            OBS: Essa entrevista é feita em uma única pagina dinâmica. Caso
-            dejese navegar entre as seções da entrevista, não utilize os botões
-            de navegação do seu browser, e sim use os botôes <em>voltar</em> e
-            <em>prosseguir</em> no final de cada seção da entrevista.      
+            OBS: Este estudo é feita em uma única página dinâmica. Caso deseje
+            navegar entre as seções do estudo, <strong>NÃO</strong> utilize
+            os botões de navegação do seu browser, e sim use os botôes
+            <em>voltar</em> e <em>prosseguir</em> no final de cada seção da
+            entrevista.      
       `
     }
   ]
@@ -75,7 +76,7 @@ _data.surveyJSON.pages.push({
 
 _data.surveyJSON.pages.push({
   name: 'perfil',
-  title: 'Dados do entrevistado',
+  title: 'Dados do participante',
   elements: [
     {
       type: 'text',
@@ -94,8 +95,8 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'formations',
-      title: 'Qual sua formação (e.g. comptuação, design, pós-gradução informática)?',
-      choices: ['gradução em comptuação', 'graduação em design', 'pós-gradução em computação', 'pós-gradução em design'],
+      title: 'Qual sua formação (e.g. computação, design, pós-graduação informática)?',
+      choices: ['graduação em computação', 'graduação em design', 'pós-graduação em computação', 'pós-graduação em design'],
       hasOther: true,
       otherText: 'outra'
     },
@@ -119,10 +120,10 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'sintax',
-      title: `Você acredida que a sintaxe da NCL atrapalha ao
-       desenvolver aplicações?`,
-      choices: ['bastante improvável', 'muito improvável', 'pouco improvável',
-        'indiferente', 'pouco provável', 'muito provável', 'bastante provável']
+      title: `De que maneira a sintaxe da NCL influencia o
+       desenvolvimento aplicações?`,
+      choices: ['atrapalha muito', 'atrapalha bastante', 'atrapalha pouco',
+        'indiferente', 'ajuda pouco', 'ajuda bastante', 'ajuda muito']
     },
     {
       type: 'radiogroup',
@@ -144,12 +145,11 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'sintax',
-      title: `Você acredida que o desenvolvimento em HTML/JavaScript requisita 
-      necessáriamente o uso de bibliotecas de manipulção DOM como jQuery, Zepto 
+      title: `O quanto o desenvolvimento em HTML/JavaScript requer 
+      o uso de bibliotecas de manipulação de DOM como jQuery, Zepto 
       e Prototype?`,
-      choices: ['bastante improvável', 'muito improvável',
-        'pouco improvável', 'indiferente', 'pouco provável',
-        'muito provável', 'bastante provável']
+      choices: ['nunca', 'quase nunca',
+        'indiferente', 'quase sempre ', 'sempre']
     }
   ]
 })
@@ -160,30 +160,30 @@ _data.surveyJSON.pages.push({
 
 _data.surveyJSON.pages.push({
   name: 'intro',
-  title: 'Introdução à linguagens multimídia com interações multimodais',
+  title: 'Introdução a linguagens multimídia com interações multimodais',
   elements: [
     {
       type: 'html',
       html: `
-        <p>O objetivo dessa seção do estudo é oferecer uma introdução sobre o 
-        conceito de <strong>linguagens multimídias com interações 
+        <p>O objetivo desta seção do estudo é oferecer uma introdução sobre o 
+        conceito de <strong>linguagens multimídia com interações 
         multimodais</strong>, proposto em nossa pesquisa.</p>
       `
     },
     {
       type: 'html',
       html: `
-        <p>Primeiro devemos introduzir o que é um linguagem multimídia, que é 
-        intimamente documento multimídia.</p>
+        <p>Primeiro devemos introduzir o que é uma linguagem multimídia, que é 
+        intimamente relacionada a documento multimídia.</p>
         <br>
 
         <p>Steinmetz [1] caracteriza um <strong>sistema multimídia</strong> 
         como aquele que utiliza um conjunto de mídias, que ao menos uma mídia 
         seja discreta e uma seja contínua. As <strong>mídias discretas</strong> 
         são aquelas que não mudam durante sua exibição, como imagens e textos. 
-        Elas também são chamadas de mídias independente de tempo. Enquanto, as 
+        Elas também são chamadas de mídias independentes de tempo. Já as 
         <strong>mídias contínuas</strong> são aquelas que mudam durante sua 
-        exbição, como áudios e vídeos. Elas também são chamdas de mídias 
+        exibição, como áudios e vídeos. Elas também são chamadas de mídias 
         dependentes de tempo.</p>
         <br>
 
@@ -196,24 +196,24 @@ _data.surveyJSON.pages.push({
 
         <p>A figura a seguir ilustra a criação e apresentação de um documento 
         multimídia.</p>
-        <p>Na <strong>criação do documento multimídia</strong>, o autor defini 
+        <p>Na <strong>criação do documento multimídia</strong>, o autor define 
         as mídias utilizadas e o sincronismo entre elas.</p>
-        <p>O sincronismo define o comportamento da exbição das mídias no 
+        <p>O sincronismo define o comportamento da exibição das mídias no 
         decorrer do tempo da apresentação. Ele é geralmente baseado em momentos 
         de apresentação de <strong>trechos de mídia</strong> contínua. 
         Considere, por exemplo, que a parte de créditos de vídeo inicie no 
-        segundo 600. Um sincronimo pode ser definido para que ao iniciar o 
-        trecho dos creditos (o vídeo alcance o segundo 600) uma uma imagen de 
+        segundo 600. Um sincronismo pode ser definido para que ao iniciar o 
+        trecho dos créditos (o vídeo alcance o segundo 600), uma imagen de 
         patrocínio seja exibida.</p>
 
-        <p>Na <strong>apresentação documento multimídia</strong>, um sistema 
+        <p>Na <strong>apresentação do documento multimídia</strong>, um sistema 
         multimídia recebe o documento multimídia e os arquivos de mídia 
         necessários para  realizar o sincronismo definido pelo autor. Na figura,
-        por exemplo, uma imagem e um audio são apresentação em determinado 
-        trecho da apresentação de um video. Por fim, o sistema utiliza 
+        por exemplo, uma imagem e um áudio são apresentados em determinado 
+        trecho da apresentação de um vídeo. Por fim, o sistema utiliza 
         <strong>dispositivos audiovisuais</strong> para apresentar conteúdos 
         das mídias (som e frames) e <strong>dispositivos apontador e 
-        tecla</strong> para capiturar interações de usuário.</p>
+        tecla</strong> para capturar interações de usuário.</p>
 
         <div class='text-center'>
           <img class='center-block img-thumbnail' style='height: 500px' 
@@ -221,10 +221,10 @@ _data.surveyJSON.pages.push({
         </div>
         <br>
 
-        <p>A <strong>linguagem multídmidia</strong> é na verdade o formato que 
-        permite um autor definir um documento multimídia. Ela define uma 
+        <p>A <strong>linguagem multimídia</strong> é na verdade o formato que 
+        permite a um autor definir um documento multimídia. Ela define uma 
         sintaxe e elementos de linguagem. Exemplos atuais de linguagens 
-        multímidia são a NCL (Nested Context Language)[2] e a HTML[3].</p>
+        multímidia são a NCL (Nested Context Language) [2] e a HTML [3].</p>
         <br>
 
         [1] <a 
@@ -239,17 +239,17 @@ _data.surveyJSON.pages.push({
       type: 'html',
       html: `
         <p>Agora, devemos introduzir o conceito de <strong>linguagens 
-        multimídia com interações multimodais</strong>, que intimamente 
+        multimídia com interações multimodais</strong>, que está intimamente 
         relacionado com interfaces multimodais.</p>
         <br>
 
         <p>Oviatt [4] define que <strong>interfaces multimodais</strong> como 
-        aquelas que reconhecerem  interações em formas mais naturais da 
-        linguagem humana e comportamento, como fala e gestos. Esse tipo de 
+        aquelas que reconhecem  interações em formas mais naturais da 
+        linguagem e comportamento humano, como fala e gestos. Esse tipo de 
         interface foi apoiada pelos recentes avanços em tecnologias de 
         reconhecimento e <strong>dispositivos de interação multimodal</strong>. 
         Ilustrados a seguir, citamos o uso de microfones para reconhecimento de 
-        voz, e dispostivos como LeapMotion e e Microsoft Kinect para 
+        voz, e dispositivos como LeapMotion e e Microsoft Kinect para 
         reconhecimento de gestos de mão e corpo, respectivamente.</p>
         <br>
 
@@ -263,23 +263,21 @@ _data.surveyJSON.pages.push({
         </div>
         <br>
 
-        <p>Modificamos a primeira figura para ilustrar a criação e apresentação 
-        de um documento multimídia com suporte a interações multimodais. Nessa 
-        nova figura, o autor não apenas midias e sincronismo, como também o 
-        reconhecimento de interações multimodais.
-        <p>Para definir receonhecimentos, o autor utiliza de descrições 
-        auxiliares para reconhcer determinada interação. Essas descrição tem 
-        sintaxe própria que defini características de interação. Por exemplo, 
-        uma descrição pode ser em SRGS (Speech Recognition Grammar 
-        Specification) [5] para definir o reconhecimento de comandos de voz.</p>
-        <br>
+        <p>Modificamos a primeira figura para ilustrar a criação e apresentação
+        de um documento multimídia com suporte a interações multimodais. Nessa
+        nova figura, o autor define não apenas midias e sincronismo, como também
+        o reconhecimento de interações multimodais. <p>Para definir
+        reconhecimentos, o autor utiliza de descrições auxiliares para
+        reconhecer determinada interação. Essas descrições têm sintaxe própria
+        que define características de interação. Por exemplo, uma descrição pode
+        ser em SRGS (Speech Recognition Grammar Specification) [5] para definir
+        o reconhecimento de comandos de voz.</p> <br>
 
-        <p>Na apresentação, esse sistema multimídia recebe o documento 
-        multimídia, arquivos de mídia e descrições multimodais necessparios 
-        para realziar o sincronismo e reconhecimentos definido pelo autor. Esse 
-        sistema utiliza dispositivos de interação multimodal para 
-        receonhecimento, além de dispositivos audiovisuais.</p>
-        <br>
+        <p>Na apresentação, esse sistema multimídia recebe o documento
+        multimídia, arquivos de mídia e descrições multimodais necessários para
+        realizar o sincronismo e reconhecimentos definidos pelo autor. Esse
+        sistema utiliza dispositivos de interação multimodal para
+        reconhecimento, além de dispositivos audiovisuais.</p> <br>
 
         <div class='text-center'>
           <img class='img-thumbnail' style='height: 500px' 
@@ -287,13 +285,13 @@ _data.surveyJSON.pages.push({
         </div>
         <br>
 
-        <p>Por fim, uma <strong>linguagem multimídia com interações 
-        multimodais</strong> é aquele formato que permite definir um documento 
-        multimída com não apenas sincroniza mídias, mas também reconhecimento 
-        de interações multimodais.</p>
+        <p>Por fim, uma <strong>linguagem multimídia com interações
+        multimodais</strong> é aquele formato que permite definir um documento
+        multimídia que não apenas sincroniza mídias, mas também reconhece
+        interações multimodais.</p>
 
         [4] <a href='http://dx.doi.org/10.1201/9781410615862.ch21'>
-        Oviatt, S. 2007. Multimodal Interfaces. Human Computer Interact 
+        Oviatt, S. 2007. Multimodal Interfaces. Human-Computer Interaction 
         Handbook. CRC Press, 413–432</a><br>
         [5] <a href='#'>https://www.w3.org/TR/speech-grammar<a>
       `
@@ -329,17 +327,17 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
             <p>As linguagens multímidia atuais não suportam adequadamente
-            interações multimodais. Em nosso estudo nos propomos um conjunto de
-            conceitos a serem adionados nessas linguagens para oferecer tal
+            interações multimodais. Em nosso estudo propomos um conjunto de
+            conceitos a serem instanciados nessas linguagens para oferecer tal
             suporte. Mais precisamente esses conceitos são os de <em>Mídia,
             Reconhecedor, Sincronismo</em> e <em>Grupo de Usuários</em>.</p>
             <br>
             
             <p>Esta seção tem o objetivo de detalhar esses conceitos e capturar
-            o entendimento do entrevistado. Entretanto, para evitar possiveis
-            dificuldades dado a sintaxe de linguagens, apresentaremos esses
-            conceitos utilizando uma abordagem de <strong>desenvolvimento de
-            aplicações através blocos</strong>.</p> <br>
+            o entendimento do entrevistado. Para evitar possíveis dificuldades
+            dada a sintaxe de linguagens, apresentaremos esses conceitos
+            utilizando uma abordagem de <strong>desenvolvimento de aplicações
+            através de blocos</strong>.</p> <br>
             
             <p>Esse tipo de abordagem é bastante utilizado para o ensino de
             programação ou para ferramentes de geração de código. Em especial,
@@ -347,7 +345,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
             <strong>MIT Scratch</strong>[4] e <strong>MIT App
             Inventor</strong>[5]. O primeiro é utilizado para criar aplicações
             web, especialmente jogos, e o segundo utilizado para criar
-            aplicações moveis. Ambos são ilustratos a seguir.</p><br>
+            aplicações móveis. Ambos são ilustrados a seguir.</p><br>
 
             <div class='text-center'>
               <img class='img-thumbnail' style='height: 270px' 
@@ -369,8 +367,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
             <p>Primeiro, vamos detalhar o elemento <em>Mídia</em>.</p><br>
 
             <p>O elemento <em>Mídia</em> é definido por um identificador e por
-            seu conteúdo. O contéudo de uma <em>Mídia</em> ter porções
-            identificáveis como trechos de um video ou áudio. Por exemplo, os
+            seu conteúdo. O conteúdo de uma <em>Mídia</em> tem porções
+            identificáveis como trechos de um vídeo ou áudio. Por exemplo, os
             blocos a seguir definem duas mídias com identificadores
             <em>midia_principal</em> e <em>icone</em>, mas elas não possuem
             conteúdo. Por não terem conteúdo, ações de iniciar sobre as mídias
@@ -379,7 +377,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
             <div id='conceptsIntro1a'></div><br>
 
             <p>Os blocos a seguir definem as mesmas mídias, mas com conteúdos de
-            áudio e imagem respectivamente. Em especial, a mídia de
+            áudio e imagem, respectivamente. Em especial, a mídia de
             <em>midia_principal</em> tem definido um trecho chamado de
             <em>creditos</em> que inicia aos 300 e termina aos 360 segundos.</p>
             <div id='conceptsIntro1b'></div></p><br>
@@ -389,40 +387,41 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       name: 'conceptsIntro2',
       html: `
-            <p></p>Em em seguida, vamos detalhar o elemento <em>Sincronimo</em>.
-            </p><br>
+            <p></p>Em em seguida, vamos detalhar o elemento
+            <em>Sincronismo</em>. </p><br>
 
-            <p>O elemento de <em>Sincronimo</em> permite definir o comportamento
-            das aplicações. O uso de elementos de <em>Sincronimo</em>s sobre
-            elementos de <em>Mídia</em> define quando mídias são apresentadas. O
-            <em>Sincronimo</em> é baseado em causalidade, ou seja, quando um
-            condição é satisfeita, ações são realizadas. Exemplos de condições
-            são inicio ou fim de uma mídia ou trecho de midia, ou a seleção de
-            ususário sobre um mídia. Exemplos de ações são inicar ou parar uma
-            mídia.</p><br>
+            <p>O elemento de <em>Sincronismo</em> permite definir o
+            comportamento das aplicações. O uso de elementos de
+            <em>Sincronismo</em> sobre elementos de <em>Mídia</em> define quando
+            as mídias devem ser apresentadas. O <em>Sincronismo</em> é baseado
+            em causalidade, ou seja, quando uma condição é satisfeita, ações são
+            realizadas. Exemplos de condições são início ou fim de uma mídia ou
+            trecho de mídia, ou a seleção de usuário sobre uma mídia. Exemplos
+            de ações são iniciar ou parar uma mídia.</p><br>
 
             <p>Os blocos a seguir definem a mídia <em>midia_principal</em> e um 
-            sincronismo que inicia mídia no início aplicação. Nesse exemplo, 
+            sincronismo que inicia a mídia com a aplicação. Nesse exemplo, 
             entretanto, alteramos o conteúdo da <em>midia_principal</em> para 
-            um conteúdo de vídeo. É importante ressaltar que mudança no 
-            conteúdo de <em>midia_principal</em> não afetam o compartamento da 
-            aplicação, desde que a mídia definia o mesmos trechos. Pois os 
-            <em>Sincronimo</em>s são definidos indepente do conteúdo.</p>
+            um conteúdo de vídeo. É importante ressaltar que mudanças no 
+            conteúdo de <em>midia_principal</em> não afetam o comportamento da 
+            aplicação, desde que a mídia defina o mesmos trechos, pois os 
+            <em>Sincronismo</em>s são definidos indepente do conteúdo.</p>
             <div id='conceptsIntro2a'></div><p><br>
 
-            <p>Para ilustrar o uso do elemento de <em>Sincronismo</em>, os blocos a seguir definem uma aplicação que apresenta um video,
-            que um icone durante os creditos. Ao selecionar o icone, o video é
+            <p>Para ilustrar o uso do elemento de <em>Sincronismo</em>, os
+            blocos a seguir definem uma aplicação que apresenta um vídeo, que um
+            ícone durante os créditos. Ao selecionar o ícone, o vídeo é
             reiniciado.</p><br> 
             
-            <p>Mais precismanete, os blocos definem novamente
+            <p>Mais precisamente, os blocos definem novamente
             <em>midia_principal</em> e um <em>Sincronismo<em> do bloco anterior,
-            mas adcionam a mídia <em>icone</em> e mais dois
-            <em>Sincronimo</em>s. O primeiro <em>Sincronimo</em> adcionado
-            defini que quando a <em>midia_principal</em> alcançar o seu trecho
-            de <em>credito</em> a mídia <em>icone_repetir</em> deve ser inciada.
-            O segundo <em>Sincronimo</em> adcionado defini que quando a mídia
-            <em>icone_repetir</em> for seleciona, esta <em>midia_principal</em>
-            deve reciniciar a <em>midia_principal</em> (terminada e
+            mas adicionam a mídia <em>icone</em> e mais dois
+            <em>Sincronismo</em>s. O primeiro <em>Sincronismo</em> adicionado
+            define que quando a <em>midia_principal</em> alcançar o seu trecho
+            de <em>credito</em> a mídia <em>icone_repetir</em> deve ser
+            iniciada. O segundo <em>Sincronismo</em> adicionado define que
+            quando a mídia <em>icone_repetir</em> for selecionada, a
+            <em>midia_principal</em> deve ser reiniciada (terminada e
             inciada)</p><br>
 
             <div id='conceptsIntro2b'></div>
@@ -437,37 +436,37 @@ _data.surveyJSON.pages[pageIndex].elements.push({
             <br>
 
             <p> O <em>Reconhecedor</em> também é definido por um identificador e
-            por seu conteúdo. Entrentato, diferente de <em>Mídia</em>, o
+            por seu conteúdo. Entretanto, diferente de <em>Mídia</em>, o
             conteúdo de um <em>Reconhecedor</em> deve ser uma descrição de
-            reconhecimento. Exemplos dessas descrições são aquelam commandos de
-            voz ou gestos de mão. Logo, porções de um <em>Reconhecedor</em> são
-            porções de um descrição de reconhecimento.</p><br>
+            reconhecimento. Exemplos dessas são descrições que definem
+            comandos de voz ou gestos de mão. Logo, porções de um
+            <em>Reconhecedor</em> são porções de uma descrição de
+            reconhecimento.</p><br>
 
             <p>Os blocos a seguir definem os reconhecedores <em>rec_voz</em> e
-            <em>rec_gestos</em>. O <em>rec_voz</em> tem uma reconhecimento de
+            <em>rec_gestos</em>. O <em>rec_voz</em> tem um reconhecimento de
             voz como conteúdo. Essa descrição tem o trecho <em>repetir</em> que
-            reconhece o comando de voz "repetir video". O <rec_gestos> tem uma
-            descrição de reconhecimento de gestos como conteúdo. Esse trecho
-            utiliza dois trechos esquerda e direita para definir gestos de mão
+            reconhece o comando de voz "repetir vídeo". O <rec_gestos> tem uma
+            descrição de reconhecimento de gestos como conteúdo. Esse conteúdo
+            utiliza dois trechos, esquerda e direita, para definir gestos de mão
             nessas direções.</p><br> 
             
             <div id='conceptsIntro3a'></div><br> 
             
             <p>Para ilustrar o uso de um <em>Reconhecedor</em>, os blocos a
-            seguir são uma nova versão da aplicação que reinicia um video dado
-            uma interação. Mas nessa versão, ao inves de clicar, o vídeo é
-            reiniciado ao usuário falar "repetir video".</p><br>
+            seguir são uma nova versão da aplicação que reinicia um vídeo dada
+            uma interação. Mas nessa versão, ao invés de clicar, o vídeo é
+            reiniciado ao usuário falar "repetir vídeo".</p><br>
             
-            <p>Mais precismanete, os blocos definem uma a <em>Mídia</em>
-            (chamada <em>midia_principal</em>), um <em>Reconhecedor</em>
-            (chamado <em>rec_voz</em>) e três <em>Sincronimo</em>s. O primeiro
-            <em>Sincronimo</em> define que <em>midia_principal</em>  é iniciado
-            com a aplicação. O segundo <em>Sincronimo</em> defini quando a
+            <p>Mais precisamente, os blocos definem uma <em>Mídia</em>
+            (<em>midia_principal</em>), um <em>Reconhecedor</em>
+            (<em>rec_voz</em>) e três <em>Sincronismo</em>s. O primeiro
+            <em>Sincronismo</em> define que <em>midia_principal</em> é iniciada
+            com a aplicação. O segundo <em>Sincronismo</em> define que quando a
             <em>midia_principal</em> alcançar o seu trecho de <em>creditos</em>,
             o <em>Reconhecedor</em> <em>rec_voz</em> deve ser iniciado. O
-            <em>Sincronimo</em> último define que quando o trecho
-            <em>repetir</em> for reconhecido a <em>midia_principal</em>
-            (terminada e inciada).</p><br>
+            último <em>Sincronismo</em> define que quando o trecho
+            <em>repetir</em> for reconhecido a <em>midia_principal</em> deve ser reiniciada (terminada e inciada).</p><br>
             
             <div id='conceptsIntro3b'></div><br>
           `
@@ -485,27 +484,27 @@ _data.surveyJSON.pages[pageIndex].elements.push({
             participar do grupo.</p><br>
             
             <p>Os blocos a seguir definem um grupo de usuário <em>gu_gestos</em>
-            que pode ter até 3 membros e cada um com reconhecedor de gestos
+            que pode ter até 3 membros, cada um com seu reconhecedor de gestos
             (e.g. LeapMotion).</p><br>
 
             <div id='conceptsIntro4a'></div><br>
 
             <p>Para ilustrar o uso de um <em>Grupo de Usuários</em>, os blocos a
-            seguir são uma nova versão da aplicação que reinicia um video dado
+            seguir são uma nova versão da aplicação que reinicia um vídeo dado]a
             uma interação. Mas nessa versão, o vídeo é reiniciado apenas quando
             o segundo usuário falar "repetir video".</p> <br>
 
-            <p>Mais precismanete, os blocos definem uma <em>Mídia</em> (chamada
-            <em>midia_principal</em>), um <em>Reconhecedor</em> (chamado
-            <em>rec_voz</em>), um <em>Grupo de Usuário</em> (chamado
-            <em>gu_voz</em>) e três <em>Sincronimo</em>s. O primeiro
-            <em>Sincronimo</em> define que <em>midia_principal</em>  é iniciado
-            com a aplicação. O segundo <em>Sincronimo</em> defini quando a
-            <em>midia_principal</em> alcançar o seu trecho de <em>creditos</em>,
-            o <em>Reconhecedor</em> <em>rec_voz</em> deve ser iniciado. O
-            <em>Sincronimo</em> último define que quando o trecho
-            <em>repetir</em> for reconhecido a <em>midia_principal</em>
-            (terminada e inciada).</p><br>
+            <p>Mais precisamente, os blocos definem uma <em>Mídia</em>
+            (<em>midia_principal</em>), um <em>Reconhecedor</em>
+            (<em>rec_voz</em>), um <em>Grupo de Usuário</em> (<em>gu_voz</em>) e
+            três <em>Sincronismo</em>s. O primeiro <em>Sincronismo</em> define
+            que <em>midia_principal</em> é iniciada com a aplicação. O segundo
+            <em>Sincronismo</em> define que quando a <em>midia_principal</em>
+            alcançar o seu trecho de <em>creditos</em>, o <em>Reconhecedor</em>
+            <em>rec_voz</em> deve ser iniciado. O último <em>Sincronismo</em>
+            define que quando o trecho <em>repetir</em> for reconhecido a
+            <em>midia_principal</em> deve ser reiniciada (terminada e
+            iniciada).</p><br>
             
             <div id='conceptsIntro4b'></div><br>
           `
@@ -795,15 +794,14 @@ _data.blocksIntro4bXml = `
 
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
-  title: 'Entendimento dos conceitos',
+  title: 'Aplicação dos conceitos',
   innerIndent: 1,
   elements: [
     {
       type: 'html',
       html: `
-        <p>Agora, desejamos <strong>capturar</strong> seu entendimento dos
-        conceitos apresentados. Para isso, pedimos que você realize as
-        quatro tarefas a seguir. Duas tarefas consistem em interpretar
+        <p>Agora, pedimos que você realize as quatro tarefas a seguir. Duas
+        tarefas consistem em interpretar aplicações e duas em modificar.<;p>
 
         </p><strong>Ressaltamos que essas tarefas NÃO se destinam à avaliar
         seus conhecimentos, mas sim capturar evidências de nossa
@@ -814,38 +812,37 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       name: 'conceptsTask1',
       html: `
-        <p>Tarefa 1: Por favor, analise com cuidado os blocos aseguir.</p>
+        <p>Tarefa 1: Por favor, analise com cuidado os blocos a seguir.</p>
       `
     },
     {
       type: 'comment',
       isRequired: true,
       name: 'conceptsTask1Question',
-      title: `Qual o comportamento da aplicação que corresponde os blocos acima
+      title: `Qual é o comportamento da aplicação que corresponde os blocos acima:
       `
     },
     {
       type: 'html',
       name: 'conceptsTask2',
       html: `
-        <p>Tarefa 2: Os blocos a seguir são um versão motificada do
-        imediatamente anterior. Por favor, analise com cuidado essa versão
-        modificada.</p>
+        <p>Tarefa 2: Os blocos a seguir são uma versão modificada
+        da Tarefa 1.</p>
       `
     },
     {
       type: 'comment',
       isRequired: true,
       name: 'conceptsTask2Question',
-      title: 'Qual a mudança no comportamento da aplicação anterior?'
+      title: 'Qual foi a mudança no comportamento da aplicação da Tarefa 1 para a Tarefa 2?'
     },
     {
       type: 'html',
       name: 'conceptsTask3',
       html: `
-        <p>Tarefa 3: Agora, pedimos que edite os blocos a seguir para
-        utilizar um interação por gestos inves de uma interação por
-        comandos de voz.</p>
+        <p>Tarefa 3: Agora, pedimos que edite os blocos a seguir para substituir
+        a interação através de comandos de voz por interação através gestos
+        .</p>
       `
     },
     {
@@ -865,7 +862,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'conceptsTask4',
       html: `
         <p>Tarefa 4: Agora, pedimos que edite os blocos a seguir para que apenas
-        o segundo usuário de um grupo de usuário possa realizar a interação.</p>
+        o segundo usuário de um grupo de 3 usuários possa realizar a interação.</p>
       `
     },
     {
@@ -1319,7 +1316,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
             <td>manter</td>
           </tr>
           <tr>
-            <td><em>Sincronimo</em></td>
+            <td><em>Sincronismo</em></td>
             <td><em>&ltport> e <em>&ltlink></em></td>
             <td>manter</td>
           </tr>
@@ -1371,8 +1368,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         creditos que inicia aos 300s. O elemento <em>&ltinput></em>, chamado de
         <em>rec</em>é definito utilizando utilizando o arquivo SRGS
         <em>rec_voz.srgs</em> (linhas 20-22). O elemento <em>&ltport></em>
-        (linha 16) defini que o <em>video_principal</em> é iniciado com
-        aplicação. O primeiro <em>&ltlink></em> (linhas 23-26) defini que quando
+        (linha 16) define que o <em>video_principal</em> é iniciado com
+        aplicação. O primeiro <em>&ltlink></em> (linhas 23-26) define que quando
         o <em>video_principal</em> alançar a sua porção de creditos (300s) o
         reconhecedor <em>rec</em> inicia seu reconhecimento. O segundo
         <em>&ltlink></em>(linhas 27-30) defique que o <em>video_principal</em>
@@ -1891,7 +1888,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
             <td>estender <em>&ltmedia> com trechos</td>
           </tr>
           <tr>
-            <td><em>Sincronimo</em></td>
+            <td><em>Sincronismo</em></td>
             <td><em>&ltscript></em></td>
             <td>manter</td>
           </tr>
@@ -1941,8 +1938,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         creditos que inicia aos 300s. O elemento <em>&ltinput></em>, chamado de
         <em>rec</em>é definito utilizando utilizando o arquivo SRGS
         <em>rec_voz.srgs</em> (linhas 20-22). O elemento <em>&ltport></em>
-        (linha 16) defini que o <em>video_principal</em> é iniciado com
-        aplicação. O primeiro <em>&ltlink></em> (linhas 23-26) defini que quando
+        (linha 16) define que o <em>video_principal</em> é iniciado com
+        aplicação. O primeiro <em>&ltlink></em> (linhas 23-26) define que quando
         o <em>video_principal</em> alançar a sua porção de creditos (300s) o
         reconhecedor <em>rec</em> inicia seu reconhecimento. O segundo
         <em>&ltlink></em>(linhas 27-30) defique que o <em>video_principal</em>
@@ -1973,9 +1970,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         (linhas 17-19) que define um trecho chamado creditos que inicia aos
         300s. O elemento <em>&ltinput></em>, chamado de <em>rec</em>é definito
         utilizando utilizando o arquivo SRGS <em>rec_voz.srgs</em> (linhas
-        20-22). O elemento <em>&ltport></em> (linha 16) defini que o
+        20-22). O elemento <em>&ltport></em> (linha 16) define que o
         <em>video_principal</em> é iniciado com aplicação. O primeiro
-        <em>&ltlink></em> (linhas 23-26) defini que quando o
+        <em>&ltlink></em> (linhas 23-26) define que quando o
         <em>video_principal</em> alançar a sua porção de creditos (300s) o
         reconhecedor <em>rec</em> inicia seu reconhecimento. O segundo
         <em>&ltlink></em>(linhas 27-30) defique que o <em>video_principal</em>
