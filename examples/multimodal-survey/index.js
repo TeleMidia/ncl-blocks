@@ -79,7 +79,7 @@ function insertRequiredErrorInBlocks (blockDivId) {
   var blockDivSelector = '#blockly_' + blockDivId
   var errorDivId = blockDivId + '_error'
   var errorDivSelector = '#' + errorDivId
-  
+
   if (!$(errorDivSelector).length) {
     $(blockDivSelector).prepend("<div id='" + errorDivId +
       "' class='label label-danger'>" + _msgEmptyBlockTask + '</div>')
@@ -111,7 +111,7 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
   var questionId = questionAndHtml.question.idValue
   var questionName = questionAndHtml.question.name
   var result, i, event, setNotEdited
-  
+
   switch (questionName) {
     case 'conceptsIntro1':
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro1a',
@@ -196,6 +196,11 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
     case 'nclIntro2':
       $('#nclIntro2aCode').append(_data.nclIntro2aCode)
       $('#nclIntro2bCode').append(_data.nclIntro2bCode)
+      $('#nclIntro2cCode').append(_data.nclIntro2cCode)
+      SyntaxHighlighter.highlight()
+      break
+    case 'nclIntro3':
+      $('#nclIntro3aCode').append(_data.nclIntro3aCode)
       SyntaxHighlighter.highlight()
       break
     case 'nclTask1':
@@ -204,6 +209,16 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       break
     case 'nclTask2':
       $('#' + questionId).append(_data.nclTask2Code)
+      SyntaxHighlighter.highlight()
+      break
+    case 'htmlIntro2':
+      $('#htmlIntro2aCode').append(_data.htmlIntro2aCode)
+      $('#htmlIntro2bCode').append(_data.htmlIntro2bCode)
+      $('#htmlIntro2cCode').append(_data.htmlIntro2cCode)
+      SyntaxHighlighter.highlight()
+      break
+    case 'htmlIntro3':
+      $('#htmlIntro3aCode').append(_data.htmlIntro3aCode)
       SyntaxHighlighter.highlight()
       break
     case 'htmlCode1':
@@ -254,7 +269,7 @@ function saveblocksTask4Changes (event) {
   jsonToSave.changes.push(jsonFromEvent)
   _survey.getQuestionByName('conceptsTask4Changes').value =
   JSON.stringify(jsonToSave)
-  
+
   // save blocksTask4 result
   var xml = Blockly.Xml.workspaceToDom(_blocksTask4Workspace)
   var xmlText = Blockly.Xml.domToText(xml)

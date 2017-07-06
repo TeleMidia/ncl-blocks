@@ -801,36 +801,37 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     {
       type: 'html',
       html: `
-            <p>Agora, desejamos <strong>capturar</strong> seu entendimento dos
-            conceitos apresentados. Para isso, pedimos que você realize as
-            quatro tarefas a seguir. Duas tarefas consistem em interpretar
+        <p>Agora, desejamos <strong>capturar</strong> seu entendimento dos
+        conceitos apresentados. Para isso, pedimos que você realize as
+        quatro tarefas a seguir. Duas tarefas consistem em interpretar
 
-            </p><strong>Ressaltamos que essas tarefas NÃO se destinam à avaliar
-            seus conhecimentos, mas sim capturar evidências de nossa
-            pesquisa.</strong>.</p><br>
-          `
+        </p><strong>Ressaltamos que essas tarefas NÃO se destinam à avaliar
+        seus conhecimentos, mas sim capturar evidências de nossa
+        pesquisa.</strong>.</p><br>
+      `
     },
     {
       type: 'html',
       name: 'conceptsTask1',
       html: `
-            <p>Tarefa 1: Por favor, analise com cuidado os blocos aseguir.</p>
-          `
+        <p>Tarefa 1: Por favor, analise com cuidado os blocos aseguir.</p>
+      `
     },
     {
       type: 'comment',
       isRequired: true,
       name: 'conceptsTask1Question',
-      title: 'Qual o comportamento da aplicação que corresponde os blocos acima?'
+      title: `Qual o comportamento da aplicação que corresponde os blocos acima
+      `
     },
     {
       type: 'html',
       name: 'conceptsTask2',
       html: `
-            <p>Tarefa 2: Os blocos a seguir são um versão motificada do
-            imediatamente anterior. Por favor, analise com cuidado essa versão
-            modificada.</p>
-          `
+        <p>Tarefa 2: Os blocos a seguir são um versão motificada do
+        imediatamente anterior. Por favor, analise com cuidado essa versão
+        modificada.</p>
+      `
     },
     {
       type: 'comment',
@@ -842,10 +843,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       name: 'conceptsTask3',
       html: `
-            <p>Tarefa 3: Agora, pedimos que edite os blocos a seguir para
-            utilizar um interação por gestos inves de uma interação por
-            comandos de voz.</p>
-          `
+        <p>Tarefa 3: Agora, pedimos que edite os blocos a seguir para
+        utilizar um interação por gestos inves de uma interação por
+        comandos de voz.</p>
+      `
     },
     {
       type: 'comment',
@@ -863,10 +864,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       name: 'conceptsTask4',
       html: `
-            <p>Tarefa 4: Agora, pedimos que edite os blocos a seguir para que
-            apenas o segundo usuário de um grupo de usuário possa realizar a
-            interação.</p>
-          `
+        <p>Tarefa 4: Agora, pedimos que edite os blocos a seguir para que apenas
+        o segundo usuário de um grupo de usuário possa realizar a interação.</p>
+      `
     },
     {
       type: 'text',
@@ -1315,7 +1315,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
           presente</em></td></tr> 
           <tr><td><em>Grupo de Usuários</em></td><td>não presente</td></tr>
         </table><br>
-        `
+      `
     },
     {
       name: 'nclIntro2',
@@ -1333,12 +1333,17 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         
         <div id='nclIntro2aCode'></div><br>
 
+        <p>O trecho de código a seguir apresente o arquivo
+        <em>rec_gestos.gml</em>. Esse arquivo é uma descrição de reconhecimento de voz no formato GML. Em particular, ele define duas porções chamadas
+        <em>swipe_esquerda</em> e  <em>swipe_direita</em>que definem acenos de mão para esquerda e para direita, respectivamente</p><br>
+
+        <div id='nclIntro2bCode'></div><br>
+
         <p>O trecho de código a seguir ilustra uma aplicação que apresenta um
         vídeo, ao qual pode ser reniciado em sua portão de creditos por comandos
         de voz. Mais precisamente, a aplicação utiliza um elemento
         <em>&ltmedia></em> mídias, um elemento de <em>&ltinput></em>, um
-        <em><port></em> e dois <em>&ltlink></em>s.</p><br>
-
+        <em><port></em> e dois <em>&ltlink></em>s.</p>
         <p>O elemento de <em>&ltmedia></em> chamado de
         <em>video_principal</em> (linhas 17-19) que define um trecho chamado
         creditos que inicia aos 300s. O elemento <em>&ltinput></em>, chamado de
@@ -1352,7 +1357,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         deve ser reiniciado (stop e start) quando for reconhecido o trecho
         <em>repete</em></p><br>
 
-        <div id='nclIntro2bCode'></div><br>
+        <div id='nclIntro2cCode'></div><br>
       `
     },
     {
@@ -1362,13 +1367,14 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Agora, vamos detalhar o elemento <em>Grupo de Usuários</em> em NCL.
         Para implementar esse Reconhecedor propomos o elemento de
         <em>&ltuserClass></em></p><br>
+        <div id='nclIntro3aCode'></div><br>
       `
     }
   ]
 })
 
 _data.nclIntro2aCode = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;">
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false; highlight: [2]">
   <![CDATA[
   <grammar xmlns="http://www.w3.org/2001/06/grammar">
     <rule id="repete">repita video</rule>
@@ -1376,9 +1382,58 @@ _data.nclIntro2aCode = `
   ]]>
   </script>
 `
-
 _data.nclIntro2bCode = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;">
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false; highlight:
+  [4,23]">
+  <![CDATA[
+  <?xml version="1.0" encoding="UTF-8"?>
+  <GestureMarkupLanguage>
+
+    <Gesture id="swipe_esquerda" type="swipe">
+      <match><action><initial>
+        <event touch_event="touchEnd"/>
+        <cluster point_number_min="1" point_number_max="5" 
+          acceleration_max="0.5"/>
+      </initial></action></match>
+      <analysis><algorithm class="kinemetric" type="discrete">
+          <library module="swipe" />
+          <variables><property id="dx" result="dx"/>
+          </variables>
+          <delta_filter><property ref="dx" active="true" delta_max="-0.01"/>
+          </delta_filter>
+        </algorithm></analysis>
+      <mapping><update dispatch_type="discrete" dispatch_mode="cluster_remove" 
+        dispatch_reset="cluster_remove">
+        <gesture_event type="custom"></gesture_event>
+      </update></mapping>
+    </Gesture>
+
+    <Gesture id="swipe_direta" type="swipe">
+      <match><action><initial>
+        <event touch_event="touchEnd"/>
+        <cluster point_number_min="1" point_number_max="5" 
+          acceleration_max="0.5"/>
+      </initial></action></match>
+      <analysis><algorithm class="kinemetric" type="discrete">
+          <library module="swipe" />
+          <variables><property id="dx" result="dx"/>
+          </variables>
+          <delta_filter><property ref="dx" active="true" delta_min="0.01"/>
+          </delta_filter>
+        </algorithm></analysis>
+      <mapping><update dispatch_type="discrete" dispatch_mode="cluster_remove" 
+        dispatch_reset="cluster_remove">
+        <gesture_event type="custom"></gesture_event>
+      </update></mapping>
+    </Gesture>
+    
+  </GestureMarkupLanguage>
+    ]]>
+    </script>
+`
+_data.nclIntro2cCode = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  highlight:[17,20,23,27]">
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <ncl>
@@ -1413,6 +1468,22 @@ _data.nclIntro2bCode = `
       </link>
     </body>
   </ncl>]]>
+  </script>
+`
+
+_data.nclIntro3aCode = `
+  <script type="syntaxhighlighter" class="brush: plain; toolbar: false;
+  highlight:[6,7]">
+  <![CDATA[
+  PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+    PREFIX prf: <http://www.wapforum.org/profiles/UAPROF/ccppschema-20010430>
+      SELECT ?person
+      WHERE {
+      ?person prf:component ? component.
+      ?component prf: name ? name FILTER regex(?name, “Leap Motion”) 
+        ? name FILTER regex(?name, “Microphone”)
+  }
+  ]]>
   </script>
 `
 
@@ -1679,10 +1750,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
   innerIndent: 1,
   elements: [
     {
-      name: 'htmlIntro',
+      name: 'htmlIntro1',
       type: 'html',
       html: ` 
-     
         <p>Essa seção da entrevista não tem o objetivo de detalhar a linguagem
         HTML. Essa seção tem o objetivo de apresentar como os conceitos de
         interação multimodal podem ser instanciados na linguagem HTML.</p> 
@@ -1710,9 +1780,92 @@ _data.surveyJSON.pages[pageIndex].elements.push({
           <tr><td><em>Grupo de Usuários</em></td><td>não presente</td></tr>
         </table><br>
       `
+    },
+    {
+      name: 'htmlIntro2',
+      type: 'html',
+      html: `
+        <p>Primeiro, vamos detalhar o conceito de <em>Reconhecedor</em> em NCL.
+        Para implementar esse <em>Reconhecedor</em> propomos o elemento de
+        <em>&ltinput></em></p><br>
+
+        <p>O trecho de código a seguir apresente o arquivo
+        <em>rec_voz.srgs</em>. Esse arquivo é uma descrição de reconhecimento de
+        voz no formato SRGS. Em particular, ele define uma porção chamada
+        <em>repete</em> que define o reconhecimento de voz "repita vídeo"</p
+        ><br>
+        
+        <div id='htmlIntro2aCode'></div><br>
+
+        <p>O trecho de código a seguir apresente o arquivo
+        <em>rec_gestos.gml</em>. Esse arquivo é uma descrição de reconhecimento de voz no formato GML. Em particular, ele define duas porções chamadas
+        <em>swipe_esquerda</em> e  <em>swipe_direita</em>que definem acenos de mão para esquerda e para direita, respectivamente</p><br>
+
+        <div id='htmlIntro2bCode'></div><br>
+
+        <p>O trecho de código a seguir ilustra uma aplicação que apresenta um
+        vídeo, ao qual pode ser reniciado em sua portão de creditos por comandos
+        de voz. Mais precisamente, a aplicação utiliza um elemento
+        <em>&ltmedia></em> mídias, um elemento de <em>&ltinput></em>, um
+        <em><port></em> e dois <em>&ltlink></em>s.</p>
+        <p>O elemento de <em>&ltmedia></em> chamado de
+        <em>video_principal</em> (linhas 17-19) que define um trecho chamado
+        creditos que inicia aos 300s. O elemento <em>&ltinput></em>, chamado de
+        <em>rec</em>é definito utilizando utilizando o arquivo SRGS
+        <em>rec_voz.srgs</em> (linhas 20-22). O elemento <em>&ltport></em>
+        (linha 16) defini que o <em>video_principal</em> é iniciado com
+        aplicação. O primeiro <em>&ltlink></em> (linhas 23-26) defini que quando
+        o <em>video_principal</em> alançar a sua porção de creditos (300s) o
+        reconhecedor <em>rec</em> inicia seu reconhecimento. O segundo
+        <em>&ltlink></em>(linhas 27-30) defique que o <em>video_principal</em>
+        deve ser reiniciado (stop e start) quando for reconhecido o trecho
+        <em>repete</em></p><br>
+
+        <div id='htmlIntro2cCode'></div><br>
+      `
+    },
+    {
+      name: 'htmlIntro3',
+      type: 'html',
+      html: `
+        <p>Agora, vamos detalhar o elemento <em>Grupo de Usuários</em> em NCL.
+        Para implementar esse Reconhecedor propomos o elemento de
+        <em>&ltuserClass></em></p><br>
+        <div id='htmlIntro3aCode'></div><br>
+      `
     }
   ]
 })
+
+_data.htmlIntro2aCode = _data.nclIntro2aCode
+
+_data.htmlIntro2bCode = _data.nclIntro2bCode
+
+_data.htmlIntro2cCode = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;">
+  <![CDATA[
+  <?xml version="1.0" encoding="ISO-8859-1"?>
+  <html>
+    <head>
+    </head>
+    <body>
+    </body>
+  </html>]]>
+  </script>
+`
+
+_data.htmlIntro3aCode = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;">
+  <![CDATA[
+  <?xml version="1.0" encoding="ISO-8859-1"?>
+  <html>
+    <head>
+    </head>
+    <body>
+    </body>
+  </html>]]>
+  </script>
+`
 
 // ----------------------------------------
 // html page - questions
