@@ -1308,12 +1308,31 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <table align="center" class="table-bordered table-striped
         table-condensed">
-          <tr><th>Conceito</th><th>Elemento da NCL</th></tr>
-          <tr><td><em>Mídia</em></td><td><em>&ltmedia></em></td></tr>
-          <tr><td><em>Sincronimo</em></td><td><em>&ltport> e <em>&ltlink></em></td></tr>
-          <tr><td><em>Reconhecedor</em></td><td><em>não 
-          presente</em></td></tr> 
-          <tr><td><em>Grupo de Usuários</em></td><td>não presente</td></tr>
+          <tr>
+            <th>Conceito</th>
+            <th>Presente na NCL?</th>
+            <th>Proposta de instanciação</th>
+          </tr>
+          <tr>
+            <td><em>Mídia</em></td>
+            <td><em>&ltmedia></em></td>
+            <td>manter</td>
+          </tr>
+          <tr>
+            <td><em>Sincronimo</em></td>
+            <td><em>&ltport> e <em>&ltlink></em></td>
+            <td>manter</td>
+          </tr>
+          <tr>
+            <td><em>Reconhecedor</em></td>
+            <td><em>não presente</em></td>
+            <td>adcionar elemento <em>&ltinput></em></td>
+          </tr>
+          <tr>
+            <td><em>Grupo de Usuários</em></td>
+            <td>não presente</td></td>
+            <td>adcionar elemento <em>&ltuserClass></em></td>
+          </tr>
         </table><br>
       `
     },
@@ -1860,13 +1879,34 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <table align="center" class="table-bordered table-striped
         table-condensed">
-          <tr><th>Conceito</th><th>Elemento da HTML</th></tr>
-          <tr><td><em>Mídia</em></td><td><em>&ltimg></em>, <em>&ltvideo></em>,
-          <em>&ltaudio></em></td></tr>
-          <tr><td><em>Sincronimo</em></td><td><em>&ltscript></em></td></tr>
-          <tr><td><em>Reconhecedor</em></td><td><em>não presente</em></td></tr>
-          <tr><td><em>Grupo de Usuários</em></td><td>não presente</td></tr>
+          <tr>
+            <th>Conceito</th>
+            <th>Presente na NCL?</th>
+            <th>Proposta de instanciação</th>
+          </tr>
+          <tr>
+            <td><em>&ltimg></em>, <em>&ltvideo></em>,<em>&ltaudio></em>
+            </td>
+            <td><em>&ltmedia></em></td>
+            <td>estender <em>&ltmedia> com trechos</td>
+          </tr>
+          <tr>
+            <td><em>Sincronimo</em></td>
+            <td><em>&ltscript></em></td>
+            <td>manter</td>
+          </tr>
+          <tr>
+            <td><em>Reconhecedor</em></td>
+            <td><em>não presente</em></td>
+            <td>adcionar elemento <em>&ltinput></em></td>
+          </tr>
+          <tr>
+            <td><em>Grupo de Usuários</em></td>
+            <td>não presente</td></td>
+            <td>adcionar elemento <em>&ltuserClass></em></td>
+          </tr>
         </table><br>
+        
       `
     },
     {
