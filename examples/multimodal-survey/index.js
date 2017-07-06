@@ -201,6 +201,7 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       break
     case 'nclIntro3':
       $('#nclIntro3aCode').append(_data.nclIntro3aCode)
+      $('#nclIntro3bCode').append(_data.nclIntro3bCode)
       SyntaxHighlighter.highlight()
       break
     case 'nclTask1':
@@ -219,6 +220,7 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       break
     case 'htmlIntro3':
       $('#htmlIntro3aCode').append(_data.htmlIntro3aCode)
+      $('#htmlIntro3bCode').append(_data.htmlIntro3bCode)
       SyntaxHighlighter.highlight()
       break
     case 'htmlCode1':

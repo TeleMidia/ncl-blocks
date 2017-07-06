@@ -1339,11 +1339,14 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <div id='nclIntro2bCode'></div><br>
 
-        <p>O trecho de código a seguir ilustra uma aplicação que apresenta um
-        vídeo, ao qual pode ser reniciado em sua portão de creditos por comandos
-        de voz. Mais precisamente, a aplicação utiliza um elemento
-        <em>&ltmedia></em> mídias, um elemento de <em>&ltinput></em>, um
-        <em><port></em> e dois <em>&ltlink></em>s.</p>
+        <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em NCL, o código
+        a seguir são uma nova versão da aplicação que reinicia um video dado uma
+        interação. Mas nessa versão, ao inves de clicar, o vídeo é reiniciado ao
+        usuário falar "repetir video".</p> <p>Mais precisamente, a aplicação
+        utiliza um elemento <em>&ltmedia></em> mídias, um elemento de
+        <em>&ltinput></em>, um <em><port></em> e dois
+        <em>&ltlink></em>s.</p><br>
+        
         <p>O elemento de <em>&ltmedia></em> chamado de
         <em>video_principal</em> (linhas 17-19) que define um trecho chamado
         creditos que inicia aos 300s. O elemento <em>&ltinput></em>, chamado de
@@ -1368,6 +1371,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         Para implementar esse Reconhecedor propomos o elemento de
         <em>&ltuserClass></em></p><br>
         <div id='nclIntro3aCode'></div><br>
+
+        <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em NCL, o código a seguir são uma nova versão da aplicação que reinicia um video dado uma interação. Mas nessa versão, ao inves de clicar, o vídeo é reiniciado ao usuário falar "repetir video".</p><br>
+
+        <div id='nclIntro3bCode'></div><br>
       `
     }
   ]
@@ -1484,6 +1491,51 @@ _data.nclIntro3aCode = `
         ? name FILTER regex(?name, “Microphone”)
   }
   ]]>
+  </script>
+`
+_data.nclIntro3bCode = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  highlight:[15,16,33]">
+  <![CDATA[
+  <?xml version="1.0" encoding="ISO-8859-1"?>
+  <ncl>
+    <head>
+      <connectorBase>
+        <causalConnector id="onRecognizeStopStart">
+          <simpleCondition role="onRecognize" max="unbounded"/>
+          <compoundAction>
+            <simpleAction role="stop" max="unbounded"/>
+            <simpleAction role="start" max="unbounded"/>
+          </compoundAction>
+        </causalConnector>
+      </connectorBase>
+      <descriptorBase documentURI="desc.ncl" alias="desEx"/>
+       <userBase>
+        <userClass id="gu_leap_microphone" max="2"
+        userClassDescription="gu_leap_microphone.sparql" /> 
+      </userBase>
+    </head>
+    <body>
+      <port component="video_principal"/>
+      <media id="video_principal" src="video.mp4" descriptor="desEx#video">
+        <area label="credits" begin="300s" end="360s" />
+      </media>
+      <input id="rec"src="rec_voz.srgs">
+        <area label="repete"/>
+      </input>
+      <link xconnector="onBeginStart">
+        <bind role="onBegin" component="video_principal" interface="credits"/>
+        <bind role="start" component="rec"/>
+      </link>
+      <link xconnector="onRecognizeStart">
+        <bind role="onRecognize" component="rec_voz" interface="repete">
+          <linkParam name="user_id" value="gu_leap_microphone(2)"/>
+        </bind>
+        <bind role="stop" component="video_principal"/>
+        <bind role="start" component="video_principal"/>
+      </link>
+    </body>
+  </ncl>]]>
   </script>
 `
 
@@ -1832,6 +1884,29 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         Para implementar esse Reconhecedor propomos o elemento de
         <em>&ltuserClass></em></p><br>
         <div id='htmlIntro3aCode'></div><br>
+
+        <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em HTML, o
+        código a seguir são uma nova versão da aplicação que reinicia um video
+        dado uma interação. Mas nessa versão, ao inves de clicar, o vídeo é
+        reiniciado ao usuário falar "repetir video".</p> <p>Mais precisamente, a
+        aplicação utiliza um elemento <em>&ltmedia></em> mídias, um elemento de
+        <em>&ltinput></em>, um <em><port></em> e dois
+        <em>&ltlink></em>s.</p><br>
+        
+        <p>O elemento de <em>&ltmedia></em> chamado de <em>video_principal</em>
+        (linhas 17-19) que define um trecho chamado creditos que inicia aos
+        300s. O elemento <em>&ltinput></em>, chamado de <em>rec</em>é definito
+        utilizando utilizando o arquivo SRGS <em>rec_voz.srgs</em> (linhas
+        20-22). O elemento <em>&ltport></em> (linha 16) defini que o
+        <em>video_principal</em> é iniciado com aplicação. O primeiro
+        <em>&ltlink></em> (linhas 23-26) defini que quando o
+        <em>video_principal</em> alançar a sua porção de creditos (300s) o
+        reconhecedor <em>rec</em> inicia seu reconhecimento. O segundo
+        <em>&ltlink></em>(linhas 27-30) defique que o <em>video_principal</em>
+        deve ser reiniciado (stop e start) quando for reconhecido o trecho
+        <em>repete</em></p><br>
+
+        <div id='htmlIntro3bCode'></div><br>
       `
     }
   ]
@@ -1855,6 +1930,18 @@ _data.htmlIntro2cCode = `
 `
 
 _data.htmlIntro3aCode = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;">
+  <![CDATA[
+  <?xml version="1.0" encoding="ISO-8859-1"?>
+  <html>
+    <head>
+    </head>
+    <body>
+    </body>
+  </html>]]>
+  </script>
+`
+_data.htmlIntro3bCode = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;">
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
