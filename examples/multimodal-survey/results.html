@@ -28,10 +28,10 @@
 <body>
   <div class="center-block text-center">
     <br> resultIndex=
-    <select id="resultIndex" type="text" value="-"><option value="-">-</option></select> blockTask=
-    <select id="blockTask" type="text" value="blocksTask3">
-      <option value="blocksTask3">blocksTask3</option>
-      <option value="blocksTask4">blocksTask4</option>
+    <select id="resultIndex" type="text" value="-"><option value="-">-</option></select> conceptTask=
+    <select id="conceptTask" type="text" value="conceptsTask3">
+      <option value="conceptsTask3">conceptsTask3</option>
+      <option value="conceptsTask4">conceptsTask4</option>
       </select>
     <br><br>
     <button id="showChanges" class="btn">showChanges</button>
@@ -91,10 +91,10 @@
       if (selected === '-') return
       var selectIndex = parseInt(selected)
       var savedWorkspaceXml
-      if ($('#blockTask option:selected').val() === 'conceptsTask3') {
-        savedWorkspaceXml = _resultsData[selectIndex].blocksTask3Result
-      } else if ($('#blockTask option:selected').val() === 'conceptsTask4') {
-        savedWorkspaceXml = _resultsData[selectIndex].blocksTask4Result
+      if ($('#conceptTask option:selected').val() === 'conceptsTask3') {
+        savedWorkspaceXml = _resultsData[selectIndex].conceptsTask3Result
+      } else if ($('#conceptTask option:selected').val() === 'conceptsTask4') {
+        savedWorkspaceXml = _resultsData[selectIndex].conceptsTask4Result
       }
       $('#xmlcode').val(savedWorkspaceXml)
       Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(savedWorkspaceXml), _workspace)
@@ -103,11 +103,11 @@
 
     $('#resultIndex').change(function () {
       if (_resultsData == null) return
-      $('#blockTask').val('conceptsTask3')
+      $('#conceptTask').val('conceptsTask3')
       showBlocksXML()
     })
 
-    $('#blockTask').change(function () {
+    $('#conceptTask').change(function () {
       showBlocksXML()
     })
 
@@ -118,10 +118,10 @@
     var _runEventIntervalIndex = 0
     var runEventInterval = function (index) {
       var result
-      if ($('#blockTask option:selected').val() === 'conceptsTask3') {
-        result = JSON.parse(_resultsData[index].blocksTask3Changes)
-      } else if ($('#blockTask option:selected').val() === 'conceptsTask4') {
-        result = JSON.parse(_resultsData[index].blocksTask4Changes)
+      if ($('#conceptTask option:selected').val() === 'conceptsTask3') {
+        result = JSON.parse(_resultsData[index].conceptsTask3Changes)
+      } else if ($('#conceptTask option:selected').val() === 'conceptsTask4') {
+        result = JSON.parse(_resultsData[index].conceptsTask4Changes)
       }
       if (_runEventIntervalIndex >= result.changes.length) {
         clearInterval(runEventInterval)
