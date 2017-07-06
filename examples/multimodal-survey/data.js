@@ -1378,8 +1378,7 @@ _data.nclIntro2aCode = `
 `
 
 _data.nclIntro2bCode = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false; 
-  highlight:">
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;">
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <ncl>
@@ -1510,7 +1509,7 @@ _data.nclTask1Code = `
   </script>
 `
 _data.nclTask2Code = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;">
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false; highlight: [9,10,11,12,13,14,15,30,32,34,35,39,40]">
   <![CDATA[
   <?xml version= "1.0" encoding= "ISO-8859-1" ?>
   <ncl xmlns="http://www.ncl.org.br/NCL3.0/EDTVProfile">
