@@ -69,7 +69,7 @@ if ($('#surveyPageNo').length) {
 $('#surveyPageNo').change(function () {
   _survey.currentPageNo = this.value
 })
-$('#surveyPageNo').val(7).change()
+$('#surveyPageNo').val(2).change()
 
 // ----------------------------------------
 // survey listeners
