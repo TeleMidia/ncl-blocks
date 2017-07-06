@@ -1342,7 +1342,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
   ]
 })
 
-_data.nclIntro1Code = `
+_data.nclIntro2aCode = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;">
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
@@ -1376,7 +1376,7 @@ _data.nclIntro1Code = `
   </script>
 `
 
-_data.nclIntro2Code = `
+_data.nclIntro2bCode = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false; 
   highlight: [11,12,13,14,15,16,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,
   48]">
@@ -1447,7 +1447,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `O código a seguir consiste em uma aplicação NCL sem interações 
       multimodais.`,
-      name: 'nclTask1Code'
+      name: 'nclTask1'
     },
     {
       type: 'comment',
@@ -1461,7 +1461,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `O aplicação NCL acima foi modificada para permitir interações 
       multimodais. O novo código é apresentado a seguir com as modificações 
       destacadas:`,
-      name: 'nclTask2Code'
+      name: 'nclTask2'
     },
     {
       type: 'comment',

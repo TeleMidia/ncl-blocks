@@ -69,7 +69,7 @@ if ($('#surveyPageNo').length) {
 $('#surveyPageNo').change(function () {
   _survey.currentPageNo = this.value
 })
-$('#surveyPageNo').val(3).change()
+$('#surveyPageNo').val(5).change()
 
 // ----------------------------------------
 // survey listeners
@@ -194,16 +194,16 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       _blocksTask4Workspace.addChangeListener(saveblocksTask4Changes)
       break
     case 'nclIntro2':
-      $('#nclIntro2aCode').append(_data.nclIntro1Code)
-      $('#nclIntro2bCode').append(_data.nclIntro2Code)
+      $('#nclIntro2aCode').append(_data.nclIntro2aCode)
+      $('#nclIntro2bCode').append(_data.nclIntro2bCode)
       SyntaxHighlighter.highlight()
       break
-    case 'nclTask1Code':
-      $('#' + questionId).append(_data.nclIntro1Code)
+    case 'nclTask1':
+      $('#' + questionId).append(_data.nclIntro2aCode)
       SyntaxHighlighter.highlight()
       break
-    case 'nclTask2Code':
-      $('#' + questionId).append(_data.nclIntro2Code)
+    case 'nclTask2':
+      $('#' + questionId).append(_data.nclIntro2bCode)
       SyntaxHighlighter.highlight()
       break
     case 'htmlCode1':
