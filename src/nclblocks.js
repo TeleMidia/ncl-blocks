@@ -513,13 +513,13 @@ var NclBlockMixin = {
     this.setColour(NCLBlocks.Colours.LINK)
     if (NCLBlocks.USE_BODY === true) this.setOutput(true, NCLBlocks.Types.LINK)
   },
-  conditionLikeInit: function () {
+  initAsCondition: function () {
     this.initShared()
     this.setColour(NCLBlocks.Colours.CONDITION)
     this.setOutput(true,
       NCLBlocks.USE_CHECK ? NCLBlocks.Types.CONDITION : null)
   },
-  actionLikeInit: function () {
+  initAsAction: function () {
     this.initShared()
     this.setColour(NCLBlocks.Colours.ACTION)
     this.setPreviousStatement(true, NCLBlocks.USE_CHECK
@@ -1063,7 +1063,7 @@ Object.assign(Blockly.Blocks.link, NclBlockMixin)
 
 Blockly.Blocks.onbegin = {
   init: function () {
-    this.conditionLikeInit()
+    this.initAsCondition()
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.ONBEGIN,
         15, 15, '*'))
@@ -1075,7 +1075,7 @@ Object.assign(Blockly.Blocks.onbegin, NclBlockMixin)
 
 Blockly.Blocks.onend = {
   init: function () {
-    this.conditionLikeInit()
+    this.initAsCondition()
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.ONEND, 15, 15, '*'))
       .appendField(NCLBlocks.Msg.ONEND)
@@ -1086,7 +1086,7 @@ Object.assign(Blockly.Blocks.onend, NclBlockMixin)
 
 Blockly.Blocks.onpause = {
   init: function () {
-    this.conditionLikeInit()
+    this.initAsCondition()
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.ONPAUSE,
         15, 15, '*'))
@@ -1098,7 +1098,7 @@ Object.assign(Blockly.Blocks.onpause, NclBlockMixin)
 
 Blockly.Blocks.onresume = {
   init: function () {
-    this.conditionLikeInit()
+    this.initAsCondition()
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.ONRESUME,
         15, 15, '*'))
@@ -1110,7 +1110,7 @@ Object.assign(Blockly.Blocks.onresume, NclBlockMixin)
 
 Blockly.Blocks.onselection = {
   init: function () {
-    this.conditionLikeInit()
+    this.initAsCondition()
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.ONSELECTION,
         15, 15, '*'))
@@ -1122,7 +1122,7 @@ Object.assign(Blockly.Blocks.onselection, NclBlockMixin)
 
 Blockly.Blocks.onrecognize = {
   init: function () {
-    this.conditionLikeInit()
+    this.initAsCondition()
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.ONRECOGNIZE,
         15, 15, '*'))
@@ -1134,7 +1134,7 @@ Object.assign(Blockly.Blocks.onrecognize, NclBlockMixin)
 
 Blockly.Blocks.onrecognizeuser = {
   init: function () {
-    this.conditionLikeInit()
+    this.initAsCondition()
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.ONRECOGNIZE,
         15, 15, '*'))
@@ -1148,7 +1148,7 @@ Object.assign(Blockly.Blocks.onrecognizeuser, NclBlockMixin)
 
 Blockly.Blocks.compoundcondition = {
   init: function () {
-    this.conditionLikeInit()
+    this.initAsCondition()
     // InputStackMixin config
     this.stackSize = 0
     this.isInputValue = true
@@ -1177,7 +1177,7 @@ Object.assign(Blockly.Blocks.compoundcondition, InputStackMixin)
 Blockly.Blocks.start = {
   init:
   function () {
-    this.actionLikeInit()
+    this.initAsAction()
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.START, 15, 15, '*'))
       .appendField(NCLBlocks.Msg.START)
@@ -1188,7 +1188,7 @@ Object.assign(Blockly.Blocks.start, NclBlockMixin)
 
 Blockly.Blocks.stop = {
   init: function () {
-    this.actionLikeInit()
+    this.initAsAction()
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.STOP, 15, 15, '*'))
       .appendField(NCLBlocks.Msg.STOP)
@@ -1199,7 +1199,7 @@ Object.assign(Blockly.Blocks.stop, NclBlockMixin)
 
 Blockly.Blocks.pause = {
   init: function () {
-    this.actionLikeInit()
+    this.initAsAction()
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.PAUSE, 15, 15, '*'))
       .appendField(NCLBlocks.Msg.PAUSE)
@@ -1210,7 +1210,7 @@ Object.assign(Blockly.Blocks.pause, NclBlockMixin)
 
 Blockly.Blocks.resume = {
   init: function () {
-    this.actionLikeInit()
+    this.initAsAction()
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.RESUME, 15, 15, '*'))
       .appendField(NCLBlocks.Msg.RESUME)
@@ -1221,7 +1221,7 @@ Object.assign(Blockly.Blocks.resume, NclBlockMixin)
 
 Blockly.Blocks.set = {
   init: function () {
-    this.actionLikeInit()
+    this.initAsAction()
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.SET, 15, 15, '*'))
       .appendField(NCLBlocks.Msg.SET)
