@@ -1550,9 +1550,16 @@ _data.surveyJSON.pages[pageIndex].elements.push({
   elements: [
     {
       type: 'html',
-      html: `O código a seguir consiste em uma aplicação NCL sem interações 
-      multimodais.`,
-      name: 'nclTask1'
+      html: `
+        <p>Agora, desejamos <strong>capturar</strong> seu entendimento dos
+        conceitos apresentados em NCL. Para isso, pedimos que você realize as
+        quatro tarefas a seguir. Duas tarefas consistem em interpretar códigos e
+        outra duas editar códigos<></p><br> 
+        
+        <p><strong>Ressaltamos que essas tarefas NÃO se destinam à avaliar seus
+        conhecimentos, mas sim capturar evidências de nossa
+        pesquisa.</strong>.</p><br>
+      `
     },
     {
       type: 'comment',
@@ -1577,7 +1584,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     },
     {
       type: 'comment',
-      name: 'nclTask3',
+      name: 'nclTask3Question',
       rows: '47',
       title: {
         en: `Tarefa 3: Agora, pedimos que edite o código NCL a seguir para
@@ -1587,7 +1594,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     },
     {
       type: 'comment',
-      name: 'nclTask4',
+      name: 'nclTask4Question',
       rows: '47',
       title: {
         en: `Tarefa 4: Agora, pedimos que edite o código NCL anterior a seguir
@@ -1699,7 +1706,7 @@ _data.nclTask2CodeOnly = `
   </ncl>
 `
 
-_data.nclTask1Code = `
+_data.nclTask2Code = `
 <script type="syntaxhighlighter" class="brush: xml; toolbar: false; highlight: [9,10,11,12,13,14,15,30,32,34,35,39,40]"> <![CDATA[` + _data.nclTask2CodeOnly + ` ]]></script>`
 
 // ----------------------------------------
@@ -1985,9 +1992,16 @@ _data.surveyJSON.pages[pageIndex].elements.push({
   elements: [
     {
       type: 'html',
-      html: `O código a seguir consiste em uma aplicação HTML sem interações 
-      multimodais.`,
-      name: 'htmlTask1'
+      html: `
+        <p>Agora, desejamos <strong>capturar</strong> seu entendimento dos
+        conceitos apresentados em HTML. Para isso, pedimos que você realize as
+        quatro tarefas a seguir. Duas tarefas consistem em interpretar códigos e
+        outra duas editar códigos<></p><br> 
+        
+        <p><strong>Ressaltamos que essas tarefas NÃO se destinam à avaliar seus
+        conhecimentos, mas sim capturar evidências de nossa
+        pesquisa.</strong>.</p><br>
+      `
     },
     {
       type: 'comment',
@@ -2012,7 +2026,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     },
     {
       type: 'comment',
-      name: 'htmlTask3',
+      name: 'htmlTask3Question',
       rows: '9',
       title: {
         en: `Tarefa 3: Agora, pedimos que edite o código HTML a seguir para
@@ -2022,7 +2036,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     },
     {
       type: 'comment',
-      name: 'htmlTask4',
+      name: 'htmlTask4Question',
       rows: '9',
       title: {
         en: `Tarefa 4: Agora, pedimos que edite o código HTML anterior a seguir

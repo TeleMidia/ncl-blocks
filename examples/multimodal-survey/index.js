@@ -69,7 +69,7 @@ if ($('#surveyPageNo').length) {
 $('#surveyPageNo').change(function () {
   _survey.currentPageNo = this.value
 })
-$('#surveyPageNo').val(7).change()
+$('#surveyPageNo').val(5).change()
 
 // ----------------------------------------
 // survey listeners
@@ -204,19 +204,21 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       $('#nclIntro3bCode').append(_data.nclIntro3bCode)
       SyntaxHighlighter.highlight()
       break
-    case 'nclTask1':
+    case 'nclTask1Question':
       $('#' + questionId).append(_data.nclTask1Code)
       SyntaxHighlighter.highlight()
       break
-    case 'nclTask2':
+    case 'nclTask2Question':
       $('#' + questionId).append(_data.nclTask2Code)
       SyntaxHighlighter.highlight()
       break
-    case 'nclTask3':
-      _survey.getQuestionByName('nclTask3').value = _data.nclTask2CodeOnly
+    case 'nclTask3Question':
+      _survey.getQuestionByName('nclTask3Question').value =
+        _data.nclTask2CodeOnly
       break
-    case 'nclTask4':
-      _survey.getQuestionByName('nclTask4').value = _data.nclTask2CodeOnly
+    case 'nclTask4Question':
+      _survey.getQuestionByName('nclTask4Question').value =
+        _data.nclTask2CodeOnly
       break
     case 'htmlIntro2':
       $('#htmlIntro2aCode').append(_data.htmlIntro2aCode)
@@ -229,19 +231,21 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       $('#htmlIntro3bCode').append(_data.htmlIntro3bCode)
       SyntaxHighlighter.highlight()
       break
-    case 'htmlTask1':
+    case 'htmlTask1Question':
       $('#' + questionId).append(_data.htmlTask1)
       SyntaxHighlighter.highlight()
       break
-    case 'htmlTask2':
+    case 'htmlTask2Question':
       $('#' + questionId).append(_data.htmlTask2)
       SyntaxHighlighter.highlight()
       break
-    case 'htmlTask3':
-      _survey.getQuestionByName('htmlTask3').value = _data.htmlTask2CodeOnly
+    case 'htmlTask3Question':
+      _survey.getQuestionByName('htmlTask3Question').value =
+      _data.htmlTask2CodeOnly
       break
-    case 'htmlTask4':
-      _survey.getQuestionByName('htmlTask4').value = _data.htmlTask2CodeOnly
+    case 'htmlTask4Question':
+      _survey.getQuestionByName('htmlTask4Question').value =
+      _data.htmlTask2CodeOnly
       break
   }
   window.scrollTo(0, 0)
