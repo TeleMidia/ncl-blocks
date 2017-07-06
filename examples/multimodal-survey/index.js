@@ -79,6 +79,7 @@ function insertRequiredErrorInBlocks (blockDivId) {
   var blockDivSelector = '#blockly_' + blockDivId
   var errorDivId = blockDivId + '_error'
   var errorDivSelector = '#' + errorDivId
+  
   if (!$(errorDivSelector).length) {
     $(blockDivSelector).prepend("<div id='" + errorDivId +
       "' class='label label-danger'>" + _msgEmptyBlockTask + '</div>')
@@ -110,6 +111,7 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
   var questionId = questionAndHtml.question.idValue
   var questionName = questionAndHtml.question.name
   var result, i, event, setNotEdited
+  
   switch (questionName) {
     case 'conceptsIntro1':
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro1a',
@@ -218,16 +220,16 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
 
 function saveblocksTask3Changes (event) {
   _blocksTask3WorkspaceEdited = true
+
+  // save change
   var savedJsonStr = _survey.getQuestionByName('conceptsTask3Changes').value
   var jsonFromEvent = event.toJson()
   var jsonToSave
-
   if (savedJsonStr == null) {
     jsonToSave = { 'changes': [] }
   } else {
     jsonToSave = JSON.parse(savedJsonStr)
   } jsonToSave.changes.push(jsonFromEvent)
-
   _survey.getQuestionByName('conceptsTask3Changes').value =
     JSON.stringify(jsonToSave)
 
@@ -239,10 +241,11 @@ function saveblocksTask3Changes (event) {
 
 function saveblocksTask4Changes (event) {
   _blocksTask4WorkspaceEdited = true
+
+  // save change
   var savedJsonStr = _survey.getQuestionByName('conceptsTask4Changes').value
   var jsonFromEvent = event.toJson()
   var jsonToSave
-
   if (savedJsonStr == null) {
     jsonToSave = { 'changes': [] }
   } else {
@@ -251,7 +254,8 @@ function saveblocksTask4Changes (event) {
   jsonToSave.changes.push(jsonFromEvent)
   _survey.getQuestionByName('conceptsTask4Changes').value =
   JSON.stringify(jsonToSave)
-
+  
+  // save blocksTask4 result
   var xml = Blockly.Xml.workspaceToDom(_blocksTask4Workspace)
   var xmlText = Blockly.Xml.domToText(xml)
   _survey.getQuestionByName('conceptsTask4Result').value = xmlText

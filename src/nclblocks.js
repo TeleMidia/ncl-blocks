@@ -761,13 +761,12 @@ Blockly.Blocks.body = {
             NCLBlocks.Types.LINK]
           : null)
     }
-    // add name
+    // add name, buttons and initial inputs
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.CONTEXT, 20, 20, '*'))
       .appendField('{' + NCLBlocks.Msg.BODY + '}')
-    // add edit buttons
+    
     this.addMinusPlusDummyInput()
-    // add initial inputs
     for (var i = 0; i < 5; i++) this.pushInput()
   }
 }
@@ -780,7 +779,7 @@ Object.assign(Blockly.Blocks.body, InputStackMixin)
 Blockly.Blocks.media = {
   init: function () {
     this.initAsMedia()
-
+    // add name one input
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(
         NCLBlocks.Icons.MEDIA, 25, 25, '*'))
@@ -798,7 +797,7 @@ Object.assign(Blockly.Blocks.media, NclBlockMixin)
 Blockly.Blocks.image = {
   init: function () {
     this.initAsMedia(true)
-
+    // add name
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.IMAGE, 25, 25, '*'))
       .appendField('{' + NCLBlocks.Msg.IMAGE + '}')
@@ -809,7 +808,6 @@ Object.assign(Blockly.Blocks.image, NclBlockMixin)
 Blockly.Blocks.video = {
   init: function () {
     this.initAsMedia(true)
-
     // InputStackMixin config
     this.stackSize = 0
     this.isInputValue = false
@@ -822,13 +820,11 @@ Blockly.Blocks.video = {
         .appendField(NCLBlocks.Msg.ANCHOR_END)
         .appendField(new Blockly.FieldTextInput(''), 'end' + index)
     }
-    // add name
+    // add name, buttons and initial inputs
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.VIDEO, 25, 25, '*'))
       .appendField('{' + NCLBlocks.Msg.VIDEO + '}')
-    // add edit buttons
     this.addMinusPlusDummyInput()
-    // add one area
     this.pushInput()
   }
 }
@@ -838,7 +834,6 @@ Object.assign(Blockly.Blocks.video, InputStackMixin)
 Blockly.Blocks.audio = {
   init: function () {
     this.initAsMedia(true)
-
     // InputStackMixin config
     this.stackSize = 0
     this.isInputValue = false
@@ -851,13 +846,11 @@ Blockly.Blocks.audio = {
         .appendField(NCLBlocks.Msg.ANCHOR_END)
         .appendField(new Blockly.FieldTextInput(''), 'end' + index)
     }
-    // add name
+    // add name, buttons and initial inputs
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.AUDIO, 25, 25, '*'))
       .appendField('{' + NCLBlocks.Msg.AUDIO + '}')
-    // add edit buttons
     this.addMinusPlusDummyInput()
-    // add one area
     this.pushInput()
   }
 }
@@ -867,7 +860,6 @@ Object.assign(Blockly.Blocks.audio, InputStackMixin)
 Blockly.Blocks.ssml = {
   init: function () {
     this.initAsMedia(true)
-
     // InputStackMixin config
     this.stackSize = 0
     this.isInputValue = false
@@ -878,14 +870,12 @@ Blockly.Blocks.ssml = {
         .appendField(NCLBlocks.Msg.SSML_ANCHOR)
         .appendField(new Blockly.FieldTextInput(''), 'label' + index)
     }
-    // add name
+    // add name, buttons and initial inputs
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.SSML, 25, 25, '*'))
       .appendField('{' + NCLBlocks.Msg.SSML + '}')
     this.stackSize++
-    // add plus button
     this.addMinusPlusDummyInput()
-    // add one area
     this.pushInput()
   }
 }
@@ -899,7 +889,7 @@ Object.assign(Blockly.Blocks.ssml, InputStackMixin)
 Blockly.Blocks.input = {
   init: function () {
     this.initAsInput(false)
-
+    // add name one input
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(
         NCLBlocks.Icons.INPUT, 25, 25, '*'))
@@ -916,7 +906,6 @@ Object.assign(Blockly.Blocks.input, NclBlockMixin)
 Blockly.Blocks.srgs = {
   init: function () {
     this.initAsInput(true)
-
     // InputStackMixin config
     this.stackSize = 0
     this.isInputValue = false
@@ -927,13 +916,13 @@ Blockly.Blocks.srgs = {
         .appendField(NCLBlocks.Msg.SRGS_ANCHOR)
         .appendField(new Blockly.FieldTextInput(''), 'label' + index)
     }
-    // add name
+    // add name, buttons and initial inputs
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.SRGS, 25, 25, '*'))
       .appendField('{' + NCLBlocks.Msg.SRGS + '}')
-    // add edit buttons
+    
     this.addMinusPlusDummyInput()
-    // add one area
+    
     this.pushInput()
   }
 }
@@ -943,7 +932,6 @@ Object.assign(Blockly.Blocks.srgs, InputStackMixin)
 Blockly.Blocks.hand_gesture = {
   init: function () {
     this.initAsInput(true)
-
     // InputStackMixin config
     this.stackSize = 0
     this.isInputValue = false
@@ -965,14 +953,12 @@ Blockly.Blocks.hand_gesture = {
         .appendField(NCLBlocks.Msg.HAND_GESTURE_ANCHOR)
         .appendField(dropdown, 'label' + index)
     }
-    // add name
+    // add name, buttons and initial inputs
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(
         NCLBlocks.Icons.HAND_GESTURE, 25, 25, '*'))
       .appendField('{' + NCLBlocks.Msg.HAND_GESTURE + '}')
-    // add edit buttons
     this.addMinusPlusDummyInput()
-    // add one area
     this.pushInput()
   }
 }
@@ -986,7 +972,6 @@ Object.assign(Blockly.Blocks.hand_gesture, InputStackMixin)
 Blockly.Blocks.user = {
   init: function () {
     this.initAsUser()
-
     // InputStackMixin config
     this.stackSize = 0
     this.isInputValue = true
@@ -1002,12 +987,10 @@ Blockly.Blocks.user = {
       .appendField('id')
       .appendField(new IdFieldText('', NCLBlocks.Types.USER), 'id')
       .appendField(NCLBlocks.Msg.AND)
-      // .appendField(new IdFieldText('2'), 'usermax', 'usermax')
       .appendField(new UserMaxFieldNumber(), 'usermax')
       .appendField(NCLBlocks.Msg.USERS)
-    // add edit buttons
+    // add buttons and initial inputs
     this.addMinusPlusDummyInput()
-    // add one device
     this.pushInput()
   }
 }
@@ -1029,7 +1012,6 @@ Object.assign(Blockly.Blocks.headset, NclBlockMixin)
 Blockly.Blocks.hand_gesture_sensor = {
   init: function () {
     this.initAsUser(true)
-
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.HAND_GESTURE_SENSOR,
         25, 25, '*'))
@@ -1045,7 +1027,6 @@ Object.assign(Blockly.Blocks.hand_gesture_sensor, NclBlockMixin)
 Blockly.Blocks.port = {
   init: function () {
     this.initAsLink()
-
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.PORT, 25, 25, '*'))
       .appendField('{' + NCLBlocks.Msg.LINK + '}')
@@ -1063,7 +1044,6 @@ Object.assign(Blockly.Blocks.port, NclBlockMixin)
 Blockly.Blocks.link = {
   init: function () {
     this.initAsLink()
-
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.LINK, 25, 25, '*'))
       .appendField('{' + NCLBlocks.Msg.LINK + '}')
@@ -1084,7 +1064,6 @@ Object.assign(Blockly.Blocks.link, NclBlockMixin)
 Blockly.Blocks.onbegin = {
   init: function () {
     this.conditionLikeInit()
-
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.ONBEGIN,
         15, 15, '*'))
@@ -1097,7 +1076,6 @@ Object.assign(Blockly.Blocks.onbegin, NclBlockMixin)
 Blockly.Blocks.onend = {
   init: function () {
     this.conditionLikeInit()
-
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.ONEND, 15, 15, '*'))
       .appendField(NCLBlocks.Msg.ONEND)
@@ -1109,7 +1087,6 @@ Object.assign(Blockly.Blocks.onend, NclBlockMixin)
 Blockly.Blocks.onpause = {
   init: function () {
     this.conditionLikeInit()
-
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.ONPAUSE,
         15, 15, '*'))
@@ -1122,7 +1099,6 @@ Object.assign(Blockly.Blocks.onpause, NclBlockMixin)
 Blockly.Blocks.onresume = {
   init: function () {
     this.conditionLikeInit()
-
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.ONRESUME,
         15, 15, '*'))
@@ -1135,7 +1111,6 @@ Object.assign(Blockly.Blocks.onresume, NclBlockMixin)
 Blockly.Blocks.onselection = {
   init: function () {
     this.conditionLikeInit()
-
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.ONSELECTION,
         15, 15, '*'))
@@ -1148,7 +1123,6 @@ Object.assign(Blockly.Blocks.onselection, NclBlockMixin)
 Blockly.Blocks.onrecognize = {
   init: function () {
     this.conditionLikeInit()
-
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.ONRECOGNIZE,
         15, 15, '*'))
@@ -1161,7 +1135,6 @@ Object.assign(Blockly.Blocks.onrecognize, NclBlockMixin)
 Blockly.Blocks.onrecognizeuser = {
   init: function () {
     this.conditionLikeInit()
-
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.ONRECOGNIZE,
         15, 15, '*'))
@@ -1176,23 +1149,20 @@ Object.assign(Blockly.Blocks.onrecognizeuser, NclBlockMixin)
 Blockly.Blocks.compoundcondition = {
   init: function () {
     this.conditionLikeInit()
-
     // InputStackMixin config
     this.stackSize = 0
     this.isInputValue = true
     this.configureNewInput = function (newInput, index) {
       newInput.setCheck(NCLBlocks.USE_CHECK ? NCLBlocks.Types.CONDITION : null)
     }
-    // add name
+    // add buttons and initial inputs
     var dropdown = new Blockly.FieldDropdown([
       [NCLBlocks.Msg.COMPOUND_CONDITION_SEQ, 'seq'],
       [NCLBlocks.Msg.COMPOUND_CONDITION_AND, 'and'],
       [NCLBlocks.Msg.COMPOUND_CONDITION_OR, 'or']
     ])
     this.appendDummyInput().appendField(dropdown, 'operator')
-    // add plus button
     this.addMinusPlusDummyInput()
-    // add two conditions
     this.pushInput()
     this.pushInput()
   }
@@ -1208,7 +1178,6 @@ Blockly.Blocks.start = {
   init:
   function () {
     this.actionLikeInit()
-
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.START, 15, 15, '*'))
       .appendField(NCLBlocks.Msg.START)
@@ -1220,7 +1189,6 @@ Object.assign(Blockly.Blocks.start, NclBlockMixin)
 Blockly.Blocks.stop = {
   init: function () {
     this.actionLikeInit()
-
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.STOP, 15, 15, '*'))
       .appendField(NCLBlocks.Msg.STOP)
@@ -1232,7 +1200,6 @@ Object.assign(Blockly.Blocks.stop, NclBlockMixin)
 Blockly.Blocks.pause = {
   init: function () {
     this.actionLikeInit()
-
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.PAUSE, 15, 15, '*'))
       .appendField(NCLBlocks.Msg.PAUSE)
@@ -1244,7 +1211,6 @@ Object.assign(Blockly.Blocks.pause, NclBlockMixin)
 Blockly.Blocks.resume = {
   init: function () {
     this.actionLikeInit()
-
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.RESUME, 15, 15, '*'))
       .appendField(NCLBlocks.Msg.RESUME)
@@ -1256,7 +1222,6 @@ Object.assign(Blockly.Blocks.resume, NclBlockMixin)
 Blockly.Blocks.set = {
   init: function () {
     this.actionLikeInit()
-
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.SET, 15, 15, '*'))
       .appendField(NCLBlocks.Msg.SET)
