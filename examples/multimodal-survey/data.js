@@ -2297,7 +2297,7 @@ _data.surveyJSON.pages.push({
       name: 'commentsQuestion1',
       rows: '9',
       title: {
-        en: `Chegamos ao fim de nosso entrevista. Se desejar, deixe comentários ou sugestões relacionados ao nosso estudo.`
+        en: `Chegamos ao fim de nosso estudo. Se desejar, deixe comentários ou sugestões relacionados ao nosso estudo.`
       }
     },
     {
@@ -2306,8 +2306,7 @@ _data.surveyJSON.pages.push({
       rows: '9',
       title: {
         en: `Adcionalmente, se desejar, você fale sobre que tipos de aplicações 
-          você gostaria de desenvolver com conceitos apresentados nessa
-          entrevista.`
+          você gostaria de desenvolver com conceitos apresentados nesse estudo.`
       }
     }
   ]
@@ -2320,8 +2319,8 @@ _data.surveyJSON.pages.push({
 _data.surveyJSON.completedHtml = `
     <br><br><br><br><br><br><br><br><br><br><br><br>
     <div class='alert alert-success' role='alert' style='text-align:center;'>
-      <h2>Muito bem!!! Terminamos a nossa entrevista.<br>
-      Obrigado por sua participação em nosso estudo.</h2>
+      <h2>Muito bem!!! Terminamos a nosso estudo.<br>
+      Obrigado por sua participação.</h2>
       <span class='glyphicon glyphicon-thumbs-up' style='font-size: 75px;'
         aria-hidden='true'></span>
     </div>`
