@@ -1562,6 +1562,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       `
     },
     {
+      type: 'html',
+      name: 'nclTask1',
+      html: `
+        <p>Tarefa 1: Por favor, analise com cuidado o código NCL a seguir.</p>
+      `
+    },
+    {
       type: 'comment',
       isRequired: true,
       name: 'nclTask1Question',
@@ -1570,10 +1577,12 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     },
     {
       type: 'html',
-      html: `O aplicação NCL acima foi modificada para permitir interações 
-      multimodais. O novo código é apresentado a seguir com as modificações 
-      destacadas:`,
-      name: 'nclTask2'
+      name: 'nclTask2',
+      html: `
+        <p>Tarefa 2: O aplicação NCL da Tarefa 1 foi modificada para permitir
+        interações multimodais. O novo código é apresentado a seguir com as
+        modificações destacadas. Por favor, analise com cuidado.</p>
+      `
     },
     {
       type: 'comment',
@@ -1587,9 +1596,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'nclTask3Question',
       rows: '47',
       title: {
-        en: `Tarefa 3: Agora, pedimos que edite o código NCL a seguir para
-        utilizar um interação por gestos inves de uma interação por comandos de
-        voz.`
+        en: `Tarefa 3: Agora, pedimos que edite o código NCL da Tarefa 2 para
+        que utilize uma interação por gestos inves de uma interação por comandos
+        de voz. OBS: O código foi copiado para facilitar sua edição.`
       }
     },
     {
@@ -1597,9 +1606,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'nclTask4Question',
       rows: '47',
       title: {
-        en: `Tarefa 4: Agora, pedimos que edite o código NCL anterior a seguir
+        en: `Tarefa 4: Agora, pedimos que edite o código NCL da Tarefa 2 
         para que apenas o segundo usuário de um grupo de usuário possa realizar
-        a interação.`
+        a interação. OBS: O código foi copiado para facilitar sua edição.`
       }
     }
   ]
@@ -2004,6 +2013,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       `
     },
     {
+      type: 'html',
+      name: 'htmlTask1',
+      html: `
+        <p>Tarefa 1: Por favor, analise com cuidado o código HTML a seguir.</p>
+      `
+    },
+    {
       type: 'comment',
       isRequired: true,
       name: 'htmlTask1Question',
@@ -2012,10 +2028,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     },
     {
       type: 'html',
-      html: `O aplicação HTML acima foi modificada para permitir interações 
-      multimodais. O novo código é apresentado a seguir com as modificações 
-      destacadas:`,
-      name: 'htmlTask2'
+      name: 'htmlTask2',
+      html: `
+        <p>Tarefa 2: O aplicação HTML da Tarefa 1 foi modificada para permitir
+        interações multimodais. O novo código é apresentado a seguir com as
+        modificações destacadas. Por favor, analise com cuidado o código
+        HTML.</p>
+      `
     },
     {
       type: 'comment',
@@ -2029,9 +2048,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'htmlTask3Question',
       rows: '9',
       title: {
-        en: `Tarefa 3: Agora, pedimos que edite o código HTML a seguir para
-        utilizar um interação por gestos inves de uma interação por comandos de
-        voz.`
+        en: `Tarefa 3: Agora, pedimos que edite o código da Tarefa 2 para que
+        utilize uma interação por gestos inves de uma interação por comandos de
+        voz. OBS: O código foi copiado para facilitar sua edição.`
       }
     },
     {
@@ -2039,15 +2058,15 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'htmlTask4Question',
       rows: '9',
       title: {
-        en: `Tarefa 4: Agora, pedimos que edite o código HTML anterior a seguir
-        para que apenas o segundo usuário de um grupo de usuário possa realizar
-        a interação.`
+        en: `Tarefa 4: Agora, pedimos que edite o Tarefa 2 para que utilize que
+        apenas o segundo usuário de um grupo de usuário possa realizar
+        a interação. OBS: O código foi copiado para facilitar sua edição.`
       }
     }
   ]
 })
 
-_data.htmlTask1 = `
+_data.htmlTask1Code = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;">
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
@@ -2070,7 +2089,7 @@ _data.htmlTask2CodeOnly = `
   </html>
 `
 
-_data.htmlTask2 = `
+_data.htmlTask2Code = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;">
   <![CDATA[` + _data.htmlTask2CodeOnly + `]]></script>
 `

@@ -69,7 +69,7 @@ if ($('#surveyPageNo').length) {
 $('#surveyPageNo').change(function () {
   _survey.currentPageNo = this.value
 })
-$('#surveyPageNo').val(5).change()
+$('#surveyPageNo').val(7).change()
 
 // ----------------------------------------
 // survey listeners
@@ -204,11 +204,11 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       $('#nclIntro3bCode').append(_data.nclIntro3bCode)
       SyntaxHighlighter.highlight()
       break
-    case 'nclTask1Question':
+    case 'nclTask1':
       $('#' + questionId).append(_data.nclTask1Code)
       SyntaxHighlighter.highlight()
       break
-    case 'nclTask2Question':
+    case 'nclTask2':
       $('#' + questionId).append(_data.nclTask2Code)
       SyntaxHighlighter.highlight()
       break
@@ -231,12 +231,12 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       $('#htmlIntro3bCode').append(_data.htmlIntro3bCode)
       SyntaxHighlighter.highlight()
       break
-    case 'htmlTask1Question':
-      $('#' + questionId).append(_data.htmlTask1)
+    case 'htmlTask1':
+      $('#' + questionId).append(_data.htmlTask1Code)
       SyntaxHighlighter.highlight()
       break
-    case 'htmlTask2Question':
-      $('#' + questionId).append(_data.htmlTask2)
+    case 'htmlTask2':
+      $('#' + questionId).append(_data.htmlTask2Code)
       SyntaxHighlighter.highlight()
       break
     case 'htmlTask3Question':
