@@ -1390,18 +1390,14 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         voz no formato SRGS. Em particular, ele define uma porção chamada
         <em>repete</em> que define o reconhecimento de voz "repita vídeo"</p
         ><br>
-        </div>
         <div id='nclIntro2aCode'></div><br>
 
-        <div style="text-align: justify; width: 70%;">
         <p>O trecho de código a seguir apresente o arquivo
         <em>rec_gestos.gml</em>. Esse arquivo é uma descrição de reconhecimento de voz no formato GML. Em particular, ele define duas porções chamadas
         <em>swipe_esquerda</em> e  <em>swipe_direita</em>que definem acenos de mão para esquerda e para direita, respectivamente</p><br>
-        </div>
 
         <div id='nclIntro2bCode'></div><br>
 
-        <div style="text-align: justify; width: 70%;">
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em NCL, o código
         a seguir são uma nova versão da aplicação que reinicia um video dado uma
         interação. Mas nessa versão, ao inves de clicar, o vídeo é reiniciado ao
@@ -1422,23 +1418,26 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>&ltlink></em>(linhas 27-30) defique que o <em>video_principal</em>
         deve ser reiniciado (stop e start) quando for reconhecido o trecho
         <em>repete</em></p><br>
-        </div>
 
         <div id='nclIntro2cCode'></div><br>
+        </div>
       `
     },
     {
       name: 'nclIntro3',
       type: 'html',
       html: `
+        <div style="text-align: justify; width: 70%;">
         <p>Agora, vamos detalhar o elemento <em>Grupo de Usuários</em> em NCL.
         Para implementar esse Reconhecedor propomos o elemento de
         <em>&ltuserClass></em></p><br>
+
         <div id='nclIntro3aCode'></div><br>
 
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em NCL, o código a seguir são uma nova versão da aplicação que reinicia um video dado uma interação. Mas nessa versão, ao inves de clicar, o vídeo é reiniciado ao usuário falar "repetir video".</p><br>
 
         <div id='nclIntro3bCode'></div><br>
+        </div>
       `
     }
   ]
@@ -1629,7 +1628,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       name: 'nclTask1',
       html: `
+        <div style="text-align: justify; width: 70%;">
         <p>Tarefa 1: Por favor, analise com cuidado o código NCL a seguir.</p>
+        <div id='nclTask1Code'></div><br>
+        </div>
       `
     },
     {
@@ -1647,6 +1649,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Tarefa 2: O aplicação NCL da Tarefa 1 foi modificada para permitir
         interações multimodais. O novo código é apresentado a seguir com as
         modificações destacadas. Por favor, analise com cuidado.</p>
+        <div id='nclTask2Code'></div><br>
         </div>
       `
     },
@@ -1663,9 +1666,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       rows: '47',
       title: {
         en: `
-          Tarefa 3: Agora, pedimos que edite o código NCL da Tarefa 2 para que
-          utilize uma interação por gestos inves de uma interação por comandos
-          de voz. OBS: O código foi copiado para facilitar sua edição. 
+          Tarefa 3: Agora, pedimos que edite o código NCL da Tarefa 2 (copiado a
+          seguir) para que utilize uma interação por gestos inves de uma
+          interação por comandos de voz. 
         `
       }
     },
@@ -1675,10 +1678,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       rows: '47',
       title: {
         en: `
-          Tarefa 4: Agora, pedimos que edite o código NCL da Tarefa 2 
-          para que apenas o segundo usuário de um grupo de usuário possa
-          realizar a interação. OBS: O código foi copiado para facilitar sua
-          edição.
+          Tarefa 4: Agora, pedimos que edite o código NCL da Tarefa 2 (copiado a
+          seguir)  para que apenas o segundo usuário de um grupo de usuário
+          possa realizar a interação.
         `
       }
     }
@@ -1965,19 +1967,15 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         voz no formato SRGS. Em particular, ele define uma porção chamada
         <em>repete</em> que define o reconhecimento de voz "repita vídeo"</p
         ><br>
-        </div>
 
         <div id='htmlIntro2aCode'></div><br>
 
-        <div style="text-align: justify; width: 70%;">
         <p>O trecho de código a seguir apresente o arquivo
         <em>rec_gestos.gml</em>. Esse arquivo é uma descrição de reconhecimento de voz no formato GML. Em particular, ele define duas porções chamadas
         <em>swipe_esquerda</em> e  <em>swipe_direita</em>que definem acenos de mão para esquerda e para direita, respectivamente</p><br>
-        </div>
 
         <div id='htmlIntro2bCode'></div><br>
 
-        <div style="text-align: justify; width: 70%;">
         <p>O trecho de código a seguir ilustra uma aplicação que apresenta um
         vídeo, ao qual pode ser reniciado em sua portão de creditos por comandos
         de voz. Mais precisamente, a aplicação utiliza um elemento
@@ -1995,9 +1993,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>&ltlink></em>(linhas 27-30) defique que o <em>video_principal</em>
         deve ser reiniciado (stop e start) quando for reconhecido o trecho
         <em>repete</em></p><br>
-        </div>
 
         <div id='htmlIntro2cCode'></div><br>
+        </div>
       `
     },
     {
@@ -2145,9 +2143,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       rows: '9',
       title: {
         en: `
-          Tarefa 3: Agora, pedimos que edite o código da Tarefa 2 para que
-          utilize uma interação por gestos inves de uma interação por comandos
-          de voz. OBS: O código foi copiado para facilitar sua edição.
+          Tarefa 3: Agora, pedimos que edite o código da Tarefa 2 ((copiado a
+          seguir) para que utilize uma interação por gestos inves de uma
+          interação por comandos de voz.
         `
       }
     },
@@ -2157,9 +2155,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       rows: '9',
       title: {
         en: `
-          Tarefa 4: Agora, pedimos que edite o Tarefa 2 para que utilize que
-          apenas o segundo usuário de um grupo de usuário possa realizar
-          a interação. OBS: O código foi copiado para facilitar sua edição.
+          Tarefa 4: Agora, pedimos que edite o Tarefa 2 (copiado a seguir) para
+          que utilize que apenas o segundo usuário de um grupo de 3 usuários
+          possa realizar a interação.
         `
       }
     }
