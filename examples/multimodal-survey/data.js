@@ -29,47 +29,48 @@ _data.surveyJSON.pages.push({
     {
       type: 'html',
       html: `
-            <div style="text-align: justify; width: 70%;">
-            <p>O TeleMídia é um grupo de pesquisa do Departamento de Informática
-            da PUC-Rio. O TeleMídia desenvolve pesquisas nas áreas de Sistemas 
-            Multimídia e Redes de Computadores. Em particular, Sistemas de TV 
-            Digital terrestre e IPTV, têm sido foco de pesquisa e inovação do 
-            laboratório nos últimos anos.</p><br>
-            
-            <p>Convidamos a você a participar de uma estudo sobre nossa pesquisa
-            sobre <i>Interações multimodais em linguagens
-            multimídia</i>.</p><br>
-            
-            <p><strong>Ressaltamos que este estudo NÃO se destina a avaliar
-            você, mas sim capturar evidências para nossa
-            pesquisa.</strong></p><br>
-            
-            <p>Para prosseguirmos, pedimos seu consentimento para realizarmos
-            este estudo e informamos que:</p> 
-            <ul> 
-            <li>Os dados coletados destinam-se estritamente a atividades de
-            pesquisa e desenvolvimento, e somente os pesquisadores do TeleMídia
-            têm acesso à integra do material resultante do estudo .</li> 
-            <li>A divulgação dos resultados de nossa pesquisa em foros
-            científicos e/ou pedagógicos pauta-se no respeito à privacidade, e o
-            anonimato dos participantes é preservado em qualquer material
-            publicado.</li> 
-            </ul>
-            </div>
+        <div style="text-align: justify; width: 70%;">
+        <p>O TeleMídia é um grupo de pesquisa do Departamento de Informática
+        da PUC-Rio. O TeleMídia desenvolve pesquisas nas áreas de Sistemas 
+        Multimídia e Redes de Computadores. Em particular, Sistemas de TV 
+        Digital terrestre e IPTV, têm sido foco de pesquisa e inovação do 
+        laboratório nos últimos anos.</p><br>
+        
+        <p>Convidamos a você a participar de uma estudo sobre nossa pesquisa
+        sobre <i>Interações multimodais em linguagens
+        multimídia</i>.</p><br>
+        
+        <p><strong>Ressaltamos que este estudo NÃO se destina a avaliar
+        você, mas sim capturar evidências para nossa
+        pesquisa.</strong></p><br>
+        
+        <p>Para prosseguirmos, pedimos seu consentimento para realizarmos
+        este estudo e informamos que:</p> 
+        <ul> 
+        <li>Os dados coletados destinam-se estritamente a atividades de
+        pesquisa e desenvolvimento, e somente os pesquisadores do TeleMídia
+        têm acesso à integra do material resultante do estudo .</li> 
+        <li>A divulgação dos resultados de nossa pesquisa em foros
+        científicos e/ou pedagógicos pauta-se no respeito à privacidade, e o
+        anonimato dos participantes é preservado em qualquer material
+        publicado.</li> 
+        </ul>
+        </div>
 
-          `
+      `
     },
     {
       type: 'html',
-      html: `<div style="text-align: justify; width: 70%;">
-            <p>Caso esteja de acordo, prossiga.</p><br>
+      html: `
+        <div style="text-align: justify; width: 70%;">
+        <p>Caso esteja de acordo, prossiga.</p><br>
 
-            OBS: Este estudo é feito em uma única página web. Caso deseje
-            navegar entre as seções do estudo, <strong>NÃO</strong> utilize
-            os botões de navegação do seu browser, e sim use os botôes
-            <em>voltar</em> e <em>prosseguir</em> no final de cada seção do
-            estudo.      
-            </div>
+        OBS: Este estudo é feito em uma única página web. Caso deseje
+        navegar entre as seções do estudo, <strong>NÃO</strong> utilize
+        os botões de navegação do seu browser, e sim use os botôes
+        <em>voltar</em> e <em>prosseguir</em> no final de cada seção do
+        estudo.      
+        </div>
       `
     }
   ]
@@ -472,93 +473,93 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       name: 'conceptsIntro3',
       html: `
-            <div style="text-align: justify; width: 70%;">
-            <p>Agora, detalhamos a seguir o elemento <em>Reconhecedor</em>.</p>
-            <br>
+        <div style="text-align: justify; width: 70%;">
+        <p>Agora, detalhamos a seguir o elemento <em>Reconhecedor</em>.</p>
+        <br>
 
-            <p> O <em>Reconhecedor</em> também é definido por um identificador e
-            por seu conteúdo. Entretanto, diferente de <em>Mídia</em>, o
-            conteúdo de um <em>Reconhecedor</em> deve ser uma descrição de
-            reconhecimento. Exemplos dessas são descrições que definem
-            comandos de voz ou gestos de mão. Logo, porções de um
-            <em>Reconhecedor</em> são porções de uma descrição de
-            reconhecimento.</p><br>
+        <p> O <em>Reconhecedor</em> também é definido por um identificador e
+        por seu conteúdo. Entretanto, diferente de <em>Mídia</em>, o
+        conteúdo de um <em>Reconhecedor</em> deve ser uma descrição de
+        reconhecimento. Exemplos dessas são descrições que definem
+        comandos de voz ou gestos de mão. Logo, porções de um
+        <em>Reconhecedor</em> são porções de uma descrição de
+        reconhecimento.</p><br>
 
-            <p>Os blocos a seguir definem os reconhecedores <em>rec_voz</em> e
-            <em>rec_gestos</em>. O <em>rec_voz</em> tem um reconhecimento de
-            voz como conteúdo. Essa descrição tem o trecho <em>repetir</em> que
-            reconhece o comando de voz "repetir vídeo". O <rec_gestos> tem uma
-            descrição de reconhecimento de gestos como conteúdo. Esse conteúdo
-            utiliza dois trechos, esquerda e direita, para definir gestos de mão
-            nessas direções.</p><br> 
-            </div>
-            
-            <div id='conceptsIntro3a'></div><br> 
-            
-            <div style="text-align: justify; width: 70%;">
-            <p>Para ilustrar o uso de um <em>Reconhecedor</em>, os blocos a
-            seguir são uma nova versão da aplicação que reinicia um vídeo dada
-            uma interação. Mas nessa versão, ao invés de clicar, o vídeo é
-            reiniciado ao usuário falar "repetir vídeo".</p><br>
-            
-            <p>Mais precisamente, os blocos definem uma <em>Mídia</em>
-            (<em>midia_principal</em>), um <em>Reconhecedor</em>
-            (<em>rec_voz</em>) e três <em>Sincronismo</em>s. O primeiro
-            <em>Sincronismo</em> define que <em>midia_principal</em> é iniciada
-            com a aplicação. O segundo <em>Sincronismo</em> define que quando a
-            <em>midia_principal</em> alcançar o seu trecho de <em>creditos</em>,
-            o <em>Reconhecedor</em> <em>rec_voz</em> deve ser iniciado. O
-            último <em>Sincronismo</em> define que quando o trecho
-            <em>repetir</em> for reconhecido a <em>midia_principal</em> deve ser
-            reiniciada (terminada e inciada).</p><br>
-            </div>
-            
-            <div id='conceptsIntro3b'></div><br>
-          `
+        <p>Os blocos a seguir definem os reconhecedores <em>rec_voz</em> e
+        <em>rec_gestos</em>. O <em>rec_voz</em> tem um reconhecimento de
+        voz como conteúdo. Essa descrição tem o trecho <em>repetir</em> que
+        reconhece o comando de voz "repetir vídeo". O <rec_gestos> tem uma
+        descrição de reconhecimento de gestos como conteúdo. Esse conteúdo
+        utiliza dois trechos, esquerda e direita, para definir gestos de mão
+        nessas direções.</p><br> 
+        </div>
+        
+        <div id='conceptsIntro3a'></div><br> 
+        
+        <div style="text-align: justify; width: 70%;">
+        <p>Para ilustrar o uso de um <em>Reconhecedor</em>, os blocos a
+        seguir são uma nova versão da aplicação que reinicia um vídeo dada
+        uma interação. Mas nessa versão, ao invés de clicar, o vídeo é
+        reiniciado ao usuário falar "repetir vídeo".</p><br>
+        
+        <p>Mais precisamente, os blocos definem uma <em>Mídia</em>
+        (<em>midia_principal</em>), um <em>Reconhecedor</em>
+        (<em>rec_voz</em>) e três <em>Sincronismo</em>s. O primeiro
+        <em>Sincronismo</em> define que <em>midia_principal</em> é iniciada
+        com a aplicação. O segundo <em>Sincronismo</em> define que quando a
+        <em>midia_principal</em> alcançar o seu trecho de <em>creditos</em>,
+        o <em>Reconhecedor</em> <em>rec_voz</em> deve ser iniciado. O
+        último <em>Sincronismo</em> define que quando o trecho
+        <em>repetir</em> for reconhecido a <em>midia_principal</em> deve ser
+        reiniciada (terminada e inciada).</p><br>
+        </div>
+        
+        <div id='conceptsIntro3b'></div><br>
+      `
     },
     {
       type: 'html',
       name: 'conceptsIntro4',
       html: `
-            <div style="text-align: justify; width: 70%;">
+        <div style="text-align: justify; width: 70%;">
 
-            <p>Por fim, vamos detalhar o elemento <em>Grupo de
-            usuários</em>.</p><br>
+        <p>Por fim, vamos detalhar o elemento <em>Grupo de
+        usuários</em>.</p><br>
 
-            <p> O elemento <em>Grupo de Usuários</em> é definido por um
-            identificador, pelo número de membros que podem participar do grupo
-            e pelos dispositivos que um ususário necessita possuir para
-            participar do grupo.</p><br>
-            
-            <p>Os blocos a seguir definem um grupo de usuário <em>gu_gestos</em>
-            que pode ter até 3 membros, cada um com seu reconhecedor de gestos
-            (e.g. LeapMotion).</p><br>
-            </div>
+        <p> O elemento <em>Grupo de Usuários</em> é definido por um
+        identificador, pelo número de membros que podem participar do grupo
+        e pelos dispositivos que um ususário necessita possuir para
+        participar do grupo.</p><br>
+        
+        <p>Os blocos a seguir definem um grupo de usuário <em>gu_gestos</em>
+        que pode ter até 3 membros, cada um com seu reconhecedor de gestos
+        (e.g. LeapMotion).</p><br>
+        </div>
 
-            <div id='conceptsIntro4a'></div><br>
+        <div id='conceptsIntro4a'></div><br>
 
-            <div style="text-align: justify; width: 70%;">
+        <div style="text-align: justify; width: 70%;">
 
-            <p>Para ilustrar o uso de um <em>Grupo de Usuários</em>, os blocos a
-            seguir são uma nova versão da aplicação que reinicia um vídeo dado]a
-            uma interação. Mas nessa versão, o vídeo é reiniciado apenas quando
-            o segundo usuário falar "repetir video".</p> <br>
+        <p>Para ilustrar o uso de um <em>Grupo de Usuários</em>, os blocos a
+        seguir são uma nova versão da aplicação que reinicia um vídeo dado]a
+        uma interação. Mas nessa versão, o vídeo é reiniciado apenas quando
+        o segundo usuário falar "repetir video".</p> <br>
 
-            <p>Mais precisamente, os blocos definem uma <em>Mídia</em>
-            (<em>midia_principal</em>), um <em>Reconhecedor</em>
-            (<em>rec_voz</em>), um <em>Grupo de Usuário</em> (<em>gu_voz</em>) e
-            três <em>Sincronismo</em>s. O primeiro <em>Sincronismo</em> define
-            que <em>midia_principal</em> é iniciada com a aplicação. O segundo
-            <em>Sincronismo</em> define que quando a <em>midia_principal</em>
-            alcançar o seu trecho de <em>creditos</em>, o <em>Reconhecedor</em>
-            <em>rec_voz</em> deve ser iniciado. O último <em>Sincronismo</em>
-            define que quando o trecho <em>repetir</em> for reconhecido a
-            <em>midia_principal</em> deve ser reiniciada (terminada e
-            iniciada).</p><br>
-            </div>
-            
-            <div id='conceptsIntro4b'></div><br>
-          `
+        <p>Mais precisamente, os blocos definem uma <em>Mídia</em>
+        (<em>midia_principal</em>), um <em>Reconhecedor</em>
+        (<em>rec_voz</em>), um <em>Grupo de Usuário</em> (<em>gu_voz</em>) e
+        três <em>Sincronismo</em>s. O primeiro <em>Sincronismo</em> define
+        que <em>midia_principal</em> é iniciada com a aplicação. O segundo
+        <em>Sincronismo</em> define que quando a <em>midia_principal</em>
+        alcançar o seu trecho de <em>creditos</em>, o <em>Reconhecedor</em>
+        <em>rec_voz</em> deve ser iniciado. O último <em>Sincronismo</em>
+        define que quando o trecho <em>repetir</em> for reconhecido a
+        <em>midia_principal</em> deve ser reiniciada (terminada e
+        iniciada).</p><br>
+        </div>
+        
+        <div id='conceptsIntro4b'></div><br>
+      `
     }
   ]
 })
@@ -1498,8 +1499,7 @@ _data.nclIntro2bCode = `
     </Gesture>
     
   </GestureMarkupLanguage>
-    ]]>
-    </script>
+  ]]></script>
 `
 _data.nclIntro2cCode = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
@@ -1737,8 +1737,7 @@ _data.nclTask1Code = `
         <bind role="start" component="video_principal" />
       </link>
     </body>
-  </ncl>]]>
-  </script>
+  </ncl>]]></script>
 `
 _data.nclTask2CodeOnly = `
   <?xml version= "1.0" encoding= "ISO-8859-1" ?>
@@ -2313,10 +2312,11 @@ _data.surveyJSON.pages.push({
 // ----------------------------------------
 
 _data.surveyJSON.completedHtml = `
-    <br><br><br><br><br><br><br><br><br><br><br><br>
-    <div class='alert alert-success' role='alert' style='text-align:center;'>
-      <h2>Muito bem!!! Terminamos a nosso estudo.<br>
-      Obrigado por sua participação.</h2>
-      <span class='glyphicon glyphicon-thumbs-up' style='font-size: 75px;'
-        aria-hidden='true'></span>
-    </div>`
+  <br><br><br><br><br><br><br><br><br><br><br><br>
+  <div class='alert alert-success' role='alert' style='text-align:center;'>
+    <h2>Muito bem!!! Terminamos a nosso estudo.<br>
+    Obrigado por sua participação.</h2>
+    <span class='glyphicon glyphicon-thumbs-up' style='font-size: 75px;'
+      aria-hidden='true'></span>
+  </div>
+`
