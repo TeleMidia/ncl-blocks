@@ -69,7 +69,7 @@ if ($('#surveyPageNo').length) {
 $('#surveyPageNo').change(function () {
   _survey.currentPageNo = this.value
 })
-$('#surveyPageNo').val(5).change()
+$('#surveyPageNo').val(7).change()
 
 // ----------------------------------------
 // survey listeners
@@ -212,6 +212,12 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       $('#' + questionId).append(_data.nclTask2Code)
       SyntaxHighlighter.highlight()
       break
+    case 'nclTask3':
+      _survey.getQuestionByName('nclTask3').value = _data.nclTask2CodeOnly
+      break
+    case 'nclTask4':
+      _survey.getQuestionByName('nclTask4').value = _data.nclTask2CodeOnly
+      break
     case 'htmlIntro2':
       $('#htmlIntro2aCode').append(_data.htmlIntro2aCode)
       $('#htmlIntro2bCode').append(_data.htmlIntro2bCode)
@@ -223,13 +229,19 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       $('#htmlIntro3bCode').append(_data.htmlIntro3bCode)
       SyntaxHighlighter.highlight()
       break
-    case 'htmlCode1':
-      $('#' + questionId).append(_data.htmlCode1)
+    case 'htmlTask1':
+      $('#' + questionId).append(_data.htmlTask1)
       SyntaxHighlighter.highlight()
       break
-    case 'htmlCode2':
-      $('#' + questionId).append(_data.htmlCode2)
+    case 'htmlTask2':
+      $('#' + questionId).append(_data.htmlTask2)
       SyntaxHighlighter.highlight()
+      break
+    case 'htmlTask3':
+      _survey.getQuestionByName('htmlTask3').value = _data.htmlTask2CodeOnly
+      break
+    case 'htmlTask4':
+      _survey.getQuestionByName('htmlTask4').value = _data.htmlTask2CodeOnly
       break
   }
   window.scrollTo(0, 0)

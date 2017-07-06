@@ -1574,6 +1574,26 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'nclTask2Question',
       rows: '9',
       title: 'Qual o novo comportamento da aplicação?'
+    },
+    {
+      type: 'comment',
+      name: 'nclTask3',
+      rows: '47',
+      title: {
+        en: `Tarefa 3: Agora, pedimos que edite o código NCL a seguir para
+        utilizar um interação por gestos inves de uma interação por comandos de
+        voz.`
+      }
+    },
+    {
+      type: 'comment',
+      name: 'nclTask4',
+      rows: '47',
+      title: {
+        en: `Tarefa 4: Agora, pedimos que edite o código NCL anterior a seguir
+        para que apenas o segundo usuário de um grupo de usuário possa realizar
+        a interação.`
+      }
     }
   ]
 })
@@ -1631,9 +1651,7 @@ _data.nclTask1Code = `
   </ncl>]]>
   </script>
 `
-_data.nclTask2Code = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false; highlight: [9,10,11,12,13,14,15,30,32,34,35,39,40]">
-  <![CDATA[
+_data.nclTask2CodeOnly = `
   <?xml version= "1.0" encoding= "ISO-8859-1" ?>
   <ncl xmlns="http://www.ncl.org.br/NCL3.0/EDTVProfile">
     <head>
@@ -1678,9 +1696,11 @@ _data.nclTask2Code = `
         <bind role="start" component="video_praia" />
       </link>
     </body>
-  </ncl>]]>
-  </script>
+  </ncl>
 `
+
+_data.nclTask1Code = `
+<script type="syntaxhighlighter" class="brush: xml; toolbar: false; highlight: [9,10,11,12,13,14,15,30,32,34,35,39,40]"> <![CDATA[` + _data.nclTask2CodeOnly + ` ]]></script>`
 
 // ----------------------------------------
 // ncl feedback page
@@ -1967,12 +1987,12 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `O código a seguir consiste em uma aplicação HTML sem interações 
       multimodais.`,
-      name: 'htmlCode1'
+      name: 'htmlTask1'
     },
     {
       type: 'comment',
       isRequired: true,
-      name: 'htmlQuestion1',
+      name: 'htmlTask1Question',
       rows: '9',
       title: 'Qual o comportamento da aplicação?'
     },
@@ -1981,19 +2001,39 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `O aplicação HTML acima foi modificada para permitir interações 
       multimodais. O novo código é apresentado a seguir com as modificações 
       destacadas:`,
-      name: 'htmlCode2'
+      name: 'htmlTask2'
     },
     {
       type: 'comment',
       isRequired: true,
-      name: 'htmlQuestion2',
+      name: 'htmlTask2Question',
       rows: '9',
       title: 'Qual o novo comportamento da aplicação?'
+    },
+    {
+      type: 'comment',
+      name: 'htmlTask3',
+      rows: '9',
+      title: {
+        en: `Tarefa 3: Agora, pedimos que edite o código HTML a seguir para
+        utilizar um interação por gestos inves de uma interação por comandos de
+        voz.`
+      }
+    },
+    {
+      type: 'comment',
+      name: 'htmlTask4',
+      rows: '9',
+      title: {
+        en: `Tarefa 4: Agora, pedimos que edite o código HTML anterior a seguir
+        para que apenas o segundo usuário de um grupo de usuário possa realizar
+        a interação.`
+      }
     }
   ]
 })
 
-_data.htmlCode1 = `
+_data.htmlTask1 = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;">
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
@@ -2006,17 +2046,19 @@ _data.htmlCode1 = `
   </script>
 `
 
-_data.htmlCode2 = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;">
-  <![CDATA[
+_data.htmlTask2CodeOnly = `
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <html>
     <head>
     </head>
     <body>
     </body>
-  </html>]]>
-  </script>
+  </html>
+`
+
+_data.htmlTask2 = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;">
+  <![CDATA[` + _data.htmlTask2CodeOnly + `]]></script>
 `
 
 // ----------------------------------------
