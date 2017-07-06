@@ -5,7 +5,7 @@ var _data = {}
 // ----------------------------------------
 
 _data.surveyJSON = {
-  completeText: 'Finalizar entrevista',
+  completeText: 'Finalizar estudo',
   focusFirstQuestionAutomatic: false,
   locale: 'en',
   pageNextText: 'prosseguir',
@@ -67,8 +67,8 @@ _data.surveyJSON.pages.push({
             OBS: Este estudo é feito em uma única página web. Caso deseje
             navegar entre as seções do estudo, <strong>NÃO</strong> utilize
             os botões de navegação do seu browser, e sim use os botôes
-            <em>voltar</em> e <em>prosseguir</em> no final de cada seção da
-            entrevista.      
+            <em>voltar</em> e <em>prosseguir</em> no final de cada seção do
+            estudo.      
             </div>
       `
     }
