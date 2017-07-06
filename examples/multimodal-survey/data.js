@@ -8,7 +8,7 @@ _data.surveyJSON = {
   completeText: 'Finalizar entrevista',
   focusFirstQuestionAutomatic: false,
   locale: 'en',
-  pageNextText: 'seguir',
+  pageNextText: 'prosseguir',
   pagePrevText: 'voltar',
   requiredText: '',
   showProgressBar: 'top',
@@ -59,7 +59,12 @@ _data.surveyJSON.pages.push({
     },
     {
       type: 'html',
-      html: 'Caso esteja de acordo, prossiga.'
+      html: `<p>Caso esteja de acordo, prossiga.</p><br>
+            OBS: Essa entrevista é feita em uma única pagina dinâmica. Caso
+            dejese navegar entre as seções da entrevista, não utilize os botões
+            de navegação do seu browser, e sim use os botôes <em>voltar</em> e
+            <em>prosseguir</em> no final de cada seção da entrevista.      
+      `
     }
   ]
 })
