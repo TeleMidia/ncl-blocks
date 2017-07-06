@@ -226,7 +226,7 @@ NCLBlocks.disableTypeCheck = function () {
 // xml blocks functions
 // ----------------------------------------
 
-NCLBlocks.calculateHeight = function (numBlocks, oneBlockHeight) {
+NCLBlocks.calcHt = function (numBlocks, oneBlockHeight) {
   return 20 * (1 + numBlocks) + oneBlockHeight * numBlocks + 'px'
 }
 

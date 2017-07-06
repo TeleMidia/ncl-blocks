@@ -113,35 +113,35 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
   switch (questionName) {
     case 'conceptsIntro1':
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro1a',
-        NCLBlocks.calculateHeight(1, 60), _data.blocksIntro1aXml, true)
+        NCLBlocks.calcHt(1, 60), _data.blocksIntro1aXml, true)
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro1b',
-        NCLBlocks.calculateHeight(1, 110), _data.blocksIntro1bXml, true)
+        NCLBlocks.calcHt(1, 110), _data.blocksIntro1bXml, true)
       break
     case 'conceptsIntro2':
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro2a',
-        NCLBlocks.calculateHeight(2, 100), _data.blocksIntro2aXml, true)
+        NCLBlocks.calcHt(2, 100), _data.blocksIntro2aXml, true)
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro2b',
-        NCLBlocks.calculateHeight(3, 110), _data.blocksIntro2bXml, true)
+        NCLBlocks.calcHt(3, 110), _data.blocksIntro2bXml, true)
       break
     case 'conceptsIntro3':
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro3a',
-        NCLBlocks.calculateHeight(2, 200), _data.blocksIntro3aXml, true)
+        NCLBlocks.calcHt(2, 200), _data.blocksIntro3aXml, true)
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro3b',
-        NCLBlocks.calculateHeight(3, 110), _data.blocksIntro3bXml, true)
+        NCLBlocks.calcHt(3, 110), _data.blocksIntro3bXml, true)
       break
     case 'conceptsIntro4':
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro4a',
-        NCLBlocks.calculateHeight(1, 130), _data.blocksIntro4aXml, true)
+        NCLBlocks.calcHt(1, 130), _data.blocksIntro4aXml, true)
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro4b',
-        NCLBlocks.calculateHeight(3, 140), _data.blocksIntro4bXml, true)
+        NCLBlocks.calcHt(3, 140), _data.blocksIntro4bXml, true)
       break
     case 'conceptsTask1':
       NCLBlocks.injectInDiv(_pathToBlockly, questionId,
-        NCLBlocks.calculateHeight(5, 145), _data.blocksTask1Xml, true)
+        NCLBlocks.calcHt(5, 145), _data.blocksTask1Xml, true)
       break
     case 'conceptsTask2':
       NCLBlocks.injectInDiv(_pathToBlockly, questionId,
-        NCLBlocks.calculateHeight(6, 145), _data.blocksTask2Xml, true)
+        NCLBlocks.calcHt(6, 145), _data.blocksTask2Xml, true)
       break
     case 'conceptsTask3':
       if (_survey.getQuestionByName('conceptsTask3Changes').value) {
@@ -149,7 +149,7 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
         result = JSON.parse(_survey.getQuestionByName('conceptsTask3Changes').value)
         _survey.getQuestionByName('conceptsTask3Changes').value = ''
         _blocksTask3Workspace = NCLBlocks.injectInDiv(_pathToBlockly,
-          questionId, NCLBlocks.calculateHeight(6, 145), '', false, ['excludeResumePauseSet'])
+          questionId, NCLBlocks.calcHt(9, 130), '', false, ['excludeResumePauseSet'])
         for (i in result.changes) {
           event = Blockly.Events.fromJson(result.changes[i],
             _blocksTask3Workspace)
@@ -158,7 +158,7 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       } else {
         // first inject
         _blocksTask3Workspace = NCLBlocks.injectInDiv(_pathToBlockly,
-          questionId, NCLBlocks.calculateHeight(6, 145), _data.blocksTask2Xml,
+          questionId, NCLBlocks.calcHt(9, 130), _data.blocksTask2Xml,
           false, ['excludeResumePauseSet'])
         setNotEdited = function () {
           _blocksTask3WorkspaceEdited = false
@@ -173,7 +173,7 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
         result = JSON.parse(_survey.getQuestionByName('conceptsTask4Changes').value)
         _survey.getQuestionByName('conceptsTask4Changes').value = ''
         _blocksTask4Workspace = NCLBlocks.injectInDiv(_pathToBlockly,
-          questionId, NCLBlocks.calculateHeight(6, 145), '', false, ['excludeResumePauseSet'])
+          questionId, NCLBlocks.calcHt(9, 130), '', false, ['excludeResumePauseSet'])
         for (i in result.changes) {
           event = Blockly.Events.fromJson(result.changes[i],
             _blocksTask4Workspace)
@@ -182,7 +182,7 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       } else {
         // first inject
         _blocksTask4Workspace = NCLBlocks.injectInDiv(_pathToBlockly,
-          questionId, NCLBlocks.calculateHeight(6, 145), _data.blocksTask2Xml,
+          questionId, NCLBlocks.calcHt(9, 130), _data.blocksTask2Xml,
           false, ['excludeResumePauseSet'])
         setNotEdited = function () {
           _blocksTask4WorkspaceEdited = false
