@@ -126,7 +126,7 @@ _data.surveyJSON.pages.push({
       isRequired: true,
       name: 'sintax',
       title: `De que maneira a sintaxe da NCL influencia o
-       desenvolvimento aplicações?`,
+       desenvolvimento de aplicações?`,
       choices: ['atrapalha muito', 'atrapalha bastante', 'atrapalha pouco',
         'indiferente', 'ajuda pouco', 'ajuda bastante', 'ajuda muito']
     },
@@ -155,6 +155,14 @@ _data.surveyJSON.pages.push({
       e Prototype?`,
       choices: ['nunca', 'quase nunca',
         'indiferente', 'quase sempre ', 'sempre']
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'sintax',
+      title: `Você desenvolve aplicações multimídia interativas?`,
+      choices: ['nunca', 'quase nunca',
+        'razoável', 'quase sempre', 'sempre']
     }
   ]
 })
