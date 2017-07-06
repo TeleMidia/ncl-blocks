@@ -1214,97 +1214,70 @@ _data.surveyJSON.pages.push({
   name: 'conceptsFeedback',
   elements: [
     {
+      type: 'html',
+      html: `
+        <div style="text-align: justify; width: 70%;">
+        <p>Para capturar evidências de nossa pesquisa, por favor, opnie sobre os pontos a seguir.</p>
+        </div>
+      `
+    },
+    {
       type: 'radiogroup',
       isRequired: true,
       name: 'conceptsFeedbackQuestion1',
       title: `Os conceitos apresentadados permitem realizar mais facilmente 
             o desenvolmento de aplicações multimodais`,
-      choices: [
-        {
-          value: '0',
-          text: {
-            en: 'bastante improvável'
-          }
-        }, {
-          value: '1',
-          text: {
-            en: 'muito improvável'
-          }
-        }, {
-          value: '2',
-          text: {
-            en: 'pouco improvável'
-          }
-        }, {
-          value: '3',
-          text: {
-            en: 'indiferente'
-          }
-        }, {
-          value: '4',
-          text: {
-            en: 'pouco provável'
-          }
-        }, {
-          value: '5',
-          text: {
-            en: 'muito provável'
-          }
-        }, {
-          value: '6',
-          text: {
-            en: 'bastante provável'
-          }
-        }
-      ]
+      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
+        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
+        'concordo fortemente']
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'conceptsFeedbackQuestion2',
       title: `Os conceitos apresentadados permitem realizar mais 
-            rapidamente o desenvolmento de aplicações multimodais?`,
-      choices: ['bastante improvável', 'muito improvável',
-        'pouco improvável', 'indiferente', 'pouco provável',
-        'muito provável', 'bastante provável']
+            rapidamente o desenvolmento de aplicações multimodais.`,
+      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
+        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
+        'concordo fortemente']
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'conceptsFeedbackQuestion3',
       title: `De modo geral, os conceitos apresentadados são úteis para o 
-            desenvolmento de aplicações multimodais?`,
-      choices: ['bastante improvável', 'muito improvável',
-        'pouco improvável', 'indiferente', 'pouco provável',
-        'muito provável', 'bastante provável']
+            desenvolmento de aplicações multimodais.`,
+      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
+        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
+        'concordo fortemente']
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'conceptsFeedbackQuestion4',
-      title: 'Aprender os conceitos é fácil?',
-      choices: ['bastante improvável', 'muito improvável',
-        'pouco improvável', 'indiferente', 'pouco provável',
-        'muito provável', 'bastante provável']
+      title: 'Aprender os conceitos é fácil.',
+      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
+        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
+        'concordo fortemente']
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'conceptsFeedbackQuestion5',
       title: 'Os conceitos são claros e entendíveis?',
-      choices: ['bastante improvável', 'muito improvável',
-        'pouco improvável', 'indiferente', 'pouco provável',
-        'muito provável', 'bastante provável']
+      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
+        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
+        'concordo fortemente']
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'conceptsFeedbackQuestion6',
       title: `De modo geral, os conceitos apresentadados são fáceis de 
-            utilizar?`,
-      choices: ['bastante improvável', 'muito improvável',
-        'pouco improvável', 'indiferente', 'pouco provável',
-        'muito provável', 'bastante provável']
+            utilizar.`,
+      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
+        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
+        'concordo fortemente']
     }
   ]
 })
@@ -1802,81 +1775,89 @@ _data.surveyJSON.pages.push({
   name: 'nclFeedback',
   elements: [
     {
+      type: 'html',
+      html: `
+        <div style="text-align: justify; width: 70%;">
+        <p>Para capturar evidências de nossa pesquisa, por favor, opnie sobre os pontos a seguir.</p>
+        </div>
+      `
+    },
+    {
       type: 'radiogroup',
       isRequired: true,
       name: 'nclFeedbackQuestion1',
       title: `A NCL estendida permite realizar mais facilmente o 
-            desenvolmento de aplicações multimodais?`,
-      choices: ['bastante improvável', 'muito improvável',
-        'pouco improvável', 'indiferente', 'pouco provável',
-        'muito provável', 'bastante provável']
+            desenvolmento de aplicações multimodais.`,
+      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
+        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
+        'concordo fortemente']
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'nclFeedbackQuestion2',
       title: `A NCL estendida permite realizar mais rapidamente o 
-            desenvolmento de aplicações multimodais?`,
-      choices: ['bastante improvável', 'muito improvável',
-        'pouco improvável', 'indiferente', 'pouco provável',
-        'muito provável', 'bastante provável']
+            desenvolmento de aplicações multimodais.`,
+      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
+        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
+        'concordo fortemente']
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'nclFeedbackQuestion3',
       title: `A NCL estendida aumenta a qualidade no desenvolmento de   
-            aplicações multimodais?`,
-      choices: ['bastante improvável', 'muito improvável',
-        'pouco improvável', 'indiferente', 'pouco provável',
-        'muito provável', 'bastante provável']
+            aplicações multimodais.`,
+      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
+        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
+        'concordo fortemente']
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'nclFeedbackQuestion4',
       title: `A NCL estendida fornece maior controle no desenvolmento de 
-            aplicações multimodais?`,
-      choices: ['bastante improvável', 'muito improvável',
-        'pouco improvável', 'indiferente', 'pouco provável',
-        'muito provável', 'bastante provável']
+            aplicações multimodais.`,
+      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
+        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
+        'concordo fortemente']
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'nclFeedbackQuestion5',
       title: `De modo geral, A NCL estendida é util para realizar o 
-            desenvolmento de aplicações multimodais?`,
-      choices: ['bastante improvável', 'muito improvável',
-        'pouco improvável', 'indiferente', 'pouco provável',
-        'muito provável', 'bastante provável']
+            desenvolmento de aplicações multimodais.`,
+      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
+        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
+        'concordo fortemente']
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'nclFeedbackQuestion6',
-      title: 'Aprender a NCL estendida é fácil?',
-      choices: ['bastante improvável', 'muito improvável',
-        'pouco improvável', 'indiferente', 'pouco provável',
-        'muito provável', 'bastante provável']
+      title: 'Aprender a NCL estendida é fácil.',
+      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
+        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
+        'concordo fortemente']
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'nclFeedbackQuestion7',
-      title: 'A NCL estendida é claro e entendível?',
-      choices: ['bastante improvável', 'muito improvável',
-        'pouco improvável', 'indiferente', 'pouco provável',
-        'muito provável', 'bastante provável']
+      title: 'A NCL estendida é claro e entendível.',
+      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
+        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
+        'concordo fortemente']
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'nclFeedbackQuestion8',
-      title: 'De modo geral, a NCL estendida é fácil de utilizar?',
-      choices: ['bastante improvável', 'muito improvável',
-        'pouco improvável', 'indiferente', 'pouco provável',
-        'muito provável', 'bastante provável']
+      title: 'De modo geral, a NCL estendida é fácil de utilizar.',
+      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
+        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
+        'concordo fortemente']
     }
   ]
 })
@@ -2200,82 +2181,90 @@ _data.surveyJSON.pages.push({
   name: 'htmlFeedback',
   elements: [
     {
+      type: 'html',
+      html: `
+        <div style="text-align: justify; width: 70%;">
+        <p>Para capturar evidências de nossa pesquisa, por favor, opnie sobre os pontos a seguir.</p>
+        </div>
+      `
+    },
+    {
       type: 'radiogroup',
       isRequired: true,
       name: 'htmlFeedbackQuestion1',
       title: `A HTML/JavaScrip estendida permite realizar mais facilmente o 
-            desenvolmento de aplicações multimodais?`,
-      choices: ['bastante improvável', 'muito improvável',
-        'pouco improvável', 'indiferente', 'pouco provável',
-        'muito provável', 'bastante provável']
+            desenvolmento de aplicações multimodais.`,
+      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
+        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
+        'concordo fortemente']
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'htmlFeedbackQuestion2',
       title: `A HTML/JavaScrip estendida permite realizar mais rapidamente 
-            o desenvolmento de aplicações multimodais?`,
-      choices: ['bastante improvável', 'muito improvável',
-        'pouco improvável', 'indiferente', 'pouco provável',
-        'muito provável', 'bastante provável']
+            o desenvolmento de aplicações multimodais.`,
+      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
+        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
+        'concordo fortemente']
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'htmlFeedbackQuestion3',
       title: `A HTML/JavaScrip estendida aumenta a qualidade no 
-            desenvolmento de aplicações multimodais?`,
-      choices: ['bastante improvável', 'muito improvável',
-        'pouco improvável', 'indiferente', 'pouco provável',
-        'muito provável', 'bastante provável']
+            desenvolmento de aplicações multimodais.`,
+      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
+        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
+        'concordo fortemente']
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'htmlFeedbackQuestion4',
       title: `A HTML/JavaScrip estendida fornece maior controle no  
-            desenvolmento de aplicações multimodais?`,
-      choices: ['bastante improvável', 'muito improvável',
-        'pouco improvável', 'indiferente', 'pouco provável',
-        'muito provável', 'bastante provável']
+            desenvolmento de aplicações multimodais.`,
+      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
+        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
+        'concordo fortemente']
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'htmlFeedbackQuestion5',
       title: `De modo geral, a HTML/JavaScript estendida é util para 
-            realizar o desenvolmento de aplicações multimodais?`,
-      choices: ['bastante improvável', 'muito improvável',
-        'pouco improvável', 'indiferente', 'pouco provável',
-        'muito provável', 'bastante provável']
+            realizar o desenvolmento de aplicações multimodais.`,
+      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
+        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
+        'concordo fortemente']
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'htmlFeedbackQuestion6',
-      title: 'Aprender a HTML/Javascript estendida é fácil?',
-      choices: ['bastante improvável', 'muito improvável',
-        'pouco improvável', 'indiferente', 'pouco provável',
-        'muito provável', 'bastante provável']
+      title: 'Aprender a HTML/Javascript estendida é fácil.',
+      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
+        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
+        'concordo fortemente']
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'htmlFeedbackQuestion7',
-      title: 'A HTML/Javascript estendida é claro e entendível?',
-      choices: ['bastante improvável', 'muito improvável',
-        'pouco improvável', 'indiferente', 'pouco provável',
-        'muito provável', 'bastante provável']
+      title: 'A HTML/Javascript estendida é claro e entendível.',
+      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
+        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
+        'concordo fortemente']
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'htmlFeedbackQuestion8',
       title: `De modo geral, a HTML/Javascript estendida é fácil de 
-            utilizar?`,
-      choices: ['bastante improvável', 'muito improvável',
-        'pouco improvável', 'indiferente', 'pouco provável',
-        'muito provável', 'bastante provável']
+            utilizar.`,
+      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
+        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
+        'concordo fortemente']
     }
   ]
 })
