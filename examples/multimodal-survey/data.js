@@ -1609,16 +1609,14 @@ _data.nclIntro3bCode = `
 
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
-  title: 'Entendimento dos conceitos',
+  title: 'Aplicação dos conceitos',
   innerIndent: 1,
   elements: [
     {
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Agora, desejamos <strong>capturar</strong> seu entendimento dos
-        conceitos apresentados em NCL. Para isso, pedimos que você realize as
-        quatro tarefas a seguir. Duas tarefas consistem em interpretar códigos e
+        <p>Agora, pedimos que você realize as quatro tarefas a seguir. Duas tarefas consistem em interpretar códigos e
         outra duas editar códigos<></p><br> 
         
         <p><strong>Ressaltamos que essas tarefas NÃO se destinam à avaliar seus
@@ -2091,17 +2089,16 @@ _data.htmlIntro3bCode = `
 
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
-  title: 'Entendimento dos conceitos',
+  title: 'Aplicação dos conceitos',
   innerIndent: 1,
   elements: [
     {
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Agora, desejamos <strong>capturar</strong> seu entendimento dos
-        conceitos apresentados em HTML. Para isso, pedimos que você realize as
-        quatro tarefas a seguir. Duas tarefas consistem em interpretar códigos e
-        outra duas editar códigos<></p><br> 
+        <p>Agora, pedimos que você realize as quatro tarefas a seguir. Duas
+        tarefas consistem em interpretar códigos e outra duas editar
+        códigos<></p><br> 
         
         <p><strong>Ressaltamos que essas tarefas NÃO se destinam à avaliar seus
         conhecimentos, mas sim capturar evidências de nossa
