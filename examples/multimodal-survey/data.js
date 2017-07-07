@@ -874,7 +874,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'comment',
       isRequired: true,
       name: 'conceptsTask1Question',
-      title: `Qual é o comportamento da aplicação que corresponde os blocos acima:
+      title: `Qual é o comportamento da aplicação que corresponde os blocos
+      acima:
       `
     },
     {
@@ -889,7 +890,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'comment',
       isRequired: true,
       name: 'conceptsTask2Question',
-      title: 'Qual foi a mudança no comportamento da aplicação da Tarefa 1 para a Tarefa 2?'
+      title: `
+        Qual foi a mudança no comportamento da aplicação da Tarefa 1 paraa
+        Tarefa 2?
+      `
     },
     {
       type: 'html',
@@ -1217,7 +1221,8 @@ _data.surveyJSON.pages.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Para capturar evidências de nossa pesquisa, por favor, opnie sobre os pontos a seguir.</p>
+        <p>Para capturar evidências de nossa pesquisa, por favor, opnie sobre os
+        pontos a seguir.</p>
         </div>
       `
     },
@@ -1409,7 +1414,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <div id='nclIntro3aCode'></div><br>
 
-        <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em NCL, o código a seguir são uma nova versão da aplicação que reinicia um vídeo dado uma interação. Mas nessa versão, ao inves de clicar, o vídeo é reiniciado ao usuário falar "repita vídeo".</p><br>
+        <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em NCL, o código
+        a seguir são uma nova versão da aplicação que reinicia um vídeo dado uma
+        interação. Mas nessa versão, ao inves de clicar, o vídeo é reiniciado ao
+        usuário falar "repita vídeo".</p><br>
 
         <div id='nclIntro3bCode'></div><br>
         </div>
@@ -1728,7 +1736,8 @@ _data.nclTask2CodeOnly = `
     </head>
     <body>
       <port component="video_principal" />
-      <media id="video_principal" src="video_principal.mp4" descriptor="desEx#video">
+      <media id="video_principal" src="video_principal.mp4"
+        descriptor="desEx#video">
         <area label="creditos" begin="300s" />
       </media>
       <media id="video_centro" src="centro.mp4" descriptor="desEx#video"/>
@@ -1772,7 +1781,8 @@ _data.surveyJSON.pages.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Para capturar evidências de nossa pesquisa, por favor, opnie sobre os pontos a seguir.</p>
+        <p>Para capturar evidências de nossa pesquisa, por favor, opnie sobre os
+        pontos a seguir.</p>
         </div>
       `
     },
@@ -1946,8 +1956,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div id='htmlIntro2aCode'></div><br>
 
         <p>O trecho de código a seguir apresente o arquivo
-        <em>rec_gestos.gml</em>. Esse arquivo é uma descrição de reconhecimento de voz no formato GML. Em particular, ele define duas porções chamadas
-        <em>swipe_esquerda</em> e  <em>swipe_direita</em>que definem acenos de mão para esquerda e para direita, respectivamente</p><br>
+        <em>rec_gestos.gml</em>. Esse arquivo é uma descrição de reconhecimento
+        de voz no formato GML. Em particular, ele define duas porções chamadas
+        <em>swipe_esquerda</em> e  <em>swipe_direita</em>que definem acenos de
+        mão para esquerda e para direita, respectivamente</p><br>
 
         <div id='htmlIntro2bCode'></div><br>
 
@@ -2045,7 +2057,8 @@ _data.htmlIntro3aCode = `
   ]]></script>
 `
 _data.htmlIntro3bCode = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false; auto-links: false;">
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false;">
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <html>
@@ -2179,8 +2192,8 @@ _data.surveyJSON.pages.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Para capturar evidências de nossa pesquisa, por favor, opnie sobre os pontos a seguir.</p>
-        </div>
+        <p>Para capturar evidências de nossa pesquisa, por favor, opnie sobre os
+        pontos a seguir.</p> </div>
       `
     },
     {
@@ -2276,18 +2289,19 @@ _data.surveyJSON.pages.push({
       type: 'comment',
       name: 'commentsQuestion1',
       rows: '9',
-      title: {
-        en: `Chegamos ao fim de nosso estudo. Se desejar, deixe comentários ou sugestões relacionados ao nosso estudo.`
-      }
+      title: `
+          Chegamos ao fim de nosso estudo. Se desejar, deixe comentários ou
+          sugestões relacionados ao nosso estudo.
+        `
     },
     {
       type: 'comment',
       name: 'commentsQuestion2',
       rows: '9',
-      title: {
-        en: `Adcionalmente, se desejar, você fale sobre que tipos de aplicações 
-          você gostaria de desenvolver com conceitos apresentados nesse estudo.`
-      }
+      title: `
+        Adcionalmente, se desejar, você fale sobre que tipos de aplicações
+        você gostaria de desenvolver com conceitos apresentados nesse estudo.
+      `
     }
   ]
 })
