@@ -1419,18 +1419,16 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 })
 
 _data.nclIntro2aCode = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false; highlight: [2]">
-  <![CDATA[
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false; highlight: [2]"> <![CDATA[
   <grammar xmlns="http://www.w3.org/2001/06/grammar">
     <rule id="repete">repita vídeo</rule>
   </grammar>
-  ]]>
-  </script>
+  ]]></script>
 `
 _data.nclIntro2bCode = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false; highlight:
-  [3,21]">
-  <![CDATA[
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false; highlight: [3,21]"> <![CDATA[
   <?xml version="1.0" encoding="UTF-8"?>
   <GestureMarkupLanguage>
     <Gesture id="swipe_esquerda" type="swipe">
@@ -1474,7 +1472,7 @@ _data.nclIntro2bCode = `
 `
 _data.nclIntro2cCode = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  highlight:[17,20,23,27]">
+  auto-links: false; highlight:[17,20,23,27]">
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <ncl>
@@ -1508,14 +1506,13 @@ _data.nclIntro2cCode = `
         <bind role="start" component="video_principal"/>
       </link>
     </body>
-  </ncl>]]>
-  </script>
+  </ncl>
+  ]]></script>
 `
 
 _data.nclIntro3aCode = `
   <script type="syntaxhighlighter" class="brush: plain; toolbar: false;
-  highlight:[6,7]">
-  <![CDATA[
+  auto-links: false; highlight:[6,7]"> <![CDATA[
   PREFIX foaf: <http://xmlns.com/foaf/0.1/>
     PREFIX prf: <http://www.wapforum.org/profiles/UAPROF/ccppschema-20010430>
       SELECT ?person
@@ -1524,13 +1521,11 @@ _data.nclIntro3aCode = `
       ?component prf: name ? name FILTER regex(?name, “Leap Motion”) 
         ? name FILTER regex(?name, “Microphone”)
   }
-  ]]>
-  </script>
+  ]]></script>
 `
 _data.nclIntro3bCode = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  highlight:[15,16,33]">
-  <![CDATA[
+  auto-links: false; highlight:[15,16,33]"> <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <ncl>
     <head>
@@ -1569,8 +1564,8 @@ _data.nclIntro3bCode = `
         <bind role="start" component="video_principal"/>
       </link>
     </body>
-  </ncl>]]>
-  </script>
+  </ncl>
+  ]]></script>
 `
 
 // ----------------------------------------
@@ -1659,7 +1654,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 })
 
 _data.nclTask1Code = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;">
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false;">
   <![CDATA[
   <?xml version= "1.0" encoding= "ISO-8859-1" ?>
   <ncl xmlns="http://www.ncl.org.br/NCL3.0/EDTVProfile">
@@ -1708,7 +1704,8 @@ _data.nclTask1Code = `
         <bind role="start" component="video_principal" />
       </link>
     </body>
-  </ncl>]]></script>
+  </ncl>
+  ]]></script>
 `
 _data.nclTask2CodeOnly = `
   <?xml version= "1.0" encoding= "ISO-8859-1" ?>
@@ -1759,9 +1756,9 @@ _data.nclTask2CodeOnly = `
 `
 
 _data.nclTask2Code = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false; 
-  highlight: [9,10,11,12,13,14,15,30,32,34,35,39,40]"> <![CDATA[` +
-  _data.nclTask2CodeOnly + ` ]]></script>
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false; highlight: [9,10,11,12,13,14,15,30,32,34,35,39,40]">
+  <![CDATA[` + _data.nclTask2CodeOnly + ` ]]></script>
 `
 
 // ----------------------------------------
@@ -2022,20 +2019,21 @@ _data.htmlIntro2aCode = _data.nclIntro2aCode
 _data.htmlIntro2bCode = _data.nclIntro2bCode
 
 _data.htmlIntro2cCode = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;">
-  <![CDATA[
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false;"> <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <html>
     <head>
     </head>
     <body>
     </body>
-  </html>]]>
-  </script>
+  </html>
+  ]]></script>
 `
 
 _data.htmlIntro3aCode = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;">
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false;">
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <html>
@@ -2043,11 +2041,11 @@ _data.htmlIntro3aCode = `
     </head>
     <body>
     </body>
-  </html>]]>
-  </script>
+  </html>
+  ]]></script>
 `
 _data.htmlIntro3bCode = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;">
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false; auto-links: false;">
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <html>
@@ -2055,8 +2053,8 @@ _data.htmlIntro3bCode = `
     </head>
     <body>
     </body>
-  </html>]]>
-  </script>
+  </html>
+  ]]></script>
 `
 
 // ----------------------------------------
@@ -2143,16 +2141,16 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 })
 
 _data.htmlTask1Code = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;">
-  <![CDATA[
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false;"> <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <html>
     <head>
     </head>
     <body>
     </body>
-  </html>]]>
-  </script>
+  </html>
+  ]]></script>
 `
 
 _data.htmlTask2CodeOnly = `
@@ -2166,8 +2164,8 @@ _data.htmlTask2CodeOnly = `
 `
 
 _data.htmlTask2Code = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;">
-  <![CDATA[` + _data.htmlTask2CodeOnly + `]]></script>
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false;"> <![CDATA[` + _data.htmlTask2CodeOnly + `]]></script>
 `
 
 // ----------------------------------------
