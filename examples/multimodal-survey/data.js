@@ -109,6 +109,14 @@ _data.surveyJSON.pages.push({
     {
       type: 'radiogroup',
       isRequired: true,
+      name: 'sintax',
+      title: `Você desenvolve aplicações multimídia interativas?`,
+      choices: ['nunca', 'quase nunca',
+        'razoável', 'quase sempre', 'sempre']
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
       name: 'profileQuestion1',
       title: 'Qual seu conhecimento no desenvolvimento em NCL?',
       choices: ['nenhum', 'muito pouco', 'pouco', 'razoável', 'alto',
@@ -156,14 +164,6 @@ _data.surveyJSON.pages.push({
       e Prototype?`,
       choices: ['nunca', 'quase nunca',
         'indiferente', 'quase sempre ', 'sempre']
-    },
-    {
-      type: 'radiogroup',
-      isRequired: true,
-      name: 'sintax',
-      title: `Você desenvolve aplicações multimídia interativas?`,
-      choices: ['nunca', 'quase nunca',
-        'razoável', 'quase sempre', 'sempre']
     }
   ]
 })
