@@ -223,13 +223,13 @@ _data.surveyJSON.pages.push({
         trecho dos créditos (o vídeo alcance o segundo 600), uma imagen de 
         patrocínio seja exibida.</p>
 
-        <p>Na <strong>apresentação do documento multimídia</strong>, um sistema 
-        multimídia recebe o documento multimídia e os arquivos de mídia 
+        <p>Na <strong>apresentação do documento multimídia</strong>, um sistema
+        multimídia recebe o documento multimídia e os arquivos de mídia
         necessários para  realizar o sincronismo definido pelo autor. Na figura,
-        por exemplo, uma imagem e um áudio são apresentados em determinado 
-        trecho da apresentação de um vídeo. Por fim, o sistema utiliza 
-        <strong>dispositivos audiovisuais</strong> para apresentar conteúdos 
-        das mídias (som e frames) e <strong>dispositivos apontador e de
+        por exemplo, uma imagem e um áudio são apresentados em determinado
+        trecho da apresentação de um vídeo. Por fim, o sistema utiliza
+        <strong>dispositivos audiovisuais</strong> para apresentar conteúdos das
+        mídias (som e frames) e <strong>dispositivos apontador e de
         tecla</strong> para capturar interações de usuário.</p>
 
         <div class='text-center'>
@@ -307,11 +307,18 @@ _data.surveyJSON.pages.push({
         </div>
         <br>
 
-        <div style="text-align: justify; width: 70%;">
         <p>Por fim, uma <strong>linguagem multimídia com interações
         multimodais</strong> é aquele formato que permite definir um documento
         multimídia que não apenas sincroniza mídias, mas também reconhece
-        interações multimodais.</p>
+        interações multimodais. </p><br>
+
+        <p>Para finalizar essa seção, podemos afirmar que uma <strong>linguagem
+        multimídia é "output oriented"</strong>, pois tem foco na sincronia de
+        conteúdos de mídia para apresentação, como imagens, vídeo e áudios.
+        Entretanto, uma <strong>linguagem multimídia com interações multimodais
+        é "output and input oriented"</strong>, pois tem foco na sincronia tanto
+        de mídias, quanto de  reconhecimentos de interações como voz e
+        gestos.</p>
 
         [4] <a href='http://dx.doi.org/10.1201/9781410615862.ch21'>
         Oviatt, S. 2007. Multimodal Interfaces. Human-Computer Interaction 
@@ -354,14 +361,15 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     {
       type: 'html',
       html: `
-        <div style="text-align: justify; width: 70%;"> <p>As linguagens
-        multimídia atuais não suportam adequadamente interações multimodais.
-        Elas podem ser consideradas 'out-oriented' pois focam em conteúdos para
-        apresentação, como imagens, vídeo e áudios. Em nossa pesquisa propomos
-        um conjunto de conceitos a serem instanciados nessas linguagens para
-        oferecer tal suporte. Mais precisamente esses conceitos são os de
-        <em>Mídia, Reconhecedor, Sincronismo</em> e <em>Grupo de Usuários</em>.
-        <br>
+        <div style="text-align: justify; width: 70%;"> 
+        <p>As linguagens multimídia atuais não suportam adequadamente interações
+        multimodais. Elas podem ser consideradas "output-oriented" pois focam em
+        conteúdos para apresentação, como imagens, vídeo e áudios. </p><br>
+        
+        <p>Em nossa pesquisa propomos que conceitos a serem
+        necessários para linguagem multimídia com interações multimodais. Mais
+        precisamente esses conceitos são os de <em>Mídia, Reconhecedor,
+        Sincronismo</em> e <em>Grupo de Usuários</em>. </p><br>
         
         <p>Esta seção tem o objetivo de detalhar esses conceitos para o
         participante e capturar evidências de nossa pesquisa. Para evitar
