@@ -49,7 +49,7 @@ _data.surveyJSON.pages.push({
         <ul> 
         <li>Os dados coletados destinam-se estritamente a atividades de
         pesquisa e desenvolvimento, e somente os pesquisadores do TeleMídia
-        têm acesso à integra do material resultante do estudo .</li> 
+        têm acesso à íntegra do material resultante do estudo .</li> 
         <li>A divulgação dos resultados de nossa pesquisa em foros
         científicos e/ou pedagógicos pauta-se no respeito à privacidade, e o
         anonimato dos participantes é preservado em qualquer material
@@ -205,9 +205,9 @@ _data.surveyJSON.pages.push({
         <br>
 
         <p>Um <strong>documento multimídia</strong>, também segundo Steinmentz, 
-        é aquele que define como um sistema multímida deve exibir um conjunto 
+        é aquele que define como um sistema multimídia deve exibir um conjunto 
         de mídias (discretas e contínuas) na forma de uma apresentação 
-        multimídia. O criador de um documento multímidia é usualmente chamado 
+        multimídia. O criador de um documento multimídia é usualmente chamado 
         de autor.</p>
         <br>
 
@@ -229,7 +229,7 @@ _data.surveyJSON.pages.push({
         por exemplo, uma imagem e um áudio são apresentados em determinado 
         trecho da apresentação de um vídeo. Por fim, o sistema utiliza 
         <strong>dispositivos audiovisuais</strong> para apresentar conteúdos 
-        das mídias (som e frames) e <strong>dispositivos apontador e 
+        das mídias (som e frames) e <strong>dispositivos apontador e de
         tecla</strong> para capturar interações de usuário.</p>
 
         <div class='text-center'>
@@ -241,7 +241,7 @@ _data.surveyJSON.pages.push({
         <p>A <strong>linguagem multimídia</strong> é na verdade o formato que 
         permite a um autor definir um documento multimídia. Ela define uma 
         sintaxe e elementos de linguagem. Exemplos atuais de linguagens 
-        multímidia são a NCL (Nested Context Language) [2] e a HTML [3].</p>
+        multimídia são a NCL (Nested Context Language) [2] e a HTML [3].</p>
         <br>
 
         [1] <a 
@@ -285,7 +285,7 @@ _data.surveyJSON.pages.push({
 
         <p>Modificamos a primeira figura para ilustrar a criação e apresentação
         de um documento multimídia com suporte a interações multimodais. Nessa
-        nova figura, o autor define não apenas midias e sincronismo, como também
+        nova figura, o autor define não apenas mídias e sincronismo, como também
         o reconhecimento de interações multimodais. </p> <br>
         
         <p>Para definir reconhecimentos, o autor utiliza de descrições
@@ -355,7 +355,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;"> <p>As linguagens
-        multímidia atuais não suportam adequadamente interações multimodais.
+        multimídia atuais não suportam adequadamente interações multimodais.
         Elas podem ser consideradas 'out-oriented' pois focam em conteúdos para
         apresentação, como imagens, vídeo e áudios. Em nossa pesquisa propomos
         um conjunto de conceitos a serem instanciados nessas linguagens para
@@ -370,7 +370,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         aplicações através de blocos</strong>.</p> <br>
         
         <p>Esse tipo de abordagem é bastante utilizado para o ensino de
-        programação ou para ferramentes de geração de código. Em especial,
+        programação ou para ferramentas de geração de código. Em especial,
         esse tipo de desenvolvimento foi popularizado por ferramentas como o
         <strong>MIT Scratch</strong>[4] e <strong>MIT App
         Inventor</strong>[5]. O primeiro é utilizado para criar aplicações
@@ -442,7 +442,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         um conteúdo de vídeo. É importante ressaltar que mudanças no 
         conteúdo de <em>midia_principal</em> não afetam o comportamento da 
         aplicação, desde que a mídia defina o mesmos trechos, pois os 
-        <em>Sincronismo</em>s são definidos indepente do conteúdo.</p>
+        <em>Sincronismo</em>s são definidos independe do conteúdo.</p>
 
         </div>
 
@@ -529,7 +529,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <p> O elemento <em>Grupo de Usuários</em> é definido por um
         identificador, pelo número de membros que podem participar do grupo
-        e pelos dispositivos que um ususário necessita possuir para
+        e pelos dispositivos que um usuário necessita possuir para
         participar do grupo.</p><br>
         
         <p>Os blocos a seguir definem um grupo de usuário <em>gu_gestos</em>
@@ -857,7 +857,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Agora, pedimos que você realize as quatro tarefas a seguir. Duas
         tarefas consistem em interpretar aplicações e duas em modificar.</p>
 
-        </p><strong>Ressaltamos que essas tarefas NÃO se destinam à avaliar
+        </p><strong>Ressaltamos que essas tarefas NÃO se destinam a avaliar
         seus conhecimentos, mas sim capturar evidências de nossa
         pesquisa.</strong>.</p><br>
         <div>
@@ -891,7 +891,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       isRequired: true,
       name: 'conceptsTask2Question',
       title: `
-        Qual foi a mudança no comportamento da aplicação da Tarefa 1 paraa
+        Qual foi a mudança no comportamento da aplicação da Tarefa 1 para
         Tarefa 2?
       `
     },
@@ -1221,7 +1221,7 @@ _data.surveyJSON.pages.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Para capturar evidências de nossa pesquisa, por favor, opnie sobre os
+        <p>Para capturar evidências de nossa pesquisa, por favor, opine sobre os
         pontos a seguir.</p>
         </div>
       `
@@ -1230,8 +1230,8 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'conceptsFeedbackQuestion1',
-      title: `Os conceitos apresentadados permitem realizar mais facilmente 
-            o desenvolmento de aplicações multimodais`,
+      title: `Os conceitos apresentados permitem realizar mais facilmente 
+            o desenvolvimento de aplicações multimodais`,
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
@@ -1240,8 +1240,8 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'conceptsFeedbackQuestion2',
-      title: `Os conceitos apresentadados permitem realizar mais 
-            rapidamente o desenvolmento de aplicações multimodais.`,
+      title: `Os conceitos apresentados permitem realizar mais 
+            rapidamente o desenvolvimento de aplicações multimodais.`,
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
@@ -1250,8 +1250,8 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'conceptsFeedbackQuestion3',
-      title: `De modo geral, os conceitos apresentadados são úteis para o 
-            desenvolmento de aplicações multimodais.`,
+      title: `De modo geral, os conceitos apresentados são úteis para o 
+            desenvolvimento de aplicações multimodais.`,
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
@@ -1278,7 +1278,7 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'conceptsFeedbackQuestion6',
-      title: `De modo geral, os conceitos apresentadados são fáceis de 
+      title: `De modo geral, os conceitos apresentados são fáceis de 
             utilizar.`,
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
@@ -1319,7 +1319,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>&ltmedia></em> e <em>&ltlink></em>. O <em>&ltmedia></em> permite
         apresentar conteúdo audiovisual como imagens, vídeo e áudios. Enquanto
         <em>&ltlink></em> permite criar sincronismos entre mídias e sincronismos
-        baseados em interações de tecla e mouse.</p>
+        baseados em interações de usuário por apontador e tecla.</p>
         
         <p>A tabela seguir analisa quais dos conceitos propostos em nossa
         pesquisa estão presentes e qual o elemento da NCL que
@@ -1365,14 +1365,14 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         Para implementar esse <em>Reconhecedor</em> propomos o elemento de
         <em>&ltinput></em></p><br>
 
-        <p>O trecho de código a seguir apresente o arquivo
+        <p>O trecho de código a seguir apresenta o arquivo
         <em>rec_voz.srgs</em>. Esse arquivo é uma descrição de reconhecimento de
         voz no formato SRGS. Em particular, ele define uma porção chamada
         <em>repete</em> que define o reconhecimento de voz "repita vídeo"</p
         ><br>
         <div id='nclIntro2aCode'></div><br>
 
-        <p>O trecho de código a seguir apresente o arquivo
+        <p>O trecho de código a seguir apresenta o arquivo
         <em>rec_gestos.gml</em>. Esse arquivo é uma descrição de reconhecimento de voz no formato GML. Em particular, ele define duas porções chamadas
         <em>swipe_esquerda</em> e  <em>swipe_direita</em>que definem acenos de mão para esquerda e para direita, respectivamente</p><br>
 
@@ -1380,7 +1380,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em NCL, o código
         a seguir são uma nova versão da aplicação que reinicia um vídeo dado uma
-        interação. Mas nessa versão, ao inves de clicar, o vídeo é reiniciado ao
+        interação. Mas nessa versão, ao invés de clicar, o vídeo é reiniciado ao
         usuário falar "repita vídeo".</p> <p>Mais precisamente, a aplicação
         utiliza um elemento <em>&ltmedia></em> mídias, um elemento de
         <em>&ltinput></em>, um <em><port></em> e dois
@@ -1389,13 +1389,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>O elemento de <em>&ltmedia></em> chamado de
         <em>video_principal</em> (linhas 17-19) que define um trecho chamado
         creditos que inicia aos 300s. O elemento <em>&ltinput></em>, chamado de
-        <em>rec</em>é definito utilizando utilizando o arquivo SRGS
+        <em>rec</em>é definido utilizando utilizando o arquivo SRGS
         <em>rec_voz.srgs</em> (linhas 20-22). O elemento <em>&ltport></em>
         (linha 16) define que o <em>video_principal</em> é iniciado com
         aplicação. O primeiro <em>&ltlink></em> (linhas 23-26) define que quando
-        o <em>video_principal</em> alançar a sua porção de creditos (300s) o
+        o <em>video_principal</em> alcançar a sua porção de creditos (300s) o
         reconhecedor <em>rec</em> inicia seu reconhecimento. O segundo
-        <em>&ltlink></em>(linhas 27-30) defique que o <em>video_principal</em>
+        <em>&ltlink></em>(linhas 27-30) define que o <em>video_principal</em>
         deve ser reiniciado (stop e start) quando for reconhecido o trecho
         <em>repete</em></p><br>
 
@@ -1416,7 +1416,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em NCL, o código
         a seguir são uma nova versão da aplicação que reinicia um vídeo dado uma
-        interação. Mas nessa versão, ao inves de clicar, o vídeo é reiniciado ao
+        interação. Mas nessa versão, ao invés de clicar, o vídeo é reiniciado ao
         usuário falar "repita vídeo".</p><br>
 
         <div id='nclIntro3bCode'></div><br>
@@ -1592,7 +1592,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Agora, pedimos que você realize as quatro tarefas a seguir. Duas tarefas consistem em interpretar códigos e
         outra duas editar códigos<></p><br> 
         
-        <p><strong>Ressaltamos que essas tarefas NÃO se destinam à avaliar seus
+        <p><strong>Ressaltamos que essas tarefas NÃO se destinam a avaliar seus
         conhecimentos, mas sim capturar evidências de nossa
         pesquisa.</strong>.</p><br>
         </div>
@@ -1641,7 +1641,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       title: {
         en: `
           Tarefa 3: Agora, pedimos que edite o código NCL da Tarefa 2 (copiado a
-          seguir) para que utilize uma interação por gestos inves de uma
+          seguir) para que utilize uma interação por gestos invés de uma
           interação por comandos de voz. 
         `
       }
@@ -1781,7 +1781,7 @@ _data.surveyJSON.pages.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Para capturar evidências de nossa pesquisa, por favor, opnie sobre os
+        <p>Para capturar evidências de nossa pesquisa, por favor, opine sobre os
         pontos a seguir.</p>
         </div>
       `
@@ -1791,7 +1791,7 @@ _data.surveyJSON.pages.push({
       isRequired: true,
       name: 'nclFeedbackQuestion1',
       title: `A NCL estendida permite realizar mais facilmente o 
-            desenvolmento de aplicações multimodais.`,
+            desenvolvimento de aplicações multimodais.`,
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
@@ -1801,7 +1801,7 @@ _data.surveyJSON.pages.push({
       isRequired: true,
       name: 'nclFeedbackQuestion2',
       title: `A NCL estendida permite realizar mais rapidamente o 
-            desenvolmento de aplicações multimodais.`,
+            desenvolvimento de aplicações multimodais.`,
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
@@ -1810,7 +1810,7 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'nclFeedbackQuestion3',
-      title: `A NCL estendida aumenta a qualidade no desenvolmento de   
+      title: `A NCL estendida aumenta a qualidade no desenvolvimento de   
             aplicações multimodais.`,
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
@@ -1820,7 +1820,7 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'nclFeedbackQuestion4',
-      title: `A NCL estendida fornece maior controle no desenvolmento de 
+      title: `A NCL estendida fornece maior controle no desenvolvimento de 
             aplicações multimodais.`,
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
@@ -1831,7 +1831,7 @@ _data.surveyJSON.pages.push({
       isRequired: true,
       name: 'nclFeedbackQuestion5',
       title: `De modo geral, A NCL estendida é util para realizar o 
-            desenvolmento de aplicações multimodais.`,
+            desenvolvimento de aplicações multimodais.`,
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
@@ -1898,9 +1898,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>&ltimg></em>, <em>&ltvideo></em> e <em>&ltaudio></em>. Esses
         elementos permitem apresentar respectivamente imagens, vídeo e áudios.
         Para criar sincronismos, entretanto, o HTML recorre a um a JavaScript
-        como linguagem auxiliar atraves do elemento <em>&ltscript></em>.
+        como linguagem auxiliar através do elemento <em>&ltscript></em>.
         Elementos JavaScript podem criar sincronismos de mídias e sincronismos
-        baseados em interações de tecla e mouse.</p>
+        baseados em interações de usuário por apontador e tecla.</p>
         
         <p>A tabela seguir analisa quais dos conceitos propostos em nossa
         pesquisa estão presentes e qual o elemento da HTML que
@@ -1947,7 +1947,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         Para implementar esse <em>Reconhecedor</em> propomos o elemento de
         <em>&ltinput></em></p><br>
 
-        <p>O trecho de código a seguir apresente o arquivo
+        <p>O trecho de código a seguir apresenta o arquivo
         <em>rec_voz.srgs</em>. Esse arquivo é uma descrição de reconhecimento de
         voz no formato SRGS. Em particular, ele define uma porção chamada
         <em>repete</em> que define o reconhecimento de voz "repita vídeo"</p
@@ -1955,7 +1955,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <div id='htmlIntro2aCode'></div><br>
 
-        <p>O trecho de código a seguir apresente o arquivo
+        <p>O trecho de código a seguir apresenta o arquivo
         <em>rec_gestos.gml</em>. Esse arquivo é uma descrição de reconhecimento
         de voz no formato GML. Em particular, ele define duas porções chamadas
         <em>swipe_esquerda</em> e  <em>swipe_direita</em>que definem acenos de
@@ -1964,20 +1964,20 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div id='htmlIntro2bCode'></div><br>
 
         <p>O trecho de código a seguir ilustra uma aplicação que apresenta um
-        vídeo, ao qual pode ser reniciado em sua portão de creditos por comandos
-        de voz. Mais precisamente, a aplicação utiliza um elemento
+        vídeo, ao qual pode ser reiniciado em sua portão de créditos por
+        comandos de voz. Mais precisamente, a aplicação utiliza um elemento
         <em>&ltmedia></em> mídias, um elemento de <em>&ltinput></em>, um
         <em><port></em> e dois <em>&ltlink></em>s.</p>
         <p>O elemento de <em>&ltmedia></em> chamado de
         <em>video_principal</em> (linhas 17-19) que define um trecho chamado
-        creditos que inicia aos 300s. O elemento <em>&ltinput></em>, chamado de
-        <em>rec</em>é definito utilizando utilizando o arquivo SRGS
+        créditos que inicia aos 300s. O elemento <em>&ltinput></em>, chamado de
+        <em>rec</em>é definido utilizando utilizando o arquivo SRGS
         <em>rec_voz.srgs</em> (linhas 20-22). O elemento <em>&ltport></em>
         (linha 16) define que o <em>video_principal</em> é iniciado com
         aplicação. O primeiro <em>&ltlink></em> (linhas 23-26) define que quando
-        o <em>video_principal</em> alançar a sua porção de creditos (300s) o
+        o <em>video_principal</em> alançar a sua porção de créditos (300s) o
         reconhecedor <em>rec</em> inicia seu reconhecimento. O segundo
-        <em>&ltlink></em>(linhas 27-30) defique que o <em>video_principal</em>
+        <em>&ltlink></em>(linhas 27-30) define que o <em>video_principal</em>
         deve ser reiniciado (stop e start) quando for reconhecido o trecho
         <em>repete</em></p><br>
 
@@ -2000,20 +2000,20 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;">
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em HTML, o
         código a seguir são uma nova versão da aplicação que reinicia um video
-        dado uma interação. Mas nessa versão, ao inves de clicar, o vídeo é
+        dado uma interação. Mas nessa versão, ao invés de clicar, o vídeo é
         reiniciado ao usuário falar "repita vídeo".</p> <p>Mais precisamente, a
         aplicação utiliza um elemento <em>&ltmedia></em> mídias, um elemento de
         <em>&ltinput></em>, um <em><port></em> e dois
         <em>&ltlink></em>s.</p><br>
         
         <p>O elemento de <em>&ltmedia></em> chamado de <em>video_principal</em>
-        (linhas 17-19) que define um trecho chamado creditos que inicia aos
-        300s. O elemento <em>&ltinput></em>, chamado de <em>rec</em>é definito
+        (linhas 17-19) que define um trecho chamado créditos que inicia aos
+        300s. O elemento <em>&ltinput></em>, chamado de <em>rec</em>é definido
         utilizando utilizando o arquivo SRGS <em>rec_voz.srgs</em> (linhas
         20-22). O elemento <em>&ltport></em> (linha 16) define que o
         <em>video_principal</em> é iniciado com aplicação. O primeiro
         <em>&ltlink></em> (linhas 23-26) define que quando o
-        <em>video_principal</em> alançar a sua porção de creditos (300s) o
+        <em>video_principal</em> alcançar a sua porção de créditos (300s) o
         reconhecedor <em>rec</em> inicia seu reconhecimento. O segundo
         <em>&ltlink></em>(linhas 27-30) defique que o <em>video_principal</em>
         deve ser reiniciado (stop e start) quando for reconhecido o trecho
@@ -2087,7 +2087,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         tarefas consistem em interpretar códigos e outra duas editar
         códigos<></p><br> 
         
-        <p><strong>Ressaltamos que essas tarefas NÃO se destinam à avaliar seus
+        <p><strong>Ressaltamos que essas tarefas NÃO se destinam a avaliar seus
         conhecimentos, mas sim capturar evidências de nossa
         pesquisa.</strong>.</p><br>
         </div>
@@ -2133,7 +2133,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       title: {
         en: `
           Tarefa 3: Agora, pedimos que edite o código da Tarefa 2 ((copiado a
-          seguir) para que utilize uma interação por gestos inves de uma
+          seguir) para que utilize uma interação por gestos invés de uma
           interação por comandos de voz.
         `
       }
@@ -2192,7 +2192,7 @@ _data.surveyJSON.pages.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Para capturar evidências de nossa pesquisa, por favor, opnie sobre os
+        <p>Para capturar evidências de nossa pesquisa, por favor, opine sobre os
         pontos a seguir.</p> </div>
       `
     },
@@ -2201,7 +2201,7 @@ _data.surveyJSON.pages.push({
       isRequired: true,
       name: 'htmlFeedbackQuestion1',
       title: `A HTML/JavaScrip estendida permite realizar mais facilmente o 
-            desenvolmento de aplicações multimodais.`,
+            desenvolvimento de aplicações multimodais.`,
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
@@ -2211,7 +2211,7 @@ _data.surveyJSON.pages.push({
       isRequired: true,
       name: 'htmlFeedbackQuestion2',
       title: `A HTML/JavaScrip estendida permite realizar mais rapidamente 
-            o desenvolmento de aplicações multimodais.`,
+            o desenvolvimento de aplicações multimodais.`,
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
@@ -2221,7 +2221,7 @@ _data.surveyJSON.pages.push({
       isRequired: true,
       name: 'htmlFeedbackQuestion3',
       title: `A HTML/JavaScrip estendida aumenta a qualidade no 
-            desenvolmento de aplicações multimodais.`,
+            desenvolvimento de aplicações multimodais.`,
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
@@ -2231,7 +2231,7 @@ _data.surveyJSON.pages.push({
       isRequired: true,
       name: 'htmlFeedbackQuestion4',
       title: `A HTML/JavaScrip estendida fornece maior controle no  
-            desenvolmento de aplicações multimodais.`,
+            desenvolvimento de aplicações multimodais.`,
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
@@ -2241,7 +2241,7 @@ _data.surveyJSON.pages.push({
       isRequired: true,
       name: 'htmlFeedbackQuestion5',
       title: `De modo geral, a HTML/JavaScript estendida é util para 
-            realizar o desenvolmento de aplicações multimodais.`,
+            realizar o desenvolvimento de aplicações multimodais.`,
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
@@ -2299,8 +2299,8 @@ _data.surveyJSON.pages.push({
       name: 'commentsQuestion2',
       rows: '9',
       title: `
-        Adcionalmente, se desejar, você fale sobre que tipos de aplicações
-        você gostaria de desenvolver com conceitos apresentados nesse estudo.
+        Adicionalmente, se desejar, você fale sobre que tipos de aplicações
+        você gostaria de desenvolver com conceitos apresentados neste estudo.
       `
     }
   ]
