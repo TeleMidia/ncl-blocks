@@ -907,8 +907,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       name: 'conceptsTask3',
       html: `
-        Tarefa 3: Agora, pedimos que edite os blocos a seguir para substituir
-        a interação através de comandos de voz por interação através gestos.
+        Tarefa 3: Agora, pedimos que edite os blcoos da Tarefa 2 (copiado a
+        seguir) para que utilize uma interação por gestos ao invés de uma
+        interação por comandos de voz. 
       `
     },
     {
@@ -927,9 +928,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       name: 'conceptsTask4',
       html: `
-        Tarefa 4: Agora, pedimos que edite os blocos a seguir para que apenas
-        o segundo usuário de um grupo de 3 usuários possa realizar a
-        interação.
+        Tarefa 4: Agora, pedimos que edite os blocos da Tarefa 2 (copiado
+        a seguir) para que apenas o segundo usuário, de um grupo de 3
+        usuários com microphone, possa realizar a interação por voz.
       `
     },
     {
@@ -1614,13 +1615,14 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     {
       type: 'html',
       html: `
-        <div style="text-align: justify; width: 70%;">
-        <p>Agora, pedimos que você realize as quatro tarefas a seguir. Duas tarefas consistem em interpretar códigos e
-        outra duas editar códigos<></p><br> 
+        <div style="text-align: justify; width: 70%;"> 
+        <p>Agora, pedimos que você realize as quatro tarefas a seguir. Duas
+        tarefas consistem em interpretar códigos e outra duas editar
+        códigos<></p><br>
         
         <p><strong>Ressaltamos que essas tarefas NÃO se destinam a avaliar seus
         conhecimentos, mas sim capturar evidências de nossa
-        pesquisa.</strong>.</p><br>
+        pesquisa.</strong>.</p><br> 
         </div>
       `
     },
@@ -1667,7 +1669,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       title: {
         en: `
           Tarefa 3: Agora, pedimos que edite o código NCL da Tarefa 2 (copiado a
-          seguir) para que utilize uma interação por gestos invés de uma
+          seguir) para que utilize uma interação por gestos ao invés de uma
           interação por comandos de voz. 
         `
       }
@@ -1679,8 +1681,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       title: {
         en: `
           Tarefa 4: Agora, pedimos que edite o código NCL da Tarefa 2 (copiado a
-          seguir)  para que apenas o segundo usuário de um grupo de usuário
-          possa realizar a interação.
+          seguir) para que apenas o segundo usuário, de um grupo de 3 usuários,
+          com microphone, possa realizar a interação por voz.
         `
       }
     }
@@ -2174,9 +2176,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       rows: '9',
       title: {
         en: `
-          Tarefa 3: Agora, pedimos que edite o código da Tarefa 2 ((copiado a
-          seguir) para que utilize uma interação por gestos invés de uma
-          interação por comandos de voz.
+          Tarefa 3: Agora, pedimos que edite o código HTML da Tarefa 2 (copiado
+          a seguir) para que utilize uma interação por gestos ao invés de uma
+          interação por comandos de voz. 
         `
       }
     },
@@ -2186,9 +2188,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       rows: '9',
       title: {
         en: `
-          Tarefa 4: Agora, pedimos que edite o Tarefa 2 (copiado a seguir) para
-          que utilize que apenas o segundo usuário de um grupo de 3 usuários
-          possa realizar a interação.
+          Tarefa 4: Agora, pedimos que edite o código HTML da Tarefa 2 (copiado
+          a seguir) para que apenas o segundo usuário, de um grupo de 3
+          usuários com microphone, possa realizar a interação por voz.
         `
       }
     }
