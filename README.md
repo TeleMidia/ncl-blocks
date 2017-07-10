@@ -8,7 +8,15 @@ A tool, based in Google Blocks, to enable a block-oriented development of NCL ap
 
 ## preview images
 
+The following blocks define an application that starts a video and, when the
+video reaches its 300s, the user can select a image to repeat the video.
+
 ![](https://github.com/alanlivio/nclblocks/raw/master/docs/overview1.png)
+
+The following blocks define an application that starts a video and, when the
+video reaches its 300s, the user can choose see between two videos by selection
+one of two images.
+
 ![](https://github.com/alanlivio/nclblocks/raw/master/docs/overview2.png)
 
 ## References
