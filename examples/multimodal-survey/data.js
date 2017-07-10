@@ -1139,7 +1139,7 @@ _data.blocksTask2Xml = `
   <block type="port" id="+ p - MtE:D * clWz(7oX7Hg" x="20" y="622">
     <field name="id">video_principal</field>
   </block>
-  <block type="link" id="% 6sP% 0di, O * v % qS % d\`(\`" x="550" y="627">
+  <block type="link" id="BLK@~VH8\`;o!;uMR.^tZ" x="550" y="627">
     <value name="conditions">
       <block type="onbegin" id="(H8dBhXk6.y#]q%\`UM^D">
         <field name="id">creditos</field>
