@@ -69,7 +69,8 @@ if ($('#surveyPageNo').length) {
 $('#surveyPageNo').change(function () {
   _survey.currentPageNo = this.value
 })
-$('#surveyPageNo').val(5).change()
+// $('#surveyPageNo').val(5).change()
+$('#surveyPageNo').val(7).change()
 
 // ----------------------------------------
 // survey listeners
@@ -193,15 +194,15 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       }
       _blocksTask4Workspace.addChangeListener(saveblocksTask4Changes)
       break
-    case 'nclIntro2':
-      $('#nclIntro2aCode').append(_data.nclIntro2aCode)
-      $('#nclIntro2bCode').append(_data.nclIntro2bCode)
-      $('#nclIntro2cCode').append(_data.nclIntro2cCode)
-      SyntaxHighlighter.highlight()
-      break
     case 'nclIntro3':
       $('#nclIntro3aCode').append(_data.nclIntro3aCode)
       $('#nclIntro3bCode').append(_data.nclIntro3bCode)
+      $('#nclIntro3cCode').append(_data.nclIntro3cCode)
+      SyntaxHighlighter.highlight()
+      break
+    case 'nclIntro4':
+      $('#nclIntro4aCode').append(_data.nclIntro4aCode)
+      $('#nclIntro4bCode').append(_data.nclIntro4bCode)
       SyntaxHighlighter.highlight()
       break
     case 'nclTask1':
@@ -220,15 +221,15 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       _survey.getQuestionByName('nclTask4Question').value =
         _data.nclTask2CodeOnly
       break
-    case 'htmlIntro2':
-      $('#htmlIntro2aCode').append(_data.htmlIntro2aCode)
-      $('#htmlIntro2bCode').append(_data.htmlIntro2bCode)
-      $('#htmlIntro2cCode').append(_data.htmlIntro2cCode)
-      SyntaxHighlighter.highlight()
-      break
     case 'htmlIntro3':
       $('#htmlIntro3aCode').append(_data.htmlIntro3aCode)
       $('#htmlIntro3bCode').append(_data.htmlIntro3bCode)
+      $('#htmlIntro3cCode').append(_data.htmlIntro3cCode)
+      SyntaxHighlighter.highlight()
+      break
+    case 'htmlIntro4':
+      $('#htmlIntro4aCode').append(_data.htmlIntro4aCode)
+      $('#htmlIntro4bCode').append(_data.htmlIntro4bCode)
       SyntaxHighlighter.highlight()
       break
     case 'htmlTask1':

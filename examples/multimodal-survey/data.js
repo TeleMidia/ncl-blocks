@@ -1318,20 +1318,19 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Esta seção não tem o objetivo de detalhar a linguagem
-        NCL. Esta seção tem sim o objetivo de apresentar como os conceitos de
-        interação multimodal podem ser instanciados na linguagem NCL.</p> 
-
-        <p>A linguagem NCL tem o foco de criar apresentações multimídia
-        interativas. Sua versão atual oferece, entre outros, os elementos
+        <p>A linguagem NCL é utilizada para criar conteúdo multimídia
+        interativo em sistemas de TV ( terrestre, IPTV e BroadBand). Em
+        particular, sua versão atual (NCL 3.1) oferece os elementos
         <em>&ltmedia></em> e <em>&ltlink></em>. O <em>&ltmedia></em> permite
         apresentar conteúdo audiovisual como imagens, vídeo e áudios. Enquanto
         <em>&ltlink></em> permite criar sincronismos entre mídias e sincronismos
         baseados em interações de usuário por apontador e tecla.</p>
-        
-        <p>A tabela seguir analisa quais dos conceitos propostos em nossa
-        pesquisa estão presentes e qual o elemento da NCL que
-        implementa.</p><br>
+      
+        <p>Esta seção não tem o objetivo de detalhar a linguagem NCL. Mas sim
+        tem o objetivo de apresentar como os conceitos de apresentados podem ser
+        instanciados na linguagem NCL. A tabela seguir apresenta quais conceitos
+        propostos em nossa pesquisa estão presentes na NCL e como deve ser a
+        instanciação dos ausentes.</p><br>
 
         <table align="center" class="table-bordered table-striped
         table-condensed">
@@ -1365,11 +1364,30 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       `
     },
     {
+      name: 'nclIntro1',
+      type: 'html',
+      html: `
+        <div style="text-align: justify; width: 70%;">
+        <p>Primeiro, vamos detalhar o conceito de <em>Mídia</em> em NCL.
+        
+        </div>
+      `
+    },
+    {
       name: 'nclIntro2',
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Primeiro, vamos detalhar o conceito de <em>Reconhecedor</em> em NCL.
+        <p>Primeiro, vamos detalhar o conceito de <em>Sincronismo</em> em NCL.
+        </div>
+      `
+    },
+    {
+      name: 'nclIntro3',
+      type: 'html',
+      html: `
+        <div style="text-align: justify; width: 70%;">
+        <p>Agora, vamos detalhar o conceito de <em>Reconhecedor</em> em NCL.
         Para implementar esse <em>Reconhecedor</em> propomos o elemento de
         <em>&ltinput></em></p><br>
 
@@ -1378,13 +1396,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         voz no formato SRGS. Em particular, ele define uma porção chamada
         <em>repete</em> que define o reconhecimento de voz "repita vídeo"</p
         ><br>
-        <div id='nclIntro2aCode'></div><br>
+        <div id='nclIntro3aCode'></div><br>
 
         <p>O trecho de código a seguir apresenta o arquivo
         <em>rec_gestos.gml</em>. Esse arquivo é uma descrição de reconhecimento de voz no formato GML. Em particular, ele define duas porções chamadas
         <em>swipe_esquerda</em> e  <em>swipe_direita</em>que definem acenos de mão para esquerda e para direita, respectivamente</p><br>
 
-        <div id='nclIntro2bCode'></div><br>
+        <div id='nclIntro3bCode'></div><br>
 
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em NCL, o código
         a seguir são uma nova versão da aplicação que reinicia um vídeo dado uma
@@ -1407,12 +1425,12 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         deve ser reiniciado (stop e start) quando for reconhecido o trecho
         <em>repete</em></p><br>
 
-        <div id='nclIntro2cCode'></div><br>
+        <div id='nclIntro3cCode'></div><br>
         </div>
       `
     },
     {
-      name: 'nclIntro3',
+      name: 'nclIntro4',
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
@@ -1420,21 +1438,21 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         Para implementar esse Reconhecedor propomos o elemento de
         <em>&ltuserClass></em></p><br>
 
-        <div id='nclIntro3aCode'></div><br>
+        <div id='nclIntro4aCode'></div><br>
 
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em NCL, o código
         a seguir são uma nova versão da aplicação que reinicia um vídeo dado uma
         interação. Mas nessa versão, ao invés de clicar, o vídeo é reiniciado ao
         usuário falar "repita vídeo".</p><br>
 
-        <div id='nclIntro3bCode'></div><br>
+        <div id='nclIntro4bCode'></div><br>
         </div>
       `
     }
   ]
 })
 
-_data.nclIntro2aCode = `
+_data.nclIntro3aCode = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight: [2]"> <![CDATA[
   <grammar xmlns="http://www.w3.org/2001/06/grammar">
@@ -1442,7 +1460,7 @@ _data.nclIntro2aCode = `
   </grammar>
   ]]></script>
 `
-_data.nclIntro2bCode = `
+_data.nclIntro3bCode = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight: [3,21]"> <![CDATA[
   <?xml version="1.0" encoding="UTF-8"?>
@@ -1486,7 +1504,7 @@ _data.nclIntro2bCode = `
   </GestureMarkupLanguage>
   ]]></script>
 `
-_data.nclIntro2cCode = `
+_data.nclIntro3cCode = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight:[17,20,23,27]">
   <![CDATA[
@@ -1526,7 +1544,7 @@ _data.nclIntro2cCode = `
   ]]></script>
 `
 
-_data.nclIntro3aCode = `
+_data.nclIntro4aCode = `
   <script type="syntaxhighlighter" class="brush: plain; toolbar: false;
   auto-links: false; highlight:[6,7]"> <![CDATA[
   PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -1539,7 +1557,7 @@ _data.nclIntro3aCode = `
   }
   ]]></script>
 `
-_data.nclIntro3bCode = `
+_data.nclIntro4bCode = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight:[15,16,33]"> <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
@@ -1897,12 +1915,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: ` 
         <div style="text-align: justify; width: 70%;">
-        <p>Esta seção não tem o objetivo de detalhar a linguagem
-        HTML. Esta seção tem sim o objetivo de apresentar como os conceitos de
-        interação multimodal podem ser instanciados na linguagem HTML.</p> 
 
-        <p>A linguagem HTML tem o foco de criar apresentações multimídia
-        interativas na web. Sua versão atual oferece, entre outros, os elementos
+        <p>A linguagem HTML é utilizada criar conteúdo multimídia para serviços
+        web. Em particular, sua versão atual (HTML 5) oferece os elementos
         <em>&ltimg></em>, <em>&ltvideo></em> e <em>&ltaudio></em>. Esses
         elementos permitem apresentar respectivamente imagens, vídeo e áudios.
         Para criar sincronismos, entretanto, o HTML recorre a um a JavaScript
@@ -1910,22 +1925,24 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         Elementos JavaScript podem criar sincronismos de mídias e sincronismos
         baseados em interações de usuário por apontador e tecla.</p>
         
-        <p>A tabela seguir analisa quais dos conceitos propostos em nossa
-        pesquisa estão presentes e qual o elemento da HTML que
-        implementa.</p><br>
+        <p>Esta seção não tem o objetivo de detalhar a linguagem HTML. Esta
+        seção tem sim o objetivo de apresentar como os conceitos de interação
+        multimodal podem ser instanciados na linguagem HTML. A tabela seguir
+        apresenta quais conceitos propostos em nossa pesquisa estão presentes
+        na HTML e como deve ser a instanciação dos ausentes.</p><br>
 
         <table align="center" class="table-bordered table-striped
         table-condensed">
           <tr>
             <th>Conceito</th>
-            <th>Presente na NCL?</th>
+            <th>Presente na HTML?</th>
             <th>Proposta de instanciação</th>
           </tr>
           <tr>
-            <td><em>&ltimg></em>, <em>&ltvideo></em>,<em>&ltaudio></em>
-            </td>
             <td><em>&ltmedia></em></td>
-            <td>estender <em>&ltmedia> com trechos</td>
+            <td><em>&ltimg></em>, <em>&ltvideo></em>, <em>&ltaudio></em>
+            </td>
+            <td>estender adcionando com trechos</td>
           </tr>
           <tr>
             <td><em>Sincronismo</em></td>
@@ -1947,11 +1964,29 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       `
     },
     {
-      name: 'htmlIntro2',
+      name: 'htmlIntro1',
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Primeiro, vamos detalhar o conceito de <em>Reconhecedor</em> em NCL.
+        <p>Primeiro, vamos detalhar o conceito de <em>Mídia</em> em HTML.
+        
+        </div>
+      `
+    },
+    {
+      name: 'htmlIntro2',
+      html: `
+        <div style="text-align: justify; width: 70%;">
+        <p>Primeiro, vamos detalhar o conceito de <em>Sincronismo</em> em HTML.
+        </div>
+      `
+    },
+    {
+      name: 'htmlIntro3',
+      type: 'html',
+      html: `
+        <div style="text-align: justify; width: 70%;">
+        <p>Primeiro, vamos detalhar o conceito de <em>Reconhecedor</em> em HTML.
         Para implementar esse <em>Reconhecedor</em> propomos o elemento de
         <em>&ltinput></em></p><br>
 
@@ -1961,7 +1996,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>repete</em> que define o reconhecimento de voz "repita vídeo"</p
         ><br>
 
-        <div id='htmlIntro2aCode'></div><br>
+        <div id='htmlIntro3aCode'></div><br>
 
         <p>O trecho de código a seguir apresenta o arquivo
         <em>rec_gestos.gml</em>. Esse arquivo é uma descrição de reconhecimento
@@ -1969,7 +2004,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>swipe_esquerda</em> e  <em>swipe_direita</em>que definem acenos de
         mão para esquerda e para direita, respectivamente</p><br>
 
-        <div id='htmlIntro2bCode'></div><br>
+        <div id='htmlIntro3bCode'></div><br>
 
         <p>O trecho de código a seguir ilustra uma aplicação que apresenta um
         vídeo, ao qual pode ser reiniciado em sua portão de créditos por
@@ -1989,21 +2024,21 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         deve ser reiniciado (stop e start) quando for reconhecido o trecho
         <em>repete</em></p><br>
 
-        <div id='htmlIntro2cCode'></div><br>
+        <div id='htmlIntro3cCode'></div><br>
         </div>
       `
     },
     {
-      name: 'htmlIntro3',
+      name: 'htmlIntro4',
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Agora, vamos detalhar o elemento <em>Grupo de Usuários</em> em NCL.
+        <p>Agora, vamos detalhar o elemento <em>Grupo de Usuários</em> em HTML.
         Para implementar esse Reconhecedor propomos o elemento de
         <em>&ltuserClass></em></p><br>
         </div>
 
-        <div id='htmlIntro3aCode'></div><br>
+        <div id='htmlIntro4aCode'></div><br>
 
         <div style="text-align: justify; width: 70%;">
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em HTML, o
@@ -2028,17 +2063,16 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>repete</em></p><br>
         </div>
 
-        <div id='htmlIntro3bCode'></div><br>
+        <div id='htmlIntro4bCode'></div><br>
       `
     }
   ]
 })
 
-_data.htmlIntro2aCode = _data.nclIntro2aCode
+_data.htmlIntro3aCode = _data.nclIntro3aCode
+_data.htmlIntro3bCode = _data.nclIntro3bCode
 
-_data.htmlIntro2bCode = _data.nclIntro2bCode
-
-_data.htmlIntro2cCode = `
+_data.htmlIntro3cCode = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
@@ -2051,7 +2085,7 @@ _data.htmlIntro2cCode = `
   ]]></script>
 `
 
-_data.htmlIntro3aCode = `
+_data.htmlIntro4aCode = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;">
   <![CDATA[
@@ -2064,7 +2098,7 @@ _data.htmlIntro3aCode = `
   </html>
   ]]></script>
 `
-_data.htmlIntro3bCode = `
+_data.htmlIntro4bCode = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;">
   <![CDATA[
