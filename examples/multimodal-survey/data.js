@@ -1382,7 +1382,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         um video. O video possui uma um ancora chamada de creditos que inicia
         aos 300 e termina aos 360 segundos.</p>
         
-        <div id='nclIntro1aCode'></div><br>
+        <div id='nclIntro1CodeA'></div><br>
         
         </div>
       `
@@ -1409,7 +1409,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>img_reptetir</em> é selecionado <em>video_principal</em> é
         reiniciado (<em>stop</em> e <em>start</em>).</p>
 
-        <div id='nclIntro2aCode'></div><br>
+        <div id='nclIntro2CodeA'></div><br>
 
         </div>
       `
@@ -1427,7 +1427,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>rec_voz.srgs</em>. Esse arquivo é uma descrição de reconhecimento de
         voz no formato SRGS. Em particular, ele define uma porção chamada
         <em>repete</em> que define o reconhecimento de voz "repita vídeo".</p >
-        <div id='nclIntro3aCode'></div><br>
+        <div id='nclIntro3CodeA'></div><br>
 
         <p>O trecho de código a seguir apresenta o arquivo
         <em>rec_gestos.gml</em>. Esse arquivo é uma descrição de reconhecimento
@@ -1435,7 +1435,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>swipe_esquerda</em> e  <em>swipe_direita</em>que definem acenos de
         mão para esquerda e para direita, respectivamente</p>
 
-        <div id='nclIntro3bCode'></div><br>
+        <div id='nclIntro3CodeB'></div><br>
 
         <p>Para ilustrar o uso de um <em>Reconhecedor</em> em NCL, o código
         a seguir são uma nova versão da aplicação que reinicia um vídeo dado uma
@@ -1458,7 +1458,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         deve ser reiniciado (stop e start) quando for reconhecido o trecho
         <em>repete</em></p>
 
-        <div id='nclIntro3cCode'></div><br>
+        <div id='nclIntro3CodeC'></div><br>
         </div>
       `
     },
@@ -1471,21 +1471,21 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         Para implementar esse Reconhecedor propomos o elemento de
         <em>&ltuserClass></em></p>
 
-        <div id='nclIntro4aCode'></div><br>
+        <div id='nclIntro4CodeA'></div><br>
 
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em NCL, o código
         a seguir são uma nova versão da aplicação que reinicia um vídeo dado uma
         interação. Mas nessa versão, ao invés de clicar, o vídeo é reiniciado ao
         usuário falar "repita vídeo".</p>
 
-        <div id='nclIntro4bCode'></div><br>
+        <div id='nclIntro4CodeB'></div><br>
         </div>
       `
     }
   ]
 })
 
-_data.nclIntro1aCode = `
+_data.nclIntro1CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
   <media id="img_repetir" src="img_repetir.png">
@@ -1500,7 +1500,7 @@ _data.nclIntro1aCode = `
   </media>
   ]]></script>
 `
-_data.nclIntro2aCode = `
+_data.nclIntro2CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight:[16,21,26,30]">
   <![CDATA[
@@ -1542,7 +1542,7 @@ _data.nclIntro2aCode = `
   </ncl>
   ]]></script>
 `
-_data.nclIntro3aCode = `
+_data.nclIntro3CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight: [2]"> <![CDATA[
   <grammar xmlns="http://www.w3.org/2001/06/grammar">
@@ -1550,7 +1550,7 @@ _data.nclIntro3aCode = `
   </grammar>
   ]]></script>
 `
-_data.nclIntro3bCode = `
+_data.nclIntro3CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight: [3,21]"> <![CDATA[
   <?xml version="1.0" encoding="UTF-8"?>
@@ -1594,7 +1594,7 @@ _data.nclIntro3bCode = `
   </GestureMarkupLanguage>
   ]]></script>
 `
-_data.nclIntro3cCode = `
+_data.nclIntro3CodeC = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight:[16,21,24,28]">
   <![CDATA[
@@ -1635,7 +1635,7 @@ _data.nclIntro3cCode = `
   ]]></script>
 `
 
-_data.nclIntro4aCode = `
+_data.nclIntro4CodeA = `
   <script type="syntaxhighlighter" class="brush: plain; toolbar: false;
   auto-links: false; highlight:[6,7]"> <![CDATA[
   PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -1648,7 +1648,7 @@ _data.nclIntro4aCode = `
   }
   ]]></script>
 `
-_data.nclIntro4bCode = `
+_data.nclIntro4CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight:[13,14,15,16,32,34]"> <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
@@ -2109,7 +2109,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>repete</em> que define o reconhecimento de voz "repita vídeo"</p
         ><br>
 
-        <div id='htmlIntro3aCode'></div><br>
+        <div id='htmlIntro3CodeA'></div><br>
 
         <p>O trecho de código a seguir apresenta o arquivo
         <em>rec_gestos.gml</em>. Esse arquivo é uma descrição de reconhecimento
@@ -2117,7 +2117,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>swipe_esquerda</em> e  <em>swipe_direita</em>que definem acenos de
         mão para esquerda e para direita, respectivamente</p><br>
 
-        <div id='htmlIntro3bCode'></div><br>
+        <div id='htmlIntro3CodeB'></div><br>
 
         <p>O trecho de código a seguir ilustra uma aplicação que apresenta um
         vídeo, ao qual pode ser reiniciado em sua portão de créditos por
@@ -2137,7 +2137,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         deve ser reiniciado (stop e start) quando for reconhecido o trecho
         <em>repete</em></p><br>
 
-        <div id='htmlIntro3cCode'></div><br>
+        <div id='htmlIntro3CodeC'></div><br>
         </div>
       `
     },
@@ -2151,7 +2151,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>&ltuserClass></em></p><br>
         </div>
 
-        <div id='htmlIntro4aCode'></div><br>
+        <div id='htmlIntro4CodeA'></div><br>
 
         <div style="text-align: justify; width: 70%;">
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em HTML, o
@@ -2176,16 +2176,16 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>repete</em></p><br>
         </div>
 
-        <div id='htmlIntro4bCode'></div><br>
+        <div id='htmlIntro4CodeB'></div><br>
       `
     }
   ]
 })
 
-_data.htmlIntro3aCode = _data.nclIntro3aCode
-_data.htmlIntro3bCode = _data.nclIntro3bCode
+_data.htmlIntro3CodeA = _data.nclIntro3CodeA
+_data.htmlIntro3CodeB = _data.nclIntro3CodeB
 
-_data.htmlIntro3cCode = `
+_data.htmlIntro3CodeC = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
@@ -2198,7 +2198,7 @@ _data.htmlIntro3cCode = `
   ]]></script>
 `
 
-_data.htmlIntro4aCode = `
+_data.htmlIntro4CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;">
   <![CDATA[
@@ -2211,7 +2211,7 @@ _data.htmlIntro4aCode = `
   </html>
   ]]></script>
 `
-_data.htmlIntro4bCode = `
+_data.htmlIntro4CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;">
   <![CDATA[

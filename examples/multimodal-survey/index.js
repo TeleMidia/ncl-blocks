@@ -195,22 +195,22 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       _blocksTask4Workspace.addChangeListener(saveblocksTask4Changes)
       break
     case 'nclIntro1':
-      $('#nclIntro1aCode').append(_data.nclIntro1aCode)
+      $('#nclIntro1CodeA').append(_data.nclIntro1CodeA)
       SyntaxHighlighter.highlight()
       break
     case 'nclIntro2':
-      $('#nclIntro2aCode').append(_data.nclIntro2aCode)
+      $('#nclIntro2CodeA').append(_data.nclIntro2CodeA)
       SyntaxHighlighter.highlight()
       break
     case 'nclIntro3':
-      $('#nclIntro3aCode').append(_data.nclIntro3aCode)
-      $('#nclIntro3bCode').append(_data.nclIntro3bCode)
-      $('#nclIntro3cCode').append(_data.nclIntro3cCode)
+      $('#nclIntro3CodeA').append(_data.nclIntro3CodeA)
+      $('#nclIntro3CodeB').append(_data.nclIntro3CodeB)
+      $('#nclIntro3CodeC').append(_data.nclIntro3CodeC)
       SyntaxHighlighter.highlight()
       break
     case 'nclIntro4':
-      $('#nclIntro4aCode').append(_data.nclIntro4aCode)
-      $('#nclIntro4bCode').append(_data.nclIntro4bCode)
+      $('#nclIntro4CodeA').append(_data.nclIntro4CodeA)
+      $('#nclIntro4CodeB').append(_data.nclIntro4CodeB)
       SyntaxHighlighter.highlight()
       break
     case 'nclTask1':
@@ -230,14 +230,14 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
         _data.nclTask2CodeOnly
       break
     case 'htmlIntro3':
-      $('#htmlIntro3aCode').append(_data.htmlIntro3aCode)
-      $('#htmlIntro3bCode').append(_data.htmlIntro3bCode)
-      $('#htmlIntro3cCode').append(_data.htmlIntro3cCode)
+      $('#htmlIntro3CodeA').append(_data.htmlIntro3CodeA)
+      $('#htmlIntro3CodeB').append(_data.htmlIntro3CodeB)
+      $('#htmlIntro3CodeC').append(_data.htmlIntro3CodeC)
       SyntaxHighlighter.highlight()
       break
     case 'htmlIntro4':
-      $('#htmlIntro4aCode').append(_data.htmlIntro4aCode)
-      $('#htmlIntro4bCode').append(_data.htmlIntro4bCode)
+      $('#htmlIntro4CodeA').append(_data.htmlIntro4CodeA)
+      $('#htmlIntro4CodeB').append(_data.htmlIntro4CodeB)
       SyntaxHighlighter.highlight()
       break
     case 'htmlTask1':
