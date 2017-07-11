@@ -1320,10 +1320,11 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>A linguagem NCL é utilizada para criar conteúdo multimídia
         interativo em sistemas de TV ( terrestre, IPTV e BroadBand). Em
         particular, sua versão atual (NCL 3.1) oferece os elementos
-        <em>&ltmedia></em> e <em>&ltlink></em>. O <em>&ltmedia></em> permite
-        apresentar conteúdo audiovisual como imagens, vídeo e áudios. Enquanto
-        <em>&ltlink></em> permite criar sincronismos entre mídias e sincronismos
-        baseados em interações de usuário por apontador e tecla.</p>
+        <em>&ltmedia></em> e <em>&ltlink></em>. O elemento <em>&ltmedia></em>
+        permite apresentar conteúdo audiovisual como imagens, vídeo e áudios. Já
+        o elemento <em>&ltlink></em> permite criar sincronismos entre mídias e
+        sincronismos baseados em interações de usuário por apontador e
+        tecla.</p>
       
         <p>Esta seção não tem o objetivo de detalhar a linguagem NCL. Mas sim
         tem o objetivo de apresentar como os conceitos de apresentados podem ser
@@ -2096,16 +2097,12 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;"> 
         
         <p>Primeiro, vamos detalhar o conceito de <em>Mídia</em> em HTML que é
-        já implementado pelo elemento <em>&ltmedia></em>.</p>
-        
-        </p> O elemento  <em>&ltmedia></em> possui um identificador, conteúdo e
-        propriedades. O conteúdo consiste em um arquivo de mídia, como imagem,
-        video, audio, entre outros. O conteúdo de uma <em>&ltmedia></em> tem
-        porções identificáveis, chamadas de âncora. Dentre outros tipos, as
-        âncoras temporais definem porções da apresentação da mídia elemento
-        <em>&ltarea></em>. O código a seguir ilustra duas mídias, uma imagem e
-        um video. O video possui uma um ancora chamada de creditos que inicia
-        aos 300 e termina aos 360 segundos.</p>
+        já implementado por diferentes elementos, como <em>&ltimg></em>,
+        <em>&ltaudio></em> e <em>&ltvideo></em>. Entretanto, esses elementos não
+        possuem porções identificáveis. Logo, propromos os elementos para
+        definir esses porções. Mais precisamente, elementos <em>&ltimg></em> e
+        <em>&ltimg></em> para porções temporais e <em>&llabel></em> para porções
+        em uma descrição textual.</p>
         
         <div id='htmlIntro1CodeA'></div><br>
         </div>
@@ -2118,20 +2115,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;">
         
         <p>Agora, vamos detalhar o conceito de <em>Sincronismo</em> em HTML que
-        é já implementado pelo elementos <em>&ltport></em> e
-        <em>&ltlink></em>.</p>
-        
-        <p> O elemento <em>&ltport></em> indica qual <em>&ltmedia></em> deve ser
-        iniciada com a aplicação. No código a seguir, <em>&ltport></em> define
-        que o elemento <em>midia_principal</em> incia com a aplicação.</p>
-        
-        <p>O elemento <em>&ltlink></em> indica relacionamentos através de
-        <em>&ltmedia></em> através des elementos <em>&ltbind></em>. O código a
-        seguir define dois <em>&ltlink></em>. O primeiro defini que quando o
-        <em>video_principal</em> alcançar o seu trecho de créditos a imagem
-        <em>img_repetir</em> é iniciada. O segundo que quando essa
-        <em>img_reptetir</em> é selecionado <em>video_principal</em> é
-        reiniciado (<em>stop</em> e <em>start</em>).</p>
+        é parcialmente implementado pelo elemento <em>&lscript></em> utilizando
+        a linguagem JavaScript.</p>
 
         <div id='htmlIntro2CodeA'></div><br>
 
@@ -2150,8 +2135,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>O trecho de código a seguir apresenta o arquivo
         <em>rec_voz.srgs</em>. Esse arquivo é uma descrição de reconhecimento de
         voz no formato SRGS. Em particular, ele define uma porção chamada
-        <em>repete</em> que define o reconhecimento de voz "repita vídeo"</p
-        >
+        <em>repete</em> que define o reconhecimento de voz "repita vídeo".</p>
 
         <div id='htmlIntro3CodeA'></div><br>
 
@@ -2167,19 +2151,19 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         vídeo, ao qual pode ser reiniciado em sua portão de créditos por
         comandos de voz. Mais precisamente, a aplicação utiliza um elemento
         <em>&ltmedia></em> mídias, um elemento de <em>&ltinput></em>, um
-        <em><port></em> e dois <em>&ltlink></em>s.</p>
-        <p>O elemento de <em>&ltmedia></em> chamado de
-        <em>video_principal</em> (linhas 17-19) que define um trecho chamado
-        créditos que inicia aos 300s. O elemento <em>&ltinput></em>, chamado de
-        <em>rec</em>é definido utilizando utilizando o arquivo SRGS
-        <em>rec_voz.srgs</em> (linhas 20-22). O elemento <em>&ltport></em>
-        (linha 16) define que o <em>video_principal</em> é iniciado com
-        aplicação. O primeiro <em>&ltlink></em> (linhas 23-26) define que quando
-        o <em>video_principal</em> alançar a sua porção de créditos (300s) o
+        <em><port></em> e dois <em>&ltlink></em>s.</p> <p>O elemento de
+        <em>&ltmedia></em> chamado de <em>video_principal</em> (linhas 17-19)
+        que define um trecho chamado créditos que inicia aos 300s. O elemento
+        <em>&ltinput></em>, chamado de <em>rec</em>é definido utilizando
+        utilizando o arquivo SRGS <em>rec_voz.srgs</em> (linhas 20-22). O
+        elemento <em>&ltport></em> (linha 16) define que o
+        <em>video_principal</em> é iniciado com aplicação. O primeiro
+        <em>&ltlink></em> (linhas 23-26) define que quando o
+        <em>video_principal</em> alançar a sua porção de créditos (300s) o
         reconhecedor <em>rec</em> inicia seu reconhecimento. O segundo
         <em>&ltlink></em>(linhas 27-30) define que o <em>video_principal</em>
         deve ser reiniciado (stop e start) quando for reconhecido o trecho
-        <em>repete</em></p>
+        <em>repete</em>.</p>
 
         <div id='htmlIntro3CodeC'></div><br>
         </div>
