@@ -1314,7 +1314,6 @@ _data.surveyJSON.pages[pageIndex].elements.push({
   innerIndent: 1,
   elements: [
     {
-      name: 'nclIntro1',
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
@@ -2039,7 +2038,6 @@ _data.surveyJSON.pages[pageIndex].elements.push({
   innerIndent: 1,
   elements: [
     {
-      name: 'htmlIntro1',
       type: 'html',
       html: ` 
         <div style="text-align: justify; width: 70%;">
@@ -2103,6 +2101,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     },
     {
       name: 'htmlIntro2',
+      type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
         <p>Primeiro, vamos detalhar o conceito de <em>Sincronismo</em> em HTML.
