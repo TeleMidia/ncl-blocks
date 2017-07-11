@@ -1383,7 +1383,6 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         aos 300 e termina aos 360 segundos.</p>
         
         <div id='nclIntro1CodeA'></div><br>
-        
         </div>
       `
     },
@@ -1427,6 +1426,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>rec_voz.srgs</em>. Esse arquivo é uma descrição de reconhecimento de
         voz no formato SRGS. Em particular, ele define uma porção chamada
         <em>repete</em> que define o reconhecimento de voz "repita vídeo".</p >
+        
         <div id='nclIntro3CodeA'></div><br>
 
         <p>O trecho de código a seguir apresenta o arquivo
@@ -1459,6 +1459,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>repete</em></p>
 
         <div id='nclIntro3CodeC'></div><br>
+
         </div>
       `
     },
@@ -1468,17 +1469,32 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         <div style="text-align: justify; width: 70%;">
         <p>Agora, vamos detalhar o elemento <em>Grupo de Usuários</em> em NCL.
-        Para implementar esse Reconhecedor propomos o elemento de
-        <em>&ltuserClass></em></p>
+        Para implementar esse conceito propomos o elemento
+        <em>&ltuserClass></em>.</p>
 
+       <p> Um importante parte da definição de um <em>&ltuserClass></em> é como
+       são descritos as caracterisicas que ususários devem ter par aparticipar
+       da classe, por exemplos quais dispositivos devem possuir. Para essa
+       descrição propomos um descrição  no formato SPARQL. O trecho de código a
+       seguir apresenta o arquivo de descrição de ususários
+       <em>gu_leap_microphone.sparql</em>. Essa descrição define que cada
+       usuário do grupo deve ter um headset e um leapmotion.</p >
+        
         <div id='nclIntro4CodeA'></div><br>
+
+       <p> O elemento  <em>&ltuserClass></em> é definido dentro do
+       <em>&lthead></em> de uma aplicação NCL. Ele é definido por um
+       identificador, número maximo de ususário e pelo seu arquivo de descrição
+       de usuários. </p>
 
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em NCL, o código
         a seguir são uma nova versão da aplicação que reinicia um vídeo dado uma
-        interação. Mas nessa versão, ao invés de clicar, o vídeo é reiniciado ao
-        usuário falar "repita vídeo".</p>
+        interação (modificações em destaque). Mas nessa versão, ao invés de
+        clicar, o vídeo é reiniciado ao segundo usuário do usuário falar "repita
+        vídeo".</p>
 
         <div id='nclIntro4CodeB'></div><br>
+        
         </div>
       `
     }
@@ -1639,12 +1655,12 @@ _data.nclIntro4CodeA = `
   <script type="syntaxhighlighter" class="brush: plain; toolbar: false;
   auto-links: false; highlight:[6,7]"> <![CDATA[
   PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-    PREFIX prf: <http://www.wapforum.org/profiles/UAPROF/ccppschema-20010430>
-      SELECT ?person
-      WHERE {
-      ?person prf:component ? component.
-      ?component prf: name ? name FILTER regex(?name, “Leap Motion”) 
-        ? name FILTER regex(?name, “Microphone”)
+  PREFIX prf: <http://www.wapforum.org/profiles/UAPROF/ccppschema-20010430>
+  SELECT ?person
+  WHERE {
+  ?person prf:component ? component.
+  ?component prf: name ? name FILTER regex(?name, “Leap Motion”) 
+    ? name FILTER regex(?name, “Microphone”)
   }
   ]]></script>
 `
