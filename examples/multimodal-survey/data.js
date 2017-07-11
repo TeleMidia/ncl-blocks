@@ -1368,8 +1368,21 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'nclIntro1',
       type: 'html',
       html: `
-        <div style="text-align: justify; width: 70%;">
-        <p>Primeiro, vamos detalhar o conceito de <em>Mídia</em> em NCL.
+        <div style="text-align: justify; width: 70%;"> 
+        
+        <p>Primeiro, vamos detalhar o conceito de <em>Mídia</em> em NCL que é
+        já implementado pelo elemento <em>&ltmedia></em>.</p>
+        
+        </p> O elemento  <em>&ltmedia></em> possui um identificador, conteúdo e
+        propriedades. O conteúdo consiste em um arquivo de mídia, como imagem,
+        video, audio, entre outros. O conteúdo de uma <em>&ltmedia></em> tem
+        porções identificáveis, chamadas de âncora. Dentre outros tipos, as
+        âncoras temporais definem porções da apresentação da mídia elemento
+        <em>&ltarea></em>. O código a seguir ilustra duas mídias, uma imagem e
+        um video. O video possui uma um ancora chamada de creditos que inicia
+        aos 300 e termina aos 360 segundos.</p>
+        
+        <div id='nclIntro1aCode'></div><br>
         
         </div>
       `
@@ -1379,7 +1392,25 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Primeiro, vamos detalhar o conceito de <em>Sincronismo</em> em NCL.
+        
+        <p>Agora, vamos detalhar o conceito de <em>Sincronismo</em> em NCL que é
+        já implementado pelo elementos <em>&ltport></em> e
+        <em>&ltlink></em>.</p>
+        
+        <p> O elemento <em>&ltport></em> indica qual <em>&ltmedia></em> deve ser
+        iniciada com a aplicação. No código a seguir, <em>&ltport></em> define
+        que o elemento <em>midia_principal</em> incia com a aplicação.</p>
+        
+        <p>O elemento <em>&ltlink></em> indica relacionamentos através de
+        <em>&ltmedia></em> através des elementos <em>&ltbind></em>. O código a
+        seguir define dois <em>&ltlink></em>. O primeiro defini que quando o
+        <em>video_principal</em> alcançar o seu trecho de créditos a imagem
+        <em>img_repetir</em> é iniciada. O segundo que quando essa
+        <em>img_reptetir</em> é selecionado <em>video_principal</em> é
+        reiniciado (<em>stop</em> e <em>start</em>).</p>
+
+        <div id='nclIntro2aCode'></div><br>
+
         </div>
       `
     },
@@ -1390,28 +1421,29 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;">
         <p>Agora, vamos detalhar o conceito de <em>Reconhecedor</em> em NCL.
         Para implementar esse <em>Reconhecedor</em> propomos o elemento de
-        <em>&ltinput></em></p><br>
+        <em>&ltinput></em>.</p>
 
         <p>O trecho de código a seguir apresenta o arquivo
         <em>rec_voz.srgs</em>. Esse arquivo é uma descrição de reconhecimento de
         voz no formato SRGS. Em particular, ele define uma porção chamada
-        <em>repete</em> que define o reconhecimento de voz "repita vídeo"</p
-        ><br>
+        <em>repete</em> que define o reconhecimento de voz "repita vídeo".</p >
         <div id='nclIntro3aCode'></div><br>
 
         <p>O trecho de código a seguir apresenta o arquivo
-        <em>rec_gestos.gml</em>. Esse arquivo é uma descrição de reconhecimento de voz no formato GML. Em particular, ele define duas porções chamadas
-        <em>swipe_esquerda</em> e  <em>swipe_direita</em>que definem acenos de mão para esquerda e para direita, respectivamente</p><br>
+        <em>rec_gestos.gml</em>. Esse arquivo é uma descrição de reconhecimento
+        de voz no formato GML. Em particular, ele define duas porções chamadas
+        <em>swipe_esquerda</em> e  <em>swipe_direita</em>que definem acenos de
+        mão para esquerda e para direita, respectivamente</p>
 
         <div id='nclIntro3bCode'></div><br>
 
-        <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em NCL, o código
+        <p>Para ilustrar o uso de um <em>Reconhecedor</em> em NCL, o código
         a seguir são uma nova versão da aplicação que reinicia um vídeo dado uma
         interação. Mas nessa versão, ao invés de clicar, o vídeo é reiniciado ao
         usuário falar "repita vídeo".</p> <p>Mais precisamente, a aplicação
         utiliza um elemento <em>&ltmedia></em> mídias, um elemento de
         <em>&ltinput></em>, um <em><port></em> e dois
-        <em>&ltlink></em>s.</p><br>
+        <em>&ltlink></em>s.</p>
         
         <p>O elemento de <em>&ltmedia></em> chamado de
         <em>video_principal</em> (linhas 17-19) que define um trecho chamado
@@ -1424,7 +1456,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         reconhecedor <em>rec</em> inicia seu reconhecimento. O segundo
         <em>&ltlink></em>(linhas 27-30) define que o <em>video_principal</em>
         deve ser reiniciado (stop e start) quando for reconhecido o trecho
-        <em>repete</em></p><br>
+        <em>repete</em></p>
 
         <div id='nclIntro3cCode'></div><br>
         </div>
@@ -1437,14 +1469,14 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;">
         <p>Agora, vamos detalhar o elemento <em>Grupo de Usuários</em> em NCL.
         Para implementar esse Reconhecedor propomos o elemento de
-        <em>&ltuserClass></em></p><br>
+        <em>&ltuserClass></em></p>
 
         <div id='nclIntro4aCode'></div><br>
 
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em NCL, o código
         a seguir são uma nova versão da aplicação que reinicia um vídeo dado uma
         interação. Mas nessa versão, ao invés de clicar, o vídeo é reiniciado ao
-        usuário falar "repita vídeo".</p><br>
+        usuário falar "repita vídeo".</p>
 
         <div id='nclIntro4bCode'></div><br>
         </div>
@@ -1453,6 +1485,63 @@ _data.surveyJSON.pages[pageIndex].elements.push({
   ]
 })
 
+_data.nclIntro1aCode = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false;"> <![CDATA[
+  <media id="img_repetir" src="img_repetir.png">
+    <property name="width" value="20%" />
+    <property name="hight" value="20%" />
+    <property name="zindex" value="1" />
+  </media>
+  <media id="video_principal" src="video.mp4">
+    <property name="width" value="100%" />
+    <property name="hight" value="100%" />
+    <area label="credits" begin="300s" end="360s" />
+  </media>
+  ]]></script>
+`
+_data.nclIntro2aCode = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false; highlight:[16,21,26,30]">
+  <![CDATA[
+  <?xml version="1.0" encoding="ISO-8859-1"?>
+  <ncl>
+    <head>
+      <connectorBase>
+        <causalConnector id="onSelectionStopStart">
+          <simpleCondition role="onSelection" max="unbounded"/>
+          <compoundAction>
+            <simpleAction role="stop" max="unbounded"/>
+            <simpleAction role="start" max="unbounded"/>
+          </compoundAction>
+        </causalConnector>
+      </connectorBase>
+    </head>
+    <body>
+      <port component="video_principal"/>
+      <media id="video_principal" src="video.mp4">
+        <property name="width" value="100%" />
+        <property name="hight" value="100%" />
+        <area label="credits" begin="300s" end="360s" />
+      </media>
+      <media id="img_repetir" src="img_repetir.png">
+        <property name="width" value="20%" />
+        <property name="hight" value="20%" />
+        <property name="zindex" value="1" />
+      </media>
+      <link xconnector="onBeginStart">
+        <bind role="onBegin" component="video_principal" interface="credits"/>
+        <bind role="start" component="rec"/>
+      </link>
+      <link xconnector="onSelectionStopStart">
+        <bind role="onSelection" component="img_repetir"/>
+        <bind role="stop" component="video_principal"/>
+        <bind role="start" component="video_principal"/>
+      </link>
+    </body>
+  </ncl>
+  ]]></script>
+`
 _data.nclIntro3aCode = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight: [2]"> <![CDATA[
@@ -1507,7 +1596,7 @@ _data.nclIntro3bCode = `
 `
 _data.nclIntro3cCode = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[17,20,23,27]">
+  auto-links: false; highlight:[16,21,24,28]">
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <ncl>
@@ -1521,11 +1610,12 @@ _data.nclIntro3cCode = `
           </compoundAction>
         </causalConnector>
       </connectorBase>
-      <descriptorBase documentURI="desc.ncl" alias="desEx"/>
     </head>
     <body>
       <port component="video_principal"/>
-      <media id="video_principal" src="video.mp4" descriptor="desEx#video">
+      <media id="video_principal" src="video.mp4">
+        <property name="width" value="100%" />
+        <property name="hight" value="100%" />
         <area label="credits" begin="300s" end="360s" />
       </media>
       <input id="rec"src="rec_voz.srgs">
@@ -1535,7 +1625,7 @@ _data.nclIntro3cCode = `
         <bind role="onBegin" component="video_principal" interface="credits"/>
         <bind role="start" component="rec"/>
       </link>
-      <link xconnector="onRecognizeStart">
+      <link xconnector="onRecognizeStopStart">
         <bind role="onRecognize" component="rec_voz" interface="repete"/>
         <bind role="stop" component="video_principal"/>
         <bind role="start" component="video_principal"/>
@@ -1560,7 +1650,7 @@ _data.nclIntro4aCode = `
 `
 _data.nclIntro4bCode = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[15,16,33]"> <![CDATA[
+  auto-links: false; highlight:[13,14,15,16,32,34]"> <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <ncl>
     <head>
@@ -1573,15 +1663,16 @@ _data.nclIntro4bCode = `
           </compoundAction>
         </causalConnector>
       </connectorBase>
-      <descriptorBase documentURI="desc.ncl" alias="desEx"/>
-       <userBase>
+      <userBase>
         <userClass id="gu_leap_microphone" max="2"
-        userClassDescription="gu_leap_microphone.sparql" /> 
+          userClassDescription="gu_leap_microphone.sparql" /> 
       </userBase>
     </head>
     <body>
       <port component="video_principal"/>
-      <media id="video_principal" src="video.mp4" descriptor="desEx#video">
+      <media id="video_principal" src="video.mp4">
+        <property name="width" value="100%" />
+        <property name="hight" value="100%" />
         <area label="credits" begin="300s" end="360s" />
       </media>
       <input id="rec"src="rec_voz.srgs">
@@ -1709,19 +1800,33 @@ _data.nclTask1Code = `
           </compoundAction>
         </causalConnector>
       </connectorBase>
-      <descriptorBase documentURI="desc.ncl" alias="desEx"/>
     </head>
     <body>
       <port component="video_principal" />
-      <media id="video_principal" src="video_principal.mp4" descriptor="desEx#video">
-        <area label="creditos" begin="300s" />
+      <media id="video_principal" src="video_principal.mp4">
+        <property name="width" value="100%" />
+        <property name="hight" value="100%" />
+        <area label="credits" begin="300s" end="360s" />
       </media>
-      <media id="video_centro" src="centro.mp4" descriptor="desEx#video"/>
-      <media id="video_praia" src="praia.mp4" descriptor="desEx#video"/>
-      <media id="img_centro" src="img_centro.png" descriptor="desEx#icon1"/>
-      <media id="img_praia" src="img_praia.png" descriptor="desEx#icon2"/>
+      <media id="video_centro" src="centro.mp4">
+        <property name="width" value="100%" />
+        <property name="hight" value="100%" />
+      </media>
+      <media id="video_praia" src="praia.mp4">
+        <property name="width" value="100%" />
+        <property name="hight" value="100%" />
+      </media>
+      <media id="img_centro" src="img_centro.png">
+        <property name="width" value="20%" />
+        <property name="hight" value="20%" />
+      </media>
+      <media id="img_praia" src="img_praia.png">
+        <property name="left" value="80%" />
+        <property name="width" value="20%" />
+        <property name="hight" value="20%" />
+      </media>
       <link xconnector="onBeginStart">
-        <bind role="onBegin" component="video_principal" interface="creditos" />
+        <bind role="onBegin" component="video_principal" interface="creditos">
         <bind role="start" component="img_centro" />
         <bind role="start" component="img_praia" />
       </link>
@@ -1745,7 +1850,7 @@ _data.nclTask1Code = `
 `
 _data.nclTask2CodeOnly = `
   <?xml version= "1.0" encoding= "ISO-8859-1" ?>
-  <ncl xmlns="http://www.ncl.org.br/NCL3.0/EDTVProfile">
+   <ncl xmlns="http://www.ncl.org.br/NCL3.0/EDTVProfile">
     <head>
       <connectorBase>
         <causalConnector id="onBeginStart">
@@ -1753,23 +1858,29 @@ _data.nclTask2CodeOnly = `
           <simpleAction role="start" max="unbounded" qualifier="par"/>
         </causalConnector>
         <causalConnector id="onRecognizeStopStart">
-          <simpleCondition role="onRecognize" max="unbounded" />
+          <simpleCondition role="onRecognize" />
           <compoundAction>
             <simpleAction role="stop" ax="unbounded"/>
             <simpleAction role="start" max="unbounded" />
           </compoundAction>
         </causalConnector>
       </connectorBase>
-    <descriptorBase documentURI="desc.ncl" alias="desEx"/>
     </head>
     <body>
       <port component="video_principal" />
-      <media id="video_principal" src="video_principal.mp4"
-        descriptor="desEx#video">
-        <area label="creditos" begin="300s" />
+      <media id="video_principal" src="video_principal.mp4">
+        <property name="width" value="100%" />
+        <property name="hight" value="100%" />
+        <area label="credits" begin="300s" end="360s" />
       </media>
-      <media id="video_centro" src="centro.mp4" descriptor="desEx#video"/>
-      <media id="video_praia" src="praia.mp4" descriptor="desEx#video"/>
+      <media id="video_centro" src="centro.mp4">
+        <property name="width" value="100%" />
+        <property name="hight" value="100%" />
+      </media>
+      <media id="video_praia" src="praia.mp4">
+        <property name="width" value="100%" />
+        <property name="hight" value="100%" />
+      </media>
       <input id="rec" src="rec_voz.sgrs">
         <area label="centro" />
         <area label="praia" />
@@ -1794,7 +1905,7 @@ _data.nclTask2CodeOnly = `
 
 _data.nclTask2Code = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight: [9,10,11,12,13,14,15,30,32,34,35,39,40]">
+  auto-links: false; highlight: [9,10,11,12,13,14,15,33,34,35,36,41,46]">
   <![CDATA[` + _data.nclTask2CodeOnly + ` ]]></script>
 `
 

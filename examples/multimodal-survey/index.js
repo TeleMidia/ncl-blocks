@@ -69,8 +69,8 @@ if ($('#surveyPageNo').length) {
 $('#surveyPageNo').change(function () {
   _survey.currentPageNo = this.value
 })
-// $('#surveyPageNo').val(5).change()
-$('#surveyPageNo').val(7).change()
+$('#surveyPageNo').val(5).change()
+// $('#surveyPageNo').val(7).change()
 
 // ----------------------------------------
 // survey listeners
@@ -193,6 +193,14 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
         setTimeout(setNotEdited, 500)
       }
       _blocksTask4Workspace.addChangeListener(saveblocksTask4Changes)
+      break
+    case 'nclIntro1':
+      $('#nclIntro1aCode').append(_data.nclIntro1aCode)
+      SyntaxHighlighter.highlight()
+      break
+    case 'nclIntro2':
+      $('#nclIntro2aCode').append(_data.nclIntro2aCode)
+      SyntaxHighlighter.highlight()
       break
     case 'nclIntro3':
       $('#nclIntro3aCode').append(_data.nclIntro3aCode)
