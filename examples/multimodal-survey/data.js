@@ -1485,15 +1485,15 @@ _data.surveyJSON.pages[pageIndex].elements.push({
        identificador, número maximo de ususário e pelo seu arquivo de descrição
        de usuários.</p>
 
-        <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em NCL, o código
-        a seguir são uma nova versão da aplicação que reinicia um vídeo dado uma
-        interação (modificações em destaque). Mas nessa versão, ao invés de
-        clicar, o vídeo é reiniciado ao segundo usuário do usuário falar "repita
-        vídeo".</p>
+      <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em NCL, o código
+      a seguir é uma nova versão da aplicação que reinicia um vídeo dado uma
+      interação (modificações em destaque). Mas nessa versão, ao invés de
+      clicar, o vídeo é reiniciado ao segundo usuário do usuário falar "repita
+      vídeo".</p>
 
-        <div id='nclIntro4CodeB'></div><br>
-        
-        </div>
+      <div id='nclIntro4CodeB'></div><br>
+      
+      </div>
       `
     }
   ]
@@ -2093,9 +2093,21 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'htmlIntro1',
       type: 'html',
       html: `
-        <div style="text-align: justify; width: 70%;">
-        <p>Primeiro, vamos detalhar o conceito de <em>Mídia</em> em HTML.
+        <div style="text-align: justify; width: 70%;"> 
         
+        <p>Primeiro, vamos detalhar o conceito de <em>Mídia</em> em HTML que é
+        já implementado pelo elemento <em>&ltmedia></em>.</p>
+        
+        </p> O elemento  <em>&ltmedia></em> possui um identificador, conteúdo e
+        propriedades. O conteúdo consiste em um arquivo de mídia, como imagem,
+        video, audio, entre outros. O conteúdo de uma <em>&ltmedia></em> tem
+        porções identificáveis, chamadas de âncora. Dentre outros tipos, as
+        âncoras temporais definem porções da apresentação da mídia elemento
+        <em>&ltarea></em>. O código a seguir ilustra duas mídias, uma imagem e
+        um video. O video possui uma um ancora chamada de creditos que inicia
+        aos 300 e termina aos 360 segundos.</p>
+        
+        <div id='htmlIntro1CodeA'></div><br>
         </div>
       `
     },
@@ -2104,7 +2116,25 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Primeiro, vamos detalhar o conceito de <em>Sincronismo</em> em HTML.
+        
+        <p>Agora, vamos detalhar o conceito de <em>Sincronismo</em> em HTML que
+        é já implementado pelo elementos <em>&ltport></em> e
+        <em>&ltlink></em>.</p>
+        
+        <p> O elemento <em>&ltport></em> indica qual <em>&ltmedia></em> deve ser
+        iniciada com a aplicação. No código a seguir, <em>&ltport></em> define
+        que o elemento <em>midia_principal</em> incia com a aplicação.</p>
+        
+        <p>O elemento <em>&ltlink></em> indica relacionamentos através de
+        <em>&ltmedia></em> através des elementos <em>&ltbind></em>. O código a
+        seguir define dois <em>&ltlink></em>. O primeiro defini que quando o
+        <em>video_principal</em> alcançar o seu trecho de créditos a imagem
+        <em>img_repetir</em> é iniciada. O segundo que quando essa
+        <em>img_reptetir</em> é selecionado <em>video_principal</em> é
+        reiniciado (<em>stop</em> e <em>start</em>).</p>
+
+        <div id='htmlIntro2CodeA'></div><br>
+
         </div>
       `
     },
@@ -2161,15 +2191,22 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         <div style="text-align: justify; width: 70%;">
         <p>Agora, vamos detalhar o elemento <em>Grupo de Usuários</em> em HTML.
-        Para implementar esse Reconhecedor propomos o elemento de
-        <em>&ltuserClass></em></p>
-        </div>
+        Para implementar esse conceito propomos o elemento
+        <em>&ltuserClass></em>.</p>
 
+       <p> Um importante parte da definição de um <em>&ltuserClass></em> é como
+       são descritos as caracterisicas que ususários devem ter par aparticipar
+       da classe, por exemplos quais dispositivos devem possuir. Para essa
+       descrição propomos um descrição  no formato SPARQL. O trecho de código a
+       seguir apresenta o arquivo de descrição de ususários
+       <em>gu_leap_microphone.sparql</em>. Essa descrição define que cada
+       usuário do grupo deve ter um headset e um leapmotion.</p >
+        
         <div id='htmlIntro4CodeA'></div><br>
 
         <div style="text-align: justify; width: 70%;">
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em HTML, o
-        código a seguir são uma nova versão da aplicação que reinicia um video
+        código a seguir é uma nova versão da aplicação que reinicia um video
         dado uma interação. Mas nessa versão, ao invés de clicar, o vídeo é
         reiniciado ao usuário falar "repita vídeo".</p> <p>Mais precisamente, a
         aplicação utiliza um elemento <em>&ltmedia></em> mídias, um elemento de
@@ -2196,6 +2233,32 @@ _data.surveyJSON.pages[pageIndex].elements.push({
   ]
 })
 
+_data.htmlIntro1CodeA = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false;"> <![CDATA[
+  <?xml version="1.0" encoding="ISO-8859-1"?>
+  <html>
+    <head>
+    </head>
+    <body>
+    </body>
+  </html>
+  ]]></script>
+`
+
+_data.htmlIntro2CodeA = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false;">
+  <![CDATA[
+  <?xml version="1.0" encoding="ISO-8859-1"?>
+  <html>
+    <head>
+    </head>
+    <body>
+    </body>
+  </html>
+  ]]></script>
+`
 _data.htmlIntro3CodeA = _data.nclIntro3CodeA
 _data.htmlIntro3CodeB = _data.nclIntro3CodeB
 
@@ -2212,19 +2275,8 @@ _data.htmlIntro3CodeC = `
   ]]></script>
 `
 
-_data.htmlIntro4CodeA = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false;">
-  <![CDATA[
-  <?xml version="1.0" encoding="ISO-8859-1"?>
-  <html>
-    <head>
-    </head>
-    <body>
-    </body>
-  </html>
-  ]]></script>
-`
+_data.htmlIntro4CodeA = _data.nclIntro4CodeA
+
 _data.htmlIntro4CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;">

@@ -229,6 +229,14 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       _survey.getQuestionByName('nclTask4Question').value =
         _data.nclTask2CodeOnly
       break
+    case 'htmlIntro1':
+      $('#htmlIntro1CodeA').append(_data.htmlIntro1CodeA)
+      SyntaxHighlighter.highlight()
+      break
+    case 'htmlIntro2':
+      $('#htmlIntro2CodeA').append(_data.htmlIntro2CodeA)
+      SyntaxHighlighter.highlight()
+      break
     case 'htmlIntro3':
       $('#htmlIntro3CodeA').append(_data.htmlIntro3CodeA)
       $('#htmlIntro3CodeB').append(_data.htmlIntro3CodeB)
