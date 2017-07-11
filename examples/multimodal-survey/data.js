@@ -34,15 +34,15 @@ _data.surveyJSON.pages.push({
         da PUC-Rio. O TeleMídia desenvolve pesquisas nas áreas de Sistemas 
         Multimídia e Redes de Computadores. Em particular, Sistemas de TV 
         Digital terrestre e IPTV, têm sido foco de pesquisa e inovação do 
-        laboratório nos últimos anos.</p><br>
+        laboratório nos últimos anos.</p>
         
         <p>Convidamos a você a participar de uma estudo sobre nossa pesquisa
         sobre <i>Interações multimodais em linguagens
-        multimídia</i>.</p><br>
+        multimídia</i>.</p>
         
         <p><strong>Ressaltamos que este estudo NÃO se destina a avaliar
         você, mas sim capturar evidências para nossa
-        pesquisa.</strong></p><br>
+        pesquisa.</strong></p>
         
         <p>Para prosseguirmos, pedimos seu consentimento para realizarmos
         este estudo e informamos que:</p> 
@@ -63,7 +63,7 @@ _data.surveyJSON.pages.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Caso esteja de acordo, prossiga.</p><br>
+        <p>Caso esteja de acordo, prossiga.</p>
 
         OBS: Este estudo é feito em uma única página web. Caso deseje
         navegar entre as seções do estudo, <strong>NÃO</strong> utilize
@@ -286,20 +286,20 @@ _data.surveyJSON.pages.push({
         <p>Modificamos a primeira figura para ilustrar a criação e apresentação
         de um documento multimídia com suporte a interações multimodais. Nessa
         nova figura, o autor define não apenas mídias e sincronismo, como também
-        o reconhecimento de interações multimodais. </p> <br>
+        o reconhecimento de interações multimodais.</p>
         
         <p>Para definir reconhecimentos, o autor utiliza de descrições
         auxiliares para reconhecer determinada interação. Essas descrições têm
         sintaxe própria que define características de interação. Por exemplo,
         uma descrição pode ser em SRGS (Speech Recognition Grammar
         Specification) [5] para definir
-        o reconhecimento de comandos de voz.</p><br>
+        o reconhecimento de comandos de voz.</p>
 
         <p>Na apresentação, esse sistema multimídia recebe o documento
         multimídia, arquivos de mídia e descrições multimodais necessários para
         realizar o sincronismo e reconhecimentos definidos pelo autor. Esse
         sistema utiliza dispositivos de interação multimodal para
-        reconhecimento, além de dispositivos audiovisuais.</p> <br>
+        reconhecimento, além de dispositivos audiovisuais.</p>
 
         <div class='text-center'>
           <img class='img-thumbnail' style='height: 500px' 
@@ -310,7 +310,7 @@ _data.surveyJSON.pages.push({
         <p>Por fim, uma <strong>linguagem multimídia com interações
         multimodais</strong> é aquele formato que permite definir um documento
         multimídia que não apenas sincroniza mídias, mas também reconhece
-        interações multimodais. </p><br>
+        interações multimodais.</p>
 
         <p>Para finalizar essa seção, podemos afirmar que uma <strong>linguagem
         multimídia é "output oriented"</strong>, pois tem foco na sincronia de
@@ -364,18 +364,18 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;"> 
         <p>As linguagens multimídia atuais não suportam adequadamente interações
         multimodais. Elas podem ser consideradas "output-oriented" pois focam em
-        conteúdos para apresentação, como imagens, vídeo e áudios. </p><br>
+        conteúdos para apresentação, como imagens, vídeo e áudios.</p>
         
         <p>Em nossa pesquisa propomos que conceitos a serem
         necessários para linguagem multimídia com interações multimodais. Mais
         precisamente esses conceitos são os de <em>Mídia, Reconhecedor,
-        Sincronismo</em> e <em>Grupo de Usuários</em>. </p><br>
+        Sincronismo</em> e <em>Grupo de Usuários</em>.</p>
         
         <p>Esta seção tem o objetivo de detalhar esses conceitos para o
         participante e capturar evidências de nossa pesquisa. Para evitar
         possíveis dificuldades dada a sintaxe de linguagens, apresentaremos
         esses conceitos utilizando uma abordagem de <strong>desenvolvimento de
-        aplicações através de blocos</strong>.</p> <br>
+        aplicações através de blocos</strong>.</p>
         
         <p>Esse tipo de abordagem é bastante utilizado para o ensino de
         programação ou para ferramentas de geração de código. Em especial,
@@ -383,7 +383,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <strong>MIT Scratch</strong>[4] e <strong>MIT App
         Inventor</strong>[5]. O primeiro é utilizado para criar aplicações
         web, especialmente jogos, e o segundo utilizado para criar
-        aplicações móveis. Ambos são ilustrados a seguir.</p><br>
+        aplicações móveis. Ambos são ilustrados a seguir.</p>
 
         <div class='text-center'>
           <img class='img-thumbnail' style='height: 270px' 
@@ -404,7 +404,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'conceptsIntro1',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Primeiro, vamos detalhar o elemento <em>Mídia</em>.</p><br>
+        <p>Primeiro, vamos detalhar o elemento <em>Mídia</em>.</p>
         
         <p>O elemento <em>Mídia</em> é definido por um identificador e por
         seu conteúdo. O conteúdo de uma <em>Mídia</em> tem porções
@@ -412,7 +412,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         blocos a seguir definem duas mídias com identificadores
         <em>midia_principal</em> e <em>icone</em>, mas elas não possuem
         conteúdo. Por não terem conteúdo, ações de iniciar sobre as mídias
-        acima não apresentaram resultados.</p><br>
+        acima não apresentaram resultados.</p>
         </div>
         
         <div id='conceptsIntro1a'></div><br>
@@ -424,7 +424,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>creditos</em> que inicia aos 300 e termina aos 360 segundos.</p>
         </div>
         
-        <div id='conceptsIntro1b'></div></p><br>
+        <div id='conceptsIntro1b'></div></p>
       `
     },
     {
@@ -433,7 +433,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         <div style="text-align: justify; width: 70%;">
         <p></p>Em em seguida, vamos detalhar o elemento
-        <em>Sincronismo</em>. </p><br>
+        <em>Sincronismo</em>.</p>
 
         <p>O elemento de <em>Sincronismo</em> permite definir o
         comportamento das aplicações. O uso de elementos de
@@ -442,7 +442,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         em causalidade, ou seja, quando uma condição é satisfeita, ações são
         realizadas. Exemplos de condições são início ou fim de uma mídia ou
         trecho de mídia, ou a seleção de usuário sobre uma mídia. Exemplos
-        de ações são iniciar ou parar uma mídia.</p><br>
+        de ações são iniciar ou parar uma mídia.</p>
 
         <p>Os blocos a seguir definem a mídia <em>midia_principal</em> e um 
         sincronismo que inicia a mídia com a aplicação. Nesse exemplo, 
@@ -460,7 +460,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Para ilustrar o uso do elemento de <em>Sincronismo</em>, os
         blocos a seguir definem uma aplicação que apresenta um vídeo, que um
         ícone durante os créditos. Ao selecionar o ícone, o vídeo é
-        reiniciado.</p><br> 
+        reiniciado.</p> 
         
         <p>Mais precisamente, os blocos definem novamente
         <em>midia_principal</em> e um <em>Sincronismo<em> do bloco anterior,
@@ -471,7 +471,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         iniciada. O segundo <em>Sincronismo</em> adicionado define que
         quando a mídia <em>icone_repetir</em> for selecionada, a
         <em>midia_principal</em> deve ser reiniciada (terminada e
-        inciada)</p><br>
+        inciada)</p>
         </div>
 
         <div id='conceptsIntro2b'></div>
@@ -484,7 +484,6 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         <div style="text-align: justify; width: 70%;">
         <p>Agora, detalhamos a seguir o elemento <em>Reconhecedor</em>.</p>
-        <br>
 
         <p> O <em>Reconhecedor</em> também é definido por um identificador e
         por seu conteúdo. Entretanto, diferente de <em>Mídia</em>, o
@@ -492,7 +491,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         reconhecimento. Exemplos dessas são descrições que definem
         comandos de voz ou gestos de mão. Logo, porções de um
         <em>Reconhecedor</em> são porções de uma descrição de
-        reconhecimento.</p><br>
+        reconhecimento.</p>
 
         <p>Os blocos a seguir definem os reconhecedores <em>rec_voz</em> e
         <em>rec_gestos</em>. O <em>rec_voz</em> tem um reconhecimento de
@@ -500,7 +499,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         reconhece o comando de voz "repita vídeo". O <rec_gestos> tem uma
         descrição de reconhecimento de gestos como conteúdo. Esse conteúdo
         utiliza dois trechos, esquerda e direita, para definir gestos de mão
-        nessas direções.</p><br> 
+        nessas direções.</p> 
         </div>
         
         <div id='conceptsIntro3a'></div><br> 
@@ -509,7 +508,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Para ilustrar o uso de um <em>Reconhecedor</em>, os blocos a
         seguir são uma nova versão da aplicação que reinicia um vídeo dada
         uma interação. Mas nessa versão, ao invés de clicar, o vídeo é
-        reiniciado ao usuário falar "repita vídeo".</p><br>
+        reiniciado ao usuário falar "repita vídeo".</p>
         
         <p>Mais precisamente, os blocos definem uma <em>Mídia</em>
         (<em>midia_principal</em>), um <em>Reconhecedor</em>
@@ -520,7 +519,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         o <em>Reconhecedor</em> <em>rec_voz</em> deve ser iniciado. O
         último <em>Sincronismo</em> define que quando o trecho
         <em>repetir</em> for reconhecido a <em>midia_principal</em> deve ser
-        reiniciada (terminada e inciada).</p><br>
+        reiniciada (terminada e inciada).</p>
         </div>
         
         <div id='conceptsIntro3b'></div><br>
@@ -533,16 +532,16 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;">
 
         <p>Por fim, vamos detalhar o elemento <em>Grupo de
-        usuários</em>.</p><br>
+        usuários</em>.</p>
 
         <p> O elemento <em>Grupo de Usuários</em> é definido por um
         identificador, pelo número de membros que podem participar do grupo
         e pelos dispositivos que um usuário necessita possuir para
-        participar do grupo.</p><br>
+        participar do grupo.</p>
         
         <p>Os blocos a seguir definem um grupo de usuário <em>gu_gestos</em>
         que pode ter até 3 membros, cada um com seu reconhecedor de gestos
-        (e.g. LeapMotion).</p><br>
+        (e.g. LeapMotion).</p>
         </div>
 
         <div id='conceptsIntro4a'></div><br>
@@ -552,7 +551,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em>, os blocos a
         seguir são uma nova versão da aplicação que reinicia um vídeo dado]a
         uma interação. Mas nessa versão, o vídeo é reiniciado apenas quando
-        o segundo usuário falar "repita vídeo".</p> <br>
+        o segundo usuário falar "repita vídeo".</p>
 
         <p>Mais precisamente, os blocos definem uma <em>Mídia</em>
         (<em>midia_principal</em>), um <em>Reconhecedor</em>
@@ -564,7 +563,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>rec_voz</em> deve ser iniciado. O último <em>Sincronismo</em>
         define que quando o trecho <em>repetir</em> for reconhecido a
         <em>midia_principal</em> deve ser reiniciada (terminada e
-        iniciada).</p><br>
+        iniciada).</p>
         </div>
         
         <div id='conceptsIntro4b'></div><br>
@@ -867,7 +866,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         </p><strong>Ressaltamos que essas tarefas NÃO se destinam a avaliar
         seus conhecimentos, mas sim capturar evidências de nossa
-        pesquisa.</strong>.</p><br>
+        pesquisa.</strong>.</p>
         <div>
       `
     },
@@ -1331,7 +1330,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         tem o objetivo de apresentar como os conceitos de apresentados podem ser
         instanciados na linguagem NCL. A tabela seguir apresenta quais conceitos
         propostos em nossa pesquisa estão presentes na NCL e como deve ser a
-        instanciação dos ausentes.</p><br>
+        instanciação dos ausentes.</p>
 
         <table align="center" class="table-bordered table-striped
         table-condensed">
@@ -1485,7 +1484,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
        <p> O elemento  <em>&ltuserClass></em> é definido dentro do
        <em>&lthead></em> de uma aplicação NCL. Ele é definido por um
        identificador, número maximo de ususário e pelo seu arquivo de descrição
-       de usuários. </p>
+       de usuários.</p>
 
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em NCL, o código
         a seguir são uma nova versão da aplicação que reinicia um vídeo dado uma
@@ -1725,11 +1724,11 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;"> 
         <p>Agora, pedimos que você realize as quatro tarefas a seguir. Duas
         tarefas consistem em interpretar códigos e outra duas editar
-        códigos<></p><br>
+        códigos<></p>
         
         <p><strong>Ressaltamos que essas tarefas NÃO se destinam a avaliar seus
         conhecimentos, mas sim capturar evidências de nossa
-        pesquisa.</strong>.</p><br> 
+        pesquisa.</strong>.</p> 
         </div>
       `
     },
@@ -2058,7 +2057,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         seção tem sim o objetivo de apresentar como os conceitos de interação
         multimodal podem ser instanciados na linguagem HTML. A tabela seguir
         apresenta quais conceitos propostos em nossa pesquisa estão presentes
-        na HTML e como deve ser a instanciação dos ausentes.</p><br>
+        na HTML e como deve ser a instanciação dos ausentes.</p>
 
         <table align="center" class="table-bordered table-striped
         table-condensed">
@@ -2117,13 +2116,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;">
         <p>Primeiro, vamos detalhar o conceito de <em>Reconhecedor</em> em HTML.
         Para implementar esse <em>Reconhecedor</em> propomos o elemento de
-        <em>&ltinput></em></p><br>
+        <em>&ltinput></em></p>
 
         <p>O trecho de código a seguir apresenta o arquivo
         <em>rec_voz.srgs</em>. Esse arquivo é uma descrição de reconhecimento de
         voz no formato SRGS. Em particular, ele define uma porção chamada
         <em>repete</em> que define o reconhecimento de voz "repita vídeo"</p
-        ><br>
+        >
 
         <div id='htmlIntro3CodeA'></div><br>
 
@@ -2131,7 +2130,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>rec_gestos.gml</em>. Esse arquivo é uma descrição de reconhecimento
         de voz no formato GML. Em particular, ele define duas porções chamadas
         <em>swipe_esquerda</em> e  <em>swipe_direita</em>que definem acenos de
-        mão para esquerda e para direita, respectivamente</p><br>
+        mão para esquerda e para direita, respectivamente</p>
 
         <div id='htmlIntro3CodeB'></div><br>
 
@@ -2151,7 +2150,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         reconhecedor <em>rec</em> inicia seu reconhecimento. O segundo
         <em>&ltlink></em>(linhas 27-30) define que o <em>video_principal</em>
         deve ser reiniciado (stop e start) quando for reconhecido o trecho
-        <em>repete</em></p><br>
+        <em>repete</em></p>
 
         <div id='htmlIntro3CodeC'></div><br>
         </div>
@@ -2164,7 +2163,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;">
         <p>Agora, vamos detalhar o elemento <em>Grupo de Usuários</em> em HTML.
         Para implementar esse Reconhecedor propomos o elemento de
-        <em>&ltuserClass></em></p><br>
+        <em>&ltuserClass></em></p>
         </div>
 
         <div id='htmlIntro4CodeA'></div><br>
@@ -2176,7 +2175,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         reiniciado ao usuário falar "repita vídeo".</p> <p>Mais precisamente, a
         aplicação utiliza um elemento <em>&ltmedia></em> mídias, um elemento de
         <em>&ltinput></em>, um <em><port></em> e dois
-        <em>&ltlink></em>s.</p><br>
+        <em>&ltlink></em>s.</p>
         
         <p>O elemento de <em>&ltmedia></em> chamado de <em>video_principal</em>
         (linhas 17-19) que define um trecho chamado créditos que inicia aos
@@ -2189,7 +2188,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         reconhecedor <em>rec</em> inicia seu reconhecimento. O segundo
         <em>&ltlink></em>(linhas 27-30) defique que o <em>video_principal</em>
         deve ser reiniciado (stop e start) quando for reconhecido o trecho
-        <em>repete</em></p><br>
+        <em>repete</em></p>
         </div>
 
         <div id='htmlIntro4CodeB'></div><br>
@@ -2256,11 +2255,11 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;">
         <p>Agora, pedimos que você realize as quatro tarefas a seguir. Duas
         tarefas consistem em interpretar códigos e outra duas editar
-        códigos<></p><br> 
+        códigos<></p> 
         
         <p><strong>Ressaltamos que essas tarefas NÃO se destinam a avaliar seus
         conhecimentos, mas sim capturar evidências de nossa
-        pesquisa.</strong>.</p><br>
+        pesquisa.</strong>.</p>
         </div>
       `
     },
