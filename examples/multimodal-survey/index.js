@@ -116,27 +116,27 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
   switch (questionName) {
     case 'conceptsIntro1':
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro1a',
-        NCLBlocks.calcHt(1, 60), _data.blocksIntro1aXml, true)
+        NCLBlocks.calcHt(1, 60), _data.conceptsIntro1BlocksA, true)
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro1b',
-        NCLBlocks.calcHt(1, 110), _data.blocksIntro1bXml, true)
+        NCLBlocks.calcHt(1, 110), _data.conceptsIntro1BlocksB, true)
       break
     case 'conceptsIntro2':
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro2a',
-        NCLBlocks.calcHt(2, 100), _data.blocksIntro2aXml, true)
+        NCLBlocks.calcHt(2, 100), _data.conceptsIntro2BlocksA, true)
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro2b',
-        NCLBlocks.calcHt(3, 110), _data.blocksIntro2bXml, true)
+        NCLBlocks.calcHt(3, 110), _data.conceptsIntro2BlocksB, true)
       break
     case 'conceptsIntro3':
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro3a',
-        NCLBlocks.calcHt(2, 200), _data.blocksIntro3aXml, true)
+        NCLBlocks.calcHt(2, 200), _data.conceptsIntro3BlocksA, true)
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro3b',
-        NCLBlocks.calcHt(3, 110), _data.blocksIntro3bXml, true)
+        NCLBlocks.calcHt(3, 110), _data.conceptsIntro3BlocksB, true)
       break
     case 'conceptsIntro4':
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro4a',
-        NCLBlocks.calcHt(1, 130), _data.blocksIntro4aXml, true)
+        NCLBlocks.calcHt(1, 130), _data.conceptsIntro4BlocksA, true)
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro4b',
-        NCLBlocks.calcHt(3, 140), _data.blocksIntro4bXml, true)
+        NCLBlocks.calcHt(3, 140), _data.conceptsIntro4BlocksB, true)
       break
     case 'conceptsTask1':
       NCLBlocks.injectInDiv(_pathToBlockly, questionId,

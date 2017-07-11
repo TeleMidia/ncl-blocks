@@ -573,7 +573,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
   ]
 })
 
-_data.blocksIntro1aXml = `
+_data.conceptsIntro1BlocksA = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
       <field name="id">midia_principal</field>
@@ -584,7 +584,7 @@ _data.blocksIntro1aXml = `
   </xml>
 `
 
-_data.blocksIntro1bXml = `
+_data.conceptsIntro1BlocksB = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
       <field name="id">midia_principal</field>
@@ -606,7 +606,7 @@ _data.blocksIntro1bXml = `
   </xml>
 `
 
-_data.blocksIntro2aXml = `
+_data.conceptsIntro2BlocksA = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
       <field name="id">midia_principal</field>
@@ -625,7 +625,7 @@ _data.blocksIntro2aXml = `
   </xml>
 `
 
-_data.blocksIntro2bXml = `
+_data.conceptsIntro2BlocksB = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
       <field name="id">midia_principal</field>
@@ -684,7 +684,7 @@ _data.blocksIntro2bXml = `
   </xml>
 `
 
-_data.blocksIntro3aXml = `
+_data.conceptsIntro3BlocksA = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="20" y="20">
       <field name="id">rec_voz</field>
@@ -712,7 +712,7 @@ _data.blocksIntro3aXml = `
   </xml>
 `
 
-_data.blocksIntro3bXml = `
+_data.conceptsIntro3BlocksB = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
       <field name="id">midia_principal</field>
@@ -770,7 +770,7 @@ _data.blocksIntro3bXml = `
     </block>
   </xml>
 `
-_data.blocksIntro4aXml = `
+_data.conceptsIntro4BlocksA = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="user" id="IPnvWeecZqr2WM|RGxm|" x="20" y="20">
       <mutation length="1"></mutation>
@@ -783,7 +783,7 @@ _data.blocksIntro4aXml = `
   </xml>
 `
 
-_data.blocksIntro4bXml = `
+_data.conceptsIntro4BlocksB = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
       <field name="id">midia_principal</field>
