@@ -1329,7 +1329,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         sincronismos baseados em interações de usuário por apontador e
         tecla.</p>
       
-        <p>Esta seção não tem o objetivo de detalhar a linguagem NCL. Mas sim
+        <p>Esta seção não tem o objetivo de ensinar a linguagem NCL. Mas sim
         tem o objetivo de apresentar como os conceitos de apresentados podem ser
         instanciados na linguagem NCL. A tabela seguir apresenta quais conceitos
         propostos em nossa pesquisa estão presentes na NCL e como deve ser a
@@ -2040,7 +2040,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         Elementos JavaScript podem criar sincronismos de mídias e sincronismos
         baseados em interações de usuário por apontador e tecla.</p>
         
-        <p>Esta seção não tem o objetivo de detalhar a linguagem HTML. Esta
+        <p>Esta seção não tem o objetivo de ensinar a linguagem HTML. Esta
         seção tem sim o objetivo de apresentar como os conceitos de interação
         multimodal podem ser instanciados na linguagem HTML. A tabela seguir
         apresenta quais conceitos propostos em nossa pesquisa estão presentes
