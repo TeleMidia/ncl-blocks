@@ -1950,8 +1950,8 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'nclFeedbackQuestion1',
-      title: `A NCL estendida permite realizar mais facilmente o 
-            desenvolvimento de aplicações multimodais.`,
+      title: `A NCL estendida permite realizar mais facilmente 
+            o desenvolvimento de aplicações multimodais`,
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
@@ -1960,8 +1960,8 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'nclFeedbackQuestion2',
-      title: `A NCL estendida permite realizar mais rapidamente o 
-            desenvolvimento de aplicações multimodais.`,
+      title: `A NCL estendida permite realizar mais 
+            rapidamente o desenvolvimento de aplicações multimodais.`,
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
@@ -1969,9 +1969,9 @@ _data.surveyJSON.pages.push({
     {
       type: 'radiogroup',
       isRequired: true,
-      name: 'nclFeedbackQuestion3',
-      title: `A NCL estendida aumenta a qualidade no desenvolvimento de   
-            aplicações multimodais.`,
+      name: 'conceptsFeedbackQuestion3',
+      title: `De modo geral, a NCL estendida permite é útel para o 
+            desenvolvimento de aplicações multimodais.`,
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
@@ -1980,26 +1980,6 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'nclFeedbackQuestion4',
-      title: `A NCL estendida fornece maior controle no desenvolvimento de 
-            aplicações multimodais.`,
-      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
-        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
-        'concordo fortemente']
-    },
-    {
-      type: 'radiogroup',
-      isRequired: true,
-      name: 'nclFeedbackQuestion5',
-      title: `De modo geral, A NCL estendida é util para realizar o 
-            desenvolvimento de aplicações multimodais.`,
-      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
-        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
-        'concordo fortemente']
-    },
-    {
-      type: 'radiogroup',
-      isRequired: true,
-      name: 'nclFeedbackQuestion6',
       title: 'Aprender a NCL estendida é fácil.',
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
@@ -2008,8 +1988,8 @@ _data.surveyJSON.pages.push({
     {
       type: 'radiogroup',
       isRequired: true,
-      name: 'nclFeedbackQuestion7',
-      title: 'A NCL estendida é claro e entendível.',
+      name: 'nclFeedbackQuestion5',
+      title: 'A NCL estendida é clara e entendível.',
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
@@ -2017,7 +1997,7 @@ _data.surveyJSON.pages.push({
     {
       type: 'radiogroup',
       isRequired: true,
-      name: 'nclFeedbackQuestion8',
+      name: 'nclFeedbackQuestion6',
       title: 'De modo geral, a NCL estendida é fácil de utilizar.',
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
@@ -2418,9 +2398,9 @@ _data.surveyJSON.pages.push({
     {
       type: 'radiogroup',
       isRequired: true,
-      name: 'htmlFeedbackQuestion1',
-      title: `A HTML/JavaScrip estendida permite realizar mais facilmente o 
-            desenvolvimento de aplicações multimodais.`,
+      name: 'nclFeedbackQuestion1',
+      title: `A HTML estendida permite realizar mais facilmente 
+            o desenvolvimento de aplicações multimodais`,
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
@@ -2428,9 +2408,9 @@ _data.surveyJSON.pages.push({
     {
       type: 'radiogroup',
       isRequired: true,
-      name: 'htmlFeedbackQuestion2',
-      title: `A HTML/JavaScrip estendida permite realizar mais rapidamente 
-            o desenvolvimento de aplicações multimodais.`,
+      name: 'nclFeedbackQuestion2',
+      title: `A HTML estendida permite realizar mais 
+            rapidamente o desenvolvimento de aplicações multimodais.`,
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
@@ -2438,8 +2418,8 @@ _data.surveyJSON.pages.push({
     {
       type: 'radiogroup',
       isRequired: true,
-      name: 'htmlFeedbackQuestion3',
-      title: `A HTML/JavaScrip estendida aumenta a qualidade no 
+      name: 'conceptsFeedbackQuestion3',
+      title: `De modo geral, a HTML estendida permite é útel para o 
             desenvolvimento de aplicações multimodais.`,
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
@@ -2449,8 +2429,7 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'htmlFeedbackQuestion4',
-      title: `A HTML/JavaScrip estendida fornece maior controle no  
-            desenvolvimento de aplicações multimodais.`,
+      title: 'Aprender a HTML estendida é fácil.',
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
@@ -2459,8 +2438,7 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'htmlFeedbackQuestion5',
-      title: `De modo geral, a HTML/JavaScript estendida é util para 
-            realizar o desenvolvimento de aplicações multimodais.`,
+      title: 'A HTML estendida é clara e entendível.',
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
@@ -2469,25 +2447,7 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'htmlFeedbackQuestion6',
-      title: 'Aprender a HTML/Javascript estendida é fácil.',
-      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
-        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
-        'concordo fortemente']
-    },
-    {
-      type: 'radiogroup',
-      isRequired: true,
-      name: 'htmlFeedbackQuestion7',
-      title: 'A HTML/Javascript estendida é claro e entendível.',
-      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
-        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
-        'concordo fortemente']
-    },
-    {
-      type: 'radiogroup',
-      isRequired: true,
-      name: 'htmlFeedbackQuestion8',
-      title: `De modo geral, a HTML/Javascript estendida é fácil de 
+      title: `De modo geral, a HTML estendida é fácil de 
             utilizar.`,
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
