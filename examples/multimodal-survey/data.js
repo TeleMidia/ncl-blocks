@@ -118,15 +118,18 @@ _data.surveyJSON.pages.push({
       isRequired: true,
       name: 'profileQuestion1',
       title: 'Qual seu conhecimento no desenvolvimento em NCL?',
-      choices: ['nenhum', 'muito pouco', 'pouco', 'razoável', 'alto',
-        'muito alto', 'expert']
+      choices: [
+        { value: 0, text: 'nenhum' }, { value: 1, text: 'muito pouco' },
+        { value: 2, text: 'pouco' }, { value: 3, text: 'razoável' },
+        { value: 4, text: 'alto' }, { value: 5, text: 'muito alto' },
+        { value: 6, text: 'expert' }]
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'profileQuestion2',
       title: 'Quantas aplicações NCL você desenvolveu?',
-      visibleIf: '{profileQuestion1} != nenhum',
+      visibleIf: '{profileQuestion1} > 0',
       choices: ['0', '1-2', '3-4', '5-6', '7-8', '8 ou mais']
     },
     {
@@ -143,15 +146,18 @@ _data.surveyJSON.pages.push({
       isRequired: true,
       name: 'profileQuestion3',
       title: 'Qual seu conhecimento no desenvolvimento em HTML/JavaScript?',
-      choices: ['nenhum', 'muito pouco', 'pouco', 'razoável', 'alto',
-        'muito alto', 'expert']
+      choices: [
+        { value: 0, text: 'nenhum' }, { value: 1, text: 'muito pouco' },
+        { value: 2, text: 'pouco' }, { value: 3, text: 'razoável' },
+        { value: 4, text: 'alto' }, { value: 5, text: 'muito alto' },
+        { value: 6, text: 'expert' }]
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'profileQuestion4',
       title: 'Quantas aplicações HTML/JavaScript você desenvolveu?',
-      visibleIf: '{profileQuestion3} != nenhum',
+      visibleIf: '{profileQuestion3} > 0',
       choices: ['0', '1-2', '3-4', '5-6', '7-8', '8 ou mais']
     },
     {
@@ -1304,6 +1310,7 @@ _data.surveyJSON.pages.push({
 
 pageIndex = _data.surveyJSON.pages.push({
   name: 'ncl',
+  visibleIf: '{profileQuestion1} >= {profileQuestion3}',
   elements: []
 }) - 1
 
@@ -1933,6 +1940,7 @@ _data.nclTask2Code = `
 
 _data.surveyJSON.pages.push({
   name: 'nclFeedback',
+  visibleIf: '{profileQuestion1} >= {profileQuestion3}',
   elements: [
     {
       type: 'html',
@@ -2014,6 +2022,7 @@ _data.surveyJSON.pages.push({
 
 pageIndex = _data.surveyJSON.pages.push({
   name: 'html',
+  visibleIf: '{profileQuestion3} > {profileQuestion1}',
   elements: []
 }) - 1
 
@@ -2380,6 +2389,7 @@ _data.htmlTask2Code = `
 
 _data.surveyJSON.pages.push({
   name: 'htmlFeedback',
+  visibleIf: '{profileQuestion3} > {profileQuestion1}',
   elements: [
     {
       type: 'html',
