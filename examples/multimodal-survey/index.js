@@ -52,6 +52,21 @@ $('#surveyContainer').Survey({
 })
 
 // ----------------------------------------
+// survey markdown
+// ----------------------------------------
+
+var converter = new showdown.Converter()
+_survey.onTextMarkdown.add(function (survey, options) {
+  // convert the mardown text to html
+  var str = converter.makeHtml(options.text)
+  // remove root paragraphs <p></p>
+  str = str.substring(3)
+  str = str.substring(0, str.length - 4)
+  // set html
+  options.html = str
+})
+
+// ----------------------------------------
 // survey page jump
 // ----------------------------------------
 
@@ -69,8 +84,9 @@ if ($('#surveyPageNo').length) {
 $('#surveyPageNo').change(function () {
   _survey.currentPageNo = this.value
 })
+$('#surveyPageNo').val(4).change()
 // $('#surveyPageNo').val(5).change()
-$('#surveyPageNo').val(7).change()
+// $('#surveyPageNo').val(7).change()
 
 // ----------------------------------------
 // survey listeners

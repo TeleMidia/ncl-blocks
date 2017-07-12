@@ -21,6 +21,7 @@
       "NCLBlocks": true,
       "Blockly": true,
       "_data": true,
+      "showdown": true,
       "SyntaxHighlighter": true
     }
   }
