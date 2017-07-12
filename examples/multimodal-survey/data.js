@@ -1289,6 +1289,14 @@ _data.surveyJSON.pages.push({
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
+    },
+    {
+      type: 'comment',
+      rows: '9',
+      title: `
+        Se desejar, você fale sobre que tipos de aplicações você gostaria de
+        desenvolver com conceitos apresentados neste estudo.
+      `
     }
   ]
 })
@@ -2014,6 +2022,14 @@ _data.surveyJSON.pages.push({
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
+    },
+    {
+      type: 'comment',
+      rows: '9',
+      title: `
+        Os conceitos de aplicações multimodais estão claramente presentes na
+        linguagem NCL estendida.
+      `
     }
   ]
 })
@@ -2476,6 +2492,14 @@ _data.surveyJSON.pages.push({
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
+    },
+    {
+      type: 'comment',
+      rows: '9',
+      title: `
+        Os conceitos de aplicações multimodais estão claramente presentes na
+        linguagem HTML estendida.
+      `
     }
   ]
 })
@@ -2490,21 +2514,12 @@ _data.surveyJSON.pages.push({
   elements: [
     {
       type: 'comment',
-      name: 'commentsQuestion1',
+      name: 'commentsFinal',
       rows: '9',
       title: `
           Chegamos ao fim de nosso estudo. Se desejar, deixe comentários ou
           sugestões relacionados ao nosso estudo.
         `
-    },
-    {
-      type: 'comment',
-      name: 'commentsQuestion2',
-      rows: '9',
-      title: `
-        Adicionalmente, se desejar, você fale sobre que tipos de aplicações
-        você gostaria de desenvolver com conceitos apresentados neste estudo.
-      `
     }
   ]
 })
