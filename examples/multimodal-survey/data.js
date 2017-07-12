@@ -1339,8 +1339,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         table-condensed">
           <tr>
             <th>Conceito</th>
-            <th>Presente na NCL?</th>
-            <th>Proposta de instanciação</th>
+            <th>NCL atual</th>
+            <th>Como propomos</th>
           </tr>
           <tr>
             <td><em>Mídia</em></td>
@@ -2050,8 +2050,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         table-condensed">
           <tr>
             <th>Conceito</th>
-            <th>Presente na HTML?</th>
-            <th>Proposta de instanciação</th>
+            <th>HTML atual</th>
+            <th>Como propomos</th>
           </tr>
           <tr>
             <td><em>&ltmedia></em></td>
