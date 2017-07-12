@@ -100,19 +100,18 @@ _data.surveyJSON.pages.push({
     {
       type: 'radiogroup',
       isRequired: true,
-      name: 'formations',
+      name: 'formation',
       title: 'Qual sua formação (e.g. computação, design, pós-graduação informática)?',
       choices: ['graduação em computação', 'graduação em design', 'pós-graduação em computação', 'pós-graduação em design'],
       hasOther: true,
-      otherText: 'outra'
+      otherText: 'outra graduação ou outra pós-graduação'
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'sintax',
-      title: `Você desenvolve aplicações multimídia interativas?`,
-      choices: ['nunca', 'quase nunca',
-        'razoável', 'quase sempre', 'sempre']
+      title: `Quantas aplicações multimídia interativas você desenvolveu (independente de tecnologia ou linguagem de programação)?`,
+      choices: ['0', '1-2', '3-4', '5-6', '7-8', '8 ou mais']
     },
     {
       type: 'radiogroup',
@@ -160,8 +159,7 @@ _data.surveyJSON.pages.push({
       isRequired: true,
       name: 'sintax',
       title: `O quanto o desenvolvimento em HTML/JavaScript requer 
-      o uso de bibliotecas de manipulação de DOM como jQuery, Zepto 
-      e Prototype?`,
+      o uso de bibliotecas de manipulação de DOM, como jQuery ou Prototype?`,
       choices: ['nunca', 'quase nunca',
         'indiferente', 'quase sempre ', 'sempre']
     }
