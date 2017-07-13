@@ -84,8 +84,8 @@ if ($('#surveyPageNo').length) {
 $('#surveyPageNo').change(function () {
   _survey.currentPageNo = this.value
 })
-$('#surveyPageNo').val(4).change()
-// $('#surveyPageNo').val(5).change()
+// $('#surveyPageNo').val(4).change()
+$('#surveyPageNo').val(5).change()
 // $('#surveyPageNo').val(7).change()
 
 // ----------------------------------------

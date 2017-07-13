@@ -877,34 +877,24 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     {
       type: 'html',
       name: 'conceptsTask1',
-      html: `
-        <p>Tarefa 1: Por favor, analise com cuidado os blocos a seguir.</p>
-      `
+      html: 'Tarefa 1: Por favor, analise com cuidado os blocos a seguir.<br><br>'
     },
     {
       type: 'comment',
       isRequired: true,
       name: 'conceptsTask1Question',
-      title: `Qual é o comportamento da aplicação que corresponde os blocos
-      acima:
-      `
+      title: 'Qual é o comportamento da aplicação que corresponde os blocos acima.'
     },
     {
       type: 'html',
       name: 'conceptsTask2',
-      html: `
-        <p>Tarefa 2: Os blocos a seguir são uma versão modificada
-        da Tarefa 1.</p>
-      `
+      html: 'Tarefa 2: Os blocos a seguir são uma versão modificada da Tarefa 1. Por favor, analise. <br><br>'
     },
     {
       type: 'comment',
       isRequired: true,
       name: 'conceptsTask2Question',
-      title: `
-        Qual foi a mudança no comportamento da aplicação da Tarefa 1 para
-        Tarefa 2?
-      `
+      title: ' Qual foi a mudança no comportamento da aplicação da Tarefa 1 para Tarefa 2?'
     },
     {
       type: 'html',
@@ -912,7 +902,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         Tarefa 3: Agora, pedimos que edite os blcoos da Tarefa 2 (copiado a
         seguir) para que utilize uma interação por gestos ao invés de uma
-        interação por comandos de voz. 
+        interação por comandos de voz. <br><br>
       `
     },
     {
@@ -933,7 +923,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         Tarefa 4: Agora, pedimos que edite os blocos da Tarefa 2 (copiado
         a seguir) para que apenas o segundo usuário, de um grupo de 3
-        usuários com microphone, possa realizar a interação por voz.
+        usuários com microphone, possa realizar a interação por voz. <br><br>
       `
     },
     {
@@ -1786,25 +1776,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'comment',
       name: 'nclTask3Question',
       rows: '47',
-      title: {
-        en: `
-          Tarefa 3: Agora, pedimos que edite o código NCL da Tarefa 2 (copiado a
-          seguir) para que utilize uma interação por gestos ao invés de uma
-          interação por comandos de voz. 
-        `
-      }
+      title: ' Tarefa 3: Agora, pedimos que edite o código NCL da Tarefa 2 (copiado a seguir) para que utilize uma interação por gestos ao invés de uma interação por comandos de voz.'
     },
     {
       type: 'comment',
       name: 'nclTask4Question',
       rows: '47',
-      title: {
-        en: `
-          Tarefa 4: Agora, pedimos que edite o código NCL da Tarefa 2 (copiado a
-          seguir) para que apenas o segundo usuário, de um grupo de 3 usuários,
-          com microphone, possa realizar a interação por voz.
-        `
-      }
+      title: ' Tarefa 4: Agora, pedimos que edite o código NCL da Tarefa 2 (copiado a seguir) para que apenas o segundo usuário, de um grupo de 3 usuários, com microphone, possa realizar a interação por voz.'
     }
   ]
 })
@@ -2337,25 +2315,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'comment',
       name: 'htmlTask3Question',
       rows: '9',
-      title: {
-        en: `
-          Tarefa 3: Agora, pedimos que edite o código HTML da Tarefa 2 (copiado
-          a seguir) para que utilize uma interação por gestos ao invés de uma
-          interação por comandos de voz. 
-        `
-      }
+      title: 'Tarefa 3: Agora, pedimos que edite o código HTML da Tarefa 2 (copiado a seguir) para que utilize uma interação por gestos ao invés de uma interação por comandos de voz.'
     },
     {
       type: 'comment',
       name: 'htmlTask4Question',
       rows: '9',
-      title: {
-        en: `
-          Tarefa 4: Agora, pedimos que edite o código HTML da Tarefa 2 (copiado
-          a seguir) para que apenas o segundo usuário, de um grupo de 3
-          usuários com microphone, possa realizar a interação por voz.
-        `
-      }
+      title: ' Tarefa 4: Agora, pedimos que edite o código HTML da Tarefa 2 (copiado a seguir) para que apenas o segundo usuário, de um grupo de 3 usuários com microphone, possa realizar a interação por voz.'
     }
   ]
 })
