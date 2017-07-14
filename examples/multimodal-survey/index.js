@@ -84,8 +84,8 @@ if ($('#surveyPageNo').length) {
 $('#surveyPageNo').change(function () {
   _survey.currentPageNo = this.value
 })
-$('#surveyPageNo').val(3).change()
-// $('#surveyPageNo').val(5).change()
+// $('#surveyPageNo').val(3).change()
+$('#surveyPageNo').val(5).change()
 // $('#surveyPageNo').val(7).change()
 
 // ----------------------------------------
@@ -131,14 +131,14 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
 
   switch (questionName) {
     case 'conceptsIntro1':
-      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro1a',
+      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro1A',
         NCLBlocks.calcHt(1, 60), _data.conceptsIntro1BlocksA, true)
-      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro1b',
+      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro1B',
         NCLBlocks.calcHt(1, 110), _data.conceptsIntro1BlocksB, true)
+      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro1C',
+        NCLBlocks.calcHt(1, 110), _data.conceptsIntro1BlocksC, true)
       break
     case 'conceptsIntro2':
-      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro2a',
-        NCLBlocks.calcHt(2, 100), _data.conceptsIntro2BlocksA, true)
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro2b',
         NCLBlocks.calcHt(3, 110), _data.conceptsIntro2BlocksB, true)
       break
@@ -212,6 +212,8 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       break
     case 'nclIntro1':
       $('#nclIntro1CodeA').append(_data.nclIntro1CodeA)
+      $('#nclIntro1CodeB').append(_data.nclIntro1CodeB)
+      $('#nclIntro1CodeC').append(_data.nclIntro1CodeC)
       SyntaxHighlighter.highlight()
       break
     case 'nclIntro2':
@@ -247,6 +249,8 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       break
     case 'htmlIntro1':
       $('#htmlIntro1CodeA').append(_data.htmlIntro1CodeA)
+      $('#htmlIntro1CodeB').append(_data.htmlIntro1CodeB)
+      $('#htmlIntro1CodeC').append(_data.htmlIntro1CodeC)
       SyntaxHighlighter.highlight()
       break
     case 'htmlIntro2':

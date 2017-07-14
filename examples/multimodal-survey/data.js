@@ -410,25 +410,36 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;">
         <p>Primeiro, vamos detalhar o elemento <em>Mídia</em>.</p>
         
-        <p>O elemento <em>Mídia</em> é definido por um identificador e por
-        seu conteúdo. O conteúdo de uma <em>Mídia</em> tem porções
-        identificáveis como trechos de um vídeo ou áudio. Por exemplo, os
-        blocos a seguir definem duas mídias com identificadores
-        <em>midia_principal</em> e <em>icone</em>, mas elas não possuem
-        conteúdo. Por não terem conteúdo, ações de iniciar sobre as mídias
-        acima não apresentaram resultados.</p>
+        <p>O elemento <em>Mídia</em> é definido por <strong>um identificador e
+        seu um conteúdo</strong>. O conteúdo de uma <em>Mídia</em> tem porções
+        identificáveis como trechos de um vídeo ou áudio.</p>
+
+        <p>Para ilustrar o uso do elemento de <em>Sincronismo</em>, os blocos a
+        seguir definem duas mídias com identificadores <em>midia_principal</em>
+        e <em>icone</em>, mas elas não possuem conteúdo. Por não terem conteúdo,
+        ações de iniciar sobre as mídias acima não apresentaram resultados.</p>
         </div>
         
-        <div id='conceptsIntro1a'></div><br>
+        <div id='conceptsIntro1A'></div><br>
 
         <div style="text-align: justify; width: 70%;">
-        <p>Os blocos a seguir definem as mesmas mídias, mas com conteúdos de
-        áudio e imagem, respectivamente. Em especial, a mídia de
+        <p>Os blocos a seguir definem as mesmas mídias acima, mas com conteúdos
+        de áudio e imagem, respectivamente. Em especial, a mídia de
         <em>midia_principal</em> tem definido um trecho chamado de
         <em>creditos</em> que inicia aos 300 e termina aos 360 segundos.</p>
         </div>
         
-        <div id='conceptsIntro1b'></div>
+        <div id='conceptsIntro1B'></div><br>
+
+        <div style="text-align: justify; width: 70%;">
+        <p>É importante ressaltar que mudanças no conteúdo de uma <em>Mídia</em>
+        não afetam o comportamento da aplicação, desde que a mídia defina os
+        mesmos trechos, pois os <em>Sincronismo</em>s são definidos independe do
+        conteúdo. Por exemplo, os blocos a seguir definem a mesma mídia
+        <em>midia_principal</em>mas com o conteúdo de vídeo.</p>
+        </div>
+
+        <div id='conceptsIntro1C'></div><br>
       `
     },
     {
@@ -436,50 +447,42 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'conceptsIntro2',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p></p>Em em seguida, vamos detalhar o elemento
-        <em>Sincronismo</em>.</p>
-
-        <p>O elemento de <em>Sincronismo</em> permite definir o
-        comportamento das aplicações. O uso de elementos de
-        <em>Sincronismo</em> sobre elementos de <em>Mídia</em> define quando
-        as mídias devem ser apresentadas. O <em>Sincronismo</em> é baseado
-        em causalidade, ou seja, quando uma condição é satisfeita, ações são
-        realizadas. Exemplos de condições são início ou fim de uma mídia ou
-        trecho de mídia, ou a seleção de usuário sobre uma mídia. Exemplos
-        de ações são iniciar ou parar uma mídia.</p>
-
-        <p>Os blocos a seguir definem a mídia <em>midia_principal</em> e um 
-        sincronismo que inicia a mídia com a aplicação. Nesse exemplo, 
-        entretanto, alteramos o conteúdo da <em>midia_principal</em> para 
-        um conteúdo de vídeo. É importante ressaltar que mudanças no 
-        conteúdo de <em>midia_principal</em> não afetam o comportamento da 
-        aplicação, desde que a mídia defina o mesmos trechos, pois os 
-        <em>Sincronismo</em>s são definidos independe do conteúdo.</p>
-
-        </div>
-
-        <div id='conceptsIntro2a'></div><p><br>
-
-        <div style="text-align: justify; width: 70%;">
-        <p>Para ilustrar o uso do elemento de <em>Sincronismo</em>, os
-        blocos a seguir definem uma aplicação que apresenta um vídeo, que um
-        ícone durante os créditos. Ao selecionar o ícone, o vídeo é
+        
+        <p>Em em seguida, vamos detalhar o elemento <em>Sincronismo</em>. O uso
+        dessa elemento permite especificar o comportamento das aplicações. Por
+        exemplo, elementos de <em>Sincronismo</em> podem especificar elementos
+        <em>Mídia</em> devem ser apresentadas.</p>
+        
+        <p>O <em>Sincronismo</em> é baseado em causalidade edefinido sendo
+        definido por <strong>um conjunto de condições e um conjunto de
+        ações</strong>. Ou seja, quando as condições são satisfeitas ações são
+        realizadas.</p> 
+        
+        <p> As condições de um <em>Sincronismo</em> podem ser simples ou
+        compostas. Exemplos de condições simples são o início ou fim de uma
+        mídia ou trecho de mídia, ou a seleção de usuário sobre uma mídia.</p>
+        
+        <p>As ações de um <em>Sincronismo</em> são executadas em sequencia.
+        Exemplos de ações são iniciar ou parar uma mídia.</p>
+       
+        <p>Para ilustrar o uso do elemento de <em>Sincronismo</em>, os blocos a
+        seguir definem uma aplicação que apresenta um vídeo e um ícone durante
+        os créditos do vídeo. Se o usuário selecionar o ícone, o vídeo é
         reiniciado.</p> 
         
-        <p>Mais precisamente, os blocos definem novamente
-        <em>midia_principal</em> e um <em>Sincronismo<em> do bloco anterior,
-        mas adicionam a mídia <em>icone</em> e mais dois
-        <em>Sincronismo</em>s. O primeiro <em>Sincronismo</em> adicionado
-        define que quando a <em>midia_principal</em> alcançar o seu trecho
-        de <em>credito</em> a mídia <em>icone_repetir</em> deve ser
-        iniciada. O segundo <em>Sincronismo</em> adicionado define que
-        quando a mídia <em>icone_repetir</em> for selecionada, a
-        <em>midia_principal</em> deve ser reiniciada (terminada e
-        inciada)</p>
+        <p>Os blocos definem novamente <em>midia_principal</em> e um
+        <em>Sincronismo<em> do bloco anterior, mas adicionam a mídia
+        <em>icone</em> e mais dois <em>Sincronismo</em>s. O primeiro
+        <em>Sincronismo</em> adicionado define que quando a
+        <em>midia_principal</em> alcançar o seu trecho de <em>credito</em> a
+        mídia <em>icone_repetir</em> deve ser iniciada. O segundo
+        <em>Sincronismo</em> adicionado define que quando a mídia
+        <em>icone_repetir</em> for selecionada, a <em>midia_principal</em> deve
+        ser reiniciada (terminada e inciada)</p>
+        
         </div>
 
         <div id='conceptsIntro2b'></div>
-        <br>
       `
     },
     {
@@ -489,10 +492,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;">
         <p>Agora, detalhamos a seguir o elemento <em>Reconhecedor</em>.</p>
 
-        <p> O <em>Reconhecedor</em> também é definido por um identificador e
-        por seu conteúdo. Entretanto, diferente de <em>Mídia</em>, o
-        conteúdo de um <em>Reconhecedor</em> deve ser uma descrição de
-        reconhecimento. Exemplos dessas são descrições que definem
+        <p> O <em>Reconhecedor</em> também é definido por <strong>um
+        identificador e por seu conteúdo</strong>. Entretanto, diferente de
+        <em>Mídia</em>, o conteúdo de um <em>Reconhecedor</em> deve ser uma
+        descrição de reconhecimento. Exemplos dessas são descrições que definem
         comandos de voz ou gestos de mão. Logo, porções de um
         <em>Reconhecedor</em> são porções de uma descrição de
         reconhecimento.</p>
@@ -514,16 +517,15 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         uma interação. Mas nessa versão, ao invés de clicar, o vídeo é
         reiniciado ao usuário falar "repita vídeo".</p>
         
-        <p>Mais precisamente, os blocos definem uma <em>Mídia</em>
-        (<em>midia_principal</em>), um <em>Reconhecedor</em>
-        (<em>rec_voz</em>) e três <em>Sincronismo</em>s. O primeiro
-        <em>Sincronismo</em> define que <em>midia_principal</em> é iniciada
-        com a aplicação. O segundo <em>Sincronismo</em> define que quando a
-        <em>midia_principal</em> alcançar o seu trecho de <em>creditos</em>,
-        o <em>Reconhecedor</em> <em>rec_voz</em> deve ser iniciado. O
-        último <em>Sincronismo</em> define que quando o trecho
-        <em>repetir</em> for reconhecido a <em>midia_principal</em> deve ser
-        reiniciada (terminada e inciada).</p>
+        <p>Os blocos a seguirdefinem uma <em>Mídia</em>
+        (<em>midia_principal</em>), um <em>Reconhecedor</em> (<em>rec_voz</em>)
+        e três <em>Sincronismo</em>s. O primeiro <em>Sincronismo</em> define que
+        <em>midia_principal</em> é iniciada com a aplicação. O segundo
+        <em>Sincronismo</em> define que quando a <em>midia_principal</em>
+        alcançar o seu trecho de <em>creditos</em>, o <em>Reconhecedor</em>
+        <em>rec_voz</em> deve ser iniciado. O último <em>Sincronismo</em> define
+        que quando o trecho <em>repetir</em> for reconhecido a
+        <em>midia_principal</em> deve ser reiniciada (terminada e inciada).</p>
         </div>
         
         <div id='conceptsIntro3b'></div><br>
@@ -538,10 +540,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Por fim, vamos detalhar o elemento <em>Grupo de
         usuários</em>.</p>
 
-        <p> O elemento <em>Grupo de Usuários</em> é definido por um
-        identificador, pelo número de membros que podem participar do grupo
-        e pelos dispositivos que um usuário necessita possuir para
-        participar do grupo.</p>
+        <p> O elemento <em>Grupo de Usuários</em> é definido <strong>por um
+        identificador, número maximo de participantes e quais dispositivos estes
+        utilizam</strong>. Mais precisamente, esses dispositivos definem o que
+        um usuário necessita possuir para participar do grupo.</p>
         
         <p>Os blocos a seguir definem um grupo de usuário <em>gu_gestos</em>
         que pode ter até 3 membros, cada um com seu reconhecedor de gestos
@@ -609,7 +611,7 @@ _data.conceptsIntro1BlocksB = `
   </xml>
 `
 
-_data.conceptsIntro2BlocksA = `
+_data.conceptsIntro1BlocksC = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
       <field name="id">midia_principal</field>
@@ -618,12 +620,9 @@ _data.conceptsIntro2BlocksA = `
           <mutation length="1"></mutation>
           <field name="id_area0">creditos</field>
           <field name="begin0">300s</field>
-          <field name="end0"></field>
+          <field name="end0">360s</field>
         </block>
       </value>
-    </block>
-    <block type="port" id="+p-MtE:D*clWz(7oX7Hg" x="20" y="170">
-      <field name="id">midia_principal</field>
     </block>
   </xml>
 `
@@ -637,7 +636,7 @@ _data.conceptsIntro2BlocksB = `
           <mutation length="1"></mutation>
           <field name="id_area0">creditos</field>
           <field name="begin0">300s</field>
-          <field name="end0"></field>
+          <field name="end0">360s</field>
         </block>
       </value>
     </block>
@@ -724,7 +723,7 @@ _data.conceptsIntro3BlocksB = `
           <mutation length="1"></mutation>
           <field name="id_area0">creditos</field>
           <field name="begin0">300s</field>
-          <field name="end0"></field>
+          <field name="end0">360s</field>
         </block>
       </value>
     </block>
@@ -795,7 +794,7 @@ _data.conceptsIntro4BlocksB = `
           <mutation length="1"></mutation>
           <field name="id_area0">creditos</field>
           <field name="begin0">300s</field>
-          <field name="end0"></field>
+          <field name="end0">360s</field>
         </block>
       </value>
     </block>
@@ -950,7 +949,7 @@ _data.blocksTask1Xml = `
           <mutation length="1"></mutation>
           <field name="id_area0">creditos</field>
           <field name="begin0">300s</field>
-          <field name="end0"></field>
+          <field name="end0">360s</field>
         </block>
       </value>
     </block>
@@ -1075,7 +1074,7 @@ _data.blocksTask2Xml = `
         </mutation>
         <field name="id_area0">creditos</field>
         <field name="begin0">300s</field>
-        <field name="end0"></field>
+        <field name="end0">360s</field>
       </block>
     </value>
   </block>
@@ -1376,17 +1375,34 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Primeiro, vamos detalhar o conceito de <em>Mídia</em> em NCL que é
         já implementado pelo elemento <em>&ltmedia></em>.</p>
         
-                </p> O elemento  <em>&ltmedia></em> possui um identificador, conteúdo e
-        propriedades. O conteúdo consiste em um arquivo de mídia, como imagem,
-        video, audio, entre outros. O conteúdo de uma <em>&ltmedia></em> tem
-        porções identificáveis, chamadas de âncora. Dentre outros tipos, as
-        âncoras temporais definem porções da apresentação da mídia elemento
-        <em>&ltarea></em>. O código a seguir ilustra duas mídias, uma imagem e
-        um video. O video possui uma um ancora chamada de creditos que inicia
-        aos 300 e termina aos 360 segundos.</p>
+        </p> O elemento <em>&ltmedia></em> definido por <strong>um
+        identificador, um conteúdo e propriedades</strong>. O conteúdo consiste
+        em um arquivo de mídia, como imagem jpeg, video mp4, audio mp3, entre
+        outros. O conteúdo de uma <em>&ltmedia></em> tem porções identificáveis,
+        chamadas de âncora. Dentre outros tipos, as âncoras temporais definem
+        porções da apresentação da mídia elemento <em>&ltarea></em>. 
+
+        <p>Para ilustrar o uso do elemento de <em>&ltmedia></em>, o código a
+        seguir define duas mídias com identificadores <em>midia_principal</em> e
+        <em>icone</em>, mas elas não possuem conteúdo. Por não terem conteúdo,
+        ações de iniciar sobre as mídias acima não apresentaram resultados.</p>
         
-        <div id='nclIntro1CodeA'></div>
-        </div>
+        <div id='nclIntro1CodeA'></div><br>
+
+        <p>O código a seguir define as mesmas mídias acima, mas com conteúdos de
+        áudio e imagem, respectivamente. Em especial, a mídia de
+        <em>midia_principal</em> tem definido um trecho chamado de
+        <em>creditos</em> que inicia aos 300 e termina aos 360 segundos.</p>
+        
+        <div id='nclIntro1CodeB'></div><br>
+        
+        <p>É importante ressaltar que mudanças no conteúdo de uma
+        <em>&ltmedia></em> não afetam o comportamento da aplicação, desde que a
+        mídia defina os mesmos trechos, pois os sincronismos são definidos
+        independe do conteúdo. Por exemplo, os blocos a seguir definem a mesma
+        mídia <em>midia_principal</em> mas com o conteúdo de vídeo.</p> </div>
+
+        <div id='nclIntro1CodeC'></div>
       `
     },
     {
@@ -1396,18 +1412,31 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;">
         
         <p>Agora, vamos detalhar o conceito de <em>Sincronismo</em> em NCL que é
-        já implementado pelo elementos <em>&ltport></em> e
-        <em>&ltlink></em>.</p>
+        já implementado pelo elementos <em>&ltport></em> e <em>&ltlink></em>. Os
+        elementos <em>&ltport></em> indicam qual elementos de <em>&ltmedia></em>
+        são iniciados com a aplicação. Já elementos de <em>&ltlink></em> indicam
+        relações te tempo entre elementos de <em>&ltmedia></em>. </p>
         
-        <p> O elemento <em>&ltport></em> indica qual <em>&ltmedia></em> deve ser
-        iniciada com a aplicação. No código a seguir, <em>&ltport></em> define
-        que o elemento <em>midia_principal</em> incia com a aplicação.</p>
+        <p>O <em>&ltlink></em> é baseado em causalidade e definido por
+        <strong>um conjunto de condições e um conjunto de ações</strong>. Ou
+        seja, quando as condições são satisfeitas ações são realizadas.</p> 
         
-        <p>O elemento <em>&ltlink></em> indica relacionamentos através de
-        <em>&ltmedia></em> através des elementos <em>&ltbind></em>. O código a
-        seguir define dois <em>&ltlink></em>. O primeiro defini que quando o
-        <em>video_principal</em> alcançar o seu trecho de créditos a imagem
-        <em>img_repetir</em> é iniciada. O segundo que quando essa
+        <p> As condições de um <em>&ltlink</em> podem ser simples ou
+        compostas. Exemplos de condições simples são o início ou fim de uma
+        mídia ou trecho de mídia, ou a seleção de usuário sobre uma mídia.</p>
+        
+        <p>As ações de um <em>&ltlink</em> são executadas em sequencia.
+        Exemplos de ações são iniciar ou parar uma mídia.</p>
+
+        <p>Para ilustrar o uso desses elementos, o código a segui define uma
+        aplicação que apresenta um vídeo e um ícone durante os créditos do
+        vídeo. Se o usuário selecionar o ícone, o vídeo é reiniciado.</p> 
+
+        <p> O código a seguir tem um elemento <em>&ltport></em> e dois elementos
+        <em>&ltlink></em>. O <em>&ltport></em> define que o elemento
+        <em>midia_principal</em> incia com a aplicação. O primeiro defini que
+        quando o <em>video_principal</em> alcançar o seu trecho de créditos a
+        imagem <em>img_repetir</em> é iniciada. O segundo que quando essa
         <em>img_reptetir</em> é selecionado <em>video_principal</em> é
         reiniciado (<em>stop</em> e <em>start</em>).</p>
 
@@ -1483,7 +1512,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
        <em>gu_leap_microphone.sparql</em>. Essa descrição define que cada
        usuário do grupo deve ter um headset e um leapmotion.</p >
         
-        <div id='nclIntro4CodeA'></div><br>
+      <div id='nclIntro4CodeA'></div><br>
 
        <p> O elemento  <em>&ltuserClass></em> é definido dentro do
        <em>&lthead></em> de uma aplicação NCL. Ele é definido por um
@@ -1507,12 +1536,29 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 _data.nclIntro1CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
-  <media id="img_repetir" src="img_repetir.png">
+  <media id="icone" >
+  </media>
+  <media id="midia_principal">
+  </media>
+  ]]></script>
+`
+_data.nclIntro1CodeB = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false;"> <![CDATA[
+  <media id="icone" src="icone.png">
     <property name="size" value="20%, 20%" />
     <property name="top" value="80%" />
     <property name="zindex" value="1" />
   </media>
-  <media id="video_principal" src="video.mp4">
+  <media id="midia_principal" src="audio.mp4">
+    <area label="credits" begin="300s" end="360s" />
+  </media>
+  ]]></script>
+`
+_data.nclIntro1CodeC = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false;"> <![CDATA[
+  <media id="midia_principal" src="video.mp4">
     <property name="size" value="100%, 100%" />
     <area label="credits" begin="300s" end="360s" />
   </media>
@@ -2043,7 +2089,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
           <tr>
             <td><em>Sincronismo</em></td>
             <td><em>&ltscript></em></td>
-            <td>manter</td>
+            <td>estender <em>&ltscript></em> com API <em>Sync</em></td>
           </tr>
           <tr>
             <td><em>Reconhecedor</em></td>
@@ -2065,15 +2111,40 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         <div style="text-align: justify; width: 70%;"> 
         
-        <p>Primeiro, vamos detalhar o conceito de <em>Mídia</em> em HTML que é
-        já implementado por diferentes elementos, como <em>&ltimg></em>,
-        <em>&ltaudio></em> e <em>&ltvideo></em>. Entretanto, esses elementos não
-        possuem porções identificáveis. Logo, propromos os elementos para
-        definir esses porções. Mais precisamente, elementos <em>&ltimg></em> e
-        <em>&ltimg></em> para porções temporais e <em>&llabel></em> para porções
-        em uma descrição textual.</p>
+        <p>Primeiro, vamos detalhar o conceito de <em>Mídia</em> em HTML. Para
+        implementar esse conceito nos estendemos elementos <em>&ltimg></em>,
+        <em>&ltaudio></em> e <em>&ltvideo></em> com porções temporais e
+        <em>&ltlabel></em> para porções em uma descrição textual.</p>
         
-        <div id='htmlIntro1CodeA'></div>
+        <p>Assim <em>&ltimg></em>, <em>&ltaudio></em>, <em>&ltvideo></em> devem
+        ser definidos por <strong>identificador, um conteúdo, propriedades
+        âncoras </strong>. O conteúdo consiste em um arquivo de mídia, como
+        imagem jpeg, video mp4, audio mp3, entre outros. As âncoras podem
+        definir porções temporais da apresentação da mídia ou trechos de um
+        descrição.</p>
+
+        <p>Para ilustrar o uso desses elementos, o código a seguir define duas
+        mídias com identificadores <em>midia_principal</em> e <em>icone</em>,
+        mas elas não possuem conteúdo. Por não terem conteúdo,ações de iniciar
+        sobre as mídias acima não apresentaram resultados.</p>
+
+        <div id='htmlIntro1CodeA'></div><br>
+
+        <p>O código a seguir define as mesmas mídias acima, mas com conteúdos de
+        áudio e imagem, respectivamente. Em especial, a mídia de
+        <em>midia_principal</em> tem definido um trecho chamado de
+        <em>creditos</em> que inicia aos 300 e termina aos 360 segundos.</p>
+        
+        <div id='htmlIntro1CodeB'></div><br>
+        
+        <p>É importante ressaltar que mudanças no conteúdo de uma
+        <em>&ltmedia></em> não afetam o comportamento da aplicação, desde que a
+        mídia defina os mesmos trechos, pois os sincronismos são definidos
+        independe do conteúdo. Por exemplo, os blocos a seguir definem a mesma
+        mídia <em>midia_principal</em> mas com o conteúdo de vídeo.</p> 
+
+        <div id='htmlIntro1CodeC'></div>
+        
         </div>
       `
     },
@@ -2084,8 +2155,26 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;">
         
         <p>Agora, vamos detalhar o conceito de <em>Sincronismo</em> em HTML que
-        é parcialmente implementado pelo elemento <em>&lscript></em> utilizando
-        a linguagem JavaScript.</p>
+        é implementado pelo elemento <em>&lscript></em> em conjunto com a API
+        utilizando a API de <em>Sync></em>. O uso dessa API  permite especificar
+        o comportamento das aplicações.</p>
+                
+        <p> API de <em>Sync></em> é baseada em causalidade edefinido sendo
+        definido por <strong>um conjunto de condições e um conjunto de
+        ações</strong>. Ou seja, quando as condições são satisfeitas ações são
+        realizadas.</p> 
+        
+        <p> As condições de um <em>Sync></em> podem ser simples ou
+        compostas. Exemplos de condições simples são o início ou fim de uma
+        mídia ou trecho de mídia, ou a seleção de usuário sobre uma mídia.</p>
+        
+        <p>As ações de um <<em>Sync></em> são executadas em sequencia.
+        Exemplos de ações são iniciar ou parar uma mídia.</p>
+
+        <p>Para ilustrar o uso do elemento de <em>script</em>, o coódigo a
+        define uma aplicação que apresenta um vídeo e um ícone durante os
+        créditos do vídeo. Se o usuário selecionar o ícone, o vídeo é
+        reiniciado.</p> 
 
         <div id='htmlIntro2CodeA'></div>
 
@@ -2147,17 +2236,16 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         Para implementar esse conceito propomos o elemento
         <em>&ltuserClass></em>.</p>
 
-       <p> Um importante parte da definição de um <em>&ltuserClass></em> é como
-       são descritos as caracterisicas que ususários devem ter par aparticipar
-       da classe, por exemplos quais dispositivos devem possuir. Para essa
-       descrição propomos um descrição  no formato SPARQL. O trecho de código a
-       seguir apresenta o arquivo de descrição de ususários
-       <em>gu_leap_microphone.sparql</em>. Essa descrição define que cada
-       usuário do grupo deve ter um headset e um leapmotion.</p >
-        
+        <p> Um importante parte da definição de um <em>&ltuserClass></em> é como
+        são descritos as caracterisicas que ususários devem ter par aparticipar
+        da classe, por exemplos quais dispositivos devem possuir. Para essa
+        descrição propomos um descrição  no formato SPARQL. O trecho de código a
+        seguir apresenta o arquivo de descrição de ususários
+        <em>gu_leap_microphone.sparql</em>. Essa descrição define que cada
+        usuário do grupo deve ter um headset e um leapmotion.</p >
+          
         <div id='htmlIntro4CodeA'></div><br>
 
-        <div style="text-align: justify; width: 70%;">
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em HTML, o
         código a seguir é uma nova versão da aplicação que reinicia um video
         dado uma interação. Mas nessa versão, ao invés de clicar, o vídeo é
@@ -2178,15 +2266,41 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>&ltlink></em>(linhas 27-30) defique que o <em>video_principal</em>
         deve ser reiniciado (stop e start) quando for reconhecido o trecho
         <em>repete</em></p>
-        </div>
 
         <div id='htmlIntro4CodeB'></div>
+        </div>
       `
     }
   ]
 })
 
 _data.htmlIntro1CodeA = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false;"> <![CDATA[
+  <?xml version="1.0" encoding="ISO-8859-1"?>
+  <html>
+    <head>
+    </head>
+    <body>
+    </body>
+  </html>
+  ]]></script>
+`
+
+_data.htmlIntro1CodeB = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false;"> <![CDATA[
+  <?xml version="1.0" encoding="ISO-8859-1"?>
+  <html>
+    <head>
+    </head>
+    <body>
+    </body>
+  </html>
+  ]]></script>
+`
+
+_data.htmlIntro1CodeC = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
