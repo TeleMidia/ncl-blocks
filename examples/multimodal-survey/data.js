@@ -428,7 +428,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>creditos</em> que inicia aos 300 e termina aos 360 segundos.</p>
         </div>
         
-        <div id='conceptsIntro1b'></div></p>
+        <div id='conceptsIntro1b'></div>
       `
     },
     {
@@ -506,7 +506,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         nessas direções.</p> 
         </div>
         
-        <div id='conceptsIntro3a'></div><br> 
+        <div id='conceptsIntro3a'></div><br>
         
         <div style="text-align: justify; width: 70%;">
         <p>Para ilustrar o uso de um <em>Reconhecedor</em>, os blocos a
@@ -570,7 +570,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         iniciada).</p>
         </div>
         
-        <div id='conceptsIntro4b'></div><br>
+        <div id='conceptsIntro4b'></div>
       `
     }
   ]
@@ -1363,7 +1363,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
             <td>não presente</td></td>
             <td>adcionar elemento <em>&ltuserClass></em></td>
           </tr>
-        </table><br>
+        </table>
         </div>
       `
     },
@@ -1376,7 +1376,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Primeiro, vamos detalhar o conceito de <em>Mídia</em> em NCL que é
         já implementado pelo elemento <em>&ltmedia></em>.</p>
         
-        </p> O elemento  <em>&ltmedia></em> possui um identificador, conteúdo e
+                </p> O elemento  <em>&ltmedia></em> possui um identificador, conteúdo e
         propriedades. O conteúdo consiste em um arquivo de mídia, como imagem,
         video, audio, entre outros. O conteúdo de uma <em>&ltmedia></em> tem
         porções identificáveis, chamadas de âncora. Dentre outros tipos, as
@@ -1385,7 +1385,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         um video. O video possui uma um ancora chamada de creditos que inicia
         aos 300 e termina aos 360 segundos.</p>
         
-        <div id='nclIntro1CodeA'></div><br>
+        <div id='nclIntro1CodeA'></div>
         </div>
       `
     },
@@ -1411,7 +1411,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>img_reptetir</em> é selecionado <em>video_principal</em> é
         reiniciado (<em>stop</em> e <em>start</em>).</p>
 
-        <div id='nclIntro2CodeA'></div><br>
+        <div id='nclIntro2CodeA'></div>
 
         </div>
       `
@@ -1428,7 +1428,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>O trecho de código a seguir apresenta o arquivo
         <em>rec_voz.srgs</em>. Esse arquivo é uma descrição de reconhecimento de
         voz no formato SRGS. Em particular, ele define uma porção chamada
-        <em>repete</em> que define o reconhecimento de voz "repita vídeo".</p >
+        <em>repete</em> que define o reconhecimento de voz "repita vídeo".</p>
         
         <div id='nclIntro3CodeA'></div><br>
 
@@ -1461,7 +1461,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         deve ser reiniciado (stop e start) quando for reconhecido o trecho
         <em>repete</em></p>
 
-        <div id='nclIntro3CodeC'></div><br>
+        <div id='nclIntro3CodeC'></div>
 
         </div>
       `
@@ -1496,7 +1496,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       clicar, o vídeo é reiniciado ao segundo usuário do usuário falar "repita
       vídeo".</p>
 
-      <div id='nclIntro4CodeB'></div><br>
+      <div id='nclIntro4CodeB'></div>
       
       </div>
       `
@@ -1737,7 +1737,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         <div style="text-align: justify; width: 70%;">
         <p>Tarefa 1: Por favor, analise com cuidado o código NCL a seguir.</p>
-        <div id='nclTask1Code'></div><br>
+        <div id='nclTask1Code'></div>
         </div>
       `
     },
@@ -1756,7 +1756,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Tarefa 2: O aplicação NCL da Tarefa 1 foi modificada para permitir
         interações multimodais. O novo código é apresentado a seguir com as
         modificações destacadas. Por favor, analise com cuidado.</p>
-        <div id='nclTask2Code'></div><br>
+        <div id='nclTask2Code'></div>
         </div>
       `
     },
@@ -2055,7 +2055,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
             <td>não presente</td></td>
             <td>adcionar elemento <em>&ltuserClass></em></td>
           </tr>
-        </table><br>
+        </table>
         </div>
       `
     },
@@ -2073,7 +2073,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>&ltimg></em> para porções temporais e <em>&llabel></em> para porções
         em uma descrição textual.</p>
         
-        <div id='htmlIntro1CodeA'></div><br>
+        <div id='htmlIntro1CodeA'></div>
         </div>
       `
     },
@@ -2087,7 +2087,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         é parcialmente implementado pelo elemento <em>&lscript></em> utilizando
         a linguagem JavaScript.</p>
 
-        <div id='htmlIntro2CodeA'></div><br>
+        <div id='htmlIntro2CodeA'></div>
 
         </div>
       `
@@ -2134,7 +2134,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         deve ser reiniciado (stop e start) quando for reconhecido o trecho
         <em>repete</em>.</p>
 
-        <div id='htmlIntro3CodeC'></div><br>
+        <div id='htmlIntro3CodeC'></div>
         </div>
       `
     },
@@ -2180,7 +2180,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>repete</em></p>
         </div>
 
-        <div id='htmlIntro4CodeB'></div><br>
+        <div id='htmlIntro4CodeB'></div>
       `
     }
   ]
