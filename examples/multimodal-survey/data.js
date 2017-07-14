@@ -1508,20 +1508,19 @@ _data.nclIntro1CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
   <media id="img_repetir" src="img_repetir.png">
-    <property name="width" value="20%" />
-    <property name="hight" value="20%" />
+    <property name="size" value="20%, 20%" />
+    <property name="top" value="80%" />
     <property name="zindex" value="1" />
   </media>
   <media id="video_principal" src="video.mp4">
-    <property name="width" value="100%" />
-    <property name="hight" value="100%" />
+    <property name="size" value="100%, 100%" />
     <area label="credits" begin="300s" end="360s" />
   </media>
   ]]></script>
 `
 _data.nclIntro2CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[16,21,26,30]">
+  auto-links: false; highlight:[16,20,24,28]">
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <ncl>
@@ -1539,13 +1538,11 @@ _data.nclIntro2CodeA = `
     <body>
       <port component="video_principal"/>
       <media id="video_principal" src="video.mp4">
-        <property name="width" value="100%" />
-        <property name="hight" value="100%" />
+        <property name="size" value="100%, 100%" />
         <area label="credits" begin="300s" end="360s" />
       </media>
       <media id="img_repetir" src="img_repetir.png">
-        <property name="width" value="20%" />
-        <property name="hight" value="20%" />
+        <property name="size" value="20%, 20%" />
         <property name="zindex" value="1" />
       </media>
       <link xconnector="onBeginStart">
@@ -1615,7 +1612,7 @@ _data.nclIntro3CodeB = `
 `
 _data.nclIntro3CodeC = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[16,21,24,28]">
+  auto-links: false; highlight:[16,20,23,27]">
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <ncl>
@@ -1633,8 +1630,7 @@ _data.nclIntro3CodeC = `
     <body>
       <port component="video_principal"/>
       <media id="video_principal" src="video.mp4">
-        <property name="width" value="100%" />
-        <property name="hight" value="100%" />
+        <property name="size" value="100%, 100%" />
         <area label="credits" begin="300s" end="360s" />
       </media>
       <input id="rec"src="rec_voz.srgs">
@@ -1669,7 +1665,7 @@ _data.nclIntro4CodeA = `
 `
 _data.nclIntro4CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[13,14,15,16,32,34]"> <![CDATA[
+  auto-links: false; highlight:[13,14,15,16,31,33]"> <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <ncl>
     <head>
@@ -1690,8 +1686,7 @@ _data.nclIntro4CodeB = `
     <body>
       <port component="video_principal"/>
       <media id="video_principal" src="video.mp4">
-        <property name="width" value="100%" />
-        <property name="hight" value="100%" />
+        <property name="size" value="100%, 100%" />
         <area label="credits" begin="300s" end="360s" />
       </media>
       <input id="rec"src="rec_voz.srgs">
@@ -1811,26 +1806,24 @@ _data.nclTask1Code = `
     <body>
       <port component="video_principal" />
       <media id="video_principal" src="video_principal.mp4">
-        <property name="width" value="100%" />
-        <property name="hight" value="100%" />
+        <property name="size" value="100%, 100%" />
         <area label="credits" begin="300s" end="360s" />
       </media>
       <media id="video_centro" src="centro.mp4">
-        <property name="width" value="100%" />
-        <property name="hight" value="100%" />
+        <property name="size" value="100%, 100%" />
       </media>
       <media id="video_praia" src="praia.mp4">
-        <property name="width" value="100%" />
-        <property name="hight" value="100%" />
+        <property name="size" value="100%, 100%" />
       </media>
       <media id="img_centro" src="img_centro.png">
-        <property name="width" value="20%" />
-        <property name="hight" value="20%" />
+        <property name="top" value="80%" />
+        <property name="size" value="20%, 20%" />
+        <property name="zindex" value="1" />
       </media>
       <media id="img_praia" src="img_praia.png">
-        <property name="left" value="80%" />
-        <property name="width" value="20%" />
-        <property name="hight" value="20%" />
+        <property name="location" value="80%, 80%" />
+        <property name="size" value="20%, 20%" />
+        <property name="zindex" value="1" />
       </media>
       <link xconnector="onBeginStart">
         <bind role="onBegin" component="video_principal" interface="creditos">
@@ -1876,17 +1869,13 @@ _data.nclTask2CodeOnly = `
     <body>
       <port component="video_principal" />
       <media id="video_principal" src="video_principal.mp4">
-        <property name="width" value="100%" />
-        <property name="hight" value="100%" />
-        <area label="credits" begin="300s" end="360s" />
+        <property name="size" value="100%, 100%" />
       </media>
       <media id="video_centro" src="centro.mp4">
-        <property name="width" value="100%" />
-        <property name="hight" value="100%" />
+        <property name="size" value="100%, 100%" />
       </media>
       <media id="video_praia" src="praia.mp4">
-        <property name="width" value="100%" />
-        <property name="hight" value="100%" />
+        <property name="size" value="100%, 100%" />
       </media>
       <input id="rec" src="rec_voz.sgrs">
         <area label="centro" />
@@ -1912,7 +1901,7 @@ _data.nclTask2CodeOnly = `
 
 _data.nclTask2Code = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight: [9,10,11,12,13,14,15,33,34,35,36,41,46]">
+  auto-links: false; highlight: [9,10,11,12,13,14,15,29,33,37,42]">
   <![CDATA[` + _data.nclTask2CodeOnly + ` ]]></script>
 `
 
