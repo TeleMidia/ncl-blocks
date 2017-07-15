@@ -40,7 +40,7 @@ _data.surveyJSON.pages.push({
         de <i>Interações multimodais em linguagens multimídia</i>.</p>
         
         <p><strong>Ressaltamos que este estudo NÃO se destina a avaliar você,
-        mas sim capturar evidências da nossa pesquisa.</strong></p>
+        mas sim capturar evidências para nossa pesquisa.</strong></p>
         
         <p>Para prosseguirmos, pedimos seu consentimento para realizarmos
         este estudo e informamos que:</p> 
@@ -1128,10 +1128,10 @@ _data.blocksTask2Xml = `
       </block>
     </value>
   </block>
-  <block type="port" id="+ p - MtE:D * clWz(7oX7Hg" x="20" y="622">
+  <block type="port" id="+ p - MtE:D * clWz(7oX7Hg" x="20" y="722">
     <field name="id">video_principal</field>
   </block>
-  <block type="link" id="BLK@~VH8\`;o!;uMR.^tZ" x="550" y="627">
+  <block type="link" id="BLK@~VH8\`;o!;uMR.^tZ" x="550" y="727">
     <value name="conditions">
       <block type="onbegin" id="(H8dBhXk6.y#]q%\`UM^D">
         <field name="id">creditos</field>
@@ -1153,7 +1153,7 @@ _data.blocksTask2Xml = `
       </block>
     </statement>
   </block>
-  <block type="link" id="M)^!XeQ3fwhKEwGTcoGK" x="20" y="795">
+  <block type="link" id="M)^!XeQ3fwhKEwGTcoGK" x="20" y="895">
     <value name="conditions">
       <block type="onrecognize" id="IokIu//km+7L0Y@Nioi[">
         <field name="id">voz_centro</field>
@@ -1180,7 +1180,7 @@ _data.blocksTask2Xml = `
       </block>
     </statement>
   </block>
-  <block type="link" id="BLK@~VH8\`;o!;uMR.^tZ" x="549" y="805">
+  <block type="link" id="BLK@~VH8\`;o!;uMR.^tZ" x="549" y="905">
     <value name="conditions">
       <block type="onrecognize" id="[SfTF*!(*0N7]Hv9.tNh">
         <field name="id">voz_praia</field>

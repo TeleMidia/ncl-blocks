@@ -84,7 +84,7 @@ if ($('#surveyPageNo').length) {
 $('#surveyPageNo').change(function () {
   _survey.currentPageNo = this.value
 })
-// $('#surveyPageNo').val(4).change()
+$('#surveyPageNo').val(3).change()
 // $('#surveyPageNo').val(5).change()
 // $('#surveyPageNo').val(6).change()
 // $('#surveyPageNo').val(7).change()
@@ -161,7 +161,7 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       break
     case 'conceptsTask2':
       NCLBlocks.injectInDiv(_pathToBlockly, questionId,
-        NCLBlocks.calcHt(6, 145), _data.blocksTask2Xml, true)
+        NCLBlocks.calcHt(7, 135), _data.blocksTask2Xml, true)
       break
     case 'conceptsTask3':
       if (_survey.getQuestionByName('conceptsTask3Changes').value) {
