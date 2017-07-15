@@ -192,34 +192,36 @@ _data.surveyJSON.pages.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Primeiro devemos introduzir o que é uma linguagem multimídia, que é 
+        <p>Primeiro devemos introduzir o que é uma linguagem multimídia, que é
         intimamente relacionada a documento multimídia.</p>
 
-        <p>Steinmetz [1] caracteriza um <strong>sistema multimídia</strong> 
-        como aquele que utiliza um conjunto de mídias, que ao menos uma mídia 
-        seja discreta e uma seja contínua. As <strong>mídias discretas</strong> 
-        são aquelas que não mudam durante sua exibição, como imagens e textos. 
-        Elas também são chamadas de mídias independentes de tempo. Já as 
-        <strong>mídias contínuas</strong> são aquelas que mudam durante sua 
-        exibição, como áudios e vídeos. Elas também são chamadas de mídias 
+        <p>Steinmetz [1] caracteriza um <strong>sistema multimídia</strong> como
+        aquele que utiliza um conjunto de mídias, que ao menos uma mídia seja
+        discreta e uma seja contínua. As <strong>mídias discretas</strong> são
+        aquelas que não mudam durante sua exibição, como imagens e textos. Elas
+        também são chamadas de mídias independentes de tempo. Já as
+        <strong>mídias contínuas</strong> são aquelas que mudam durante sua
+        exibição, como áudios e vídeos. Elas também são chamadas de mídias
         dependentes de tempo.</p>
 
-        <p>Um <strong>documento multimídia</strong>, também segundo Steinmentz, 
-        é aquele que define como um sistema multimídia deve exibir um conjunto 
-        de mídias (discretas e contínuas) na forma de uma apresentação 
-        multimídia. O criador de um documento multimídia é usualmente chamado 
-        de autor.</p>
+        <p>Um <strong>documento multimídia</strong>, também segundo Steinmentz,
+        é aquele que define como um sistema multimídia deve exibir um conjunto
+        de mídias (discretas e contínuas) na forma de uma apresentação
+        multimídia. O criador de um documento multimídia é usualmente chamado de
+        autor.</p>
 
-        <p>A figura a seguir ilustra a criação e apresentação de um documento 
+        <p>A figura a seguir ilustra a criação e apresentação de um documento
         multimídia.</p>
-        <p>Na <strong>criação do documento multimídia</strong>, o autor define 
+
+        <p>Na <strong>criação do documento multimídia</strong>, o autor define
         as mídias utilizadas e o sincronismo entre elas.</p>
-        <p>O sincronismo define o comportamento da exibição das mídias no 
-        decorrer do tempo da apresentação. Ele é geralmente baseado em momentos 
-        de apresentação de <strong>trechos de mídia</strong> contínua. 
-        Considere, por exemplo, que a parte de créditos de vídeo inicie no 
-        segundo 600. Um sincronismo pode ser definido para que ao iniciar o 
-        trecho dos créditos (o vídeo alcance o segundo 600), uma imagen de 
+
+        <p>O sincronismo define o comportamento da exibição das mídias no
+        decorrer do tempo da apresentação. Ele é geralmente baseado em momentos
+        de apresentação de <strong>trechos de mídia</strong> contínua.
+        Considere, por exemplo, que a parte de créditos de vídeo inicie no
+        segundo 600. Um sincronismo pode ser definido para que ao iniciar o
+        trecho dos créditos (o vídeo alcance o segundo 600), uma imagen de
         patrocínio seja exibida.</p>
 
         <p>Na <strong>apresentação do documento multimídia</strong>, um sistema
@@ -259,14 +261,18 @@ _data.surveyJSON.pages.push({
         multimídia com interações multimodais</strong>, que está intimamente 
         relacionado com interfaces multimodais.</p>
 
-        <p>Oviatt [4] define que <strong>interfaces multimodais</strong> como 
-        aquelas que reconhecem  interações em formas mais naturais da 
-        linguagem e comportamento humano, como fala e gestos. Esse tipo de 
-        interface foi apoiada pelos recentes avanços em tecnologias de 
-        reconhecimento e <strong>dispositivos de interação multimodal</strong>. 
-        Ilustrados a seguir, citamos o uso de microfones para reconhecimento de 
-        voz, e dispositivos como LeapMotion e e Microsoft Kinect para 
-        reconhecimento de gestos de mão e corpo, respectivamente.</p>
+        <p>Oviatt [4] define que <strong>interfaces multimodais</strong> como
+        aquelas que utilizam formas comunicação mais naturais da linguagem e
+        comportamento humano, como fala e gestos. Por exemplo, algumas
+        interfaces multimodais para crianças e idosos utilizaram de
+        comunicação de voz, avaraes humanos ou gestos.</p>
+        
+        <p>Esse tipo de interface foi apoiada pelos recentes avanços em
+        tecnologias de reconhecimento e <strong>dispositivos de interação
+        multimodal</strong>. Ilustrados a seguir, citamos o uso de microfones
+        para reconhecimento de voz, e dispositivos como LeapMotion e e Microsoft
+        Kinect para reconhecimento de gestos de mão e corpo,
+        respectivamente.</p>
 
         <div class='text-center'>
           <img class='img-thumbnail' style='height: 180px'
@@ -279,20 +285,27 @@ _data.surveyJSON.pages.push({
         <br>
 
         <p>Modificamos a primeira figura para ilustrar a criação e apresentação
-        de um documento multimídia com suporte a interações multimodais. Nessa
-        nova figura, o autor define não apenas mídias e sincronismo, como também
-        o reconhecimento de interações multimodais.</p>
+        de um documento multimídia com suporte a interações multimodais. Nesse
+        tipo de documento, o autor não apenas defini as mídias utilizadas e o
+        sincronismo entre elas, mas também de defini interações multimodais.</p>
         
-        <p>Para definir reconhecimentos, o autor utiliza de descrições
-        auxiliares para reconhecer determinada interação. Essas descrições têm
-        sintaxe própria que define características de interação. Por exemplo,
-        uma descrição pode ser em SRGS (Speech Recognition Grammar
-        Specification) [5] para definir o reconhecimento de comandos de voz.</p>
+        <p>As interações multimodais são regalmente definidas por descrições
+        auxiliares que define características especifica da modalidade. Essas
+        descrições podem ser de sintetização e reconhecimento modalidades.</p>
+        
+        <p>Exemplos de descrições de sintetização são o SSML (Speech Synthesis
+        Markup Language) [5] para sintetização de voz e BML (Behavior Markup
+        Language) para sintetização de avatares humanos.</p>
+
+        <p>Exemplos de descrições de reconhecimento são o SRGS (Speech
+        Recognition Grammar Specification) [5] para reconhecimento de comandos
+        de voz eo GML (Gesture Markup Language) para reconhecimetno de
+        gestos.</p>
 
         <p>Na apresentação, esse sistema multimídia recebe o documento
         multimídia, arquivos de mídia e descrições multimodais necessários para
-        realizar o sincronismo e reconhecimentos definidos pelo autor. Esse
-        sistema utiliza dispositivos de interação multimodal para
+        realizar o sincronismo e interações multimodais definidos pelo autor.
+        Esse sistema utiliza dispositivos de interação multimodal para
         reconhecimento, além de dispositivos audiovisuais.</p>
 
         <div class='text-center'>
@@ -314,10 +327,12 @@ _data.surveyJSON.pages.push({
         de mídias, quanto de  reconhecimentos de interações como voz e
         gestos.</p>
 
-        [4] <a href='http://dx.doi.org/10.1201/9781410615862.ch21'>
+        [4] <a href='#'>https://www.w3.org/TR/speech-synthesis/<a>
+        [5] <a href='#'>http://www.mindmakers.org/projects/bml-1-0/wiki<a>
+        [6] <a href='http://dx.doi.org/10.1201/9781410615862.ch21'>
         Oviatt, S. 2007. Multimodal Interfaces. Human-Computer Interaction 
         Handbook. CRC Press, 413–432</a><br>
-        [5] <a href='#'>https://www.w3.org/TR/speech-grammar<a>
+        [7] <a href='#'>https://www.w3.org/TR/speech-grammar<a>
         </div>
       `
     },
