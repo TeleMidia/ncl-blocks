@@ -53,7 +53,6 @@ _data.surveyJSON.pages.push({
         anonimato dos participantes é preservado em qualquer material
         publicado.</li> 
         </ul>
-        <br>
         <p>Caso esteja de acordo, prossiga.</p>
         </div>
 
@@ -195,7 +194,6 @@ _data.surveyJSON.pages.push({
         <div style="text-align: justify; width: 70%;">
         <p>Primeiro devemos introduzir o que é uma linguagem multimídia, que é 
         intimamente relacionada a documento multimídia.</p>
-        <br>
 
         <p>Steinmetz [1] caracteriza um <strong>sistema multimídia</strong> 
         como aquele que utiliza um conjunto de mídias, que ao menos uma mídia 
@@ -205,14 +203,12 @@ _data.surveyJSON.pages.push({
         <strong>mídias contínuas</strong> são aquelas que mudam durante sua 
         exibição, como áudios e vídeos. Elas também são chamadas de mídias 
         dependentes de tempo.</p>
-        <br>
 
         <p>Um <strong>documento multimídia</strong>, também segundo Steinmentz, 
         é aquele que define como um sistema multimídia deve exibir um conjunto 
         de mídias (discretas e contínuas) na forma de uma apresentação 
         multimídia. O criador de um documento multimídia é usualmente chamado 
         de autor.</p>
-        <br>
 
         <p>A figura a seguir ilustra a criação e apresentação de um documento 
         multimídia.</p>
@@ -240,12 +236,11 @@ _data.surveyJSON.pages.push({
             src='assets/overview1.svg'>
         </div>
         <br>
-
+        
         <p>A <strong>linguagem multimídia</strong> é na verdade o formato que 
         permite a um autor definir um documento multimídia. Ela define uma 
         sintaxe e elementos de linguagem. Exemplos atuais de linguagens 
         multimídia são a NCL (Nested Context Language) [2] e a HTML [3].</p>
-        <br>
 
         [1] <a 
         href='https://www.pearson.com/us/higher-education/product/Steinmetz-Multimedia-Computing-Communications-and-Applications/9780133244359.html'> 
@@ -263,7 +258,6 @@ _data.surveyJSON.pages.push({
         <p>Agora, devemos introduzir o conceito de <strong>linguagens 
         multimídia com interações multimodais</strong>, que está intimamente 
         relacionado com interfaces multimodais.</p>
-        <br>
 
         <p>Oviatt [4] define que <strong>interfaces multimodais</strong> como 
         aquelas que reconhecem  interações em formas mais naturais da 
@@ -273,7 +267,6 @@ _data.surveyJSON.pages.push({
         Ilustrados a seguir, citamos o uso de microfones para reconhecimento de 
         voz, e dispositivos como LeapMotion e e Microsoft Kinect para 
         reconhecimento de gestos de mão e corpo, respectivamente.</p>
-        <br>
 
         <div class='text-center'>
           <img class='img-thumbnail' style='height: 180px'
@@ -283,7 +276,6 @@ _data.surveyJSON.pages.push({
           <img class='img-thumbnail'
           style='height: 180px' src='assets/kinect.jpg'>
         </div>
-
         <br>
 
         <p>Modificamos a primeira figura para ilustrar a criação e apresentação
@@ -295,8 +287,7 @@ _data.surveyJSON.pages.push({
         auxiliares para reconhecer determinada interação. Essas descrições têm
         sintaxe própria que define características de interação. Por exemplo,
         uma descrição pode ser em SRGS (Speech Recognition Grammar
-        Specification) [5] para definir
-        o reconhecimento de comandos de voz.</p>
+        Specification) [5] para definir o reconhecimento de comandos de voz.</p>
 
         <p>Na apresentação, esse sistema multimídia recebe o documento
         multimídia, arquivos de mídia e descrições multimodais necessários para
@@ -365,9 +356,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;"> 
-        <p>As linguagens multimídia atuais não suportam adequadamente interações
-        multimodais. Elas podem ser consideradas "output-oriented" pois focam em
-        conteúdos para apresentação, como imagens, vídeo e áudios.</p>
+        <p>Em nossa pesquisa, argumentamos que as linguagens multimídia atuais
+        não suportam adequadamente interações multimodais e ser consideradas
+        "output-oriented". Pois essa linguagens atuas tem maior foco na
+        apresentação na conteúdos de mídia, como imagens, vídeo e áudios.</p>
         
         <p>Em nossa pesquisa propomos quatro conceitos que são necessários para
         linguagem multimídia com interações multimodais. Mais precisamente esses
@@ -875,7 +867,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     {
       type: 'html',
       name: 'conceptsTask1',
-      html: 'Tarefa 1: Por favor, analise com cuidado os blocos a seguir.<br><br>'
+      html: 'Tarefa 1: Por favor, analise com cuidado os blocos a seguir.<br>'
     },
     {
       type: 'comment',
@@ -892,7 +884,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'comment',
       isRequired: true,
       name: 'conceptsTask2Question',
-      title: ' Qual foi a mudança no comportamento da aplicação da Tarefa 1 para Tarefa 2?'
+      title: 'Qual foi a mudança no comportamento da aplicação da Tarefa 1 para Tarefa 2?'
     },
     {
       type: 'html',
@@ -1765,7 +1757,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;"> 
         <p>Agora, pedimos que você realize as quatro tarefas a seguir. Duas
         tarefas consistem em interpretar códigos e outra duas editar
-        códigos<></p>
+        códigos.</p>
         
         <p><strong>Ressaltamos que essas tarefas NÃO se destinam a avaliar seus
         conhecimentos, mas sim capturar evidências de nossa
@@ -2373,7 +2365,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;">
         <p>Agora, pedimos que você realize as quatro tarefas a seguir. Duas
         tarefas consistem em interpretar códigos e outra duas editar
-        códigos<></p> 
+        códigos.</p> 
         
         <p><strong>Ressaltamos que essas tarefas NÃO se destinam a avaliar seus
         conhecimentos, mas sim capturar evidências de nossa
