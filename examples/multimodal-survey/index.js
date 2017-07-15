@@ -86,7 +86,7 @@ $('#surveyPageNo').change(function () {
 })
 // $('#surveyPageNo').val(4).change()
 // $('#surveyPageNo').val(5).change()
-$('#surveyPageNo').val(6).change()
+// $('#surveyPageNo').val(6).change()
 // $('#surveyPageNo').val(7).change()
 
 // ----------------------------------------

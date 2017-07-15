@@ -36,25 +36,25 @@ _data.surveyJSON.pages.push({
         Digital terrestre e IPTV, têm sido foco de pesquisa e inovação do 
         laboratório nos últimos anos.</p>
         
-        <p>Convidamos a você a participar de uma estudo sobre nossa pesquisa
-        sobre <i>Interações multimodais em linguagens
-        multimídia</i>.</p>
+        <p>Convidamos a você a participar deste estudo sobre nossa pesquisa
+        de <i>Interações multimodais em linguagens multimídia</i>.</p>
         
-        <p><strong>Ressaltamos que este estudo NÃO se destina a avaliar
-        você, mas sim capturar evidências para nossa
-        pesquisa.</strong></p>
+        <p><strong>Ressaltamos que este estudo NÃO se destina a avaliar você,
+        mas sim capturar evidências da nossa pesquisa.</strong></p>
         
         <p>Para prosseguirmos, pedimos seu consentimento para realizarmos
         este estudo e informamos que:</p> 
         <ul> 
         <li>Os dados coletados destinam-se estritamente a atividades de
         pesquisa e desenvolvimento, e somente os pesquisadores do TeleMídia
-        têm acesso à íntegra do material resultante do estudo .</li> 
+        têm acesso à íntegra do material resultante do estudo.</li> 
         <li>A divulgação dos resultados de nossa pesquisa em foros
         científicos e/ou pedagógicos pauta-se no respeito à privacidade, e o
         anonimato dos participantes é preservado em qualquer material
         publicado.</li> 
         </ul>
+        <br>
+        <p>Caso esteja de acordo, prossiga.</p>
         </div>
 
       `
@@ -63,7 +63,6 @@ _data.surveyJSON.pages.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Caso esteja de acordo, prossiga.</p>
 
         OBS: Este estudo é feito em uma única página web. Caso deseje
         navegar entre as seções do estudo, <strong>NÃO</strong> utilize
