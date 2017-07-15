@@ -1276,12 +1276,6 @@ _data.surveyJSON.pages.push({
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
-    },
-    {
-      type: 'comment',
-      rows: '9',
-      title: `Se desejar, fale sobre que **tipos de aplicações** você gostaria
-        de desenvolver com os conceitos apresentados neste estudo.`
     }
   ]
 })
@@ -2570,10 +2564,26 @@ _data.surveyJSON.pages.push({
   title: 'Comentários adicionais do participante',
   elements: [
     {
+      type: 'html',
+      html: `
+        <div style="text-align: justify; width: 70%;">
+        <p>Chegamos ao fim de nosso estudo. Por favor, se desejar, deixei
+        comentários adcionais sobre os pontos a seguir.</p>
+        </div>
+      `
+    },
+    {
+      type: 'comment',
+      rows: '9',
+      title: `Fale sobre **que tipos de aplicações** você gostaria
+        de desenvolver com os conceitos apresentados neste estudo.`
+    },
+    {
       type: 'comment',
       name: 'commentsFinal',
       rows: '9',
-      title: 'Chegamos ao fim de nosso estudo. Se desejar, deixe comentários ou sugestões relacionados ao nosso estudo.'
+      title: `Fale sobre **sugestões** para melhorar os conceitos ou a
+        instaciação.`
     }
   ]
 })
