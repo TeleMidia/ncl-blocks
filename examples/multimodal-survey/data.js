@@ -370,10 +370,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         multimodais. Elas podem ser consideradas "output-oriented" pois focam em
         conteúdos para apresentação, como imagens, vídeo e áudios.</p>
         
-        <p>Em nossa pesquisa propomos que conceitos a serem
-        necessários para linguagem multimídia com interações multimodais. Mais
-        precisamente esses conceitos são os de <em>Mídia, Reconhecedor,
-        Sincronismo</em> e <em>Grupo de Usuários</em>.</p>
+        <p>Em nossa pesquisa propomos quatro conceitos que são necessários para
+        linguagem multimídia com interações multimodais. Mais precisamente esses
+        conceitos são os de <em>Mídia, Reconhecedor, Sincronismo</em> e
+        <em>Grupo de Usuários</em>.</p>
         
         <p>Esta seção tem o objetivo de detalhar esses conceitos para o
         participante e capturar evidências de nossa pesquisa. Para evitar
@@ -1222,8 +1222,9 @@ _data.surveyJSON.pages.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Para capturar evidências de nossa pesquisa, por favor, opine sobre os
-        pontos a seguir.</p>
+        <p>Para capturar evidências de sobre o conceitos que apresentamos
+        (<em>Mídia, Reconhecedor, Sincronismo</em> e <em>Grupo de Usuários</em>,
+        por favor, opine sobre os pontos a seguir.</p>
         </div>
       `
     },
@@ -1231,10 +1232,8 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'conceptsFeedbackQuestion1',
-      title: `Os conceitos apresentados **permitem realizar mais
-            rapidamente** o desenvolvimento de aplicações multimodais frente a
-            conceitos existentes em linguagens multimídia atuais como NCL e
-            HTML`,
+      title: `Os conceitos apresentados **permitem realizar mais rapidamente** a
+        especificação de aplicações multimodais.`,
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
@@ -1244,8 +1243,7 @@ _data.surveyJSON.pages.push({
       isRequired: true,
       name: 'conceptsFeedbackQuestion2',
       title: `Os conceitos apresentados **permitem aumentar a qualidade** 
-            do desenvolvimento de aplicações multimodais frente a conceitos
-            existentes em linguagens multimídia atuais como NCL e HTML`,
+            a especificação de aplicações multimodais.`,
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
@@ -1254,9 +1252,8 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'conceptsFeedbackQuestion3',
-      title: `De modo geral, os conceitos apresentados **são úteis** para o 
-            desenvolvimento de aplicações multimodais frente a conceitos
-            existentes em linguagens multimídia atuais como NCL e HTML.`,
+      title: `De modo geral, os conceitos apresentados **são úteis** para a 
+            especificação de aplicações multimodais.`,
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
@@ -1265,7 +1262,7 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'conceptsFeedbackQuestion4',
-      title: 'Os conceitos apresentados **são fáceis**.',
+      title: `Os conceitos apresentados **são fáceis**.`,
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
@@ -1274,7 +1271,7 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'conceptsFeedbackQuestion5',
-      title: 'Os conceitos apresentados **são claros e entendíveis**?',
+      title: `Os conceitos apresentados **são claros e entendíveis**.`,
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
@@ -1292,7 +1289,7 @@ _data.surveyJSON.pages.push({
     {
       type: 'comment',
       rows: '9',
-      title: 'Se desejar, você fale sobre que **tipos de aplicações** você gostaria de desenvolver com conceitos apresentados neste estudo.'
+      title: 'Se desejar, fale sobre que **tipos de aplicações** você gostaria de desenvolver com os conceitos apresentados neste estudo.'
     }
   ]
 })
@@ -1962,9 +1959,10 @@ _data.surveyJSON.pages.push({
     {
       type: 'html',
       html: `
-        <div style="text-align: justify; width: 70%;">
-        <p>Para capturar evidências de nossa pesquisa, por favor, opine sobre os
-        pontos a seguir.</p>
+        <div style="text-align: justify; width: 70%;"> 
+        <p>Para capturar evidências da instanciação dos conceitos apresentados
+        (<em>Mídia, Reconhecedor, Sincronismo</em> e <em>Grupo de Usuários</em>)
+        na linguagem NCL, por favor, opine sobre os pontos a seguir.</p>
         </div>
       `
     },
@@ -1973,8 +1971,7 @@ _data.surveyJSON.pages.push({
       isRequired: true,
       name: 'nclFeedbackQuestion1',
       title: `A NCL estendida **permite realizar mais 
-            rapidamente** o desenvolvimento de aplicações multimodais frente a
-            NCL atual.`,
+            rapidamente** o desenvolvimento de aplicações multimodais.`,
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
@@ -1984,7 +1981,7 @@ _data.surveyJSON.pages.push({
       isRequired: true,
       name: 'nclFeedbackQuestion2',
       title: `A NCL estendida **permite aumentar a qualidade** 
-            do desenvolvimento de aplicações multimodais frente a NCL atual`,
+            do desenvolvimento de aplicações multimodais.`,
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
@@ -1994,7 +1991,7 @@ _data.surveyJSON.pages.push({
       isRequired: true,
       name: 'nclFeedbackQuestion3',
       title: `De modo geral, a NCL estendida permite **é útel** para o 
-            desenvolvimento de aplicações multimodais frente a NCL atual.`,
+            desenvolvimento de aplicações multimodais.`,
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
@@ -2027,9 +2024,13 @@ _data.surveyJSON.pages.push({
         'concordo fortemente']
     },
     {
-      type: 'comment',
-      rows: '9',
-      title: 'Os conceitos de aplicações multimodais estão claramente presentes na linguagem NCL estendida.'
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'htmlFeedbackQuestion6',
+      title: 'Os conceitos apresentados na seção anterior estão claramente instanciados na linguagem NCL estendida.',
+      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
+        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
+        'concordo fortemente']
     }
   ]
 })
@@ -2469,8 +2470,10 @@ _data.surveyJSON.pages.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Para capturar evidências de nossa pesquisa, por favor, opine sobre os
-        pontos a seguir.</p> </div>
+        <p>Para capturar evidências da instanciação dos conceitos apresentados
+        (<em>Mídia, Reconhecedor, Sincronismo</em> e <em>Grupo de Usuários</em>)
+        na linguagem HTML, por favor, opine sobre os pontos a seguir.</p>
+        </div>
       `
     },
     {
@@ -2478,8 +2481,7 @@ _data.surveyJSON.pages.push({
       isRequired: true,
       name: 'htmlFeedbackQuestion1',
       title: `A HTML estendida **permite realizar mais 
-            rapidamente** o desenvolvimento de aplicações multimodais frente a
-            HTML atual.`,
+            rapidamente** o desenvolvimento de aplicações multimodais.`,
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
@@ -2489,7 +2491,7 @@ _data.surveyJSON.pages.push({
       isRequired: true,
       name: 'htmlFeedbackQuestion2',
       title: `A HTML estendida **permite aumentar a qualidade**
-            do desenvolvimento de aplicações multimodais frente a HTML atual.`,
+            do desenvolvimento de aplicações multimodais.`,
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
@@ -2499,7 +2501,7 @@ _data.surveyJSON.pages.push({
       isRequired: true,
       name: 'htmlFeedbackQuestion3',
       title: `De modo geral, a HTML estendida **é útel** para o 
-            desenvolvimento de aplicações multimodais frente a HTML atual..`,
+            desenvolvimento de aplicações multimodais.`,
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
@@ -2526,16 +2528,19 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'htmlFeedbackQuestion6',
-      title: `De modo geral, a HTML estendida **é fácil** de 
-            utilizar.`,
+      title: `De modo geral, a HTML estendida **é fácil** de utilizar.`,
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
         'concordo fortemente']
     },
     {
-      type: 'comment',
-      rows: '9',
-      title: 'Os conceitos de aplicações multimodais estão claramente presentes na linguagem HTML estendida.'
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'htmlFeedbackQuestion6',
+      title: 'Os conceitos apresentados na seção anterior estão claramente instanciados na linguagem HTML estendida.',
+      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
+        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
+        'concordo fortemente']
     }
   ]
 })
