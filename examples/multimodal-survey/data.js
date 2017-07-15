@@ -2560,8 +2560,8 @@ _data.surveyJSON.pages.push({
 _data.surveyJSON.completedHtml = `
   <br><br><br><br><br><br><br><br><br><br><br><br>
   <div class='alert alert-success' role='alert' style='text-align:center;'>
-    <h2>Muito bem!!! Terminamos a nosso estudo.<br>
-    Obrigado por sua participação.</h2>
+    <h2>Terminamos nosso estudo.<br>
+    Somos muito gratos por sua participação.</h2>
     <span class='glyphicon glyphicon-thumbs-up' style='font-size: 75px;'
       aria-hidden='true'></span>
   </div>
