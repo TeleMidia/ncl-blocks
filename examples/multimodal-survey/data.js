@@ -1621,12 +1621,16 @@ _data.nclIntro1CodeE = `
 
 _data.nclIntro2CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[16,20,24,28]">
+  auto-links: false; highlight:[20,24,28,32]">
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <ncl>
     <head>
       <connectorBase>
+        <causalConnector id="onBeginStart">
+          <simpleCondition role="onBegin"></simpleCondition>
+          <simpleAction role="start" max="unbounded"></simpleAction>
+        </causalConnector>
         <causalConnector id="onSelectionStopStart">
           <simpleCondition role="onSelection" max="unbounded"/>
           <compoundAction>
@@ -1648,7 +1652,7 @@ _data.nclIntro2CodeA = `
       </media>
       <link xconnector="onBeginStart">
         <bind role="onBegin" component="video_principal" interface="credits"/>
-        <bind role="start" component="rec"/>
+        <bind role="start" component="img_repetir"/>
       </link>
       <link xconnector="onSelectionStopStart">
         <bind role="onSelection" component="img_repetir"/>
@@ -1713,14 +1717,18 @@ _data.nclIntro3CodeB = `
 `
 _data.nclIntro3CodeC = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[16,20,23,27]">
+  auto-links: false; highlight:[9,20,24,27,30,35]">
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <ncl>
     <head>
       <connectorBase>
+        <causalConnector id="onBeginStart">
+          <simpleCondition role="onBegin"></simpleCondition>
+          <simpleAction role="start" max="unbounded"></simpleAction>
+        </causalConnector>
         <causalConnector id="onRecognizeStopStart">
-          <simpleCondition role="onRecognize" max="unbounded"/>
+          <simpleCondition role="onRecognize" />
           <compoundAction>
             <simpleAction role="stop" max="unbounded"/>
             <simpleAction role="start" max="unbounded"/>
@@ -1734,15 +1742,20 @@ _data.nclIntro3CodeC = `
         <property name="size" value="100%, 100%" />
         <area label="credits" begin="300s" end="360s" />
       </media>
-      <input id="rec"src="rec_voz.srgs">
+      <input id="sinte_voz" src="sinte_voz.ssml">
+        <area label="pergunta"/>
+      </input>
+      <input id="rec_voz" src="rec_voz.srgs">
         <area label="repete"/>
       </input>
       <link xconnector="onBeginStart">
         <bind role="onBegin" component="video_principal" interface="credits"/>
-        <bind role="start" component="rec"/>
+        <bind role="start" component="pergunta"/>
+        <bind role="start" component="rec_voz"/>
       </link>
       <link xconnector="onRecognizeStopStart">
         <bind role="onRecognize" component="rec_voz" interface="repete"/>
+        <bind role="stop" component="rec_voz"/>
         <bind role="stop" component="video_principal"/>
         <bind role="start" component="video_principal"/>
       </link>
@@ -1766,13 +1779,18 @@ _data.nclIntro4CodeA = `
 `
 _data.nclIntro4CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[13,14,15,16,31,33]"> <![CDATA[
+  auto-links: false; highlight:[10,11,19,20,42]"> <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <ncl>
     <head>
       <connectorBase>
+        <causalConnector id="onBeginStart">
+          <simpleCondition role="onBegin"></simpleCondition>
+          <simpleAction role="start" max="unbounded"></simpleAction>
+        </causalConnector>
         <causalConnector id="onRecognizeStopStart">
-          <simpleCondition role="onRecognize" max="unbounded"/>
+          <connectorParam name="user_id"/>
+          <simpleCondition role="onRecognize" user_id="$user_id"/>
           <compoundAction>
             <simpleAction role="stop" max="unbounded"/>
             <simpleAction role="start" max="unbounded"/>
@@ -1790,12 +1808,16 @@ _data.nclIntro4CodeB = `
         <property name="size" value="100%, 100%" />
         <area label="credits" begin="300s" end="360s" />
       </media>
-      <input id="rec"src="rec_voz.srgs">
+      <media id="sinte_voz" src="sinte_voz.srgs">
+        <area label="pergunta" />
+      </media>
+      <input id="rec_voz" src="rec_voz.srgs">
         <area label="repete"/>
       </input>
       <link xconnector="onBeginStart">
         <bind role="onBegin" component="video_principal" interface="credits"/>
-        <bind role="start" component="rec"/>
+        <bind role="start" component="sinte_voz"/>
+        <bind role="start" component="rec_voz"/>
       </link>
       <link xconnector="onRecognizeStart">
         <bind role="onRecognize" component="rec_voz" interface="repete">
@@ -1893,7 +1915,7 @@ _data.nclTask1Code = `
       <connectorBase>
         <causalConnector id="onBeginStart">
           <simpleCondition role="onBegin"/>
-          <simpleAction role="start" max="unbounded" qualifier="par"/>
+          <simpleAction role="start" max="unbounded"/>
         </causalConnector>
         <causalConnector id="onSelectionStopStart">
           <simpleCondition role="onSelection" />
@@ -1956,7 +1978,7 @@ _data.nclTask2CodeOnly = `
       <connectorBase>
         <causalConnector id="onBeginStart">
           <simpleCondition role="onBegin"/>
-          <simpleAction role="start" max="unbounded" qualifier="par"/>
+          <simpleAction role="start" max="unbounded"/>
         </causalConnector>
         <causalConnector id="onRecognizeStopStart">
           <simpleCondition role="onRecognize" />
@@ -1978,21 +2000,27 @@ _data.nclTask2CodeOnly = `
       <media id="video_praia" src="praia.mp4">
         <property name="size" value="100%, 100%" />
       </media>
-      <input id="rec" src="rec_voz.sgrs">
+      <media id="sinte_voz" src="sinte_voz.srgs">
+        <area label="pergunta" />
+      </media>
+      <input id="rec_voz" src="rec_voz.sgrs">
         <area label="centro" />
         <area label="praia" />
       </input>
       <link xconnector="onBeginStart">
         <bind role="onBegin" component="video_principal" interface="creditos" />
+        <bind role="start" component="sinte_voz" />
         <bind role="start" component="rec_voz" />
       </link>
       <link xconnector="onRecognizeStopStart">
-        <bind role="onRecognize" component="rec" interface="centro" />
+        <bind role="onRecognize" component="rec_voz" interface="centro" />
+        <bind role="stop" component="rec_voz" />
         <bind role="stop" component="video_principal" />
         <bind role="start" component="video_centro" />
       </link>
       <link xconnector="onRecognizeStopStart">
-        <bind role="onRecognize" component="rec" interface="praia" />
+        <bind role="onRecognize" component="rec_voz" interface="praia" />
+        <bind role="stop" component="rec_voz" />
         <bind role="stop" component="video_principal" />
         <bind role="start" component="video_praia" />
       </link>
@@ -2002,7 +2030,7 @@ _data.nclTask2CodeOnly = `
 
 _data.nclTask2Code = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight: [9,10,11,12,13,14,15,29,33,37,42]">
+  auto-links: false; highlight: [9,29,32,36,41,47]">
   <![CDATA[` + _data.nclTask2CodeOnly + ` ]]></script>
 `
 
@@ -2350,8 +2378,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em HTML, o
         código a seguir é uma nova versão da aplicação que reinicia um video
-        dado uma interação. Entretanto, nessa versão, o vídeo é reiniciado apenas
-        quando o segundo usuário falar "repita vídeo".</p></p>
+        dado uma interação de voz. Entretanto, nessa versão, o vídeo é
+        reiniciado apenas quando o segundo usuário falar "repita vídeo".</p></p>
 
         <div id='htmlIntro4CodeB'></div>
         </div>
