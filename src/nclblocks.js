@@ -765,7 +765,7 @@ Blockly.Blocks.body = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.CONTEXT, 20, 20, '*'))
       .appendField('{' + NCLBlocks.Msg.BODY + '}')
-    
+
     this.addMinusPlusDummyInput()
     for (var i = 0; i < 5; i++) this.pushInput()
   }
@@ -874,7 +874,6 @@ Blockly.Blocks.ssml = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.SSML, 25, 25, '*'))
       .appendField('{' + NCLBlocks.Msg.SSML + '}')
-    this.stackSize++
     this.addMinusPlusDummyInput()
     this.pushInput()
   }
@@ -920,9 +919,9 @@ Blockly.Blocks.srgs = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.SRGS, 25, 25, '*'))
       .appendField('{' + NCLBlocks.Msg.SRGS + '}')
-    
+
     this.addMinusPlusDummyInput()
-    
+
     this.pushInput()
   }
 }
