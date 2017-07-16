@@ -414,13 +414,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'conceptsIntro1',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Primeiro, vamos detalhar o elemento <em>Mídia</em>.</p>
+        <p>Primeiro, vamos detalhar <em>Mídia</em>.</p>
         
-        <p>O elemento <em>Mídia</em> é definido por <strong>um identificador e
+        <p><em>Mídia</em> é definido por <strong>um identificador e
         seu um conteúdo</strong>. O conteúdo de uma <em>Mídia</em> tem porções
         identificáveis como trechos de um áudio ou vídeo.</p>
 
-        <p>Para ilustrar o uso do elemento de <em>Mídia</em>, os blocos a
+        <p>Para ilustrar o uso de <em>Mídia</em>, os blocos a
         seguir definem duas mídias com identificadores <em>midia_principal</em>
         e <em>icone</em>, mas elas não possuem conteúdo. Por não terem conteúdo,
         ações de iniciar sobre as mídias acima não apresentaram resultados.</p>
@@ -465,10 +465,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         <div style="text-align: justify; width: 70%;">
         
-        <p>Em em seguida, vamos detalhar o elemento <em>Sincronismo</em>. O uso
-        dessa elemento permite especificar o comportamento das aplicações. Por
-        exemplo, elementos de <em>Sincronismo</em> podem especificar elementos
-        <em>Mídia</em> devem ser apresentadas.</p>
+        <p>Em em seguida, vamos detalhar o conceito <em>Sincronismo</em>. O uso
+        de <em>Sincronismo</em> permite definir o comportamento das aplicações.
+        Por exemplo, seu uso pode definir quando <em>Mídia</em>s devem ser
+        apresentadas.</p>
         
         <p>O <em>Sincronismo</em> é baseado em causalidade edefinido sendo
         definido por <strong>um conjunto de condições e um conjunto de
@@ -482,7 +482,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>As ações de um <em>Sincronismo</em> são executadas em sequencia.
         Exemplos de ações são iniciar ou parar uma mídia.</p>
        
-        <p>Para ilustrar o uso do elemento de <em>Sincronismo</em>, os blocos a
+        <p>Para ilustrar o uso de <em>Sincronismo</em>, os blocos a
         seguir definem uma aplicação que apresenta um vídeo e um ícone durante
         os créditos do vídeo. Se o usuário selecionar o ícone, o vídeo é
         reiniciado.</p> 
@@ -507,7 +507,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'conceptsIntro3',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Agora, detalhamos a seguir o elemento <em>Reconhecedor</em>.</p>
+        <p>Agora, detalhamos a seguir <em>Reconhecedor</em>.</p>
 
         <p> O <em>Reconhecedor</em> também é definido por <strong>um
         identificador e por seu conteúdo</strong>. Entretanto, diferente de
@@ -529,7 +529,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div id='conceptsIntro3a'></div><br>
         
         <div style="text-align: justify; width: 70%;">
-        <p>Para ilustrar o uso de um <em>Reconhecedor</em>, os blocos a
+        <p>Para ilustrar o uso de <em>Reconhecedor</em>, os blocos a
         seguir são uma nova versão da aplicação que reinicia um vídeo dada
         uma interação. Mas nessa versão, ao invés de clicar, o vídeo é
         reiniciado ao usuário falar "repita vídeo".</p>
@@ -554,11 +554,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         <div style="text-align: justify; width: 70%;">
 
-        <p>Por fim, vamos detalhar o elemento <em>Grupo de
-        usuários</em>.</p>
+        <p>Por fim, vamos detalhar <em>Grupo de usuários</em>.</p>
 
-        <p> O elemento <em>Grupo de Usuários</em> é definido <strong>por um
-        identificador, número maximo de participantes e quais dispositivos estes
+        <p><em>Grupo de Usuários</em> é definido <strong>por um identificador,
+        número maximo de participantes e quais dispositivos estes
         utilizam</strong>. Mais precisamente, esses dispositivos definem o que
         um usuário necessita possuir para participar do grupo.</p>
         
