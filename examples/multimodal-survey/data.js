@@ -418,9 +418,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         
         <p>O elemento <em>Mídia</em> é definido por <strong>um identificador e
         seu um conteúdo</strong>. O conteúdo de uma <em>Mídia</em> tem porções
-        identificáveis como trechos de um vídeo ou áudio.</p>
+        identificáveis como trechos de um áudio ou vídeo.</p>
 
-        <p>Para ilustrar o uso do elemento de <em>Sincronismo</em>, os blocos a
+        <p>Para ilustrar o uso do elemento de <em>Mídia</em>, os blocos a
         seguir definem duas mídias com identificadores <em>midia_principal</em>
         e <em>icone</em>, mas elas não possuem conteúdo. Por não terem conteúdo,
         ações de iniciar sobre as mídias acima não apresentaram resultados.</p>
@@ -440,12 +440,23 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;">
         <p>É importante ressaltar que mudanças no conteúdo de uma <em>Mídia</em>
         não afetam o comportamento da aplicação, desde que a mídia defina os
-        mesmos trechos, pois os <em>Sincronismo</em>s são definidos independe do
+        mesmos trechos, pois <em>Sincronismo</em>s são definidos independe do
         conteúdo. Por exemplo, os blocos a seguir definem a mesma mídia
-        <em>midia_principal</em>mas com o conteúdo de vídeo.</p>
+        <em>midia_principal</em> mas com o conteúdo de vídeo.</p>
         </div>
 
         <div id='conceptsIntro1C'></div><br>
+
+        <div style="text-align: justify; width: 70%;"> <p>Além de midías como
+        imagens, áudio e vídeos, o conceito <em>Mídia</em> abrange também outras
+        modalidades conteúdo como voz sintetizada e avatares humanoides. Os
+        blocos a seguir definem a <em>Mídia</em> com identificador
+        <em>sinte_voz</em> que tem como conteúdo um texto para sintetização de
+        voz. Esse conteúdo de sintetização possui o trecho <em>pergunta</em> que
+        sintetiza a frase "você deseja repetir o video?".</p>
+        </div>
+
+        <div id='conceptsIntro1D'></div><br>
       `
     },
     {
@@ -627,6 +638,20 @@ _data.conceptsIntro1BlocksC = `
           <field name="id_area0">creditos</field>
           <field name="begin0">300s</field>
           <field name="end0">360s</field>
+        </block>
+      </value>
+    </block>
+  </xml>
+`
+_data.conceptsIntro1BlocksD = `
+  <xml xmlns="http://www.w3.org/1999/xhtml">
+    <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
+      <field name="id">sinte_voz</field>
+      <value name="src">
+        <block type="ssml" id="OSge%SF-~~.%rZKqZqym">
+          <mutation length="1"></mutation>
+          <field name="id_area0">pergunta</field>
+          <field name="label0">você deseja repetir o video?</field>
         </block>
       </value>
     </block>

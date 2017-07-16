@@ -84,9 +84,9 @@ if ($('#surveyPageNo').length) {
 $('#surveyPageNo').change(function () {
   _survey.currentPageNo = this.value
 })
-// $('#surveyPageNo').val(2).change()
+$('#surveyPageNo').val(3).change()
 // $('#surveyPageNo').val(5).change()
-$('#surveyPageNo').val(6).change()
+// $('#surveyPageNo').val(6).change()
 // $('#surveyPageNo').val(7).change()
 
 // ----------------------------------------
@@ -138,6 +138,8 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
         NCLBlocks.calcHt(1, 110), _data.conceptsIntro1BlocksB, true)
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro1C',
         NCLBlocks.calcHt(1, 110), _data.conceptsIntro1BlocksC, true)
+      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro1D',
+        NCLBlocks.calcHt(1, 110), _data.conceptsIntro1BlocksD, true)
       break
     case 'conceptsIntro2':
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro2b',
