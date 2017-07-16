@@ -85,8 +85,8 @@ $('#surveyPageNo').change(function () {
   _survey.currentPageNo = this.value
 })
 // $('#surveyPageNo').val(3).change()
-$('#surveyPageNo').val(5).change()
-// $('#surveyPageNo').val(7).change()
+// $('#surveyPageNo').val(5).change()
+$('#surveyPageNo').val(7).change()
 
 // ----------------------------------------
 // survey listeners
@@ -255,6 +255,8 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       $('#htmlIntro1CodeA').append(_data.htmlIntro1CodeA)
       $('#htmlIntro1CodeB').append(_data.htmlIntro1CodeB)
       $('#htmlIntro1CodeC').append(_data.htmlIntro1CodeC)
+      $('#htmlIntro1CodeD').append(_data.htmlIntro1CodeD)
+      $('#htmlIntro1CodeE').append(_data.htmlIntro1CodeE)
       SyntaxHighlighter.highlight()
       break
     case 'htmlIntro2':

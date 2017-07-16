@@ -1428,8 +1428,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div id='nclIntro1CodeC'></div>
 
         <p>Além de midías como imagens, áudio e vídeos, o elemento
-        <em>&ltmedia></em> nossa NCL estendida deve suporta outras modalidades de
-        conteúdo como sintetização de voz e avatares humanoides.</p>
+        <em>&ltmedia></em> nossa NCL estendida deve suportar outras modalidades
+        de conteúdo como sintetização de voz e avatares humanoides.</p>
         
         <p>Os trechos de código a seguir ilustram o uso de sintetização de voz
         em nossa NCL. O primeiro trecho de código a seguir apresenta o arquivo
@@ -2223,6 +2223,23 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         mídia <em>midia_principal</em> mas com o conteúdo de vídeo.</p> 
 
         <div id='htmlIntro1CodeC'></div>
+
+        <p>Além de midías como imagens, áudio e vídeos, a HTML estendida deve
+        suportar outras modalidades de conteúdo como sintetização de voz e
+        avatares humanoides.</p>
+        
+        <p>Os trechos de código a seguir ilustram o uso de sintetização de voz
+        em nossa HTML. O primeiro trecho de código a seguir apresenta o arquivo
+        <em>sinte_voz.srgs</em>, que é uma descrição de sintetização de voz no
+        formato SSML. Em particular, esse arquivo defini a frase a ser
+        sintetizada "você deseja repetir o video?". O segundo trecho de código
+        define uma mídia com identificador <em>sinte_voz</em> que tem como
+        conteúdo o arquivo <em>sinte_voz.srgs</em>. Essa mídia possui uma âncora
+        que indica a frase a ser sintetizada.</p>
+
+        <div id='htmlIntro1CodeD'></div>
+        
+        <div id='htmlIntro1CodeE'></div>
         
         </div>
       `
@@ -2241,7 +2258,21 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p> API de <em>Sync></em> é baseada em causalidade edefinido sendo
         definido por <strong>um conjunto de condições e um conjunto de
         ações</strong>. Ou seja, quando as condições são satisfeitas ações são
-        realizadas.</p> 
+        realizadas.</p>         
+        
+        <p>Além de midías como imagens, áudio e vídeos, o elemento
+        <em>&ltmedia></em> nossa NCL estendida deve suportar outras modalidades
+        de conteúdo como sintetização de voz e avatares humanoides.</p>
+        
+        <p>Os trechos de código a seguir ilustram o uso de sintetização de voz
+        em nossa NCL. O primeiro trecho de código a seguir apresenta o arquivo
+        <em>sinte_voz.srgs</em>, que é uma descrição de sintetização de voz no
+        formato SSML. Em particular, esse arquivo defini a frase a ser
+        sintetizada "você deseja repetir o video?". O segundo trecho de código
+        define uma <em>&ltmedia></em> com identificador <em>sinte_voz</em> que
+        tem como conteúdo o arquivo <em>sinte_voz.srgs</em>. Essa
+        <em>&ltmedia></em> possui uma âncora que indica a frase a ser
+        sintetizada.</p>
         
         <p> As condições de um <em>Sync></em> podem ser simples ou
         compostas. Exemplos de condições simples são o início ou fim de uma
@@ -2380,6 +2411,21 @@ _data.htmlIntro1CodeB = `
 `
 
 _data.htmlIntro1CodeC = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false;"> <![CDATA[
+  <?xml version="1.0" encoding="ISO-8859-1"?>
+  <html>
+    <head>
+    </head>
+    <body>
+    </body>
+  </html>
+  ]]></script>
+`
+
+_data.htmlIntro1CodeD = _data.nclIntro1CodeD
+
+_data.htmlIntro1CodeE = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
