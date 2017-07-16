@@ -451,10 +451,14 @@ var InputStackMixin = {
   domToMutation: function (xmlElement) {
     var newLength = xmlElement.getAttribute('length')
     var i
-    if (newLength - this.stackSize > 0) {
-      for (i = 0; i < newLength - this.stackSize; i++) this.pushInput()
+    var diff = parseInt(newLength - this.stackSize)
+    if (diff > 0) {
+      for (i = 0; i < diff; i++) {
+        this.pushInput()
+      }
     } else {
-      for (i = 0; i < this.stackSize - newLength; i++) this.popInput()
+      diff = Math.abs(diff)
+      for (i = 0; i < diff; i++) this.popInput()
     }
   },
 
