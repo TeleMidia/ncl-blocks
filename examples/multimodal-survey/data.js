@@ -324,7 +324,7 @@ _data.surveyJSON.pages.push({
         conteúdos de mídia para apresentação, como imagens, vídeo e áudios.
         Entretanto, uma <strong>linguagem multimídia com interações multimodais
         é "output and input oriented"</strong>, pois tem foco na sincronia tanto
-        de mídias, quanto de  reconhecimentos de interações como voz e
+        de mídias, quanto de reconhecimentos de interações como voz e
         gestos.</p>
 
         [4] <a href='#'>https://www.w3.org/TR/speech-synthesis/<a>
@@ -447,13 +447,14 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <div id='conceptsIntro1C'></div><br>
 
-        <div style="text-align: justify; width: 70%;"> <p>Além de midías como
-        imagens, áudio e vídeos, o conceito <em>Mídia</em> abrange também outras
-        modalidades conteúdo como voz sintetizada e avatares humanoides. Os
-        blocos a seguir definem a <em>Mídia</em> com identificador
-        <em>sinte_voz</em> que tem como conteúdo um texto para sintetização de
-        voz. Esse conteúdo de sintetização possui o trecho <em>pergunta</em> que
-        sintetiza a frase "você deseja repetir o video?".</p>
+        <div style="text-align: justify; width: 70%;"> 
+        <p>Além de midías como imagens, áudio e vídeos, o conceito
+        <em>Mídia</em> abrange também outras modalidades conteúdo como voz
+        sintetizada e avatares humanoides. Os blocos a seguir definem a
+        <em>Mídia</em> com identificador <em>sinte_voz</em> que tem como
+        conteúdo um texto para sintetização de voz. Esse conteúdo de
+        sintetização possui o trecho <em>pergunta</em> que sintetiza a frase
+        "você deseja repetir o video?".</p>
         </div>
 
         <div id='conceptsIntro1D'></div><br>
@@ -650,7 +651,7 @@ _data.conceptsIntro1BlocksD = `
         <block type="ssml" id="OSge%SF-~~.%rZKqZqym">
           <mutation length="1"></mutation>
           <field name="id_area0">pergunta</field>
-          <field name="label0">você deseja repetir o video?</field>
+          <field name="label0">você deseja repetir o vídeo?</field>
         </block>
       </value>
     </block>
@@ -1422,9 +1423,27 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>&ltmedia></em> não afetam o comportamento da aplicação, desde que a
         mídia defina os mesmos trechos, pois os sincronismos são definidos
         independe do conteúdo. Por exemplo, os blocos a seguir definem a mesma
-        mídia <em>midia_principal</em> mas com o conteúdo de vídeo.</p> </div>
+        mídia <em>midia_principal</em> mas com o conteúdo de vídeo.</p>
 
         <div id='nclIntro1CodeC'></div>
+
+        <p>Além de midías como imagens, áudio e vídeos, o elemento
+        <em>&ltmedia></em> nossa NCL estendida deve suporta outras modalidades de
+        conteúdo como sintetização de voz e avatares humanoides.</p>
+        
+        <p>Os trechos de código a seguir ilustram o uso de sintetização de voz
+        em nossa NCL. O primeiro trecho de código a seguir apresenta o arquivo
+        <em>sinte_voz.srgs</em>, que é uma descrição de sintetização de voz no
+        formato SSML. Em particular, esse arquivo defini a frase a ser
+        sintetizada "você deseja repetir o video?". O segundo trecho de código
+        define uma <em>&ltmedia></em> com identificador <em>sinte_voz</em> que
+        tem como conteúdo o arquivo <em>sinte_voz.srgs</em>. Essa
+        <em>&ltmedia></em> possui uma âncora que indica a frase a ser
+        sintetizada.</p>
+
+        <div id='nclIntro1CodeD'></div>
+
+        <div id='nclIntro1CodeE'></div>
       `
     },
     {
@@ -1564,6 +1583,7 @@ _data.nclIntro1CodeA = `
   </media>
   ]]></script>
 `
+
 _data.nclIntro1CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
@@ -1577,6 +1597,7 @@ _data.nclIntro1CodeB = `
   </media>
   ]]></script>
 `
+
 _data.nclIntro1CodeC = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
@@ -1586,6 +1607,26 @@ _data.nclIntro1CodeC = `
   </media>
   ]]></script>
 `
+
+_data.nclIntro1CodeD = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false;"> <![CDATA[
+  <?xml version="1.0" encoding="ISO-8859-1"?>
+  <speak xmlns="http://www.w3.org/2001/10/synthesis">
+    <s id="repetir">você deseja repetir o vídeo?</s>
+  </speak>
+  ]]></script>
+`
+
+_data.nclIntro1CodeE = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false;"> <![CDATA[
+  <media id="sinte_voz" src="sinte_voz.ssml">
+    <area label="repetir"/>
+  </media>
+  ]]></script>
+`
+
 _data.nclIntro2CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight:[16,20,24,28]">

@@ -84,9 +84,8 @@ if ($('#surveyPageNo').length) {
 $('#surveyPageNo').change(function () {
   _survey.currentPageNo = this.value
 })
-$('#surveyPageNo').val(3).change()
-// $('#surveyPageNo').val(5).change()
-// $('#surveyPageNo').val(6).change()
+// $('#surveyPageNo').val(3).change()
+$('#surveyPageNo').val(5).change()
 // $('#surveyPageNo').val(7).change()
 
 // ----------------------------------------
@@ -217,6 +216,8 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       $('#nclIntro1CodeA').append(_data.nclIntro1CodeA)
       $('#nclIntro1CodeB').append(_data.nclIntro1CodeB)
       $('#nclIntro1CodeC').append(_data.nclIntro1CodeC)
+      $('#nclIntro1CodeD').append(_data.nclIntro1CodeD)
+      $('#nclIntro1CodeE').append(_data.nclIntro1CodeE)
       SyntaxHighlighter.highlight()
       break
     case 'nclIntro2':
