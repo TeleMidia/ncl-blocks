@@ -84,9 +84,9 @@ if ($('#surveyPageNo').length) {
 $('#surveyPageNo').change(function () {
   _survey.currentPageNo = this.value
 })
-// $('#surveyPageNo').val(3).change()
+$('#surveyPageNo').val(3).change()
 // $('#surveyPageNo').val(5).change()
-$('#surveyPageNo').val(7).change()
+// $('#surveyPageNo').val(7).change()
 
 // ----------------------------------------
 // survey listeners
@@ -148,13 +148,13 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro3a',
         NCLBlocks.calcHt(2, 200), _data.conceptsIntro3BlocksA, true)
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro3b',
-        NCLBlocks.calcHt(3, 110), _data.conceptsIntro3BlocksB, true)
+        NCLBlocks.calcHt(4, 110), _data.conceptsIntro3BlocksB, true)
       break
     case 'conceptsIntro4':
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro4a',
         NCLBlocks.calcHt(1, 130), _data.conceptsIntro4BlocksA, true)
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro4b',
-        NCLBlocks.calcHt(3, 140), _data.conceptsIntro4BlocksB, true)
+        NCLBlocks.calcHt(4, 130), _data.conceptsIntro4BlocksB, true)
       break
     case 'conceptsTask1':
       NCLBlocks.injectInDiv(_pathToBlockly, questionId,
@@ -162,7 +162,7 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       break
     case 'conceptsTask2':
       NCLBlocks.injectInDiv(_pathToBlockly, questionId,
-        NCLBlocks.calcHt(7, 135), _data.blocksTask2Xml, true)
+        NCLBlocks.calcHt(5, 140), _data.blocksTask2Xml, true)
       break
     case 'conceptsTask3':
       if (_survey.getQuestionByName('conceptsTask3Changes').value) {
@@ -170,7 +170,7 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
         result = JSON.parse(_survey.getQuestionByName('conceptsTask3Changes').value)
         _survey.getQuestionByName('conceptsTask3Changes').value = ''
         _blocksTask3Workspace = NCLBlocks.injectInDiv(_pathToBlockly,
-          questionId, NCLBlocks.calcHt(9, 130), '', false, ['excludeResumePauseSet'])
+          questionId, NCLBlocks.calcHt(7, 130), '', false, ['excludeResumePauseSet'])
         for (i in result.changes) {
           event = Blockly.Events.fromJson(result.changes[i],
             _blocksTask3Workspace)
@@ -179,7 +179,7 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       } else {
         // first inject
         _blocksTask3Workspace = NCLBlocks.injectInDiv(_pathToBlockly,
-          questionId, NCLBlocks.calcHt(9, 130), _data.blocksTask2Xml,
+          questionId, NCLBlocks.calcHt(7, 130), _data.blocksTask2Xml,
           false, ['excludeResumePauseSet'])
         setNotEdited = function () {
           _blocksTask3WorkspaceEdited = false
@@ -194,7 +194,7 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
         result = JSON.parse(_survey.getQuestionByName('conceptsTask4Changes').value)
         _survey.getQuestionByName('conceptsTask4Changes').value = ''
         _blocksTask4Workspace = NCLBlocks.injectInDiv(_pathToBlockly,
-          questionId, NCLBlocks.calcHt(9, 130), '', false, ['excludeResumePauseSet'])
+          questionId, NCLBlocks.calcHt(7, 130), '', false, ['excludeResumePauseSet'])
         for (i in result.changes) {
           event = Blockly.Events.fromJson(result.changes[i],
             _blocksTask4Workspace)
@@ -203,7 +203,7 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       } else {
         // first inject
         _blocksTask4Workspace = NCLBlocks.injectInDiv(_pathToBlockly,
-          questionId, NCLBlocks.calcHt(9, 130), _data.blocksTask2Xml,
+          questionId, NCLBlocks.calcHt(7, 130), _data.blocksTask2Xml,
           false, ['excludeResumePauseSet'])
         setNotEdited = function () {
           _blocksTask4WorkspaceEdited = false
