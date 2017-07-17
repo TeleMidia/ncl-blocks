@@ -240,16 +240,18 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       SyntaxHighlighter.highlight()
       break
     case 'nclTask2':
-      $('#nclTask2Code').append(_data.nclTask2Code)
+      $('#nclTask2CodeA').append(_data.nclTask2CodeA)
+      $('#nclTask2CodeB').append(_data.nclTask2CodeB)
+      $('#nclTask2CodeC').append(_data.nclTask2CodeC)
       SyntaxHighlighter.highlight()
       break
     case 'nclTask3Question':
       _survey.getQuestionByName('nclTask3Question').value =
-        _data.nclTask2CodeOnly
+        _data.nclTask2CCodeOnly
       break
     case 'nclTask4Question':
       _survey.getQuestionByName('nclTask4Question').value =
-        _data.nclTask2CodeOnly
+        _data.nclTask2CCodeOnly
       break
     case 'htmlIntro1':
       $('#htmlIntro1CodeA').append(_data.htmlIntro1CodeA)

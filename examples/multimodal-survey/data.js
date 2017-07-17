@@ -1151,7 +1151,8 @@ _data.blocksTask2Xml = `
       <block type="ssml" id="Oj6ycjV}(wESn+h/UL/Z">
         <mutation length="1"></mutation>
         <field name="id_area0">pergunta</field>
-        <field name="label0">fale o vídeo deseja ver, centro ou praia?</field>
+        <field name="label0">fale o vídeo que deseja ver, centro ou
+        praia?</field>
       </block>
     </value>
   </block>
@@ -1548,7 +1549,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div id='nclIntro4CodeA'></div><br>
 
         <p> O elemento  <em>&ltuserClass></em> é definido dentro do
-        <em>&lthead></em> de uma aplicação NCL. Ele é definido por um
+        <em>&lthead></em> de uma aplicação HTML. Ele é definido por um
         identificador, número maximo de ususário e pelo seu arquivo de descrição
         de usuários.</p>
 
@@ -1870,11 +1871,19 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       name: 'nclTask2',
       html: `
-        <div style="text-align: justify; width: 70%;">
-        <p>Tarefa 2: O aplicação NCL da Tarefa 1 foi modificada para permitir
-        interações multimodais. O novo código é apresentado a seguir com as
-        modificações destacadas. Por favor, analise com cuidado.</p>
-        <div id='nclTask2Code'></div>
+        <div style="text-align: justify; width: 70%;"> 
+        Tarefa 2: Considere as descrições sinte_voiz.ssml e rec.voz.srgs,
+        respectivamente, a seguir.<br><br>
+
+        <div id='nclTask2CodeA'></div>
+        <div id='nclTask2CodeB'></div>
+        
+        A aplicação NCL da Tarefa 1 foi modificada para permitir
+        interações multimodais utilizando as descrições aima. O novo código é
+        apresentado a seguir com as modificações destacadas. Por favor, analise
+        com cuidado.</p> 
+        
+        <div id='nclTask2CodeC'></div>
         </div>
       `
     },
@@ -1887,9 +1896,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     },
     {
       type: 'comment',
+      isRequired: true,
       name: 'nclTask3Question',
       rows: '47',
-      title: ' Tarefa 3: Agora, pedimos que edite o código NCL da Tarefa 2 (copiado a seguir) para que utilize uma interação por gestos ao invés de uma interação por comandos de voz.'
+      title: `<p>Tarefa 3: Agora, pedimos que edite o código NCL da Tarefa 2
+        (copiado a seguir) para que utilize uma interação por gestos ao invés de
+        uma interação por comandos de voz.</p>
+      `
     },
     {
       type: 'comment',
@@ -1966,7 +1979,32 @@ _data.nclTask1Code = `
   </ncl>
   ]]></script>
 `
-_data.nclTask2CodeOnly = `
+_data.nclTask2CodeAOnly = `
+  <?xml version="1.0" encoding="ISO-8859-1"?>
+  <speak xmlns="http://www.w3.org/2001/10/synthesis">
+    <s id="repetir">fale o vídeo que deseja ver, centro ou praia?</s>
+  </speak>
+`
+_data.nclTask2CodeA = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false;">
+   <![CDATA[` + _data.nclTask2CodeAOnly + ` ]]></script>
+`
+
+_data.nclTask2CodeBOnly = `
+  <?xml version="1.0" encoding="ISO-8859-1"?>
+  <grammar xmlns="http://www.w3.org/2001/06/grammar">
+    <rule id="voz_centro">centro</rule>
+    <rule id="voz_praia">praia</rule>
+  </grammar>
+`
+_data.nclTask2CodeB = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false;">
+  <![CDATA[` + _data.nclTask2CodeBOnly + ` ]]></script>
+`
+
+_data.nclTask2CCodeOnly = `
   <?xml version= "1.0" encoding= "ISO-8859-1" ?>
    <ncl xmlns="http://www.ncl.org.br/NCL3.0/EDTVProfile">
     <head>
@@ -2023,10 +2061,10 @@ _data.nclTask2CodeOnly = `
   </ncl>
 `
 
-_data.nclTask2Code = `
+_data.nclTask2CodeC = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight: [9,29,32,36,41,47]">
-  <![CDATA[` + _data.nclTask2CodeOnly + ` ]]></script>
+  <![CDATA[` + _data.nclTask2CCodeOnly + ` ]]></script>
 `
 
 // ----------------------------------------
@@ -2523,8 +2561,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       name: 'htmlTask2',
       html: `
-        <div style="text-align: justify; width: 70%;">
-        <p>Tarefa 2: O aplicação HTML da Tarefa 1 foi modificada para permitir
+        <p>Tarefa 2: A aplicação HTML da Tarefa 1 foi modificada para permitir
         interações multimodais. O novo código é apresentado a seguir com as
         modificações destacadas. Por favor, analise com cuidado o código
         HTML.</p>
