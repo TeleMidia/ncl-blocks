@@ -2561,10 +2561,19 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       name: 'htmlTask2',
       html: `
-        <p>Tarefa 2: A aplicação HTML da Tarefa 1 foi modificada para permitir
-        interações multimodais. O novo código é apresentado a seguir com as
-        modificações destacadas. Por favor, analise com cuidado o código
-        HTML.</p>
+        <div style="text-align: justify; width: 70%;"> 
+        Tarefa 2: Considere as descrições sinte_voiz.ssml e rec.voz.srgs,
+        respectivamente, a seguir.<br><br>
+
+        <div id='htmlTask2CodeA'></div>
+        <div id='htmlTask2CodeB'></div>
+        
+        A aplicação HTML da Tarefa 1 foi modificada para permitir interações
+        multimodais utilizando as descrições aima. O novo código é apresentado a
+        seguir com as modificações destacadas. Por favor, analise com
+        cuidado.</p> 
+        
+        <div id='htmlTask2CodeC'></div>
         </div>
       `
     },
@@ -2603,7 +2612,7 @@ _data.htmlTask1Code = `
   ]]></script>
 `
 
-_data.htmlTask2CodeOnly = `
+_data.htmlTask2CodeCOnly = `
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <html>
     <head>
@@ -2613,9 +2622,9 @@ _data.htmlTask2CodeOnly = `
   </html>
 `
 
-_data.htmlTask2Code = `
+_data.htmlTask2CodeC = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false;"> <![CDATA[` + _data.htmlTask2CodeOnly + `]]></script>
+  auto-links: false;"> <![CDATA[` + _data.htmlTask2CodeCOnly + `]]></script>
 `
 
 // ----------------------------------------
