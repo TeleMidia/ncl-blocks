@@ -1665,7 +1665,8 @@ _data.nclIntro2CodeA = `
 `
 _data.nclIntro3CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight: [2]"> <![CDATA[
+  auto-links: false; highlight: [3]"> <![CDATA[
+  <?xml version="1.0" encoding="ISO-8859-1"?>
   <grammar xmlns="http://www.w3.org/2001/06/grammar">
     <rule id="repete">repita vídeo</rule>
   </grammar>
@@ -1673,42 +1674,36 @@ _data.nclIntro3CodeA = `
 `
 _data.nclIntro3CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight: [3,21]"> <![CDATA[
+  auto-links: false; highlight: [3,18]"> <![CDATA[
   <?xml version="1.0" encoding="UTF-8"?>
   <GestureMarkupLanguage>
     <Gesture id="swipe_esquerda" type="swipe">
       <match><action><initial>
         <event touch_event="touchEnd"/>
-        <cluster point_number_min="1" point_number_max="5" 
-          acceleration_max="0.5"/>
+        <cluster point_number_max="5" acceleration_max="0.5"/>
       </initial></action></match>
       <analysis><algorithm class="kinemetric" type="discrete">
           <library module="swipe" />
-          <variables><property id="dx" result="dx"/>
-          </variables>
+          <variables><property id="dx" result="dx"/></variables>
           <delta_filter><property ref="dx" active="true" delta_max="-0.01"/>
           </delta_filter>
-        </algorithm></analysis>
-      <mapping><update dispatch_type="discrete" dispatch_mode="cluster_remove" 
-        dispatch_reset="cluster_remove">
+      </algorithm></analysis>
+      <mapping><update dispatch_type="discrete" dispatch_mode="cluster_remove">
         <gesture_event type="custom"></gesture_event>
       </update></mapping>
     </Gesture>
     <Gesture id="swipe_direta" type="swipe">
       <match><action><initial>
         <event touch_event="touchEnd"/>
-        <cluster point_number_min="1" point_number_max="5" 
-          acceleration_max="0.5"/>
+        <cluster point_number_max="5" acceleration_max="0.5"/>
       </initial></action></match>
       <analysis><algorithm class="kinemetric" type="discrete">
           <library module="swipe" />
-          <variables><property id="dx" result="dx"/>
-          </variables>
+          <variables><property id="dx" result="dx"/></variables>
           <delta_filter><property ref="dx" active="true" delta_min="0.01"/>
           </delta_filter>
-        </algorithm></analysis>
-      <mapping><update dispatch_type="discrete" dispatch_mode="cluster_remove" 
-        dispatch_reset="cluster_remove">
+      </algorithm></analysis>
+      <mapping><update dispatch_type="discrete" dispatch_mode="cluster_remove">
         <gesture_event type="custom"></gesture_event>
       </update></mapping>
     </Gesture>
