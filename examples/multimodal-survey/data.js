@@ -2460,14 +2460,37 @@ _data.htmlIntro1CodeE = `
 
 _data.htmlIntro2CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false;">
-  <![CDATA[
-  <?xml version="1.0" encoding="ISO-8859-1"?>
+  auto-links: false;"><![CDATA[
+  <!DOCTYPE html>
   <html>
-    <head>
-    </head>
-    <body>
-    </body>
+  <head></head>
+  <body>
+    <img id="img_repetir" src="img_repetir.png" 
+      style="position: absolute; left: 50%; top: 50%; z-index: 1;" />
+    <video id="midia_principal" src="video.mp4" 
+      style="position: relative; hight 100%; width: 100%;" >
+      <area id="credits" begin="300s" end="360s" />
+    </video>
+    <script>
+      var sync1 = new Synchronism()
+      sync.bind('onbegin', document.body)
+      sync.bind('start',video)
+      
+      video = document.getElementById("midia_principal")
+      credits = document.getElementById("credits")
+      img_repetir = document.getElementById("img_repetir")
+
+      var sync2 = new Synchronism()
+      sync.bind('onbegin',credits)
+      sync.bind('start', icon)
+
+      var sync3 = new Synchronism()
+      sync.bind('onselection',img_repetir)
+      sync.bind('stop',video)
+      sync.bind('start',video)
+
+    <&#47script>
+  </body>
   </html>
   ]]></script>
 `
