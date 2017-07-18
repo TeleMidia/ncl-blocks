@@ -416,23 +416,26 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;">
         <p>Primeiro, vamos detalhar <em>Mídia</em>.</p>
         
-        <p><em>Mídia</em> é definido por <strong>um identificador e
-        seu um conteúdo</strong>. O conteúdo de uma <em>Mídia</em> tem porções
-        identificáveis como trechos de um áudio ou vídeo.</p>
+        <p><em>Mídia</em> é definido por <strong>um identificador, um conteúdoe
+        âncoras</strong>. O conteúdo consiste em um arquivo de mídia, como
+        imagem jpeg, video mp4, audio mp3, entre outros. As âncoras podem
+        definir porções temporais da apresentação da mídia ou trechos de um
+        descrição. Exemplos de blocos serão apresentados para ilustrar
+        conceito.</p>
 
-        <p>Para ilustrar o uso de <em>Mídia</em>, os blocos a
-        seguir definem duas mídias com identificadores <em>midia_principal</em>
-        e <em>icone</em>, mas elas não possuem conteúdo. Por não terem conteúdo,
-        ações de iniciar sobre as mídias acima não apresentaram resultados.</p>
+        <p>Os blocos a seguir definem duas mídias com identificadores
+        <em>midia_principal</em> e <em>icone</em>, mas elas não possuem
+        conteúdo. Por não terem conteúdo, essas <em>&ltmedia></em> não
+        apresentaram resultados audiovisuais.</p>
         </div>
         
         <div id='conceptsIntro1A'></div><br>
 
-        <div style="text-align: justify; width: 70%;">
-        <p>Os blocos a seguir definem as mesmas mídias acima, mas com conteúdos
-        de áudio e imagem, respectivamente. Em especial, a mídia de
-        <em>midia_principal</em> tem definido um trecho chamado de
-        <em>creditos</em> que inicia aos 300 e termina aos 360 segundos.</p>
+        <div style="text-align: justify; width: 70%;"> <p>Os blocos a seguir
+        definem as mesmas mídias acima, mas com conteúdos de áudio e imagem,
+        respectivamente. Em especial, a mídia de <em>midia_principal</em> tem
+        definido uma âncora chamada de <em>creditos</em> que inicia aos 300 e
+        termina aos 360 segundos.</p> 
         </div>
         
         <div id='conceptsIntro1B'></div><br>
@@ -466,22 +469,18 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         <div style="text-align: justify; width: 70%;">
         
-        <p>Em em seguida, vamos detalhar o conceito <em>Sincronismo</em>. O uso
-        de <em>Sincronismo</em> permite definir o comportamento das aplicações.
-        Por exemplo, seu uso pode definir quando <em>Mídia</em>s devem ser
-        apresentadas.</p>
+        <p>Em em seguida, vamos detalhar o conceito <em>Sincronismo</em>. Ele
+        permite definir o comportamento das aplicações.</p>
         
-        <p>O <em>Sincronismo</em> é baseado em causalidade edefinido sendo
-        definido por <strong>um conjunto de condições e um conjunto de
-        ações</strong>. Ou seja, quando as condições são satisfeitas ações são
-        realizadas.</p> 
+        <p>O <em>Sincronismo</em> é baseado em causalidade e definido definido
+        por <strong>um conjunto de condições e um conjunto de ações</strong>. Ou
+        seja, quando as condições são satisfeitas ações são realizadas.</p> 
         
-        <p> As condições de um <em>Sincronismo</em> podem ser simples ou
-        compostas. Exemplos de condições simples são o início ou fim de uma
-        mídia ou trecho de mídia, ou a seleção de usuário sobre uma mídia.</p>
-        
-        <p>As ações de um <em>Sincronismo</em> são executadas em sequencia.
-        Exemplos de ações são iniciar ou parar uma mídia.</p>
+        <p>Um <em>Sincronismo</em> tem condições simples ou compostas, e ações
+        que são executadas em sequência. Exemplos de condições simples são o
+        início da aplicação, o início ('onBegin') ou fim ('onEnd') de uma mídia
+        ou de sua âncora, além de interações usuário (e.g. 'onSelection' e
+        'onRecognition'). Exemplos de ações são iniciar ou parar uma mídia.</p>
        
         <p>Para ilustrar o uso de <em>Sincronismo</em>, os blocos a
         seguir definem uma aplicação que apresenta um vídeo e um ícone durante
@@ -1388,26 +1387,29 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         <div style="text-align: justify; width: 70%;"> 
         
-        <p>Primeiro, vamos detalhar o conceito de <em>Mídia</em> em NCL que é
-        já implementado pelo elemento <em>&ltmedia></em>.</p>
+        <p>Primeiro, vamos detalhar o conceito de <em>Mídia</em>. 
         
-        </p> O elemento <em>&ltmedia></em> definido por <strong>um
-        identificador, um conteúdo e propriedades</strong>. O conteúdo consiste
-        em um arquivo de mídia, como imagem jpeg, video mp4, audio mp3, entre
-        outros. O conteúdo de uma <em>&ltmedia></em> tem porções identificáveis,
-        chamadas de âncora. Dentre outros tipos, as âncoras temporais definem
-        porções da apresentação da mídia elemento <em>&ltarea></em>. 
+        <p>Uma <em>Mídia</em> deve ser definida por <strong>um identificador, um
+        conteúdo e âncoras</strong>. 
+        
+        <p>Na NCL, esse conceito já é já implementado pelo elemento
+        <em>&ltmedia></em>. O conteúdo consiste em um arquivo de mídia, como
+        imagem jpeg, video mp4, audio mp3, entre outros. O conteúdo consiste em
+        um arquivo de mídia, como imagem jpeg, video mp4, audio mp3, entre
+        outros. As âncoras podem definir porções temporais da apresentação da
+        mídia ou trechos de um descrição. Exemplos de blocos serão apresentados
+        para ilustrar esse conceito.</p>
 
-        <p>Para ilustrar o uso do elemento de <em>&ltmedia></em>, o código a
-        seguir define duas mídias com identificadores <em>midia_principal</em> e
-        <em>icone</em>, mas elas não possuem conteúdo. Por não terem conteúdo,
-        ações de iniciar sobre as mídias acima não apresentaram resultados.</p>
+        <p>O trecho de código a seguir define duas mídias com identificadores
+        <em>midia_principal</em> e <em>icone</em>, mas elas não possuem
+        conteúdo. Por não terem conteúdo, elas não apresentaram resultados
+        audiovisuais.</p>
         
         <div id='nclIntro1CodeA'></div><br>
 
-        <p>O código a seguir define as mesmas mídias acima, mas com conteúdos de
-        áudio e imagem, respectivamente. Em especial, a mídia de
-        <em>midia_principal</em> tem definido um trecho chamado de
+        <p>O trecho de código a seguir define as mesmas mídias acima, mas com
+        conteúdos de áudio e imagem, respectivamente. Em especial, a mídia de
+        <em>midia_principal</em> tem definido uma âncora chamada de
         <em>creditos</em> que inicia aos 300 e termina aos 360 segundos.</p>
         
         <div id='nclIntro1CodeB'></div><br>
@@ -1422,19 +1424,21 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <p>Além de midías como imagens, áudio e vídeos, o elemento
         <em>&ltmedia></em> nossa NCL estendida deve suportar outras modalidades
-        de conteúdo como sintetização de voz e avatares humanoides.</p>
+        de conteúdo como sintetização de voz e avatares humanoides. Por exemplo,
+        os trechos de código a seguir ilustram o uso de sintetização de voz em
+        nossa NCL.</p>
         
-        <p>Os trechos de código a seguir ilustram o uso de sintetização de voz
-        em nossa NCL. O primeiro trecho de código a seguir apresenta o arquivo
+        <p> O primeiro trecho de código a seguir apresenta o arquivo
         <em>sinte_voz.srgs</em>, que é uma descrição de sintetização de voz no
         formato SSML. Em particular, esse arquivo defini a frase a ser
-        sintetizada "você deseja repetir o video?". O segundo trecho de código
-        define uma <em>&ltmedia></em> com identificador <em>sinte_voz</em> que
-        tem como conteúdo o arquivo <em>sinte_voz.srgs</em>. Essa
-        <em>&ltmedia></em> possui uma âncora que indica a frase a ser
-        sintetizada.</p>
+        sintetizada "você deseja repetir o video?".</p>
 
         <div id='nclIntro1CodeD'></div>
+
+        O segundo trecho de código define uma <em>&ltmedia></em> com
+        identificador <em>sinte_voz</em> que tem como conteúdo o arquivo
+        <em>sinte_voz.srgs</em>. Essa <em>&ltmedia></em> possui uma âncora que
+        indica a frase a ser sintetizada.</p>
 
         <div id='nclIntro1CodeE'></div>
       `
@@ -1445,29 +1449,32 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         <div style="text-align: justify; width: 70%;">
         
-        <p>Agora, vamos detalhar o conceito de <em>Sincronismo</em> em NCL que é
-        já implementado pelo elementos <em>&ltport></em> e <em>&ltlink></em>. Os
-        elementos <em>&ltport></em> indicam qual elementos de <em>&ltmedia></em>
-        são iniciados com a aplicação. Já elementos de <em>&ltlink></em> indicam
-        relações te tempo entre elementos de <em>&ltmedia></em>. </p>
+        <p>Agora, vamos detalhar o conceito de <em>Sincronismo</em>.Ele
+        permite definir o comportamento das aplicações.</p>
         
-        <p>O <em>&ltlink></em> é baseado em causalidade e definido por
+        <p>O <em>Sincronismo</em> é baseado em causalidade e definido por
         <strong>um conjunto de condições e um conjunto de ações</strong>. Ou
-        seja, quando as condições são satisfeitas ações são realizadas.</p> 
+        seja, quando as condições são satisfeitas ações são realizadas.</p>
         
-        <p> As condições de um <em>&ltlink</em> podem ser simples ou
-        compostas. Exemplos de condições simples são o início ou fim de uma
-        mídia ou trecho de mídia, ou a seleção de usuário sobre uma mídia.</p>
+        <p>Na NCL que esse conceito já implementado pelo elementos
+        <em>&ltport></em> e <em>&ltlink></em>.</p>
         
-        <p>As ações de um <em>&ltlink</em> são executadas em sequencia.
-        Exemplos de ações são iniciar ou parar uma mídia.</p>
+        <p>Elementos <em>&ltport></em> indicam quais elementos de
+        <em>&ltmedia></em> são iniciados quando a aplicação é iniciada. 
+        
+        <p>Elementos <em>&ltlink></em> tem condições simples ou compostas, e
+        ações que são executadas em sequência. Exemplos de condições simples são
+        o início da aplicação, o início ('onBegin') ou fim ('onEnd') de uma
+        mídia ou de sua âncora, além de interações usuário (e.g. 'onSelection' e
+        'onRecognition'). Exemplos de ações são iniciar ou parar uma mídia.</p>
+        
+        <p>Para ilustrar o uso desses elementos, o trecho de código a segui
+        define uma aplicação que apresenta um vídeo e um ícone durante os
+        créditos do vídeo. Se o usuário selecionar o ícone, o vídeo é
+        reiniciado.</p> 
 
-        <p>Para ilustrar o uso desses elementos, o código a segui define uma
-        aplicação que apresenta um vídeo e um ícone durante os créditos do
-        vídeo. Se o usuário selecionar o ícone, o vídeo é reiniciado.</p> 
-
-        <p> O código a seguir tem um elemento <em>&ltport></em> e dois elementos
-        <em>&ltlink></em>. O <em>&ltport></em> define que o elemento
+        <p> O trecho de código tem um elemento <em>&ltport></em> e dois
+        elementos <em>&ltlink></em>. O <em>&ltport></em> define que o elemento
         <em>midia_principal</em> incia com a aplicação. O primeiro defini que
         quando o <em>video_principal</em> alcançar o seu trecho de créditos a
         imagem <em>img_repetir</em> é iniciada. O segundo que quando essa
@@ -1855,7 +1862,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'nclTask1',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Tarefa 1: Por favor, analise com cuidado o código NCL a seguir.</p>
+        <p>Tarefa 1: Por favor, analise com cuidado o trecho de código NCL a
+        seguir.</p>
         <div id='nclTask1Code'></div>
         </div>
       `
@@ -1878,8 +1886,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div id='nclTask2CodeA'></div>
         <div id='nclTask2CodeB'></div>
         
-        A aplicação NCL da Tarefa 1 foi modificada para permitir
-        interações multimodais utilizando as descrições aima. O novo código é
+        A aplicação NCL da Tarefa 1 foi modificada para permitir interações
+        multimodais utilizando as descrições aima. O novo trecho de código é
         apresentado a seguir com as modificações destacadas. Por favor, analise
         com cuidado.</p> 
         
@@ -1899,16 +1907,19 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       isRequired: true,
       name: 'nclTask3Question',
       rows: '47',
-      title: `<p>Tarefa 3: Agora, pedimos que edite o código NCL da Tarefa 2
-        (copiado a seguir) para que utilize uma interação por gestos ao invés de
-        uma interação por comandos de voz.</p>
+      title: `<p>Tarefa 3: Agora, pedimos que edite o trecho de código NCL da
+        Tarefa 2 (copiado a seguir) para que utilize uma interação por gestos ao
+        invés de uma interação por comandos de voz.</p>
       `
     },
     {
       type: 'comment',
       name: 'nclTask4Question',
       rows: '47',
-      title: ' Tarefa 4: Agora, pedimos que edite o código NCL da Tarefa 2 (copiado a seguir) para que apenas o segundo usuário, de um grupo de 3 usuários, com microphone, possa realizar a interação por voz.'
+      title: ` Tarefa 4: Agora, pedimos que edite o trecho de código NCL da
+        Tarefa 2 (copiado a seguir) para que apenas o segundo usuário, de um
+        grupo de 3 usuários, com microphone, possa realizar a interação por
+        voz.`
     }
   ]
 })
@@ -2190,14 +2201,14 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: ` 
         <div style="text-align: justify; width: 70%;">
 
-        <p>A linguagem HTML é utilizada para criar conteúdo na web. Em
-        particular, sua versão atual (HTML 5) oferece os elementos
-        <em>&ltimg></em>, <em>&ltvideo></em> e <em>&ltaudio></em>,
-        respectivamente para apresentar imagens, vídeo e áudios. Para criar
-        sincronismos, entretanto, o HTML recorre a elementos <em>script</em>
-        scritos na linguagem JavaScript. Um <em>script</em> pode criar
-        sincronismos de mídias e sincronismos baseados em interações de usuário
-        por apontador e tecla.</p>
+        <p>A linguagem HTML é utilizada para criar conteúdo multimídia na web.
+        Em particular, sua versão atual (HTML 5) oferece, entre outros, os
+        elementos <em>&ltimg></em>, <em>&ltvideo></em> e <em>&ltaudio></em>,
+        respectivamente para apresentar imagens, vídeo e áudios. Entretanto,
+        para criar sincronismos a HTML recorre a linguagem JavaScript, através
+        de elementos <em>script</em>. Um <em>script</em> pode criar sincronismos
+        de mídias e sincronismos baseados em interações de usuário por apontador
+        e tecla.</p>
         
         <p><strong>Esta seção não tem o objetivo de ensinar a linguagem
         HTML</strong>. Esta seção tem sim o objetivo de apresentar como os
@@ -2216,12 +2227,12 @@ _data.surveyJSON.pages[pageIndex].elements.push({
             <td><em>&ltmedia></em></td>
             <td><em>&ltimg></em>, <em>&ltvideo></em>, <em>&ltaudio></em>
             </td>
-            <td>estender adcionando com trechos</td>
+            <td>estender esses elementos com <em>&ltarea></em></td>
           </tr>
           <tr>
             <td><em>Sincronismo</em></td>
             <td><em>&ltscript></em></td>
-            <td>estender <em>&ltscript></em> com API <em>Sync</em></td>
+            <td>estender <em>&ltscript></em> com API <em>Synchronism</em></td>
           </tr>
           <tr>
             <td><em>Reconhecedor</em></td>
@@ -2243,28 +2254,30 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         <div style="text-align: justify; width: 70%;"> 
         
-        <p>Primeiro, vamos detalhar o conceito de <em>Mídia</em> em HTML. Para
-        implementar esse conceito nos estendemos elementos <em>&ltimg></em>,
-        <em>&ltaudio></em> e <em>&ltvideo></em> com porções temporais e
-        <em>&ltlabel></em> para porções em uma descrição textual.</p>
+        <p>Primeiro, vamos detalhar o conceito de <em>Mídia</em> em HTML e
+        ilustrar com trechos de código.</p>
         
-        <p>Assim <em>&ltimg></em>, <em>&ltaudio></em>, <em>&ltvideo></em> devem
-        ser definidos por <strong>identificador, um conteúdo, propriedades
-        âncoras </strong>. O conteúdo consiste em um arquivo de mídia, como
-        imagem jpeg, video mp4, audio mp3, entre outros. As âncoras podem
-        definir porções temporais da apresentação da mídia ou trechos de um
-        descrição.</p>
+        <p>Uma <em>Mídia</em> deve ser definida por um <strong>identificador, um
+        conteúdo e âncoras</strong>.</p>
+        
+        <p>Em nossa HTML estendida, estendemos elementos <em>&ltimg></em>,
+        <em>&ltaudio></em> e <em>&ltvideo></em> com elementos <em>&ltarea></em>
+        para permitir definir âncoras. O conteúdo consiste em um arquivo de
+        mídia, como imagem jpeg, video mp4, audio mp3, entre outros. As âncoras
+        podem definir porções temporais da apresentação da mídia ou trechos de
+        um descrição. Exemplos de blocos serão apresentados para ilustrar
+        esse conceito.</p>
 
-        <p>Para ilustrar o uso desses elementos, o código a seguir define duas
-        mídias com identificadores <em>midia_principal</em> e <em>icone</em>,
-        mas elas não possuem conteúdo. Por não terem conteúdo,ações de iniciar
-        sobre as mídias acima não apresentaram resultados.</p>
+        <p>O trecho de código a seguir define as duas mídias com identificadores
+        <em>midia_principal</em> e <em>icone</em>, mas elas não possuem
+        conteúdo. Por não terem conteúdo, elas não apresentaram resultados
+        audiovisuais.</p>
 
         <div id='htmlIntro1CodeA'></div><br>
 
-        <p>O código a seguir define as mesmas mídias acima, mas com conteúdos de
-        áudio e imagem, respectivamente. Em especial, a mídia de
-        <em>midia_principal</em> tem definido um trecho chamado de
+        <p>O trecho de código a seguir define as mesmas mídias acima, mas com
+        conteúdos de áudio e imagem, respectivamente. Em especial, a mídia de
+        <em>midia_principal</em> tem definido uma âncora chamada de
         <em>creditos</em> que inicia aos 300 e termina aos 360 segundos.</p>
         
         <div id='htmlIntro1CodeB'></div><br>
@@ -2279,18 +2292,20 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <p>Além de midías como imagens, áudio e vídeos, a HTML estendida deve
         suportar outras modalidades de conteúdo como sintetização de voz e
-        avatares humanoides.</p>
+        avatares humanoides. Por exemplo, os trechos de código a seguir ilustram
+        o uso de sintetização de voz em nossa HTML. </p>
         
-        <p>Os trechos de código a seguir ilustram o uso de sintetização de voz
-        em nossa HTML. O primeiro trecho de código a seguir apresenta o arquivo
+        <p>O primeiro trecho de código a seguir apresenta o arquivo
         <em>sinte_voz.srgs</em>, que é uma descrição de sintetização de voz no
         formato SSML. Em particular, esse arquivo defini a frase a ser
-        sintetizada "você deseja repetir o video?". O segundo trecho de código
-        define uma mídia com identificador <em>sinte_voz</em> que tem como
-        conteúdo o arquivo <em>sinte_voz.srgs</em>. Essa mídia possui uma âncora
-        que indica a frase a ser sintetizada.</p>
-
+        sintetizada "você deseja repetir o video?".</p> 
+        
         <div id='htmlIntro1CodeD'></div>
+
+        O segundo trecho de código define uma mídia com identificador
+        <em>sinte_voz</em> que tem como conteúdo o arquivo
+        <em>sinte_voz.srgs</em>. Essa mídia possui uma âncora que indica a frase
+        a ser sintetizada.</p>
         
         <div id='htmlIntro1CodeE'></div>
         
@@ -2302,42 +2317,34 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
+        <p>Agora, vamos detalhar o conceito de <em>Sincronismo</em>. Ele
+        permite definir o comportamento das aplicações.</p>
         
-        <p>Agora, vamos detalhar o conceito de <em>Sincronismo</em> em HTML que
-        é implementado pelo elemento <em>&lscript></em> em conjunto com a API
-        utilizando a API de <em>Sync></em>. O uso dessa API  permite especificar
-        o comportamento das aplicações.</p>
-                
-        <p> API de <em>Sync></em> é baseada em causalidade edefinido sendo
-        definido por <strong>um conjunto de condições e um conjunto de
-        ações</strong>. Ou seja, quando as condições são satisfeitas ações são
-        realizadas.</p>         
-        
-        <p>Além de midías como imagens, áudio e vídeos, o elemento
-        <em>&ltmedia></em> nossa NCL estendida deve suportar outras modalidades
-        de conteúdo como sintetização de voz e avatares humanoides.</p>
-        
-        <p>Os trechos de código a seguir ilustram o uso de sintetização de voz
-        em nossa NCL. O primeiro trecho de código a seguir apresenta o arquivo
-        <em>sinte_voz.srgs</em>, que é uma descrição de sintetização de voz no
-        formato SSML. Em particular, esse arquivo defini a frase a ser
-        sintetizada "você deseja repetir o video?". O segundo trecho de código
-        define uma <em>&ltmedia></em> com identificador <em>sinte_voz</em> que
-        tem como conteúdo o arquivo <em>sinte_voz.srgs</em>. Essa
-        <em>&ltmedia></em> possui uma âncora que indica a frase a ser
-        sintetizada.</p>
-        
-        <p> As condições de um <em>Sync></em> podem ser simples ou
-        compostas. Exemplos de condições simples são o início ou fim de uma
-        mídia ou trecho de mídia, ou a seleção de usuário sobre uma mídia.</p>
-        
-        <p>As ações de um <<em>Sync></em> são executadas em sequencia.
-        Exemplos de ações são iniciar ou parar uma mídia.</p>
+        <p>O <em>Sincronismo</em> é baseado em causalidade e definido por
+        <strong>um conjunto de condições e um conjunto de ações</strong>.Ou
+        seja, quando as condições são satisfeitas ações são realizadas.</p>
 
-        <p>Para ilustrar o uso do elemento de <em>script</em>, o coódigo a
+        <p>Na HTML estendida esse conceito é implementado pelo elemento
+        <em>&lscript></em><> com um código JavaScript que utiliza um o objeto
+        <em>Synchronism</em></p>. Objetos <em>Synchronism</em> tem
+        condições simples ou compostas, e ações que são executadas em
+        sequência. Exemplos de condições simples são o início da aplicação, o
+        início('onBegin') ou fim('onEnd') de uma mídia ou de sua âncora, além de
+        interações usuário (e.g. 'onSelection' e 'onRecognition'). Exemplos de
+        ações são iniciar ('start') ou parar ('stop') de elementos.</p>
+
+        <p>Para ilustrar de objetos <em>Synchronism</em>, o código a
         define uma aplicação que apresenta um vídeo e um ícone durante os
         créditos do vídeo. Se o usuário selecionar o ícone, o vídeo é
         reiniciado.</p> 
+
+        <p> O trecho de código tem três objetos <em>Synchronism</em>. O
+        primeiro define que o elemento <em>midia_principal</em> incia com a
+        aplicação. O segundo defini que quando o <em>video_principal</em>
+        alcançar o seu trecho de créditos a imagem <em>img_repetir</em> é
+        iniciada. O terceiro que quando essa <em>img_reptetir</em> é selecionado
+        <em>video_principal</em> é reiniciado (<em>stop</em> e
+        <em>start</em>).</p>
 
         <div id='htmlIntro2CodeA'></div>
 
@@ -2468,26 +2475,26 @@ _data.htmlIntro2CodeA = `
     <img id="img_repetir" src="img_repetir.png" 
       style="position: absolute; left: 50%; top: 50%; z-index: 1;" />
     <video id="midia_principal" src="video.mp4" 
-      style="position: relative; hight 100%; width: 100%;" >
+      style="position: absolute; hight 100%; width: 100%;" >
       <area id="credits" begin="300s" end="360s" />
     </video>
     <script>
-      var sync1 = new Synchronism()
-      sync.bind('onbegin', document.body)
-      sync.bind('start',video)
-      
       video = document.getElementById("midia_principal")
       credits = document.getElementById("credits")
       img_repetir = document.getElementById("img_repetir")
 
+      var sync1 = new Synchronism('onBeginStart')
+      sync.bind('onBegin', document.body)
+      sync.bind('start', video)
+
       var sync2 = new Synchronism()
-      sync.bind('onbegin',credits)
+      sync.bind('onBegin', credits)
       sync.bind('start', icon)
 
-      var sync3 = new Synchronism()
-      sync.bind('onselection',img_repetir)
-      sync.bind('stop',video)
-      sync.bind('start',video)
+      var sync3 = new Synchronism('onSelectionStopStart')
+      sync.bind('onSelection', img_repetir)
+      sync.bind('stop', video)
+      sync.bind('start', video)
 
     <&#47script>
   </body>
@@ -2551,7 +2558,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       name: 'htmlTask1',
       html: `
-        <p>Tarefa 1: Por favor, analise com cuidado o código HTML a seguir.</p>
+        <p>Tarefa 1: Por favor, analise com cuidado o trecho de código HTML a seguir.</p>
       `
     },
     {
@@ -2573,7 +2580,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div id='htmlTask2CodeB'></div>
         
         A aplicação HTML da Tarefa 1 foi modificada para permitir interações
-        multimodais utilizando as descrições aima. O novo código é apresentado a
+        multimodais utilizando as descrições aima. O novo trecho de código é apresentado a
         seguir com as modificações destacadas. Por favor, analise com
         cuidado.</p> 
         
@@ -2592,13 +2599,17 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'comment',
       name: 'htmlTask3Question',
       rows: '9',
-      title: 'Tarefa 3: Agora, pedimos que edite o código HTML da Tarefa 2 (copiado a seguir) para que utilize uma interação por gestos ao invés de uma interação por comandos de voz.'
+      title: `Tarefa 3: Agora, pedimos que edite o trecho de código HTML da
+      Tarefa 2 (copiado a seguir) para que utilize uma interação por gestos ao
+      invés de uma interação por comandos de voz.`
     },
     {
       type: 'comment',
       name: 'htmlTask4Question',
       rows: '9',
-      title: ' Tarefa 4: Agora, pedimos que edite o código HTML da Tarefa 2 (copiado a seguir) para que apenas o segundo usuário, de um grupo de 3 usuários com microphone, possa realizar a interação por voz.'
+      title: ` Tarefa 4: Agora, pedimos que edite o trecho de código HTML da
+      Tarefa 2 (copiado a seguir) para que apenas o segundo usuário, de um grupo
+      de 3 usuários com microphone, possa realizar a interação por voz.`
     }
   ]
 })
