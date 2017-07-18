@@ -1345,11 +1345,11 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         sincronismos baseados em interações de usuário por apontador e
         tecla.</p>
       
-        <p>Esta seção não tem o objetivo de ensinar a linguagem NCL. Mas sim
-        tem o objetivo de apresentar como os conceitos de apresentados podem ser
-        instanciados na linguagem NCL. A tabela seguir apresenta quais conceitos
-        propostos em nossa pesquisa estão presentes na NCL e como deve ser a
-        instanciação dos ausentes.</p>
+        <p><strong>Esta seção não tem o objetivo de ensinar a linguagem
+        NCL</strong>. Mas sim tem o objetivo de apresentar como os conceitos
+        apresentados na seção anterior ser instanciados na linguagem NCL. A
+        tabela seguir apresenta quais conceitos propostos em nossa pesquisa como
+        propomos instanciação.</p>
 
         <table align="center" class="table-bordered table-striped
         table-condensed">
@@ -2190,20 +2190,20 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: ` 
         <div style="text-align: justify; width: 70%;">
 
-        <p>A linguagem HTML é utilizada criar conteúdo multimídia para serviços
-        web. Em particular, sua versão atual (HTML 5) oferece os elementos
-        <em>&ltimg></em>, <em>&ltvideo></em> e <em>&ltaudio></em>. Esses
-        elementos permitem apresentar respectivamente imagens, vídeo e áudios.
-        Para criar sincronismos, entretanto, o HTML recorre a um a JavaScript
-        como linguagem auxiliar através do elemento <em>&ltscript></em>.
-        Elementos JavaScript podem criar sincronismos de mídias e sincronismos
-        baseados em interações de usuário por apontador e tecla.</p>
+        <p>A linguagem HTML é utilizada para criar conteúdo na web. Em
+        particular, sua versão atual (HTML 5) oferece os elementos
+        <em>&ltimg></em>, <em>&ltvideo></em> e <em>&ltaudio></em>,
+        respectivamente para apresentar imagens, vídeo e áudios. Para criar
+        sincronismos, entretanto, o HTML recorre a elementos <em>script</em>
+        scritos na linguagem JavaScript. Um <em>script</em> pode criar
+        sincronismos de mídias e sincronismos baseados em interações de usuário
+        por apontador e tecla.</p>
         
-        <p>Esta seção não tem o objetivo de ensinar a linguagem HTML. Esta
-        seção tem sim o objetivo de apresentar como os conceitos de interação
-        multimodal podem ser instanciados na linguagem HTML. A tabela seguir
-        apresenta quais conceitos propostos em nossa pesquisa estão presentes
-        na HTML e como deve ser a instanciação dos ausentes.</p>
+        <p><strong>Esta seção não tem o objetivo de ensinar a linguagem
+        HTML</strong>. Esta seção tem sim o objetivo de apresentar como os
+        como os conceitos apresentados na seção anterior podem ser instanciados
+        na linguagem HTML. A tabela seguir apresenta quais conceitos propostos
+        em nossa pesquisa como propomos instanciação.</p>
 
         <table align="center" class="table-bordered table-striped
         table-condensed">
@@ -2424,39 +2424,26 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 _data.htmlIntro1CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
-  <?xml version="1.0" encoding="ISO-8859-1"?>
-  <html>
-    <head>
-    </head>
-    <body>
-    </body>
-  </html>
+  <img id="icone"></img>
+  <audio id="midia_principal"></img>
   ]]></script>
 `
 
 _data.htmlIntro1CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
-  <?xml version="1.0" encoding="ISO-8859-1"?>
-  <html>
-    <head>
-    </head>
-    <body>
-    </body>
-  </html>
+  <img id="icone" src="icone.png"></img>
+  <audio id="midia_principal" src="audio.mp3"></audio>
   ]]></script>
 `
 
 _data.htmlIntro1CodeC = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
-  <?xml version="1.0" encoding="ISO-8859-1"?>
-  <html>
-    <head>
-    </head>
-    <body>
-    </body>
-  </html>
+  <img id="icone" src="icone.png"></img>
+  <video id="midia_principal" src="video.mp4">
+    <area id="credits" begin="300s" end="360s" />
+  </video>
   ]]></script>
 `
 
@@ -2465,13 +2452,9 @@ _data.htmlIntro1CodeD = _data.nclIntro1CodeD
 _data.htmlIntro1CodeE = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
-  <?xml version="1.0" encoding="ISO-8859-1"?>
-  <html>
-    <head>
-    </head>
-    <body>
-    </body>
-  </html>
+  <object id="sinte_voz" src="sinte_voz.ssml">
+    <area label="repetir"/>
+  </object>
   ]]></script>
 `
 
@@ -2496,8 +2479,7 @@ _data.htmlIntro3CodeC = `
   auto-links: false;"> <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <html>
-    <head>
-    </head>
+    <head></head>
     <body>
     </body>
   </html>
@@ -2512,8 +2494,7 @@ _data.htmlIntro4CodeB = `
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <html>
-    <head>
-    </head>
+    <head></head>
     <body>
     </body>
   </html>
@@ -2604,8 +2585,7 @@ _data.htmlTask1Code = `
   auto-links: false;"> <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <html>
-    <head>
-    </head>
+    <head></head>
     <body>
     </body>
   </html>
@@ -2615,8 +2595,7 @@ _data.htmlTask1Code = `
 _data.htmlTask2CodeCOnly = `
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <html>
-    <head>
-    </head>
+    <head></head>
     <body>
     </body>
   </html>
