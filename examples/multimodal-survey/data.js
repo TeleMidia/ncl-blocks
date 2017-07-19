@@ -541,7 +541,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <p>Para o comportamento, essa aplicação utiliza três
         <em>Sincronismo</em>. O primeiro <em>Sincronismo</em> define
-        <em>midia_principal</em> inicia junto com a aplicalção. O segundo
+        <em>midia_principal</em> inicia junto com a aplicação. O segundo
         <em>Sincronismo</em> define que quando a <em>midia_principal</em>
         alcançar o seu trecho de <em>credito</em> a mídia <em>icone_repetir</em>
         deve ser iniciada. O terceiro <em>Sincronismo</em> define que quando a
@@ -570,7 +570,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         devem as frases a serem reconhecidas.</p>
 
         <p>Na nossa representação de blocos, o <em>Reconhecedor</em> é definida
-        juntando um bloco de <em>Reconhecedor</em> com o campo id preenchido e
+        juntando um bloco de <em>Reconhecedor</em>, com o campo id preenchido, e
         um bloco de conteúdo com as âncoras preenchidas.</p>
         
         <p>Exemplos de blocos serão apresentados para ilustrar o conceito.</p>
@@ -616,7 +616,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         <div style="text-align: justify; width: 70%;">
         <p>Por fim, vamos detalhar <em>Grupo de usuários</em>. Ele permite
-        definir identificar unicamente interações de cada ususário. Por exemplo,
+        identificar unicamente interações de cada ususário. Por exemplo,
         o comando de voz apenas de um ususário</p>
 
         <p><em>Grupo de Usuários</em> é definido <strong>por um identificador,
@@ -624,18 +624,20 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         utilizam</strong>. Mais precisamente, esses dispositivos definem o que
         um usuário necessita possuir para participar do grupo.</p>
 
-        <p>Os blocos a seguir definem um grupo de usuário <em>gu_gestos</em>
-        que pode ter até 3 membros, cada um com seu reconhecedor de gestos
-        (e.g. LeapMotion).</p>
+        <p>Na nossa representação de blocos, o <em>Grupo de Usuários</em> é
+        definida juntando um bloco de <em>Grupo de Usuários</em>, com campo id
+        preenchido,  e  blocos de dispositivos. Por exemplo, Os blocos a seguir
+        definem um grupo de usuário <em>gu_gestos</em> que pode ter até 3
+        membros, cada um com seu reconhecedor de gestos (e.g. LeapMotion).</p>
         </div>
 
         <div id='conceptsIntro4a'></div><br>
 
-        <div style="text-align: justify; width: 70%;">
+        <div style="text-align: justify; width: 70%;"> 
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em>, os blocos a
-        seguir são uma nova versão da aplicação que reinicia um vídeo dadoa
-        uma interação. Entretanto, nessa versão, o vídeo será reiniciado apenas
-        quando o segundo usuário falar "repita vídeo".</p>
+        seguir são uma nova versão da aplicação que reinicia um vídeo dadoa uma
+        interação por voz. Entretanto, nessa versão, o vídeo será reiniciado
+        apenas quando o segundo usuário falar "repita vídeo".</p>
         </div>
 
         <div id='conceptsIntro4b'></div>
@@ -1454,7 +1456,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         e o arquivo de mídia do conteúdo é definido atributo <em>src</em>. As
         âncoras são definidas pelo elemento <em>area</em> e podem definem
         porções temporais com os atributos <em>begin</em> e <em>end</em> ou
-        trechos delimitados com o atributo <em>label</em>. </p>
+        trechos delimitados com o atributo <em>label</em>.</p>
 
         <p>Trechos de código serão apresentados para ilustrar conceito./p>
 
@@ -1622,9 +1624,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div id='nclIntro3CodeB'></div><br>
 
         <p>Para ilustrar o uso desse conceito em uma aplicação NCL, o trecho de
-        código a seguir defini uma nova versão da aplicação que reinicia um
-        vídeo dada uma interação. Mas nessa versão, ao invés de selecionar, o
-        vídeo é reiniciado ao usuário falar "repita vídeo".</p>
+        código a seguir apresenta uma nova versão da aplicação que reinicia um
+        vídeo dada uma interação (modificações em destaque). Mas nessa versão,
+        ao invés de selecionar, o vídeo é reiniciado ao usuário falar "repita
+        vídeo".</p>
 
         <p>Essa aplicação utiliza dois elementos de
         <em>&ltmedia></em>(<em>video_principal</em> e <em>sinte_voz</em>) e um
@@ -1635,7 +1638,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Para o comportamento, a aplicação utiliza um elemento
         <em>&ltport></em> e dois <em>&ltlink></em>. O define <em>&ltport></em>
         define que o <em>video_principal</em> é iniciado com aplicação
-        <em>midia_principal</em> inicia junto com a aplicalção. O primeiro
+        <em>midia_principal</em> inicia junto com a aplicação. O primeiro
         <em>&ltlink></em> define que quando o <em>video_principal</em> alcançar
         a sua porção <em>creditos</em> (300s), a frase da âncora
         <em>pergunta</em> é sintetizada e o reconhecedor <em>rec_voz</em> inicia
@@ -1653,29 +1656,30 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         <div style="text-align: justify; width: 70%;">
         <p>Agora, vamos detalhar o elemento <em>Grupo de Usuários</em> em NCL.
-        Para implementar esse conceito propomos o elemento
-        <em>&ltuserClass></em>.</p>
+        Ele permite identificar unicamente interações de cada ususário. Por
+        exemplo, o comando de voz apenas de um ususário</p>
 
-        <p>Um importante parte da definição de um <em>&ltuserClass></em> é como
-        são descritos as caracterisicas que ususários devem ter par aparticipar
-        da classe, por exemplos quais dispositivos devem possuir. Para essa
-        descrição propomos um descrição  no formato SPARQL. O trecho de código a
-        seguir apresenta o arquivo de descrição de ususários
-        <em>gu_leap_microphone.sparql</em>. Essa descrição define que cada
-        usuário do grupo deve ter um headset e um leapmotion.</p >
+        <p><em>Grupo de Usuários</em> é definido <strong>por um identificador,
+        número maximo de participantes e quais dispositivos estes
+        utilizam</strong>. Mais precisamente, esses dispositivos definem o que
+        um usuário necessita possuir para participar do grupo.</p>
+        
+        <p>Na nossa NCL estendida, o conceito de <em>Grupo de Usuários</em> é
+        implementado pelo elemento <em>&ltuserClass></em> dentro do
+        <em>&lthead></em>. O identificador é definito pelo atributo <em>id</em>
+        e os dispositivos são definidos por um arquivo de descrição definido em
+        <em>src</em>. Para essa descrição propomos um descrição  no formato
+        SPARQL. O trecho de código a seguir apresenta o arquivo de descrição de
+        ususários <em>gu_leap_microphone.sparql</em>. Essa descrição define que
+        cada usuário do grupo deve ter um headset e um leapmotion.</p>
 
         <div id='nclIntro4CodeA'></div><br>
 
-        <p>O elemento  <em>&ltuserClass></em> é definido dentro do
-        <em>&lthead></em> de uma aplicação HTML. Ele é definido por um
-        identificador, número maximo de ususário e pelo seu arquivo de descrição
-        de usuários.</p>
-
-        <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em NCL, o código
-        a seguir é uma nova versão da aplicação que reinicia um vídeo dado uma
-        interação (modificações em destaque). Mas nessa versão, ao invés de
-        clicar, o vídeo será reiniciado ao segundo usuário do usuário falar
-        "repita vídeo".</p>
+        <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em NCL, o trecho
+        de código a seguir apresenta uma nova versão da aplicação que reinicia
+        um vídeo dado uma interação por voz (modificações em destaque). Mas
+        nessa versão, ao invés de clicar, o vídeo será reiniciado ao segundo
+        usuário do usuário falar "repita vídeo".</p>
 
         <div id='nclIntro4CodeB'></div>
         </div>
@@ -1863,8 +1867,8 @@ _data.nclIntro4CodeA = `
   SELECT ?person
   WHERE {
   ?person prf:component ? component.
-  ?component prf: name ? name FILTER regex(?name, “Leap Motion”)
-    ? name FILTER regex(?name, “Microphone”)
+  ?component prf: name ? name FILTER regex(?name, "Leap Motion")
+    ? name FILTER regex(?name, "Microphone")
   }
   ]]></script>
 `
@@ -1892,7 +1896,7 @@ _data.nclIntro4CodeB = `
         <area label="pergunta"></area>
       </media>
       <input id="rec_voz" src="rec_voz.srgs">
-        <area label="repete"></repete>
+        <area label="repete"></area>
       </input>
       <link xconnector="conEx#onBeginStart">
         <bind role="onBegin" component="video_principal" interface="credits"></bind>
@@ -2492,9 +2496,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div id='htmlIntro3CodeB'></div><br>
 
         <p>Para ilustrar o uso desse conceito em uma aplicação HTML, o trecho de
-        código a seguir defini uma nova versão da aplicação que reinicia um
-        vídeo dada uma interação. Mas nessa versão, ao invés de selecionar, o
-        vídeo é reiniciado ao usuário falar "repita vídeo".</p>
+        código a seguir apresenta uma nova versão da aplicação que reinicia um
+        vídeo dada uma interação (modificações em destaque). Mas nessa versão,
+        ao invés de selecionar, o vídeo é reiniciado ao usuário falar "repita
+        vídeo".</p>
 
         <p>Essa aplicação utiliza dois elementos de
         mídia (<em>video_principal</em> e <em>sinte_voz</em>) e um de
@@ -2523,23 +2528,29 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         <div style="text-align: justify; width: 70%;">
         <p>Agora, vamos detalhar o elemento <em>Grupo de Usuários</em> em HTML.
-        Para implementar esse conceito propomos o elemento
-        <em>&ltuserClass></em>.</p>
+        Ele permite identificar unicamente interações de cada ususário. Por
+        exemplo, o comando de voz apenas de um ususário</p>
+        
+        <p><em>Grupo de Usuários</em> é definido <strong>por um identificador,
+        número maximo de participantes e quais dispositivos estes
+        utilizam</strong>. Mais precisamente, esses dispositivos definem o que
+        um usuário necessita possuir para participar do grupo.</p>
 
-        <p>Um importante parte da definição de um <em>&ltuserClass></em> é como
-        são descritos as caracterisicas que ususários devem ter par aparticipar
-        da classe, por exemplos quais dispositivos devem possuir. Para essa
-        descrição propomos um descrição  no formato SPARQL. O trecho de código a
-        seguir apresenta o arquivo de descrição de ususários
-        <em>gu_leap_microphone.sparql</em>. Essa descrição define que cada
-        usuário do grupo deve ter um headset e um leapmotion.</p >
+        <p>Na nossa HTML estendida, o conceito de <em>Grupo de Usuários</em> é
+        implementado por elemento JavaScript que utilize um objeto
+        <em>&UserGroup></em>. Para essa descrição propomos usar um descrição no
+        formato SPARQL. Essa descrição é utilizada como parametro na criação do
+        objeto <em>&UserGroup></em>. O trecho de código a seguir apresenta um
+        codigo JavaScript que cria um objeto <em>&UserGroup></em> em que cada
+        usuário do grupo deve ter um headset e um leapmotion.</p>
 
         <div id='htmlIntro4CodeA'></div><br>
 
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em HTML, o
         código a seguir é uma nova versão da aplicação que reinicia um vídeo
-        dado uma interação de voz. Entretanto, nessa versão, o vídeo é
-        reiniciado apenas quando o segundo usuário falar "repita vídeo".</p>
+        dado uma interação de voz (modificações em destaque). Entretanto, nessa
+        versão, o vídeo é reiniciado apenas quando o segundo usuário falar
+        "repita vídeo".</p>
 
         <div id='htmlIntro4CodeB'></div>
         </div>
@@ -2650,13 +2661,29 @@ _data.htmlIntro3CodeC = `
       sync.bind("onRecognize", "rec_voz", "repete")
       sync.bind("stop", "midia_principal")
       sync.bind("start", "midia_principal")
+
     <&#47script>
   </body>
   </html>
   ]]></script>
 `
 
-_data.htmlIntro4CodeA = _data.nclIntro4CodeA
+_data.htmlIntro4CodeA = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false;"> <![CDATA[
+    var sparql = [
+      "PREFIX foaf: <http://xmlns.com/foaf/0.1>",
+      PREFIX prf: <http://www.wapforum.org/profiles/UAPROF/ccppschema-20010430>
+      "SELECT ?person",
+      "WHERE {",
+          ?person prf:component ? component.
+      ?component prf: name ? name FILTER regex(?name, "Leap Motion")
+        ? name FILTER regex(?name, "Microphone")
+      "}"
+    ].join(" ");
+    var gu_leap_microphone = new UserGroup(sparql, 2)
+  ]]></script>
+`
 
 _data.htmlIntro4CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
@@ -2677,7 +2704,17 @@ _data.htmlIntro4CodeB = `
       <area label="repete"><&#47repete>
     </object>
     <script>
-      var gu_leap_microphone("gu_leap_microphone.sparql", 2)
+      var sparql = [
+        "PREFIX foaf: <http://xmlns.com/foaf/0.1>",
+        PREFIX prf: <http://www.wapforum.org/profiles/UAPROF/ccppschema-20010430>
+        "SELECT ?person",
+        "WHERE {",
+            ?person prf:component ? component.
+        ?component prf: name ? name FILTER regex(?name, "Leap Motion")
+          ? name FILTER regex(?name, "Microphone")
+        "}"
+      ].join(" ");
+      var gu_leap_microphone = new UserGroup(sparql, 2)
 
       var sync1 = new Synchronism("onBeginStart")
       sync.bind("onBegin", "body")
@@ -2688,7 +2725,7 @@ _data.htmlIntro4CodeB = `
       sync.bind("start", "sinte_voz")
 
       var sync3 = new Synchronism("onRecognizeStopStart")
-      sync.bind("onRecognize", "rec_voz", "repete", "gu_leap_microphone(2)")
+      sync.bind("onRecognize", "rec_voz", "repete", gu_leap_microphone, 2)
       sync.bind("stop", "midia_principal")
       sync.bind("start", "midia_principal")
     <&#47script>
