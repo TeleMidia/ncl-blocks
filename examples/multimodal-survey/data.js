@@ -422,7 +422,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         porções do conteúdo e podem ser trechos emporais (e.g. entre 300s e
         360s) ou trechos delimitados do conteúdo.</p>
 
-        <p>Em nossa representação por blocos, a <em>Mídia</em> é definida
+        <p>Em nossa representação de blocos, a <em>Mídia</em> é definida
         juntando um bloco de <em>Mídia</em>, com o campo id preenchido, e um
         bloco de conteúdo, com as âncoras preenchidas. Exemplos de blocos serão
         apresentados para ilustrar o conceito.</p>
@@ -480,7 +480,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         ações são executadas em sequência quando as condições são
         satisfeitas.</p>
 
-        <p>Em nossa representação por blocos, o <em>Sincronismo</em> é
+        <p>Em nossa representação de blocos, o <em>Sincronismo</em> é
         implementado por um bloco de mesmo nome.</p>
 
         <p>Os blocos de ações podem ser de iniciar("inicie") ou parar("pare")
@@ -531,18 +531,22 @@ _data.surveyJSON.pages[pageIndex].elements.push({
           </tr>
         </table><br>
 
-        <p>Para ilustrar o uso de <em>Sincronismo</em>, os blocos a
-        seguir definem uma aplicação que apresenta um vídeo e um ícone durante
-        os créditos do vídeo. Se o usuário selecionar o ícone, o vídeo é
+        <p>Para ilustrar o uso desse conceito em uma aplicação, os
+        blocos a seguir definem uma aplicação que apresenta um vídeo e um ícone
+        durante os créditos do vídeo. Se o usuário selecionar o ícone, o vídeo é
         reiniciado.</p>
 
-        <p>Os blocos utilizam três blcoos <em>Sincronismo</em>s. O primeiro
-        <em>Sincronismo</em> adicionado define que quando a
-        <em>midia_principal</em> alcançar o seu trecho de <em>credito</em> a
-        mídia <em>icone_repetir</em> deve ser iniciada. O segundo
-        <em>Sincronismo</em> adicionado define que quando a mídia
-        <em>icone_repetir</em> for selecionada, a <em>midia_principal</em> deve
-        ser reiniciada (terminada e inciada)</p>
+        <p>Essa aplicação utiliza duas <em>Mídia</em> (<em>midia_principal</em>
+        e <em>icone_repetir</em>).
+
+        <p>Para o comportamento, essa aplicação utiliza três
+        <em>Sincronismo</em>. O primeiro <em>Sincronismo</em> define
+        <em>midia_principal</em> inicia junto com a aplicalção. O segundo
+        <em>Sincronismo</em> define que quando a <em>midia_principal</em>
+        alcançar o seu trecho de <em>credito</em> a mídia <em>icone_repetir</em>
+        deve ser iniciada. O terceiro <em>Sincronismo</em> define que quando a
+        mídia <em>icone_repetir</em> for selecionada, a <em>midia_principal</em>
+        deve ser reiniciada (terminada e inciada)</p>
 
         </div>
 
@@ -554,17 +558,22 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'conceptsIntro3',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Agora, detalhamos a seguir <em>Reconhecedor</em>. Ele permite o uso
-        de reconhecimento de interações mutimodais realizadas pelo ususário,
-        como voz e gestos.</p>
+        <p>Agora, vamos detalhar o conceito <em>Reconhecedor</em>. Ele permite
+        o uso de reconhecimento de interações mutimodais realizadas pelo
+        ususário, como voz e gestos.</p>
 
-        <p>O <em>Reconhecedor</em> também é definido por <strong>um
-        identificador e por seu conteúdo</strong>. Entretanto, diferente de
-        <em>Mídia</em>, o conteúdo de um <em>Reconhecedor</em> deve ser uma
-        descrição de reconhecimento. Exemplos dessas são descrições que definem
-        comandos de voz ou gestos de mão. Logo, porções de um
-        <em>Reconhecedor</em> são porções de uma descrição de
-        reconhecimento.</p>
+        <p>O <em>Reconhecedor</em> é definido por <strong>um identificador, seu
+        conteúdo e âncoras</strong>. Entretanto, diferente de <em>Mídia</em>, o
+        conteúdo de um <em>Reconhecedor</em> deve ser uma descrição de
+        reconhecimento As âncroas são porções delimitadas da descrição.
+        Por exemplo, uma descrição de reconhecimento de voz deve ter âncoras que
+        devem as frases a serem reconhecidas.</p>
+
+        <p>Na nossa representação de blocos, o <em>Reconhecedor</em> é definida
+        juntando um bloco de <em>Reconhecedor</em> com o campo id preenchido e
+        um bloco de conteúdo com as âncoras preenchidas.</p>
+        
+        <p>Exemplos de blocos serão apresentados para ilustrar o conceito.</p>
 
         <p>Os blocos a seguir definem os reconhecedores <em>rec_voz</em> e
         <em>rec_gestos</em>. O <em>rec_voz</em> tem um reconhecimento de
@@ -578,22 +587,24 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div id='conceptsIntro3a'></div><br>
 
         <div style="text-align: justify; width: 70%;">
-        <p>Para ilustrar o uso de <em>Reconhecedor</em>, os blocos a
-        seguir são uma nova versão da aplicação que reinicia um vídeo dada
-        uma interação. Mas nessa versão, ao invés de clicar, o vídeo é
-        reiniciado ao usuário falar "repita vídeo".</p>
 
-        <p>Os blocos a seguir definem duas <em>Mídia</em>
-        (<em>midia_principal</em> e <em>sinte_voz</em>), um
-        <em>Reconhecedor</em> (<em>rec_voz</em>) e três <em>Sincronismo</em>s. O
-        primeiro <em>Sincronismo</em> define que <em>midia_principal</em> é
+        <p>Para ilustrar o uso desse conceito em uma aplicação, os
+        blocos a seguir definem uma nova versão da aplicação que reinicia um
+        vídeo dada uma interação. Mas nessa versão, ao invés de selecionar, o
+        vídeo é reiniciado ao usuário falar "repita vídeo".</p>
+
+        <p>Essa aplicação utiliza duas <em>Mídia</em> (<em>midia_principal</em>
+        e <em>sinte_voz</em>) e um <em>Reconhecedor</em> (<em>rec_voz</em>).
+        
+        <p>Para o comportamento, a aplicação utiliza três <em>Sincronismo</em>s.
+        O primeiro <em>Sincronismo</em> define que <em>midia_principal</em> é
         iniciada com a aplicação. O segundo <em>Sincronismo</em> define que
         quando a <em>midia_principal</em> alcançar o seu trecho de
-        <em>creditos</em>, o frase do trecho <em>pergunta</em> é sintetizada e o
-        <em>Reconhecedor</em> <em>rec_voz</em> inicia o reconhecimento. O último
-        <em>Sincronismo</em> define que quando o trecho <em>repetir</em> for
-        reconhecido a <em>midia_principal</em> deve ser reiniciada (terminada e
-        inciada).</p>
+        <em>creditos</em> (300s), a frase da âncora <em>pergunta</em> é
+        sintetizada e o <em>Reconhecedor</em> <em>rec_voz</em> inicia o
+        reconhecimento. O último <em>Sincronismo</em> define que quando for
+        reconhecida a âncora <em>repetir</em>,
+        <em>midia_principal</em> deve ser reiniciada (terminada e inciada).</p>
         </div>
 
         <div id='conceptsIntro3b'></div><br>
@@ -993,7 +1004,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       name: 'conceptsTask3',
       html: `
-        Tarefa 3: Agora, pedimos que edite os blcoos da Tarefa 2 (copiado a
+        Tarefa 3: Agora, pedimos que edite os blocos da Tarefa 2 (copiado a
         seguir) para que utilize uma interação por gestos ao invés de uma
         interação por comandos de voz. <br><br>
       `
@@ -1443,8 +1454,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         e o arquivo de mídia do conteúdo é definido atributo <em>src</em>. As
         âncoras são definidas pelo elemento <em>area</em> e podem definem
         porções temporais com os atributos <em>begin</em> e <em>end</em> ou
-        trechos delimitados com o atributo <em>label</em>. Trechos de código
-        serão apresentados para ilustrar conceito./p>
+        trechos delimitados com o atributo <em>label</em>. </p>
+
+        <p>Trechos de código serão apresentados para ilustrar conceito./p>
 
         <p>O trecho de código a seguir define duas mídias com identificadores
         <em>midia_principal</em> e <em>icone</em>, mas elas não possuem
@@ -1556,9 +1568,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>&ltlink></em> esta interessado é definida pelo elemento
         <em>&ltbind></em>.</p>
         
-        <p>Para ilustrar o uso desses elementos, o trecho de código a segui
-        define uma aplicação que apresenta um vídeo e um ícone durante os
-        créditos do vídeo. Se o usuário selecionar o ícone, o vídeo é
+        <p>Para ilustrar o uso desse conceito em uma aplicação NCL, o trecho de
+        código a segui define uma aplicação que apresenta um vídeo e um ícone
+        durante os créditos do vídeo. Se o usuário selecionar o ícone, o vídeo é
         reiniciado.</p>
 
         <p>O trecho de código a utiliza um elemento <em>&ltport></em> e dois
@@ -1578,9 +1590,21 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Agora, vamos detalhar o conceito de <em>Reconhecedor</em> em NCL.
-        Para implementar esse <em>Reconhecedor</em> propomos o elemento de
-        <em>&ltinput></em>.</p>
+        <p>Agora, vamos detalhar o conceito <em>Reconhecedor</em> em NCL. Ele
+        permite o uso de reconhecimento de interações mutimodais realizadas pelo
+        ususário, como voz e gestos.</p>
+        
+        <p>O <em>Reconhecedor</em> é definido por <strong>um identificador, seu
+        conteúdo e âncoras</strong>.</p>
+        
+        <p>Na nossa NCL estendida, o conceito de <em>Reconhecedor</em> é
+        implementado pelo elemento <em>&ltinput></em>. O identificador é
+        definito pelo atributo <em>id</em> e o arquivo de descrição de
+        reconhecimento é definido atributo <em>src</em>. As âncoras são
+        definidas pelo elemento <em>area</em> e podem definem trechos
+        delimitados da descrição com o atributo <em>label</em>.</p>
+        
+        <p>Trechos de código serão apresentados para ilustrar conceito./p>
 
         <p>O trecho de código a seguir apresenta o arquivo
         <em>rec_voz.srgs</em>. Esse arquivo é uma descrição de reconhecimento de
@@ -1597,25 +1621,27 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <div id='nclIntro3CodeB'></div><br>
 
-        <p>Para ilustrar o uso de um <em>Reconhecedor</em> em NCL, o código
-        a seguir são uma nova versão da aplicação que reinicia um vídeo dado uma
-        interação. Mas nessa versão, ao invés de clicar, o vídeo será reiniciado
-        ao usuário falar "repita vídeo". Mais precisamente, a aplicação utiliza
-        um elemento <em>&ltmedia></em> mídias, um elemento de
-        <em>&ltinput></em>, um <em><port></em> e dois <em>&ltlink></em>s.</p>
+        <p>Para ilustrar o uso desse conceito em uma aplicação NCL, o trecho de
+        código a seguir defini uma nova versão da aplicação que reinicia um
+        vídeo dada uma interação. Mas nessa versão, ao invés de selecionar, o
+        vídeo é reiniciado ao usuário falar "repita vídeo".</p>
 
-        <p>O elemento de <em>&ltmedia></em> chamado de
-        <em>video_principal</em> (linhas 17-19) que define um trecho chamado
-        creditos que inicia aos 300s. O elemento <em>&ltinput></em>, chamado de
-        <em>rec</em>é definido utilizando utilizando o arquivo SRGS
-        <em>rec_voz.srgs</em> (linhas 20-22). O elemento <em>&ltport></em>
-        (linha 16) define que o <em>video_principal</em> é iniciado com
-        aplicação. O primeiro <em>&ltlink></em> (linhas 23-26) define que quando
-        o <em>video_principal</em> alcançar a sua porção de creditos (300s) o
-        reconhecedor <em>rec</em> inicia seu reconhecimento. O segundo
-        <em>&ltlink></em>(linhas 27-30) define que o <em>video_principal</em>
-        deve ser reiniciado (stop e start) quando for reconhecido o trecho
-        <em>repete</em>.</p>
+        <p>Essa aplicação utiliza dois elementos de
+        <em>&ltmedia></em>(<em>video_principal</em> e <em>sinte_voz</em>) e um
+        <em>&ltinput></em>(<em>rec_voz</em>). Os elementos <em>sinte_voz</em> e
+        <em>rec_voz</em> usam respectivamente os arquivos
+        <em>sinte_voz.srgs</em> e <em>rec_voz.srgs</em> (apresentados a cima). 
+        
+        <p>Para o comportamento, a aplicação utiliza um elemento
+        <em>&ltport></em> e dois <em>&ltlink></em>. O define <em>&ltport></em>
+        define que o <em>video_principal</em> é iniciado com aplicação
+        <em>midia_principal</em> inicia junto com a aplicalção. O primeiro
+        <em>&ltlink></em> define que quando o <em>video_principal</em> alcançar
+        a sua porção <em>creditos</em> (300s), a frase da âncora
+        <em>pergunta</em> é sintetizada e o reconhecedor <em>rec_voz</em> inicia
+        seu reconhecimento. O segundo <em>&ltlink></em> define que quando for
+        reconhecido a âncora <em>repete</em>, a <em>midia_principal</em> deve
+        ser reiniciada (terminada e inciada).</p>
 
         <div id='nclIntro3CodeC'></div>
         </div>
@@ -2298,8 +2324,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         permitir definir âncoras esses elementos são estendidos com elementos
         <em>&ltarea></em>. Uma <em>&ltarea></em> pode definir uma porção
         temporal com os atributos <em>begin</em> e <em>end</em> ou um trecho
-        delimitado com o atributo <em>label</em>. Trechos de código serão
-        apresentados para ilustrar conceito./p>
+        delimitado com o atributo <em>label</em>.</p>
+
+        <p>Trechos de código serão apresentados para ilustrar conceito./p>
 
         <p>O trecho de código a seguir define as duas mídias com identificadores
         <em>midia_principal</em> e <em>icone</em>, mas elas não possuem
@@ -2411,9 +2438,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>&ltlink></em> esta interessado é definida pelo metodo bind do um
         objeto <em>Synchronism</em>.</p>
 
-        <p>Para ilustrar o uso de objetos <em>Synchronism</em>, o código a
-        define uma aplicação que apresenta um vídeo e um ícone durante os
-        créditos do vídeo. Se o usuário selecionar o ícone, o vídeo é
+        <p>Para ilustrar o uso desse conceito em uma aplicação HTML, o trecho de
+        código a segui define uma aplicação que apresenta um vídeo e um ícone
+        durante os créditos do vídeo. Se o usuário selecionar o ícone, o vídeo é
         reiniciado.</p>
 
         <p>O trecho de código a utiliza três objetos <em>Synchronism</em>. O
@@ -2433,9 +2460,21 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Primeiro, vamos detalhar o conceito de <em>Reconhecedor</em> em HTML.
-        Para implementar esse <em>Reconhecedor</em> propomos o elemento de
-        <em>&ltinput></em>.</p>
+        <p>Agora, vamos detalhar o conceito <em>Reconhecedor</em> em HTML. Ele
+        permite o uso de reconhecimento de interações mutimodais realizadas pelo
+        ususário, como voz e gestos.</p>
+
+        <p>O <em>Reconhecedor</em> é definido por <strong>um identificador, seu
+        conteúdo e âncoras</strong>.</p>
+        
+        <p>Na nossa NCL estendida, o conceito de <em>Reconhecedor</em> é
+        implementado pelo elemento <em>&ltinput></em>. O identificador é
+        definito pelo atributo <em>id</em> e o arquivo de descrição de
+        reconhecimento é definido atributo <em>src</em>. As âncoras são
+        definidas pelo elemento <em>area</em> e podem definem trechos
+        delimitados da descrição com o atributo <em>label</em>.</p>
+        
+        <p>Trechos de código serão apresentados para ilustrar conceito./p>
 
         <p>O trecho de código a seguir apresenta o arquivo
         <em>rec_voz.srgs</em>. Esse arquivo é uma descrição de reconhecimento de
@@ -2452,23 +2491,27 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <div id='htmlIntro3CodeB'></div><br>
 
-        <p>O trecho de código a seguir ilustra uma aplicação que apresenta um
-        vídeo, ao qual pode ser reiniciado em sua porção de créditos por
-        comandos de voz. Mais precisamente, a aplicação utiliza um elemento
-        <em>&ltmedia></em> mídias, um elemento de <em>&ltinput></em>, um
-        <em><port></em> e dois <em>&ltlink></em>s. O elemento de
-        <em>&ltmedia></em> chamado de <em>video_principal</em> (linhas 17-19)
-        que define um trecho chamado créditos que inicia aos 300s. O elemento
-        <em>&ltinput></em>, chamado de <em>rec</em>é definido utilizando
-        utilizando o arquivo SRGS <em>rec_voz.srgs</em> (linhas 20-22). O
-        elemento <em>&ltport></em> (linha 16) define que o
-        <em>video_principal</em> é iniciado com aplicação. O primeiro
-        <em>&ltlink></em> (linhas 23-26) define que quando o
-        <em>video_principal</em> alançar a sua porção de créditos (300s) o
-        reconhecedor <em>rec</em> inicia seu reconhecimento. O segundo
-        <em>&ltlink></em>(linhas 27-30) define que o <em>video_principal</em>
-        deve ser reiniciado (stop e start) quando for reconhecido o trecho
-        <em>repete</em>.</p>
+        <p>Para ilustrar o uso desse conceito em uma aplicação HTML, o trecho de
+        código a seguir defini uma nova versão da aplicação que reinicia um
+        vídeo dada uma interação. Mas nessa versão, ao invés de selecionar, o
+        vídeo é reiniciado ao usuário falar "repita vídeo".</p>
+
+        <p>Essa aplicação utiliza dois elementos de
+        mídia (<em>video_principal</em> e <em>sinte_voz</em>) e um de
+        reconhecimento (<em>rec_voz</em>). Os elementos <em>sinte_voz</em> e
+        <em>rec_voz</em> usam respectivamente os arquivos
+        <em>sinte_voz.srgs</em> e <em>rec_voz.srgs</em> (apresentados a cima). 
+        
+        <p>Para o comportamento, a aplicação utiliza um <em>&lscript></em> com
+        três objetos <em>Synchronism</em>. O primeiro <em>Synchronism</em>
+        define que <em>midia_principal</em> é iniciada com a aplicação. O
+        segundo <em>Synchronism</em> define que quando o
+        <em>video_principal</em> alcançar a sua porção de <em>creditos</em>
+        (300s), a frase da âncora <em>pergunta</em> é sintetizada e o
+        reconhecedor <em>rec</em> inicia seu reconhecimento. O último
+        <em>Synchronism</em> define que o <em>video_principal</em> deve ser
+        reiniciado (<em>stop</em> e <em>start</em>) quando for reconhecido o
+        trecho <em>repete</em>.</p>
 
         <div id='htmlIntro3CodeC'></div>
         </div>
