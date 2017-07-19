@@ -1634,25 +1634,13 @@ _data.nclIntro1CodeE = `
 
 _data.nclIntro2CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[20,24,28,32]">
+  auto-links: false; highlight:[7,8,12,16,20,]">
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <ncl>
-    <head>
-      <connectorBase>
-        <causalConnector id="onBeginStart">
-          <simpleCondition role="onBegin"></simpleCondition>
-          <simpleAction role="start" max="unbounded"></simpleAction>
-        </causalConnector>
-        <causalConnector id="onSelectionStopStart">
-          <simpleCondition role="onSelection" max="unbounded"/>
-          <compoundAction>
-            <simpleAction role="stop" max="unbounded"/>
-            <simpleAction role="start" max="unbounded"/>
-          </compoundAction>
-        </causalConnector>
-      </connectorBase>
-    </head>
+    <connectorBase>
+      <importBase documentURI="causalConnBase.ncl" alias="conEx"/>
+    </connectorBase>
     <body>
       <port component="video_principal"/>
       <media id="video_principal" src="video.mp4">
@@ -1663,11 +1651,11 @@ _data.nclIntro2CodeA = `
         <property name="size" value="20%, 20%" />
         <property name="zindex" value="1" />
       </media>
-      <link xconnector="onBeginStart">
+      <link xconnector="conEx#onBeginStart">
         <bind role="onBegin" component="video_principal" interface="credits"/>
         <bind role="start" component="icone_repetir"/>
       </link>
-      <link xconnector="onSelectionStopStart">
+      <link xconnector="conEx#onSelectionStopStart">
         <bind role="onSelection" component="icone_repetir"/>
         <bind role="stop" component="video_principal"/>
         <bind role="start" component="video_principal"/>
@@ -1725,23 +1713,13 @@ _data.nclIntro3CodeB = `
 `
 _data.nclIntro3CodeC = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[9,20,24,27,30,35]">
+  auto-links: false; highlight:[14,17,25]">
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <ncl>
     <head>
       <connectorBase>
-        <causalConnector id="onBeginStart">
-          <simpleCondition role="onBegin"></simpleCondition>
-          <simpleAction role="start" max="unbounded"></simpleAction>
-        </causalConnector>
-        <causalConnector id="onRecognizeStopStart">
-          <simpleCondition role="onRecognize" />
-          <compoundAction>
-            <simpleAction role="stop" max="unbounded"/>
-            <simpleAction role="start" max="unbounded"/>
-          </compoundAction>
-        </causalConnector>
+        <importBase documentURI="causalConnBase.ncl" alias="conEx"/>
       </connectorBase>
     </head>
     <body>
@@ -1756,12 +1734,12 @@ _data.nclIntro3CodeC = `
       <input id="rec_voz" src="rec_voz.srgs">
         <area label="repete"/>
       </input>
-      <link xconnector="onBeginStart">
+      <link xconnector="conEx#onBeginStart">
         <bind role="onBegin" component="video_principal" interface="credits"/>
         <bind role="start" component="sinte_voz" interface="pergunta"/>
         <bind role="start" component="rec_voz"/>
       </link>
-      <link xconnector="onRecognizeStopStart">
+      <link xconnector="conEx#onRecognizeStopStart">
         <bind role="onRecognize" component="rec_voz" interface="repete"/>
         <bind role="stop" component="rec_voz"/>
         <bind role="stop" component="video_principal"/>
@@ -1787,23 +1765,12 @@ _data.nclIntro4CodeA = `
 `
 _data.nclIntro4CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[10,11,19,20,42]"> <![CDATA[
+  auto-links: false; highlight:[8,9,31]"> <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <ncl>
     <head>
       <connectorBase>
-        <causalConnector id="onBeginStart">
-          <simpleCondition role="onBegin"></simpleCondition>
-          <simpleAction role="start" max="unbounded"></simpleAction>
-        </causalConnector>
-        <causalConnector id="onRecognizeStopStart">
-          <connectorParam name="user_id"/>
-          <simpleCondition role="onRecognize" user_id="$user_id"/>
-          <compoundAction>
-            <simpleAction role="stop" max="unbounded"/>
-            <simpleAction role="start" max="unbounded"/>
-          </compoundAction>
-        </causalConnector>
+        <importBase documentURI="causalConnBase.ncl" alias="conEx"/>
       </connectorBase>
       <userBase>
         <userClass id="gu_leap_microphone" max="2"
@@ -1822,12 +1789,12 @@ _data.nclIntro4CodeB = `
       <input id="rec_voz" src="rec_voz.srgs">
         <area label="repete"/>
       </input>
-      <link xconnector="onBeginStart">
+      <link xconnector="conEx#onBeginStart">
         <bind role="onBegin" component="video_principal" interface="credits"/>
         <bind role="start" component="sinte_voz" interface="pergunta"/>
         <bind role="start" component="rec_voz"/>
       </link>
-      <link xconnector="onRecognizeStart">
+      <link xconnector="conEx#onRecognizeStart">
         <bind role="onRecognize" component="rec_voz" interface="repete">
           <linkParam name="user_id" value="gu_leap_microphone(2)"/>
         </bind>
@@ -1937,17 +1904,7 @@ _data.nclTask1Code = `
   <ncl xmlns="http://www.ncl.org.br/NCL3.0/EDTVProfile">
     <head>
       <connectorBase>
-        <causalConnector id="onBeginStart">
-          <simpleCondition role="onBegin"/>
-          <simpleAction role="start" max="unbounded"/>
-        </causalConnector>
-        <causalConnector id="onSelectionStopStart">
-          <simpleCondition role="onSelection" />
-          <compoundAction>
-            <simpleAction role="stop" ax="unbounded"/>
-            <simpleAction role="start" max="unbounded" />
-          </compoundAction>
-        </causalConnector>
+        <importBase documentURI="causalConnBase.ncl" alias="conEx"/>
       </connectorBase>
     </head>
     <body>
@@ -1972,7 +1929,7 @@ _data.nclTask1Code = `
         <property name="size" value="20%, 20%" />
         <property name="zindex" value="1" />
       </media>
-      <link xconnector="onBeginStart">
+      <link xconnector="conEx#onBeginStart">
         <bind role="onBegin" component="video_inicial" interface="creditos">
         <bind role="start" component="icone_centro" />
         <bind role="start" component="icone_praia" />
@@ -2025,17 +1982,7 @@ _data.nclTask2CCodeOnly = `
    <ncl xmlns="http://www.ncl.org.br/NCL3.0/EDTVProfile">
     <head>
       <connectorBase>
-        <causalConnector id="onBeginStart">
-          <simpleCondition role="onBegin"/>
-          <simpleAction role="start" max="unbounded"/>
-        </causalConnector>
-        <causalConnector id="onRecognizeStopStart">
-          <simpleCondition role="onRecognize" />
-          <compoundAction>
-            <simpleAction role="stop" ax="unbounded"/>
-            <simpleAction role="start" max="unbounded" />
-          </compoundAction>
-        </causalConnector>
+        <importBase documentURI="causalConnBase.ncl" alias="conEx"/>
       </connectorBase>
     </head>
     <body>
@@ -2056,7 +2003,7 @@ _data.nclTask2CCodeOnly = `
         <area label="centro" />
         <area label="praia" />
       </input>
-      <link xconnector="onBeginStart">
+      <link xconnector="conEx#onBeginStart">
         <bind role="onBegin" component="video_inicial" interface="creditos" />
         <bind role="start" component="sinte_voz_videos" interface="pergunta"/>
         <bind role="start" component="rec_voz" />
