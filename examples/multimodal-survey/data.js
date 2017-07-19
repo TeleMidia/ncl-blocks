@@ -31,27 +31,27 @@ _data.surveyJSON.pages.push({
       html: `
         <div style="text-align: justify; width: 70%;">
         <p>O TeleMídia é um grupo de pesquisa do Departamento de Informática
-        da PUC-Rio. O TeleMídia desenvolve pesquisas nas áreas de Sistemas 
-        Multimídia e Redes de Computadores. Em particular, Sistemas de TV 
-        Digital terrestre e IPTV, têm sido foco de pesquisa e inovação do 
+        da PUC-Rio. O TeleMídia desenvolve pesquisas nas áreas de Sistemas
+        Multimídia e Redes de Computadores. Em particular, Sistemas de TV
+        Digital terrestre e IPTV, têm sido foco de pesquisa e inovação do
         laboratório nos últimos anos.</p>
-        
+
         <p>Convidamos a você a participar deste estudo sobre nossa pesquisa
         de <i>Interações multimodais em linguagens multimídia</i>.</p>
-        
+
         <p><strong>Ressaltamos que este estudo NÃO se destina a avaliar você,
         mas sim capturar evidências para nossa pesquisa.</strong></p>
-        
+
         <p>Para prosseguirmos, pedimos seu consentimento para realizarmos
-        este estudo e informamos que:</p> 
-        <ul> 
+        este estudo e informamos que:</p>
+        <ul>
         <li>Os dados coletados destinam-se estritamente a atividades de
         pesquisa e desenvolvimento, e somente os pesquisadores do TeleMídia
-        têm acesso à íntegra do material resultante do estudo.</li> 
+        têm acesso à íntegra do material resultante do estudo.</li>
         <li>A divulgação dos resultados de nossa pesquisa em foros
         científicos e/ou pedagógicos pauta-se no respeito à privacidade, e o
         anonimato dos participantes é preservado em qualquer material
-        publicado.</li> 
+        publicado.</li>
         </ul>
         <p>Caso esteja de acordo, prossiga.</p>
         </div>
@@ -161,7 +161,7 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'sintax',
-      title: `O quanto o desenvolvimento em HTML/JavaScript requer 
+      title: `O quanto o desenvolvimento em HTML/JavaScript requer
       o uso de bibliotecas de manipulação de DOM, como jQuery ou Prototype?`,
       choices: ['nunca', 'quase nunca',
         'indiferente', 'quase sempre ', 'sempre']
@@ -181,8 +181,8 @@ _data.surveyJSON.pages.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>O objetivo desta seção do estudo é oferecer uma introdução sobre o 
-        conceito de <strong>linguagens multimídia com interações 
+        <p>O objetivo desta seção do estudo é oferecer uma introdução sobre o
+        conceito de <strong>linguagens multimídia com interações
         multimodais</strong>, proposto em nossa pesquisa.</p>
         </div>
       `
@@ -233,19 +233,19 @@ _data.surveyJSON.pages.push({
         tecla</strong> para capturar interações de usuário.</p>
 
         <div class='text-center'>
-          <img class='center-block img-thumbnail' style='height: 500px' 
+          <img class='center-block img-thumbnail' style='height: 500px'
             src='assets/overview1.svg'>
         </div>
         <br>
-        
-        <p>A <strong>linguagem multimídia</strong> é na verdade o formato que 
-        permite a um autor definir um documento multimídia. Ela define uma 
-        sintaxe e elementos de linguagem. Exemplos atuais de linguagens 
+
+        <p>A <strong>linguagem multimídia</strong> é na verdade o formato que
+        permite a um autor definir um documento multimídia. Ela define uma
+        sintaxe e elementos de linguagem. Exemplos atuais de linguagens
         multimídia são a NCL (Nested Context Language) [2] e a HTML [3].</p>
 
-        [1] <a 
-        href='https://www.pearson.com/us/higher-education/product/Steinmetz-Multimedia-Computing-Communications-and-Applications/9780133244359.html'> 
-        Steinmetz, R. and Nahrstedt, K. 1995. Multimedia: Computing, 
+        [1] <a
+        href='https://www.pearson.com/us/higher-education/product/Steinmetz-Multimedia-Computing-Communications-and-Applications/9780133244359.html'>
+        Steinmetz, R. and Nahrstedt, K. 1995. Multimedia: Computing,
         Communications and Applications. Prentice Hall.</a><br>
         [2] <a href='#'>https://www.itu.int/rec/T-REC-H.761</a><br>
         [3] <a href='#'>https://www.w3.org/TR/html5</a><br>
@@ -256,8 +256,8 @@ _data.surveyJSON.pages.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Agora, devemos introduzir o conceito de <strong>linguagens 
-        multimídia com interações multimodais</strong>, que está intimamente 
+        <p>Agora, devemos introduzir o conceito de <strong>linguagens
+        multimídia com interações multimodais</strong>, que está intimamente
         relacionado com interfaces multimodais.</p>
 
         <p>Oviatt [4] define que <strong>interfaces multimodais</strong> como
@@ -265,7 +265,7 @@ _data.surveyJSON.pages.push({
         comportamento humano, como fala e gestos. Por exemplo, algumas
         interfaces multimodais para crianças e idosos utilizaram de
         comunicação de voz, avaraes humanos ou gestos.</p>
-        
+
         <p>Esse tipo de interface foi apoiada pelos recentes avanços em
         tecnologias de reconhecimento e <strong>dispositivos de interação
         multimodal</strong>. Ilustrados a seguir, citamos o uso de microfones
@@ -275,9 +275,9 @@ _data.surveyJSON.pages.push({
 
         <div class='text-center'>
           <img class='img-thumbnail' style='height: 180px'
-          src='assets/voice.jpg'> 
+          src='assets/voice.jpg'>
           <img class='img-thumbnail' style='height:
-          180px' src='assets/leap.jpg'> 
+          180px' src='assets/leap.jpg'>
           <img class='img-thumbnail'
           style='height: 180px' src='assets/kinect.jpg'>
         </div>
@@ -287,11 +287,11 @@ _data.surveyJSON.pages.push({
         de um documento multimídia com suporte a interações multimodais. Nesse
         tipo de documento, o autor não apenas defini as mídias utilizadas e o
         sincronismo entre elas, mas também de defini interações multimodais.</p>
-        
+
         <p>As interações multimodais são regalmente definidas por descrições
         auxiliares que define características especifica da modalidade. Essas
         descrições podem ser de sintetização e reconhecimento modalidades.</p>
-        
+
         <p>Exemplos de descrições de sintetização são o SSML (Speech Synthesis
         Markup Language) [5] para sintetização de voz e BML (Behavior Markup
         Language) para sintetização de avatares humanos.</p>
@@ -308,7 +308,7 @@ _data.surveyJSON.pages.push({
         reconhecimento, além de dispositivos audiovisuais.</p>
 
         <div class='text-center'>
-          <img class='img-thumbnail' style='height: 500px' 
+          <img class='img-thumbnail' style='height: 500px'
           src='assets/overview2.svg'>
         </div>
         <br>
@@ -329,7 +329,7 @@ _data.surveyJSON.pages.push({
         [4] <a href='#'>https://www.w3.org/TR/speech-synthesis/<a>
         [5] <a href='#'>http://www.mindmakers.org/projects/bml-1-0/wiki<a>
         [6] <a href='http://dx.doi.org/10.1201/9781410615862.ch21'>
-        Oviatt, S. 2007. Multimodal Interfaces. Human-Computer Interaction 
+        Oviatt, S. 2007. Multimodal Interfaces. Human-Computer Interaction
         Handbook. CRC Press, 413–432</a><br>
         [7] <a href='#'>https://www.w3.org/TR/speech-grammar<a>
         </div>
@@ -369,23 +369,23 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     {
       type: 'html',
       html: `
-        <div style="text-align: justify; width: 70%;"> 
+        <div style="text-align: justify; width: 70%;">
         <p>Em nossa pesquisa, argumentamos que as linguagens multimídia atuais
         não suportam adequadamente interações multimodais e ser consideradas
         "output-oriented". Pois essa linguagens atuas tem maior foco na
         apresentação na conteúdos de mídia, como imagens, vídeo e áudios.</p>
-        
+
         <p>Em nossa pesquisa propomos quatro conceitos que são necessários para
         linguagem multimídia com interações multimodais. Mais precisamente esses
         conceitos são os de <em>Mídia, Reconhecedor, Sincronismo</em> e
         <em>Grupo de Usuários</em>.</p>
-        
+
         <p>Esta seção tem o objetivo de detalhar esses conceitos para o
         participante e capturar evidências de nossa pesquisa. Para evitar
         possíveis dificuldades dada a sintaxe de linguagens, apresentaremos
         esses conceitos utilizando uma abordagem de <strong>desenvolvimento de
         aplicações através de blocos</strong>.</p>
-        
+
         <p>Esse tipo de abordagem é bastante utilizado para o ensino de
         programação ou para ferramentas de geração de código. Em especial,
         esse tipo de desenvolvimento foi popularizado por ferramentas como o
@@ -395,10 +395,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         aplicações móveis. Ambos são ilustrados a seguir.</p>
 
         <div class='text-center'>
-          <img class='img-thumbnail' style='height: 270px' 
+          <img class='img-thumbnail' style='height: 270px'
           src='assets/scratch.jpg'>
           <span style="margin-left:10px"></span>
-          <img class='img-thumbnail' style='height: 270px' 
+          <img class='img-thumbnail' style='height: 270px'
           src='assets/appinventor.jpg'>
         </div>
         <br>
@@ -415,13 +415,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;">
         <p>Primeiro, vamos detalhar <em>Mídia</em>. Ele permite definir o uso de
         conteúdo audiovisual. </p>
-        
+
         <p>Uma <em>Mídia</em> é definida por <strong>um identificador, um
         conteúdo e âncoras</strong>. O conteúdo consiste em um arquivo de mídia,
         como imagem jpeg, vídeo mp4, áudio mp3, entre outros. As âncoras são
         porções do conteúdo e podem ser trechos emporais (e.g. entre 300s e
         360s) ou trechos delimitados do conteúdo.</p>
-        
+
         <p>Na representação por blocos, a <em>Mídia</em> é definida juntando um
         bloco de <em>Mídia</em> e um bloco de conteúdo de <em>Mídia</em>
         Exemplos de blocos serão apresentados para ilustrar o conceito.</p>
@@ -431,7 +431,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         conteúdo. Por não terem conteúdo, essas <em>&ltmedia></em> não
         apresentaram resultados audiovisuais.</p>
         </div>
-        
+
         <div id='conceptsIntro1A'></div><br>
 
         <div style="text-align: justify; width: 70%;"> <p>Os blocos a seguir
@@ -440,7 +440,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         definido uma âncora chamada de <em>creditos</em> que inicia aos 300 e
         termina aos 360 segundos.</p>
         </div>
-        
+
         <div id='conceptsIntro1B'></div><br>
 
         <div style="text-align: justify; width: 70%;">
@@ -453,7 +453,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <div id='conceptsIntro1C'></div><br>
 
-        <div style="text-align: justify; width: 70%;"> 
+        <div style="text-align: justify; width: 70%;">
         <p>Além de midías como imagens, áudio e vídeos, o conceito
         <em>Mídia</em> abrange também outras modalidades conteúdo como voz
         sintetizada e avatares humanoides. Os blocos a seguir definem a
@@ -470,33 +470,33 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       name: 'conceptsIntro2',
       html: `
-        <div style="text-align: justify; width: 70%;">        
+        <div style="text-align: justify; width: 70%;">
         <p>Agora, vamos detalhar o conceito de <em>Sincronismo</em>. Ele
         permite definir o comportamento das aplicações.</p>
 
         <p>O <em>Sincronismo</em> é baseado em causalidade e definido
         por <strong>um conjunto de condições e um conjunto de ações</strong>. Ou
         seja, ações são realizadas quando as condições são satisfeitas.</p>
-        
+
         <p>As ações são executadas em sequência. Exemplos de ações são
         iniciar('start') ou parar('stop') uma <em>Mídia</em> ou
         <em>Reconhecedor</em> .</p>
-        
+
         <p>As condições podem ser simples ou compostas. Exemplos de condições
         simples são o início da aplicação, o início ('onBegin') ou fim ('onEnd')
         de uma mídia ou de sua âncora, além de interações usuário (e.g.
         'onSelection' e 'onRecognition').<p>
-        
+
         <p>Ações compostas combinam ações simples de três operadores: 'OR'
         quando apenas uma das condições é necessária; 'AND' quando todos
         condições são necessária; e 'SEQ' quando todos as ações são necessárias
-        e na sequência estabelecida.</p> 
-       
+        e na sequência estabelecida.</p>
+
         <p>Para ilustrar o uso de <em>Sincronismo</em>, os blocos a
         seguir definem uma aplicação que apresenta um vídeo e um ícone durante
         os créditos do vídeo. Se o usuário selecionar o ícone, o vídeo é
-        reiniciado.</p> 
-        
+        reiniciado.</p>
+
         <p>Os blocos definem novamente <em>midia_principal</em> e um
         <em>Sincronismo<em> do bloco anterior, mas adicionam a mídia
         <em>icone</em> e mais dois <em>Sincronismo</em>s. O primeiro
@@ -506,7 +506,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>Sincronismo</em> adicionado define que quando a mídia
         <em>icone_repetir</em> for selecionada, a <em>midia_principal</em> deve
         ser reiniciada (terminada e inciada)</p>
-        
+
         </div>
 
         <div id='conceptsIntro2b'></div>
@@ -516,7 +516,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       name: 'conceptsIntro3',
       html: `
-        <div style="text-align: justify; width: 70%;"> 
+        <div style="text-align: justify; width: 70%;">
         <p>Agora, detalhamos a seguir <em>Reconhecedor</em>. Ele permite o uso
         de reconhecimento de interações mutimodais realizadas pelo ususário,
         como voz e gestos.</p>
@@ -535,17 +535,17 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         reconhece o comando de voz "repita vídeo". O <rec_gestos> tem uma
         descrição de reconhecimento de gestos como conteúdo. Esse conteúdo
         utiliza dois trechos, esquerda e direita, para definir gestos de mão
-        nessas direções.</p> 
+        nessas direções.</p>
         </div>
-        
+
         <div id='conceptsIntro3a'></div><br>
-        
+
         <div style="text-align: justify; width: 70%;">
         <p>Para ilustrar o uso de <em>Reconhecedor</em>, os blocos a
         seguir são uma nova versão da aplicação que reinicia um vídeo dada
         uma interação. Mas nessa versão, ao invés de clicar, o vídeo é
         reiniciado ao usuário falar "repita vídeo".</p>
-        
+
         <p>Os blocos a seguir definem duas <em>Mídia</em>
         (<em>midia_principal</em> e <em>sinte_voz</em>), um
         <em>Reconhecedor</em> (<em>rec_voz</em>) e três <em>Sincronismo</em>s. O
@@ -558,7 +558,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         reconhecido a <em>midia_principal</em> deve ser reiniciada (terminada e
         inciada).</p>
         </div>
-        
+
         <div id='conceptsIntro3b'></div><br>
       `
     },
@@ -575,7 +575,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         número maximo de participantes e quais dispositivos estes
         utilizam</strong>. Mais precisamente, esses dispositivos definem o que
         um usuário necessita possuir para participar do grupo.</p>
-        
+
         <p>Os blocos a seguir definem um grupo de usuário <em>gu_gestos</em>
         que pode ter até 3 membros, cada um com seu reconhecedor de gestos
         (e.g. LeapMotion).</p>
@@ -1314,7 +1314,7 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'conceptsFeedbackQuestion6',
-      title: `De modo geral, os conceitos apresentados **são fáceis** de 
+      title: `De modo geral, os conceitos apresentados **são fáceis** de
         utilizar.`,
       choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
         'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
@@ -1354,7 +1354,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         o elemento <em>&ltlink></em> permite criar sincronismos entre mídias e
         sincronismos baseados em interações de usuário por apontador e
         tecla.</p>
-      
+
         <p><strong>Esta seção não tem o objetivo de ensinar a linguagem
         NCL</strong>. Mas sim tem o objetivo de apresentar como os conceitos
         apresentados na seção anterior ser instanciados na linguagem NCL. A
@@ -1396,12 +1396,12 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'nclIntro1',
       type: 'html',
       html: `
-        <div style="text-align: justify; width: 70%;">         
-        <p>Primeiro, vamos detalhar o conceito de <em>Mídia</em>. 
-        
+        <div style="text-align: justify; width: 70%;">
+        <p>Primeiro, vamos detalhar o conceito de <em>Mídia</em>.
+
         <p>Uma <em>Mídia</em> é definida por <strong>um identificador, um
         conteúdo e âncoras</strong>. </p>
-        
+
         <p>Na NCL, o conceito de <em>Mídia</em> já é implementado pelo elemento
         XML <em>&ltmedia></em>. O identificador é definito pelo atributo
         <em>id</em> e o arquivo de mídia do conteúdo é definido atributo
@@ -1414,16 +1414,16 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>midia_principal</em> e <em>icone</em>, mas elas não possuem
         conteúdo. Por não terem conteúdo, elas não apresentaram resultados
         audiovisuais.</p>
-        
+
         <div id='nclIntro1CodeA'></div><br>
 
         <p>O trecho de código a seguir define as mesmas mídias acima, mas com
         conteúdos de áudio e imagem, respectivamente. Em especial, a mídia de
         <em>midia_principal</em> tem definido uma âncora chamada de
         <em>creditos</em> que inicia aos 300 e termina aos 360 segundos.</p>
-        
+
         <div id='nclIntro1CodeB'></div><br>
-        
+
         <p>É importante ressaltar que mudanças no conteúdo de uma
         <em>&ltmedia></em> não afetam o comportamento da aplicação, desde que a
         mídia defina os mesmos trechos, pois os sincronismos são definidos
@@ -1437,7 +1437,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         de conteúdo como sintetização de voz e avatares humanoides. Por exemplo,
         os trechos de código a seguir ilustram o uso de sintetização de voz em
         nossa NCL.</p>
-        
+
         <p>O primeiro trecho de código a seguir apresenta o arquivo
         <em>sinte_voz.srgs</em>, que é uma descrição de sintetização de voz no
         formato SSML. Em particular, esse arquivo defini a frase a ser
@@ -1457,30 +1457,30 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'nclIntro2',
       type: 'html',
       html: `
-        <div style="text-align: justify; width: 70%;">        
+        <div style="text-align: justify; width: 70%;">
         <p>Agora, vamos detalhar o conceito de <em>Sincronismo</em>.Ele
         permite definir o comportamento das aplicações.</p>
-        
+
         <p>O <em>Sincronismo</em> é baseado em causalidade e definido definido
         por <strong>um conjunto de condições e um conjunto de ações</strong>. Ou
-        seja, ações são realizadas quando as condições são satisfeitas.</p> 
-        
+        seja, ações são realizadas quando as condições são satisfeitas.</p>
+
         <p>Na NCL que esse conceito já implementado pelo elementos
         <em>&ltport></em> e <em>&ltlink></em>.</p>
-        
+
         <p>Elementos <em>&ltport></em> indicam quais elementos de
-        <em>&ltmedia></em> são iniciados quando a aplicação é iniciada. 
-        
+        <em>&ltmedia></em> são iniciados quando a aplicação é iniciada.
+
         <p>Elementos <em>&ltlink></em> tem condições simples ou compostas, e
         ações que são executadas em sequência. Exemplos de condições simples são
         o início da aplicação, o início ('onBegin') ou fim ('onEnd') de uma
         mídia ou de sua âncora, além de interações usuário (e.g. 'onSelection' e
         'onRecognition'). Exemplos de ações são iniciar ou parar uma mídia.</p>
-        
+
         <p>Para ilustrar o uso desses elementos, o trecho de código a segui
         define uma aplicação que apresenta um vídeo e um ícone durante os
         créditos do vídeo. Se o usuário selecionar o ícone, o vídeo é
-        reiniciado.</p> 
+        reiniciado.</p>
 
         <p>O trecho de código a seguir tem um elemento <em>&ltport></em> e dois
         elementos <em>&ltlink></em>. O <em>&ltport></em> define que o elemento
@@ -1507,7 +1507,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>rec_voz.srgs</em>. Esse arquivo é uma descrição de reconhecimento de
         voz no formato SRGS. Em particular, ele define uma porção chamada
         <em>repete</em> que define o reconhecimento de voz "repita vídeo".</p>
-        
+
         <div id='nclIntro3CodeA'></div><br>
 
         <p>O trecho de código a seguir apresenta o arquivo
@@ -1525,7 +1525,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         utiliza um elemento <em>&ltmedia></em> mídias, um elemento de
         <em>&ltinput></em>, um <em><port></em> e dois
         <em>&ltlink></em>s.</p>
-        
+
         <p>O elemento de <em>&ltmedia></em> chamado de
         <em>video_principal</em> (linhas 17-19) que define um trecho chamado
         creditos que inicia aos 300s. O elemento <em>&ltinput></em>, chamado de
@@ -1559,7 +1559,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         seguir apresenta o arquivo de descrição de ususários
         <em>gu_leap_microphone.sparql</em>. Essa descrição define que cada
         usuário do grupo deve ter um headset e um leapmotion.</p >
-        
+
         <div id='nclIntro4CodeA'></div><br>
 
         <p>O elemento  <em>&ltuserClass></em> é definido dentro do
@@ -1781,7 +1781,7 @@ _data.nclIntro4CodeA = `
   SELECT ?person
   WHERE {
   ?person prf:component ? component.
-  ?component prf: name ? name FILTER regex(?name, “Leap Motion”) 
+  ?component prf: name ? name FILTER regex(?name, “Leap Motion”)
     ? name FILTER regex(?name, “Microphone”)
   }
   ]]></script>
@@ -1808,7 +1808,7 @@ _data.nclIntro4CodeB = `
       </connectorBase>
       <userBase>
         <userClass id="gu_leap_microphone" max="2"
-          userClassDescription="gu_leap_microphone.sparql" /> 
+          userClassDescription="gu_leap_microphone.sparql" />
       </userBase>
     </head>
     <body>
@@ -1852,14 +1852,14 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     {
       type: 'html',
       html: `
-        <div style="text-align: justify; width: 70%;"> 
+        <div style="text-align: justify; width: 70%;">
         <p>Agora, pedimos que você realize as quatro tarefas a seguir. Duas
         tarefas consistem em interpretar códigos e outra duas editar
         códigos.</p>
-        
+
         <p><strong>Ressaltamos que essas tarefas NÃO se destinam a avaliar seus
         conhecimentos, mas sim capturar evidências de nossa
-        pesquisa.</strong></p> 
+        pesquisa.</strong></p>
         </div>
       `
     },
@@ -1885,18 +1885,18 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       name: 'nclTask2',
       html: `
-        <div style="text-align: justify; width: 70%;"> 
+        <div style="text-align: justify; width: 70%;">
         Tarefa 2: Considere as descrições sinte_voiz.ssml e rec.voz.srgs,
         respectivamente, a seguir.<br><br>
 
         <div id='nclTask2CodeA'></div>
         <div id='nclTask2CodeB'></div>
-        
+
         A aplicação NCL da Tarefa 1 foi modificada para permitir interações
         multimodais utilizando as descrições aima. O novo trecho de código é
         apresentado a seguir com as modificações destacadas. Por favor, analise
-        com cuidado.</p> 
-        
+        com cuidado.</p>
+
         <div id='nclTask2CodeC'></div>
         </div>
       `
@@ -2095,7 +2095,7 @@ _data.surveyJSON.pages.push({
     {
       type: 'html',
       html: `
-        <div style="text-align: justify; width: 70%;"> 
+        <div style="text-align: justify; width: 70%;">
         <p>Por favor, opine sobre os pontos a seguir. Eles tem o objetivo de
         capturar evidências de como os conceitos apresentados na seção
         anterior(<em>Mídia, Reconhecedor, Sincronismo</em> e <em>Grupo de
@@ -2204,7 +2204,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
   elements: [
     {
       type: 'html',
-      html: ` 
+      html: `
         <div style="text-align: justify; width: 70%;">
         <p>A linguagem HTML é utilizada para criar conteúdo multimídia na web.
         Em particular, sua versão atual (HTML 5) oferece, entre outros, os
@@ -2214,7 +2214,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         de elementos <em>script</em>. Um <em>script</em> pode criar sincronismos
         de mídias e sincronismos baseados em interações de usuário por apontador
         e tecla.</p>
-        
+
         <p><strong>Esta seção não tem o objetivo de ensinar a linguagem
         HTML</strong>. Esta seção tem sim o objetivo de apresentar como os
         como os conceitos apresentados na seção anterior podem ser instanciados
@@ -2257,12 +2257,12 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'htmlIntro1',
       type: 'html',
       html: `
-        <div style="text-align: justify; width: 70%;"> 
+        <div style="text-align: justify; width: 70%;">
         <p>Primeiro, vamos detalhar o conceito de <em>Mídia</em> em HTML.</p>
-        
+
         <p>Uma <em>Mídia</em> é definida por <strong>um identificador, um
         conteúdo e âncoras</strong>.</p>
-        
+
         <p>Em nossa HTML estendida, o conceito de <em>Mídia</em> é implementado
         por elementos como <em>&ltimg></em>, <em>&ltaudio></em>. Entretanto,
         eles são estendidos para <em>&ltarea></em> para permitir definir âncoras
@@ -2281,14 +2281,14 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         conteúdos de áudio e imagem, respectivamente. Em especial, a mídia de
         <em>midia_principal</em> tem definido uma âncora chamada de
         <em>creditos</em> que inicia aos 300 e termina aos 360 segundos.</p>
-        
+
         <div id='htmlIntro1CodeB'></div><br>
-        
+
         <p>É importante ressaltar que mudanças no conteúdo de uma
         <em>&ltmedia></em> não afetam o comportamento da aplicação, desde que a
         mídia defina os mesmos trechos, pois os sincronismos são definidos
         independe do conteúdo. Por exemplo, os blocos a seguir definem a mesma
-        mídia <em>midia_principal</em> mas com o conteúdo de vídeo.</p> 
+        mídia <em>midia_principal</em> mas com o conteúdo de vídeo.</p>
 
         <div id='htmlIntro1CodeC'></div>
 
@@ -2296,21 +2296,21 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         suportar outras modalidades de conteúdo como sintetização de voz e
         avatares humanoides. Por exemplo, os trechos de código a seguir ilustram
         o uso de sintetização de voz em nossa HTML. </p>
-        
+
         <p>O primeiro trecho de código a seguir apresenta o arquivo
         <em>sinte_voz.srgs</em>, que é uma descrição de sintetização de voz no
         formato SSML. Em particular, esse arquivo defini a frase a ser
-        sintetizada "você deseja repetir o video?".</p> 
-        
+        sintetizada "você deseja repetir o video?".</p>
+
         <div id='htmlIntro1CodeD'></div>
 
         O segundo trecho de código define uma mídia com identificador
         <em>sinte_voz</em> que tem como conteúdo o arquivo
         <em>sinte_voz.srgs</em>. Essa mídia possui uma âncora que indica a frase
         a ser sintetizada.</p>
-        
+
         <div id='htmlIntro1CodeE'></div>
-        
+
         </div>
       `
     },
@@ -2321,7 +2321,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;">
         <p>Agora, vamos detalhar o conceito de <em>Sincronismo</em>. Ele
         permite definir o comportamento das aplicações.</p>
-        
+
         <p>O <em>Sincronismo</em> é baseado em causalidade e definido definido
         por <strong>um conjunto de condições e um conjunto de ações</strong>. Ou
         seja, ações são realizadas quando as condições são satisfeitas.</p>
@@ -2338,7 +2338,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Para ilustrar de objetos <em>Synchronism</em>, o código a
         define uma aplicação que apresenta um vídeo e um ícone durante os
         créditos do vídeo. Se o usuário selecionar o ícone, o vídeo é
-        reiniciado.</p> 
+        reiniciado.</p>
 
         <p>O trecho de código tem três objetos <em>Synchronism</em>. O
         primeiro define que o elemento <em>midia_principal</em> incia com a
@@ -2414,7 +2414,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         seguir apresenta o arquivo de descrição de ususários
         <em>gu_leap_microphone.sparql</em>. Essa descrição define que cada
         usuário do grupo deve ter um headset e um leapmotion.</p >
-          
+
         <div id='htmlIntro4CodeA'></div><br>
 
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em HTML, o
@@ -2473,9 +2473,9 @@ _data.htmlIntro2CodeA = `
   <html>
   <head></head>
   <body>
-    <img id="img_repetir" src="img_repetir.png" 
+    <img id="img_repetir" src="img_repetir.png"
       style="position: absolute; left: 50%; top: 50%; z-index: 1;" />
-    <video id="midia_principal" src="video.mp4" 
+    <video id="midia_principal" src="video.mp4"
       style="position: absolute; hight 100%; width: 100%;" >
       <area id="credits" begin="300s" end="360s" />
     </video>
@@ -2547,8 +2547,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;">
         <p>Agora, pedimos que você realize as quatro tarefas a seguir. Duas
         tarefas consistem em interpretar códigos e outra duas editar
-        códigos.</p> 
-        
+        códigos.</p>
+
         <p><strong>Ressaltamos que essas tarefas NÃO se destinam a avaliar seus
         conhecimentos, mas sim capturar evidências de nossa
         pesquisa.</strong>.</p>
@@ -2573,18 +2573,18 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       name: 'htmlTask2',
       html: `
-        <div style="text-align: justify; width: 70%;"> 
+        <div style="text-align: justify; width: 70%;">
         Tarefa 2: Considere as descrições sinte_voiz.ssml e rec.voz.srgs,
         respectivamente, a seguir.<br><br>
 
         <div id='htmlTask2CodeA'></div>
         <div id='htmlTask2CodeB'></div>
-        
+
         A aplicação HTML da Tarefa 1 foi modificada para permitir interações
         multimodais utilizando as descrições aima. O novo trecho de código é apresentado a
         seguir com as modificações destacadas. Por favor, analise com
-        cuidado.</p> 
-        
+        cuidado.</p>
+
         <div id='htmlTask2CodeC'></div>
         </div>
       `
