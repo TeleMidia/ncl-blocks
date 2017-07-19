@@ -508,19 +508,23 @@ _data.surveyJSON.pages[pageIndex].elements.push({
             <th>defini</th>
           </tr>
           <tr>
-            <td><em>onBeginStart</td>
+            <td><img class='img-thumbnail' style='height: 150px'
+          src='assets/concepts-sample-1.png'></td>
             <td>condição "ao começar" e ações de "inicie"</td>
           </tr>
           <tr>
-            <td><em>onSelectionStopStart</em></td>
+            <td><img class='img-thumbnail' style='height: 150px'
+          src='assets/concepts-sample-2.png'></td>
             <td>condição "ao selecionar" e ações de "pare" e "inicie" </td>
           </tr>
           <tr>
-            <td><em>onRecognizeStopStart</em></td>
+            <td><img class='img-thumbnail' style='height: 150px'
+          src='assets/concepts-sample-3.png'></td>
             <td>condição "ao reconhecer" e ações de "pare" e "inicie" </td>
           </tr>
           <tr>
-            <td><em>onOrRecognizeStopStart</em></td> 
+            <td><img class='img-thumbnail' style='height: 150px'
+          src='assets/concepts-sample-4.png'></td> 
             <td>condições "ao reconhecer" combinados com operador "OR", ações de
             "pare" e "inicie"
             </td>
