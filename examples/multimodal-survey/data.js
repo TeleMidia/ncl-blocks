@@ -1598,7 +1598,7 @@ _data.nclIntro1CodeB = `
     <property name="zindex" value="1"></property>
   </media>
   <media id="midia_principal" src="audio.mp4">
-    <area label="credits" begin="300s" end="360s"></area>
+    <area id="credits" begin="300s" end="360s"></area>
   </media>
   ]]></script>
 `
@@ -1608,7 +1608,7 @@ _data.nclIntro1CodeC = `
   auto-links: false;"> <![CDATA[
   <media id="midia_principal" src="video.mp4">
     <property name="size" value="100%, 100%"></property>
-    <area label="credits" begin="300s" end="360s"></area>
+    <area id="credits" begin="300s" end="360s"></area>
   </media>
   ]]></script>
 `
@@ -1645,7 +1645,7 @@ _data.nclIntro2CodeA = `
       <port component="video_principal"></port>
       <media id="video_principal" src="video.mp4">
         <property name="size" value="100%, 100%"></property>
-        <area label="credits" begin="300s" end="360s"></area>
+        <area id="credits" begin="300s" end="360s"></area>
       </media>
       <media id="icone_repetir" src="icone_repetir.png">
         <property name="size" value="20%, 20%"></property>
@@ -1726,7 +1726,7 @@ _data.nclIntro3CodeC = `
       <port component="video_principal"></port>
       <media id="video_principal" src="video.mp4">
         <property name="size" value="100%, 100%"></property>
-        <area label="credits" begin="300s" end="360s"></area>
+        <area id="credits" begin="300s" end="360s"></area>
       </media>
       <media id="sinte_voz" src="sinte_voz.ssml">
         <area label="pergunta"></area>
@@ -1781,7 +1781,7 @@ _data.nclIntro4CodeB = `
       <port component="video_principal"></port>
       <media id="video_principal" src="video.mp4">
         <property name="size" value="100%, 100%"></property>
-        <area label="credits" begin="300s" end="360s"></area>
+        <area id="credits" begin="300s" end="360s"></area>
       </media>
       <media id="sinte_voz" src="sinte_voz.srgs">
         <area label="pergunta"></area>
@@ -1911,7 +1911,7 @@ _data.nclTask1Code = `
       <port component="video_inicial"></port>
       <media id="video_inicial" src="video_inicial.mp4">
         <property name="size" value="100%, 100%"></property>
-        <area label="credits" begin="300s" end="360s"></area>
+        <area id="credits" begin="300s" end="360s"></area>
       </media>
       <media id="video_centro" src="centro.mp4">
         <property name="size" value="100%, 100%"></property>
