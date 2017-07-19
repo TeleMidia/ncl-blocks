@@ -62,12 +62,11 @@ _data.surveyJSON.pages.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-
         OBS: Este estudo é feito em uma única página web. Caso deseje
         navegar entre as seções do estudo, <strong>NÃO</strong> utilize
         os botões de navegação do seu browser, e sim use os botôes
         <em>voltar</em> e <em>prosseguir</em> no final de cada seção do
-        estudo.      
+        estudo.
         </div>
       `
     }
@@ -423,7 +422,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         porções do conteúdo e podem ser trechos emporais (e.g. entre 300s e
         360s) ou trechos delimitados do conteúdo.</p>
         
-        <p> Na representação por blocos, a <em>Mídia</em> é definida juntando um
+        <p>Na representação por blocos, a <em>Mídia</em> é definida juntando um
         bloco de <em>Mídia</em> e um bloco de conteúdo de <em>Mídia</em>
         Exemplos de blocos serão apresentados para ilustrar o conceito.</p>
 
@@ -439,7 +438,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         definem as mesmas mídias acima, mas com conteúdos de áudio e imagem,
         respectivamente. Em especial, a mídia de <em>midia_principal</em> tem
         definido uma âncora chamada de <em>creditos</em> que inicia aos 300 e
-        termina aos 360 segundos.</p> 
+        termina aos 360 segundos.</p>
         </div>
         
         <div id='conceptsIntro1B'></div><br>
@@ -471,8 +470,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       name: 'conceptsIntro2',
       html: `
-        <div style="text-align: justify; width: 70%;">
-        
+        <div style="text-align: justify; width: 70%;">        
         <p>Agora, vamos detalhar o conceito de <em>Sincronismo</em>. Ele
         permite definir o comportamento das aplicações.</p>
 
@@ -523,7 +521,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         de reconhecimento de interações mutimodais realizadas pelo ususário,
         como voz e gestos.</p>
 
-        <p> O <em>Reconhecedor</em> também é definido por <strong>um
+        <p>O <em>Reconhecedor</em> também é definido por <strong>um
         identificador e por seu conteúdo</strong>. Entretanto, diferente de
         <em>Mídia</em>, o conteúdo de um <em>Reconhecedor</em> deve ser uma
         descrição de reconhecimento. Exemplos dessas são descrições que definem
@@ -569,7 +567,6 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'conceptsIntro4',
       html: `
         <div style="text-align: justify; width: 70%;">
-
         <p>Por fim, vamos detalhar <em>Grupo de usuários</em>. Ele permite
         definir identificar unicamente interações de cada ususário. Por exemplo,
         o comando de voz apenas de um ususário</p>
@@ -587,7 +584,6 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div id='conceptsIntro4a'></div><br>
 
         <div style="text-align: justify; width: 70%;">
-
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em>, os blocos a
         seguir são uma nova versão da aplicação que reinicia um vídeo dadoa
         uma interação. Entretanto, nessa versão, o vídeo é reiniciado apenas
@@ -1400,8 +1396,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'nclIntro1',
       type: 'html',
       html: `
-        <div style="text-align: justify; width: 70%;"> 
-        
+        <div style="text-align: justify; width: 70%;">         
         <p>Primeiro, vamos detalhar o conceito de <em>Mídia</em>. 
         
         <p>Uma <em>Mídia</em> é definida por <strong>um identificador, um
@@ -1443,7 +1438,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         os trechos de código a seguir ilustram o uso de sintetização de voz em
         nossa NCL.</p>
         
-        <p> O primeiro trecho de código a seguir apresenta o arquivo
+        <p>O primeiro trecho de código a seguir apresenta o arquivo
         <em>sinte_voz.srgs</em>, que é uma descrição de sintetização de voz no
         formato SSML. Em particular, esse arquivo defini a frase a ser
         sintetizada "você deseja repetir o video?".</p>
@@ -1462,8 +1457,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'nclIntro2',
       type: 'html',
       html: `
-        <div style="text-align: justify; width: 70%;">
-        
+        <div style="text-align: justify; width: 70%;">        
         <p>Agora, vamos detalhar o conceito de <em>Sincronismo</em>.Ele
         permite definir o comportamento das aplicações.</p>
         
@@ -1488,7 +1482,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         créditos do vídeo. Se o usuário selecionar o ícone, o vídeo é
         reiniciado.</p> 
 
-        <p> O trecho de código a seguir tem um elemento <em>&ltport></em> e dois
+        <p>O trecho de código a seguir tem um elemento <em>&ltport></em> e dois
         elementos <em>&ltlink></em>. O <em>&ltport></em> define que o elemento
         <em>midia_principal</em> incia com a aplicação. O primeiro defini que
         quando o <em>video_principal</em> alcançar o seu trecho de créditos a
@@ -1497,7 +1491,6 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         reiniciado (<em>stop</em> e <em>start</em>).</p>
 
         <div id='nclIntro2CodeA'></div>
-
         </div>
       `
     },
@@ -1547,7 +1540,6 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>repete</em>.</p>
 
         <div id='nclIntro3CodeC'></div>
-
         </div>
       `
     },
@@ -1560,7 +1552,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         Para implementar esse conceito propomos o elemento
         <em>&ltuserClass></em>.</p>
 
-        <p> Um importante parte da definição de um <em>&ltuserClass></em> é como
+        <p>Um importante parte da definição de um <em>&ltuserClass></em> é como
         são descritos as caracterisicas que ususários devem ter par aparticipar
         da classe, por exemplos quais dispositivos devem possuir. Para essa
         descrição propomos um descrição  no formato SPARQL. O trecho de código a
@@ -1570,7 +1562,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         
         <div id='nclIntro4CodeA'></div><br>
 
-        <p> O elemento  <em>&ltuserClass></em> é definido dentro do
+        <p>O elemento  <em>&ltuserClass></em> é definido dentro do
         <em>&lthead></em> de uma aplicação HTML. Ele é definido por um
         identificador, número maximo de ususário e pelo seu arquivo de descrição
         de usuários.</p>
@@ -1582,7 +1574,6 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         vídeo".</p>
 
         <div id='nclIntro4CodeB'></div>
-        
         </div>
       `
     }
@@ -2215,7 +2206,6 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: ` 
         <div style="text-align: justify; width: 70%;">
-
         <p>A linguagem HTML é utilizada para criar conteúdo multimídia na web.
         Em particular, sua versão atual (HTML 5) oferece, entre outros, os
         elementos <em>&ltimg></em>, <em>&ltvideo></em> e <em>&ltaudio></em>,
@@ -2268,7 +2258,6 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;"> 
-        
         <p>Primeiro, vamos detalhar o conceito de <em>Mídia</em> em HTML.</p>
         
         <p>Uma <em>Mídia</em> é definida por <strong>um identificador, um
@@ -2351,7 +2340,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         créditos do vídeo. Se o usuário selecionar o ícone, o vídeo é
         reiniciado.</p> 
 
-        <p> O trecho de código tem três objetos <em>Synchronism</em>. O
+        <p>O trecho de código tem três objetos <em>Synchronism</em>. O
         primeiro define que o elemento <em>midia_principal</em> incia com a
         aplicação. O segundo defini que quando o <em>video_principal</em>
         alcançar o seu trecho de créditos a imagem <em>img_repetir</em> é
@@ -2360,7 +2349,6 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>start</em>).</p>
 
         <div id='htmlIntro2CodeA'></div>
-
         </div>
       `
     },
@@ -2419,7 +2407,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         Para implementar esse conceito propomos o elemento
         <em>&ltuserClass></em>.</p>
 
-        <p> Um importante parte da definição de um <em>&ltuserClass></em> é como
+        <p>Um importante parte da definição de um <em>&ltuserClass></em> é como
         são descritos as caracterisicas que ususários devem ter par aparticipar
         da classe, por exemplos quais dispositivos devem possuir. Para essa
         descrição propomos um descrição  no formato SPARQL. O trecho de código a
