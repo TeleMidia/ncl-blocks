@@ -476,12 +476,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Agora, vamos detalhar o conceito de <em>Sincronismo</em>. Ele
         permite definir o comportamento das aplicações.</p>
 
-        <p>O <em>Sincronismo</em> é baseado em causalidade e definido definido
+        <p>O <em>Sincronismo</em> é baseado em causalidade e definido
         por <strong>um conjunto de condições e um conjunto de ações</strong>. Ou
-        seja, ações são realizadas quando as condições são satisfeitas.</p>. 
+        seja, ações são realizadas quando as condições são satisfeitas.</p>
         
         <p>As ações são executadas em sequência. Exemplos de ações são
-        iniciar('start') ou parar('stop') uma mídia.</p>
+        iniciar('start') ou parar('stop') uma <em>Mídia</em> ou
+        <em>Reconhecedor</em> .</p>
         
         <p>As condições podem ser simples ou compostas. Exemplos de condições
         simples são o início da aplicação, o início ('onBegin') ou fim ('onEnd')
@@ -698,8 +699,8 @@ _data.conceptsIntro2BlocksB = `
     </block>
     <block type="link" id="%6sP%0di,O*v%qS%d\`(\`" x="594" y="250">
       <value name="conditions">
-        <block type="onbegin" id="(H8dBhXk6.y#]q%\`UM^D">
-          <field name="id">creditos</field>
+        <block type="onselection" id="(H8dBhXk6.y#]q%\`UM^D">
+          <field name="id">icone_repetir</field>
         </block>
       </value>
       <statement name="actions">
@@ -1165,8 +1166,7 @@ _data.blocksTask2Xml = `
       <block type="ssml" id="Oj6ycjV}(wESn+h/UL/Z">
         <mutation length="1"></mutation>
         <field name="id_area0">pergunta</field>
-        <field name="label0">fale o vídeo que deseja ver, centro ou
-        praia?</field>
+        <field name="label0">fale o vídeo que deseja ver, centro ou praia?</field>
       </block>
     </value>
   </block>
@@ -1469,7 +1469,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         
         <p>O <em>Sincronismo</em> é baseado em causalidade e definido definido
         por <strong>um conjunto de condições e um conjunto de ações</strong>. Ou
-        seja, ações são realizadas quando as condições são satisfeitas.</p>. 
+        seja, ações são realizadas quando as condições são satisfeitas.</p> 
         
         <p>Na NCL que esse conceito já implementado pelo elementos
         <em>&ltport></em> e <em>&ltlink></em>.</p>
@@ -1488,7 +1488,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         créditos do vídeo. Se o usuário selecionar o ícone, o vídeo é
         reiniciado.</p> 
 
-        <p> O trecho de código tem um elemento <em>&ltport></em> e dois
+        <p> O trecho de código a seguir tem um elemento <em>&ltport></em> e dois
         elementos <em>&ltlink></em>. O <em>&ltport></em> define que o elemento
         <em>midia_principal</em> incia com a aplicação. O primeiro defini que
         quando o <em>video_principal</em> alcançar o seu trecho de créditos a
@@ -1528,7 +1528,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Para ilustrar o uso de um <em>Reconhecedor</em> em NCL, o código
         a seguir são uma nova versão da aplicação que reinicia um vídeo dado uma
         interação. Mas nessa versão, ao invés de clicar, o vídeo é reiniciado ao
-        usuário falar "repita vídeo".</p> <p>Mais precisamente, a aplicação
+        usuário falar "repita vídeo". Mais precisamente, a aplicação
         utiliza um elemento <em>&ltmedia></em> mídias, um elemento de
         <em>&ltinput></em>, um <em><port></em> e dois
         <em>&ltlink></em>s.</p>
@@ -1544,7 +1544,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         reconhecedor <em>rec</em> inicia seu reconhecimento. O segundo
         <em>&ltlink></em>(linhas 27-30) define que o <em>video_principal</em>
         deve ser reiniciado (stop e start) quando for reconhecido o trecho
-        <em>repete</em></p>
+        <em>repete</em>.</p>
 
         <div id='nclIntro3CodeC'></div>
 
@@ -1868,7 +1868,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         
         <p><strong>Ressaltamos que essas tarefas NÃO se destinam a avaliar seus
         conhecimentos, mas sim capturar evidências de nossa
-        pesquisa.</strong>.</p> 
+        pesquisa.</strong></p> 
         </div>
       `
     },
@@ -2335,11 +2335,11 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         
         <p>O <em>Sincronismo</em> é baseado em causalidade e definido definido
         por <strong>um conjunto de condições e um conjunto de ações</strong>. Ou
-        seja, ações são realizadas quando as condições são satisfeitas.</p>. 
+        seja, ações são realizadas quando as condições são satisfeitas.</p>
 
         <p>Na HTML estendida esse conceito é implementado pelo elemento
         <em>&lscript></em><> com um código JavaScript que utiliza um o objeto
-        <em>Synchronism</em></p>. Objetos <em>Synchronism</em> tem
+        <em>Synchronism</em>. Objetos <em>Synchronism</em> tem
         condições simples ou compostas, e ações que são executadas em
         sequência. Exemplos de condições simples são o início da aplicação, o
         início('onBegin') ou fim('onEnd') de uma mídia ou de sua âncora, além de
@@ -2371,7 +2371,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;">
         <p>Primeiro, vamos detalhar o conceito de <em>Reconhecedor</em> em HTML.
         Para implementar esse <em>Reconhecedor</em> propomos o elemento de
-        <em>&ltinput></em></p>
+        <em>&ltinput></em>.</p>
 
         <p>O trecho de código a seguir apresenta o arquivo
         <em>rec_voz.srgs</em>. Esse arquivo é uma descrição de reconhecimento de
@@ -2392,7 +2392,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         vídeo, ao qual pode ser reiniciado em sua porção de créditos por
         comandos de voz. Mais precisamente, a aplicação utiliza um elemento
         <em>&ltmedia></em> mídias, um elemento de <em>&ltinput></em>, um
-        <em><port></em> e dois <em>&ltlink></em>s.</p> <p>O elemento de
+        <em><port></em> e dois <em>&ltlink></em>s. O elemento de
         <em>&ltmedia></em> chamado de <em>video_principal</em> (linhas 17-19)
         que define um trecho chamado créditos que inicia aos 300s. O elemento
         <em>&ltinput></em>, chamado de <em>rec</em>é definido utilizando
@@ -2432,7 +2432,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em HTML, o
         código a seguir é uma nova versão da aplicação que reinicia um video
         dado uma interação de voz. Entretanto, nessa versão, o vídeo é
-        reiniciado apenas quando o segundo usuário falar "repita vídeo".</p></p>
+        reiniciado apenas quando o segundo usuário falar "repita vídeo".</p>
 
         <div id='htmlIntro4CodeB'></div>
         </div>
