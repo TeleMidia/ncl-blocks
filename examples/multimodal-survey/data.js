@@ -1461,7 +1461,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Agora, vamos detalhar o conceito de <em>Sincronismo</em>.Ele
         permite definir o comportamento das aplicações.</p>
 
-        <p>O <em>Sincronismo</em> é baseado em causalidade e definido definido
+        <p>O <em>Sincronismo</em> é baseado em causalidade e definido
         por <strong>um conjunto de condições e um conjunto de ações</strong>. Ou
         seja, ações são realizadas quando as condições são satisfeitas.</p>
 
@@ -1751,15 +1751,15 @@ _data.nclIntro3CodeC = `
         <property name="size" value="100%, 100%" />
         <area label="credits" begin="300s" end="360s" />
       </media>
-      <input id="sinte_voz" src="sinte_voz.ssml">
+      <media id="sinte_voz" src="sinte_voz.ssml">
         <area label="pergunta"/>
-      </input>
+      </media>
       <input id="rec_voz" src="rec_voz.srgs">
         <area label="repete"/>
       </input>
       <link xconnector="onBeginStart">
         <bind role="onBegin" component="video_principal" interface="credits"/>
-        <bind role="start" component="pergunta"/>
+        <bind role="start" component="sinte_voz" interface="pergunta"/>
         <bind role="start" component="rec_voz"/>
       </link>
       <link xconnector="onRecognizeStopStart">
@@ -1825,7 +1825,7 @@ _data.nclIntro4CodeB = `
       </input>
       <link xconnector="onBeginStart">
         <bind role="onBegin" component="video_principal" interface="credits"/>
-        <bind role="start" component="sinte_voz"/>
+        <bind role="start" component="sinte_voz" interface="pergunta"/>
         <bind role="start" component="rec_voz"/>
       </link>
       <link xconnector="onRecognizeStart">
@@ -1983,14 +1983,14 @@ _data.nclTask1Code = `
         <bind role="stop" component="img_centro" />
         <bind role="stop" component="img_praia" />
         <bind role="stop" component="video_principal" />
-        <bind role="start" component="video_principal" />
+        <bind role="start" component="video_centro" />
       </link>
       <link xconnector="onSelectionStopStart">
         <bind role="onSelection" component="img_praia" />
         <bind role="stop" component="img_centro" />
         <bind role="stop" component="img_praia" />
         <bind role="stop" component="video_principal" />
-        <bind role="start" component="video_principal" />
+        <bind role="start" component="video_praia" />
       </link>
     </body>
   </ncl>
@@ -2059,7 +2059,7 @@ _data.nclTask2CCodeOnly = `
       </input>
       <link xconnector="onBeginStart">
         <bind role="onBegin" component="video_principal" interface="creditos" />
-        <bind role="start" component="sinte_voz" />
+        <bind role="start" component="sinte_voz" interface="pergunta"/>
         <bind role="start" component="rec_voz" />
       </link>
       <link xconnector="onRecognizeStopStart">
@@ -2322,7 +2322,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Agora, vamos detalhar o conceito de <em>Sincronismo</em>. Ele
         permite definir o comportamento das aplicações.</p>
 
-        <p>O <em>Sincronismo</em> é baseado em causalidade e definido definido
+        <p>O <em>Sincronismo</em> é baseado em causalidade e definido
         por <strong>um conjunto de condições e um conjunto de ações</strong>. Ou
         seja, ações são realizadas quando as condições são satisfeitas.</p>
 
@@ -2473,30 +2473,26 @@ _data.htmlIntro2CodeA = `
   <html>
   <head></head>
   <body>
-    <img id="img_repetir" src="img_repetir.png"
-      style="position: absolute; left: 50%; top: 50%; z-index: 1;" />
     <video id="midia_principal" src="video.mp4"
       style="position: absolute; hight 100%; width: 100%;" >
       <area id="credits" begin="300s" end="360s" />
     </video>
+    <img id="img_repetir" src="img_repetir.png"
+      style="position: absolute; left: 50%; top: 50%; z-index: 1;">
+    </img>
     <script>
-      vídeo = document.getElementById("midia_principal")
-      credits = document.getElementById("credits")
-      img_repetir = document.getElementById("img_repetir")
+      var sync1 = new Synchronism("onBeginStart")
+      sync.bind("onBegin", "body")
+      sync.bind("start", "midia_principal")
 
-      var sync1 = new Synchronism('onBeginStart')
-      sync.bind('onBegin', document.body)
-      sync.bind('start', video)
+      var sync2 = new Synchronism("onBeginStart")
+      sync.bind("onBegin", "midia_principal", "credits")
+      sync.bind("start", "img_repetir")
 
-      var sync2 = new Synchronism()
-      sync.bind('onBegin', credits)
-      sync.bind('start', icon)
-
-      var sync3 = new Synchronism('onSelectionStopStart')
-      sync.bind('onSelection', img_repetir)
-      sync.bind('stop', video)
-      sync.bind('start', video)
-
+      var sync3 = new Synchronism("onSelectionStopStart")
+      sync.bind("onSelection", "img_repetir")
+      sync.bind("stop", "midia_principal")
+      sync.bind("start", "midia_principal")
     <&#47script>
   </body>
   </html>
@@ -2506,13 +2502,37 @@ _data.htmlIntro3CodeA = _data.nclIntro3CodeA
 _data.htmlIntro3CodeB = _data.nclIntro3CodeB
 
 _data.htmlIntro3CodeC = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false;"> <![CDATA[
-  <?xml version="1.0" encoding="ISO-8859-1"?>
+ <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false;"><![CDATA[
+  <!DOCTYPE html>
   <html>
-    <head></head>
-    <body>
-    </body>
+  <head></head>
+  <body>
+    <video id="midia_principal" src="video.mp4"
+      style="position: absolute; hight 100%; width: 100%;">
+      <area id="credits" begin="300s" end="360s" />
+    </video>
+    <object id="sinte_voz" src="sinte_voz.ssml">
+      <area label="pergunta"/>
+    </object>
+    <object id="rec_voz" src="rec_voz.srgs">
+      <area label="repete"/>
+    </object>
+    <script>
+      var sync1 = new Synchronism("onBeginStart")
+      sync.bind("onBegin", "body")
+      sync.bind("start", "midia_principal")
+
+      var sync2 = new Synchronism("onBeginStart")
+      sync.bind("onBegin", "midia_principal", "credits")
+      sync.bind("start", "sinte_voz")
+
+      var sync3 = new Synchronism("onRecognizeStopStart")
+      sync.bind("onRecognize", "rec_voz", "repete")
+      sync.bind("stop", "midia_principal")
+      sync.bind("start", "midia_principal")
+    <&#47script>
+  </body>
   </html>
   ]]></script>
 `
@@ -2525,9 +2545,35 @@ _data.htmlIntro4CodeB = `
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <html>
-    <head></head>
-    <body>
-    </body>
+  <head></head>
+  <body>
+    <video id="midia_principal" src="video.mp4"
+      style="position: absolute; hight 100%; width: 100%;">
+      <area id="credits" begin="300s" end="360s" />
+    </video>
+    <object id="sinte_voz" src="sinte_voz.ssml">
+      <area label="pergunta"/>
+    </object>
+    <object id="rec_voz" src="rec_voz.srgs">
+      <area label="repete"/>
+    </object>
+    <script>
+      var gu_leap_microphone("gu_leap_microphone.sparql", 2)
+
+      var sync1 = new Synchronism("onBeginStart")
+      sync.bind("onBegin", "body")
+      sync.bind("start", "midia_principal")
+
+      var sync2 = new Synchronism("onBeginStart")
+      sync.bind("onBegin", "midia_principal", "credits")
+      sync.bind("start", "sinte_voz")
+
+      var sync3 = new Synchronism("onRecognizeStopStart")
+      sync.bind("onRecognize", "rec_voz", "repete", "gu_leap_microphone(2)")
+      sync.bind("stop", "midia_principal")
+      sync.bind("start", "midia_principal")
+    <&#47script>
+  </body>
   </html>
   ]]></script>
 `
@@ -2599,7 +2645,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     {
       type: 'comment',
       name: 'htmlTask3Question',
-      rows: '9',
+      rows: '47',
       title: `Tarefa 3: Agora, pedimos que edite o trecho de código HTML da
       Tarefa 2 (copiado a seguir) para que utilize uma interação por gestos ao
       invés de uma interação por comandos de voz.`
@@ -2607,7 +2653,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     {
       type: 'comment',
       name: 'htmlTask4Question',
-      rows: '9',
+      rows: '47',
       title: ` Tarefa 4: Agora, pedimos que edite o trecho de código HTML da
       Tarefa 2 (copiado a seguir) para que apenas o segundo usuário, de um grupo
       de 3 usuários com microphone, possa realizar a interação por voz.`
@@ -2620,19 +2666,95 @@ _data.htmlTask1Code = `
   auto-links: false;"> <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <html>
-    <head></head>
-    <body>
-    </body>
+  <head></head>
+  <body>
+    <video id="midia_principal" src="video.mp4"
+      style="position: absolute; hight 100%; width: 100%;">
+      <area id="credits" begin="300s" end="360s" />
+    </video>
+    <video id="video_centro" src="video.mp4"
+      style="position: absolute; hight 100%; width: 100%;">
+      <area id="credits" begin="300s" end="360s" />
+    </video>
+    <video id="video_praia" src="video.mp4"
+      style="position: absolute; hight 100%; width: 100%;">
+      <area id="credits" begin="300s" end="360s" />
+    </video>
+    <img id="img_centro" src="img_centro.png"
+      style="position: absolute; left: 50%; top: 50%; z-index: 1;">
+    </img>
+    <img id="img_praia" src="img_praia.png"
+      style="position: absolute; left: 50%; top: 50%; z-index: 1;">
+    </img>
+    <script>
+      var sync1 = new Synchronism("onBeginStart")
+      sync.bind("onBegin", "body")
+      sync.bind("start", "midia_principal")
+
+      var sync2 = new Synchronism("onBeginStart")
+      sync.bind("onBegin", "midia_principal", "credits")
+      sync.bind("start", "img_centro")
+      sync.bind("start", "img_praia")
+
+      var sync3 = new Synchronism("onSelectionStopStart")
+      sync.bind("onSelection", "img_centro")
+      sync.bind("stop", "midia_principal")
+      sync.bind("start", "video_centro")
+
+      var sync3 = new Synchronism("onSelectionStopStart")
+      sync.bind("onSelection", "img_praia")
+      sync.bind("stop", "midia_principal")
+      sync.bind("start", "video_praia")
+    <&#47script>
+  </body>
   </html>
   ]]></script>
 `
 
 _data.htmlTask2CodeCOnly = `
   <?xml version="1.0" encoding="ISO-8859-1"?>
-  <html>
-    <head></head>
-    <body>
-    </body>
+ <html>
+  <head></head>
+  <body>
+    <video id="midia_principal" src="video.mp4"
+      style="position: absolute; hight 100%; width: 100%;">
+      <area id="credits" begin="300s" end="360s" />
+    </video>
+    <video id="video_centro" src="video.mp4"
+      style="position: absolute; hight 100%; width: 100%;">
+      <area id="credits" begin="300s" end="360s" />
+    </video>
+    <video id="video_praia" src="video.mp4"
+      style="position: absolute; hight 100%; width: 100%;">
+      <area id="credits" begin="300s" end="360s" />
+    </video>
+    <object id="sinte_voz" src="sinte_voz.ssml">
+      <area label="pergunta"/>
+    </object>
+    <object id="rec_voz" src="rec_voz.srgs">
+      <area label="repete"/>
+    </object>
+    <script>
+      var sync1 = new Synchronism("onBeginStart")
+      sync.bind("onBegin", "body")
+      sync.bind("start", "midia_principal")
+
+      var sync2 = new Synchronism("onBeginStart")
+      sync.bind("onBegin", "midia_principal", "credits")
+      sync.bind("start", "sinte_voz", "pergunta")
+      sync.bind("start", "rec_voz")
+
+      var sync3 = new Synchronism("onRecognizeStopStart")
+      sync.bind("onRecognize", "rec_voz", "centro")
+      sync.bind("stop", "midia_principal")
+      sync.bind("start", "video_centro")
+
+      var sync3 = new Synchronism("onRecognizeStopStart")
+      sync.bind("onRecognize", "rec_voz", "praia")
+      sync.bind("stop", "midia_principal")
+      sync.bind("start", "video_praia")
+    <&#47script>
+  </body>
   </html>
 `
 
