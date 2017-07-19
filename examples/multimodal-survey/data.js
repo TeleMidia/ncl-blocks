@@ -2470,7 +2470,7 @@ _data.htmlIntro2CodeA = `
   auto-links: false;"><![CDATA[
   <!DOCTYPE html>
   <html>
-  <head></head>
+  <head><script src="synchronism.js"></script></head>
   <body>
     <video id="midia_principal" src="video.mp4"
       style="position: absolute; hight 100%; width: 100%;" >
@@ -2505,7 +2505,7 @@ _data.htmlIntro3CodeC = `
   auto-links: false;"><![CDATA[
   <!DOCTYPE html>
   <html>
-  <head></head>
+  <head><script src="synchronism.js"></script></head>
   <body>
     <video id="midia_principal" src="video.mp4"
       style="position: absolute; hight 100%; width: 100%;">
@@ -2544,7 +2544,7 @@ _data.htmlIntro4CodeB = `
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <html>
-  <head></head>
+  <head><script src="synchronism.js"></script></head>
   <body>
     <video id="midia_principal" src="video.mp4"
       style="position: absolute; hight 100%; width: 100%;">
@@ -2665,7 +2665,7 @@ _data.htmlTask1Code = `
   auto-links: false;"> <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <html>
-  <head></head>
+  <head><script src="synchronism.js"></script></head>
   <body>
     <video id="video_inicial" src="video_inicial.mp4"
       style="position: absolute; hight 100%; width: 100%;">
@@ -2713,7 +2713,7 @@ _data.htmlTask1Code = `
 _data.htmlTask2CodeCOnly = `
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <html>
-  <head></head>
+  <head><script src="synchronism.js"></script></head>
   <body>
     <video id="video_inicial" src="video_inicial.mp4"
       style="position: absolute; hight 100%; width: 100%;">
