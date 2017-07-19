@@ -414,14 +414,18 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'conceptsIntro1',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Primeiro, vamos detalhar <em>Mídia</em>.</p>
+        <p>Primeiro, vamos detalhar <em>Mídia</em>. Ele permite definir o uso de
+        conteúdo audiovisual. </p>
         
-        <p><em>Mídia</em> é definido por <strong>um identificador, um conteúdoe
-        âncoras</strong>. O conteúdo consiste em um arquivo de mídia, como
-        imagem jpeg, video mp4, audio mp3, entre outros. As âncoras podem
-        definir porções temporais da apresentação da mídia ou trechos de um
-        descrição. Exemplos de blocos serão apresentados para ilustrar
-        conceito.</p>
+        <p>Uma <em>Mídia</em> é definida por <strong>um identificador, um
+        conteúdo e âncoras</strong>. O conteúdo consiste em um arquivo de mídia,
+        como imagem jpeg, vídeo mp4, áudio mp3, entre outros. As âncoras são
+        porções do conteúdo e podem ser trechos emporais (e.g. entre 300s e
+        360s) ou trechos delimitados do conteúdo.</p>
+        
+        <p> Na representação por blocos, a <em>Mídia</em> é definida juntando um
+        bloco de <em>Mídia</em> e um bloco de conteúdo de <em>Mídia</em>
+        Exemplos de blocos serão apresentados para ilustrar o conceito.</p>
 
         <p>Os blocos a seguir definem duas mídias com identificadores
         <em>midia_principal</em> e <em>icone</em>, mas elas não possuem
@@ -469,18 +473,25 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         <div style="text-align: justify; width: 70%;">
         
-        <p>Em em seguida, vamos detalhar o conceito <em>Sincronismo</em>. Ele
+        <p>Agora, vamos detalhar o conceito de <em>Sincronismo</em>. Ele
         permite definir o comportamento das aplicações.</p>
-        
+
         <p>O <em>Sincronismo</em> é baseado em causalidade e definido definido
         por <strong>um conjunto de condições e um conjunto de ações</strong>. Ou
-        seja, quando as condições são satisfeitas ações são realizadas.</p> 
+        seja, ações são realizadas quando as condições são satisfeitas.</p>. 
         
-        <p>Um <em>Sincronismo</em> tem condições simples ou compostas, e ações
-        que são executadas em sequência. Exemplos de condições simples são o
-        início da aplicação, o início ('onBegin') ou fim ('onEnd') de uma mídia
-        ou de sua âncora, além de interações usuário (e.g. 'onSelection' e
-        'onRecognition'). Exemplos de ações são iniciar ou parar uma mídia.</p>
+        <p>As ações são executadas em sequência. Exemplos de ações são
+        iniciar('start') ou parar('stop') uma mídia.</p>
+        
+        <p>As condições podem ser simples ou compostas. Exemplos de condições
+        simples são o início da aplicação, o início ('onBegin') ou fim ('onEnd')
+        de uma mídia ou de sua âncora, além de interações usuário (e.g.
+        'onSelection' e 'onRecognition').<p>
+        
+        <p>Ações compostas combinam ações simples de três operadores: 'OR'
+        quando apenas uma das condições é necessária; 'AND' quando todos
+        condições são necessária; e 'SEQ' quando todos as ações são necessárias
+        e na sequência estabelecida.</p> 
        
         <p>Para ilustrar o uso de <em>Sincronismo</em>, os blocos a
         seguir definem uma aplicação que apresenta um vídeo e um ícone durante
@@ -506,8 +517,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       name: 'conceptsIntro3',
       html: `
-        <div style="text-align: justify; width: 70%;">
-        <p>Agora, detalhamos a seguir <em>Reconhecedor</em>.</p>
+        <div style="text-align: justify; width: 70%;"> 
+        <p>Agora, detalhamos a seguir <em>Reconhecedor</em>. Ele permite o uso
+        de reconhecimento de interações mutimodais realizadas pelo ususário,
+        como voz e gestos.</p>
 
         <p> O <em>Reconhecedor</em> também é definido por <strong>um
         identificador e por seu conteúdo</strong>. Entretanto, diferente de
@@ -556,7 +569,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         <div style="text-align: justify; width: 70%;">
 
-        <p>Por fim, vamos detalhar <em>Grupo de usuários</em>.</p>
+        <p>Por fim, vamos detalhar <em>Grupo de usuários</em>. Ele permite
+        definir identificar unicamente interações de cada ususário. Por exemplo,
+        o comando de voz apenas de um ususário</p>
 
         <p><em>Grupo de Usuários</em> é definido <strong>por um identificador,
         número maximo de participantes e quais dispositivos estes
@@ -1389,16 +1404,16 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         
         <p>Primeiro, vamos detalhar o conceito de <em>Mídia</em>. 
         
-        <p>Uma <em>Mídia</em> deve ser definida por <strong>um identificador, um
-        conteúdo e âncoras</strong>. 
+        <p>Uma <em>Mídia</em> é definida por <strong>um identificador, um
+        conteúdo e âncoras</strong>. </p>
         
-        <p>Na NCL, esse conceito já é já implementado pelo elemento
-        <em>&ltmedia></em>. O conteúdo consiste em um arquivo de mídia, como
-        imagem jpeg, video mp4, audio mp3, entre outros. O conteúdo consiste em
-        um arquivo de mídia, como imagem jpeg, video mp4, audio mp3, entre
-        outros. As âncoras podem definir porções temporais da apresentação da
-        mídia ou trechos de um descrição. Exemplos de blocos serão apresentados
-        para ilustrar esse conceito.</p>
+        <p>Na NCL, o conceito de <em>Mídia</em> já é implementado pelo elemento
+        XML <em>&ltmedia></em>. O identificador é definito pelo atributo
+        <em>id</em> e o arquivo de mídia do conteúdo é definido atributo
+        <em>src</em>. As âncoras são definidas pelo elemento XML <em>area</em> e
+        podem definem porções temporais com os atributos <em>begin</em> e
+        <em>end</em> ou trechos delimitados com o atributo <em>label</em>.
+        Exemplos de blocos serão apresentados para ilustrar conceito./p>
 
         <p>O trecho de código a seguir define duas mídias com identificadores
         <em>midia_principal</em> e <em>icone</em>, mas elas não possuem
@@ -1452,9 +1467,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Agora, vamos detalhar o conceito de <em>Sincronismo</em>.Ele
         permite definir o comportamento das aplicações.</p>
         
-        <p>O <em>Sincronismo</em> é baseado em causalidade e definido por
-        <strong>um conjunto de condições e um conjunto de ações</strong>. Ou
-        seja, quando as condições são satisfeitas ações são realizadas.</p>
+        <p>O <em>Sincronismo</em> é baseado em causalidade e definido definido
+        por <strong>um conjunto de condições e um conjunto de ações</strong>. Ou
+        seja, ações são realizadas quando as condições são satisfeitas.</p>. 
         
         <p>Na NCL que esse conceito já implementado pelo elementos
         <em>&ltport></em> e <em>&ltlink></em>.</p>
@@ -2254,19 +2269,17 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         <div style="text-align: justify; width: 70%;"> 
         
-        <p>Primeiro, vamos detalhar o conceito de <em>Mídia</em> em HTML e
-        ilustrar com trechos de código.</p>
+        <p>Primeiro, vamos detalhar o conceito de <em>Mídia</em> em HTML.</p>
         
-        <p>Uma <em>Mídia</em> deve ser definida por um <strong>identificador, um
+        <p>Uma <em>Mídia</em> é definida por <strong>um identificador, um
         conteúdo e âncoras</strong>.</p>
         
-        <p>Em nossa HTML estendida, estendemos elementos <em>&ltimg></em>,
-        <em>&ltaudio></em> e <em>&ltvideo></em> com elementos <em>&ltarea></em>
-        para permitir definir âncoras. O conteúdo consiste em um arquivo de
-        mídia, como imagem jpeg, video mp4, audio mp3, entre outros. As âncoras
-        podem definir porções temporais da apresentação da mídia ou trechos de
-        um descrição. Exemplos de blocos serão apresentados para ilustrar
-        esse conceito.</p>
+        <p>Em nossa HTML estendida, o conceito de <em>Mídia</em> é implementado
+        por elementos como <em>&ltimg></em>, <em>&ltaudio></em>. Entretanto,
+        eles são estendidos para <em>&ltarea></em> para permitir definir âncoras
+        e podem definem porções temporais com os atributos <em>begin</em> e
+        <em>end</em> ou trechos delimitados com o atributo <em>label</em>.
+        Exemplos de blocos serão apresentados para ilustrar conceito./p>
 
         <p>O trecho de código a seguir define as duas mídias com identificadores
         <em>midia_principal</em> e <em>icone</em>, mas elas não possuem
@@ -2320,9 +2333,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Agora, vamos detalhar o conceito de <em>Sincronismo</em>. Ele
         permite definir o comportamento das aplicações.</p>
         
-        <p>O <em>Sincronismo</em> é baseado em causalidade e definido por
-        <strong>um conjunto de condições e um conjunto de ações</strong>.Ou
-        seja, quando as condições são satisfeitas ações são realizadas.</p>
+        <p>O <em>Sincronismo</em> é baseado em causalidade e definido definido
+        por <strong>um conjunto de condições e um conjunto de ações</strong>. Ou
+        seja, ações são realizadas quando as condições são satisfeitas.</p>. 
 
         <p>Na HTML estendida esse conceito é implementado pelo elemento
         <em>&lscript></em><> com um código JavaScript que utiliza um o objeto
@@ -2479,7 +2492,7 @@ _data.htmlIntro2CodeA = `
       <area id="credits" begin="300s" end="360s" />
     </video>
     <script>
-      video = document.getElementById("midia_principal")
+      vídeo = document.getElementById("midia_principal")
       credits = document.getElementById("credits")
       img_repetir = document.getElementById("img_repetir")
 
