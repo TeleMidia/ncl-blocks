@@ -1582,7 +1582,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 _data.nclIntro1CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
-  <media id="icone" >
+  <media id="icone">
   </media>
   <media id="midia_principal">
   </media>
@@ -1593,12 +1593,12 @@ _data.nclIntro1CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
   <media id="icone" src="icone.png">
-    <property name="size" value="20%, 20%" />
-    <property name="top" value="80%" />
-    <property name="zindex" value="1" />
+    <property name="size" value="20%, 20%"></property>
+    <property name="top" value="80%"></property>
+    <property name="zindex" value="1"></property>
   </media>
   <media id="midia_principal" src="audio.mp4">
-    <area label="credits" begin="300s" end="360s" />
+    <area label="credits" begin="300s" end="360s"></area>
   </media>
   ]]></script>
 `
@@ -1607,8 +1607,8 @@ _data.nclIntro1CodeC = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
   <media id="midia_principal" src="video.mp4">
-    <property name="size" value="100%, 100%" />
-    <area label="credits" begin="300s" end="360s" />
+    <property name="size" value="100%, 100%"></property>
+    <area label="credits" begin="300s" end="360s"></area>
   </media>
   ]]></script>
 `
@@ -1627,7 +1627,7 @@ _data.nclIntro1CodeE = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
   <media id="sinte_voz" src="sinte_voz.ssml">
-    <area label="repetir"/>
+    <area label="repetir"></area>
   </media>
   ]]></script>
 `
@@ -1639,26 +1639,26 @@ _data.nclIntro2CodeA = `
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <ncl>
     <connectorBase>
-      <importBase documentURI="causalConnBase.ncl" alias="conEx"/>
+      <importBase documentURI="causalConnBase.ncl" alias="conEx"></importBase>
     </connectorBase>
     <body>
-      <port component="video_principal"/>
+      <port component="video_principal"></port>
       <media id="video_principal" src="video.mp4">
-        <property name="size" value="100%, 100%" />
-        <area label="credits" begin="300s" end="360s" />
+        <property name="size" value="100%, 100%"></property>
+        <area label="credits" begin="300s" end="360s"></area>
       </media>
       <media id="icone_repetir" src="icone_repetir.png">
-        <property name="size" value="20%, 20%" />
-        <property name="zindex" value="1" />
+        <property name="size" value="20%, 20%"></property>
+        <property name="zindex" value="1"></property>
       </media>
       <link xconnector="conEx#onBeginStart">
-        <bind role="onBegin" component="video_principal" interface="credits"/>
-        <bind role="start" component="icone_repetir"/>
+        <bind role="onBegin" component="video_principal" interface="credits"></bind>
+        <bind role="start" component="icone_repetir"></bind>
       </link>
       <link xconnector="conEx#onSelectionStopStart">
-        <bind role="onSelection" component="icone_repetir"/>
-        <bind role="stop" component="video_principal"/>
-        <bind role="start" component="video_principal"/>
+        <bind role="onSelection" component="icone_repetir"></bind>
+        <bind role="stop" component="video_principal"></bind>
+        <bind role="start" component="video_principal"></bind>
       </link>
     </body>
   </ncl>
@@ -1719,29 +1719,29 @@ _data.nclIntro3CodeC = `
   <ncl>
     <head>
       <connectorBase>
-        <importBase documentURI="causalConnBase.ncl" alias="conEx"/>
+        <importBase documentURI="causalConnBase.ncl" alias="conEx"></importBase>
       </connectorBase>
     </head>
     <body>
-      <port component="video_principal"/>
+      <port component="video_principal"></port>
       <media id="video_principal" src="video.mp4">
-        <property name="size" value="100%, 100%" />
-        <area label="credits" begin="300s" end="360s" />
+        <property name="size" value="100%, 100%"></property>
+        <area label="credits" begin="300s" end="360s"></area>
       </media>
       <media id="sinte_voz" src="sinte_voz.ssml">
-        <area label="pergunta"/>
+        <area label="pergunta"></area>
       </media>
       <input id="rec_voz" src="rec_voz.srgs">
-        <area label="repete"/>
+        <area label="repete"></repete>
       </input>
       <link xconnector="conEx#onBeginStart">
-        <bind role="onBegin" component="video_principal" interface="credits"/>
-        <bind role="start" component="sinte_voz" interface="pergunta"/>
-        <bind role="start" component="rec_voz"/>
+        <bind role="onBegin" component="video_principal" interface="credits"></bind>
+        <bind role="start" component="sinte_voz" interface="pergunta"></bind>
+        <bind role="start" component="rec_voz"></bind>
       </link>
       <link xconnector="conEx#onRecognizeStopStart">
         <bind role="onRecognize" component="rec_voz" interface="repete"/>
-        <bind role="stop" component="rec_voz"/>
+        <bind role="stop" component="rec_voz"></bind>
         <bind role="stop" component="video_principal"/>
         <bind role="start" component="video_principal"/>
       </link>
@@ -1770,36 +1770,36 @@ _data.nclIntro4CodeB = `
   <ncl>
     <head>
       <connectorBase>
-        <importBase documentURI="causalConnBase.ncl" alias="conEx"/>
+        <importBase documentURI="causalConnBase.ncl" alias="conEx"></importBase>
       </connectorBase>
       <userBase>
         <userClass id="gu_leap_microphone" max="2"
-          userClassDescription="gu_leap_microphone.sparql" />
+          userClassDescription="gu_leap_microphone.sparql"></userClass>
       </userBase>
     </head>
     <body>
-      <port component="video_principal"/>
+      <port component="video_principal"></port>
       <media id="video_principal" src="video.mp4">
-        <property name="size" value="100%, 100%" />
-        <area label="credits" begin="300s" end="360s" />
+        <property name="size" value="100%, 100%"></property>
+        <area label="credits" begin="300s" end="360s"></area>
       </media>
       <media id="sinte_voz" src="sinte_voz.srgs">
-        <area label="pergunta" />
+        <area label="pergunta"></area>
       </media>
       <input id="rec_voz" src="rec_voz.srgs">
-        <area label="repete"/>
+        <area label="repete"></repete>
       </input>
       <link xconnector="conEx#onBeginStart">
-        <bind role="onBegin" component="video_principal" interface="credits"/>
-        <bind role="start" component="sinte_voz" interface="pergunta"/>
-        <bind role="start" component="rec_voz"/>
+        <bind role="onBegin" component="video_principal" interface="credits"></bind>
+        <bind role="start" component="sinte_voz" interface="pergunta"></bind>
+        <bind role="start" component="rec_voz"></bind>
       </link>
       <link xconnector="conEx#onRecognizeStart">
         <bind role="onRecognize" component="rec_voz" interface="repete">
-          <linkParam name="user_id" value="gu_leap_microphone(2)"/>
+          <linkParam name="user_id" value="gu_leap_microphone(2)"></linkParam>
         </bind>
-        <bind role="stop" component="video_principal"/>
-        <bind role="start" component="video_principal"/>
+        <bind role="stop" component="video_principal"></bind>
+        <bind role="start" component="video_principal"></bind>
       </link>
     </body>
   </ncl>
@@ -1904,49 +1904,49 @@ _data.nclTask1Code = `
   <ncl xmlns="http://www.ncl.org.br/NCL3.0/EDTVProfile">
     <head>
       <connectorBase>
-        <importBase documentURI="causalConnBase.ncl" alias="conEx"/>
+        <importBase documentURI="causalConnBase.ncl" alias="conEx"></importBase>
       </connectorBase>
     </head>
     <body>
-      <port component="video_inicial" />
+      <port component="video_inicial"></port>
       <media id="video_inicial" src="video_inicial.mp4">
-        <property name="size" value="100%, 100%" />
-        <area label="credits" begin="300s" end="360s" />
+        <property name="size" value="100%, 100%"></property>
+        <area label="credits" begin="300s" end="360s"></area>
       </media>
       <media id="video_centro" src="centro.mp4">
-        <property name="size" value="100%, 100%" />
+        <property name="size" value="100%, 100%"></property>
       </media>
       <media id="video_praia" src="praia.mp4">
-        <property name="size" value="100%, 100%" />
+        <property name="size" value="100%, 100%"></property>
       </media>
       <media id="icone_centro" src="icone_centro.png">
-        <property name="top" value="80%" />
-        <property name="size" value="20%, 20%" />
-        <property name="zindex" value="1" />
+        <property name="top" value="80%"></property>
+        <property name="size" value="20%, 20%"></property>
+        <property name="zindex" value="1"></property>
       </media>
       <media id="icone_praia" src="icone_praia.png">
-        <property name="location" value="80%, 80%" />
-        <property name="size" value="20%, 20%" />
-        <property name="zindex" value="1" />
+        <property name="location" value="80%, 80%"></property>
+        <property name="size" value="20%, 20%"></property>
+        <property name="zindex" value="1"></property>
       </media>
       <link xconnector="conEx#onBeginStart">
         <bind role="onBegin" component="video_inicial" interface="creditos">
-        <bind role="start" component="icone_centro" />
+        <bind role="start" component="icone_centro"></bind></bind>
         <bind role="start" component="icone_praia" />
       </link>
       <link xconnector="onSelectionStopStart">
-        <bind role="onSelection" component="icone_centro" />
-        <bind role="stop" component="icone_centro" />
+        <bind role="onSelection" component="icone_centro"></bind>
+        <bind role="stop" component="icone_centro"></bind>
         <bind role="stop" component="icone_praia" />
-        <bind role="stop" component="video_inicial" />
-        <bind role="start" component="video_centro" />
+        <bind role="stop" component="video_inicial"></bind>
+        <bind role="start" component="video_centro"></bind>
       </link>
       <link xconnector="onSelectionStopStart">
         <bind role="onSelection" component="icone_praia" />
-        <bind role="stop" component="icone_centro" />
+        <bind role="stop" component="icone_centro"></bind>
         <bind role="stop" component="icone_praia" />
-        <bind role="stop" component="video_inicial" />
-        <bind role="start" component="video_praia" />
+        <bind role="stop" component="video_inicial"></bind>
+        <bind role="start" component="video_praia"></bind>
       </link>
     </body>
   </ncl>
@@ -1982,43 +1982,43 @@ _data.nclTask2CCodeOnly = `
    <ncl xmlns="http://www.ncl.org.br/NCL3.0/EDTVProfile">
     <head>
       <connectorBase>
-        <importBase documentURI="causalConnBase.ncl" alias="conEx"/>
+        <importBase documentURI="causalConnBase.ncl" alias="conEx"></importBase>
       </connectorBase>
     </head>
     <body>
-      <port component="video_inicial" />
+      <port component="video_inicial"></port>
       <media id="video_inicial" src="video_inicial.mp4">
-        <property name="size" value="100%, 100%" />
+        <property name="size" value="100%, 100%"></property>
       </media>
       <media id="video_centro" src="centro.mp4">
-        <property name="size" value="100%, 100%" />
+        <property name="size" value="100%, 100%"></property>
       </media>
       <media id="video_praia" src="praia.mp4">
-        <property name="size" value="100%, 100%" />
+        <property name="size" value="100%, 100%"></property>
       </media>
       <media id="sinte_voz_videos" src="sinte_voz_videos.ssml">
-        <area label="pergunta" />
+        <area label="pergunta"></area>
       </media>
       <input id="rec_voz_videos" src="rec_voz_videos.sgrs">
-        <area label="centro" />
-        <area label="praia" />
+        <area label="centro"></area>
+        <area label="praia"></area>
       </input>
       <link xconnector="conEx#onBeginStart">
-        <bind role="onBegin" component="video_inicial" interface="creditos" />
-        <bind role="start" component="sinte_voz_videos" interface="pergunta"/>
-        <bind role="start" component="rec_voz" />
+        <bind role="onBegin" component="video_inicial" interface="creditos"></area>
+        <bind role="start" component="sinte_voz_videos" interface="pergunta"></bind>
+        <bind role="start" component="rec_voz"></bind>
       </link>
       <link xconnector="onRecognizeStopStart">
-        <bind role="onRecognize" component="rec_voz" interface="centro" />
-        <bind role="stop" component="rec_voz" />
-        <bind role="stop" component="video_inicial" />
-        <bind role="start" component="video_centro" />
+        <bind role="onRecognize" component="rec_voz" interface="centro"></bind>
+        <bind role="stop" component="rec_voz"></bind>
+        <bind role="stop" component="video_inicial"></bind>
+        <bind role="start" component="video_centro"></bind>
       </link>
       <link xconnector="onRecognizeStopStart">
-        <bind role="onRecognize" component="rec_voz_videos" interface="praia" />
-        <bind role="stop" component="rec_voz_videos" />
-        <bind role="stop" component="video_inicial" />
-        <bind role="start" component="video_praia" />
+        <bind role="onRecognize" component="rec_voz_videos" interface="praia"></bind>
+        <bind role="stop" component="rec_voz_videos"></area>
+        <bind role="stop" component="video_inicial"></bind>
+        <bind role="start" component="video_praia"></bind>
       </link>
     </body>
   </ncl>
@@ -2396,7 +2396,7 @@ _data.htmlIntro1CodeC = `
   auto-links: false;"> <![CDATA[
   <img id="icone" src="icone.png"></img>
   <video id="midia_principal" src="video.mp4">
-    <area id="credits" begin="300s" end="360s" />
+    <area id="credits" begin="300s" end="360s"></area>
   </video>
   ]]></script>
 `
@@ -2407,7 +2407,7 @@ _data.htmlIntro1CodeE = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
   <object id="sinte_voz" src="sinte_voz.ssml">
-    <area label="repetir"/>
+    <area label="repetir"></area>
   </object>
   ]]></script>
 `
@@ -2417,11 +2417,11 @@ _data.htmlIntro2CodeA = `
   auto-links: false;"><![CDATA[
   <!DOCTYPE html>
   <html>
-  <head><script src="synchronism.js"></script></head>
+  <head><script src="synchronism.js"><&#47script></head>
   <body>
     <video id="midia_principal" src="video.mp4"
-      style="position: absolute; hight 100%; width: 100%;" >
-      <area id="credits" begin="300s" end="360s" />
+      style="position: absolute; hight 100%; width: 100%;">
+      <area id="credits" begin="300s" end="360s"></area>
     </video>
     <img id="icone_repetir" src="icone_repetir.png"
       style="position: absolute; left: 50%; top: 50%; z-index: 1;">
@@ -2452,17 +2452,17 @@ _data.htmlIntro3CodeC = `
   auto-links: false;"><![CDATA[
   <!DOCTYPE html>
   <html>
-  <head><script src="synchronism.js"></script></head>
+  <head><script src="synchronism.js"><&#47script></head>
   <body>
     <video id="midia_principal" src="video.mp4"
       style="position: absolute; hight 100%; width: 100%;">
-      <area id="credits" begin="300s" end="360s" />
+      <area id="credits" begin="300s" end="360s"><&#47area>
     </video>
     <object id="sinte_voz" src="sinte_voz.ssml">
-      <area label="pergunta"/>
+      <area label="pergunta"><&#47area>
     </object>
     <object id="rec_voz" src="rec_voz.srgs">
-      <area label="repete"/>
+      <area label="repete"><&#47repete>
     </object>
     <script>
       var sync1 = new Synchronism("onBeginStart")
@@ -2491,17 +2491,17 @@ _data.htmlIntro4CodeB = `
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <html>
-  <head><script src="synchronism.js"></script></head>
+  <head><script src="synchronism.js"><&#47script></head>
   <body>
     <video id="midia_principal" src="video.mp4"
       style="position: absolute; hight 100%; width: 100%;">
-      <area id="credits" begin="300s" end="360s" />
+      <area id="credits" begin="300s" end="360s"><&#47area>
     </video>
     <object id="sinte_voz" src="sinte_voz.ssml">
-      <area label="pergunta"/>
+      <area label="pergunta"><&#47area>
     </object>
     <object id="rec_voz" src="rec_voz.srgs">
-      <area label="repete"/>
+      <area label="repete"><&#47repete>
     </object>
     <script>
       var gu_leap_microphone("gu_leap_microphone.sparql", 2)
@@ -2612,19 +2612,19 @@ _data.htmlTask1Code = `
   auto-links: false;"> <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <html>
-  <head><script src="synchronism.js"></script></head>
+  <head><script src="synchronism.js"><&#47script></head>
   <body>
     <video id="video_inicial" src="video_inicial.mp4"
       style="position: absolute; hight 100%; width: 100%;">
-      <area id="credits" begin="300s" end="360s" />
+      <area id="credits" begin="300s" end="360s"><&#47area>
     </video>
     <video id="video_centro" src="video_centro.mp4"
       style="position: absolute; hight 100%; width: 100%;">
-      <area id="credits" begin="300s" end="360s" />
+      <area id="credits" begin="300s" end="360s"><&#47area>
     </video>
     <video id="video_praia" src="video_praia.mp4"
       style="position: absolute; hight 100%; width: 100%;">
-      <area id="credits" begin="300s" end="360s" />
+      <area id="credits" begin="300s" end="360s"><&#47area>
     </video>
     <img id="icone_centro" src="icone_centro.png"
       style="position: absolute; left: 50%; top: 50%; z-index: 1;">
@@ -2660,25 +2660,25 @@ _data.htmlTask1Code = `
 _data.htmlTask2CodeCOnly = `
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <html>
-  <head><script src="synchronism.js"></script></head>
+  <head><script src="synchronism.js"><&#47script></head>
   <body>
     <video id="video_inicial" src="video_inicial.mp4"
       style="position: absolute; hight 100%; width: 100%;">
-      <area id="credits" begin="300s" end="360s" />
+      <area id="credits" begin="300s" end="360s"></area>
     </video>
     <video id="video_centro" src="video_centro.mp4"
       style="position: absolute; hight 100%; width: 100%;">
-      <area id="credits" begin="300s" end="360s" />
+      <area id="credits" begin="300s" end="360s"></area>
     </video>
     <video id="video_praia" src="video_praia.mp4"
       style="position: absolute; hight 100%; width: 100%;">
-      <area id="credits" begin="300s" end="360s" />
+      <area id="credits" begin="300s" end="360s"></area>
     </video>
     <object id="sinte_voz" src="sinte_voz.ssml">
-      <area label="pergunta"/>
+      <area label="pergunta"></area>
     </object>
     <object id="rec_voz" src="rec_voz.srgs">
-      <area label="repete"/>
+      <area label="repete"></repete>
     </object>
     <script>
       var sync1 = new Synchronism("onBeginStart")
