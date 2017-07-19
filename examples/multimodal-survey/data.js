@@ -924,7 +924,7 @@ _data.conceptsIntro4BlocksB = `
     <value name="conditions">
       <block type="onrecognizeuser" id="y/zz?q?8ebd@?9llBV[0">
         <field name="id">repetir</field>
-        <field name="user_id">gu_gestos.2</field>
+        <field name="user_id">gu_gestos(2)</field>
       </block>
     </value>
     <statement name="actions">
