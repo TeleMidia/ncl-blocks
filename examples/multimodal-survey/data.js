@@ -1885,8 +1885,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'nclTask2',
       html: `
         <div style="text-align: justify; width: 70%;">
-        Tarefa 2: Considere as descrições sinte_voiz.ssml e rec.voz.srgs,
-        respectivamente, a seguir.<br><br>
+        Tarefa 2: Considere as descrições sinte_voz_videos.ssml e
+        rec_voz_videos.srgs a seguir.<br><br>
 
         <div id='nclTask2CodeA'></div>
         <div id='nclTask2CodeB'></div>
@@ -1951,8 +1951,8 @@ _data.nclTask1Code = `
       </connectorBase>
     </head>
     <body>
-      <port component="video_principal" />
-      <media id="video_principal" src="video_principal.mp4">
+      <port component="video_inicial" />
+      <media id="video_inicial" src="video_inicial.mp4">
         <property name="size" value="100%, 100%" />
         <area label="credits" begin="300s" end="360s" />
       </media>
@@ -1973,7 +1973,7 @@ _data.nclTask1Code = `
         <property name="zindex" value="1" />
       </media>
       <link xconnector="onBeginStart">
-        <bind role="onBegin" component="video_principal" interface="creditos">
+        <bind role="onBegin" component="video_inicial" interface="creditos">
         <bind role="start" component="icone_centro" />
         <bind role="start" component="icone_praia" />
       </link>
@@ -1981,14 +1981,14 @@ _data.nclTask1Code = `
         <bind role="onSelection" component="icone_centro" />
         <bind role="stop" component="icone_centro" />
         <bind role="stop" component="icone_praia" />
-        <bind role="stop" component="video_principal" />
+        <bind role="stop" component="video_inicial" />
         <bind role="start" component="video_centro" />
       </link>
       <link xconnector="onSelectionStopStart">
         <bind role="onSelection" component="icone_praia" />
         <bind role="stop" component="icone_centro" />
         <bind role="stop" component="icone_praia" />
-        <bind role="stop" component="video_principal" />
+        <bind role="stop" component="video_inicial" />
         <bind role="start" component="video_praia" />
       </link>
     </body>
@@ -2039,8 +2039,8 @@ _data.nclTask2CCodeOnly = `
       </connectorBase>
     </head>
     <body>
-      <port component="video_principal" />
-      <media id="video_principal" src="video_principal.mp4">
+      <port component="video_inicial" />
+      <media id="video_inicial" src="video_inicial.mp4">
         <property name="size" value="100%, 100%" />
       </media>
       <media id="video_centro" src="centro.mp4">
@@ -2049,28 +2049,28 @@ _data.nclTask2CCodeOnly = `
       <media id="video_praia" src="praia.mp4">
         <property name="size" value="100%, 100%" />
       </media>
-      <media id="sinte_voz" src="sinte_voz.srgs">
+      <media id="sinte_voz_videos" src="sinte_voz_videos.ssml">
         <area label="pergunta" />
       </media>
-      <input id="rec_voz" src="rec_voz.sgrs">
+      <input id="rec_voz_videos" src="rec_voz_videos.sgrs">
         <area label="centro" />
         <area label="praia" />
       </input>
       <link xconnector="onBeginStart">
-        <bind role="onBegin" component="video_principal" interface="creditos" />
-        <bind role="start" component="sinte_voz" interface="pergunta"/>
+        <bind role="onBegin" component="video_inicial" interface="creditos" />
+        <bind role="start" component="sinte_voz_videos" interface="pergunta"/>
         <bind role="start" component="rec_voz" />
       </link>
       <link xconnector="onRecognizeStopStart">
         <bind role="onRecognize" component="rec_voz" interface="centro" />
         <bind role="stop" component="rec_voz" />
-        <bind role="stop" component="video_principal" />
+        <bind role="stop" component="video_inicial" />
         <bind role="start" component="video_centro" />
       </link>
       <link xconnector="onRecognizeStopStart">
-        <bind role="onRecognize" component="rec_voz" interface="praia" />
-        <bind role="stop" component="rec_voz" />
-        <bind role="stop" component="video_principal" />
+        <bind role="onRecognize" component="rec_voz_videos" interface="praia" />
+        <bind role="stop" component="rec_voz_videos" />
+        <bind role="stop" component="video_inicial" />
         <bind role="start" component="video_praia" />
       </link>
     </body>
@@ -2619,7 +2619,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'htmlTask2',
       html: `
         <div style="text-align: justify; width: 70%;">
-        Tarefa 2: Considere as descrições sinte_voiz.ssml e rec.voz.srgs,
+        Tarefa 2: Considere as descrições sinte_voz.ssml e rec_voz.srgs,
         respectivamente, a seguir.<br><br>
 
         <div id='htmlTask2CodeA'></div>
@@ -2667,15 +2667,15 @@ _data.htmlTask1Code = `
   <html>
   <head></head>
   <body>
-    <video id="midia_principal" src="video.mp4"
+    <video id="video_inicial" src="video_inicial.mp4"
       style="position: absolute; hight 100%; width: 100%;">
       <area id="credits" begin="300s" end="360s" />
     </video>
-    <video id="video_centro" src="video.mp4"
+    <video id="video_centro" src="video_centro.mp4"
       style="position: absolute; hight 100%; width: 100%;">
       <area id="credits" begin="300s" end="360s" />
     </video>
-    <video id="video_praia" src="video.mp4"
+    <video id="video_praia" src="video_praia.mp4"
       style="position: absolute; hight 100%; width: 100%;">
       <area id="credits" begin="300s" end="360s" />
     </video>
@@ -2688,21 +2688,21 @@ _data.htmlTask1Code = `
     <script>
       var sync1 = new Synchronism("onBeginStart")
       sync.bind("onBegin", "body")
-      sync.bind("start", "midia_principal")
+      sync.bind("start", "video_inicial")
 
       var sync2 = new Synchronism("onBeginStart")
-      sync.bind("onBegin", "midia_principal", "credits")
+      sync.bind("onBegin", "video_inicial", "credits")
       sync.bind("start", "icone_centro")
       sync.bind("start", "icone_praia")
 
       var sync3 = new Synchronism("onSelectionStopStart")
       sync.bind("onSelection", "icone_centro")
-      sync.bind("stop", "midia_principal")
+      sync.bind("stop", "video_inicial")
       sync.bind("start", "video_centro")
 
       var sync3 = new Synchronism("onSelectionStopStart")
       sync.bind("onSelection", "icone_praia")
-      sync.bind("stop", "midia_principal")
+      sync.bind("stop", "video_inicial")
       sync.bind("start", "video_praia")
     <&#47script>
   </body>
@@ -2712,18 +2712,18 @@ _data.htmlTask1Code = `
 
 _data.htmlTask2CodeCOnly = `
   <?xml version="1.0" encoding="ISO-8859-1"?>
- <html>
+  <html>
   <head></head>
   <body>
-    <video id="midia_principal" src="video.mp4"
+    <video id="video_inicial" src="video_inicial.mp4"
       style="position: absolute; hight 100%; width: 100%;">
       <area id="credits" begin="300s" end="360s" />
     </video>
-    <video id="video_centro" src="video.mp4"
+    <video id="video_centro" src="video_centro.mp4"
       style="position: absolute; hight 100%; width: 100%;">
       <area id="credits" begin="300s" end="360s" />
     </video>
-    <video id="video_praia" src="video.mp4"
+    <video id="video_praia" src="video_praia.mp4"
       style="position: absolute; hight 100%; width: 100%;">
       <area id="credits" begin="300s" end="360s" />
     </video>
@@ -2736,21 +2736,21 @@ _data.htmlTask2CodeCOnly = `
     <script>
       var sync1 = new Synchronism("onBeginStart")
       sync.bind("onBegin", "body")
-      sync.bind("start", "midia_principal")
+      sync.bind("start", "video_inicial")
 
       var sync2 = new Synchronism("onBeginStart")
-      sync.bind("onBegin", "midia_principal", "credits")
+      sync.bind("onBegin", "video_inicial", "credits")
       sync.bind("start", "sinte_voz", "pergunta")
       sync.bind("start", "rec_voz")
 
       var sync3 = new Synchronism("onRecognizeStopStart")
       sync.bind("onRecognize", "rec_voz", "centro")
-      sync.bind("stop", "midia_principal")
+      sync.bind("stop", "video_inicial")
       sync.bind("start", "video_centro")
 
       var sync3 = new Synchronism("onRecognizeStopStart")
       sync.bind("onRecognize", "rec_voz", "praia")
-      sync.bind("stop", "midia_principal")
+      sync.bind("stop", "video_inicial")
       sync.bind("start", "video_praia")
     <&#47script>
   </body>
