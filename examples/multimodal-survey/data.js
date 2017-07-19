@@ -586,7 +586,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;">
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em>, os blocos a
         seguir são uma nova versão da aplicação que reinicia um vídeo dadoa
-        uma interação. Entretanto, nessa versão, o vídeo é reiniciado apenas
+        uma interação. Entretanto, nessa versão, o vídeo será reiniciado apenas
         quando o segundo usuário falar "repita vídeo".</p>
         </div>
 
@@ -1022,7 +1022,7 @@ _data.blocksTask1Xml = `
       </value>
     </block>
     <block type="media" id="PnS;4T$~ftTn7U;nWSZb" x="550" y="208">
-      <field name="id">img_centro</field>
+      <field name="id">icone_centro</field>
       <value name="src">
         <block type="image" id="n8jL;6KJe-2c6B~=pPj("></block>
       </value>
@@ -1039,7 +1039,7 @@ _data.blocksTask1Xml = `
       </value>
     </block>
     <block type="media" id="K2a)Xd1Ob5$8Ju=7i:DR" x="550" y="353">
-      <field name="id">img_praia</field>
+      <field name="id">icone_praia</field>
       <value name="src">
         <block type="image" id="fQF^b?g4I,]ah26x]In~"></block>
       </value>
@@ -1055,10 +1055,10 @@ _data.blocksTask1Xml = `
       </value>
       <statement name="actions">
         <block type="start" id="UEqL{b=Ws2G#w}+xMV%m">
-          <field name="id">img_centro</field>
+          <field name="id">icone_centro</field>
           <next>
             <block type="start" id=".Pt;)N?Y.:xGz;dDp@+W">
-              <field name="id">img_praia</field>
+              <field name="id">icone_praia</field>
             </block>
           </next>
         </block>
@@ -1067,7 +1067,7 @@ _data.blocksTask1Xml = `
     <block type="link" id="M)^!XeQ3fwhKEwGTcoGK" x="20" y="590">
       <value name="conditions">
         <block type="onselection" id="voo~B}yCX+XML3~iOm0r">
-          <field name="id">img_centro</field>
+          <field name="id">icone_centro</field>
         </block>
       </value>
       <statement name="actions">
@@ -1075,10 +1075,10 @@ _data.blocksTask1Xml = `
           <field name="id">video_principal</field>
           <next>
             <block type="stop" id="9Eb$H9^oR7Z)o_g^A7r?">
-              <field name="id">img_centro</field>
+              <field name="id">icone_centro</field>
               <next>
                 <block type="stop" id="xz194KXLw:HdJABl^)[9">
-                  <field name="id">img_praia</field>
+                  <field name="id">icone_praia</field>
                   <next>
                     <block type="start" id="Wo67TbqF5]_pN(b1R3D_">
                       <field name="id">video_centro</field>
@@ -1094,7 +1094,7 @@ _data.blocksTask1Xml = `
     <block type="link" id="BLK@~VH8\`;o!;uMR.^tZ" x="550" y="597">
       <value name="conditions">
         <block type="onselection" id="O]aL:r0KkCvhs#W\`[}El">
-          <field name="id">img_praia</field>
+          <field name="id">icone_praia</field>
         </block>
       </value>
       <statement name="actions">
@@ -1102,7 +1102,7 @@ _data.blocksTask1Xml = `
           <field name="id">video_principal</field>
           <next>
             <block type="stop" id="=6LVnQ^v7.gTbQiBB2rM">
-              <field name="id">img_centro</field>
+              <field name="id">icone_centro</field>
               <next>
                 <block type="stop" id="1UR0{9!iy~vJx~m2prd4">
                   <field name="id">video_praia</field>
@@ -1486,9 +1486,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         elementos <em>&ltlink></em>. O <em>&ltport></em> define que o elemento
         <em>midia_principal</em> incia com a aplicação. O primeiro defini que
         quando o <em>video_principal</em> alcançar o seu trecho de créditos a
-        imagem <em>img_repetir</em> é iniciada. O segundo que quando essa
-        <em>img_reptetir</em> é selecionado <em>video_principal</em> é
-        reiniciado (<em>stop</em> e <em>start</em>).</p>
+        imagem <em>icone_repetir</em> é iniciada. O segundo que quando essa
+        <em>icone_reptetir</em> force selecionado o <em>video_principal</em>
+        será reiniciado (<em>stop</em> e <em>start</em>).</p>
 
         <div id='nclIntro2CodeA'></div>
         </div>
@@ -1520,11 +1520,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <p>Para ilustrar o uso de um <em>Reconhecedor</em> em NCL, o código
         a seguir são uma nova versão da aplicação que reinicia um vídeo dado uma
-        interação. Mas nessa versão, ao invés de clicar, o vídeo é reiniciado ao
-        usuário falar "repita vídeo". Mais precisamente, a aplicação
-        utiliza um elemento <em>&ltmedia></em> mídias, um elemento de
-        <em>&ltinput></em>, um <em><port></em> e dois
-        <em>&ltlink></em>s.</p>
+        interação. Mas nessa versão, ao invés de clicar, o vídeo será reiniciado
+        ao usuário falar "repita vídeo". Mais precisamente, a aplicação utiliza
+        um elemento <em>&ltmedia></em> mídias, um elemento de
+        <em>&ltinput></em>, um <em><port></em> e dois <em>&ltlink></em>s.</p>
 
         <p>O elemento de <em>&ltmedia></em> chamado de
         <em>video_principal</em> (linhas 17-19) que define um trecho chamado
@@ -1570,8 +1569,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em NCL, o código
         a seguir é uma nova versão da aplicação que reinicia um vídeo dado uma
         interação (modificações em destaque). Mas nessa versão, ao invés de
-        clicar, o vídeo é reiniciado ao segundo usuário do usuário falar "repita
-        vídeo".</p>
+        clicar, o vídeo será reiniciado ao segundo usuário do usuário falar
+        "repita vídeo".</p>
 
         <div id='nclIntro4CodeB'></div>
         </div>
@@ -1660,16 +1659,16 @@ _data.nclIntro2CodeA = `
         <property name="size" value="100%, 100%" />
         <area label="credits" begin="300s" end="360s" />
       </media>
-      <media id="img_repetir" src="img_repetir.png">
+      <media id="icone_repetir" src="icone_repetir.png">
         <property name="size" value="20%, 20%" />
         <property name="zindex" value="1" />
       </media>
       <link xconnector="onBeginStart">
         <bind role="onBegin" component="video_principal" interface="credits"/>
-        <bind role="start" component="img_repetir"/>
+        <bind role="start" component="icone_repetir"/>
       </link>
       <link xconnector="onSelectionStopStart">
-        <bind role="onSelection" component="img_repetir"/>
+        <bind role="onSelection" component="icone_repetir"/>
         <bind role="stop" component="video_principal"/>
         <bind role="start" component="video_principal"/>
       </link>
@@ -1963,32 +1962,32 @@ _data.nclTask1Code = `
       <media id="video_praia" src="praia.mp4">
         <property name="size" value="100%, 100%" />
       </media>
-      <media id="img_centro" src="img_centro.png">
+      <media id="icone_centro" src="icone_centro.png">
         <property name="top" value="80%" />
         <property name="size" value="20%, 20%" />
         <property name="zindex" value="1" />
       </media>
-      <media id="img_praia" src="img_praia.png">
+      <media id="icone_praia" src="icone_praia.png">
         <property name="location" value="80%, 80%" />
         <property name="size" value="20%, 20%" />
         <property name="zindex" value="1" />
       </media>
       <link xconnector="onBeginStart">
         <bind role="onBegin" component="video_principal" interface="creditos">
-        <bind role="start" component="img_centro" />
-        <bind role="start" component="img_praia" />
+        <bind role="start" component="icone_centro" />
+        <bind role="start" component="icone_praia" />
       </link>
       <link xconnector="onSelectionStopStart">
-        <bind role="onSelection" component="img_centro" />
-        <bind role="stop" component="img_centro" />
-        <bind role="stop" component="img_praia" />
+        <bind role="onSelection" component="icone_centro" />
+        <bind role="stop" component="icone_centro" />
+        <bind role="stop" component="icone_praia" />
         <bind role="stop" component="video_principal" />
         <bind role="start" component="video_centro" />
       </link>
       <link xconnector="onSelectionStopStart">
-        <bind role="onSelection" component="img_praia" />
-        <bind role="stop" component="img_centro" />
-        <bind role="stop" component="img_praia" />
+        <bind role="onSelection" component="icone_praia" />
+        <bind role="stop" component="icone_centro" />
+        <bind role="stop" component="icone_praia" />
         <bind role="stop" component="video_principal" />
         <bind role="start" component="video_praia" />
       </link>
@@ -2343,9 +2342,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>O trecho de código tem três objetos <em>Synchronism</em>. O
         primeiro define que o elemento <em>midia_principal</em> incia com a
         aplicação. O segundo defini que quando o <em>video_principal</em>
-        alcançar o seu trecho de créditos a imagem <em>img_repetir</em> é
-        iniciada. O terceiro que quando essa <em>img_reptetir</em> é selecionado
-        <em>video_principal</em> é reiniciado (<em>stop</em> e
+        alcançar o seu trecho de créditos a imagem <em>icone_repetir</em> é
+        iniciada. O terceiro que quando essa <em>icone_reptetir</em> for
+        selecionado <em>video_principal</em> será reiniciado (<em>stop</em> e
         <em>start</em>).</p>
 
         <div id='htmlIntro2CodeA'></div>
@@ -2477,7 +2476,7 @@ _data.htmlIntro2CodeA = `
       style="position: absolute; hight 100%; width: 100%;" >
       <area id="credits" begin="300s" end="360s" />
     </video>
-    <img id="img_repetir" src="img_repetir.png"
+    <img id="icone_repetir" src="icone_repetir.png"
       style="position: absolute; left: 50%; top: 50%; z-index: 1;">
     </img>
     <script>
@@ -2487,10 +2486,10 @@ _data.htmlIntro2CodeA = `
 
       var sync2 = new Synchronism("onBeginStart")
       sync.bind("onBegin", "midia_principal", "credits")
-      sync.bind("start", "img_repetir")
+      sync.bind("start", "icone_repetir")
 
       var sync3 = new Synchronism("onSelectionStopStart")
-      sync.bind("onSelection", "img_repetir")
+      sync.bind("onSelection", "icone_repetir")
       sync.bind("stop", "midia_principal")
       sync.bind("start", "midia_principal")
     <&#47script>
@@ -2680,10 +2679,10 @@ _data.htmlTask1Code = `
       style="position: absolute; hight 100%; width: 100%;">
       <area id="credits" begin="300s" end="360s" />
     </video>
-    <img id="img_centro" src="img_centro.png"
+    <img id="icone_centro" src="icone_centro.png"
       style="position: absolute; left: 50%; top: 50%; z-index: 1;">
     </img>
-    <img id="img_praia" src="img_praia.png"
+    <img id="icone_praia" src="icone_praia.png"
       style="position: absolute; left: 50%; top: 50%; z-index: 1;">
     </img>
     <script>
@@ -2693,16 +2692,16 @@ _data.htmlTask1Code = `
 
       var sync2 = new Synchronism("onBeginStart")
       sync.bind("onBegin", "midia_principal", "credits")
-      sync.bind("start", "img_centro")
-      sync.bind("start", "img_praia")
+      sync.bind("start", "icone_centro")
+      sync.bind("start", "icone_praia")
 
       var sync3 = new Synchronism("onSelectionStopStart")
-      sync.bind("onSelection", "img_centro")
+      sync.bind("onSelection", "icone_centro")
       sync.bind("stop", "midia_principal")
       sync.bind("start", "video_centro")
 
       var sync3 = new Synchronism("onSelectionStopStart")
-      sync.bind("onSelection", "img_praia")
+      sync.bind("onSelection", "icone_praia")
       sync.bind("stop", "midia_principal")
       sync.bind("start", "video_praia")
     <&#47script>
