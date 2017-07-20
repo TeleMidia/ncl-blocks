@@ -1875,9 +1875,9 @@ _data.nclIntro4CodeA = `
   PREFIX prf: <http://www.wapforum.org/profiles/UAPROF/ccppschema-20010430>
   SELECT ?person
   WHERE {
-  ?person prf:component ? component.
-  ?component prf: name ? name FILTER regex(?name, "Leap Motion")
-    ? name FILTER regex(?name, "Microphone")
+  ?person prf:component ?component.
+  ?component prf: name ?name FILTER regex(?name, "Leap Motion")
+    ?name FILTER regex(?name, "Microphone")
   }
   ]]></script>
 `
@@ -2693,16 +2693,15 @@ _data.htmlIntro3CodeC = `
 _data.htmlIntro4CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight:[7,8]"> <![CDATA[
-    var sparql = [
-      "PREFIX foaf: <http://xmlns.com/foaf/0.1>",
+    var sparql =
+      \`PREFIX foaf: <http://xmlns.com/foaf/0.1>
       PREFIX prf: <http://www.wapforum.org/profiles/UAPROF/ccppschema-20010430>
-      "SELECT ?person",
-      "WHERE {",
-          ?person prf:component ? component.
-      ?component prf: name ? name FILTER regex(?name, "Leap Motion")
-        ? name FILTER regex(?name, "Microphone")
-      "}"
-    ].join(" ");
+      SELECT ?person
+      WHERE {
+        ?person prf:component ?component.
+        ?component prf: name ?name FILTER regex(?name, "Leap Motion")
+        ?name FILTER regex(?name, "Microphone")
+      }\`
     var gu_leap_microphone = new UserGroup(sparql, 2)
   ]]></script>
 `
@@ -2726,16 +2725,15 @@ _data.htmlIntro4CodeB = `
       <area label="repete"><&#47repete>
     </object>
     <script>
-      var sparql = [
-        "PREFIX foaf: <http://xmlns.com/foaf/0.1>",
+      var sparql = 
+        \`PREFIX foaf: <http://xmlns.com/foaf/0.1>
         PREFIX prf: <http://www.wapforum.org/profiles/UAPROF/ccppschema-20010430>
-        "SELECT ?person",
-        "WHERE {",
-            ?person prf:component ? component.
-        ?component prf: name ? name FILTER regex(?name, "Leap Motion")
-          ? name FILTER regex(?name, "Microphone")
-        "}"
-      ].join(" ");
+        SELECT ?person
+        WHERE {
+          ?person prf:component ?component.
+          ?component prf: name ?name FILTER regex(?name, "Leap Motion")
+          ?name FILTER regex(?name, "Microphone")
+        }\`
       var gu_leap_microphone = new UserGroup(sparql, 2)
 
       var sync1 = new Synchronism("onBeginStart")
