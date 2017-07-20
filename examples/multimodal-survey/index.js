@@ -141,21 +141,21 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
         NCLBlocks.calcHt(1, 110), _data.conceptsIntro1BlocksD, true)
       break
     case 'conceptsIntro2':
-      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro2b',
+      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro2B',
         NCLBlocks.calcHt(3, 110), _data.conceptsIntro2BlocksB, true)
       break
     case 'conceptsIntro3':
-      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro3a',
+      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro3A',
         NCLBlocks.calcHt(2, 200), _data.conceptsIntro3BlocksA, true)
-      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro3b',
+      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro3B',
         NCLBlocks.calcHt(4, 110), _data.conceptsIntro3BlocksB, true)
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro3c',
         NCLBlocks.calcHt(5, 110), _data.conceptsIntro3BlocksC, true)
       break
     case 'conceptsIntro4':
-      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro4a',
+      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro4A',
         NCLBlocks.calcHt(1, 130), _data.conceptsIntro4BlocksA, true)
-      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro4b',
+      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro4B',
         NCLBlocks.calcHt(4, 130), _data.conceptsIntro4BlocksB, true)
       break
     case 'conceptsTask1':

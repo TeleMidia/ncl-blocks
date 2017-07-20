@@ -550,7 +550,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         </div>
 
-        <div id='conceptsIntro2b'></div>
+        <div id='conceptsIntro2B'></div>
       `
     },
     {
@@ -584,7 +584,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         nessas direções.</p>
         </div>
 
-        <div id='conceptsIntro3a'></div><br>
+        <div id='conceptsIntro3A'></div><br>
 
         <div style="text-align: justify; width: 70%;">
         <p>Para ilustrar o uso desse conceito em uma aplicação, os
@@ -606,7 +606,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>midia_principal</em> deve ser reiniciada (terminada e inciada).</p>
         </div>
 
-        <div id='conceptsIntro3b'></div><br>
+        <div id='conceptsIntro3B'></div><br>
 
         <div style="text-align: justify; width: 70%;"> 
         <p>Um dos principais benefícios de interfaces multimodais é o uso
@@ -648,7 +648,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         membros, cada um com seu reconhecedor de gestos (e.g. LeapMotion).</p>
         </div>
 
-        <div id='conceptsIntro4a'></div><br>
+        <div id='conceptsIntro4A'></div><br>
 
         <div style="text-align: justify; width: 70%;"> 
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em>, os blocos a
@@ -657,7 +657,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         apenas quando o segundo usuário falar "repita vídeo".</p>
         </div>
 
-        <div id='conceptsIntro4b'></div>
+        <div id='conceptsIntro4B'></div>
       `
     }
   ]
