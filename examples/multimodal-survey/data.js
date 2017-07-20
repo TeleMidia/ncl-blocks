@@ -1458,7 +1458,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         porções temporais com os atributos <em>begin</em> e <em>end</em> ou
         trechos delimitados com o atributo <em>label</em>.</p>
 
-        <p>Trechos de código serão apresentados para ilustrar esse conceito.</p>
+        <p>Elementos <em>&ltmedia></em> também podem possuir elementos
+        <em>&ltproperty></em> para definir características de sua apresentação,
+        como <em>&ltsize></em> (width e high), <em>&ltposition></em> (top e
+        left) and <em>&ltz-index></em>.</p>
+
+        <p>Trechos de código serão apresentados para ilustrar esse conceito em
+        NCL.</p>
 
         <p>O trecho de código a seguir define duas mídias com identificadores
         <em>midia_principal</em> e <em>icone</em>, mas elas não possuem
@@ -1608,7 +1614,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         elemento <em>area</em> e podem definem trechos delimitados da descrição
         com o atributo <em>label</em>.</p>
         
-        <p>Trechos de código serão apresentados para ilustrar esse conceito.</p>
+        <p>Trechos de código serão apresentados para ilustrar esse conceito em
+        NCL.</p>
 
         <p>O trecho de código a seguir apresenta o arquivo
         <em>rec_voz.srgs</em>. Esse arquivo é uma descrição de reconhecimento de
@@ -2332,7 +2339,12 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         definir uma porção temporal com os atributos <em>begin</em> e
         <em>end</em> ou um trecho delimitado com o atributo <em>label</em>.</p>
 
-        <p>Trechos de código serão apresentados para ilustrar esse conceito.</p>
+        <p>Elementos <em>Mídia</em> também podem possuir propriedades para
+        definir características de sua apresentação definidas no atribudo
+        <em>&lstyle></em>.</p>
+
+        <p>Trechos de código serão apresentados para ilustrar esse conceito em
+        HTML.</p>
 
         <p>O trecho de código a seguir define as duas mídias com identificadores
         <em>midia_principal</em> e <em>icone</em>, mas elas não possuem
@@ -2482,7 +2494,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         definidas pelo elemento <em>area</em> e podem definem trechos
         delimitados da descrição com o atributo <em>label</em>.</p>
         
-        <p>Trechos de código serão apresentados para ilustrar esse conceito.</p>
+        <p>Trechos de código serão apresentados para ilustrar esse conceito em
+        HTML.</p>
 
         <p>O trecho de código a seguir apresenta o arquivo
         <em>rec_voz.srgs</em>. Esse arquivo é uma descrição de reconhecimento de
@@ -2574,7 +2587,9 @@ _data.htmlIntro1CodeA = `
 _data.htmlIntro1CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
-  <img id="icone" src="icone.png"></img>
+  <img id="icone" src="icone.png"
+     style="position: absolute; width: 20%; high: 20%; top: 80%; z-index: 1;">
+  </img>
   <audio id="midia_principal" src="audio.mp3"></audio>
   ]]></script>
 `
@@ -2582,8 +2597,11 @@ _data.htmlIntro1CodeB = `
 _data.htmlIntro1CodeC = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
-  <img id="icone" src="icone.png"></img>
-  <video id="midia_principal" src="video.mp4">
+  <img id="icone" src="icone.png"
+   style="position: absolute; width: 20%; high: 20%; top: 80%; z-index: 1;">
+  </img>
+  <video id="midia_principal" src="video.mp4" 
+    style="position: absolute; high 100%; width: 100%;">
     <area id="credits" begin="300s" end="360s"></area>
   </video>
   ]]></script>
@@ -2608,11 +2626,11 @@ _data.htmlIntro2CodeA = `
   <head><script src="synchronism.js"><&#47script></head>
   <body>
     <video id="midia_principal" src="video.mp4"
-      style="position: absolute; hight 100%; width: 100%;">
+      style="position: absolute; high 100%; width: 100%;">
       <area id="credits" begin="300s" end="360s"></area>
     </video>
     <img id="icone_repetir" src="icone_repetir.png"
-      style="position: absolute; left: 50%; top: 50%; z-index: 1;">
+      style="position: absolute; width: 20%; high: 20%; top: 80%; z-index: 1;">
     </img>
     <script>
       var sync1 = new Synchronism("onBeginStart")
@@ -2643,7 +2661,7 @@ _data.htmlIntro3CodeC = `
   <head><script src="synchronism.js"><&#47script></head>
   <body>
     <video id="midia_principal" src="video.mp4"
-      style="position: absolute; hight 100%; width: 100%;">
+      style="position: absolute; high 100%; width: 100%;">
       <area id="credits" begin="300s" end="360s"><&#47area>
     </video>
     <object id="sinte_voz" src="sinte_voz.ssml">
@@ -2698,7 +2716,7 @@ _data.htmlIntro4CodeB = `
   <head><script src="synchronism.js"><&#47script></head>
   <body>
     <video id="midia_principal" src="video.mp4"
-      style="position: absolute; hight 100%; width: 100%;">
+      style="position: absolute; high 100%; width: 100%;">
       <area id="credits" begin="300s" end="360s"><&#47area>
     </video>
     <object id="sinte_voz" src="sinte_voz.ssml">
@@ -2829,22 +2847,22 @@ _data.htmlTask1Code = `
   <head><script src="synchronism.js"><&#47script></head>
   <body>
     <video id="video_inicial" src="video_inicial.mp4"
-      style="position: absolute; hight 100%; width: 100%;">
+      style="position: absolute; high 100%; width: 100%;">
       <area id="credits" begin="300s" end="360s"><&#47area>
     </video>
     <video id="video_centro" src="video_centro.mp4"
-      style="position: absolute; hight 100%; width: 100%;">
+      style="position: absolute; high 100%; width: 100%;">
       <area id="credits" begin="300s" end="360s"><&#47area>
     </video>
     <video id="video_praia" src="video_praia.mp4"
-      style="position: absolute; hight 100%; width: 100%;">
+      style="position: absolute; high 100%; width: 100%;">
       <area id="credits" begin="300s" end="360s"><&#47area>
     </video>
     <img id="icone_centro" src="icone_centro.png"
-      style="position: absolute; left: 50%; top: 50%; z-index: 1;">
+      style="position: absolute; width: 20%; high: 20%; top: 80%; z-index: 1;">
     </img>
     <img id="icone_praia" src="icone_praia.png"
-      style="position: absolute; left: 50%; top: 50%; z-index: 1;">
+      style="position: absolute; width: 20%; high: 20%; top: 80%; z-index: 1;">
     </img>
     <script>
       var sync1 = new Synchronism("onBeginStart")
@@ -2877,15 +2895,15 @@ _data.htmlTask2CodeCOnly = `
   <head><script src="synchronism.js"><&#47script></head>
   <body>
     <video id="video_inicial" src="video_inicial.mp4"
-      style="position: absolute; hight 100%; width: 100%;">
+      style="position: absolute; high 100%; width: 100%;">
       <area id="credits" begin="300s" end="360s"></area>
     </video>
     <video id="video_centro" src="video_centro.mp4"
-      style="position: absolute; hight 100%; width: 100%;">
+      style="position: absolute; high 100%; width: 100%;">
       <area id="credits" begin="300s" end="360s"></area>
     </video>
     <video id="video_praia" src="video_praia.mp4"
-      style="position: absolute; hight 100%; width: 100%;">
+      style="position: absolute; high 100%; width: 100%;">
       <area id="credits" begin="300s" end="360s"></area>
     </video>
     <object id="sinte_voz" src="sinte_voz.ssml">
