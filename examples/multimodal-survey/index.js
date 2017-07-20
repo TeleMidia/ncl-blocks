@@ -293,12 +293,12 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
     case 'htmlTask3Question':
       var re = /<&#47/
       _survey.getQuestionByName('htmlTask3Question').value =
-        _data.htmlTask2CodeCOnly.replace(re, '</')
+        _data.htmlTask2CodeCOnly.replace(re, '</').replace('<&#47script>', '</script>')
       break
     case 'htmlTask4Question':
       re = /<&#47/
       _survey.getQuestionByName('htmlTask4Question').value =
-        _data.htmlTask2CodeCOnly.replace(re, '</')
+        _data.htmlTask2CodeCOnly.replace(re, '</').replace('<&#47script>', '</script>')
       break
   }
   window.scrollTo(0, 0)

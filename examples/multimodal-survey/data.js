@@ -2959,7 +2959,7 @@ _data.htmlIntro4CodeA = `
 
 _data.htmlIntro4CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[26,37]">
+  auto-links: false; highlight:[16,25,31,35]">
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <html>
