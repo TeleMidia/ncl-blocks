@@ -64,7 +64,7 @@ NCLBlocks.Msg.LEAP = 'sensor de gestos de mão'
 NCLBlocks.Msg.MICROFONE = 'microfone'
 NCLBlocks.Msg.CONDITION = 'condição'
 NCLBlocks.Msg.CONDITION_SIMPLE = 'condição simples'
-NCLBlocks.Msg.CONDITIONS = 'condições'
+NCLBlocks.Msg.CONDITIONS = 'Sincronismo - condições'
 NCLBlocks.Msg.ONBEGIN = 'ao começar'
 NCLBlocks.Msg.ONEND = 'ao terminar'
 NCLBlocks.Msg.ONPAUSE = 'ao pausar'
@@ -75,11 +75,11 @@ NCLBlocks.Msg.ONRECOGNIZE_FROM_USER = 'do usuário'
 // NCLBlocks.Msg.COMPOUND_CONDITION_SEQ = 'em sequencia'
 // NCLBlocks.Msg.COMPOUND_CONDITION_AND = 'todos entre'
 // NCLBlocks.Msg.COMPOUND_CONDITION_OR = 'um entre'
-NCLBlocks.Msg.COMPOUND_CONDITION_SEQ = 'SEQ'
-NCLBlocks.Msg.COMPOUND_CONDITION_AND = 'AND'
 NCLBlocks.Msg.COMPOUND_CONDITION_OR = 'OR'
+NCLBlocks.Msg.COMPOUND_CONDITION_AND = 'AND'
+NCLBlocks.Msg.COMPOUND_CONDITION_SEQ = 'SEQ'
 NCLBlocks.Msg.ACTION = 'ação'
-NCLBlocks.Msg.ACTIONS = 'ações'
+NCLBlocks.Msg.ACTIONS = 'Sincronismo - ações'
 NCLBlocks.Msg.START = 'inicie'
 NCLBlocks.Msg.STOP = 'termine'
 NCLBlocks.Msg.PAUSE = 'pause'
@@ -1159,9 +1159,9 @@ Blockly.Blocks.compoundcondition = {
     }
     // add buttons and initial inputs
     var dropdown = new Blockly.FieldDropdown([
-      [NCLBlocks.Msg.COMPOUND_CONDITION_SEQ, 'seq'],
+      [NCLBlocks.Msg.COMPOUND_CONDITION_OR, 'or'],
       [NCLBlocks.Msg.COMPOUND_CONDITION_AND, 'and'],
-      [NCLBlocks.Msg.COMPOUND_CONDITION_OR, 'or']
+      [NCLBlocks.Msg.COMPOUND_CONDITION_SEQ, 'seq']
     ])
     this.appendDummyInput().appendField(dropdown, 'operator')
     this.addMinusPlusDummyInput()
