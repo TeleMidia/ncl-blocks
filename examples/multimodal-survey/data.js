@@ -2598,7 +2598,7 @@ _data.htmlIntro1CodeE = `
 
 _data.htmlIntro2CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false;"><![CDATA[
+  auto-links: false; highlight:[5,9,13,17,21]"><![CDATA[
   <!DOCTYPE html>
   <html>
   <head><script src="synchronism.js"><&#47script></head>
@@ -2633,7 +2633,7 @@ _data.htmlIntro3CodeB = _data.nclIntro3CodeB
 
 _data.htmlIntro3CodeC = `
  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false;"><![CDATA[
+  auto-links: false; highlight:[9,12,24]"><![CDATA[
   <!DOCTYPE html>
   <html>
   <head><script src="synchronism.js"><&#47script></head>
@@ -2670,7 +2670,7 @@ _data.htmlIntro3CodeC = `
 
 _data.htmlIntro4CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false;"> <![CDATA[
+  auto-links: false; highlight:[7,8]"> <![CDATA[
     var sparql = [
       "PREFIX foaf: <http://xmlns.com/foaf/0.1>",
       PREFIX prf: <http://www.wapforum.org/profiles/UAPROF/ccppschema-20010430>
@@ -2687,7 +2687,7 @@ _data.htmlIntro4CodeA = `
 
 _data.htmlIntro4CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false;">
+  auto-links: false; highlight:[26,37]">
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <html>
