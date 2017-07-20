@@ -565,7 +565,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>O <em>Reconhecedor</em> é definido por <strong>um identificador, seu
         conteúdo e âncoras</strong>. Entretanto, diferente de <em>Mídia</em>, o
         conteúdo de um <em>Reconhecedor</em> deve ser uma descrição de
-        reconhecimento As âncroas são porções delimitadas da descrição.
+        reconhecimento. As âncoras são porções delimitadas da descrição.
         Por exemplo, uma descrição de reconhecimento de voz deve ter âncoras que
         devem as frases a serem reconhecidas.</p>
 
@@ -1453,12 +1453,12 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <p>Na NCL, o conceito de <em>Mídia</em> já é implementado pelo elemento
         <em>&ltmedia></em>. O identificador é definito pelo atributo <em>id</em>
-        e o arquivo de mídia do conteúdo é definido atributo <em>src</em>. As
-        âncoras são definidas pelo elemento <em>area</em> e podem definem
+        e o arquivo de mídia do conteúdo é definido pelo atributo <em>src</em>.
+        As âncoras são definidas pelo elemento <em>area</em> e podem definem
         porções temporais com os atributos <em>begin</em> e <em>end</em> ou
         trechos delimitados com o atributo <em>label</em>.</p>
 
-        <p>Trechos de código serão apresentados para ilustrar conceito./p>
+        <p>Trechos de código serão apresentados para ilustrar esse conceito.</p>
 
         <p>O trecho de código a seguir define duas mídias com identificadores
         <em>midia_principal</em> e <em>icone</em>, mas elas não possuem
@@ -1597,16 +1597,18 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         ususário, como voz e gestos.</p>
         
         <p>O <em>Reconhecedor</em> é definido por <strong>um identificador, seu
-        conteúdo e âncoras</strong>.</p>
+        conteúdo e âncoras</strong>. Entretanto, diferente de <em>Mídia</em>, o
+        conteúdo de um <em>Reconhecedor</em> deve ser uma descrição de
+        reconhecimento.</p>
         
         <p>Na nossa NCL estendida, o conceito de <em>Reconhecedor</em> é
         implementado pelo elemento <em>&ltinput></em>. O identificador é
-        definito pelo atributo <em>id</em> e o arquivo de descrição de
-        reconhecimento é definido atributo <em>src</em>. As âncoras são
-        definidas pelo elemento <em>area</em> e podem definem trechos
-        delimitados da descrição com o atributo <em>label</em>.</p>
+        definito pelo atributo <em>id</em> e a descrição de reconhecimento é
+        definida pelo atributo <em>src</em>. As âncoras são definidas pelo
+        elemento <em>area</em> e podem definem trechos delimitados da descrição
+        com o atributo <em>label</em>.</p>
         
-        <p>Trechos de código serão apresentados para ilustrar conceito./p>
+        <p>Trechos de código serão apresentados para ilustrar esse conceito.</p>
 
         <p>O trecho de código a seguir apresenta o arquivo
         <em>rec_voz.srgs</em>. Esse arquivo é uma descrição de reconhecimento de
@@ -2322,15 +2324,15 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         conteúdo e âncoras</strong>.</p>
 
         <p>Em nossa HTML estendida, o conceito de <em>Mídia</em> é parcialmente
-        implementado por elementos como <em>&ltimg></em>, <em>&ltaudio></em> e
-        <em>&ltvideo></em>. O identificador é definito pelo atributo <em>id</em>
-        e o arquivo de mídia do conteúdo é definido atributo <em>src</em>. Para
-        permitir definir âncoras esses elementos são estendidos com elementos
-        <em>&ltarea></em>. Uma <em>&ltarea></em> pode definir uma porção
-        temporal com os atributos <em>begin</em> e <em>end</em> ou um trecho
-        delimitado com o atributo <em>label</em>.</p>
+        implementado por elementos como <em>&ltimg></em>, <em>&ltaudio></em>, 
+        <em>&ltvideo></em> e <em>&ltobj></em>. O identificador é definito pelo
+        atributo <em>id</em> e o arquivo de mídia do conteúdo é definido
+        atributo <em>src</em>. Para permitir definir âncoras esses elementos são
+        estendidos com elementos <em>&ltarea></em>. Uma <em>&ltarea></em> pode
+        definir uma porção temporal com os atributos <em>begin</em> e
+        <em>end</em> ou um trecho delimitado com o atributo <em>label</em>.</p>
 
-        <p>Trechos de código serão apresentados para ilustrar conceito./p>
+        <p>Trechos de código serão apresentados para ilustrar esse conceito.</p>
 
         <p>O trecho de código a seguir define as duas mídias com identificadores
         <em>midia_principal</em> e <em>icone</em>, mas elas não possuem
@@ -2367,10 +2369,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <div id='htmlIntro1CodeD'></div>
 
-        O segundo trecho de código define uma mídia com identificador
-        <em>sinte_voz</em> que tem como conteúdo o arquivo
-        <em>sinte_voz.srgs</em>. Essa mídia possui uma âncora que indica a frase
-        a ser sintetizada.</p>
+        O segundo trecho de código define elemento <em>&ltvideo></em> com
+        identificador <em>sinte_voz</em> que tem como conteúdo o arquivo
+        <em>sinte_voz.srgs</em>. Esse <em>&ltvideo></em> possui uma âncora que
+        indica a frase a ser sintetizada.</p>
 
         <div id='htmlIntro1CodeE'></div>
 
@@ -2469,16 +2471,18 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         ususário, como voz e gestos.</p>
 
         <p>O <em>Reconhecedor</em> é definido por <strong>um identificador, seu
-        conteúdo e âncoras</strong>.</p>
+        conteúdo e âncoras</strong>. Entretanto, diferente de <em>Mídia</em>, o
+        conteúdo de um <em>Reconhecedor</em> deve ser uma descrição de
+        reconhecimento.</p>
         
-        <p>Na nossa NCL estendida, o conceito de <em>Reconhecedor</em> é
-        implementado pelo elemento <em>&ltinput></em>. O identificador é
-        definito pelo atributo <em>id</em> e o arquivo de descrição de
-        reconhecimento é definido atributo <em>src</em>. As âncoras são
+        <p>Na nossa HTML estendida, o conceito de <em>Reconhecedor</em> é
+        implementado pelo elemento <em>&ltobj></em>. O identificador é
+        definito pelo atributo <em>id</em> e a descrição de
+        reconhecimento é definida pelo atributo <em>src</em>. As âncoras são
         definidas pelo elemento <em>area</em> e podem definem trechos
         delimitados da descrição com o atributo <em>label</em>.</p>
         
-        <p>Trechos de código serão apresentados para ilustrar conceito./p>
+        <p>Trechos de código serão apresentados para ilustrar esse conceito.</p>
 
         <p>O trecho de código a seguir apresenta o arquivo
         <em>rec_voz.srgs</em>. Esse arquivo é uma descrição de reconhecimento de
