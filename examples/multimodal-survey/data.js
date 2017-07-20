@@ -1131,10 +1131,11 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     {
       type: 'html',
       name: 'conceptsTask3',
-      html: `
-        Tarefa 3: Agora, pedimos que edite os blocos da Tarefa 2 (copiado a
-        seguir) para que utilize uma interação por gestos ao invés de uma
-        interação por comandos de voz. <br><br>
+      html: ` Tarefa 3: Agora, pedimos que edite os blocos da Tarefa 2 (copiado
+        a seguir) para que seja possivel a interação por voz <strong>ou</strong>
+        (operador OR) interação por gestos. Na interação por gesto, consire que
+        gesto mão para esquera indica centro e gesto de mão para direita indica
+        praia. <br><br>
       `
     },
     {
@@ -1153,8 +1154,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       name: 'conceptsTask4',
       html: `
-        Tarefa 4: Agora, pedimos que edite os blocos da Tarefa 2 (copiado
-        a seguir) para que apenas o segundo usuário, de um grupo de 3
+        Tarefa 4: Agora, pedimos que edite novamente os blocos da Tarefa 2
+        (copiado a seguir) para que apenas o segundo usuário, de um grupo de 3
         usuários com microphone, possa realizar a interação por voz. <br><br>
       `
     },
@@ -2182,19 +2183,21 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       isRequired: true,
       name: 'nclTask3Question',
       rows: '47',
-      title: `<p>Tarefa 3: Agora, pedimos que edite o trecho de código NCL da
-        Tarefa 2 (copiado a seguir) para que utilize uma interação por gestos ao
-        invés de uma interação por comandos de voz.</p>
+      title: `Tarefa 3: Agora, pedimos que edite o código NCL da Tarefa 2
+        (copiado  a seguir) para que seja possivel a interação por voz
+        <strong>ou</strong> (operador OR) interação por gestos. Na interação
+        por gesto, consire que gesto mão para esquera indica centro e gesto de
+        mão para direita indica praia.
       `
     },
     {
       type: 'comment',
       name: 'nclTask4Question',
       rows: '47',
-      title: ` Tarefa 4: Agora, pedimos que edite o trecho de código NCL da
-        Tarefa 2 (copiado a seguir) para que apenas o segundo usuário, de um
-        grupo de 3 usuários, com microphone, possa realizar a interação por
-        voz.`
+      title: ` Tarefa 4: Agora, pedimos que edite novamente o trecho de código
+      NCL da Tarefa 2 (copiado a seguir) para que apenas o segundo usuário, de
+      um grupo de 3 usuários, com microphone, possa realizar a interação por
+      voz.`
     }
   ]
 })
@@ -3070,17 +3073,20 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'comment',
       name: 'htmlTask3Question',
       rows: '47',
-      title: `Tarefa 3: Agora, pedimos que edite o trecho de código HTML da
-      Tarefa 2 (copiado a seguir) para que utilize uma interação por gestos ao
-      invés de uma interação por comandos de voz.`
+      title: `Tarefa 3: Agora, pedimos que edite o código HTML da Tarefa 2
+        (copiado  a seguir) para que seja possivel a interação por voz
+        <strong>ou</strong> (operador OR) interação por gestos. Na interação por
+        gesto, consire que gesto mão para esquera indica centro e gesto de mão
+        para direita indica praia.`
     },
     {
       type: 'comment',
       name: 'htmlTask4Question',
       rows: '47',
-      title: ` Tarefa 4: Agora, pedimos que edite o trecho de código HTML da
-      Tarefa 2 (copiado a seguir) para que apenas o segundo usuário, de um grupo
-      de 3 usuários com microphone, possa realizar a interação por voz.`
+      title: ` Tarefa 4: Agora, pedimos que edite novamente o trecho de código
+        HTML da Tarefa 2 (copiado a seguir) para que apenas o segundo usuário,
+        de um grupo de 3 usuários com microphone, possa realizar a interação por
+        voz.`
     }
   ]
 })
