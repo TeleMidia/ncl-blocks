@@ -587,7 +587,6 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div id='conceptsIntro3a'></div><br>
 
         <div style="text-align: justify; width: 70%;">
-
         <p>Para ilustrar o uso desse conceito em uma aplicação, os
         blocos a seguir definem uma nova versão da aplicação que reinicia um
         vídeo dada uma interação. Mas nessa versão, ao invés de selecionar, o
@@ -608,6 +607,24 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         </div>
 
         <div id='conceptsIntro3b'></div><br>
+
+        <div style="text-align: justify; width: 70%;"> 
+        <p>Um dos principais benefícios de interfaces multimodais é o uso
+        diferentes interações. Ou seja, as interações de ususários podem ser
+        realizadas por diferentes modalidades. Em nossos, conceitos essa
+        combinação de modalidades de interação pode ser feita utilizando uma
+        condição composta. Usar um operador OR indica que qualquer uma das
+        interações é necessparia. Já usar o perador AND significaria que as
+        todas as interações são necessárias em qualquer ordem. E por fim usar o
+        operador SEQ significa que as interações tem que ser feitas em
+        sequência.</p> 
+
+        <p>Os blocos a seguir modificam a aplicação acima. Mas nessa
+        versão a mídia <em>midia_principal</em> é repetida quando usuário
+        interage atravès de  voz ou (operador OR) através de gesto.</p>
+        </div>
+
+        <div id='conceptsIntro3c'></div><br>
       `
     },
     {
@@ -861,6 +878,115 @@ _data.conceptsIntro3BlocksB = `
         <next>
           <block type="start" id=".Pt;)N?s.:xGz;dDp@+W">
             <field name="id">midia_principal</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
+`
+
+_data.conceptsIntro3BlocksC = `
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
+    <field name="id">midia_principal</field>
+    <value name="src">
+      <block type="video" id="OFge%WW-~~.%rZKqZqym">
+        <mutation length="1"></mutation>
+        <field name="id_area0">creditos</field>
+        <field name="begin0">300s</field>
+        <field name="end0">360s</field>
+      </block>
+    </value>
+  </block>
+  <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="661" y="21">
+    <field name="id">rec_voz</field>
+    <value name="src">
+      <block type="srgs" id="N5Lu5_J\`hn-e3lm60 |^3">
+        <mutation length="1"></mutation>
+        <field name="id_area0">repetir</field>
+        <field name="label0">repita vídeo</field>
+      </block>
+    </value>
+  </block>
+  <block type="input" id=".9jD5o=BhpsFB80:]=BB" x="660" y="167">
+    <field name="id">rec_gesto</field>
+    <value name="src">
+      <block type="hand_gesture" id="}JcogVLf/Y7(1Pp@lK6,">
+        <mutation length="1"></mutation>
+        <field name="id_area0">esquerta</field>
+        <field name="label0">esquerda</field>
+      </block>
+    </value>
+  </block>
+  <block type="media" id="v(3}oRBymiPD}7m@(iT*" x="19" y="226">
+    <field name="id">sinte_voz</field>
+    <value name="src">
+      <block type="ssml" id="OIfl%BPi_3-\`+z5^x\`FD">
+        <mutation length="1"></mutation>
+        <field name="id_area0">pergunta</field>
+        <field name="label0">você deseja repetir o vídeo?</field>
+      </block>
+    </value>
+  </block>
+  <block type="port" id="+p-MtE:D*clWz(7oX7Hg" x="27" y="390">
+    <field name="id">midia_principal</field>
+  </block>
+  <block type="link" id="%6sP%0di,O*v%qS%d\`(\`" x="660" y="385">
+    <value name="conditions">
+      <block type="compoundcondition" id="#sWuH)YfLm?005GvLQaK">
+        <mutation length="2"></mutation>
+        <field name="operator">or</field>
+        <value name="element_0">
+          <block type="onrecognize" id="(H8dBhXk6.y#]q%\`UM^D">
+            <field name="id">repetir</field>
+          </block>
+        </value>
+        <value name="element_1">
+          <block type="onrecognize" id="_9w{*LI=9Gvs8$EK20Qt">
+            <field name="id">esquerta</field>
+          </block>
+        </value>
+      </block>
+    </value>
+    <statement name="actions">
+      <block type="stop" id="[gymipNN4gU6mk#uyh#l">
+        <field name="id">pergunta</field>
+        <next>
+          <block type="stop" id="Q=dtDW}ox*A]D{[#H}iD">
+            <field name="id">rec_gesto</field>
+            <next>
+              <block type="stop" id="O6Xl3j%N[Dl)iB+j;|!]">
+                <field name="id">midia_principal</field>
+                <next>
+                  <block type="start" id=".Pt;)N?s.:xGz;dDp@+W">
+                    <field name="id">midia_principal</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="link" id="%6ew%0di,O*v%qS%d\`(\`" x="32" y="487">
+    <value name="conditions">
+      <block type="onbegin" id="(H8xxhXk6.y#]q%\`UM^D">
+        <field name="id">creditos</field>
+      </block>
+    </value>
+    <statement name="actions">
+      <block type="start" id="}9[3akS_o4Z)PoiFYV7v">
+        <field name="id">pergunta</field>
+        <next>
+          <block type="start" id="UEqL{b=Ws2G#w}+xMV%m">
+            <field name="id">rec_voz</field>
+            <next>
+              <block type="start" id=":k;*7!h^DLlpa^ls9[re">
+                <field name="id">rec_gesto</field>
+              </block>
+            </next>
           </block>
         </next>
       </block>
@@ -1656,6 +1782,22 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         ser reiniciada (terminada e inciada).</p>
 
         <div id='nclIntro3CodeC'></div>
+
+        <p>Um dos principais benefícios de interfaces multimodais é o uso
+        diferentes interações. Ou seja, as interações de ususários podem ser
+        realizadas por diferentes modalidades. Em nossos, conceitos essa
+        combinação de modalidades de interação pode ser feita utilizando uma
+        condição composta. Usar um operador OR indica que qualquer uma das
+        interações é necessparia. Já usar o perador AND significaria que as
+        todas as interações são necessárias em qualquer ordem. E por fim usar o
+        operador SEQ significa que as interações tem que ser feitas em
+        sequência.</p> 
+
+        <p>Os blocos a seguir modificam a aplicação acima. Mas nessa
+        versão a mídia <em>midia_principal</em> é repetida quando usuário
+        interage atravès de  voz ou (operador OR) através de gesto.</p>
+
+        <div id='nclIntro3CodeD'></div><br>
         </div>
       `
     },
@@ -1830,6 +1972,49 @@ _data.nclIntro3CodeB = `
   ]]></script>
 `
 _data.nclIntro3CodeC = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false; highlight:[14,17,25]">
+  <![CDATA[
+  <?xml version="1.0" encoding="ISO-8859-1"?>
+  <ncl>
+    <head>
+      <connectorBase>
+        <importBase documentURI="causalConnBase.ncl" alias="conEx"></importBase>
+      </connectorBase>
+    </head>
+    <body>
+      <port component="video_principal"></port>
+      <media id="video_principal" src="video.mp4">
+        <property name="size" value="100%, 100%"></property>
+        <area id="credits" begin="300s" end="360s"></area>
+      </media>
+      <media id="sinte_voz" src="sinte_voz.ssml">
+        <area label="pergunta"></area>
+      </media>
+      <input id="rec_voz" src="rec_voz.srgs">
+        <area label="repete"></repete>
+      </input>
+      <input id="rec_gesto" src="rec_gesto.gml">
+        <area label="esquerda"></repete>
+      </input>
+      <link xconnector="conEx#onBeginStart">
+        <bind role="onBegin" component="video_principal" interface="credits"></bind>
+        <bind role="start" component="sinte_voz" interface="pergunta"></bind>
+        <bind role="start" component="rec_voz"></bind>
+      </link>
+      <link xconnector="conEx#onOrRecognizeStopStart">
+        <bind role="onRecognize" component="rec_voz" interface="repete"/>
+        <bind role="onRecognize" component="rec_gesto" interface="esquerda"/>
+        <bind role="stop" component="rec_gesto"></bind>
+        <bind role="stop" component="rec_voz"></bind>
+        <bind role="stop" component="video_principal"/>
+        <bind role="start" component="video_principal"/>
+      </link>
+    </body>
+  </ncl>
+  ]]></script>
+`
+_data.nclIntro3CodeD = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight:[14,17,25]">
   <![CDATA[
@@ -2536,6 +2721,23 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         trecho <em>repete</em>.</p>
 
         <div id='htmlIntro3CodeC'></div>
+
+
+        <p>Um dos principais benefícios de interfaces multimodais é o uso
+        diferentes interações. Ou seja, as interações de ususários podem ser
+        realizadas por diferentes modalidades. Em nossos, conceitos essa
+        combinação de modalidades de interação pode ser feita utilizando uma
+        condição composta. Usar um operador OR indica que qualquer uma das
+        interações é necessparia. Já usar o perador AND significaria que as
+        todas as interações são necessárias em qualquer ordem. E por fim usar o
+        operador SEQ significa que as interações tem que ser feitas em
+        sequência.</p> 
+
+        <p>Os blocos a seguir modificam a aplicação acima. Mas nessa
+        versão a mídia <em>midia_principal</em> é repetida quando usuário
+        interage atravès de  voz ou (operador OR) através de gesto.</p>
+
+        <div id='htmlIntro3CodeD'></div><br>
         </div>
       `
     },
@@ -2655,7 +2857,7 @@ _data.htmlIntro3CodeB = _data.nclIntro3CodeB
 
 _data.htmlIntro3CodeC = `
  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[9,12,24]"><![CDATA[
+  auto-links: false; highlight:[9,12,20,25]"><![CDATA[
   <!DOCTYPE html>
   <html>
   <head><script src="synchronism.js"><&#47script></head>
@@ -2668,7 +2870,7 @@ _data.htmlIntro3CodeC = `
       <area label="pergunta"><&#47area>
     </object>
     <object id="rec_voz" src="rec_voz.srgs">
-      <area label="repete"><&#47repete>
+      <area label="repete"><&#47area>
     </object>
     <script>
       var sync1 = new Synchronism("onBeginStart")
@@ -2678,9 +2880,55 @@ _data.htmlIntro3CodeC = `
       var sync2 = new Synchronism("onBeginStart")
       sync.bind("onBegin", "midia_principal", "credits")
       sync.bind("start", "sinte_voz")
+      sync.bind("start", "rec_voz")
 
       var sync3 = new Synchronism("onRecognizeStopStart")
       sync.bind("onRecognize", "rec_voz", "repete")
+      sync.bind("stop", "midia_principal")
+      sync.bind("start", "midia_principal")
+
+    <&#47script>
+  </body>
+  </html>
+  ]]></script>
+`
+
+_data.htmlIntro3CodeD = `
+ <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false; highlight:[15,23,29]"><![CDATA[
+  <!DOCTYPE html>
+  <html>
+  <head><script src="synchronism.js"><&#47script></head>
+  <body>
+    <video id="midia_principal" src="video.mp4"
+      style="position: absolute; high 100%; width: 100%;">
+      <area id="credits" begin="300s" end="360s"><&#47area>
+    </video>
+    <object id="sinte_voz" src="sinte_voz.ssml">
+      <area label="pergunta"><&#47area>
+    </object>
+    <object id="rec_voz" src="rec_voz.srgs">
+      <area label="repete"><&#47area>
+    </object>
+    <object id="rec_gesto" src="rec_gesto.gml">
+      <area label="esquerda"><&#47area>
+    </object>
+    <script>
+      var sync1 = new Synchronism("onBeginStart")
+      sync.bind("onBegin", "body")
+      sync.bind("start", "midia_principal")
+
+      var sync2 = new Synchronism("onBeginStart")
+      sync.bind("onBegin", "midia_principal", "credits")
+      sync.bind("start", "sinte_voz")
+      sync.bind("start", "rec_voz")
+      sync.bind("start", "rec_gesto")
+
+      var sync3 = new Synchronism("onOrRecognizeStopStart")
+      sync.bind("onRecognize", "rec_voz", "repete")
+      sync.bind("onRecognize", "rec_gesto", "esquerda")
+      sync.bind("stop", "rec_voz")
+      sync.bind("stop", "rec_gesto")
       sync.bind("stop", "midia_principal")
       sync.bind("start", "midia_principal")
 
@@ -2722,7 +2970,7 @@ _data.htmlIntro4CodeB = `
       <area label="pergunta"><&#47area>
     </object>
     <object id="rec_voz" src="rec_voz.srgs">
-      <area label="repete"><&#47repete>
+      <area label="repete"><&#47area>
     </object>
     <script>
       var sparql = 

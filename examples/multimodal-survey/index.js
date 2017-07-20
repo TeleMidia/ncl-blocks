@@ -149,6 +149,8 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
         NCLBlocks.calcHt(2, 200), _data.conceptsIntro3BlocksA, true)
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro3b',
         NCLBlocks.calcHt(4, 110), _data.conceptsIntro3BlocksB, true)
+      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro3c',
+        NCLBlocks.calcHt(5, 110), _data.conceptsIntro3BlocksC, true)
       break
     case 'conceptsIntro4':
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro4a',
@@ -228,6 +230,7 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       $('#nclIntro3CodeA').append(_data.nclIntro3CodeA)
       $('#nclIntro3CodeB').append(_data.nclIntro3CodeB)
       $('#nclIntro3CodeC').append(_data.nclIntro3CodeC)
+      $('#nclIntro3CodeD').append(_data.nclIntro3CodeD)
       SyntaxHighlighter.highlight()
       break
     case 'nclIntro4':
@@ -269,6 +272,7 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       $('#htmlIntro3CodeA').append(_data.htmlIntro3CodeA)
       $('#htmlIntro3CodeB').append(_data.htmlIntro3CodeB)
       $('#htmlIntro3CodeC').append(_data.htmlIntro3CodeC)
+      $('#htmlIntro3CodeD').append(_data.htmlIntro3CodeD)
       SyntaxHighlighter.highlight()
       break
     case 'htmlIntro4':
