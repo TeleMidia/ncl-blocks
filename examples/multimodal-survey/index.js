@@ -301,7 +301,6 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
         _data.htmlTask2CodeCOnly.replace(re, '</').replace('<&#47script>', '</script>')
       break
   }
-  window.scrollTo(0, 0)
 }
 
 function saveblocksTask3Changes (event) {
