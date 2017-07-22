@@ -139,6 +139,7 @@ _data.surveyJSON.pages.push({
       name: 'sintax',
       title: `De que maneira a sintaxe da NCL influencia o
        desenvolvimento de aplicações?`,
+      visibleIf: '{profileQuestion1} > 0',
       choices: ['Atrapalha muito', 'Atrapalha bastante', 'Atrapalha pouco',
         'Indiferente', 'Ajuda pouco', 'Ajuda bastante', 'Ajuda muito']
     },
@@ -167,7 +168,9 @@ _data.surveyJSON.pages.push({
       name: 'sintax',
       title: `O quanto o desenvolvimento em HTML/JavaScript requer
       o uso de bibliotecas de manipulação de DOM, como jQuery ou Prototype?`,
-      choices: ['Nunca', 'Quase nunca', 'Indiferente', 'Quase sempre ', 'Sempre']
+      visibleIf: '{profileQuestion3} > 0',
+      choices: ['Nunca', 'Quase nunca', 'Indiferente', 'Quase sempre ',
+        'Sempre']
     }
   ]
 })
