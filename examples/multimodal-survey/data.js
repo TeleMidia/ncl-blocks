@@ -37,14 +37,14 @@ _data.surveyJSON.pages.push({
         <p>O TeleMídia é um grupo de pesquisa do Departamento de Informática
         da PUC-Rio. O TeleMídia desenvolve pesquisas nas áreas de Sistemas
         Multimídia e Redes de Computadores. Em particular, Sistemas de TV
-        Digital terrestre e IPTV, têm sido foco de pesquisa e inovação do
+        Digital terrestre e IPTV têm sido foco de pesquisa e inovação do
         laboratório nos últimos anos.</p>
 
         <p>Convidamos a você a participar deste estudo sobre nossa pesquisa
         de <i>Interações multimodais em linguagens multimídia</i>.</p>
 
         <p><strong>Ressaltamos que este estudo NÃO se destina a avaliar você,
-        mas sim capturar evidências para nossa pesquisa.</strong></p>
+        mas sim capturar evidências para avaliarmos nossa pesquisa.</strong></p>
 
         <p>Para prosseguirmos, pedimos seu consentimento para realizarmos
         este estudo e informamos que:</p>
@@ -68,7 +68,7 @@ _data.surveyJSON.pages.push({
         <div style="text-align: justify; width: 70%;">
         OBS: Este estudo é feito em uma única página web. Caso deseje
         navegar entre as seções do estudo, <strong>NÃO</strong> utilize
-        os botões de navegação do seu browser, e sim use os botôes
+        os botões de navegação do seu browser, e sim use os botões
         <em>voltar</em> e <em>prosseguir</em> no final de cada seção do
         estudo.
         </div>
@@ -102,7 +102,7 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'profileFormation',
-      title: 'Qual sua formação ou curso atual(e.g. computação, design, pós-graduação informática)?',
+      title: 'Qual sua formação ou curso atual?',
       choices: ['Graduação em computação', 'Graduação em design', 'Pós-graduação em computação', 'Pós-graduação em design'],
       hasOther: true,
       otherText: 'Outra graduação ou outra pós-graduação'
@@ -111,7 +111,7 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'profileApps',
-      title: `Quantas aplicações multimídia interativas você desenvolveu (independente de tecnologia ou linguagem de programação)?`,
+      title: `Quantas aplicações multimídia interativas você já desenvolveu (independente de tecnologia ou linguagem de programação)?`,
       choices: ['0', '1-2', '3-4', '5-6', '7-8', '8 ou mais']
     },
     {
@@ -148,8 +148,7 @@ _data.surveyJSON.pages.push({
       title: `De que maneira a sintaxe da NCL influencia o
        desenvolvimento de aplicações?`,
       visibleIf: '{profileNCL1} > 0',
-      choices: ['Atrapalha muito', 'Atrapalha bastante', 'Atrapalha pouco',
-        'Indiferente', 'Ajuda pouco', 'Ajuda bastante', 'Ajuda muito']
+      choices: ['Não se aplica', 'Atrapalha muito', 'Atrapalha bastante', 'Atrapalha pouco', 'Indiferente', 'Ajuda pouco', 'Ajuda bastante', 'Ajuda muito']
     },
     {
       type: 'radiogroup',
@@ -177,8 +176,7 @@ _data.surveyJSON.pages.push({
       title: `O quanto o desenvolvimento em HTML/JavaScript requer
       o uso de bibliotecas de manipulação de DOM, como jQuery ou Prototype?`,
       visibleIf: '{profileHTML1} > 0',
-      choices: ['Nunca', 'Quase nunca', 'Indiferente', 'Quase sempre ',
-        'Sempre']
+      choices: ['Não sei', 'Nunca', 'Quase nunca', 'Indiferente', 'Quase sempre ', 'Sempre']
     }
   ]
 })
