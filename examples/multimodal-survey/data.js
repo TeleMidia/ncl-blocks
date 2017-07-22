@@ -101,7 +101,7 @@ _data.surveyJSON.pages.push({
     {
       type: 'radiogroup',
       isRequired: true,
-      name: 'formation',
+      name: 'profileFormation',
       title: 'Qual sua formação ou curso atual(e.g. computação, design, pós-graduação informática)?',
       choices: ['Graduação em computação', 'Graduação em design', 'Pós-graduação em computação', 'Pós-graduação em design'],
       hasOther: true,
@@ -118,7 +118,7 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'profileBlocks',
-      title: `Vocẽ já utilizou alguma ferramenta programação por blocos, como Scratch ou MIT AppInventor?`,
+      title: `Você já utilizou alguma ferramenta programação por blocos, como Scratch ou MIT AppInventor?`,
       choices: ['Nunca', 'Quase nunca', 'Indiferente', 'Quase sempre ',
         'Sempre']
     },
@@ -138,7 +138,7 @@ _data.surveyJSON.pages.push({
       isRequired: true,
       name: 'profileNCL2',
       title: 'Quantas aplicações NCL você desenvolveu?',
-      visibleIf: '{profileQuestion1} > 0',
+      visibleIf: '{profileNCL1} > 0',
       choices: ['0', '1-2', '3-4', '5-6', '7-8', '8 ou mais']
     },
     {
@@ -147,7 +147,7 @@ _data.surveyJSON.pages.push({
       name: 'profileNCL3',
       title: `De que maneira a sintaxe da NCL influencia o
        desenvolvimento de aplicações?`,
-      visibleIf: '{profileQuestion1} > 0',
+      visibleIf: '{profileNCL1} > 0',
       choices: ['Atrapalha muito', 'Atrapalha bastante', 'Atrapalha pouco',
         'Indiferente', 'Ajuda pouco', 'Ajuda bastante', 'Ajuda muito']
     },
@@ -167,7 +167,7 @@ _data.surveyJSON.pages.push({
       isRequired: true,
       name: 'profileHTML2',
       title: 'Quantas aplicações HTML/JavaScript você desenvolveu?',
-      visibleIf: '{profileQuestion3} > 0',
+      visibleIf: '{profileHTML1} > 0',
       choices: ['0', '1-2', '3-4', '5-6', '7-8', '8 ou mais']
     },
     {
@@ -176,7 +176,7 @@ _data.surveyJSON.pages.push({
       name: 'profileHTML3',
       title: `O quanto o desenvolvimento em HTML/JavaScript requer
       o uso de bibliotecas de manipulação de DOM, como jQuery ou Prototype?`,
-      visibleIf: '{profileQuestion3} > 0',
+      visibleIf: '{profileHTML1} > 0',
       choices: ['Nunca', 'Quase nunca', 'Indiferente', 'Quase sempre ',
         'Sempre']
     }
@@ -1382,9 +1382,9 @@ _data.surveyJSON.pages.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Para capturar evidências de sobre o conceitos que apresentamos
-        (<em>Mídia, Reconhecedor, Sincronismo</em> e <em>Grupo de Usuários</em>,
-        por favor, opine sobre os pontos a seguir.</p>
+        <p>Por favor, opine sobre os pontos a seguir. Eles visam capturar
+        evidências sobre os conceitos que apresentamos (<em>Mídia, Reconhecedor,
+        Sincronismo</em> e <em>Grupo de Usuários</em>).</p>
         </div>
       `
     },
@@ -1443,7 +1443,7 @@ _data.surveyJSON.pages.push({
 
 pageIndex = _data.surveyJSON.pages.push({
   name: 'ncl',
-  // visibleIf: '{profileQuestion1} >= {profileQuestion3}',
+  // visibleIf: '{profileNCL1} >= {profileHTML1}',
   elements: []
 }) - 1
 
@@ -2285,7 +2285,7 @@ _data.surveyJSON.pages.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Por favor, opine sobre os pontos a seguir. Eles pontos visam capturar
+        <p>Por favor, opine sobre os pontos a seguir. Eles visam capturar
         evidências de como os conceitos apresentados na seção
         anterior(<em>Mídia, Reconhecedor, Sincronismo</em> e <em>Grupo de
         Usuários</em>) estão instanciados na NCL para suportar interações
@@ -2341,7 +2341,7 @@ _data.surveyJSON.pages.push({
     {
       type: 'radiogroup',
       isRequired: true,
-      name: 'htmlFeedbackQuestion6',
+      name: 'htmlFeedbackQuestion7',
       title: `Os conceitos apresentados na seção anterior estão **claramente
         instanciados** na NCL estendida.`,
       choices: _agreeChoices
@@ -2349,7 +2349,7 @@ _data.surveyJSON.pages.push({
     {
       type: 'radiogroup',
       isRequired: true,
-      name: 'htmlFeedbackQuestion6',
+      name: 'htmlFeedbackQuestion8',
       title: `De modo geral, a NCL estendida **melhora** o desenvolvimento de
       aplicações multimodal em comparação com a NCL atual.`,
       choices: _agreeChoices
@@ -2363,7 +2363,7 @@ _data.surveyJSON.pages.push({
 
 pageIndex = _data.surveyJSON.pages.push({
   name: 'html',
-  // visibleIf: '{profileQuestion3} > {profileQuestion1}',
+  // visibleIf: '{profileHTML1} > {profileNCL1}',
   elements: []
 }) - 1
 
@@ -2382,7 +2382,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;">
         <p>A linguagem HTML é utilizada para criar conteúdo multimídia em
         sistmas web. <strong>Nesta seção, não vamos ensinar a linguagem
-        HTML</strong><strong> mas vamos apresentar como os conceitos da seção
+        HTML</strong> mas vamos apresentar como os conceitos da seção
         anterior são instanciados na HTML para esta ofercer suporte a interações
         multimodais.</p>
         
@@ -3182,7 +3182,7 @@ _data.surveyJSON.pages.push({
     {
       type: 'radiogroup',
       isRequired: true,
-      name: 'htmlFeedbackQuestion6',
+      name: 'htmlFeedbackQuestion7',
       title: `Os conceitos apresentados na seção anterior estão **claramente
         instanciados** na HTML estendida.`,
       choices: _agreeChoices
@@ -3190,7 +3190,7 @@ _data.surveyJSON.pages.push({
     {
       type: 'radiogroup',
       isRequired: true,
-      name: 'htmlFeedbackQuestion6',
+      name: 'htmlFeedbackQuestion8',
       title: `De modo geral, a HTML estendida **melhora** o desenvolvimento de
       aplicações multimodal em comparação com a HTML atual.`,
       choices: _agreeChoices
