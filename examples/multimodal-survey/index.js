@@ -84,9 +84,11 @@ if ($('#surveyPageNo').length) {
 $('#surveyPageNo').change(function () {
   _survey.currentPageNo = this.value
 })
+
+// $('#surveyPageNo').val(2).change()
 // $('#surveyPageNo').val(3).change()
 // $('#surveyPageNo').val(5).change()
-$('#surveyPageNo').val(7).change()
+// $('#surveyPageNo').val(7).change()
 
 // ----------------------------------------
 // survey listeners
