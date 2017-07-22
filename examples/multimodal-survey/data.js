@@ -91,13 +91,13 @@ _data.surveyJSON.pages.push({
       name: 'name',
       title: 'Qual seu nome?'
     },
-    {
-      type: 'text',
-      isRequired: true,
-      name: 'email',
-      title: 'Qual seu e-mail de contato?',
-      validators: [{ type: 'email' }]
-    },
+    // {
+    //   type: 'text',
+    //   isRequired: true,
+    //   name: 'email',
+    //   title: 'Qual seu e-mail de contato?',
+    //   validators: [{ type: 'email' }]
+    // },
     {
       type: 'radiogroup',
       isRequired: true,
