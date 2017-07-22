@@ -18,6 +18,10 @@ _data.surveyJSON = {
 }
 var pageIndex
 
+var _agreeChoices = ['Discordo fortemente', 'Discordo bastante', 'Discordo um pouco',
+  'Não concordo nem discordo', 'Concordo um pouco', 'Concordo bastante',
+  'Concordo fortemente']
+
 // ----------------------------------------
 // termo page
 // ----------------------------------------
@@ -98,10 +102,10 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'formation',
-      title: 'Qual sua formação (e.g. computação, design, pós-graduação informática)?',
-      choices: ['graduação em computação', 'graduação em design', 'pós-graduação em computação', 'pós-graduação em design'],
+      title: 'Qual sua formação ou curso atual(e.g. computação, design, pós-graduação informática)?',
+      choices: ['Graduação em computação', 'Graduação em design', 'Pós-graduação em computação', 'Pós-graduação em design'],
       hasOther: true,
-      otherText: 'outra graduação ou outra pós-graduação'
+      otherText: 'Outra graduação ou outra pós-graduação'
     },
     {
       type: 'radiogroup',
@@ -116,10 +120,10 @@ _data.surveyJSON.pages.push({
       name: 'profileQuestion1',
       title: 'Qual seu conhecimento no desenvolvimento em NCL?',
       choices: [
-        { value: 0, text: 'nenhum' }, { value: 1, text: 'muito pouco' },
-        { value: 2, text: 'pouco' }, { value: 3, text: 'razoável' },
-        { value: 4, text: 'alto' }, { value: 5, text: 'muito alto' },
-        { value: 6, text: 'expert' }]
+        { value: 0, text: 'Nenhum' }, { value: 1, text: 'Muito pouco' },
+        { value: 2, text: 'Pouco' }, { value: 3, text: 'Razoável' },
+        { value: 4, text: 'Alto' }, { value: 5, text: 'Muito alto' },
+        { value: 6, text: 'Expert' }]
     },
     {
       type: 'radiogroup',
@@ -135,8 +139,8 @@ _data.surveyJSON.pages.push({
       name: 'sintax',
       title: `De que maneira a sintaxe da NCL influencia o
        desenvolvimento de aplicações?`,
-      choices: ['atrapalha muito', 'atrapalha bastante', 'atrapalha pouco',
-        'indiferente', 'ajuda pouco', 'ajuda bastante', 'ajuda muito']
+      choices: ['Atrapalha muito', 'Atrapalha bastante', 'Atrapalha pouco',
+        'Indiferente', 'Ajuda pouco', 'Ajuda bastante', 'Ajuda muito']
     },
     {
       type: 'radiogroup',
@@ -144,10 +148,10 @@ _data.surveyJSON.pages.push({
       name: 'profileQuestion3',
       title: 'Qual seu conhecimento no desenvolvimento em HTML/JavaScript?',
       choices: [
-        { value: 0, text: 'nenhum' }, { value: 1, text: 'muito pouco' },
-        { value: 2, text: 'pouco' }, { value: 3, text: 'razoável' },
-        { value: 4, text: 'alto' }, { value: 5, text: 'muito alto' },
-        { value: 6, text: 'expert' }]
+        { value: 0, text: 'Nenhum' }, { value: 1, text: 'Muito pouco' },
+        { value: 2, text: 'Pouco' }, { value: 3, text: 'Razoável' },
+        { value: 4, text: 'Alto' }, { value: 5, text: 'Muito alto' },
+        { value: 6, text: 'Expert' }]
     },
     {
       type: 'radiogroup',
@@ -163,8 +167,7 @@ _data.surveyJSON.pages.push({
       name: 'sintax',
       title: `O quanto o desenvolvimento em HTML/JavaScript requer
       o uso de bibliotecas de manipulação de DOM, como jQuery ou Prototype?`,
-      choices: ['nunca', 'quase nunca',
-        'indiferente', 'quase sempre ', 'sempre']
+      choices: ['Nunca', 'Quase nunca', 'Indiferente', 'Quase sempre ', 'Sempre']
     }
   ]
 })
@@ -1445,9 +1448,7 @@ _data.surveyJSON.pages.push({
       name: 'conceptsFeedbackQuestion1',
       title: `Os conceitos apresentados **permitem realizar mais rapidamente** a
         especificação de aplicações multimodais.`,
-      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
-        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
-        'concordo fortemente']
+      choices: _agreeChoices
     },
     {
       type: 'radiogroup',
@@ -1455,9 +1456,7 @@ _data.surveyJSON.pages.push({
       name: 'conceptsFeedbackQuestion2',
       title: `Os conceitos apresentados **permitem aumentar a qualidade** a
         especificação de aplicações multimodais.`,
-      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
-        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
-        'concordo fortemente']
+      choices: _agreeChoices
     },
     {
       type: 'radiogroup',
@@ -1465,27 +1464,21 @@ _data.surveyJSON.pages.push({
       name: 'conceptsFeedbackQuestion3',
       title: `De modo geral, os conceitos apresentados **são úteis** para a
         especificação de aplicações multimodais.`,
-      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
-        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
-        'concordo fortemente']
+      choices: _agreeChoices
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'conceptsFeedbackQuestion4',
       title: `Os conceitos apresentados **são fáceis**.`,
-      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
-        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
-        'concordo fortemente']
+      choices: _agreeChoices
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'conceptsFeedbackQuestion5',
       title: `Os conceitos apresentados **são claros e entendíveis**.`,
-      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
-        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
-        'concordo fortemente']
+      choices: _agreeChoices
     },
     {
       type: 'radiogroup',
@@ -1493,9 +1486,7 @@ _data.surveyJSON.pages.push({
       name: 'conceptsFeedbackQuestion6',
       title: `De modo geral, os conceitos apresentados **são fáceis** de
         utilizar.`,
-      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
-        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
-        'concordo fortemente']
+      choices: _agreeChoices
     }
   ]
 })
@@ -2361,9 +2352,7 @@ _data.surveyJSON.pages.push({
       name: 'nclFeedbackQuestion1',
       title: `A NCL estendida **permite realizar mais rapidamente** o
         desenvolvimento de aplicações multimodais.`,
-      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
-        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
-        'concordo fortemente']
+      choices: _agreeChoices
     },
     {
       type: 'radiogroup',
@@ -2371,9 +2360,7 @@ _data.surveyJSON.pages.push({
       name: 'nclFeedbackQuestion2',
       title: `A NCL estendida **permite aumentar a qualidade** do
         desenvolvimento de aplicações multimodais.`,
-      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
-        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
-        'concordo fortemente']
+      choices: _agreeChoices
     },
     {
       type: 'radiogroup',
@@ -2381,36 +2368,28 @@ _data.surveyJSON.pages.push({
       name: 'nclFeedbackQuestion3',
       title: `De modo geral, a NCL estendida permite **é útel** para o
         desenvolvimento de aplicações multimodais.`,
-      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
-        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
-        'concordo fortemente']
+      choices: _agreeChoices
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'nclFeedbackQuestion4',
       title: 'NCL estendida **é fácil** de aprender.',
-      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
-        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
-        'concordo fortemente']
+      choices: _agreeChoices
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'nclFeedbackQuestion5',
       title: 'A NCL estendida **é clara e entendível**.',
-      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
-        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
-        'concordo fortemente']
+      choices: _agreeChoices
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'nclFeedbackQuestion6',
       title: 'De modo geral, a NCL estendida **é fácil** de utilizar.',
-      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
-        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
-        'concordo fortemente']
+      choices: _agreeChoices
     },
     {
       type: 'radiogroup',
@@ -2418,9 +2397,7 @@ _data.surveyJSON.pages.push({
       name: 'htmlFeedbackQuestion6',
       title: `Os conceitos apresentados na seção anterior estão **claramente
         instanciados** na NCL estendida.`,
-      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
-        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
-        'concordo fortemente']
+      choices: _agreeChoices
     },
     {
       type: 'radiogroup',
@@ -2428,9 +2405,7 @@ _data.surveyJSON.pages.push({
       name: 'htmlFeedbackQuestion6',
       title: `De modo geral, a NCL estendida **melhora** o desenvolvimento de
       aplicações multimodal em comparação com a NCL atual.`,
-      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
-        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
-        'concordo fortemente']
+      choices: _agreeChoices
     }
   ]
 })
@@ -3218,9 +3193,7 @@ _data.surveyJSON.pages.push({
       name: 'htmlFeedbackQuestion1',
       title: `A HTML estendida **permite realizar mais rapidamente** o
         desenvolvimento de aplicações multimodais.`,
-      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
-        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
-        'concordo fortemente']
+      choices: _agreeChoices
     },
     {
       type: 'radiogroup',
@@ -3228,9 +3201,7 @@ _data.surveyJSON.pages.push({
       name: 'htmlFeedbackQuestion2',
       title: `A HTML estendida **permite aumentar a qualidade** do
         desenvolvimento de aplicações multimodais.`,
-      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
-        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
-        'concordo fortemente']
+      choices: _agreeChoices
     },
     {
       type: 'radiogroup',
@@ -3238,36 +3209,28 @@ _data.surveyJSON.pages.push({
       name: 'htmlFeedbackQuestion3',
       title: `De modo geral, a HTML estendida **é útel** para o desenvolvimento
         de aplicações multimodais.`,
-      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
-        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
-        'concordo fortemente']
+      choices: _agreeChoices
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'htmlFeedbackQuestion4',
       title: 'A HTML estendida **é fácil** de aprender.',
-      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
-        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
-        'concordo fortemente']
+      choices: _agreeChoices
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'htmlFeedbackQuestion5',
       title: 'A HTML estendida **é clara e entendível**.',
-      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
-        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
-        'concordo fortemente']
+      choices: _agreeChoices
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'htmlFeedbackQuestion6',
       title: `De modo geral, a HTML estendida **é fácil** de utilizar.`,
-      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
-        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
-        'concordo fortemente']
+      choices: _agreeChoices
     },
     {
       type: 'radiogroup',
@@ -3275,9 +3238,7 @@ _data.surveyJSON.pages.push({
       name: 'htmlFeedbackQuestion6',
       title: `Os conceitos apresentados na seção anterior estão **claramente
         instanciados** na HTML estendida.`,
-      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
-        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
-        'concordo fortemente']
+      choices: _agreeChoices
     },
     {
       type: 'radiogroup',
@@ -3285,9 +3246,7 @@ _data.surveyJSON.pages.push({
       name: 'htmlFeedbackQuestion6',
       title: `De modo geral, a HTML estendida **melhora** o desenvolvimento de
       aplicações multimodal em comparação com a HTML atual.`,
-      choices: ['discordo fortemente', 'discordo bastante', 'discordo um pouco',
-        'não concordo nem discordo', 'concordo um pouco', 'concordo bastante',
-        'concordo fortemente']
+      choices: _agreeChoices
     }
   ]
 })
