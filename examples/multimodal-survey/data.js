@@ -332,11 +332,11 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         conceitos são os de <em>Mídia, Reconhecedor, Sincronismo</em> e
         <em>Grupo de Usuários</em>.</p>
 
-        <p>Esta seção tem o objetivo de detalhar esses conceitos para o
-        participante e capturar evidências de nossa pesquisa. Para evitar
-        possíveis dificuldades dada a sintaxe de linguagens, apresentaremos
-        esses conceitos utilizando uma abordagem de <strong>desenvolvimento de
-        aplicações através de blocos</strong>.</p>
+        <p>Vamos detalhar agora detalhar esses conceitos para capturar
+        evidências de nossa pesquisa. Para evitar possíveis dificuldades dada a
+        sintaxe de linguagens, apresentaremos esses conceitos utilizando uma
+        abordagem de <strong>desenvolvimento de aplicações através de
+        blocos</strong>.</p>
 
         <p>Esse tipo de abordagem é bastante utilizado para o ensino de
         programação ou para ferramentas de geração de código. Em especial,
@@ -1459,12 +1459,12 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     {
       type: 'html',
       html: `
-        <div style="text-align: justify; width: 70%;"> <p>A linguagem NCL é
-        utilizada para criar conteúdo multimídia interativo em sistemas de TV (
-        terrestre, IPTV e BroadBand). <strong>Esta seção não tem o objetivo de
-        ensinar a linguagem NCL</strong>. Esta seção tem sim o objetivo de
-        apresentar como os conceitos apresentados na seção anterior ser
-        instanciados na linguagem NCL.</p>
+        <div style="text-align: justify; width: 70%;"> 
+        <p>A linguagem NCL é utilizada para criar conteúdo multimídia interativo
+        em sistemas de TV (terrestre, IPTV e BroadBand). <strong>Nesta seção,
+        não vamos ensinar a linguagem NCL</strong>, mas vamos apresentar como os
+        conceitos da seção anterior são instanciados na NCL para esta ofercer
+        suporte a interações multimodais.</p>
         
         <p>A tabela seguir apresenta como propomos instanciação dos conceitos de
         nossa pesquisa na versão atual da NCL (3.1). O conceito de
@@ -2285,10 +2285,11 @@ _data.surveyJSON.pages.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Por favor, opine sobre os pontos a seguir. Eles tem o objetivo de
-        capturar evidências de como os conceitos apresentados na seção
+        <p>Por favor, opine sobre os pontos a seguir. Eles pontos visam capturar
+        evidências de como os conceitos apresentados na seção
         anterior(<em>Mídia, Reconhecedor, Sincronismo</em> e <em>Grupo de
-        Usuários</em>) estão instanciados na NCL estendida.</p>
+        Usuários</em>) estão instanciados na NCL para suportar interações
+        multimodais.</p>
         </div>
       `
     },
@@ -2380,10 +2381,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         <div style="text-align: justify; width: 70%;">
         <p>A linguagem HTML é utilizada para criar conteúdo multimídia em
-        sistmas web. <strong>Esta seção não tem o objetivo de ensinar a
-        linguagem HTML</strong>. Esta seção tem sim o objetivo de apresentar
-        como os os conceitos apresentados na seção anterior podem ser
-        instanciados na linguagem HTML.</p> 
+        sistmas web. <strong>Nesta seção, não vamos ensinar a linguagem
+        HTML</strong><strong> mas vamos apresentar como os conceitos da seção
+        anterior são instanciados na HTML para esta ofercer suporte a interações
+        multimodais.</p>
         
         <p>A tabela seguir apresenta como propomos instanciação dos conceitos de
         nossa pesquisa na versão atual da HTML (5.0). O conceito de
@@ -3126,10 +3127,10 @@ _data.surveyJSON.pages.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Por favor, opine sobre os pontos a seguir. Eles tem o objetivo de
-        capturar evidências de como os conceitos apresentados na seção anterior
+        <p>Por favor, opine sobre os pontos a seguir. Eles visam capturar
+        evidências de como os conceitos apresentados na seção anterior
         (<em>Mídia, Reconhecedor, Sincronismo</em> e <em>Grupo de Usuários</em>)
-        estão instanciados na HTML estendida.</p>
+        estão instanciados na HTML para suportar interações multimodais.</p>
         </div>
       `
     },
