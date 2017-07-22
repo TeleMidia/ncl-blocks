@@ -110,14 +110,22 @@ _data.surveyJSON.pages.push({
     {
       type: 'radiogroup',
       isRequired: true,
-      name: 'sintax',
+      name: 'profileApps',
       title: `Quantas aplicações multimídia interativas você desenvolveu (independente de tecnologia ou linguagem de programação)?`,
       choices: ['0', '1-2', '3-4', '5-6', '7-8', '8 ou mais']
     },
     {
       type: 'radiogroup',
       isRequired: true,
-      name: 'profileQuestion1',
+      name: 'profileBlocks',
+      title: `Vocẽ já utilizou alguma ferramenta programação por blocos, como Scratch ou MIT AppInventor?`,
+      choices: ['Nunca', 'Quase nunca', 'Indiferente', 'Quase sempre ',
+        'Sempre']
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'profileNCL1',
       title: 'Qual seu conhecimento no desenvolvimento em NCL?',
       choices: [
         { value: 0, text: 'Nenhum' }, { value: 1, text: 'Muito pouco' },
@@ -128,7 +136,7 @@ _data.surveyJSON.pages.push({
     {
       type: 'radiogroup',
       isRequired: true,
-      name: 'profileQuestion2',
+      name: 'profileNCL2',
       title: 'Quantas aplicações NCL você desenvolveu?',
       visibleIf: '{profileQuestion1} > 0',
       choices: ['0', '1-2', '3-4', '5-6', '7-8', '8 ou mais']
@@ -136,7 +144,7 @@ _data.surveyJSON.pages.push({
     {
       type: 'radiogroup',
       isRequired: true,
-      name: 'sintax',
+      name: 'profileNCL3',
       title: `De que maneira a sintaxe da NCL influencia o
        desenvolvimento de aplicações?`,
       visibleIf: '{profileQuestion1} > 0',
@@ -146,7 +154,7 @@ _data.surveyJSON.pages.push({
     {
       type: 'radiogroup',
       isRequired: true,
-      name: 'profileQuestion3',
+      name: 'profileHTML1',
       title: 'Qual seu conhecimento no desenvolvimento em HTML/JavaScript?',
       choices: [
         { value: 0, text: 'Nenhum' }, { value: 1, text: 'Muito pouco' },
@@ -157,7 +165,7 @@ _data.surveyJSON.pages.push({
     {
       type: 'radiogroup',
       isRequired: true,
-      name: 'profileQuestion4',
+      name: 'profileHTML2',
       title: 'Quantas aplicações HTML/JavaScript você desenvolveu?',
       visibleIf: '{profileQuestion3} > 0',
       choices: ['0', '1-2', '3-4', '5-6', '7-8', '8 ou mais']
@@ -165,7 +173,7 @@ _data.surveyJSON.pages.push({
     {
       type: 'radiogroup',
       isRequired: true,
-      name: 'sintax',
+      name: 'profileHTML3',
       title: `O quanto o desenvolvimento em HTML/JavaScript requer
       o uso de bibliotecas de manipulação de DOM, como jQuery ou Prototype?`,
       visibleIf: '{profileQuestion3} > 0',
