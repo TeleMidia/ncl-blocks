@@ -229,7 +229,7 @@ _data.surveyJSON.pages.push({
 
         <div class='text-center'>
           <img class='center-block img-thumbnail' style='height: 500px'
-            src='assets/overview1.svg'>
+            src='assets/overview1.png'>
         </div>
         <br>
 
@@ -278,7 +278,7 @@ _data.surveyJSON.pages.push({
 
         <div class='text-center'>
           <img class='img-thumbnail' style='height: 500px'
-          src='assets/overview2.svg'>
+          src='assets/overview2.png'>
         </div>
         <br>
 
