@@ -203,29 +203,31 @@ _data.surveyJSON.pages.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Primeiro devemos falar sobre  falar de  uma linguagem multimídia, que
-        é intimamente relacionada ao de sistema multimídia.</p>
+        <p>Primeiro devemos falar sobre <strong>aplicação multimídia
+        interativa</strong>, que é intimamente relacionada a <strong>sistema
+        multimídia</strong>.</p>
 
-        <p>Um <strong>sistema multimídia</strong> é aquele que utiliza mídias
-        discretas, como imagens e textos, e ao menos uma mídia contínua, como
-        áudios e vídeos. Um <strong>documento multimídia</strong> é aquele que
-        define como um sistema multimídia deve exibir suas mídias (discretas e
-        contínuas) e reagir a interações do ususário. O criador desse documento
-        é usualmente chamado de autor. Esse autor escreve o documento utilizando
-        uma <strong>linguagem multimídia</strong>. Exemplos atuais de linguagens
-        multimídia são a NCL (Nested Context Language) e a HTML.</p>
+        <p>Um sistema multimídia é aquele que utiliza mídias discretas, como
+        imagens e textos, e ao menos uma mídia contínua, como áudios e vídeos.
+        Uma aplicação multimídia interativa define como um sistema multimídia
+        deve realizar o sincronimo das mídias e reagir a interações de ususário,
+        que são geralmente por apontador e tecla. O criador desse tipo de
+        aplicação é usualmente chamado de autor e utiliza uma <strong>linguagem
+        multimídia interativa</strong> para desenvolver sua aplicação. Exemplos
+        de linguagens multimídia atuais são a NCL (Nested Context Language) e a
+        HTML (HyperText Markup Language).</p>
         
-        <p>A figura a seguir ilustra a criação e apresentação de um documento
-        multimídia. Na criação, o autor utiliza uma linguagem multimídia para
-        definir as mídias utilizadas e o sincronismo entre elas. Por exemplo,
-        considere que a parte de créditos de vídeo deva inicie no segundo 300.
-        Um sincronismo pode ser definido para que ao iniciar o trecho dos
-        créditos (o vídeo alcance o segundo 300s), uma imagen de seja exibida.
-        Já na apresentação, um sistema multimídia recebe o documento multimídia
-        e os arquivos de mídia, e utiliza <strong>dispositivos
-        audiovisuais</strong> para apresentar conteúdos das mídias (som e
-        frames) e <strong>dispositivos apontador e de tecla</strong> para
-        capturar interações de usuário.</p>
+        <p>A figura a seguir ilustra a criação e execução de uma aplicação
+        multimídia interativa. Na criação, o autor defini quais mídias serão
+        exibidas e o sincronismo entre elas. Por exemplo, considere que o
+        trecho de créditos de um vídeo inicie no segundo 300. Um sincronismo
+        pode ser definido para que ao iniciar esse trecho dos créditos (o vídeo
+        alcance o segundo 300s), uma imagen de seja exibida. Já na execução, um
+        sistema multimídia dever receber a aplicação e seus arquivos
+        de mídia. Em seguida, esse sistema utiliza <strong>dispositivos
+        audiovisuais</strong> para exibir o conteúdo das mídias (som e frames)
+        e <strong>dispositivos de apontador e tecla</strong> para capturar
+        interações de usuário.</p>
 
         <div class='text-center'>
           <img class='center-block img-thumbnail' style='height: 500px'
@@ -240,8 +242,10 @@ _data.surveyJSON.pages.push({
         <p>As <strong>interfaces multimodais</strong> são aquelas que utilizam
         formas de comunicação mais naturais da linguagem e comportamento humano,
         como fala e gestos. Por exemplo, algumas interfaces multimodais para
-        crianças e idosos utilizaram de comunicação de voz e avatares
-        humanoides. Esse tipo de interface foi apoiada pelos recentes avanços em
+        crianças e idosos podem utilizar interação por voz e avatares
+        humanoides. Esse tipo de interface também permite multiplos usuários
+        interagindo com o sistema multimídia, como por exemplos em jogo de
+        dança. Esse tipo de interface foi apoiada pelos recentes avanços em
         tecnologias de reconhecimento e <strong>dispositivos de interação
         multimodal</strong>. Ilustrados a seguir, citamos o uso de microfones
         para reconhecimento de voz, e dispositivos como LeapMotion e Microsoft
@@ -257,31 +261,29 @@ _data.surveyJSON.pages.push({
         </div>
         <br>
 
-        <p>Para definir o comportamento de um sistema
-        multimídia com interfaces multimodais, o autor necessita
-        utilizar uma <strong>linguagem multimídia com interações
-        multimodais</strong>. Com esse tipo de linguagem, o autor pode não
+        <p>Uma <strong>linguagem multimídia com interações multimodais</strong>
+        é aquela que permite o autor criar aplicações multimídia com uma
+        interface multimodal. Com esse tipo de linguagem, o autor pode não
         apenas definir mídias e o sicronismo entre elas, mas também pode definir
-        interações multimodais com o ususário. Essas interações são geralmente
-        definidas utilizando descrições especificas para cada modalidade.
-        Exemplos dessas descrições são o SSML (Speech Synthesis Markup Language)
-        e o SRGS (Speech Recognition Grammar Specification) que descrevem,
-        respectivamente, a sintetização e reconhecimento de voz.</p>
+        interações multimodais com os ususários. Essas interações são geralmente
+        definidas utilizando <strong>descrições multimodais</strong>, que são
+        especificas para tipo de interação. Exemplos de tipos de descrições são
+        o SSML (Speech Synthesis Markup Language) e o SRGS (Speech Recognition
+        Grammar Specification) que descrevem, respectivamente, a sintetização e
+        reconhecimento de voz.</p>
 
-        <p>A figura a seguir ilustra a criação e apresentação de um documento
-        multimídia com interações multimodais. Na apresentação, esse sistema
-        multimídia recebe o documento multimídia, arquivos de mídia e descrições
-        multimodais necessários para realizar o sincronismo e interações
-        multimodais definidos pelo autor. Já na apresentação, o sistema utiliza
-        dispositivos de interação multimodal para reconhecimento, além de
-        dispositivos audiovisuais.</p>
+        <p>A figura a seguir ilustra a criação e execução de uma aplicação
+        multimídia com interações multimodais. Na criação, o autor defini as
+        mídias, descrições multimodais e o sincronimos entres eles. Em seguida,
+        na execução, o sistema utiliza <strong>dispositivos de interação
+        multimodal</strong> para realizar reconhecimentos, além de dispositivos
+        audiovisuais.</p>
 
         <div class='text-center'>
           <img class='img-thumbnail' style='height: 500px'
           src='assets/overview2.png'>
         </div>
         <br>
-
         </div>
       `
     },
