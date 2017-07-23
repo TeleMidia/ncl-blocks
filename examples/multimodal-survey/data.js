@@ -3002,7 +3002,6 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 _data.htmlTask1Code = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
-  <?xml version="1.0" encoding="ISO-8859-1"?>
   <html>
   <head><script src="synchronism.js"><&#47script></head>
   <body>
@@ -3050,7 +3049,6 @@ _data.htmlTask1Code = `
 `
 
 _data.htmlTask2CodeCOnly = `
-  <?xml version="1.0" encoding="ISO-8859-1"?>
   <html>
   <head><script src="synchronism.js"><&#47script></head>
   <body>
