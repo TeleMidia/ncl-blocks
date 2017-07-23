@@ -3189,14 +3189,14 @@ _data.surveyJSON.pages.push({
 
 _data.surveyJSON.pages.push({
   name: 'comments',
-  title: 'Comentários adicionais do participante',
+  title: 'Comentários adicionais',
   elements: [
     {
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Chegamos ao fim de nosso estudo. Por favor, se desejar, deixei
-        comentários adcionais sobre os pontos a seguir.</p>
+        <p>Chegamos ao fim de nosso estudo. Por favor, se desejar, deixe
+        comentários adicionais sobre os pontos a seguir.</p>
         </div>
       `
     },
