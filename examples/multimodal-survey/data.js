@@ -203,15 +203,15 @@ _data.surveyJSON.pages.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Primeiro devemos falar sobre <strong>aplicação multimídia
-        interativa</strong>, que é intimamente relacionada a <strong>sistema
-        multimídia</strong>.</p>
+        <p>Primeiro devemos falar sobre o conceito de <strong>aplicação
+        multimídia interativa</strong>, que é intimamente relacionado ao de
+        <strong>sistema multimídia</strong>.</p>
 
         <p>Um sistema multimídia é aquele que utiliza mídias discretas, como
         imagens e textos, e ao menos uma mídia contínua, como áudios e vídeos.
         Uma aplicação multimídia interativa define como um sistema multimídia
-        deve realizar o sincronimo das mídias e reagir a interações de ususário,
-        que são geralmente por apontador e tecla. O criador desse tipo de
+        deve realizar o sincronimo das mídias e reagir às interações de usuário,
+        geralmente por apontador e tecla. O criador desse tipo de
         aplicação é usualmente chamado de autor e utiliza uma <strong>linguagem
         multimídia interativa</strong> para desenvolver sua aplicação. Exemplos
         de linguagens multimídia atuais são a NCL (Nested Context Language) e a
@@ -221,8 +221,8 @@ _data.surveyJSON.pages.push({
         multimídia interativa. Na criação, o autor defini quais mídias serão
         exibidas e o sincronismo entre elas. Por exemplo, considere que o
         trecho de créditos de um vídeo inicie no segundo 300. Um sincronismo
-        pode ser definido para que ao iniciar esse trecho dos créditos (o vídeo
-        alcance o segundo 300s), uma imagen de seja exibida. Já na execução, um
+        pode ser definido para que ao iniciar esse trecho de créditos (o vídeo
+        alcançar o segundo 300), uma imagen seja exibida. Já na execução, um
         sistema multimídia dever receber a aplicação e seus arquivos
         de mídia. Em seguida, esse sistema utiliza <strong>dispositivos
         audiovisuais</strong> para exibir o conteúdo das mídias (som e frames)
@@ -243,8 +243,8 @@ _data.surveyJSON.pages.push({
         formas de comunicação mais naturais da linguagem e comportamento humano,
         como fala e gestos. Por exemplo, algumas interfaces multimodais para
         crianças e idosos podem utilizar interação por voz e avatares
-        humanoides. Esse tipo de interface também permite multiplos usuários
-        interagindo com o sistema multimídia, como por exemplos em jogo de
+        humanoides. Esse tipo de interface permite também que multiplos usuários
+        possam interagir com o sistema multimídia, como por exemplos em jogo de
         dança. Esse tipo de interface foi apoiada pelos recentes avanços em
         tecnologias de reconhecimento e <strong>dispositivos de interação
         multimodal</strong>. Ilustrados a seguir, citamos o uso de microfones
@@ -267,17 +267,20 @@ _data.surveyJSON.pages.push({
         apenas definir mídias e o sicronismo entre elas, mas também pode definir
         interações multimodais com os ususários. Essas interações são geralmente
         definidas utilizando <strong>descrições multimodais</strong>, que são
-        especificas para tipo de interação. Exemplos de tipos de descrições são
-        o SSML (Speech Synthesis Markup Language) e o SRGS (Speech Recognition
-        Grammar Specification) que descrevem, respectivamente, a sintetização e
-        reconhecimento de voz.</p>
+        especificas para tipo de interação. Exemplos de tipos dessas descrições
+        são o SSML (Speech Synthesis Markup Language) e o SRGS (Speech
+        Recognition Grammar Specification) que descrevem, respectivamente, a
+        sintetização e reconhecimento de voz.</p>
 
         <p>A figura a seguir ilustra a criação e execução de uma aplicação
         multimídia com interações multimodais. Na criação, o autor defini as
-        mídias, descrições multimodais e o sincronimos entres eles. Em seguida,
-        na execução, o sistema utiliza <strong>dispositivos de interação
-        multimodal</strong> para realizar reconhecimentos, além de dispositivos
-        audiovisuais.</p>
+        mídias, descrições multimodais e o sincronimos entres eles. Por exemplo,
+        considere uma aplicação que utiliza um arquivo de vídeo e uma descrição
+        que reconhece um comando de voz para repetir o vídio. Nessa aplicação,
+        um o autor pode definir um sincronimo para que o usuário possa falar
+        durante o trecho de créditos e o vídeo seja reiniciado. Já na execução,
+        o sistema utiliza <strong>dispositivos de interação multimodal</strong>
+        para realizar reconhecimentos, além de dispositivos audiovisuais.</p>
 
         <div class='text-center'>
           <img class='img-thumbnail' style='height: 500px'
@@ -321,11 +324,11 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     {
       type: 'html',
       html: `
-        <div style="text-align: justify; width: 70%;">
-        <p>Em nossa pesquisa, argumentamos que as linguagens multimídia atuais
-        não suportam adequadamente interações multimodais e ser consideradas
-        "output-oriented". Pois essas linguagens atuas tem maior foco na
-        apresentação na conteúdos de mídia, como imagens, vídeo e áudios.</p>
+        <div style="text-align: justify; width: 70%;"> <p>Em nossa pesquisa,
+        argumentamos que as linguagens multimídia atuais não suportam
+        adequadamente interações multimodais. Essas linguagem podem ser
+        consideradas "output-oriented", poi têm maior foco na exibição de
+        conteúdos de mídia, como imagens, vídeo e áudios.</p>
 
         <p>Em nossa pesquisa propomos quatro conceitos que são necessários para
         linguagem multimídia com interações multimodais. Mais precisamente esses
@@ -379,7 +382,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Os blocos a seguir definem duas mídias com identificadores
         <em>midia_principal</em> e <em>icone</em>, mas elas não possuem
         conteúdo. Por não terem conteúdo, essas <em>&ltmedia></em> não
-        apresentaram resultados audiovisuais.</p>
+        apresentam resultados audiovisuais.</p>
         </div>
 
         <div id='conceptsIntro1A'></div><br>
@@ -387,7 +390,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;"> 
         <p>Os blocos a seguir definem as mesmas mídias acima, mas com conteúdos
         de áudio e imagem, respectivamente. Em especial, a mídia de
-        <em>midia_principal</em> tem definido uma âncora chamada de
+        <em>midia_principal</em> tem definida uma âncora chamada de
         <em>creditos</em> que inicia aos 300 e termina aos 360 segundos.</p>
         </div>
 
@@ -432,7 +435,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Em nossa representação de blocos, o <em>Sincronismo</em> é
         implementado por um bloco de mesmo nome.</p>
 
-        <p>Os blocos de ações podem ser de iniciar("inicie") ou parar("pare")
+        <p>Os blocos de ações podem ser de iniciar ("inicie") ou parar ("pare")
         uma <em>Mídia</em> ou <em>Reconhecedor</em>. Já as condições podem ser
         simples ou compostas. 
         
@@ -447,14 +450,14 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         todos as ações são necessárias e na sequência estabelecida.</p>
 
         <p>O relacionamento entre condições e ações é definido juntando um
-        blocos de <em>Sincronismo</em> com blocos de condições e ações  A tabela
+        bloco de <em>Sincronismo</em> com blocos de condições e ações  A tabela
         a seguir mostra exemplos de junções de blocos.</p>
         
         <table align="center" class="table-bordered table-striped
         table-condensed">
           <tr>
             <th>blocos</th>
-            <th>defini</th>
+            <th>define</th>
           </tr>
           <tr>
             <td><img class='img-thumbnail' style='height: 150px'
@@ -474,7 +477,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
           <tr>
             <td><img class='img-thumbnail' style='height: 150px'
           src='assets/concepts-sample-4.png'></td> 
-            <td>condições "ao reconhecer" combinados com operador "OR", ações de
+            <td>condições "ao reconhecer" combinadas com operador "OR", ações de
             "pare" e "inicie"
             </td>
           </tr>
@@ -495,7 +498,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         alcançar o seu trecho de <em>credito</em> a mídia <em>icone_repetir</em>
         deve ser iniciada. O terceiro <em>Sincronismo</em> define que quando a
         mídia <em>icone_repetir</em> for selecionada, a <em>midia_principal</em>
-        deve ser reiniciada (terminada e inciada)</p>
+        deve ser reiniciada (terminada e iniciada)</p>
 
         </div>
 
@@ -509,7 +512,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;">
         <p>Agora, vamos detalhar o conceito <em>Reconhecedor</em>. Ele permite
         o uso de reconhecimento de interações mutimodais realizadas pelo
-        ususário, como voz e gestos.</p>
+        usuário, como voz e gestos.</p>
 
         <p>O <em>Reconhecedor</em> é definido por <strong>um identificador, seu
         conteúdo e âncoras</strong>. Entretanto, diferente de <em>Mídia</em>, o
@@ -582,8 +585,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         <div style="text-align: justify; width: 70%;">
         <p>Por fim, vamos detalhar <em>Grupo de usuários</em>. Ele permite
-        identificar unicamente interações de cada ususário. Por exemplo,
-        o comando de voz apenas de um ususário</p>
+        identificar unicamente interações de cada usuário. Por exemplo,
+        o comando de voz apenas de um usuário</p>
 
         <p><em>Grupo de Usuários</em> é definido <strong>por um identificador,
         número maximo de participantes e quais dispositivos estes
@@ -1523,7 +1526,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         trechos delimitados com o atributo <em>label</em>.</p>
 
         <p>Elementos <em>&ltmedia></em> também podem possuir elementos
-        <em>&ltproperty></em> para definir características de sua apresentação,
+        <em>&ltproperty></em> para definir características de sua exibição,
         como <em>&ltsize></em> (width e high), <em>&ltposition></em> (top e
         left) and <em>&ltz-index></em>.</p>
 
@@ -1664,7 +1667,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;">
         <p>Agora, vamos detalhar o conceito <em>Reconhecedor</em> em NCL. Ele
         permite o uso de reconhecimento de interações mutimodais realizadas pelo
-        ususário, como voz e gestos.</p>
+        usuário, como voz e gestos.</p>
         
         <p>O <em>Reconhecedor</em> é definido por <strong>um identificador, seu
         conteúdo e âncoras</strong>. Entretanto, diferente de <em>Mídia</em>, o
@@ -1745,8 +1748,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         <div style="text-align: justify; width: 70%;">
         <p>Agora, vamos detalhar o elemento <em>Grupo de Usuários</em> em NCL.
-        Ele permite identificar unicamente interações de cada ususário. Por
-        exemplo, o comando de voz apenas de um ususário</p>
+        Ele permite identificar unicamente interações de cada usuário. Por
+        exemplo, o comando de voz apenas de um usuário</p>
 
         <p><em>Grupo de Usuários</em> é definido <strong>por um identificador,
         número maximo de participantes e quais dispositivos estes
@@ -2450,7 +2453,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>end</em> ou um trecho delimitado com o atributo <em>label</em>.</p>
 
         <p>Elementos <em>Mídia</em> também podem possuir propriedades para
-        definir características de sua apresentação definidas no atribudo
+        definir características de sua exibição definidas no atribudo
         <em>&lstyle></em>.</p>
 
         <p>Trechos de código serão apresentados para ilustrar esse conceito em
@@ -2590,7 +2593,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;">
         <p>Agora, vamos detalhar o conceito <em>Reconhecedor</em> em HTML. Ele
         permite o uso de reconhecimento de interações mutimodais realizadas pelo
-        ususário, como voz e gestos.</p>
+        usuário, como voz e gestos.</p>
 
         <p>O <em>Reconhecedor</em> é definido por <strong>um identificador, seu
         conteúdo e âncoras</strong>. Entretanto, diferente de <em>Mídia</em>, o
@@ -2672,8 +2675,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         <div style="text-align: justify; width: 70%;">
         <p>Agora, vamos detalhar o elemento <em>Grupo de Usuários</em> em HTML.
-        Ele permite identificar unicamente interações de cada ususário. Por
-        exemplo, o comando de voz apenas de um ususário</p>
+        Ele permite identificar unicamente interações de cada usuário. Por
+        exemplo, o comando de voz apenas de um usuário</p>
         
         <p><em>Grupo de Usuários</em> é definido <strong>por um identificador,
         número maximo de participantes e quais dispositivos estes
