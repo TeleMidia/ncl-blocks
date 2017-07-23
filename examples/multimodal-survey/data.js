@@ -1392,7 +1392,7 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'conceptsFeedbackQuestion1',
-      title: `Os conceitos apresentados **permitem realizar rapidamente** a
+      title: `Os conceitos apresentados permitem **realizar rapidamente** a
         especificação de aplicações multimodais.`,
       choices: _agreeChoices
     },
@@ -1400,7 +1400,8 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'conceptsFeedbackQuestion2',
-      title: `Os conceitos apresentados permitem especificar aplicações multimodais **com qualidade**.`,
+      title: `Os conceitos apresentados permitem especificar aplicações
+        multimodais **com qualidade**.`,
       choices: _agreeChoices
     },
     {
@@ -1415,14 +1416,14 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'conceptsFeedbackQuestion4',
-      title: `Os conceitos apresentados **são fáceis** de entender.`,
+      title: `Os conceitos apresentados **são simples**.`,
       choices: _agreeChoices
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'conceptsFeedbackQuestion5',
-      title: `Os conceitos apresentados **são claros e entendíveis**.`,
+      title: `Os conceitos apresentados **são fáceis** de aprender.`,
       choices: _agreeChoices
     },
     {
@@ -2288,7 +2289,7 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'nclFeedbackQuestion1',
-      title: `A NCL estendida **permite realizar mais rapidamente** o
+      title: `A NCL estendida permite **realizar rapidamente** o
         desenvolvimento de aplicações multimodais.`,
       choices: _agreeChoices
     },
@@ -2296,15 +2297,15 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'nclFeedbackQuestion2',
-      title: `A NCL estendida **permite aumentar a qualidade** do
-        desenvolvimento de aplicações multimodais.`,
+      title: `A NCL estendida permite o desenvolvimento de aplicações
+        multimodais **com qualidade**.`,
       choices: _agreeChoices
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'nclFeedbackQuestion3',
-      title: `De modo geral, a NCL estendida permite **é útel** para o
+      title: `De modo geral, a NCL estendida permite **é útil** para o
         desenvolvimento de aplicações multimodais.`,
       choices: _agreeChoices
     },
@@ -2312,14 +2313,14 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'nclFeedbackQuestion4',
-      title: 'NCL estendida **é fácil** de aprender.',
+      title: 'A NCL estendida **é simples**.',
       choices: _agreeChoices
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'nclFeedbackQuestion5',
-      title: 'A NCL estendida **é clara e entendível**.',
+      title: 'A NCL estendida **é fácil** de aprender.',
       choices: _agreeChoices
     },
     {
@@ -3122,7 +3123,7 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'htmlFeedbackQuestion1',
-      title: `A HTML estendida **permite realizar mais rapidamente** o
+      title: `A HTML estendida permite **realizar rapidamente** o
         desenvolvimento de aplicações multimodais.`,
       choices: _agreeChoices
     },
@@ -3130,15 +3131,15 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'htmlFeedbackQuestion2',
-      title: `A HTML estendida **permite aumentar a qualidade** do
-        desenvolvimento de aplicações multimodais.`,
+      title: `A HTML estendida permite o desenvolvimento de aplicações
+        multimodais **com qualidade**.`,
       choices: _agreeChoices
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'htmlFeedbackQuestion3',
-      title: `De modo geral, a HTML estendida **é útel** para o desenvolvimento
+      title: `De modo geral, a HTML estendida **é útil** para o desenvolvimento
         de aplicações multimodais.`,
       choices: _agreeChoices
     },
@@ -3146,14 +3147,14 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'htmlFeedbackQuestion4',
-      title: 'A HTML estendida **é fácil** de aprender.',
+      title: 'A HTML estendida **é simples**.',
       choices: _agreeChoices
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'htmlFeedbackQuestion5',
-      title: 'A HTML estendida **é clara e entendível**.',
+      title: 'A HTML estendida **é fácil** de aprender.',
       choices: _agreeChoices
     },
     {
