@@ -193,7 +193,7 @@ _data.surveyJSON.pages.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Vamos nesta seção indroduzir o conceito de <strong>linguagens
+        <p>Vamos nesta seção introduzir o conceito de <strong>linguagens
         multimídia com interações multimodais</strong>, proposto em nossa
         pesquisa.</p>
         </div>
@@ -210,8 +210,8 @@ _data.surveyJSON.pages.push({
         <p>Um sistema multimídia é aquele que utiliza mídias discretas, como
         imagens e textos, e ao menos uma mídia contínua, como áudios e vídeos.
         Uma aplicação multimídia interativa define como um sistema multimídia
-        deve realizar o sincronimo das mídias e reagir às interações de usuário,
-        geralmente por apontador e tecla. O criador desse tipo de
+        deve realizar o sincronismo das mídias e reagir às interações de
+        usuário, geralmente por apontador e tecla. O criador desse tipo de
         aplicação é usualmente chamado de autor e utiliza uma <strong>linguagem
         multimídia interativa</strong> para desenvolver sua aplicação. Exemplos
         de linguagens multimídia atuais são a NCL (Nested Context Language) e a
@@ -222,8 +222,8 @@ _data.surveyJSON.pages.push({
         exibidas e o sincronismo entre elas. Por exemplo, considere que o
         trecho de créditos de um vídeo inicie no segundo 300. Um sincronismo
         pode ser definido para que ao iniciar esse trecho de créditos (o vídeo
-        alcançar o segundo 300), uma imagen seja exibida. Já na execução, um
-        sistema multimídia dever receber a aplicação e seus arquivos
+        alcançar o segundo 300) uma imagem seja exibida. Já na execução, um
+        sistema multimídia deve receber a aplicação e seus arquivos
         de mídia. Em seguida, esse sistema utiliza <strong>dispositivos
         audiovisuais</strong> para exibir o conteúdo das mídias (som e frames)
         e <strong>dispositivos de apontador e tecla</strong> para capturar
@@ -243,7 +243,7 @@ _data.surveyJSON.pages.push({
         formas de comunicação mais naturais da linguagem e comportamento humano,
         como fala e gestos. Por exemplo, algumas interfaces multimodais para
         crianças e idosos podem utilizar interação por voz e avatares
-        humanoides. Esse tipo de interface permite também que multiplos usuários
+        humanoides. Esse tipo de interface permite também que múltiplos usuários
         possam interagir com o sistema multimídia, como por exemplos em jogo de
         dança. Esse tipo de interface foi apoiada pelos recentes avanços em
         tecnologias de reconhecimento e <strong>dispositivos de interação
@@ -265,22 +265,23 @@ _data.surveyJSON.pages.push({
         é aquela que permite o autor criar aplicações multimídia com uma
         interface multimodal. Com esse tipo de linguagem, o autor pode não
         apenas definir mídias e o sicronismo entre elas, mas também pode definir
-        interações multimodais com os ususários. Essas interações são geralmente
+        interações multimodais com os usuários. Essas interações são geralmente
         definidas utilizando <strong>descrições multimodais</strong>, que são
-        especificas para tipo de interação. Exemplos de tipos dessas descrições
-        são o SSML (Speech Synthesis Markup Language) e o SRGS (Speech
-        Recognition Grammar Specification) que descrevem, respectivamente, a
-        sintetização e reconhecimento de voz.</p>
+        específicas para cada tipo de interação. Exemplos de tipos dessas
+        descrições são o SSML (Speech Synthesis Markup Language) e o SRGS
+        (Speech Recognition Grammar Specification) que descrevem,
+        respectivamente, a sintetização e reconhecimento de voz.</p>
 
         <p>A figura a seguir ilustra a criação e execução de uma aplicação
         multimídia com interações multimodais. Na criação, o autor define as
-        mídias, descrições multimodais e o sincronimos entres eles. Por exemplo,
-        considere uma aplicação que utiliza um arquivo de vídeo e uma descrição
-        que reconhece um comando de voz para repetir o vídio. Nessa aplicação,
-        um o autor pode definir um sincronimo para que o usuário possa falar
-        durante o trecho de créditos e o vídeo seja reiniciado. Já na execução,
-        o sistema utiliza <strong>dispositivos de interação multimodal</strong>
-        para realizar reconhecimentos, além de dispositivos audiovisuais.</p>
+        mídias, descrições multimodais e o sincronismos entres eles. Por
+        exemplo, considere uma aplicação que utiliza um arquivo de vídeo e uma
+        descrição que reconhece um comando de voz para repetir o vídeo. Nessa
+        aplicação, um o autor pode definir um sincronismo para que o usuário
+        possa falar durante o trecho de créditos e o vídeo seja reiniciado. Já
+        na execução, o sistema utiliza <strong>dispositivos de interação
+        multimodal</strong> para realizar reconhecimentos, além de dispositivos
+        audiovisuais.</p>
 
         <div class='text-center'>
           <img class='img-thumbnail' style='height: 500px'
@@ -370,7 +371,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Uma <em>Mídia</em> é definida por <strong>um identificador, um
         conteúdo e âncoras</strong>. O conteúdo consiste em um arquivo de mídia,
         como imagem jpeg, vídeo mp4, áudio mp3, entre outros. As âncoras são
-        porções do conteúdo e podem ser trechos emporais (e.g. entre 300s e
+        porções do conteúdo e podem ser trechos temporais (e.g. entre 300s e
         360s) ou trechos delimitados do conteúdo.</p>
 
         <p>Em nossa representação de blocos, a <em>Mídia</em> é definida
@@ -406,7 +407,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div id='conceptsIntro1C'></div><br>
 
         <div style="text-align: justify; width: 70%;">
-        <p>Além de midías como imagens, áudio e vídeos, o conceito
+        <p>Além de mídias como imagens, áudio e vídeos, o conceito
         <em>Mídia</em> abrange também outras modalidades conteúdo como voz
         sintetizada e avatares humanoides. Os blocos a seguir definem a
         <em>Mídia</em> com identificador <em>sinte_voz</em>, que tem como
@@ -445,8 +446,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <p>Os blocos de condições compostas combinam ações simples utilizando
         um dos seguintes operadores: 'OR' quando apenas uma das condições é
-        necessária; 'AND' quando todos condições são necessária; e 'SEQ' quando
-        todos as condições são necessárias e na sequência estabelecida.</p>
+        necessária; 'AND' quando todas as condições são necessárias em qualquer
+        ordem; e 'SEQ' quando todos as condições são necessárias e na sequência
+        estabelecida.</p>
 
         <p>O relacionamento entre condições e ações é definido juntando um
         bloco de <em>Sincronismo</em> com blocos de condições e ações  A tabela
@@ -510,7 +512,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         <div style="text-align: justify; width: 70%;">
         <p>Agora vamos detalhar o conceito <em>Reconhecedor</em>. Ele permite
-        o uso de reconhecimento de interações mutimodais realizadas pelo
+        o uso de reconhecimento de interações multimodais realizadas pelo
         usuário, como voz e gestos.</p>
 
         <p>O <em>Reconhecedor</em> é definido por <strong>um identificador, seu
@@ -559,11 +561,11 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <div style="text-align: justify; width: 70%;"> 
         <p>Um dos principais benefícios de interfaces multimodais é o uso
-        diferentes interações, ou seja, as interações de ususários podem ser
+        diferentes interações, ou seja, as interações de usuários podem ser
         realizadas por diferentes modalidades. Em nossos conceitos essa
         combinação de modalidades de interação pode ser feita utilizando uma
         condição composta. Usar um operador OR indica que qualquer uma das
-        interações é necessária. Já usar o operador AND significaria quetodas as
+        interações é necessária. Já usar o operador AND indica que todas as
         interações são necessárias em qualquer ordem. E por fim usar o operador
         SEQ significa que as interações têm que ser feitas em sequência.</p> 
 
@@ -1551,9 +1553,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <div id='nclIntro1CodeC'></div>
 
-        <p>Além de midías como imagens, áudio e vídeos, o elemento
+        <p>Além de mídias como imagens, áudio e vídeos, o elemento
         <em>&ltmedia></em> de nossa NCL estendida deve suportar outras
-        modalidades de conteúdo como sintetização de voz e avatares humanoides.
+        modalidades de conteúdo como sintetização de voz e avatares humanóides.
         Por exemplo, os trechos de código a seguir ilustram o uso de
         sintetização de voz em nossa NCL.</p>
 
@@ -1602,8 +1604,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Em nossa NCL estendida, as condições compostas em um
         <em>&ltlink></em> combinam condições simples utilizando um dos seguintes
         operadores: 'OR' quando apenas uma das condições é necessária; 'AND'
-        quando todas condições são necessárias; e 'SEQ' quando todas as
-        condições são necessárias e na sequência estabelecida.</p>
+        quando todas condições são necessárias em qualquer ordem; e 'SEQ' quando
+        todas as condições são necessárias e na sequência estabelecida.</p>
 
         <p>O relacionamento entre condições e ações é definido pelo connector no
         atributdo <em>xconnector</em> do <em>&ltlink></em>. A tabela a seguir
@@ -1660,7 +1662,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         <div style="text-align: justify; width: 70%;">
         <p>Agora vamos detalhar o conceito <em>Reconhecedor</em> em NCL. Ele
-        permite o uso de reconhecimento de interações mutimodais realizadas pelo
+        permite o uso de reconhecimento de interações multimodais realizadas pelo
         usuário, como voz e gestos.</p>
         
         <p>O <em>Reconhecedor</em> é definido por <strong>um identificador, seu
@@ -1716,14 +1718,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div id='nclIntro3CodeC'></div>
 
         <p>Um dos principais benefícios de interfaces multimodais é o uso
-        diferentes interações. Ou seja, as interações de ususários podem ser
+        diferentes interações. Ou seja, as interações de usuários podem ser
         realizadas por diferentes modalidades. Em nossos, conceitos essa
         combinação de modalidades de interação pode ser feita utilizando uma
         condição composta. Usar um operador 'OR' indica que qualquer uma das
-        interações é necessária. Já usar operador 'AND' significaria que todas
-        as interações são necessárias em qualquer ordem. E por fim usar o
-        operador 'SEQ' significa que as interações tem que ser feitas em
-        sequência.</p> 
+        interações é necessária. Já usar operador 'AND' indica que todas as
+        interações são necessárias em qualquer ordem. E por fim usar o operador
+        'SEQ' significa que as interações tem que ser feitas em sequência.</p> 
 
         <p>Os blocos a seguir modificam a aplicação acima. Mas nessa
         versão a mídia <em>midia_principal</em> é repetida quando usuário
@@ -1753,7 +1754,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         e os dispositivos são definidos por um arquivo de descrição definido em
         <em>src</em>. Para essa descrição propomos um descrição  no formato
         SPARQL. O trecho de código a seguir apresenta o arquivo de descrição de
-        ususários <em>gu_leap_microphone.sparql</em>. Essa descrição define que
+        usuários <em>gu_leap_microphone.sparql</em>. Essa descrição define que
         cada usuário do grupo deve ter um microfone e um leapmotion.</p>
 
         <div id='nclIntro4CodeA'></div><br>
@@ -2378,12 +2379,12 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         são instanciados na HTML para esta oferecer suporte a interações
         multimodais.</p>
         
-        <p>A tabela seguir apresenta como propomos instaciar os conceitos de
+        <p>A tabela seguir apresenta como propomos instanciar os conceitos de
         nossa pesquisa na versão atual da HTML (5.0). O conceito de
         <em>Mídia</em> é parcialmente implementado por elementos como
         <em>&ltimg></em>, <em>&ltvideo></em> e <em>&ltaudio></em>, pois estes
-        não possem nossas âncoras. O conceito de <em>Sincronismo</em> é
-        parcialmente implementado pelo elemento <em>script</em>, pois estes
+        não possuem nosso conceito de âncora. O conceito de <em>Sincronismo</em>
+        é parcialmente implementado pelo elemento <em>script</em>, pois estes
         permitem definir comportamentos na aplicação, como interações de usuário
         por apontador. Por fim os conceitos de <em>Reconhecedor</em> e <em>Grupo
         de usuários</em> não são implementados.</p>
@@ -2442,7 +2443,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>end</em> ou um trecho delimitado com o atributo <em>label</em>.</p>
 
         <p>Elementos <em>Mídia</em> também podem possuir propriedades para
-        definir características de sua exibição definidas no atribudo
+        definir características de sua exibição definidas no atributo
         <em>&ltstyle></em>. Trechos de código serão apresentados a seguir para
         ilustrar esse conceito em HTML.</p>
 
@@ -2469,7 +2470,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <div id='htmlIntro1CodeC'></div>
 
-        <p>Além de midías como imagens, áudio e vídeos, a nossa HTML estendida
+        <p>Além de mídias como imagens, áudio e vídeos, a nossa HTML estendida
         deve suportar outras modalidades de conteúdo como sintetização de voz e
         avatares humanoides. Por exemplo, os trechos de código a seguir ilustram
         o uso de sintetização de voz em nossa HTML.</p>
@@ -2520,8 +2521,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Condições compostas em um objeto <em>Synchronism</em> combinam ações
         simples utilizando um dos seguintes operadores: 'OR' quando apenas uma
         das condições é necessária; 'AND' quando todas as condições são
-        necessárias; e 'SEQ' quando todas as condições são necessárias e na
-        sequência estabelecida.</p>
+        necessárias em qualquer ordem; e 'SEQ' quando todas as condições são
+        necessárias e na sequência estabelecida.</p>
 
         <p>O relacionamento entre condições e ações é definida pelo objeto
         <em>Synchronism</em>. A tabela a seguir mostra exemplos de parâmetros do
@@ -2579,7 +2580,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         <div style="text-align: justify; width: 70%;">
         <p>Agora vamos detalhar o conceito <em>Reconhecedor</em> em HTML. Ele
-        permite o uso de reconhecimento de interações mutimodais realizadas pelo
+        permite o uso de reconhecimento de interações multimodais realizadas pelo
         usuário, como voz e gestos.</p>
 
         <p>O <em>Reconhecedor</em> é definido por <strong>um identificador, seu
@@ -2636,11 +2637,11 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div id='htmlIntro3CodeC'></div>
 
         <p>Um dos principais benefícios de interfaces multimodais é o uso
-        diferentes interações, ou seja, as interações de ususários podem ser
+        diferentes interações, ou seja, as interações de usuários podem ser
         realizadas por diferentes modalidades. Em nossos, conceitos essa
         combinação de modalidades de interação pode ser feita utilizando uma
         condição composta. Usar um operador OR indica que qualquer uma das
-        interações é necessária. Já usar operador AND significaria que todas as
+        interações é necessária. Já usar operador AND indica que todas as
         interações são necessárias em qualquer ordem. E por fim usar o operador
         SEQ significa que as interações tem que ser feitas em sequência.</p> 
 
@@ -2669,7 +2670,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Na nossa HTML estendida, o conceito de <em>Grupo de Usuários</em> é
         implementado por elemento JavaScript que utilize um objeto
         <em>&ltUserGroup></em>. Para essa descrição propomos usar um descrição
-        no formato SPARQL. Essa descrição é utilizada como parametro na criação
+        no formato SPARQL. Essa descrição é utilizada como parâmetro na criação
         do objeto <em>&ltUserGroup></em>. O trecho a seguir apresenta um codigo
         JavaScript que cria um objeto <em>&ltUserGroup></em> em que cada usuário
         do grupo deve ter um microfone e um leapmotion.</p>
