@@ -311,6 +311,7 @@ function saveblocksTask3Changes (event) {
   // save change
   var savedJsonStr = _survey.getQuestionByName('conceptsTask3Changes').value
   var jsonFromEvent = event.toJson()
+  jsonFromEvent.time = new Date()
   var jsonToSave
   if (savedJsonStr == null) {
     jsonToSave = { 'changes': [] }
@@ -332,6 +333,7 @@ function saveblocksTask4Changes (event) {
   // save change
   var savedJsonStr = _survey.getQuestionByName('conceptsTask4Changes').value
   var jsonFromEvent = event.toJson()
+  jsonFromEvent.time = new Date()
   var jsonToSave
   if (savedJsonStr == null) {
     jsonToSave = { 'changes': [] }

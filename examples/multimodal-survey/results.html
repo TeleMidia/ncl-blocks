@@ -140,6 +140,9 @@
         return
       }
       var json = result.changes[_runEventIntervalIndex]
+      // if (json.time) {
+      //   console.log(json.time)
+      // }
       var event = Blockly.Events.fromJson(json, _workspace)
       event.run(true)
       _runEventIntervalIndex++
