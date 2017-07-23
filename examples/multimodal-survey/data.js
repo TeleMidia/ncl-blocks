@@ -423,7 +423,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'conceptsIntro2',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Agora, vamos detalhar o conceito de <em>Sincronismo</em>. Ele
+        <p>Agora vamos detalhar o conceito de <em>Sincronismo</em>. Ele
         permite definir o comportamento das aplicações.</p>
 
         <p>O <em>Sincronismo</em> é baseado em causalidade e definido por
@@ -509,7 +509,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'conceptsIntro3',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Agora, vamos detalhar o conceito <em>Reconhecedor</em>. Ele permite
+        <p>Agora vamos detalhar o conceito <em>Reconhecedor</em>. Ele permite
         o uso de reconhecimento de interações mutimodais realizadas pelo
         usuário, como voz e gestos.</p>
 
@@ -552,7 +552,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         sintetizada e o <em>Reconhecedor</em> <em>rec_voz</em> inicia o
         reconhecimento. O último <em>Sincronismo</em> define que quando for
         reconhecida a âncora <em>repetir</em>,
-        <em>midia_principal</em> deve ser reiniciada (terminada e inciada).</p>
+        <em>midia_principal</em> deve ser reiniciada (terminada e iniciada).</p>
         </div>
 
         <div id='conceptsIntro3B'></div><br>
@@ -563,14 +563,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         realizadas por diferentes modalidades. Em nossos conceitos essa
         combinação de modalidades de interação pode ser feita utilizando uma
         condição composta. Usar um operador OR indica que qualquer uma das
-        interações é necessária. Já usar o operador AND significaria que as
-        todas as interações são necessárias em qualquer ordem. E por fim usar o
-        operador SEQ significa que as interações têm que ser feitas em
-        sequência.</p> 
+        interações é necessária. Já usar o operador AND significaria quetodas as
+        interações são necessárias em qualquer ordem. E por fim usar o operador
+        SEQ significa que as interações têm que ser feitas em sequência.</p> 
 
         <p>Os blocos a seguir modificam a aplicação acima. Mas nessa
         versão a mídia <em>midia_principal</em> é repetida quando usuário
-        interage atravès de  voz ou (operador OR) através de gesto.</p>
+        interage através de  voz ou (operador OR) através de gesto.</p>
         </div>
 
         <div id='conceptsIntro3c'></div><br>
@@ -586,7 +585,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         o comando de voz apenas de um usuário</p>
 
         <p><em>Grupo de Usuários</em> é definido por <strong>um identificador,
-        número maximo de participantes e quais dispositivos estes
+        número máximo de participantes e quais dispositivos estes
         utilizam</strong>. Mais precisamente, esses dispositivos definem o que
         um usuário necessita possuir para participar do grupo.</p>
 
@@ -1046,7 +1045,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Agora, pedimos que você realize as quatro tarefas a seguir. Duas
+        <p>Agora pedimos que você realize as quatro tarefas a seguir. Duas
         tarefas consistem em interpretar aplicações e duas em modificar
         aplicações.</p>
 
@@ -1076,15 +1075,15 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'comment',
       isRequired: true,
       name: 'conceptsTask2Question',
-      title: 'Qual foi a mudança no comportamento da aplicação da Tarefa 1 para Tarefa 2?'
+      title: 'Qual é o novo comportamento da aplicação?'
     },
     {
       type: 'html',
       name: 'conceptsTask3',
-      html: ` Tarefa 3: Agora, pedimos que edite os blocos da Tarefa 2 (copiados
+      html: ` Tarefa 3: Agora pedimos que edite os blocos da Tarefa 2 (copiados
         a seguir) para que seja possível a interação por voz <strong>ou</strong>
         (operador OR) interação por gestos. Na interação por gesto, consire que
-        gesto de mão para esquera indica centro e gesto de mão para direita
+        gesto de mão para esquerda indica centro e gesto de mão para direita
         indica praia. <br><br>
       `
     },
@@ -1104,9 +1103,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       name: 'conceptsTask4',
       html: `
-        Tarefa 4: Agora, pedimos que edite novamente os blocos da Tarefa 2
+        Tarefa 4: Agora pedimos que edite novamente os blocos da Tarefa 2
         (copiados a seguir) para que apenas o segundo usuário, de um grupo de 3
-        usuários com microphone, possa realizar a interação por voz. <br><br>
+        usuários comf, possa realizar a interação por voz. <br><br>
       `
     },
     {
@@ -1463,7 +1462,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>A linguagem NCL é utilizada para criar conteúdo multimídia interativo
         em sistemas de TV (terrestre, IPTV e BroadBand). <strong>Nesta seção,
         não vamos ensinar a linguagem NCL</strong>, mas vamos apresentar como os
-        conceitos da seção anterior são instanciados na NCL para esta ofercer
+        conceitos da seção anterior são instanciados na NCL para esta oferecer
         suporte a interações multimodais.</p>
         
         <p>A tabela seguir apresenta como propomos instanciação dos conceitos de
@@ -1516,15 +1515,15 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         conteúdo e âncoras</strong>.</p>
 
         <p>Na NCL, o conceito de <em>Mídia</em> já é implementado pelo elemento
-        <em>&ltmedia></em>. O identificador é definito pelo atributo <em>id</em>
+        <em>&ltmedia></em>. O identificador é definido pelo atributo <em>id</em>
         e o arquivo de mídia do conteúdo é definido pelo atributo <em>src</em>.
-        As âncoras são definidas pelo elemento <em>area</em> e podem definem
+        As âncoras são definidas pelo elemento <em>area</em> e podem definir
         porções temporais com os atributos <em>begin</em> e <em>end</em> ou
         trechos delimitados com o atributo <em>label</em>.</p>
 
         <p>Elementos <em>&ltmedia></em> também podem possuir elementos
         <em>&ltproperty></em> para definir características de sua exibição,
-        como <em>&ltsize></em> (width e high), <em>&ltposition></em> (top e
+        como <em>&ltsize></em> (width e height), <em>&ltposition></em> (top e
         left) and <em>&ltz-index></em>.</p>
 
         <p>Trechos de código serão apresentados para ilustrar esse conceito em
@@ -1532,14 +1531,14 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <p>O trecho de código a seguir define duas mídias com identificadores
         <em>midia_principal</em> e <em>icone</em>, mas elas não possuem
-        conteúdo. Por não terem conteúdo, elas não apresentaram resultados
+        conteúdo. Por não terem conteúdo, elas não apresentam resultados
         audiovisuais.</p>
 
         <div id='nclIntro1CodeA'></div><br>
 
         <p>O trecho de código a seguir define as mesmas mídias acima, mas com
         conteúdos de áudio e imagem, respectivamente. Em especial, a mídia de
-        <em>midia_principal</em> tem definido uma âncora chamada de
+        <em>midia_principal</em> tem definida uma âncora chamada de
         <em>creditos</em> que inicia aos 300 e termina aos 360 segundos.</p>
 
         <div id='nclIntro1CodeB'></div><br>
@@ -1548,8 +1547,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>&ltmedia></em> não afetam o comportamento da aplicação, desde que a
         mídia defina as mesmas âncoras, pois os sincronismos são definidos
         baseados nas âncoras e independente do conteúdo. Por exemplo, o trecho
-        código a seguir define a mesma mídia <em>midia_principal</em>, mas com o
-        conteúdo de vídeo.</p>
+        de código a seguir define a mesma mídia <em>midia_principal</em>, mas
+        com o conteúdo de vídeo.</p>
 
         <div id='nclIntro1CodeC'></div>
 
@@ -1561,13 +1560,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <p>O primeiro trecho de código a seguir apresenta o arquivo
         <em>sinte_voz.srgs</em>, que é uma descrição de sintetização de voz no
-        formato SSML. Em particular, esse arquivo defini a frase a ser
+        formato SSML. Em particular, esse arquivo define a frase a ser
         sintetizada "você deseja repetir o vídeo?".</p>
 
         <div id='nclIntro1CodeD'></div>
 
         O segundo trecho de código define uma <em>&ltmedia></em> com
-        identificador <em>sinte_voz</em> que tem como conteúdo o arquivo
+        identificador <em>sinte_voz</em>, que tem como conteúdo o arquivo
         <em>sinte_voz.srgs</em>. Essa <em>&ltmedia></em> possui uma âncora que
         indica a frase a ser sintetizada.</p>
 
@@ -1579,7 +1578,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Agora, vamos detalhar o conceito de <em>Sincronismo</em>. Ele permite
+        <p>Agora vamos detalhar o conceito de <em>Sincronismo</em>. Ele permite
         definir o comportamento das aplicações.</p>
 
         <p>O <em>Sincronismo</em> é baseado em causalidade e definido por
@@ -1592,8 +1591,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>&ltport></em> indicam quais elementos  de <em>&ltmedia></em> são
         iniciados quando a aplicação é iniciada.</p>
 
-        <p>As ações em um <em>&ltlink></em> podem ser de iniciar("start") ou
-        parar("stop") uma <em>Mídia</em> ou <em>Reconhecedor</em>. Já as
+        <p>As ações em um <em>&ltlink></em> podem ser de iniciar ("start") ou
+        parar ("stop") uma <em>Mídia</em> ou <em>Reconhecedor</em>. Já as
         condições podem ser simples ou compostas. 
         
         <p>As condições simples em um <em>&ltlink></em> podem ser de início
@@ -1604,10 +1603,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Em nossa NCL estendida, as condições compostas em um
         <em>&ltlink></em> combinam condições simples utilizando um dos seguintes
         operadores: 'OR' quando apenas uma das condições é necessária; 'AND'
-        quando todos condições são necessária; e 'SEQ' quando todos as ações são
-        necessárias e na sequência estabelecida.</p>
+        quando todas condições são necessárias; e 'SEQ' quando todos as ações
+        são necessárias e na sequência estabelecida.</p>
 
-        <p>O relacionamento entre condições e ações é definida pelo connector no
+        <p>O relacionamento entre condições e ações é definido pelo connector no
         atributdo <em>xconnector</em> do <em>&ltlink></em>. A tabela a seguir
         mostra exemplos de connectores.</p>
         
@@ -1636,9 +1635,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
           </tr>
         </table><br>
 
-        <p>A associação de que <em>&ltmedia></em> ou <em>&ltinput></em> o
-        <em>&ltlink></em> esta interessado é definida pelo elemento
-        <em>&ltbind></em>.</p>
+        <p>A associação de elementos <em>&ltmedia></em> ou <em>&ltinput></em> em
+        um <em>&ltlink></em>  é definida pelo elemento <em>&ltbind></em>.</p>
         
         <p>Para ilustrar o uso desse conceito em uma aplicação NCL, o trecho de
         código a segui define uma aplicação que apresenta um vídeo e um ícone
@@ -1649,8 +1647,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         elementos <em>&ltlink></em>. O <em>&ltport></em> define que o elemento
         <em>midia_principal</em> incia com a aplicação. O primeiro defini que
         quando o <em>video_principal</em> alcançar o seu trecho de créditos a
-        imagem <em>icone_repetir</em> é iniciada. O segundo que quando essa
-        <em>icone_reptetir</em> force selecionado o <em>video_principal</em>
+        imagem <em>icone_repetir</em> é iniciada. O segundo define que quando
+        essa <em>icone_reptetir</em> for selecionado o <em>video_principal</em>
         será reiniciado (<em>stop</em> e <em>start</em>).</p>
 
         <div id='nclIntro2CodeA'></div>
@@ -1662,7 +1660,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Agora, vamos detalhar o conceito <em>Reconhecedor</em> em NCL. Ele
+        <p>Agora vamos detalhar o conceito <em>Reconhecedor</em> em NCL. Ele
         permite o uso de reconhecimento de interações mutimodais realizadas pelo
         usuário, como voz e gestos.</p>
         
@@ -1673,13 +1671,11 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         
         <p>Na nossa NCL estendida, o conceito de <em>Reconhecedor</em> é
         implementado pelo elemento <em>&ltinput></em>. O identificador é
-        definito pelo atributo <em>id</em> e a descrição de reconhecimento é
+        definido pelo atributo <em>id</em> e a descrição de reconhecimento é
         definida pelo atributo <em>src</em>. As âncoras são definidas pelo
-        elemento <em>area</em> e podem definem trechos delimitados da descrição
-        com o atributo <em>label</em>.</p>
-        
-        <p>Trechos de código serão apresentados para ilustrar esse conceito em
-        NCL.</p>
+        elemento <em>area</em> e podem definir trechos delimitados da descrição
+        com o atributo <em>label</em>. Trechos de código ilustram exemplos de
+        descrições de reconhecimento.</p>
 
         <p>O trecho de código a seguir apresenta o arquivo
         <em>rec_voz.srgs</em>. Esse arquivo é uma descrição de reconhecimento de
@@ -1698,26 +1694,25 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <p>Para ilustrar o uso desse conceito em uma aplicação NCL, o trecho de
         código a seguir apresenta uma nova versão da aplicação que reinicia um
-        vídeo dada uma interação (modificações em destaque). Mas nessa versão,
-        ao invés de selecionar, o vídeo é reiniciado ao usuário falar "repita
+        vídeo dada uma interação (modificações em destaque). Nessa versão, ao
+        invés de selecionar, o vídeo é reiniciado ao usuário falar "repita
         vídeo".</p>
 
         <p>Essa aplicação utiliza dois elementos de
-        <em>&ltmedia></em>(<em>video_principal</em> e <em>sinte_voz</em>) e um
-        <em>&ltinput></em>(<em>rec_voz</em>). Os elementos <em>sinte_voz</em> e
+        <em>&ltmedia></em> (<em>video_principal</em> e <em>sinte_voz</em>) e um
+        <em>&ltinput></em> (<em>rec_voz</em>). Os elementos <em>sinte_voz</em> e
         <em>rec_voz</em> usam respectivamente os arquivos
-        <em>sinte_voz.srgs</em> e <em>rec_voz.srgs</em> (apresentados a cima). 
+        <em>sinte_voz.srgs</em> e <em>rec_voz.srgs</em> (apresentados acima). 
         
         <p>Para o comportamento, a aplicação utiliza um elemento
-        <em>&ltport></em> e dois <em>&ltlink></em>. O define <em>&ltport></em>
-        define que o <em>video_principal</em> é iniciado com aplicação
-        <em>midia_principal</em> inicia junto com a aplicação. O primeiro
-        <em>&ltlink></em> define que quando o <em>video_principal</em> alcançar
-        a sua porção <em>creditos</em> (300s), a frase da âncora
+        <em>&ltport></em> e dois <em>&ltlink></em>. O <em>&ltport></em>
+        define que o <em>video_principal</em> é iniciado com aplicação. O
+        primeiro <em>&ltlink></em> define que quando o <em>video_principal</em>
+        alcançar a sua porção <em>creditos</em> (300s), a frase da âncora
         <em>pergunta</em> é sintetizada e o reconhecedor <em>rec_voz</em> inicia
         seu reconhecimento. O segundo <em>&ltlink></em> define que quando for
-        reconhecido a âncora <em>repete</em>, a <em>midia_principal</em> deve
-        ser reiniciada (terminada e inciada).</p>
+        reconhecida a âncora <em>repete</em>, a <em>midia_principal</em> deve
+        ser reiniciada (terminada e iniciada).</p>
 
         <div id='nclIntro3CodeC'></div>
 
@@ -1725,15 +1720,15 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         diferentes interações. Ou seja, as interações de ususários podem ser
         realizadas por diferentes modalidades. Em nossos, conceitos essa
         combinação de modalidades de interação pode ser feita utilizando uma
-        condição composta. Usar um operador OR indica que qualquer uma das
-        interações é necessparia. Já usar o perador AND significaria que as
-        todas as interações são necessárias em qualquer ordem. E por fim usar o
-        operador SEQ significa que as interações tem que ser feitas em
+        condição composta. Usar um operador 'OR' indica que qualquer uma das
+        interações é necessária. Já usar operador 'AND' significaria que todas
+        as interações são necessárias em qualquer ordem. E por fim usar o
+        operador 'SEQ' significa que as interações tem que ser feitas em
         sequência.</p> 
 
         <p>Os blocos a seguir modificam a aplicação acima. Mas nessa
         versão a mídia <em>midia_principal</em> é repetida quando usuário
-        interage atravès de  voz ou (operador OR) através de gesto.</p>
+        interage através de voz ou (operador 'OR') através de gesto.</p>
 
         <div id='nclIntro3CodeD'></div><br>
         </div>
@@ -1744,18 +1739,18 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Agora, vamos detalhar o elemento <em>Grupo de Usuários</em> em NCL.
+        <p>Agora vamos detalhar o elemento <em>Grupo de Usuários</em> em NCL.
         Ele permite identificar unicamente interações de cada usuário. Por
         exemplo, o comando de voz apenas de um usuário</p>
 
         <p><em>Grupo de Usuários</em> é definido <strong>por um identificador,
-        número maximo de participantes e quais dispositivos estes
+        número máximo de participantes e quais dispositivos estes
         utilizam</strong>. Mais precisamente, esses dispositivos definem o que
         um usuário necessita possuir para participar do grupo.</p>
         
         <p>Na nossa NCL estendida, o conceito de <em>Grupo de Usuários</em> é
         implementado pelo elemento <em>&ltuserClass></em> dentro do
-        <em>&lthead></em>. O identificador é definito pelo atributo <em>id</em>
+        <em>&lthead></em>. O identificador é definido pelo atributo <em>id</em>
         e os dispositivos são definidos por um arquivo de descrição definido em
         <em>src</em>. Para essa descrição propomos um descrição  no formato
         SPARQL. O trecho de código a seguir apresenta o arquivo de descrição de
@@ -2000,7 +1995,7 @@ _data.nclIntro4CodeA = `
   WHERE {
   ?person prf:component ?component.
   ?component prf: name ?name FILTER regex(?name, "Leap Motion")
-    ?name FILTER regex(?name, "Microphone")
+    ?name FILTER regex(?name, f")
   }
   ]]></script>
 `
@@ -2060,13 +2055,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Agora, pedimos que você realize as quatro tarefas a seguir. Duas
-        tarefas consistem em interpretar códigos e outra duas editar
+        <p>Agora pedimos que você realize as quatro tarefas a seguir. Duas
+        tarefas consistem em interpretar códigos e outras duas em editar
         códigos.</p>
-
-        <p><strong>Ressaltamos que essas tarefas NÃO se destinam a avaliar seus
-        conhecimentos, mas sim capturar evidências de nossa
-        pesquisa.</strong></p>
         </div>
       `
     },
@@ -2086,7 +2077,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       isRequired: true,
       name: 'nclTask1Question',
       rows: '9',
-      title: 'Qual o comportamento da aplicação?'
+      title: 'Qual é o comportamento da aplicação?'
     },
     {
       type: 'html',
@@ -2100,9 +2091,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div id='nclTask2CodeB'></div>
 
         A aplicação NCL da Tarefa 1 foi modificada para permitir interações
-        multimodais utilizando as descrições aima. O novo trecho de código é
-        apresentado a seguir com as modificações destacadas. Por favor, analise
-        com cuidado.</p>
+        multimodais utilizando as descrições acima. Uma versão modificada da
+        Tarefa 1 é apresentada a seguir com as modificações destacadas. Por
+        favor, analise com cuidado.</p>
 
         <div id='nclTask2CodeC'></div>
         </div>
@@ -2113,17 +2104,17 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       isRequired: true,
       name: 'nclTask2Question',
       rows: '9',
-      title: 'Qual o novo comportamento da aplicação?'
+      title: 'Qual é o novo comportamento da aplicação?'
     },
     {
       type: 'comment',
       isRequired: true,
       name: 'nclTask3Question',
       rows: '47',
-      title: `Tarefa 3: Agora, pedimos que edite o código NCL da Tarefa 2
+      title: `Tarefa 3: Agora pedimos que edite o código NCL da Tarefa 2
         (copiado  a seguir) para que seja possivel a interação por voz
         <strong>ou</strong> (operador OR) interação por gestos. Na interação
-        por gesto, consire que gesto mão para esquera indica centro e gesto de
+        por gesto, consire que gesto mão para esquerda indica centro e gesto de
         mão para direita indica praia.
       `
     },
@@ -2131,9 +2122,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'comment',
       name: 'nclTask4Question',
       rows: '47',
-      title: ` Tarefa 4: Agora, pedimos que edite novamente o trecho de código
+      title: ` Tarefa 4: Agora pedimos que edite novamente o trecho de código
       NCL da Tarefa 2 (copiado a seguir) para que apenas o segundo usuário, de
-      um grupo de 3 usuários, com microphone, possa realizar a interação por
+      um grupo de 3 usuários, com microfone, possa realizar a interação por
       voz.`
     }
   ]
@@ -2269,7 +2260,7 @@ _data.nclTask2CCodeOnly = `
 
 _data.nclTask2CodeC = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight: [9,29,32,36,41,47]">
+  auto-links: false; highlight: [19,22,28,29,31,37]">
   <![CDATA[` + _data.nclTask2CCodeOnly + ` ]]></script>
 `
 
@@ -2383,7 +2374,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>A linguagem HTML é utilizada para criar conteúdo multimídia em
         sistmas web. <strong>Nesta seção, não vamos ensinar a linguagem
         HTML</strong> mas vamos apresentar como os conceitos da seção
-        anterior são instanciados na HTML para esta ofercer suporte a interações
+        anterior são instanciados na HTML para esta oferecer suporte a interações
         multimodais.</p>
         
         <p>A tabela seguir apresenta como propomos instanciação dos conceitos de
@@ -2442,7 +2433,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <p>Em nossa HTML estendida, o conceito de <em>Mídia</em> é parcialmente
         implementado por elementos como <em>&ltimg></em>, <em>&ltaudio></em>, 
-        <em>&ltvideo></em> e <em>&ltobj></em>. O identificador é definito pelo
+        <em>&ltvideo></em> e <em>&ltobj></em>. O identificador é definido pelo
         atributo <em>id</em> e o arquivo de mídia do conteúdo é definido
         atributo <em>src</em>. Para permitir definir âncoras esses elementos são
         estendidos com elementos <em>&ltarea></em>. Uma <em>&ltarea></em> pode
@@ -2506,7 +2497,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Agora, vamos detalhar o conceito de <em>Sincronismo</em>. Ele
+        <p>Agora vamos detalhar o conceito de <em>Sincronismo</em>. Ele
         permite definir o comportamento das aplicações.</p>
 
         <p>O <em>Sincronismo</em> é baseado em causalidade e definido por
@@ -2588,7 +2579,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Agora, vamos detalhar o conceito <em>Reconhecedor</em> em HTML. Ele
+        <p>Agora vamos detalhar o conceito <em>Reconhecedor</em> em HTML. Ele
         permite o uso de reconhecimento de interações mutimodais realizadas pelo
         usuário, como voz e gestos.</p>
 
@@ -2599,7 +2590,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         
         <p>Na nossa HTML estendida, o conceito de <em>Reconhecedor</em> é
         implementado pelo elemento <em>&ltobj></em>. O identificador é
-        definito pelo atributo <em>id</em> e a descrição de
+        definido pelo atributo <em>id</em> e a descrição de
         reconhecimento é definida pelo atributo <em>src</em>. As âncoras são
         definidas pelo elemento <em>area</em> e podem definem trechos
         delimitados da descrição com o atributo <em>label</em>.</p>
@@ -2653,14 +2644,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         realizadas por diferentes modalidades. Em nossos, conceitos essa
         combinação de modalidades de interação pode ser feita utilizando uma
         condição composta. Usar um operador OR indica que qualquer uma das
-        interações é necessparia. Já usar o perador AND significaria que as
-        todas as interações são necessárias em qualquer ordem. E por fim usar o
+        interações é necessária. Já usar operador AND significaria que todas as interações são necessárias em qualquer ordem. E por fim usar o
         operador SEQ significa que as interações tem que ser feitas em
         sequência.</p> 
 
         <p>Os blocos a seguir modificam a aplicação acima. Mas nessa
         versão a mídia <em>midia_principal</em> é repetida quando usuário
-        interage atravès de  voz ou (operador OR) através de gesto.</p>
+        interage através de  voz ou (operador OR) através de gesto.</p>
 
         <div id='htmlIntro3CodeD'></div><br>
         </div>
@@ -2671,12 +2661,12 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Agora, vamos detalhar o elemento <em>Grupo de Usuários</em> em HTML.
+        <p>Agora vamos detalhar o elemento <em>Grupo de Usuários</em> em HTML.
         Ele permite identificar unicamente interações de cada usuário. Por
         exemplo, o comando de voz apenas de um usuário</p>
         
         <p><em>Grupo de Usuários</em> é definido <strong>por um identificador,
-        número maximo de participantes e quais dispositivos estes
+        número máximo de participantes e quais dispositivos estes
         utilizam</strong>. Mais precisamente, esses dispositivos definem o que
         um usuário necessita possuir para participar do grupo.</p>
 
@@ -2715,7 +2705,7 @@ _data.htmlIntro1CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
   <img id="icone" src="icone.png"
-     style="position: absolute; width: 20%; high: 20%; top: 80%; z-index: 1;">
+     style="position: absolute; width: 20%; height: 20%; top: 80%; z-index: 1;">
   </img>
   <audio id="midia_principal" src="audio.mp3"></audio>
   ]]></script>
@@ -2725,10 +2715,10 @@ _data.htmlIntro1CodeC = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
   <img id="icone" src="icone.png"
-   style="position: absolute; width: 20%; high: 20%; top: 80%; z-index: 1;">
+   style="position: absolute; width: 20%; height: 20%; top: 80%; z-index: 1;">
   </img>
   <video id="midia_principal" src="video.mp4" 
-    style="position: absolute; high 100%; width: 100%;">
+    style="position: absolute; height 100%; width: 100%;">
     <area id="credits" begin="300s" end="360s"></area>
   </video>
   ]]></script>
@@ -2753,11 +2743,11 @@ _data.htmlIntro2CodeA = `
   <head><script src="synchronism.js"><&#47script></head>
   <body>
     <video id="midia_principal" src="video.mp4"
-      style="position: absolute; high 100%; width: 100%;">
+      style="position: absolute; height 100%; width: 100%;">
       <area id="credits" begin="300s" end="360s"></area>
     </video>
     <img id="icone_repetir" src="icone_repetir.png"
-      style="position: absolute; width: 20%; high: 20%; top: 80%; z-index: 1;">
+      style="position: absolute; width: 20%; height: 20%; top: 80%; z-index: 1;">
     </img>
     <script>
       var sync1 = new Synchronism("onBeginStart")
@@ -2788,7 +2778,7 @@ _data.htmlIntro3CodeC = `
   <head><script src="synchronism.js"><&#47script></head>
   <body>
     <video id="midia_principal" src="video.mp4"
-      style="position: absolute; high 100%; width: 100%;">
+      style="position: absolute; height 100%; width: 100%;">
       <area id="credits" begin="300s" end="360s"><&#47area>
     </video>
     <object id="sinte_voz" src="sinte_voz.ssml">
@@ -2826,7 +2816,7 @@ _data.htmlIntro3CodeD = `
   <head><script src="synchronism.js"><&#47script></head>
   <body>
     <video id="midia_principal" src="video.mp4"
-      style="position: absolute; high 100%; width: 100%;">
+      style="position: absolute; height 100%; width: 100%;">
       <area id="credits" begin="300s" end="360s"><&#47area>
     </video>
     <object id="sinte_voz" src="sinte_voz.ssml">
@@ -2873,7 +2863,7 @@ _data.htmlIntro4CodeA = `
       WHERE {
         ?person prf:component ?component.
         ?component prf: name ?name FILTER regex(?name, "Leap Motion")
-        ?name FILTER regex(?name, "Microphone")
+        ?name FILTER regex(?name, f")
       }\`
     var gu_leap_microphone = new UserGroup(sparql, 2)
   ]]></script>
@@ -2888,7 +2878,7 @@ _data.htmlIntro4CodeB = `
   <head><script src="synchronism.js"><&#47script></head>
   <body>
     <video id="midia_principal" src="video.mp4"
-      style="position: absolute; high 100%; width: 100%;">
+      style="position: absolute; height 100%; width: 100%;">
       <area id="credits" begin="300s" end="360s"><&#47area>
     </video>
     <object id="sinte_voz" src="sinte_voz.ssml">
@@ -2905,7 +2895,7 @@ _data.htmlIntro4CodeB = `
         WHERE {
           ?person prf:component ?component.
           ?component prf: name ?name FILTER regex(?name, "Leap Motion")
-          ?name FILTER regex(?name, "Microphone")
+          ?name FILTER regex(?name, f")
         }\`
       var gu_leap_microphone = new UserGroup(sparql, 2)
 
@@ -2940,8 +2930,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Agora, pedimos que você realize as quatro tarefas a seguir. Duas
-        tarefas consistem em interpretar códigos e outra duas editar
+        <p>Agora pedimos que você realize as quatro tarefas a seguir. Duas
+        tarefas consistem em interpretar códigos e outras duas em editar
         códigos.</p>
 
         <p><strong>Ressaltamos que essas tarefas NÃO se destinam a avaliar seus
@@ -2962,7 +2952,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       isRequired: true,
       name: 'htmlTask1Question',
       rows: '9',
-      title: 'Qual o comportamento da aplicação?'
+      title: 'Qual é o comportamento da aplicação?'
     },
     {
       type: 'html',
@@ -2989,25 +2979,25 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       isRequired: true,
       name: 'htmlTask2Question',
       rows: '9',
-      title: 'Qual o novo comportamento da aplicação?'
+      title: 'Qual é o novo comportamento da aplicação?'
     },
     {
       type: 'comment',
       name: 'htmlTask3Question',
       rows: '47',
-      title: `Tarefa 3: Agora, pedimos que edite o código HTML da Tarefa 2
+      title: `Tarefa 3: Agora pedimos que edite o código HTML da Tarefa 2
         (copiado  a seguir) para que seja possivel a interação por voz
         <strong>ou</strong> (operador OR) interação por gestos. Na interação por
-        gesto, consire que gesto mão para esquera indica centro e gesto de mão
+        gesto, consire que gesto mão para esquerda indica centro e gesto de mão
         para direita indica praia.`
     },
     {
       type: 'comment',
       name: 'htmlTask4Question',
       rows: '47',
-      title: ` Tarefa 4: Agora, pedimos que edite novamente o trecho de código
+      title: ` Tarefa 4: Agora pedimos que edite novamente o trecho de código
         HTML da Tarefa 2 (copiado a seguir) para que apenas o segundo usuário,
-        de um grupo de 3 usuários com microphone, possa realizar a interação por
+        de um grupo de 3 usuários comf, possa realizar a interação por
         voz.`
     }
   ]
@@ -3021,22 +3011,22 @@ _data.htmlTask1Code = `
   <head><script src="synchronism.js"><&#47script></head>
   <body>
     <video id="video_inicial" src="video_inicial.mp4"
-      style="position: absolute; high 100%; width: 100%;">
+      style="position: absolute; height 100%; width: 100%;">
       <area id="credits" begin="300s" end="360s"><&#47area>
     </video>
     <video id="video_centro" src="video_centro.mp4"
-      style="position: absolute; high 100%; width: 100%;">
+      style="position: absolute; height 100%; width: 100%;">
       <area id="credits" begin="300s" end="360s"><&#47area>
     </video>
     <video id="video_praia" src="video_praia.mp4"
-      style="position: absolute; high 100%; width: 100%;">
+      style="position: absolute; height 100%; width: 100%;">
       <area id="credits" begin="300s" end="360s"><&#47area>
     </video>
     <img id="icone_centro" src="icone_centro.png"
-      style="position: absolute; width: 20%; high: 20%; top: 80%; z-index: 1;">
+      style="position: absolute; width: 20%; height: 20%; top: 80%; z-index: 1;">
     </img>
     <img id="icone_praia" src="icone_praia.png"
-      style="position: absolute; width: 20%; high: 20%; top: 80%; z-index: 1;">
+      style="position: absolute; width: 20%; height: 20%; top: 80%; z-index: 1;">
     </img>
     <script>
       var sync1 = new Synchronism("onBeginStart")
@@ -3069,15 +3059,15 @@ _data.htmlTask2CodeCOnly = `
   <head><script src="synchronism.js"><&#47script></head>
   <body>
     <video id="video_inicial" src="video_inicial.mp4"
-      style="position: absolute; high 100%; width: 100%;">
+      style="position: absolute; height 100%; width: 100%;">
       <area id="credits" begin="300s" end="360s"></area>
     </video>
     <video id="video_centro" src="video_centro.mp4"
-      style="position: absolute; high 100%; width: 100%;">
+      style="position: absolute; height 100%; width: 100%;">
       <area id="credits" begin="300s" end="360s"></area>
     </video>
     <video id="video_praia" src="video_praia.mp4"
-      style="position: absolute; high 100%; width: 100%;">
+      style="position: absolute; height 100%; width: 100%;">
       <area id="credits" begin="300s" end="360s"></area>
     </video>
     <object id="sinte_voz" src="sinte_voz.ssml">
