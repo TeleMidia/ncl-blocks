@@ -661,7 +661,7 @@ IdFieldText.prototype.saveId = function (text) {
     var maxUsers = this.sourceBlock_.inputList[1].fieldRow[3].text_
     if (maxUsers) {
       for (var i = 1; i <= maxUsers; i++) {
-        this.idArray.push([text + '.' + i, text + '.' + i])
+        this.idArray.push([text + '(' + i + ')', text + '(' + i + ')'])
       }
     }
   }
