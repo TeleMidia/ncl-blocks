@@ -324,30 +324,29 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     {
       type: 'html',
       html: `
-        <div style="text-align: justify; width: 70%;"> <p>Em nossa pesquisa,
-        argumentamos que as linguagens multimídia atuais não suportam
-        adequadamente interações multimodais. Essas linguagem podem ser
-        consideradas "output-oriented", poi têm maior foco na exibição de
+        <div style="text-align: justify; width: 70%;"> 
+        <p>Em nossa pesquisa, argumentamos que as linguagens multimídia atuais
+        não suportam adequadamente interações multimodais. Essas linguagem podem
+        ser consideradas "output-oriented", pois têm maior foco na exibição de
         conteúdos de mídia, como imagens, vídeo e áudios.</p>
 
         <p>Em nossa pesquisa propomos quatro conceitos que são necessários para
-        linguagem multimídia com interações multimodais. Mais precisamente esses
-        conceitos são os de <em>Mídia, Reconhecedor, Sincronismo</em> e
-        <em>Grupo de Usuários</em>.</p>
+        uma linguagem multimídia suportar interações multimodais. Mais
+        precisamente, esses conceitos são os de <em>Mídia, Reconhecedor,
+        Sincronismo</em> e <em>Grupo de Usuários</em>.</p>
 
-        <p>Vamos detalhar agora detalhar esses conceitos para capturar
-        evidências de nossa pesquisa. Para evitar possíveis dificuldades dada a
-        sintaxe de linguagens, apresentaremos esses conceitos utilizando uma
-        abordagem de <strong>desenvolvimento de aplicações através de
-        blocos</strong>.</p>
+        <p>Vamos detalhar agora esses conceitos para capturar evidências de
+        nossa pesquisa. Para evitar possíveis dificuldades dada a sintaxe das
+        linguagens, apresentaremos esses conceitos utilizando uma abordagem de
+        <strong>desenvolvimento de aplicações através de blocos</strong>.</p>
 
         <p>Esse tipo de abordagem é bastante utilizado para o ensino de
         programação ou para ferramentas de geração de código. Em especial,
         esse tipo de desenvolvimento foi popularizado por ferramentas como o
-        <strong>MIT Scratch</strong> e <strong>MIT App
-        Inventor</strong>. O primeiro é utilizado para criar aplicações
-        web, especialmente jogos, e o segundo utilizado para criar
-        aplicações móveis. Ambos são ilustrados a seguir.</p>
+        <strong>MIT Scratch</strong> e <strong>MIT App</strong>
+        Inventor</strong>. O primeiro é utilizado para criar aplicações web,
+        especialmente jogos, e o segundo utilizado para criar aplicações móveis.
+        Ambos são ilustrados a seguir.</p>
 
         <div class='text-center'>
           <img class='img-thumbnail' style='height: 270px'
@@ -410,10 +409,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Além de midías como imagens, áudio e vídeos, o conceito
         <em>Mídia</em> abrange também outras modalidades conteúdo como voz
         sintetizada e avatares humanoides. Os blocos a seguir definem a
-        <em>Mídia</em> com identificador <em>sinte_voz</em> que tem como
+        <em>Mídia</em> com identificador <em>sinte_voz</em>, que tem como
         conteúdo um texto para sintetização de voz. Esse conteúdo de
         sintetização possui o trecho <em>pergunta</em> que sintetiza a frase
-        "você deseja repetir o vídeo?".</p>
+        "você deseja repetir o vídeo?"</p>
         </div>
 
         <div id='conceptsIntro1D'></div><br>
@@ -476,7 +475,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
           </tr>
           <tr>
             <td><img class='img-thumbnail' style='height: 150px'
-          src='assets/concepts-sample-4.png'></td> 
+                src='assets/concepts-sample-4.png'></td> 
             <td>condições "ao reconhecer" combinadas com operador "OR", ações de
             "pare" e "inicie"
             </td>
@@ -521,20 +520,18 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         Por exemplo, uma descrição de reconhecimento de voz deve ter âncoras que
         devem as frases a serem reconhecidas.</p>
 
-        <p>Na nossa representação de blocos, o <em>Reconhecedor</em> é definida
-        juntando um bloco de <em>Reconhecedor</em>, com o campo id preenchido, e
-        um bloco de conteúdo com as âncoras preenchidas.</p>
-        
-        <p>Exemplos de blocos serão apresentados para ilustrar o conceito.</p>
+        <p>Na nossa representação de blocos, o <em>Reconhecedor</em> é definido
+        juntando um bloco de <em>Reconhecedor</em> com o campo id preenchido, e
+        um bloco de conteúdo com as âncoras preenchidas. Exemplos de blocos
+        serão apresentados para ilustrar o conceito.</p>
 
         <p>Os blocos a seguir definem os reconhecedores <em>rec_voz</em> e
-        <em>rec_gestos</em>. O <em>rec_voz</em> tem um reconhecimento de
-        voz como conteúdo. Essa descrição tem o trecho <em>repetir</em> que
-        reconhece o comando de voz "repita vídeo". O <rec_gestos> tem uma
-        descrição de reconhecimento de gestos como conteúdo. Esse conteúdo
+        <em>rec_gestos</em>. O <em>rec_voz</em> tem um reconhecimento de voz
+        como conteúdo. Essa descrição tem o trecho <em>repetir</em> que
+        reconhece o comando de voz "repita vídeo". Já <em>rec_gestos</em> tem
+        uma descrição de reconhecimento de gestos como conteúdo. Esse conteúdo
         utiliza dois trechos, esquerda e direita, para definir gestos de mão
-        nessas direções.</p>
-        </div>
+        nessas direções.</p> </div>
 
         <div id='conceptsIntro3A'></div><br>
 
@@ -562,13 +559,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <div style="text-align: justify; width: 70%;"> 
         <p>Um dos principais benefícios de interfaces multimodais é o uso
-        diferentes interações. Ou seja, as interações de ususários podem ser
-        realizadas por diferentes modalidades. Em nossos, conceitos essa
+        diferentes interações, ou seja, as interações de ususários podem ser
+        realizadas por diferentes modalidades. Em nossos conceitos essa
         combinação de modalidades de interação pode ser feita utilizando uma
         condição composta. Usar um operador OR indica que qualquer uma das
-        interações é necessparia. Já usar o perador AND significaria que as
+        interações é necessária. Já usar o operador AND significaria que as
         todas as interações são necessárias em qualquer ordem. E por fim usar o
-        operador SEQ significa que as interações tem que ser feitas em
+        operador SEQ significa que as interações têm que ser feitas em
         sequência.</p> 
 
         <p>Os blocos a seguir modificam a aplicação acima. Mas nessa
@@ -588,25 +585,25 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         identificar unicamente interações de cada usuário. Por exemplo,
         o comando de voz apenas de um usuário</p>
 
-        <p><em>Grupo de Usuários</em> é definido <strong>por um identificador,
+        <p><em>Grupo de Usuários</em> é definido por <strong>um identificador,
         número maximo de participantes e quais dispositivos estes
         utilizam</strong>. Mais precisamente, esses dispositivos definem o que
         um usuário necessita possuir para participar do grupo.</p>
 
         <p>Na nossa representação de blocos, o <em>Grupo de Usuários</em> é
-        definida juntando um bloco de <em>Grupo de Usuários</em>, com campo id
-        preenchido,  e  blocos de dispositivos. Por exemplo, Os blocos a seguir
+        definida juntando um bloco de <em>Grupo de Usuários</em> com campo id
+        preenchido e blocos de dispositivos. Por exemplo, os blocos a seguir
         definem um grupo de usuário <em>gu_gestos</em> que pode ter até 3
-        membros, cada um com seu reconhecedor de gestos (e.g. LeapMotion).</p>
+        membros, cada qual com seu reconhecedor de gestos (e.g. LeapMotion).</p>
         </div>
 
         <div id='conceptsIntro4A'></div><br>
 
         <div style="text-align: justify; width: 70%;"> 
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em>, os blocos a
-        seguir são uma nova versão da aplicação que reinicia um vídeo dadoa uma
-        interação por voz. Entretanto, nessa versão, o vídeo será reiniciado
-        apenas quando o segundo usuário falar "repita vídeo".</p>
+        seguir são uma nova versão da aplicação que reinicia um vídeo dada uma
+        interação por voz. Nessa versão, o vídeo será reiniciado apenas quando o
+        segundo usuário falar "repita vídeo".</p>
         </div>
 
         <div id='conceptsIntro4B'></div>
@@ -1050,7 +1047,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         <div style="text-align: justify; width: 70%;">
         <p>Agora, pedimos que você realize as quatro tarefas a seguir. Duas
-        tarefas consistem em interpretar aplicações e duas em modificar.</p>
+        tarefas consistem em interpretar aplicações e duas em modificar
+        aplicações.</p>
 
       </p><strong>Ressaltamos que essas tarefas NÃO se destinam a avaliar
         seus conhecimentos, mas sim capturar evidências de nossa
@@ -1067,7 +1065,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'comment',
       isRequired: true,
       name: 'conceptsTask1Question',
-      title: 'Qual é o comportamento da aplicação que corresponde os blocos acima.'
+      title: 'Qual é o comportamento da aplicação que corresponde aos blocos acima?'
     },
     {
       type: 'html',
@@ -1083,11 +1081,11 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     {
       type: 'html',
       name: 'conceptsTask3',
-      html: ` Tarefa 3: Agora, pedimos que edite os blocos da Tarefa 2 (copiado
-        a seguir) para que seja possivel a interação por voz <strong>ou</strong>
+      html: ` Tarefa 3: Agora, pedimos que edite os blocos da Tarefa 2 (copiados
+        a seguir) para que seja possível a interação por voz <strong>ou</strong>
         (operador OR) interação por gestos. Na interação por gesto, consire que
-        gesto mão para esquera indica centro e gesto de mão para direita indica
-        praia. <br><br>
+        gesto de mão para esquera indica centro e gesto de mão para direita
+        indica praia. <br><br>
       `
     },
     {
@@ -1107,7 +1105,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'conceptsTask4',
       html: `
         Tarefa 4: Agora, pedimos que edite novamente os blocos da Tarefa 2
-        (copiado a seguir) para que apenas o segundo usuário, de um grupo de 3
+        (copiados a seguir) para que apenas o segundo usuário, de um grupo de 3
         usuários com microphone, possa realizar a interação por voz. <br><br>
       `
     },
@@ -1395,7 +1393,7 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'conceptsFeedbackQuestion1',
-      title: `Os conceitos apresentados **permitem realizar mais rapidamente** a
+      title: `Os conceitos apresentados **permitem realizar rapidamente** a
         especificação de aplicações multimodais.`,
       choices: _agreeChoices
     },
@@ -1403,8 +1401,7 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'conceptsFeedbackQuestion2',
-      title: `Os conceitos apresentados **permitem aumentar a qualidade** a
-        especificação de aplicações multimodais.`,
+      title: `Os conceitos apresentados permitem especificar aplicações multimodais **com qualidade**.`,
       choices: _agreeChoices
     },
     {
@@ -1419,7 +1416,7 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'conceptsFeedbackQuestion4',
-      title: `Os conceitos apresentados **são fáceis**.`,
+      title: `Os conceitos apresentados **são fáceis** de entender.`,
       choices: _agreeChoices
     },
     {
