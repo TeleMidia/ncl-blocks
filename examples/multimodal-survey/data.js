@@ -1445,7 +1445,7 @@ _data.surveyJSON.pages.push({
 
 pageIndex = _data.surveyJSON.pages.push({
   name: 'ncl',
-  // visibleIf: '{profileNCL1} >= {profileHTML1}',
+  visibleIf: '{profileNCL1} >= {profileHTML1}',
   elements: []
 }) - 1
 
@@ -2272,7 +2272,7 @@ _data.nclTask2CodeC = `
 
 _data.surveyJSON.pages.push({
   name: 'nclFeedback',
-  // visibleIf: '{profileQuestion1} >= {profileQuestion3}',
+  visibleIf: '{profileNCL1} >= {profileHTML1}',
   elements: [
     {
       type: 'html',
@@ -2356,7 +2356,7 @@ _data.surveyJSON.pages.push({
 
 pageIndex = _data.surveyJSON.pages.push({
   name: 'html',
-  // visibleIf: '{profileHTML1} > {profileNCL1}',
+  visibleIf: '{profileHTML1} > {profileNCL1}',
   elements: []
 }) - 1
 
@@ -3107,7 +3107,7 @@ _data.htmlTask2CodeC = `
 
 _data.surveyJSON.pages.push({
   name: 'htmlFeedback',
-  // visibleIf: '{profileQuestion3} > {profileQuestion1}',
+  visibleIf: '{profileNCL1} > {profileHTML1}',
   elements: [
     {
       type: 'html',
