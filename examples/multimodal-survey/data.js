@@ -1418,14 +1418,14 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'conceptsFeedbackQuestion4',
-      title: `Os conceitos apresentados **são simples**.`,
+      title: `Os conceitos apresentados **são simples e entendíveis**.`,
       choices: _agreeChoices
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'conceptsFeedbackQuestion5',
-      title: `Os conceitos apresentados **são fáceis** de aprender.`,
+      title: `Os conceitos apresentados **são fáceis de aprender**.`,
       choices: _agreeChoices
     },
     {
@@ -2314,21 +2314,21 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'nclFeedbackQuestion4',
-      title: 'A NCL estendida **é simples**.',
+      title: 'A NCL estendida **é simples e entendível**.',
       choices: _agreeChoices
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'nclFeedbackQuestion5',
-      title: 'A NCL estendida **é fácil** de aprender.',
+      title: 'A NCL estendida **é fácil de aprender**.',
       choices: _agreeChoices
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'nclFeedbackQuestion6',
-      title: 'De modo geral, a NCL estendida **é fácil** de utilizar.',
+      title: 'De modo geral, a NCL estendida **é fácil de utilizar**.',
       choices: _agreeChoices
     },
     {
@@ -3148,21 +3148,21 @@ _data.surveyJSON.pages.push({
       type: 'radiogroup',
       isRequired: true,
       name: 'htmlFeedbackQuestion4',
-      title: 'A HTML estendida **é simples**.',
+      title: 'A HTML estendida **é simples e entendível**.',
       choices: _agreeChoices
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'htmlFeedbackQuestion5',
-      title: 'A HTML estendida **é fácil** de aprender.',
+      title: 'A HTML estendida **é fácil de aprender**.',
       choices: _agreeChoices
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'htmlFeedbackQuestion6',
-      title: `De modo geral, a HTML estendida **é fácil** de utilizar.`,
+      title: `De modo geral, a HTML estendida **é fácil de utilizar**.`,
       choices: _agreeChoices
     },
     {
