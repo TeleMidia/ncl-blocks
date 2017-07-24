@@ -1995,7 +1995,7 @@ _data.nclIntro4CodeA = `
   WHERE {
   ?person prf:component ?component.
   ?component prf: name ?name FILTER regex(?name, "Leap Motion")
-    ?name FILTER regex(?name, f")
+    ?name FILTER regex(?name, "microfone")
   }
   ]]></script>
 `
@@ -2862,7 +2862,7 @@ _data.htmlIntro4CodeA = `
       WHERE {
         ?person prf:component ?component.
         ?component prf: name ?name FILTER regex(?name, "Leap Motion")
-        ?name FILTER regex(?name, f")
+        ?name FILTER regex(?name, "microfone")
       }\`
     var gu_leap_microphone = new UserGroup(sparql, 2)
   ]]></script>
@@ -2894,7 +2894,7 @@ _data.htmlIntro4CodeB = `
         WHERE {
           ?person prf:component ?component.
           ?component prf: name ?name FILTER regex(?name, "Leap Motion")
-          ?name FILTER regex(?name, f")
+          ?name FILTER regex(?name, "microfone")
         }\`
       var gu_leap_microphone = new UserGroup(sparql, 2)
 
