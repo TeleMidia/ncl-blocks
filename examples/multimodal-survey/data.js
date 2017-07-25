@@ -78,110 +78,6 @@ _data.surveyJSON.pages.push({
 })
 
 // ----------------------------------------
-// profile page
-// ----------------------------------------
-
-_data.surveyJSON.pages.push({
-  name: 'perfil',
-  title: 'Dados do participante',
-  elements: [
-    {
-      type: 'text',
-      isRequired: true,
-      name: 'name',
-      title: 'Qual seu nome?'
-    },
-    // {
-    //   type: 'text',
-    //   isRequired: true,
-    //   name: 'email',
-    //   title: 'Qual seu e-mail de contato?',
-    //   validators: [{ type: 'email' }]
-    // },
-    {
-      type: 'radiogroup',
-      isRequired: true,
-      name: 'profileFormation',
-      title: 'Qual sua formação ou curso atual?',
-      choices: ['Graduação em computação', 'Graduação em design', 'Pós-graduação em computação', 'Pós-graduação em design'],
-      hasOther: true,
-      otherText: 'Outra graduação ou outra pós-graduação'
-    },
-    {
-      type: 'radiogroup',
-      isRequired: true,
-      name: 'profileApps',
-      title: `Quantas aplicações multimídia interativas você já desenvolveu (independente de tecnologia ou linguagem de programação)?`,
-      choices: ['0', '1-2', '3-4', '5-6', '7-8', '8 ou mais']
-    },
-    {
-      type: 'radiogroup',
-      isRequired: true,
-      name: 'profileBlocks',
-      title: `Você já utilizou alguma ferramenta programação por blocos, como Scratch ou MIT AppInventor?`,
-      choices: ['Nunca', 'Quase nunca', 'Indiferente', 'Quase sempre ',
-        'Sempre']
-    },
-    {
-      type: 'radiogroup',
-      isRequired: true,
-      name: 'profileNCL1',
-      title: 'Qual seu conhecimento no desenvolvimento em NCL?',
-      choices: [
-        { value: 0, text: 'Nenhum' }, { value: 1, text: 'Muito pouco' },
-        { value: 2, text: 'Pouco' }, { value: 3, text: 'Razoável' },
-        { value: 4, text: 'Alto' }, { value: 5, text: 'Muito alto' },
-        { value: 6, text: 'Expert' }]
-    },
-    {
-      type: 'radiogroup',
-      isRequired: true,
-      name: 'profileNCL2',
-      title: 'Quantas aplicações NCL você desenvolveu?',
-      visibleIf: '{profileNCL1} > 0',
-      choices: ['0', '1-2', '3-4', '5-6', '7-8', '8 ou mais']
-    },
-    {
-      type: 'radiogroup',
-      isRequired: true,
-      name: 'profileNCL3',
-      title: `De que maneira a sintaxe da NCL influencia o
-       desenvolvimento de aplicações?`,
-      visibleIf: '{profileNCL1} > 0',
-      choices: ['Não se aplica', 'Atrapalha muito', 'Atrapalha bastante', 'Atrapalha pouco', 'Indiferente', 'Ajuda pouco', 'Ajuda bastante', 'Ajuda muito']
-    },
-    {
-      type: 'radiogroup',
-      isRequired: true,
-      name: 'profileHTML1',
-      title: 'Qual seu conhecimento no desenvolvimento em HTML/JavaScript?',
-      choices: [
-        { value: 0, text: 'Nenhum' }, { value: 1, text: 'Muito pouco' },
-        { value: 2, text: 'Pouco' }, { value: 3, text: 'Razoável' },
-        { value: 4, text: 'Alto' }, { value: 5, text: 'Muito alto' },
-        { value: 6, text: 'Expert' }]
-    },
-    {
-      type: 'radiogroup',
-      isRequired: true,
-      name: 'profileHTML2',
-      title: 'Quantas aplicações HTML/JavaScript você desenvolveu?',
-      visibleIf: '{profileHTML1} > 0',
-      choices: ['0', '1-2', '3-4', '5-6', '7-8', '8 ou mais']
-    },
-    {
-      type: 'radiogroup',
-      isRequired: true,
-      name: 'profileHTML3',
-      title: `O quanto o desenvolvimento em HTML/JavaScript requer
-      o uso de bibliotecas de manipulação de DOM, como jQuery ou Prototype?`,
-      visibleIf: '{profileHTML1} > 0',
-      choices: ['Não sei', 'Nunca', 'Quase nunca', 'Indiferente', 'Quase sempre ', 'Sempre']
-    }
-  ]
-})
-
-// ----------------------------------------
 // intro page
 // ----------------------------------------
 
@@ -300,6 +196,110 @@ _data.surveyJSON.pages.push({
         prossiga.</p>
         </div>
       `
+    }
+  ]
+})
+
+// ----------------------------------------
+// profile page
+// ----------------------------------------
+
+_data.surveyJSON.pages.push({
+  name: 'perfil',
+  title: 'Dados do participante',
+  elements: [
+    {
+      type: 'text',
+      isRequired: true,
+      name: 'name',
+      title: 'Qual seu nome?'
+    },
+    // {
+    //   type: 'text',
+    //   isRequired: true,
+    //   name: 'email',
+    //   title: 'Qual seu e-mail de contato?',
+    //   validators: [{ type: 'email' }]
+    // },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'profileFormation',
+      title: 'Qual sua formação ou curso atual?',
+      choices: ['Graduação em computação', 'Graduação em design', 'Pós-graduação em computação', 'Pós-graduação em design'],
+      hasOther: true,
+      otherText: 'Outra graduação ou outra pós-graduação'
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'profileApps',
+      title: `Quantas aplicações multimídia interativas você já desenvolveu (independente de tecnologia ou linguagem de programação)?`,
+      choices: ['0', '1-2', '3-4', '5-6', '7-8', '8 ou mais']
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'profileBlocks',
+      title: `Você já utilizou alguma ferramenta programação por blocos, como Scratch ou MIT AppInventor?`,
+      choices: ['Nunca', 'Quase nunca', 'Indiferente', 'Quase sempre ',
+        'Sempre']
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'profileNCL1',
+      title: 'Qual seu conhecimento no desenvolvimento em NCL?',
+      choices: [
+        { value: 0, text: 'Nenhum' }, { value: 1, text: 'Muito pouco' },
+        { value: 2, text: 'Pouco' }, { value: 3, text: 'Razoável' },
+        { value: 4, text: 'Alto' }, { value: 5, text: 'Muito alto' },
+        { value: 6, text: 'Expert' }]
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'profileNCL2',
+      title: 'Quantas aplicações NCL você desenvolveu?',
+      visibleIf: '{profileNCL1} > 0',
+      choices: ['0', '1-2', '3-4', '5-6', '7-8', '8 ou mais']
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'profileNCL3',
+      title: `De que maneira a sintaxe da NCL influencia o
+       desenvolvimento de aplicações?`,
+      visibleIf: '{profileNCL1} > 0',
+      choices: ['Não se aplica', 'Atrapalha muito', 'Atrapalha bastante', 'Atrapalha pouco', 'Indiferente', 'Ajuda pouco', 'Ajuda bastante', 'Ajuda muito']
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'profileHTML1',
+      title: 'Qual seu conhecimento no desenvolvimento em HTML/JavaScript?',
+      choices: [
+        { value: 0, text: 'Nenhum' }, { value: 1, text: 'Muito pouco' },
+        { value: 2, text: 'Pouco' }, { value: 3, text: 'Razoável' },
+        { value: 4, text: 'Alto' }, { value: 5, text: 'Muito alto' },
+        { value: 6, text: 'Expert' }]
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'profileHTML2',
+      title: 'Quantas aplicações HTML/JavaScript você desenvolveu?',
+      visibleIf: '{profileHTML1} > 0',
+      choices: ['0', '1-2', '3-4', '5-6', '7-8', '8 ou mais']
+    },
+    {
+      type: 'radiogroup',
+      isRequired: true,
+      name: 'profileHTML3',
+      title: `O quanto o desenvolvimento em HTML/JavaScript requer
+      o uso de bibliotecas de manipulação de DOM, como jQuery ou Prototype?`,
+      visibleIf: '{profileHTML1} > 0',
+      choices: ['Não sei', 'Nunca', 'Quase nunca', 'Indiferente', 'Quase sempre ', 'Sempre']
     }
   ]
 })
