@@ -360,8 +360,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         conjunto de condições e um conjunto de ações</strong>. As ações são
         executadas em sequência quando as condições são satisfeitas.</p>
 
-        <p>Na nossa representação de blocos, o <em>Relacionamento</em> é juntato um
-        um bloco <em>Relacionamento</em> com blocos de condições e blocos de ações.
+        <p>Na nossa representação de blocos, o conceito de
+        <em>Relacionamento</em> é criado juntado um bloco de
+        <em>Relacionamento</em> com blocos de condições e blocos de ações.
         Blocos de ações podem ser de iniciar ("inicie") ou parar ("pare") uma
         <em>Mídia</em> ou <em>Reconhecedor</em>. Já as condições podem ser
         simples ou compostas. Blocos de condições simples podem ser de início
@@ -401,7 +402,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
             <td>condição "ao reconhecer" e ações de "pare" e "inicie" </td>
           </tr>
           <tr>
-            <td><img class='img-thumbnail' style='height: 150px'
+            <td><img class='img-thumbnail' style='height: 200px'
                 src='assets/concepts-sample-4.png'></td> 
             <td>condições "ao reconhecer" combinadas com operador "OR", ações de
             "pare" e "inicie"
