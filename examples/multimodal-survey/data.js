@@ -18,9 +18,11 @@ _data.surveyJSON = {
 }
 var pageIndex
 
-var _agreeChoices = ['Discordo fortemente', 'Discordo bastante',
-  'Discordo um pouco', 'Não concordo nem discordo', 'Concordo um pouco',
-  'Concordo', 'Concordo fortemente']
+var _agreeChoices = [
+  'Discordo fortemente', 'Discordo bastante', 'Discordo um pouco',
+  'Não concordo nem discordo', 'Concordo um pouco', 'Concordo',
+  'Concordo fortemente'
+]
 
 // ----------------------------------------
 // termo page
@@ -34,28 +36,21 @@ _data.surveyJSON.pages.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>O TeleMídia é um grupo de pesquisa do Departamento de Informática
-        da PUC-Rio. O TeleMídia desenvolve pesquisas nas áreas de Sistemas
-        Multimídia e Redes de Computadores. Em particular, Sistemas de TV
-        Digital terrestre e IPTV têm sido foco de pesquisa e inovação do
-        laboratório nos últimos anos.</p>
+        <p>O TeleMídia é um grupo de pesquisa da PUC-Rio que desenvolve
+        pesquisas nas áreas de Sistemas Multimídia e, em particular, TV Digital
+        e IPTV.</p>
 
         <p>Convidamos a você a participar deste estudo sobre nossa pesquisa
         de <i>Interações multimodais em linguagens multimídia</i>.</p>
 
-        <p><strong>Ressaltamos que este estudo NÃO se destina a avaliar você,
-        mas sim capturar evidências para avaliarmos nossa pesquisa.</strong></p>
-
         <p>Para prosseguirmos, pedimos seu consentimento para realizarmos
         este estudo e informamos que:</p>
         <ul>
-        <li>Os dados coletados destinam-se estritamente a atividades de
-        pesquisa e desenvolvimento, e somente os pesquisadores do TeleMídia
-        têm acesso à íntegra do material resultante do estudo.</li>
-        <li>A divulgação dos resultados de nossa pesquisa em foros
-        científicos e/ou pedagógicos pauta-se no respeito à privacidade, e o
-        anonimato dos participantes é preservado em qualquer material
-        publicado.</li>
+        <li>Os dados coletados destinam-se estritamente a atividades de pesquisa
+        e somente os pesquisadores do TeleMídia têm acesso.</li>
+        <li>A divulgação dos resultados de nossa pesquisa em foros científicos
+        pauta-se no respeito à privacidade, e o anonimato dos
+        participantes.</li>
         </ul>
         <p>Caso esteja de acordo, prossiga.</p>
         </div>
@@ -92,60 +87,14 @@ _data.surveyJSON.pages.push({
         <p>Vamos nesta seção introduzir o conceito de <strong>linguagens
         multimídia com interações multimodais</strong>, proposto em nossa
         pesquisa.</p>
-        </div>
-      `
-    },
-    {
-      type: 'html',
-      html: `
-        <div style="text-align: justify; width: 70%;">
-        <p>Primeiro devemos falar sobre o conceito de <strong>aplicação
-        multimídia interativa</strong>, que é intimamente relacionado ao de
-        <strong>sistema multimídia</strong>.</p>
 
-        <p>Um sistema multimídia é aquele que utiliza mídias discretas, como
-        imagens e textos, e ao menos uma mídia contínua, como áudios e vídeos.
-        Uma aplicação multimídia interativa define como um sistema multimídia
-        deve realizar o sincronismo das mídias e reagir às interações de
-        usuário, geralmente por apontador e tecla. O criador desse tipo de
-        aplicação é usualmente chamado de autor e utiliza uma <strong>linguagem
-        multimídia interativa</strong> para desenvolver sua aplicação. Exemplos
-        de linguagens multimídia atuais são a NCL (Nested Context Language) e a
-        HTML (HyperText Markup Language).</p>
-        
-        <p>A figura a seguir ilustra a criação e execução de uma aplicação
-        multimídia interativa. Na criação, o autor define quais mídias serão
-        exibidas e o sincronismo entre elas. Por exemplo, considere que o
-        trecho de créditos de um vídeo inicie no segundo 300. Um sincronismo
-        pode ser definido para que ao iniciar esse trecho de créditos (o vídeo
-        alcançar o segundo 300) uma imagem seja exibida. Já na execução, um
-        sistema multimídia deve receber a aplicação e seus arquivos
-        de mídia. Em seguida, esse sistema utiliza <strong>dispositivos
-        audiovisuais</strong> para exibir o conteúdo das mídias (som e frames)
-        e <strong>dispositivos de apontador e tecla</strong> para capturar
-        interações de usuário.</p>
-
-        <div class='text-center'>
-          <img class='center-block img-thumbnail' style='height: 500px'
-            src='assets/overview1.png'>
-        </div>
-        <br>
-
-        <p>Já o conceito de <strong>linguagens multimídia com interações
-        multimodais</strong> está intimamente relacionado ao de interfaces
-        multimodais.</p>
-
-        <p>As <strong>interfaces multimodais</strong> são aquelas que utilizam
-        formas de comunicação mais naturais da linguagem e comportamento humano,
-        como fala e gestos. Por exemplo, algumas interfaces multimodais para
-        crianças e idosos podem utilizar interação por voz e avatares
-        humanoides. Esse tipo de interface permite também que múltiplos usuários
-        possam interagir com o sistema multimídia, como por exemplos em jogo de
-        dança. Esse tipo de interface foi apoiada pelos recentes avanços em
-        tecnologias de reconhecimento e <strong>dispositivos de interação
-        multimodal</strong>. Ilustrados a seguir, citamos o uso de microfones
-        para reconhecimento de voz, e dispositivos como LeapMotion e Microsoft
-        Kinect para reconhecimento de gestos.</p>
+        <p>Recentes avanços em tecnologias de reconhecimento e dispositivos de
+        interação permitiram criar <strong>interfaces multimodais</strong>. Esse
+        tipo de interface utiliza formas de comunicação mais naturais da
+        linguagem e comportamento humano, como fala e gestos. Ilustrados a
+        seguir, citamos o uso de microfones para reconhecimento de voz, e
+        dispositivos como LeapMotion e Microsoft Kinect para reconhecimento de
+        gestos.
 
         <div class='text-center'>
           <img class='img-thumbnail' style='height: 180px'
@@ -157,43 +106,37 @@ _data.surveyJSON.pages.push({
         </div>
         <br>
 
-        <p>Uma <strong>linguagem multimídia com interações multimodais</strong>
-        é aquela que permite o autor criar aplicações multimídia com uma
-        interface multimodal. Com esse tipo de linguagem, o autor pode não
-        apenas definir mídias e o sicronismo entre elas, mas também pode definir
-        interações multimodais com os usuários. Essas interações são geralmente
-        definidas utilizando <strong>descrições multimodais</strong>, que são
-        específicas para cada tipo de interação. Exemplos de tipos dessas
-        descrições são o SSML (Speech Synthesis Markup Language) e o SRGS
-        (Speech Recognition Grammar Specification) que descrevem,
-        respectivamente, a sintetização e reconhecimento de voz.</p>
+        <p>Uma aplicação multimídia interativa define como um sistema multimídia
+        deve realizar o sincronismo de mídias (discretas e contínuas) e reagir
+        às interações de usuário. O criador desse tipo de aplicação é usualmente
+        chamado de autor e utiliza uma <strong>linguagem multimídia</strong>
+        para desenvolver sua aplicação. Exemplos de linguagens multimídia atuais
+        são a NCL (Nested Context Language) e a HTML (HyperText Markup
+        Language). Já uma <strong>linguagem multimídia com interações
+        multimodais</strong> é aquela que permite o autor não apenas definir
+        mídias e o sincronismo entre elas, mas também pode definir interações
+        multimodais com os usuários. </p>
 
         <p>A figura a seguir ilustra a criação e execução de uma aplicação
-        multimídia com interações multimodais. Na criação, o autor define as
-        mídias, descrições multimodais e o sincronismos entres eles. Por
-        exemplo, considere uma aplicação que utiliza um arquivo de vídeo e uma
-        descrição que reconhece um comando de voz para repetir o vídeo. Nessa
-        aplicação, um o autor pode definir um sincronismo para que o usuário
-        possa falar durante o trecho de créditos e o vídeo seja reiniciado. Já
-        na execução, o sistema utiliza <strong>dispositivos de interação
-        multimodal</strong> para realizar reconhecimentos, além de dispositivos
-        audiovisuais.</p>
+        multimídia com interações multimodais. Na criação, a principal diferença
+        é que o autor define não apenas as mídias e o sincronismos entres elas,
+        mas também, defini as interações multimodais utilizando descrições
+        multimodais. Por exemplo, ele pode utilizar uma descrição de
+        reconhecimento de voz e um de reconhecimento de gestos. Já na execução,
+        a principal diferença é que o sistema utiliza <strong>dispositivos de
+        interação multimodal</strong> para realizar reconhecimentos, além de
+        dispositivos audiovisuais para exibir o conteúdo das mídias (som e
+        frames), e apontador e tecla para capturar interações dos usuários.</p>
 
         <div class='text-center'>
-          <img class='img-thumbnail' style='height: 500px'
+          <img class='img-thumbnail' style='height: 450px'
+          src='assets/overview1.png'>
+          <span style="margin-left:10px"></span>
+          <img class='img-thumbnail' style='height: 450px'
           src='assets/overview2.png'>
         </div>
         <br>
-        </div>
-      `
-    },
-    {
-      type: 'html',
-      html: `
-        <div style="text-align: justify; width: 70%;">
-        <p>Esperamos que esta introdução tenha sido útil no seu entendimento
-        acerca de linguagens multimídia com interações multimodais. Favor
-        prossiga.</p>
+
         </div>
       `
     }
