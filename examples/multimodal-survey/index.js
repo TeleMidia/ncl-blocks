@@ -85,9 +85,9 @@ $('#surveyPageNo').change(function () {
   _survey.currentPageNo = this.value
 })
 
-$('#surveyPageNo').val(3).change()
+// $('#surveyPageNo').val(3).change()
 // $('#surveyPageNo').val(4).change()
-// $('#surveyPageNo').val(5).change()
+$('#surveyPageNo').val(5).change()
 // $('#surveyPageNo').val(7).change()
 
 // ----------------------------------------
@@ -239,7 +239,11 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       break
     case 'nclIntro4':
       $('#nclIntro4CodeA').append(_data.nclIntro4CodeA)
-      $('#nclIntro4CodeB').append(_data.nclIntro4CodeB)
+      SyntaxHighlighter.highlight()
+      break
+    case 'nclIntro5':
+      $('#nclIntro5CodeA').append(_data.nclIntro5CodeA)
+      $('#nclIntro5CodeB').append(_data.nclIntro5CodeB)
       SyntaxHighlighter.highlight()
       break
     case 'nclTask1':

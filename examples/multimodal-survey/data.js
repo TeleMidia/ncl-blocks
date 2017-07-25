@@ -366,10 +366,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     </div>
     <br>
 
-    <p>Vamos agora detalhar esses conceitos e perdir que você realize tarefas
-    para podermos capturar evidências de nossa pesquisa. <strong>Ressaltamos que
-    essas tarefas NÃO se destinam a avaliar seus conhecimentos, mas sim capturar
-    evidências de nossa pesquisa.</strong>.</p>
+    <p>Vamos agora detalhar esses conceitos e perdir que você realize algumas
+    tarefas. <strong>Ressaltamos que essas tarefas NÃO se destinam a avaliar
+    seus conhecimentos, mas sim capturar evidências de nossa
+    pesquisa.</strong>.</p>
     </div>
    `
 })
@@ -1506,58 +1506,71 @@ pageIndex = _data.surveyJSON.pages.push({
 // ncl page - intro
 // ----------------------------------------
 
+_data.surveyJSON.pages[pageIndex].elements.push(
+  {
+    type: 'html',
+    html: `
+      <div style="text-align: justify; width: 70%;"> 
+      <p>A linguagem NCL é utilizada para criar conteúdo multimídia interativo
+      em sistemas de TV (terrestre, IPTV e BroadBand). <strong>Nesta seção,
+      não vamos ensinar a linguagem NCL</strong>, mas vamos apresentar como os
+      conceitos da seção anterior são instanciados na NCL para esta oferecer
+      suporte a interações multimodais.</p>
+      
+      <p>A tabela seguir apresenta como propomos instanciação dos conceitos de
+      nossa pesquisa na versão atual da NCL (3.1). O conceito de
+      <em>Mídia</em> é implementado pelo elemento <em>&ltmedia></em>. O
+      conceito de <em>Sincronismo</em> é implementado pelo elemento
+      <em>&ltlink></em>. Por fim os conceitos de <em>Reconhecedor</em> e
+      <em>Grupo de usuários</em> não são implementados.</p></p>
+
+      <table align="center" class="table-bordered table-striped
+      table-condensed">
+        <tr>
+          <th>Conceito</th>
+          <th>NCL atual</th>
+          <th>Como propomos</th>
+        </tr>
+        <tr>
+          <td><em>Mídia</em></td>
+          <td><em>&ltmedia></em></td>
+          <td>manter</td>
+        </tr>
+        <tr>
+          <td><em>Sincronismo</em></td>
+          <td><em>&ltport> e <em>&ltlink></em></td>
+          <td>manter</td>
+        </tr>
+        <tr>
+          <td><em>Reconhecedor</em></td>
+          <td><em>não presente</em></td>
+          <td>adicionar elemento <em>&ltinput></em></td>
+        </tr>
+        <tr>
+          <td><em>Grupo de Usuários</em></td>
+          <td>não presente</td></td>
+          <td>adicionar elemento <em>&ltuserClass></em></td>
+        </tr>
+      </table>
+      <br>
+
+      <p>Vamos agora detalhar esses conceitos e perdir que você realize algumas
+      tarefas. <strong>Ressaltamos que essas tarefas NÃO se destinam a avaliar
+      seus conhecimentos, mas sim capturar evidências de nossa
+      pesquisa.</strong>.</p>
+      </div>
+    `
+  }
+)
+
+// ----------------------------------------
+// ncl page - midia and link
+// ----------------------------------------
+
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
-  title: 'Proposta de conceitos multimodais em NCL',
+  title: 'Mídia e Sincronismo em NCL',
   elements: [
-    {
-      type: 'html',
-      html: `
-        <div style="text-align: justify; width: 70%;"> 
-        <p>A linguagem NCL é utilizada para criar conteúdo multimídia interativo
-        em sistemas de TV (terrestre, IPTV e BroadBand). <strong>Nesta seção,
-        não vamos ensinar a linguagem NCL</strong>, mas vamos apresentar como os
-        conceitos da seção anterior são instanciados na NCL para esta oferecer
-        suporte a interações multimodais.</p>
-        
-        <p>A tabela seguir apresenta como propomos instanciação dos conceitos de
-        nossa pesquisa na versão atual da NCL (3.1). O conceito de
-        <em>Mídia</em> é implementado pelo elemento <em>&ltmedia></em>. O
-        conceito de <em>Sincronismo</em> é implementado pelo elemento
-        <em>&ltlink></em>. Por fim os conceitos de <em>Reconhecedor</em> e
-        <em>Grupo de usuários</em> não são implementados.</p></p>
-
-        <table align="center" class="table-bordered table-striped
-        table-condensed">
-          <tr>
-            <th>Conceito</th>
-            <th>NCL atual</th>
-            <th>Como propomos</th>
-          </tr>
-          <tr>
-            <td><em>Mídia</em></td>
-            <td><em>&ltmedia></em></td>
-            <td>manter</td>
-          </tr>
-          <tr>
-            <td><em>Sincronismo</em></td>
-            <td><em>&ltport> e <em>&ltlink></em></td>
-            <td>manter</td>
-          </tr>
-          <tr>
-            <td><em>Reconhecedor</em></td>
-            <td><em>não presente</em></td>
-            <td>adicionar elemento <em>&ltinput></em></td>
-          </tr>
-          <tr>
-            <td><em>Grupo de Usuários</em></td>
-            <td>não presente</td></td>
-            <td>adicionar elemento <em>&ltuserClass></em></td>
-          </tr>
-        </table>
-        </div>
-      `
-    },
     {
       name: 'nclIntro1',
       type: 'html',
@@ -1707,122 +1720,30 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div id='nclIntro2CodeA'></div>
         </div>
       `
-    },
-    {
-      name: 'nclIntro3',
-      type: 'html',
-      html: `
-        <div style="text-align: justify; width: 70%;">
-        <p>Agora vamos detalhar o conceito <em>Reconhecedor</em> em NCL. Ele
-        permite o uso de reconhecimento de interações multimodais realizadas pelo
-        usuário, como voz e gestos.</p>
-        
-        <p>O <em>Reconhecedor</em> é definido por <strong>um identificador, seu
-        conteúdo e âncoras</strong>. Entretanto, diferente de <em>Mídia</em>, o
-        conteúdo de um <em>Reconhecedor</em> deve ser uma descrição de
-        reconhecimento.</p>
-        
-        <p>Na nossa NCL estendida, o conceito de <em>Reconhecedor</em> é
-        implementado pelo elemento <em>&ltinput></em>. O identificador é
-        definido pelo atributo <em>id</em> e a descrição de reconhecimento é
-        definida pelo atributo <em>src</em>. As âncoras são definidas pelo
-        elemento <em>area</em> e podem definir trechos delimitados da descrição
-        com o atributo <em>label</em>. Trechos de código ilustram exemplos de
-        descrições de reconhecimento.</p>
-
-        <p>O trecho de código a seguir apresenta o arquivo
-        <em>rec_voz.srgs</em>. Esse arquivo é uma descrição de reconhecimento de
-        voz no formato SRGS. Em particular, ele define uma porção chamada
-        <em>repete</em> que define o reconhecimento de voz "repita vídeo".</p>
-
-        <div id='nclIntro3CodeA'></div><br>
-
-        <p>O trecho de código a seguir apresenta o arquivo
-        <em>rec_gestos.gml</em>. Esse arquivo é uma descrição de reconhecimento
-        de voz no formato GML. Em particular, ele define duas porções chamadas
-        <em>swipe_esquerda</em> e  <em>swipe_direita</em>que definem acenos de
-        mão para esquerda e para direita, respectivamente</p>
-
-        <div id='nclIntro3CodeB'></div><br>
-
-        <p>Para ilustrar o uso desse conceito em uma aplicação NCL, o trecho de
-        código a seguir apresenta uma nova versão da aplicação que reinicia um
-        vídeo dada uma interação (modificações em destaque). Nessa versão, ao
-        invés de selecionar, o vídeo é reiniciado ao usuário falar "repita
-        vídeo".</p>
-
-        <p>Essa aplicação utiliza dois elementos de
-        <em>&ltmedia></em> (<em>video_principal</em> e <em>sinte_voz</em>) e um
-        <em>&ltinput></em> (<em>rec_voz</em>). Os elementos <em>sinte_voz</em> e
-        <em>rec_voz</em> usam respectivamente os arquivos
-        <em>sinte_voz.srgs</em> e <em>rec_voz.srgs</em> (apresentados acima). 
-        
-        <p>Para o comportamento, a aplicação utiliza um elemento
-        <em>&ltport></em> e dois <em>&ltlink></em>. O <em>&ltport></em>
-        define que o <em>video_principal</em> é iniciado com aplicação. O
-        primeiro <em>&ltlink></em> define que quando o <em>video_principal</em>
-        alcançar a sua porção <em>creditos</em> (300s), a frase da âncora
-        <em>pergunta</em> é sintetizada e o reconhecedor <em>rec_voz</em> inicia
-        seu reconhecimento. O segundo <em>&ltlink></em> define que quando for
-        reconhecida a âncora <em>repete</em>, a <em>midia_principal</em> deve
-        ser reiniciada (terminada e iniciada).</p>
-
-        <div id='nclIntro3CodeC'></div>
-
-        <p>Um dos principais benefícios de interfaces multimodais é o uso
-        diferentes interações. Ou seja, as interações de usuários podem ser
-        realizadas por diferentes modalidades. Em nossos, conceitos essa
-        combinação de modalidades de interação pode ser feita utilizando uma
-        condição composta. Usar um operador 'OR' indica que qualquer uma das
-        interações é necessária. Já usar operador 'AND' indica que todas as
-        interações são necessárias em qualquer ordem. E por fim usar o operador
-        'SEQ' significa que as interações tem que ser feitas em sequência.</p> 
-
-        <p>Os blocos a seguir modificam a aplicação acima. Mas nessa
-        versão a mídia <em>midia_principal</em> é repetida quando usuário
-        interage através de voz ou (operador 'OR') através de gesto.</p>
-
-        <div id='nclIntro3CodeD'></div><br>
-        </div>
-      `
-    },
-    {
-      name: 'nclIntro4',
-      type: 'html',
-      html: `
-        <div style="text-align: justify; width: 70%;">
-        <p>Agora vamos detalhar o elemento <em>Grupo de Usuários</em> em NCL.
-        Ele permite identificar unicamente interações de cada usuário. Por
-        exemplo, o comando de voz apenas de um determinado usuário</p>
-
-        <p><em>Grupo de Usuários</em> é definido <strong>por um identificador,
-        número máximo de participantes e quais dispositivos estes
-        utilizam</strong>. Mais precisamente, esses dispositivos definem o que
-        um usuário necessita possuir para participar do grupo.</p>
-        
-        <p>Na nossa NCL estendida, o conceito de <em>Grupo de Usuários</em> é
-        implementado pelo elemento <em>&ltuserClass></em> dentro do
-        <em>&lthead></em>. O identificador é definido pelo atributo <em>id</em>
-        e os dispositivos são definidos por um arquivo de descrição definido em
-        <em>src</em>. Para essa descrição propomos um descrição  no formato
-        SPARQL. O trecho de código a seguir apresenta o arquivo de descrição de
-        usuários <em>gu_leap_microphone.sparql</em>. Essa descrição define que
-        cada usuário do grupo deve ter um microfone e um leapmotion.</p>
-
-        <div id='nclIntro4CodeA'></div><br>
-
-        <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em NCL, o trecho
-        de código a seguir apresenta uma nova versão da aplicação que reinicia
-        um vídeo dada uma interação por voz (modificações em destaque). Mas
-        nessa versão, ao invés de clicar, o vídeo será reiniciado ao segundo
-        usuário do usuário falar "repita vídeo".</p>
-
-        <div id='nclIntro4CodeB'></div>
-        </div>
-      `
     }
   ]
 })
+
+_data.surveyJSON.pages[pageIndex].elements.push(
+  {
+    type: 'html',
+    name: 'nclTask1',
+    html: `
+        <div style="text-align: justify; width: 70%;">
+        <p>Tarefa 1: Por favor, analise com atenção o trecho de código NCL a
+        seguir.</p>
+        <div id='nclTask1Code'></div>
+        </div>
+      `
+  },
+  {
+    type: 'comment',
+    isRequired: true,
+    name: 'nclTask1Question',
+    rows: '9',
+    title: 'Qual é o comportamento da aplicação?'
+  }
+)
 
 _data.nclIntro1CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
@@ -1908,7 +1829,171 @@ _data.nclIntro2CodeA = `
     </body>
   </ncl>
   ]]></script>
+
 `
+
+_data.nclTask1Code = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false;">
+  <![CDATA[
+  <?xml version= "1.0" encoding= "ISO-8859-1" ?>
+  <ncl xmlns="http://www.ncl.org.br/NCL3.0/EDTVProfile">
+    <head>
+      <connectorBase>
+        <importBase documentURI="causalConnBase.ncl" alias="conEx"></importBase>
+      </connectorBase>
+    </head>
+    <body>
+      <port component="video_inicial"></port>
+      <media id="video_inicial" src="video_inicial.mp4">
+        <property name="size" value="100%, 100%"></property>
+        <area id="credits" begin="300s" end="360s"></area>
+      </media>
+      <media id="video_centro" src="centro.mp4">
+        <property name="size" value="100%, 100%"></property>
+      </media>
+      <media id="video_praia" src="praia.mp4">
+        <property name="size" value="100%, 100%"></property>
+      </media>
+      <media id="icone_centro" src="icone_centro.png">
+        <property name="top" value="80%"></property>
+        <property name="size" value="20%, 20%"></property>
+        <property name="zindex" value="1"></property>
+      </media>
+      <media id="icone_praia" src="icone_praia.png">
+        <property name="location" value="80%, 80%"></property>
+        <property name="size" value="20%, 20%"></property>
+        <property name="zindex" value="1"></property>
+      </media>
+      <link xconnector="conEx#onBeginStart">
+        <bind role="onBegin" component="video_inicial" interface="creditos">
+        <bind role="start" component="icone_centro"></bind></bind>
+        <bind role="start" component="icone_praia" />
+      </link>
+      <link xconnector="onSelectionStopStart">
+        <bind role="onSelection" component="icone_centro"></bind>
+        <bind role="stop" component="icone_centro"></bind>
+        <bind role="stop" component="icone_praia" />
+        <bind role="stop" component="video_inicial"></bind>
+        <bind role="start" component="video_centro"></bind>
+      </link>
+      <link xconnector="onSelectionStopStart">
+        <bind role="onSelection" component="icone_praia" />
+        <bind role="stop" component="icone_centro"></bind>
+        <bind role="stop" component="icone_praia" />
+        <bind role="stop" component="video_inicial"></bind>
+        <bind role="start" component="video_praia"></bind>
+      </link>
+    </body>
+  </ncl>
+  ]]></script>
+`
+
+// ----------------------------------------
+// ncl page - recognition
+// ----------------------------------------
+
+_data.surveyJSON.pages[pageIndex].elements.push({
+  type: 'panel',
+  title: 'Reconhecedor em NCL',
+  elements: [
+    {
+      name: 'nclIntro3',
+      type: 'html',
+      html: `
+        <div style="text-align: justify; width: 70%;">
+        <p>Agora vamos detalhar o conceito <em>Reconhecedor</em> em NCL. Ele
+        permite o uso de reconhecimento de interações multimodais realizadas pelo
+        usuário, como voz e gestos.</p>
+        
+        <p>O <em>Reconhecedor</em> é definido por <strong>um identificador, seu
+        conteúdo e âncoras</strong>. Entretanto, diferente de <em>Mídia</em>, o
+        conteúdo de um <em>Reconhecedor</em> deve ser uma descrição de
+        reconhecimento.</p>
+        
+        <p>Na nossa NCL estendida, o conceito de <em>Reconhecedor</em> é
+        implementado pelo elemento <em>&ltinput></em>. O identificador é
+        definido pelo atributo <em>id</em> e a descrição de reconhecimento é
+        definida pelo atributo <em>src</em>. As âncoras são definidas pelo
+        elemento <em>area</em> e podem definir trechos delimitados da descrição
+        com o atributo <em>label</em>. Trechos de código ilustram exemplos de
+        descrições de reconhecimento.</p>
+
+        <p>O trecho de código a seguir apresenta o arquivo
+        <em>rec_voz.srgs</em>. Esse arquivo é uma descrição de reconhecimento de
+        voz no formato SRGS. Em particular, ele define uma porção chamada
+        <em>repete</em> que define o reconhecimento de voz "repita vídeo".</p>
+
+        <div id='nclIntro3CodeA'></div><br>
+
+        <p>O trecho de código a seguir apresenta o arquivo
+        <em>rec_gestos.gml</em>. Esse arquivo é uma descrição de reconhecimento
+        de voz no formato GML. Em particular, ele define duas porções chamadas
+        <em>swipe_esquerda</em> e  <em>swipe_direita</em>que definem acenos de
+        mão para esquerda e para direita, respectivamente</p>
+
+        <div id='nclIntro3CodeB'></div><br>
+
+        <p>Para ilustrar o uso desse conceito em uma aplicação NCL, o trecho de
+        código a seguir apresenta uma nova versão da aplicação que reinicia um
+        vídeo dada uma interação (modificações em destaque). Nessa versão, ao
+        invés de selecionar, o vídeo é reiniciado ao usuário falar "repita
+        vídeo".</p>
+
+        <p>Essa aplicação utiliza dois elementos de
+        <em>&ltmedia></em> (<em>video_principal</em> e <em>sinte_voz</em>) e um
+        <em>&ltinput></em> (<em>rec_voz</em>). Os elementos <em>sinte_voz</em> e
+        <em>rec_voz</em> usam respectivamente os arquivos
+        <em>sinte_voz.srgs</em> e <em>rec_voz.srgs</em> (apresentados acima). 
+        
+        <p>Para o comportamento, a aplicação utiliza um elemento
+        <em>&ltport></em> e dois <em>&ltlink></em>. O <em>&ltport></em>
+        define que o <em>video_principal</em> é iniciado com aplicação. O
+        primeiro <em>&ltlink></em> define que quando o <em>video_principal</em>
+        alcançar a sua porção <em>creditos</em> (300s), a frase da âncora
+        <em>pergunta</em> é sintetizada e o reconhecedor <em>rec_voz</em> inicia
+        seu reconhecimento. O segundo <em>&ltlink></em> define que quando for
+        reconhecida a âncora <em>repete</em>, a <em>midia_principal</em> deve
+        ser reiniciada (terminada e iniciada).</p>
+
+        <div id='nclIntro3CodeC'></div>
+
+        </div>
+      `
+    }
+  ]
+})
+
+_data.surveyJSON.pages[pageIndex].elements.push(
+  {
+    type: 'html',
+    name: 'nclTask2',
+    html: `
+    <div style="text-align: justify; width: 70%;">
+    Tarefa 2: Considere as descrições sinte_voz_videos.ssml e
+    rec_voz_videos.srgs a seguir.<br><br>
+
+    <div id='nclTask2CodeA'></div>
+    <div id='nclTask2CodeB'></div>
+
+    <p>A aplicação NCL da Tarefa 1 foi modificada para permitir interações
+    multimodais utilizando as duas descrições acima. Uma versão modificada
+    da Tarefa 1 é apresentada a seguir com as modificações destacadas. Por
+    favor, analise com atenção.</p>
+
+    <div id='nclTask2CodeC'></div>
+    </div>
+    `
+  },
+  {
+    type: 'comment',
+    isRequired: true,
+    name: 'nclTask2Question',
+    rows: '9',
+    title: 'Qual é o novo comportamento da aplicação?'
+  }
+)
+
 _data.nclIntro3CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight: [3]"> <![CDATA[
@@ -1979,49 +2064,6 @@ _data.nclIntro3CodeC = `
       <input id="rec_voz" src="rec_voz.srgs">
         <area label="repete"></repete>
       </input>
-      <input id="rec_gesto" src="rec_gesto.gml">
-        <area label="esquerda"></repete>
-      </input>
-      <link xconnector="conEx#onBeginStart">
-        <bind role="onBegin" component="video_principal" interface="credits"></bind>
-        <bind role="start" component="sinte_voz" interface="pergunta"></bind>
-        <bind role="start" component="rec_voz"></bind>
-      </link>
-      <link xconnector="conEx#onOrRecognizeStopStart">
-        <bind role="onRecognize" component="rec_voz" interface="repete"/>
-        <bind role="onRecognize" component="rec_gesto" interface="esquerda"/>
-        <bind role="stop" component="rec_gesto"></bind>
-        <bind role="stop" component="rec_voz"></bind>
-        <bind role="stop" component="video_principal"/>
-        <bind role="start" component="video_principal"/>
-      </link>
-    </body>
-  </ncl>
-  ]]></script>
-`
-_data.nclIntro3CodeD = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[14,17,25]">
-  <![CDATA[
-  <?xml version="1.0" encoding="ISO-8859-1"?>
-  <ncl>
-    <head>
-      <connectorBase>
-        <importBase documentURI="causalConnBase.ncl" alias="conEx"></importBase>
-      </connectorBase>
-    </head>
-    <body>
-      <port component="video_principal"></port>
-      <media id="video_principal" src="video.mp4">
-        <property name="size" value="100%, 100%"></property>
-        <area id="credits" begin="300s" end="360s"></area>
-      </media>
-      <media id="sinte_voz" src="sinte_voz.ssml">
-        <area label="pergunta"></area>
-      </media>
-      <input id="rec_voz" src="rec_voz.srgs">
-        <area label="repete"></repete>
-      </input>
       <link xconnector="conEx#onBeginStart">
         <bind role="onBegin" component="video_principal" interface="credits"></bind>
         <bind role="start" component="sinte_voz" interface="pergunta"></bind>
@@ -2038,207 +2080,6 @@ _data.nclIntro3CodeD = `
   ]]></script>
 `
 
-_data.nclIntro4CodeA = `
-  <script type="syntaxhighlighter" class="brush: plain; toolbar: false;
-  auto-links: false; highlight:[6,7]"> <![CDATA[
-  PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-  PREFIX prf: <http://www.wapforum.org/profiles/UAPROF/ccppschema-20010430>
-  SELECT ?person
-  WHERE {
-  ?person prf:component ?component.
-  ?component prf: name ?name FILTER regex(?name, "Leap Motion")
-    ?name FILTER regex(?name, "microfone")
-  }
-  ]]></script>
-`
-_data.nclIntro4CodeB = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[8,9,31]"> <![CDATA[
-  <?xml version="1.0" encoding="ISO-8859-1"?>
-  <ncl>
-    <head>
-      <connectorBase>
-        <importBase documentURI="causalConnBase.ncl" alias="conEx"></importBase>
-      </connectorBase>
-      <userBase>
-        <userClass id="gu_leap_microphone" max="2"
-          userClassDescription="gu_leap_microphone.sparql"></userClass>
-      </userBase>
-    </head>
-    <body>
-      <port component="video_principal"></port>
-      <media id="video_principal" src="video.mp4">
-        <property name="size" value="100%, 100%"></property>
-        <area id="credits" begin="300s" end="360s"></area>
-      </media>
-      <media id="sinte_voz" src="sinte_voz.srgs">
-        <area label="pergunta"></area>
-      </media>
-      <input id="rec_voz" src="rec_voz.srgs">
-        <area label="repete"></area>
-      </input>
-      <link xconnector="conEx#onBeginStart">
-        <bind role="onBegin" component="video_principal" interface="credits"></bind>
-        <bind role="start" component="sinte_voz" interface="pergunta"></bind>
-        <bind role="start" component="rec_voz"></bind>
-      </link>
-      <link xconnector="conEx#onRecognizeStart">
-        <bind role="onRecognize" component="rec_voz" interface="repete">
-          <linkParam name="user_id" value="gu_leap_microphone(2)"></linkParam>
-        </bind>
-        <bind role="stop" component="video_principal"></bind>
-        <bind role="start" component="video_principal"></bind>
-      </link>
-    </body>
-  </ncl>
-  ]]></script>
-`
-
-// ----------------------------------------
-//  ncl page - questions
-// ----------------------------------------
-
-_data.surveyJSON.pages[pageIndex].elements.push({
-  type: 'panel',
-  title: 'Aplicação dos conceitos',
-  elements: [
-    {
-      type: 'html',
-      html: `
-        <div style="text-align: justify; width: 70%;">
-        <p>Agora pedimos que você realize as quatro tarefas a seguir. Duas
-        tarefas consistem em interpretar códigos e outras duas em editar
-        códigos.</p>
-        </div>
-      `
-    },
-    {
-      type: 'html',
-      name: 'nclTask1',
-      html: `
-        <div style="text-align: justify; width: 70%;">
-        <p>Tarefa 1: Por favor, analise com atenção o trecho de código NCL a
-        seguir.</p>
-        <div id='nclTask1Code'></div>
-        </div>
-      `
-    },
-    {
-      type: 'comment',
-      isRequired: true,
-      name: 'nclTask1Question',
-      rows: '9',
-      title: 'Qual é o comportamento da aplicação?'
-    },
-    {
-      type: 'html',
-      name: 'nclTask2',
-      html: `
-        <div style="text-align: justify; width: 70%;">
-        Tarefa 2: Considere as descrições sinte_voz_videos.ssml e
-        rec_voz_videos.srgs a seguir.<br><br>
-
-        <div id='nclTask2CodeA'></div>
-        <div id='nclTask2CodeB'></div>
-
-        <p>A aplicação NCL da Tarefa 1 foi modificada para permitir interações
-        multimodais utilizando as duas descrições acima. Uma versão modificada
-        da Tarefa 1 é apresentada a seguir com as modificações destacadas. Por
-        favor, analise com atenção.</p>
-
-        <div id='nclTask2CodeC'></div>
-        </div>
-      `
-    },
-    {
-      type: 'comment',
-      isRequired: true,
-      name: 'nclTask2Question',
-      rows: '9',
-      title: 'Qual é o novo comportamento da aplicação?'
-    },
-    {
-      type: 'comment',
-      isRequired: true,
-      name: 'nclTask3Question',
-      rows: '47',
-      title: `Tarefa 3: Agora pedimos que edite o código NCL da Tarefa 2
-        (copiado  a seguir) para que seja possível a interação por voz
-        <strong>ou</strong> (operador OR) interação por gestos. Na interação por
-        gesto,você pode referenciar o arquivo de descrição
-        <em>rec_gestos.gml</em> apresentado nesta seção e considere que gesto de
-        mão para esquerda indica centro e gesto de mão para direita indica
-        praia.
-      `
-    },
-    {
-      type: 'comment',
-      name: 'nclTask4Question',
-      rows: '47',
-      title: ` Tarefa 4: Agora pedimos que edite novamente o trecho de código
-      NCL da Tarefa 2 (copiado a seguir) para que apenas o segundo usuário, de
-      um grupo de 3 usuários com microfone, possa realizar a interação por
-      voz.`
-    }
-  ]
-})
-
-_data.nclTask1Code = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false;">
-  <![CDATA[
-  <?xml version= "1.0" encoding= "ISO-8859-1" ?>
-  <ncl xmlns="http://www.ncl.org.br/NCL3.0/EDTVProfile">
-    <head>
-      <connectorBase>
-        <importBase documentURI="causalConnBase.ncl" alias="conEx"></importBase>
-      </connectorBase>
-    </head>
-    <body>
-      <port component="video_inicial"></port>
-      <media id="video_inicial" src="video_inicial.mp4">
-        <property name="size" value="100%, 100%"></property>
-        <area id="credits" begin="300s" end="360s"></area>
-      </media>
-      <media id="video_centro" src="centro.mp4">
-        <property name="size" value="100%, 100%"></property>
-      </media>
-      <media id="video_praia" src="praia.mp4">
-        <property name="size" value="100%, 100%"></property>
-      </media>
-      <media id="icone_centro" src="icone_centro.png">
-        <property name="top" value="80%"></property>
-        <property name="size" value="20%, 20%"></property>
-        <property name="zindex" value="1"></property>
-      </media>
-      <media id="icone_praia" src="icone_praia.png">
-        <property name="location" value="80%, 80%"></property>
-        <property name="size" value="20%, 20%"></property>
-        <property name="zindex" value="1"></property>
-      </media>
-      <link xconnector="conEx#onBeginStart">
-        <bind role="onBegin" component="video_inicial" interface="creditos">
-        <bind role="start" component="icone_centro"></bind></bind>
-        <bind role="start" component="icone_praia" />
-      </link>
-      <link xconnector="onSelectionStopStart">
-        <bind role="onSelection" component="icone_centro"></bind>
-        <bind role="stop" component="icone_centro"></bind>
-        <bind role="stop" component="icone_praia" />
-        <bind role="stop" component="video_inicial"></bind>
-        <bind role="start" component="video_centro"></bind>
-      </link>
-      <link xconnector="onSelectionStopStart">
-        <bind role="onSelection" component="icone_praia" />
-        <bind role="stop" component="icone_centro"></bind>
-        <bind role="stop" component="icone_praia" />
-        <bind role="stop" component="video_inicial"></bind>
-        <bind role="start" component="video_praia"></bind>
-      </link>
-    </body>
-  </ncl>
-  ]]></script>
-`
 _data.nclTask2CodeAOnly = `
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <speak xmlns="http://www.w3.org/2001/10/synthesis">
@@ -2315,6 +2156,214 @@ _data.nclTask2CodeC = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight: [19,22,28,29,31,37]">
   <![CDATA[` + _data.nclTask2CCodeOnly + ` ]]></script>
+`
+
+// ----------------------------------------
+// ncl page - recognition combination
+// ----------------------------------------
+
+_data.surveyJSON.pages[pageIndex].elements.push({
+  type: 'panel',
+  title: 'Combinação de Reconhecedores em NCL',
+  elements: [
+    {
+      name: 'nclIntro4',
+      type: 'html',
+      html: `
+        <div style="text-align: justify; width: 70%;">
+        <p>Um dos principais benefícios de interfaces multimodais é o uso
+        diferentes interações. Ou seja, as interações de usuários podem ser
+        realizadas por diferentes modalidades. Em nossos, conceitos essa
+        combinação de modalidades de interação pode ser feita utilizando uma
+        condição composta. Usar um operador 'OR' indica que qualquer uma das
+        interações é necessária. Já usar operador 'AND' indica que todas as
+        interações são necessárias em qualquer ordem. E por fim usar o operador
+        'SEQ' significa que as interações tem que ser feitas em sequência.</p> 
+
+        <p>Os blocos a seguir modificam a aplicação acima. Mas nessa
+        versão a mídia <em>midia_principal</em> é repetida quando usuário
+        interage através de voz ou (operador 'OR') através de gesto.</p>
+
+        <div id='nclIntro4CodeA'></div><br>
+        </div>
+      `
+    }
+  ]
+})
+
+_data.surveyJSON.pages[pageIndex].elements.push(
+  {
+    type: 'comment',
+    isRequired: true,
+    name: 'nclTask3Question',
+    rows: '47',
+    title: `Tarefa 3: Agora pedimos que edite o código NCL da Tarefa 2
+      (copiado  a seguir) para que seja possível a interação por voz
+      <strong>ou</strong> (operador OR) interação por gestos. Na interação por
+      gesto,você pode referenciar o arquivo de descrição
+      <em>rec_gestos.gml</em> apresentado nesta seção e considere que gesto de
+      mão para esquerda indica centro e gesto de mão para direita indica
+      praia.
+    `
+  }
+)
+
+_data.nclIntro4CodeA = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false; highlight:[14,17,25]">
+  <![CDATA[
+  <?xml version="1.0" encoding="ISO-8859-1"?>
+  <ncl>
+    <head>
+      <connectorBase>
+        <importBase documentURI="causalConnBase.ncl" alias="conEx"></importBase>
+      </connectorBase>
+    </head>
+    <body>
+      <port component="video_principal"></port>
+      <media id="video_principal" src="video.mp4">
+        <property name="size" value="100%, 100%"></property>
+        <area id="credits" begin="300s" end="360s"></area>
+      </media>
+      <media id="sinte_voz" src="sinte_voz.ssml">
+        <area label="pergunta"></area>
+      </media>
+      <input id="rec_voz" src="rec_voz.srgs">
+        <area label="repete"></repete>
+      </input>
+      <input id="rec_gesto" src="rec_gesto.gml">
+        <area label="esquerda"></repete>
+      </input>
+      <link xconnector="conEx#onBeginStart">
+        <bind role="onBegin" component="video_principal" interface="credits"></bind>
+        <bind role="start" component="sinte_voz" interface="pergunta"></bind>
+        <bind role="start" component="rec_voz"></bind>
+      </link>
+      <link xconnector="conEx#onOrRecognizeStopStart">
+        <bind role="onRecognize" component="rec_voz" interface="repete"/>
+        <bind role="onRecognize" component="rec_gesto" interface="esquerda"/>
+        <bind role="stop" component="rec_gesto"></bind>
+        <bind role="stop" component="rec_voz"></bind>
+        <bind role="stop" component="video_principal"/>
+        <bind role="start" component="video_principal"/>
+      </link>
+    </body>
+  </ncl>
+  ]]></script>
+`
+
+// ----------------------------------------
+// ncl page - user
+// ----------------------------------------
+
+_data.surveyJSON.pages[pageIndex].elements.push({
+  type: 'panel',
+  title: 'Grupo de Usuários em NCL',
+  elements: [
+    {
+      name: 'nclIntro5',
+      type: 'html',
+      html: `
+        <div style="text-align: justify; width: 70%;">
+        <p>Agora vamos detalhar o elemento <em>Grupo de Usuários</em> em NCL.
+        Ele permite identificar unicamente interações de cada usuário. Por
+        exemplo, o comando de voz apenas de um determinado usuário</p>
+
+        <p><em>Grupo de Usuários</em> é definido <strong>por um identificador,
+        número máximo de participantes e quais dispositivos estes
+        utilizam</strong>. Mais precisamente, esses dispositivos definem o que
+        um usuário necessita possuir para participar do grupo.</p>
+        
+        <p>Na nossa NCL estendida, o conceito de <em>Grupo de Usuários</em> é
+        implementado pelo elemento <em>&ltuserClass></em> dentro do
+        <em>&lthead></em>. O identificador é definido pelo atributo <em>id</em>
+        e os dispositivos são definidos por um arquivo de descrição definido em
+        <em>src</em>. Para essa descrição propomos um descrição  no formato
+        SPARQL. O trecho de código a seguir apresenta o arquivo de descrição de
+        usuários <em>gu_leap_microphone.sparql</em>. Essa descrição define que
+        cada usuário do grupo deve ter um microfone e um leapmotion.</p>
+
+        <div id='nclIntro5CodeA'></div><br>
+
+        <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em NCL, o trecho
+        de código a seguir apresenta uma nova versão da aplicação que reinicia
+        um vídeo dada uma interação por voz (modificações em destaque). Mas
+        nessa versão, ao invés de clicar, o vídeo será reiniciado ao segundo
+        usuário do usuário falar "repita vídeo".</p>
+
+        <div id='nclIntro5CodeB'></div>
+        </div>
+      `
+    }
+  ]
+})
+
+_data.surveyJSON.pages[pageIndex].elements.push(
+  {
+    type: 'comment',
+    name: 'nclTask4Question',
+    rows: '47',
+    title: ` Tarefa 4: Agora pedimos que edite novamente o trecho de código
+    NCL da Tarefa 2 (copiado a seguir) para que apenas o segundo usuário, de
+    um grupo de 3 usuários com microfone, possa realizar a interação por
+    voz.`
+  }
+)
+
+_data.nclIntro5CodeA = `
+  <script type="syntaxhighlighter" class="brush: plain; toolbar: false;
+  auto-links: false; highlight:[6,7]"> <![CDATA[
+  PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+  PREFIX prf: <http://www.wapforum.org/profiles/UAPROF/ccppschema-20010430>
+  SELECT ?person
+  WHERE {
+  ?person prf:component ?component.
+  ?component prf: name ?name FILTER regex(?name, "Leap Motion")
+    ?name FILTER regex(?name, "microfone")
+  }
+  ]]></script>
+`
+_data.nclIntro5CodeB = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false; highlight:[8,9,31]"> <![CDATA[
+  <?xml version="1.0" encoding="ISO-8859-1"?>
+  <ncl>
+    <head>
+      <connectorBase>
+        <importBase documentURI="causalConnBase.ncl" alias="conEx"></importBase>
+      </connectorBase>
+      <userBase>
+        <userClass id="gu_leap_microphone" max="2"
+          userClassDescription="gu_leap_microphone.sparql"></userClass>
+      </userBase>
+    </head>
+    <body>
+      <port component="video_principal"></port>
+      <media id="video_principal" src="video.mp4">
+        <property name="size" value="100%, 100%"></property>
+        <area id="credits" begin="300s" end="360s"></area>
+      </media>
+      <media id="sinte_voz" src="sinte_voz.srgs">
+        <area label="pergunta"></area>
+      </media>
+      <input id="rec_voz" src="rec_voz.srgs">
+        <area label="repete"></area>
+      </input>
+      <link xconnector="conEx#onBeginStart">
+        <bind role="onBegin" component="video_principal" interface="credits"></bind>
+        <bind role="start" component="sinte_voz" interface="pergunta"></bind>
+        <bind role="start" component="rec_voz"></bind>
+      </link>
+      <link xconnector="conEx#onRecognizeStart">
+        <bind role="onRecognize" component="rec_voz" interface="repete">
+          <linkParam name="user_id" value="gu_leap_microphone(2)"></linkParam>
+        </bind>
+        <bind role="stop" component="video_principal"></bind>
+        <bind role="start" component="video_principal"></bind>
+      </link>
+    </body>
+  </ncl>
+  ]]></script>
 `
 
 // ----------------------------------------
