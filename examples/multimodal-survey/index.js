@@ -232,9 +232,9 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       SyntaxHighlighter.highlight()
       break
     case 'nclIntro3':
-      // $('#nclIntro3CodeA').append(_data.nclIntro3CodeA)
+      $('#nclIntro3CodeA').append(_data.nclIntro3CodeA)
       $('#nclIntro3CodeB').append(_data.nclIntro3CodeB)
-      // $('#nclIntro3CodeC').append(_data.nclIntro3CodeC)
+      $('#nclIntro3CodeC').append(_data.nclIntro3CodeC)
       $('#nclIntro3CodeD').append(_data.nclIntro3CodeD)
       SyntaxHighlighter.highlight()
       break

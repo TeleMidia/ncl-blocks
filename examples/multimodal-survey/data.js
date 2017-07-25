@@ -1643,7 +1643,7 @@ _data.nclIntro1CodeD = `
   auto-links: false;"> <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <speak xmlns="http://www.w3.org/2001/10/synthesis">
-    <s id="repetir">você deseja repetir o vídeo?</s>
+    <s id="pertunta">você deseja repetir o vídeo?</s>
   </speak>
   ]]></script>
 `
@@ -1652,7 +1652,7 @@ _data.nclIntro1CodeE = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
   <media id="sinte_voz" src="sinte_voz.ssml">
-    <area label="repetir"></area>
+    <area label="pertunta"></area> <!-- referência id repetir de sinte_voz.ssml-->
   </media>
   ]]></script>
 `
@@ -1786,14 +1786,14 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>O conceito de <em>Reconhecedor</em> é definido por <strong>um identificador, seu
-        conteúdo e âncoras</strong>. Na nossa NCL, ele é implementado pelo
-        elemento <em>&ltinput></em>. O identificador é definido pelo atributo
-        <em>id</em> e a descrição de reconhecimento é definida pelo atributo
-        <em>src</em>. As âncoras são definidas pelo elemento <em>area</em> e
-        podem definir trechos delimitados da descrição com o atributo
-        <em>label</em>. Trechos de código ilustram exemplos de descrições de
-        reconhecimento.</p>
+        <p>O conceito de <em>Reconhecedor</em> é definido por <strong>um
+        identificador, seu conteúdo e âncoras</strong>. Na nossa NCL, ele é
+        implementado pelo elemento <em>&ltinput></em>. O identificador é
+        definido pelo atributo <em>id</em> e a descrição de reconhecimento é
+        definida pelo atributo <em>src</em>. As âncoras são definidas pelo
+        elemento <em>area</em> e podem definir trechos delimitados da descrição
+        com o atributo <em>label</em>. Trechos de código ilustram exemplos de
+        descrições de reconhecimento.</p>
 
         <p>O trecho de código a seguir ilustra o arquivo <em>rec_voz.srgs</em>
         que seguir o formato SRGS (Speech Recognition Grammar Specification)
@@ -1881,10 +1881,10 @@ _data.nclIntro3CodeC = `
         <area id="credits" begin="300s" end="360s"></area>
       </media>
       <media id="sinte_voz" src="sinte_voz.ssml">
-        <area label="pergunta"></area>
+        <area label="pergunta"></area> <!-- referência id pergunta de sinte_voz.ssml-->
       </media>
       <input id="rec_voz" src="rec_voz.srgs">
-        <area label="repete"></repete>
+        <area label="repete"></repete>  <!-- referência id repete de rec_voz.srgs-->
       </input>
       <link xconnector="conEx#onBeginStart">
         <bind role="onBegin" component="video_principal" interface="credits"></bind>
@@ -2065,13 +2065,13 @@ _data.nclIntro4CodeA = `
         <area id="credits" begin="300s" end="360s"></area>
       </media>
       <media id="sinte_voz" src="sinte_voz.ssml">
-        <area label="pergunta"></area>
+        <area label="pergunta"></area> <!-- referência id pergunta de sinte_voz.ssml-->
       </media>
       <input id="rec_voz" src="rec_voz.srgs">
-        <area label="repete"></repete>
+        <area label="repete"></repete> <!-- referência id repete de rec_voz.srgs-->
       </input>
       <input id="rec_gesto" src="rec_gesto.gml">
-        <area label="esquerda"></repete>
+        <area label="esquerda"></repete> <!-- referência id esquerda de rec_gesto.gml-->
       </input>
       <link xconnector="conEx#onBeginStart">
         <bind role="onBegin" component="video_principal" interface="credits"></bind>
@@ -2185,10 +2185,10 @@ _data.nclIntro5CodeB = `
         <area id="credits" begin="300s" end="360s"></area>
       </media>
       <media id="sinte_voz" src="sinte_voz.srgs">
-        <area label="pergunta"></area>
+        <area label="pergunta"></area> <!-- referência id pergunta de sinte_voz.srgs-->
       </media>
       <input id="rec_voz" src="rec_voz.srgs">
-        <area label="repete"></area>
+        <area label="repete"></area> <!-- referência id repete de rec_voz.srgs-->
       </input>
       <link xconnector="conEx#onBeginStart">
         <bind role="onBegin" component="video_principal" interface="credits"></bind>
@@ -2553,7 +2553,7 @@ _data.htmlIntro1CodeE = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
   <object id="sinte_voz" src="sinte_voz.ssml">
-    <area label="repetir"></area>
+    <area label="pergunta"></area> <!-- referência id pergunta de sinte_voz.ssml-->
   </object>
   ]]></script>
 `
@@ -2747,10 +2747,10 @@ _data.htmlIntro3CodeC = `
       <area id="credits" begin="300s" end="360s"><&#47area>
     </video>
     <object id="sinte_voz" src="sinte_voz.ssml">
-      <area label="pergunta"><&#47area>
+      <area label="pergunta"><&#47area> <!-- referência id pergunta de sinte_voz.ssml-->
     </object>
     <object id="rec_voz" src="rec_voz.srgs">
-      <area label="repete"><&#47area>
+      <area label="repete"><&#47area> <!-- referência id repete de rec_voz.srgs-->
     </object>
     <script>
       var sync1 = new Synchronism("onBeginStart")
@@ -2823,7 +2823,7 @@ _data.htmlTask2CodeCOnly = `
       <area id="credits" begin="300s" end="360s"></area>
     </video>
     <object id="sinte_voz" src="sinte_voz.ssml">
-      <area label="pergunta"></area>
+      <area label="pergunta"></area> 
     </object>
     <object id="rec_voz" src="rec_voz.srgs">
       <area label="repete"></repete>
@@ -2902,13 +2902,13 @@ _data.htmlIntro4CodeA = `
       <area id="credits" begin="300s" end="360s"><&#47area>
     </video>
     <object id="sinte_voz" src="sinte_voz.ssml">
-      <area label="pergunta"><&#47area>
+      <area label="pergunta"><&#47area> <!-- referência id pergunta de sinte_voz.ssml-->
     </object>
     <object id="rec_voz" src="rec_voz.srgs">
-      <area label="repete"><&#47area>
+      <area label="repete"><&#47area> <!-- referência id repete de rec_voz.srgs-->
     </object>
     <object id="rec_gesto" src="rec_gesto.gml">
-      <area label="esquerda"><&#47area>
+      <area label="esquerda"><&#47area> <!-- referência id esquerda de rec_gesto.gml-->
     </object>
     <script>
       var sync1 = new Synchronism("onBeginStart")
@@ -3022,10 +3022,10 @@ _data.htmlIntro5CodeB = `
       <area id="credits" begin="300s" end="360s"><&#47area>
     </video>
     <object id="sinte_voz" src="sinte_voz.ssml">
-      <area label="pergunta"><&#47area>
+      <area label="pergunta"><&#47area>  <!-- referência id sinte_voz de sinte_voz.ssml-->
     </object>
     <object id="rec_voz" src="rec_voz.srgs">
-      <area label="repete"><&#47area>
+      <area label="repete"><&#47area> <!-- referência id repete de rec_voz.srgs-->
     </object>
     <script>
       var sparql = 
