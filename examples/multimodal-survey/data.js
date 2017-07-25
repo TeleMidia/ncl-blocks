@@ -279,7 +279,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     <p>Em nossa pesquisa propomos quatro conceitos que são necessários para
     uma linguagem multimídia suportar interações multimodais. Mais
     precisamente, esses conceitos são os de <em>Mídia, Reconhecedor,
-    Sincronismo</em> e <em>Grupo de Usuários</em>.</p>
+    Relacionamento</em> e <em>Grupo de Usuários</em>.</p>
    
     <p>Para evitar possíveis dificuldades com a sintaxe das linguagens,
     apresentaremos esses conceitos utilizando uma abordagem de
@@ -312,7 +312,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
-  title: 'Mídia e Sincronismo',
+  title: 'Mídia e Relacionamento',
   elements: [
     {
       type: 'html',
@@ -355,13 +355,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'conceptsIntro2',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>O conceito de <em>Sincronismo</em> permite definir o comportamento
+        <p>O conceito de <em>Relacionamento</em> permite definir o comportamento
         das aplicações. Ele é baseado em causalidade e definido por <strong>um
         conjunto de condições e um conjunto de ações</strong>. As ações são
         executadas em sequência quando as condições são satisfeitas.</p>
 
-        <p>Na nossa representação de blocos, o <em>Sincronismo</em> é juntato um
-        um bloco <em>Sincronismo</em> com blocos de condições e blocos de ações.
+        <p>Na nossa representação de blocos, o <em>Relacionamento</em> é juntato um
+        um bloco <em>Relacionamento</em> com blocos de condições e blocos de ações.
         Blocos de ações podem ser de iniciar ("inicie") ou parar ("pare") uma
         <em>Mídia</em> ou <em>Reconhecedor</em>. Já as condições podem ser
         simples ou compostas. Blocos de condições simples podem ser de início
@@ -376,7 +376,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         estabelecida.</p>
 
         <p>O relacionamento entre condições e ações é definido juntando um
-        bloco de <em>Sincronismo</em> com blocos de condições e ações  A tabela
+        bloco de <em>Relacionamento</em> com blocos de condições e ações  A tabela
         a seguir mostra exemplos de junções de blocos.</p>
         
         <table align="center" class="table-bordered table-striped
@@ -418,11 +418,11 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         e <em>icone_repetir</em>).
 
         <p>Para o comportamento, essa aplicação utiliza três
-        <em>Sincronismo</em>. O primeiro <em>Sincronismo</em> define
+        <em>Relacionamento</em>. O primeiro <em>Relacionamento</em> define
         <em>midia_principal</em> inicia junto com a aplicação. O segundo
-        <em>Sincronismo</em> define que quando a <em>midia_principal</em>
+        <em>Relacionamento</em> define que quando a <em>midia_principal</em>
         alcançar o seu trecho de <em>credito</em> a mídia <em>icone_repetir</em>
-        deve ser iniciada. O terceiro <em>Sincronismo</em> define que quando a
+        deve ser iniciada. O terceiro <em>Relacionamento</em> define que quando a
         mídia <em>icone_repetir</em> for selecionada, a <em>midia_principal</em>
         deve ser reiniciada (terminada e iniciada)</p>
 
@@ -744,13 +744,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Essa aplicação utiliza duas <em>Mídia</em> (<em>midia_principal</em>
         e <em>sinte_voz</em>) e um <em>Reconhecedor</em> (<em>rec_voz</em>).
         
-        <p>Para o comportamento, a aplicação utiliza três <em>Sincronismo</em>s.
-        O primeiro <em>Sincronismo</em> define que <em>midia_principal</em> é
-        iniciada com a aplicação. O segundo <em>Sincronismo</em> define que
+        <p>Para o comportamento, a aplicação utiliza três <em>Relacionamento</em>s.
+        O primeiro <em>Relacionamento</em> define que <em>midia_principal</em> é
+        iniciada com a aplicação. O segundo <em>Relacionamento</em> define que
         quando a <em>midia_principal</em> alcançar o seu trecho de
         <em>creditos</em> (300s), a frase da âncora <em>pergunta</em> é
         sintetizada e o <em>Reconhecedor</em> <em>rec_voz</em> inicia o
-        reconhecimento. O último <em>Sincronismo</em> define que quando for
+        reconhecimento. O último <em>Relacionamento</em> define que quando for
         reconhecida a âncora <em>repetir</em>,
         <em>midia_principal</em> deve ser reiniciada (terminada e iniciada).</p>
         </div>
@@ -1354,7 +1354,7 @@ _data.surveyJSON.pages.push({
         <div style="text-align: justify; width: 70%;">
         <p>Por favor, opine sobre os pontos a seguir. Eles visam capturar
         evidências sobre os conceitos que apresentamos (<em>Mídia, Reconhecedor,
-        Sincronismo</em> e <em>Grupo de Usuários</em>).</p>
+        Relacionamento</em> e <em>Grupo de Usuários</em>).</p>
         </div>
       `
     },
@@ -1435,7 +1435,7 @@ _data.surveyJSON.pages[pageIndex].elements.push(
       <p>A tabela seguir apresenta como propomos instanciação dos conceitos de
       nossa pesquisa na versão atual da NCL (3.1). O conceito de
       <em>Mídia</em> é implementado pelo elemento <em>&ltmedia></em>. O
-      conceito de <em>Sincronismo</em> é implementado pelo elemento
+      conceito de <em>Relacionamento</em> é implementado pelo elemento
       <em>&ltlink></em>. Por fim os conceitos de <em>Reconhecedor</em> e
       <em>Grupo de usuários</em> não são implementados.</p></p>
 
@@ -1452,7 +1452,7 @@ _data.surveyJSON.pages[pageIndex].elements.push(
           <td>manter</td>
         </tr>
         <tr>
-          <td><em>Sincronismo</em></td>
+          <td><em>Relacionamento</em></td>
           <td><em>&ltport> e <em>&ltlink></em></td>
           <td>manter</td>
         </tr>
@@ -1484,7 +1484,7 @@ _data.surveyJSON.pages[pageIndex].elements.push(
 
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
-  title: 'Mídia e Sincronismo em NCL',
+  title: 'Mídia e Relacionamento em NCL',
   elements: [
     {
       name: 'nclIntro1',
@@ -1531,7 +1531,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>O conceito de <em>Sincronismo</em> é baseado em causalidade e
+        <p>O conceito de <em>Relacionamento</em> é baseado em causalidade e
         definido por <strong>um conjunto de condições e um conjunto de
         ações</strong>. Na NCL esse conceito já implementado pelos elementos
         <em>&ltport></em> e <em>&ltlink></em>. Os elementos <em>&ltport></em>
@@ -2237,7 +2237,7 @@ _data.surveyJSON.pages.push({
         <div style="text-align: justify; width: 70%;">
         <p>Por favor, opine sobre os pontos a seguir. Eles visam capturar
         evidências de como os conceitos apresentados na seção
-        anterior(<em>Mídia, Reconhecedor, Sincronismo</em> e <em>Grupo de
+        anterior(<em>Mídia, Reconhecedor, Relacionamento</em> e <em>Grupo de
         Usuários</em>) estão instanciados na NCL para suportar interações
         multimodais.</p>
         </div>
@@ -2331,7 +2331,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     nossa pesquisa na versão atual da HTML (5.0). O conceito de
     <em>Mídia</em> é parcialmente implementado por elementos como
     <em>&ltimg></em>, <em>&ltvideo></em> e <em>&ltaudio></em>, pois estes
-    não possuem nosso conceito de âncora. O conceito de <em>Sincronismo</em>
+    não possuem nosso conceito de âncora. O conceito de <em>Relacionamento</em>
     é parcialmente implementado pelo elemento <em>script</em>, pois estes
     permitem definir comportamentos na aplicação, como interações de usuário
     por apontador. Por fim os conceitos de <em>Reconhecedor</em> e <em>Grupo
@@ -2351,7 +2351,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <td>estender esses elementos com <em>&ltarea></em></td>
       </tr>
       <tr>
-        <td><em>Sincronismo</em></td>
+        <td><em>Relacionamento</em></td>
         <td><em>&ltscript></em></td>
         <td><em>&ltscript></em> com o objeto JavaScript
         <em>Synchronism</em></td>
@@ -2382,7 +2382,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
-  title: 'Mídia e Sincronismo em HTML',
+  title: 'Mídia e Relacionamento em HTML',
   elements: [
     {
       name: 'htmlIntro1',
@@ -2441,7 +2441,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>O conceito de <em>Sincronismo</em> é baseado em causalidade e
+        <p>O conceito de <em>Relacionamento</em> é baseado em causalidade e
         definido por <strong>um conjunto de condições e um conjunto de
         ações</strong>. Na nossa HTML, ele é implementado pelo elemento
         <em>&ltscript></em>, com um código JavaScript que utiliza o objeto
@@ -3087,7 +3087,7 @@ _data.surveyJSON.pages.push({
         <div style="text-align: justify; width: 70%;">
         <p>Por favor, opine sobre os pontos a seguir. Eles visam capturar
         evidências de como os conceitos apresentados na seção anterior
-        (<em>Mídia, Reconhecedor, Sincronismo</em> e <em>Grupo de Usuários</em>)
+        (<em>Mídia, Reconhecedor, Relacionamento</em> e <em>Grupo de Usuários</em>)
         estão instanciados na HTML para suportar interações multimodais.</p>
         </div>
       `
