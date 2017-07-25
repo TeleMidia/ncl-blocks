@@ -95,12 +95,10 @@ _data.surveyJSON.pages.push({
         gestos.
 
         <div class='text-center'>
-          <img class='img-thumbnail' style='height: 180px'
+          <img class='img-thumbnail' style='height: 100px'
           src='assets/voice.jpg'>
-          <img class='img-thumbnail' style='height:
-          180px' src='assets/leap.jpg'>
-          <img class='img-thumbnail'
-          style='height: 180px' src='assets/kinect.jpg'>
+          <img class='img-thumbnail' style='height: 100px' src='assets/leap.jpg'>
+          <img class='img-thumbnail' style='height: 100px' src='assets/kinect.jpg'>
         </div>
         <br>
 
@@ -127,10 +125,10 @@ _data.surveyJSON.pages.push({
         frames), e apontador e tecla para capturar interações dos usuários.</p>
 
         <div class='text-center'>
-          <img class='img-thumbnail' style='height: 450px'
+          <img class='img-thumbnail' style='height: 400px'
           src='assets/overview1.png'>
           <span style="margin-left:10px"></span>
-          <img class='img-thumbnail' style='height: 450px'
+          <img class='img-thumbnail' style='height: 400px'
           src='assets/overview2.png'>
         </div>
         <br>
@@ -290,10 +288,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     <strong>MIT App</strong> Inventor</strong> (ilustrados a seguir).</p>
 
     <div class='text-center'>
-      <img class='img-thumbnail' style='height: 270px'
+      <img class='img-thumbnail' style='height: 200px'
       src='assets/scratch.jpg'>
       <span style="margin-left:10px"></span>
-      <img class='img-thumbnail' style='height: 270px'
+      <img class='img-thumbnail' style='height: 200px'
       src='assets/appinventor.jpg'>
     </div>
     <br>
