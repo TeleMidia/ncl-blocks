@@ -65,13 +65,13 @@ NCLBlocks.Msg.MICROFONE = 'microfone'
 NCLBlocks.Msg.CONDITION = 'condição'
 NCLBlocks.Msg.CONDITION_SIMPLE = 'condição simples'
 NCLBlocks.Msg.CONDITIONS = 'Sincronismo - condições'
-NCLBlocks.Msg.ONBEGIN = 'ao começar'
-NCLBlocks.Msg.ONEND = 'ao terminar'
-NCLBlocks.Msg.ONPAUSE = 'ao pausar'
-NCLBlocks.Msg.ONRESUME = 'ao resumir'
-NCLBlocks.Msg.ONSELECTION = 'ao selecionar'
-NCLBlocks.Msg.ONRECOGNIZE = 'ao reconhecer'
-NCLBlocks.Msg.ONRECOGNIZE_FROM_USER = 'do usuário'
+NCLBlocks.Msg.ONBEGIN = 'for iniciado'
+NCLBlocks.Msg.ONEND = 'for terminado'
+NCLBlocks.Msg.ONPAUSE = 'for pausado'
+NCLBlocks.Msg.ONRESUME = 'for resumido'
+NCLBlocks.Msg.ONSELECTION = 'for selecionado'
+NCLBlocks.Msg.ONRECOGNIZE = 'for reconhecido'
+NCLBlocks.Msg.ONRECOGNIZE_FROM_USER = 'for reconhecido dado usuário'
 // NCLBlocks.Msg.COMPOUND_CONDITION_SEQ = 'em sequencia'
 // NCLBlocks.Msg.COMPOUND_CONDITION_AND = 'todos entre'
 // NCLBlocks.Msg.COMPOUND_CONDITION_OR = 'um entre'
@@ -1069,8 +1069,8 @@ Blockly.Blocks.onbegin = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.ONBEGIN,
         15, 15, '*'))
-      .appendField(NCLBlocks.Msg.ONBEGIN)
       .appendField(new IdFieldDropdown(NCLBlocks.Types.NODE), 'id')
+      .appendField(NCLBlocks.Msg.ONBEGIN)
   }
 }
 Object.assign(Blockly.Blocks.onbegin, NclBlockMixin)
@@ -1080,8 +1080,8 @@ Blockly.Blocks.onend = {
     this.initAsCondition()
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.ONEND, 15, 15, '*'))
-      .appendField(NCLBlocks.Msg.ONEND)
       .appendField(new IdFieldDropdown(NCLBlocks.Types.NODE), 'id')
+      .appendField(NCLBlocks.Msg.ONEND)
   }
 }
 Object.assign(Blockly.Blocks.onend, NclBlockMixin)
@@ -1092,8 +1092,8 @@ Blockly.Blocks.onpause = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.ONPAUSE,
         15, 15, '*'))
-      .appendField(NCLBlocks.Msg.ONPAUSE)
       .appendField(new IdFieldDropdown(NCLBlocks.Types.NODE), 'id')
+      .appendField(NCLBlocks.Msg.ONPAUSE)
   }
 }
 Object.assign(Blockly.Blocks.onpause, NclBlockMixin)
@@ -1104,8 +1104,8 @@ Blockly.Blocks.onresume = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.ONRESUME,
         15, 15, '*'))
-      .appendField(NCLBlocks.Msg.ONRESUME)
       .appendField(new IdFieldDropdown(NCLBlocks.Types.NODE), 'id')
+      .appendField(NCLBlocks.Msg.ONRESUME)
   }
 }
 Object.assign(Blockly.Blocks.onresume, NclBlockMixin)
@@ -1116,8 +1116,8 @@ Blockly.Blocks.onselection = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.ONSELECTION,
         15, 15, '*'))
-      .appendField(NCLBlocks.Msg.ONSELECTION)
       .appendField(new IdFieldDropdown(NCLBlocks.Types.MEDIA), 'id')
+      .appendField(NCLBlocks.Msg.ONSELECTION)
   }
 }
 Object.assign(Blockly.Blocks.onselection, NclBlockMixin)
@@ -1128,8 +1128,8 @@ Blockly.Blocks.onrecognize = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.ONRECOGNIZE,
         15, 15, '*'))
-      .appendField(NCLBlocks.Msg.ONRECOGNIZE)
       .appendField(new IdFieldDropdown(NCLBlocks.Types.INPUT), 'id')
+      .appendField(NCLBlocks.Msg.ONRECOGNIZE)
   }
 }
 Object.assign(Blockly.Blocks.onrecognize, NclBlockMixin)
@@ -1140,7 +1140,6 @@ Blockly.Blocks.onrecognizeuser = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage(NCLBlocks.Icons.ONRECOGNIZE,
         15, 15, '*'))
-      .appendField(NCLBlocks.Msg.ONRECOGNIZE)
       .appendField(new IdFieldDropdown(NCLBlocks.Types.INPUT), 'id')
       .appendField(NCLBlocks.Msg.ONRECOGNIZE_FROM_USER)
       .appendField(new IdFieldDropdown(NCLBlocks.Types.USER), 'user_id')
