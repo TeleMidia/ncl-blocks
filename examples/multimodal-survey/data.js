@@ -54,7 +54,6 @@ _data.surveyJSON.pages.push({
         </ul>
         <p>Caso esteja de acordo, prossiga.</p>
         </div>
-
       `
     },
     {
@@ -312,7 +311,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     <p>Vamos agora detalhar esses conceitos e perdir que você realize algumas
     tarefas. <strong>Ressaltamos que essas tarefas NÃO se destinam a avaliar
     seus conhecimentos, mas sim capturar evidências de nossa
-    pesquisa.</strong>.</p>
+    pesquisa.</strong></p>
     </div>
    `
 })
@@ -1516,7 +1515,7 @@ _data.surveyJSON.pages[pageIndex].elements.push(
       <p>Vamos agora detalhar esses conceitos e perdir que você realize algumas
       tarefas. <strong>Ressaltamos que essas tarefas NÃO se destinam a avaliar
       seus conhecimentos, mas sim capturar evidências de nossa
-      pesquisa.</strong>.</p>
+      pesquisa.</strong></p>
       </div>
     `
   }
@@ -1578,23 +1577,18 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div id='nclIntro1CodeC'></div>
 
         <p>Além de mídias como imagens, áudio e vídeos, o elemento
-        <em>&ltmedia></em> de nossa NCL estendida deve suportar outras
-        modalidades de conteúdo como sintetização de voz e avatares humanóides.
-        Por exemplo, os trechos de código a seguir ilustram o uso de
-        sintetização de voz em nossa NCL.</p>
-
-        <p>O primeiro trecho de código apresenta o arquivo
-        <em>sinte_voz.srgs</em>, que é uma descrição de sintetização de voz no
-        formato SSML. Em particular, esse arquivo define a frase a ser
-        sintetizada "você deseja repetir o vídeo?".</p>
-
-        <div id='nclIntro1CodeD'></div>
-
-        O segundo trecho de código define uma <em>&ltmedia></em> com
+        <em>&ltmedia></em> de nossa NCL deve suportar outras modalidades de
+        conteúdo, como a sintetização de voz. Os trechos de código a seguir
+        ilustram o uso de sintetização de voz em nossa NCL. O primeiro apresenta
+        o arquivo <em>sinte_voz.ssml</em> que segue o formato SSML (Speech
+        Synthesis Markup Language) para sintetização de voz. Ele possui uma
+        frase com o identificador "pergunta" que sintetizada "você deseja
+        repetir o vídeo?". O segundo define uma <em>&ltmedia></em> com
         identificador <em>sinte_voz</em>, que tem como conteúdo o arquivo
-        <em>sinte_voz.srgs</em>. Essa <em>&ltmedia></em> possui uma âncora que
+        <em>sinte_voz.ssml</em>. Essa <em>&ltmedia></em> possui uma âncora que
         indica a frase a ser sintetizada.</p>
 
+        <div id='nclIntro1CodeD'></div>
         <div id='nclIntro1CodeE'></div>
       `
     },
@@ -1882,17 +1876,17 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         com o atributo <em>label</em>. Trechos de código ilustram exemplos de
         descrições de reconhecimento.</p>
 
-        <p>O trecho de código a seguir apresenta o arquivo
-        <em>rec_voz.srgs</em>. Esse arquivo é uma descrição de reconhecimento de
-        voz no formato SRGS. Em particular, ele define uma porção chamada
+        <p>O trecho de código a seguir ilustra o arquivo <em>rec_voz.srgs</em>
+        que seguir o formato SRGS (Speech Recognition Grammar Specification)
+        reconhecimento de voz. Ele possui uma frase com o identificador
         <em>repete</em> que define o reconhecimento de voz "repita vídeo".</p>
 
         <div id='nclIntro3CodeA'></div><br>
 
-        <p>O trecho de código a seguir apresenta o arquivo
-        <em>rec_gestos.gml</em>. Esse arquivo é uma descrição de reconhecimento
-        de voz no formato GML. Em particular, ele define duas porções chamadas
-        <em>swipe_esquerda</em> e  <em>swipe_direita</em>que definem acenos de
+        <p>O trecho de código a seguir ilustra o arquivo <em>rec_gestos.gml</em>
+        que segue o formato GML(Gesture Markup Language) para reconhecimento de
+        gestos de mão. Ele possui dois gestos com os identificadores
+        <em>swipe_esquerda</em> e <em>swipe_direita</em>, que definem gestos de
         mão para esquerda e para direita, respectivamente</p>
 
         <div id='nclIntro3CodeB'></div><br>
@@ -1938,38 +1932,14 @@ _data.nclIntro3CodeA = `
 `
 _data.nclIntro3CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight: [3,18]"> <![CDATA[
+  auto-links: false; highlight: [3,6]"> <![CDATA[
   <?xml version="1.0" encoding="UTF-8"?>
   <GestureMarkupLanguage>
     <Gesture id="swipe_esquerda" type="swipe">
-      <match><action><initial>
-        <event touch_event="touchEnd"/>
-        <cluster point_number_max="5" acceleration_max="0.5"/>
-      </initial></action></match>
-      <analysis><algorithm class="kinemetric" type="discrete">
-          <library module="swipe" />
-          <variables><property id="dx" result="dx"/></variables>
-          <delta_filter><property ref="dx" active="true" delta_max="-0.01"/>
-          </delta_filter>
-      </algorithm></analysis>
-      <mapping><update dispatch_type="discrete" dispatch_mode="cluster_remove">
-        <gesture_event type="custom"></gesture_event>
-      </update></mapping>
+      ...
     </Gesture>
     <Gesture id="swipe_direta" type="swipe">
-      <match><action><initial>
-        <event touch_event="touchEnd"/>
-        <cluster point_number_max="5" acceleration_max="0.5"/>
-      </initial></action></match>
-      <analysis><algorithm class="kinemetric" type="discrete">
-          <library module="swipe" />
-          <variables><property id="dx" result="dx"/></variables>
-          <delta_filter><property ref="dx" active="true" delta_min="0.01"/>
-          </delta_filter>
-      </algorithm></analysis>
-      <mapping><update dispatch_type="discrete" dispatch_mode="cluster_remove">
-        <gesture_event type="custom"></gesture_event>
-      </update></mapping>
+      ...
     </Gesture>
   </GestureMarkupLanguage>
   ]]></script>
@@ -2555,17 +2525,20 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         avatares humanoides. Por exemplo, os trechos de código a seguir ilustram
         o uso de sintetização de voz em nossa HTML.</p>
 
-        <p>O primeiro trecho de código apresenta o arquivo
-        <em>sinte_voz.srgs</em>, que é uma descrição de sintetização de voz no
-        formato SSML. Em particular, esse arquivo define a frase a ser
-        sintetizada "você deseja repetir o vídeo?".</p>
+
+        <p>Além de mídias como imagens, áudio e vídeos, o elemento
+        <em>&ltmedia></em> de nossa HTML deve suportar outras modalidades de
+        conteúdo, como a sintetização de voz. Os trechos de código a seguir
+        ilustram o uso de sintetização de voz em nossa HTML. O primeiro
+        apresenta o arquivo <em>sinte_voz.ssml</em> que segue o formato SSML
+        (Speech Synthesis Markup Language) para sintetização de voz. Ele possui
+        uma frase com o identificador "pergunta" que sintetizada "você deseja
+        repetir o vídeo?". O segundo define uma <em>&ltmedia></em> com
+        identificador <em>sinte_voz</em>, que tem como conteúdo o arquivo
+        <em>sinte_voz.ssml</em>. Essa <em>&ltmedia></em> possui uma âncora que
+        indica a frase a ser sintetizada.</p>
 
         <div id='htmlIntro1CodeD'></div>
-
-        O segundo trecho de código define elemento <em>&ltvideo></em> com
-        identificador <em>sinte_voz</em> que tem como conteúdo o arquivo
-        <em>sinte_voz.srgs</em>. Esse <em>&ltvideo></em> possui uma âncora que
-        indica a frase a ser sintetizada.</p>
 
         <div id='htmlIntro1CodeE'></div>
 
@@ -2805,17 +2778,17 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         atributo <em>label</em>. Trechos de código serão apresentados a seguir
         para ilustrar esse conceito em HTML.</p>
 
-        <p>O trecho de código a seguir apresenta o arquivo
-        <em>rec_voz.srgs</em>. Esse arquivo é uma descrição de reconhecimento de
-        voz no formato SRGS. Em particular, ele define uma porção chamada
+        <p>O trecho de código a seguir ilustra o arquivo <em>rec_voz.srgs</em>
+        que seguir o formato SRGS (Speech Recognition Grammar Specification)
+        reconhecimento de voz. Ele possui uma frase com o identificador
         <em>repete</em> que define o reconhecimento de voz "repita vídeo".</p>
 
         <div id='htmlIntro3CodeA'></div><br>
 
-        <p>O trecho de código a seguir apresenta o arquivo
-        <em>rec_gestos.gml</em>. Esse arquivo é uma descrição de reconhecimento
-        de voz no formato GML. Em particular, ele define duas porções chamadas
-        <em>swipe_esquerda</em> e  <em>swipe_direita</em>que definem acenos de
+        <p>O trecho de código a seguir ilustra o arquivo <em>rec_gestos.gml</em>
+        que segue o formato GML(Gesture Markup Language) para reconhecimento de
+        gestos de mão. Ele possui dois gestos com os identificadores
+        <em>swipe_esquerda</em> e <em>swipe_direita</em>, que definem gestos de
         mão para esquerda e para direita, respectivamente</p>
 
         <div id='htmlIntro3CodeB'></div><br>
@@ -2845,20 +2818,6 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <div id='htmlIntro3CodeC'></div>
 
-        <p>Um dos principais benefícios de interfaces multimodais é o uso
-        diferentes interações, ou seja, as interações de usuários podem ser
-        realizadas por diferentes modalidades. Em nossos, conceitos essa
-        combinação de modalidades de interação pode ser feita utilizando uma
-        condição composta. Usar um operador OR indica que qualquer uma das
-        interações é necessária. Já usar operador AND indica que todas as
-        interações são necessárias em qualquer ordem. E por fim usar o operador
-        SEQ significa que as interações tem que ser feitas em sequência.</p> 
-
-        <p>Os blocos a seguir modificam a aplicação acima. Mas nessa
-        versão a mídia <em>midia_principal</em> é repetida quando usuário
-        interage através de voz ou (operador OR) através de gesto.</p>
-
-        <div id='htmlIntro3CodeD'></div><br>
         </div>
       `
     }
