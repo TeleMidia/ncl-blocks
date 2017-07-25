@@ -415,7 +415,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         </div>
 
-        <div id='conceptsIntro2B'></div>
+        <div id='conceptsIntro1B'></div>
       `
     }
   ]
@@ -654,7 +654,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
   elements: [
     {
       type: 'html',
-      name: 'conceptsIntro3',
+      name: 'conceptsIntro2',
       html: `
         <div style="text-align: justify; width: 70%;">
         <p>Além de mídias como imagens, áudio e vídeos, o conceito
@@ -666,7 +666,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         vídeo?".</p>
         </div>
 
-        <div id='conceptsIntro3A'></div><br>
+        <div id='conceptsIntro2A'></div><br>
 
         <div style="text-align: justify; width: 70%;">
         <p>O conceito <em>Reconhecedor</em> permite reconhecimento de interações
@@ -688,7 +688,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>repetir</em> que reconhece o comando de voz "repita vídeo". 
         </div>
 
-        <div id='conceptsIntro3B'></div><br>
+        <div id='conceptsIntro2B'></div><br>
 
         <p>Para ilustrar o uso desse conceito em uma aplicação, os
         blocos a seguir definem uma nova versão da aplicação que reinicia um
@@ -710,13 +710,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         (terminada e iniciada).</p>
         </div>
 
-        <div id='conceptsIntro3C'></div><br>
+        <div id='conceptsIntro2C'></div><br>
       `
     }
   ]
 })
 
-_data.conceptsIntro3BlocksA = `
+_data.conceptsIntro2BlocksA = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
       <field name="id">sinte_voz</field>
@@ -731,7 +731,7 @@ _data.conceptsIntro3BlocksA = `
   </xml>
 `
 
-_data.conceptsIntro3BlocksB = `
+_data.conceptsIntro2BlocksB = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="20" y="20">
       <field name="id">rec_voz</field>
@@ -746,7 +746,7 @@ _data.conceptsIntro3BlocksB = `
   </xml>
 `
 
-_data.conceptsIntro3BlocksC = `
+_data.conceptsIntro2BlocksC = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
       <field name="id">midia_principal</field>
@@ -971,7 +971,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
   elements: [
     {
       type: 'html',
-      name: 'conceptsIntro4',
+      name: 'conceptsIntro3',
       html: `
         <div style="text-align: justify; width: 70%;"> 
         <p>Um dos principais benefícios de interfaces multimodais é o uso
@@ -983,7 +983,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         como conteúdo. Esse conteúd o utiliza dois trechos, esquerda e direita,
         para definir gestos de mão nessas direções.</p>
 
-        <div id='conceptsIntro4A'></div><br>
+        <div id='conceptsIntro3A'></div><br>
 
         <p>Em nossa representação de blocos, a combinação de modalidades de
         interação pode ser feita utilizando uma condição composta. Usar um
@@ -997,13 +997,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         interage através de  voz ou (operador OR) através de gesto.</p>
         </div>
 
-        <div id='conceptsIntro4B'></div><br>
+        <div id='conceptsIntro3B'></div><br>
       `
     }
   ]
 })
 
-_data.conceptsIntro4BlocksA = `
+_data.conceptsIntro3BlocksA = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="20" y="20">
       <field name="id">rec_gesto</field>
@@ -1021,7 +1021,7 @@ _data.conceptsIntro4BlocksA = `
   </xml>
 `
 
-_data.conceptsIntro4BlocksB = `
+_data.conceptsIntro3BlocksB = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
       <field name="id">midia_principal</field>
@@ -1172,7 +1172,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
   elements: [
     {
       type: 'html',
-      name: 'conceptsIntro5',
+      name: 'conceptsIntro4',
       html: `
         <div style="text-align: justify; width: 70%;">
         <p>O conceito de <em>Grupo de usuários</em> permite identificar
@@ -1189,7 +1189,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         membros, cada qual com seu reconhecedor de gestos (e.g. LeapMotion).</p>
         </div>
 
-        <div id='conceptsIntro5A'></div><br>
+        <div id='conceptsIntro4A'></div><br>
 
         <div style="text-align: justify; width: 70%;"> 
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em>, os blocos a
@@ -1198,13 +1198,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         segundo usuário falar "repita vídeo".</p>
         </div>
 
-        <div id='conceptsIntro5B'></div>
+        <div id='conceptsIntro4B'></div>
       `
     }
   ]
 })
 
-_data.conceptsIntro5BlocksA = `
+_data.conceptsIntro4BlocksA = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="user" id="IPnvWeecZqr2WM|RGxm|" x="20" y="20">
       <mutation length="1"></mutation>
@@ -1217,7 +1217,7 @@ _data.conceptsIntro5BlocksA = `
   </xml>
 `
 
-_data.conceptsIntro5BlocksB = `
+_data.conceptsIntro4BlocksB = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
   <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
     <field name="id">midia_principal</field>
@@ -1706,7 +1706,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
   title: 'Parte 2',
   elements: [
     {
-      name: 'nclIntro3',
+      name: 'nclIntro2',
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
@@ -1722,8 +1722,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>sinte_voz.ssml</em>. Essa <em>&ltmedia></em> possui uma âncora que
         indica a frase a ser sintetizada.</p>
 
-        <div id='nclIntro3CodeA'></div>
-        <div id='nclIntro3CodeB'></div>
+        <div id='nclIntro2CodeA'></div>
+        <div id='nclIntro2CodeB'></div>
 
         <p>O conceito de <em>Reconhecedor</em> é definido por <strong>um
         identificador, seu conteúdo e âncoras</strong>. Na nossa NCL, ele é
@@ -1738,8 +1738,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         reconhecimento de voz. Ele possui uma frase com o identificador
         <em>repete</em> que define o reconhecimento de voz "repita vídeo".</p>
 
-        <div id='nclIntro3CodeC'></div>
-        <div id='nclIntro3CodeD'></div><br>
+        <div id='nclIntro2CodeC'></div>
+        <div id='nclIntro2CodeD'></div><br>
 
         <p>Para ilustrar o uso desse conceito em uma aplicação NCL, o trecho de
         código a seguir apresenta uma nova versão da aplicação que reinicia um
@@ -1763,7 +1763,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         reconhecida a âncora <em>repete</em>, a <em>midia_principal</em> deve
         ser reiniciada (terminada e iniciada).</p>
 
-        <div id='nclIntro3CodeE'></div>
+        <div id='nclIntro2CodeE'></div>
 
         </div>
       `
@@ -1771,7 +1771,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
   ]
 })
 
-_data.nclIntro3CodeA = `
+_data.nclIntro2CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
@@ -1780,7 +1780,7 @@ _data.nclIntro3CodeA = `
   </speak>
   ]]></script>
 `
-_data.nclIntro3CodeB = `
+_data.nclIntro2CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
   <media id="sinte_voz" src="sinte_voz.ssml">
@@ -1789,7 +1789,7 @@ _data.nclIntro3CodeB = `
   ]]></script>
 `
 
-_data.nclIntro3CodeC = `
+_data.nclIntro2CodeC = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight: [3]"> <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
@@ -1799,7 +1799,7 @@ _data.nclIntro3CodeC = `
   ]]></script>
 `
 
-_data.nclIntro3CodeD = `
+_data.nclIntro2CodeD = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;">
   <![CDATA[
@@ -1808,7 +1808,7 @@ _data.nclIntro3CodeD = `
   </input>
   ]]></script>
 `
-_data.nclIntro3CodeE = `
+_data.nclIntro2CodeE = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight:[14,17,25]">
   <![CDATA[
@@ -1968,7 +1968,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
   title: 'Parte 3',
   elements: [
     {
-      name: 'nclIntro4',
+      name: 'nclIntro3',
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
@@ -1981,8 +1981,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>swipe_direita</em>, que definem gestos de mão para esquerda e para
         direita, respectivamente.</p>
 
-        <div id='nclIntro4CodeA'></div>
-        <div id='nclIntro4CodeB'></div><br>
+        <div id='nclIntro3CodeA'></div>
+        <div id='nclIntro3CodeB'></div><br>
         
         <p> Em nossa NCL, conceitos essa combinação de modalidades de interação
         pode ser feita utilizando uma condição composta. Usar um operador 'OR'
@@ -1995,14 +1995,14 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         versão a mídia <em>midia_principal</em> é repetida quando usuário
         interage através de voz ou (operador 'OR') através de gesto.</p>
 
-        <div id='nclIntro4CodeC'></div><br>
+        <div id='nclIntro3CodeC'></div><br>
         </div>
       `
     }
   ]
 })
 
-_data.nclIntro4CodeA = `
+_data.nclIntro3CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight: [3,6]"> <![CDATA[
   <?xml version="1.0" encoding="UTF-8"?>
@@ -2017,7 +2017,7 @@ _data.nclIntro4CodeA = `
   ]]></script>
 `
 
-_data.nclIntro4CodeB = `
+_data.nclIntro3CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;">
   <![CDATA[
@@ -2027,7 +2027,7 @@ _data.nclIntro4CodeB = `
   </input>
   ]]></script>
 `
-_data.nclIntro4CodeC = `
+_data.nclIntro3CodeC = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight:[27,29,31,33]">
   <![CDATA[
@@ -2102,7 +2102,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
   title: 'Parte 4',
   elements: [
     {
-      name: 'nclIntro5',
+      name: 'nclIntro4',
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
@@ -2117,7 +2117,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>gu_leap_microphone.sparql</em>. Essa descrição define que cada
         usuário do grupo deve ter um microfone e um leapmotion.</p>
 
-        <div id='nclIntro5CodeA'></div><br>
+        <div id='nclIntro4CodeA'></div><br>
 
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em NCL, o trecho
         de código a seguir apresenta uma nova versão da aplicação que reinicia
@@ -2125,14 +2125,14 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         nessa versão, ao invés de clicar, o vídeo será reiniciado ao segundo
         usuário do usuário falar "repita vídeo".</p>
 
-        <div id='nclIntro5CodeB'></div>
+        <div id='nclIntro4CodeB'></div>
         </div>
       `
     }
   ]
 })
 
-_data.nclIntro5CodeA = `
+_data.nclIntro4CodeA = `
   <script type="syntaxhighlighter" class="brush: plain; toolbar: false;
   auto-links: false; highlight:[6,7]"> <![CDATA[
   PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -2145,7 +2145,7 @@ _data.nclIntro5CodeA = `
   }
   ]]></script>
 `
-_data.nclIntro5CodeB = `
+_data.nclIntro4CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight:[8,9,31]"> <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
@@ -2596,7 +2596,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
   title: 'Parte 2',
   elements: [
     {
-      name: 'htmlIntro3',
+      name: 'htmlIntro2',
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
@@ -2612,8 +2612,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>sinte_voz.ssml</em>. Essa <em>&ltmedia></em> possui uma âncora que
         indica a frase a ser sintetizada.</p>
 
-        <div id='htmlIntro3CodeA'></div>
-        <div id='htmlIntro3CodeB'></div>
+        <div id='htmlIntro2CodeA'></div>
+        <div id='htmlIntro2CodeB'></div>
 
         <p>O conceito <em>Reconhecedor</em> é definido por <strong>um
         identificador, seu conteúdo e âncoras</strong>. Na nossa HTML, ele é
@@ -2628,8 +2628,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         reconhecimento de voz. Ele possui uma frase com o identificador
         <em>repete</em> que define o reconhecimento de voz "repita vídeo".</p>
 
-        <div id='htmlIntro3CodeC'></div>
-        <div id='htmlIntro3CodeD'></div><br>
+        <div id='htmlIntro2CodeC'></div>
+        <div id='htmlIntro2CodeD'></div><br>
 
         <p>Para ilustrar o uso desse conceito em uma aplicação HTML, o trecho de
         código a seguir apresenta uma nova versão da aplicação que reinicia um
@@ -2654,7 +2654,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         reiniciado (<em>stop</em> e <em>start</em>) quando for reconhecido o
         trecho <em>repete</em>.</p>
 
-        <div id='htmlIntro3CodeE'></div>
+        <div id='htmlIntro2CodeE'></div>
 
         </div>
       `
@@ -2662,9 +2662,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
   ]
 })
 
-_data.htmlIntro3CodeA = _data.nclIntro3CodeA
+_data.htmlIntro2CodeA = _data.nclIntro2CodeA
 
-_data.htmlIntro3CodeB = `
+_data.htmlIntro2CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
   <object id="sinte_voz" src="sinte_voz.ssml">
@@ -2673,8 +2673,8 @@ _data.htmlIntro3CodeB = `
   ]]></script>
 `
 
-_data.htmlIntro3CodeC = _data.nclIntro3CodeC
-_data.htmlIntro3CodeD = `
+_data.htmlIntro2CodeC = _data.nclIntro2CodeC
+_data.htmlIntro2CodeD = `
  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight:[9,12,20,25]"><![CDATA[
   <!DOCTYPE html>
@@ -2683,7 +2683,7 @@ _data.htmlIntro3CodeD = `
   </object>
   ]]></script>
 `
-_data.htmlIntro3CodeE = `
+_data.htmlIntro2CodeE = `
  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight:[9,12,20,25]"><![CDATA[
   <!DOCTYPE html>
@@ -2814,7 +2814,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
   title: 'Parte 3',
   elements: [
     {
-      name: 'htmlIntro4',
+      name: 'htmlIntro3',
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
@@ -2827,8 +2827,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>swipe_direita</em>, que definem gestos de mão para esquerda e para
         direita, respectivamente.</p>
 
-        <div id='htmlIntro4CodeA'></div>
-        <div id='htmlIntro4CodeB'></div><br>
+        <div id='htmlIntro3CodeA'></div>
+        <div id='htmlIntro3CodeB'></div><br>
 
         Em nossa HTML, a combinação de modalidades de interação pode ser feita
         utilizando uma condição composta. Usar um operador OR indica que
@@ -2841,15 +2841,15 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         versão a mídia <em>midia_principal</em> é repetida quando usuário
         interage através de voz ou (operador OR) através de gesto.</p>
 
-        <div id='htmlIntro4CodeC'></div><br>
+        <div id='htmlIntro3CodeC'></div><br>
         </div>
       `
     }
   ]
 })
-_data.htmlIntro4CodeA = _data.nclIntro4CodeA
+_data.htmlIntro3CodeA = _data.nclIntro3CodeA
 
-_data.htmlIntro4CodeB = `
+_data.htmlIntro3CodeB = `
  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight:[15,23,29]"><![CDATA[
   <object id="rec_gesto" src="rec_gesto.gml">
@@ -2857,7 +2857,7 @@ _data.htmlIntro4CodeB = `
   </object>
   ]]></script>
 `
-_data.htmlIntro4CodeC = `
+_data.htmlIntro3CodeC = `
  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight:[15,23,29]"><![CDATA[
   <!DOCTYPE html>
@@ -2931,7 +2931,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
   title: 'Parte 4',
   elements: [
     {
-      name: 'htmlIntro5',
+      name: 'htmlIntro4',
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
@@ -2945,7 +2945,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>&ltUserGroup></em> em que cada usuário do grupo deve ter um
         microfone e um leapmotion.</p>
 
-        <div id='htmlIntro5CodeA'></div><br>
+        <div id='htmlIntro4CodeA'></div><br>
 
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em HTML, o
         código a seguir é uma nova versão da aplicação que reinicia um vídeo
@@ -2953,14 +2953,14 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         vídeo é reiniciado apenas quando o segundo usuário falar "repita
         vídeo".</p>
 
-        <div id='htmlIntro5CodeB'></div>
+        <div id='htmlIntro4CodeB'></div>
         </div>
       `
     }
   ]
 })
 
-_data.htmlIntro5CodeA = `
+_data.htmlIntro4CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight:[7,8]"> <![CDATA[
     var sparql =
@@ -2976,7 +2976,7 @@ _data.htmlIntro5CodeA = `
   ]]></script>
 `
 
-_data.htmlIntro5CodeB = `
+_data.htmlIntro4CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight:[16,25,33,35]">
   <![CDATA[

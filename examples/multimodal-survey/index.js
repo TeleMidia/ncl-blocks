@@ -86,9 +86,9 @@ $('#surveyPageNo').change(function () {
 })
 
 // $('#surveyPageNo').val(1).change()
-// $('#surveyPageNo').val(3).change()
+$('#surveyPageNo').val(3).change()
 // $('#surveyPageNo').val(5).change()
-$('#surveyPageNo').val(7).change()
+// $('#surveyPageNo').val(7).change()
 
 // ----------------------------------------
 // survey listeners
@@ -135,28 +135,28 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
     case 'conceptsIntro1':
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro1A',
         NCLBlocks.calcHt(1, 110), _data.conceptsIntro1BlocksA, true)
-      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro2B',
+      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro1B',
         NCLBlocks.calcHt(3, 110), _data.conceptsIntro1BlocksB, true)
+      break
+    case 'conceptsIntro2':
+      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro2A',
+        NCLBlocks.calcHt(1, 110), _data.conceptsIntro2BlocksA, true)
+      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro2B',
+        NCLBlocks.calcHt(1, 110), _data.conceptsIntro2BlocksB, true)
+      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro2C',
+        NCLBlocks.calcHt(4, 110), _data.conceptsIntro2BlocksC, true)
       break
     case 'conceptsIntro3':
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro3A',
-        NCLBlocks.calcHt(1, 110), _data.conceptsIntro3BlocksA, true)
+        NCLBlocks.calcHt(2, 130), _data.conceptsIntro3BlocksA, true)
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro3B',
-        NCLBlocks.calcHt(1, 110), _data.conceptsIntro3BlocksB, true)
-      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro3C',
-        NCLBlocks.calcHt(4, 110), _data.conceptsIntro3BlocksC, true)
+        NCLBlocks.calcHt(5, 110), _data.conceptsIntro3BlocksB, true)
       break
     case 'conceptsIntro4':
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro4A',
-        NCLBlocks.calcHt(2, 130), _data.conceptsIntro4BlocksA, true)
+        NCLBlocks.calcHt(1, 130), _data.conceptsIntro4BlocksA, true)
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro4B',
-        NCLBlocks.calcHt(5, 110), _data.conceptsIntro4BlocksB, true)
-      break
-    case 'conceptsIntro5':
-      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro5A',
-        NCLBlocks.calcHt(1, 130), _data.conceptsIntro5BlocksA, true)
-      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro5B',
-        NCLBlocks.calcHt(4, 130), _data.conceptsIntro5BlocksB, true)
+        NCLBlocks.calcHt(4, 130), _data.conceptsIntro4BlocksB, true)
       break
     case 'conceptsTask1':
       NCLBlocks.injectInDiv(_pathToBlockly, questionId,
@@ -219,23 +219,23 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       $('#nclIntro1CodeB').append(_data.nclIntro1CodeB)
       SyntaxHighlighter.highlight()
       break
+    case 'nclIntro2':
+      $('#nclIntro2CodeA').append(_data.nclIntro2CodeA)
+      $('#nclIntro2CodeB').append(_data.nclIntro2CodeB)
+      $('#nclIntro2CodeC').append(_data.nclIntro2CodeC)
+      $('#nclIntro2CodeD').append(_data.nclIntro2CodeD)
+      $('#nclIntro2CodeE').append(_data.nclIntro2CodeE)
+      SyntaxHighlighter.highlight()
+      break
     case 'nclIntro3':
       $('#nclIntro3CodeA').append(_data.nclIntro3CodeA)
       $('#nclIntro3CodeB').append(_data.nclIntro3CodeB)
       $('#nclIntro3CodeC').append(_data.nclIntro3CodeC)
-      $('#nclIntro3CodeD').append(_data.nclIntro3CodeD)
-      $('#nclIntro3CodeE').append(_data.nclIntro3CodeE)
       SyntaxHighlighter.highlight()
       break
     case 'nclIntro4':
       $('#nclIntro4CodeA').append(_data.nclIntro4CodeA)
       $('#nclIntro4CodeB').append(_data.nclIntro4CodeB)
-      $('#nclIntro4CodeC').append(_data.nclIntro4CodeC)
-      SyntaxHighlighter.highlight()
-      break
-    case 'nclIntro5':
-      $('#nclIntro5CodeA').append(_data.nclIntro5CodeA)
-      $('#nclIntro5CodeB').append(_data.nclIntro5CodeB)
       SyntaxHighlighter.highlight()
       break
     case 'nclTask1':
@@ -261,23 +261,23 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       $('#htmlIntro1CodeB').append(_data.htmlIntro1CodeB)
       SyntaxHighlighter.highlight()
       break
+    case 'htmlIntro2':
+      $('#htmlIntro2CodeA').append(_data.htmlIntro2CodeA)
+      $('#htmlIntro2CodeB').append(_data.htmlIntro2CodeB)
+      $('#htmlIntro2CodeC').append(_data.htmlIntro2CodeC)
+      $('#htmlIntro2CodeD').append(_data.htmlIntro2CodeD)
+      $('#htmlIntro2CodeE').append(_data.htmlIntro2CodeE)
+      SyntaxHighlighter.highlight()
+      break
     case 'htmlIntro3':
       $('#htmlIntro3CodeA').append(_data.htmlIntro3CodeA)
       $('#htmlIntro3CodeB').append(_data.htmlIntro3CodeB)
       $('#htmlIntro3CodeC').append(_data.htmlIntro3CodeC)
-      $('#htmlIntro3CodeD').append(_data.htmlIntro3CodeD)
-      $('#htmlIntro3CodeE').append(_data.htmlIntro3CodeE)
       SyntaxHighlighter.highlight()
       break
     case 'htmlIntro4':
       $('#htmlIntro4CodeA').append(_data.htmlIntro4CodeA)
       $('#htmlIntro4CodeB').append(_data.htmlIntro4CodeB)
-      $('#htmlIntro4CodeC').append(_data.htmlIntro4CodeC)
-      SyntaxHighlighter.highlight()
-      break
-    case 'htmlIntro5':
-      $('#htmlIntro5CodeA').append(_data.htmlIntro5CodeA)
-      $('#htmlIntro5CodeB').append(_data.htmlIntro5CodeB)
       SyntaxHighlighter.highlight()
       break
     case 'htmlTask1':
