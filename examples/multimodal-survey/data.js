@@ -340,17 +340,6 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <div id='conceptsIntro1B'></div><br>
 
-        <div style="text-align: justify; width: 70%;">
-        <p>Além de mídias como imagens, áudio e vídeos, o conceito
-        <em>Mídia</em> abrange também outras modalidades conteúdo como voz
-        sintetizada e avatares humanoides. Os blocos a seguir definem a
-        <em>Mídia</em> com identificador <em>sinte_voz</em>, que tem como
-        conteúdo um texto para sintetização de voz. Esse conteúdo de
-        sintetização possui o trecho <em>pergunta</em> que sintetiza a frase
-        "você deseja repetir o vídeo?".</p>
-        </div>
-
-        <div id='conceptsIntro1D'></div><br>
       `
     },
     {
@@ -486,21 +475,6 @@ _data.conceptsIntro1BlocksC = `
     </block>
   </xml>
 `
-_data.conceptsIntro1BlocksD = `
-  <xml xmlns="http://www.w3.org/1999/xhtml">
-    <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
-      <field name="id">sinte_voz</field>
-      <value name="src">
-        <block type="ssml" id="OSge%SF-~~.%rZKqZqym">
-          <mutation length="1"></mutation>
-          <field name="id_area0">pergunta</field>
-          <field name="label0">você deseja repetir o vídeo?</field>
-        </block>
-      </value>
-    </block>
-  </xml>
-`
-
 _data.conceptsIntro2BlocksB = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
@@ -715,6 +689,18 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'conceptsIntro3',
       html: `
         <div style="text-align: justify; width: 70%;">
+        <p>Além de mídias como imagens, áudio e vídeos, o conceito
+        <em>Mídia</em> abrange também outras modalidades conteúdo como voz
+        sintetizada. Os blocos a seguir definem a <em>Mídia</em> com
+        identificador <em>sinte_voz</em>, que tem como conteúdo um texto para
+        sintetização de voz. Esse conteúdo de sintetização possui o trecho
+        <em>pergunta</em> que sintetiza a frase "você deseja repetir o
+        vídeo?".</p>
+        </div>
+
+        <div id='conceptsIntro1A'></div><br>
+
+        <div style="text-align: justify; width: 70%;">
         <p>O conceito <em>Reconhecedor</em> permite reconhecimento de interações
         multimodais realizadas por usuários, como voz e gestos. Ele é definido
         por <strong>um identificador, seu conteúdo e âncoras</strong>.
@@ -729,17 +715,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         um bloco de conteúdo com as âncoras preenchidas. Exemplos de blocos
         serão apresentados para ilustrar o conceito.</p>
 
-        <p>Os blocos a seguir definem os reconhecedores <em>rec_voz</em> e
-        <em>rec_gestos</em>. O <em>rec_voz</em> tem um reconhecimento de voz
-        como conteúdo. Essa descrição tem o trecho <em>repetir</em> que
-        reconhece o comando de voz "repita vídeo". Já <em>rec_gestos</em> tem
-        uma descrição de reconhecimento de gestos como conteúdo. Esse conteúdo
-        utiliza dois trechos, esquerda e direita, para definir gestos de mão
-        nessas direções.</p> </div>
+        <p>Os blocos a seguir definem o reconhecedor <em>rec_voz</em>, que
+        tem um reconhecimento de voz como conteúdo. Essa descrição tem o trecho
+        <em>repetir</em> que reconhece o comando de voz "repita vídeo". 
+        </div>
 
-        <div id='conceptsIntro3A'></div><br>
+        <div id='conceptsIntro3B'></div><br>
 
-        <div style="text-align: justify; width: 70%;">
         <p>Para ilustrar o uso desse conceito em uma aplicação, os
         blocos a seguir definem uma nova versão da aplicação que reinicia um
         vídeo dada uma interação. Mas nessa versão, ao invés de selecionar, o
@@ -748,24 +730,40 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Essa aplicação utiliza duas <em>Mídia</em> (<em>midia_principal</em>
         e <em>sinte_voz</em>) e um <em>Reconhecedor</em> (<em>rec_voz</em>).
         
-        <p>Para o comportamento, a aplicação utiliza três <em>Relacionamento</em>s.
-        O primeiro <em>Relacionamento</em> define que <em>midia_principal</em> é
-        iniciada com a aplicação. O segundo <em>Relacionamento</em> define que
-        quando a <em>midia_principal</em> alcançar o seu trecho de
-        <em>creditos</em> (300s), a frase da âncora <em>pergunta</em> é
-        sintetizada e o <em>Reconhecedor</em> <em>rec_voz</em> inicia o
-        reconhecimento. O último <em>Relacionamento</em> define que quando for
-        reconhecida a âncora <em>repetir</em>,
-        <em>midia_principal</em> deve ser reiniciada (terminada e iniciada).</p>
+        <p>Para o comportamento, a aplicação utiliza três
+        <em>Relacionamento</em>s. O primeiro <em>Relacionamento</em> define que
+        <em>midia_principal</em> é iniciada com a aplicação. O segundo
+        <em>Relacionamento</em> define que quando a <em>midia_principal</em>
+        alcançar o seu trecho de <em>creditos</em> (300s), a frase da âncora
+        <em>pergunta</em> é sintetizada e o <em>Reconhecedor</em>
+        <em>rec_voz</em> inicia o reconhecimento. O último
+        <em>Relacionamento</em> define que quando for reconhecida a âncora
+        <em>repetir</em>, <em>midia_principal</em> deve ser reiniciada
+        (terminada e iniciada).</p>
         </div>
 
-        <div id='conceptsIntro3B'></div><br>
+        <div id='conceptsIntro3C'></div><br>
       `
     }
   ]
 })
 
-_data.conceptsIntro3BlocksA = `
+_data.conceptsIntro1BlocksA = `
+  <xml xmlns="http://www.w3.org/1999/xhtml">
+    <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
+      <field name="id">sinte_voz</field>
+      <value name="src">
+        <block type="ssml" id="OSge%SF-~~.%rZKqZqym">
+          <mutation length="1"></mutation>
+          <field name="id_area0">pergunta</field>
+          <field name="label0">você deseja repetir o vídeo?</field>
+        </block>
+      </value>
+    </block>
+  </xml>
+`
+
+_data.conceptsIntro3BlocksB = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="20" y="20">
       <field name="id">rec_voz</field>
@@ -777,23 +775,10 @@ _data.conceptsIntro3BlocksA = `
         </block>
       </value>
     </block>
-    <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="20" y="180">
-      <field name="id">rec_gesto</field>
-      <value name="src">
-        <block type="hand_gesture" id="N5Lu5_J\`hn-e3lm60 |^3">
-          <mutation length="2">
-          </mutation>
-          <field name="id_area0">esquerda</field>
-          <field name="label0">esquerda</field>
-          <field name="id_area1">direita</field>
-          <field name="label1">direita</field>
-        </block>
-      </value>
-    </block>
   </xml>
 `
 
-_data.conceptsIntro3BlocksB = `
+_data.conceptsIntro3BlocksC = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
       <field name="id">midia_principal</field>
@@ -1023,25 +1008,52 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;"> 
         <p>Um dos principais benefícios de interfaces multimodais é o uso
         diferentes interações, ou seja, as interações de usuários podem ser
-        realizadas por diferentes modalidades. Em nossos conceitos essa
-        combinação de modalidades de interação pode ser feita utilizando uma
-        condição composta. Usar um operador OR indica que qualquer uma das
-        interações é necessária. Já usar o operador AND indica que todas as
-        interações são necessárias em qualquer ordem. E por fim usar o operador
-        SEQ significa que as interações têm que ser feitas em sequência.</p> 
+        realizadas por diferentes modalidades. </p>
+        
+        <p>Os blocos a seguir definem o reconhecedor <em>rec_voz</em>
+        <em>rec_gestos</em>, que tem uma descrição de reconhecimento de gestos
+        como conteúdo. Esse conteúd o utiliza dois trechos, esquerda e direita,
+        para definir gestos de mão nessas direções.</p>
+
+        <div id='conceptsIntro4A'></div><br>
+
+        <p>Em nossa representação de blocos, a combinação de modalidades de
+        interação pode ser feita utilizando uma condição composta. Usar um
+        operador OR indica que qualquer uma das interações é necessária. Já usar
+        o operador AND indica que todas as interações são necessárias em
+        qualquer ordem. E por fim usar o operador SEQ significa que as
+        interações têm que ser feitas em sequência.</p> 
 
         <p>Os blocos a seguir modificam a aplicação acima. Mas nessa
         versão a mídia <em>midia_principal</em> é repetida quando usuário
         interage através de  voz ou (operador OR) através de gesto.</p>
         </div>
 
-        <div id='conceptsIntro4A'></div><br>
+        <div id='conceptsIntro4B'></div><br>
       `
     }
   ]
 })
 
 _data.conceptsIntro4BlocksA = `
+  <xml xmlns="http://www.w3.org/1999/xhtml">
+    <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="20" y="20">
+      <field name="id">rec_gesto</field>
+      <value name="src">
+        <block type="hand_gesture" id="N5Lu5_J\`hn-e3lm60 |^3">
+          <mutation length="2">
+          </mutation>
+          <field name="id_area0">esquerda</field>
+          <field name="label0">esquerda</field>
+          <field name="id_area1">direita</field>
+          <field name="label1">direita</field>
+        </block>
+      </value>
+    </block>
+  </xml>
+`
+
+_data.conceptsIntro4BlocksB = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
       <field name="id">midia_principal</field>
@@ -1513,21 +1525,6 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>creditos</em> que inicia aos 300 e termina aos 360 segundos.</p>
 
         <div id='nclIntro1CodeB'></div><br>
-
-        <p>Além de mídias como imagens, áudio e vídeos, o elemento
-        <em>&ltmedia></em> de nossa NCL deve suportar outras modalidades de
-        conteúdo, como a sintetização de voz. Os trechos de código a seguir
-        ilustram o uso de sintetização de voz em nossa NCL. O primeiro apresenta
-        o arquivo <em>sinte_voz.ssml</em> que segue o formato SSML (Speech
-        Synthesis Markup Language) para sintetização de voz. Ele possui uma
-        frase com o identificador "pergunta" que sintetizada "você deseja
-        repetir o vídeo?". O segundo define uma <em>&ltmedia></em> com
-        identificador <em>sinte_voz</em>, que tem como conteúdo o arquivo
-        <em>sinte_voz.ssml</em>. Essa <em>&ltmedia></em> possui uma âncora que
-        indica a frase a ser sintetizada.</p>
-
-        <div id='nclIntro1CodeD'></div>
-        <div id='nclIntro1CodeE'></div>
       `
     },
     {
@@ -1641,26 +1638,6 @@ _data.nclIntro1CodeC = `
   </media>
   ]]></script>
 `
-
-_data.nclIntro1CodeD = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false;"> <![CDATA[
-  <?xml version="1.0" encoding="ISO-8859-1"?>
-  <speak xmlns="http://www.w3.org/2001/10/synthesis">
-    <s id="pergunta">você deseja repetir o vídeo?</s>
-  </speak>
-  ]]></script>
-`
-
-_data.nclIntro1CodeE = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false;"> <![CDATA[
-  <media id="sinte_voz" src="sinte_voz.ssml">
-    <area label="pergunta"></area> <!-- referência id repetir de sinte_voz.ssml-->
-  </media>
-  ]]></script>
-`
-
 _data.nclIntro2CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight:[7,8,12,16,20,]">
@@ -1790,29 +1767,36 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
+        <p>Além de mídias como imagens, áudio e vídeos, o elemento
+        <em>&ltmedia></em> de nossa NCL deve suportar outras modalidades de
+        conteúdo, como a sintetização de voz. Os trechos de código a seguir
+        ilustram o uso de sintetização de voz em nossa NCL. O primeiro apresenta
+        o arquivo <em>sinte_voz.ssml</em> que segue o formato SSML (Speech
+        Synthesis Markup Language) para sintetização de voz. Ele possui uma
+        frase com o identificador "pergunta" que sintetizada "você deseja
+        repetir o vídeo?". O segundo define uma <em>&ltmedia></em> com
+        identificador <em>sinte_voz</em>, que tem como conteúdo o arquivo
+        <em>sinte_voz.ssml</em>. Essa <em>&ltmedia></em> possui uma âncora que
+        indica a frase a ser sintetizada.</p>
+
+        <div id='nclIntro3CodeA'></div>
+        <div id='nclIntro3CodeB'></div>
+
         <p>O conceito de <em>Reconhecedor</em> é definido por <strong>um
         identificador, seu conteúdo e âncoras</strong>. Na nossa NCL, ele é
         implementado pelo elemento <em>&ltinput></em>. O identificador é
         definido pelo atributo <em>id</em> e a descrição de reconhecimento é
         definida pelo atributo <em>src</em>. As âncoras são definidas pelo
         elemento <em>area</em> e podem definir trechos delimitados da descrição
-        com o atributo <em>label</em>. Trechos de código ilustram exemplos de
-        descrições de reconhecimento.</p>
+        com o atributo <em>label</em>. </p>
 
         <p>O trecho de código a seguir ilustra o arquivo <em>rec_voz.srgs</em>
         que seguir o formato SRGS (Speech Recognition Grammar Specification)
         reconhecimento de voz. Ele possui uma frase com o identificador
         <em>repete</em> que define o reconhecimento de voz "repita vídeo".</p>
 
-        <div id='nclIntro3CodeA'></div><br>
-
-        <p>O trecho de código a seguir ilustra o arquivo <em>rec_gestos.gml</em>
-        que segue o formato GML(Gesture Markup Language) para reconhecimento de
-        gestos de mão. Ele possui dois gestos com os identificadores
-        <em>swipe_esquerda</em> e <em>swipe_direita</em>, que definem gestos de
-        mão para esquerda e para direita, respectivamente.</p>
-
-        <div id='nclIntro3CodeB'></div><br>
+        <div id='nclIntro3CodeC'></div>
+        <div id='nclIntro3CodeD'></div><br>
 
         <p>Para ilustrar o uso desse conceito em uma aplicação NCL, o trecho de
         código a seguir apresenta uma nova versão da aplicação que reinicia um
@@ -1836,7 +1820,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         reconhecida a âncora <em>repete</em>, a <em>midia_principal</em> deve
         ser reiniciada (terminada e iniciada).</p>
 
-        <div id='nclIntro3CodeC'></div>
+        <div id='nclIntro3CodeE'></div>
 
         </div>
       `
@@ -1846,6 +1830,24 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
 _data.nclIntro3CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false;"> <![CDATA[
+  <?xml version="1.0" encoding="ISO-8859-1"?>
+  <speak xmlns="http://www.w3.org/2001/10/synthesis">
+    <s id="pergunta">você deseja repetir o vídeo?</s>
+  </speak>
+  ]]></script>
+`
+_data.nclIntro3CodeB = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false;"> <![CDATA[
+  <media id="sinte_voz" src="sinte_voz.ssml">
+    <area label="pergunta"></area> <!-- referência id repetir de sinte_voz.ssml-->
+  </media>
+  ]]></script>
+`
+
+_data.nclIntro3CodeC = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight: [3]"> <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <grammar xmlns="http://www.w3.org/2001/06/grammar">
@@ -1853,21 +1855,17 @@ _data.nclIntro3CodeA = `
   </grammar>
   ]]></script>
 `
-_data.nclIntro3CodeB = `
+
+_data.nclIntro3CodeD = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight: [3,6]"> <![CDATA[
-  <?xml version="1.0" encoding="UTF-8"?>
-  <GestureMarkupLanguage>
-    <Gesture id="swipe_esquerda" type="swipe">
-      ...
-    </Gesture>
-    <Gesture id="swipe_direta" type="swipe">
-      ...
-    </Gesture>
-  </GestureMarkupLanguage>
+  auto-links: false;">
+  <![CDATA[
+  <input id="rec_voz" src="rec_voz.srgs">
+    <area label="repete"></repete>  <!-- referência id repete de rec_voz.srgs-->
+  </input>
   ]]></script>
 `
-_data.nclIntro3CodeC = `
+_data.nclIntro3CodeE = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight:[14,17,25]">
   <![CDATA[
@@ -2033,18 +2031,28 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;">
         <p>Um dos principais benefícios de interfaces multimodais é o uso
         diferentes interações. Ou seja, as interações de usuários podem ser
-        realizadas por diferentes modalidades. Em nossos, conceitos essa
-        combinação de modalidades de interação pode ser feita utilizando uma
-        condição composta. Usar um operador 'OR' indica que qualquer uma das
-        interações é necessária. Já usar operador 'AND' indica que todas as
-        interações são necessárias em qualquer ordem. E por fim usar o operador
-        'SEQ' significa que as interações tem que ser feitas em sequência.</p> 
+        realizadas por diferentes modalidades. O trecho de código a seguir
+        ilustra o arquivo <em>rec_gestos.gml</em> que segue o formato
+        GML(Gesture Markup Language) para reconhecimento de gestos de mão. Ele
+        possui dois gestos com os identificadores <em>swipe_esquerda</em> e
+        <em>swipe_direita</em>, que definem gestos de mão para esquerda e para
+        direita, respectivamente.</p>
+
+        <div id='nclIntro4CodeA'></div>
+        <div id='nclIntro4CodeB'></div><br>
+        
+        <p> Em nossa NCL, conceitos essa combinação de modalidades de interação
+        pode ser feita utilizando uma condição composta. Usar um operador 'OR'
+        indica que qualquer uma das interações é necessária. Já usar operador
+        'AND' indica que todas as interações são necessárias em qualquer ordem.
+        E por fim usar o operador 'SEQ' significa que as interações tem que ser
+        feitas em sequência.</p> 
 
         <p>Os blocos a seguir modificam a aplicação acima. Mas nessa
         versão a mídia <em>midia_principal</em> é repetida quando usuário
         interage através de voz ou (operador 'OR') através de gesto.</p>
 
-        <div id='nclIntro4CodeA'></div><br>
+        <div id='nclIntro4CodeC'></div><br>
         </div>
       `
     }
@@ -2052,6 +2060,31 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 })
 
 _data.nclIntro4CodeA = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false; highlight: [3,6]"> <![CDATA[
+  <?xml version="1.0" encoding="UTF-8"?>
+  <GestureMarkupLanguage>
+    <Gesture id="swipe_esquerda" type="swipe">
+      ...
+    </Gesture>
+    <Gesture id="swipe_direta" type="swipe">
+      ...
+    </Gesture>
+  </GestureMarkupLanguage>
+  ]]></script>
+`
+
+_data.nclIntro4CodeB = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false;">
+  <![CDATA[
+  <input id="rec_gesto" src="rec_gesto.gml">
+    <area label="esquerda"></repete> <!-- referência id esquerda de rec_gesto.gml-->
+    <area label="direita"></repete> <!-- referência id direita de rec_gesto.gml-->
+  </input>
+  ]]></script>
+`
+_data.nclIntro4CodeC = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight:[27,29,31,33]">
   <![CDATA[
@@ -2416,28 +2449,6 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>creditos</em> que inicia aos 300 e termina aos 360 segundos.</p>
 
         <div id='htmlIntro1CodeB'></div><br>
-
-        <p>Além de mídias como imagens, áudio e vídeos, a nossa HTML estendida
-        e suportar outras modalidades de conteúdo como sintetização de voz e  
-        avatares humanoides. Por exemplo, os trechos de código a seguir ilustram
-        o uso de sintetização de voz em nossa HTML.</p>
-
-        <p>Além de mídias como imagens, áudio e vídeos, o elemento
-        <em>&ltmedia></em> de nossa HTML deve suportar outras modalidades de
-        conteúdo, como a sintetização de voz. Os trechos de código a seguir
-        ilustram o uso de sintetização de voz em nossa HTML. O primeiro
-        apresenta o arquivo <em>sinte_voz.ssml</em> que segue o formato SSML
-        (Speech Synthesis Markup Language) para sintetização de voz. Ele possui
-        uma frase com o identificador "pergunta" que sintetizada "você deseja
-        repetir o vídeo?". O segundo define uma <em>&ltmedia></em> com
-        identificador <em>sinte_voz</em>, que tem como conteúdo o arquivo
-        <em>sinte_voz.ssml</em>. Essa <em>&ltmedia></em> possui uma âncora que
-        indica a frase a ser sintetizada.</p>
-
-        <div id='htmlIntro1CodeD'></div>
-
-        <div id='htmlIntro1CodeE'></div>
-
         </div>
       `
     },
@@ -2552,17 +2563,6 @@ _data.htmlIntro1CodeC = `
   ]]></script>
 `
 
-_data.htmlIntro1CodeD = _data.nclIntro1CodeD
-
-_data.htmlIntro1CodeE = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false;"> <![CDATA[
-  <object id="sinte_voz" src="sinte_voz.ssml">
-    <area label="pergunta"></area> <!-- referência id pergunta de sinte_voz.ssml-->
-  </object>
-  ]]></script>
-`
-
 // ----------------------------------------
 // html page - media and link - task
 // ----------------------------------------
@@ -2650,29 +2650,36 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
+        <p>Além de mídias como imagens, áudio e vídeos, o elemento
+        <em>&ltmedia></em> de nossa HTML deve suportar outras modalidades de
+        conteúdo, como a sintetização de voz. Os trechos de código a seguir
+        ilustram o uso de sintetização de voz em nossa HTML. O primeiro
+        apresenta o arquivo <em>sinte_voz.ssml</em> que segue o formato SSML
+        (Speech Synthesis Markup Language) para sintetização de voz. Ele possui
+        uma frase com o identificador "pergunta" que sintetizada "você deseja
+        repetir o vídeo?". O segundo define uma <em>&ltmedia></em> com
+        identificador <em>sinte_voz</em>, que tem como conteúdo o arquivo
+        <em>sinte_voz.ssml</em>. Essa <em>&ltmedia></em> possui uma âncora que
+        indica a frase a ser sintetizada.</p>
+
+        <div id='htmlIntro3CodeA'></div>
+        <div id='htmlIntro3CodeB'></div>
+
         <p>O conceito <em>Reconhecedor</em> é definido por <strong>um
         identificador, seu conteúdo e âncoras</strong>. Na nossa HTML, ele é
         implementado pelo elemento <em>&ltobject></em>. O identificador é
         definido pelo atributo <em>id</em> e a descrição de reconhecimento é
         definida pelo atributo <em>src</em>. As âncoras são definidas pelo
         elemento <em>area</em> e podem definir trechos delimitados da descrição
-        com o atributo <em>label</em>. Trechos de código serão apresentados a
-        seguir para ilustrar esse conceito em HTML.</p>
+        com o atributo <em>label</em>.</p>
 
         <p>O trecho de código a seguir ilustra o arquivo <em>rec_voz.srgs</em>
         que seguir o formato SRGS (Speech Recognition Grammar Specification)
         reconhecimento de voz. Ele possui uma frase com o identificador
         <em>repete</em> que define o reconhecimento de voz "repita vídeo".</p>
 
-        <div id='htmlIntro3CodeA'></div><br>
-
-        <p>O trecho de código a seguir ilustra o arquivo <em>rec_gestos.gml</em>
-        que segue o formato GML(Gesture Markup Language) para reconhecimento de
-        gestos de mão. Ele possui dois gestos com os identificadores
-        <em>swipe_esquerda</em> e <em>swipe_direita</em>, que definem gestos de
-        mão para esquerda e para direita, respectivamente.</p>
-
-        <div id='htmlIntro3CodeB'></div><br>
+        <div id='htmlIntro3CodeC'></div>
+        <div id='htmlIntro3CodeD'></div><br>
 
         <p>Para ilustrar o uso desse conceito em uma aplicação HTML, o trecho de
         código a seguir apresenta uma nova versão da aplicação que reinicia um
@@ -2697,7 +2704,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         reiniciado (<em>stop</em> e <em>start</em>) quando for reconhecido o
         trecho <em>repete</em>.</p>
 
-        <div id='htmlIntro3CodeC'></div>
+        <div id='htmlIntro3CodeE'></div>
 
         </div>
       `
@@ -2737,10 +2744,29 @@ _data.htmlIntro2CodeA = `
   </html>
   ]]></script>
 `
-_data.htmlIntro3CodeA = _data.nclIntro3CodeA
-_data.htmlIntro3CodeB = _data.nclIntro3CodeB
 
-_data.htmlIntro3CodeC = `
+_data.htmlIntro3CodeA = _data.nclIntro3CodeA
+
+_data.htmlIntro3CodeB = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false;"> <![CDATA[
+  <object id="sinte_voz" src="sinte_voz.ssml">
+    <area label="pergunta"></area> <!-- referência id pergunta de sinte_voz.ssml-->
+  </object>
+  ]]></script>
+`
+
+_data.htmlIntro3CodeC = _data.nclIntro3CodeC
+_data.htmlIntro3CodeD = `
+ <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false; highlight:[9,12,20,25]"><![CDATA[
+  <!DOCTYPE html>
+  <object id="rec_voz" src="rec_voz.srgs">
+    <area label="repete"><&#47area> <!-- referência id repete de rec_voz.srgs-->
+  </object>
+  ]]></script>
+`
+_data.htmlIntro3CodeE = `
  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight:[9,12,20,25]"><![CDATA[
   <!DOCTYPE html>
@@ -2877,25 +2903,35 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;">
         <p>Um dos principais benefícios de interfaces multimodais é o uso
         diferentes interações, ou seja, as interações de usuários podem ser
-        realizadas por diferentes modalidades. Em nossos, conceitos essa
-        combinação de modalidades de interação pode ser feita utilizando uma
-        condição composta. Usar um operador OR indica que qualquer uma das
-        interações é necessária. Já usar operador AND indica que todas as
-        interações são necessárias em qualquer ordem. E por fim usar o operador
-        SEQ significa que as interações tem que ser feitas em sequência.</p> 
+        realizadas por diferentes modalidades. O trecho de código a seguir
+        ilustra o arquivo <em>rec_gestos.gml</em> que segue o formato
+        GML(Gesture Markup Language) para reconhecimento de gestos de mão. Ele
+        possui dois gestos com os identificadores <em>swipe_esquerda</em> e
+        <em>swipe_direita</em>, que definem gestos de mão para esquerda e para
+        direita, respectivamente.</p>
+
+        <div id='htmlIntro4CodeA'></div><br>
+
+        Em nossa HTML, a combinação de modalidades de interação pode ser feita
+        utilizando uma condição composta. Usar um operador OR indica que
+        qualquer uma das interações é necessária. Já usar operador AND indica
+        que todas as interações são necessárias em qualquer ordem. E por fim
+        usar o operador SEQ significa que as interações tem que ser feitas em
+        sequência.</p> 
 
         <p>Os blocos a seguir modificam a aplicação acima. Mas nessa
         versão a mídia <em>midia_principal</em> é repetida quando usuário
         interage através de voz ou (operador OR) através de gesto.</p>
 
-        <div id='htmlIntro4CodeA'></div><br>
+        <div id='htmlIntro4CodeB'></div><br>
         </div>
       `
     }
   ]
 })
+_data.htmlIntro4CodeA = _data.nclIntro4CodeA
 
-_data.htmlIntro4CodeA = `
+_data.htmlIntro4CodeB = `
  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight:[15,23,29]"><![CDATA[
   <!DOCTYPE html>

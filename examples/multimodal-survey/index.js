@@ -87,9 +87,8 @@ $('#surveyPageNo').change(function () {
 
 // $('#surveyPageNo').val(1).change()
 // $('#surveyPageNo').val(3).change()
-// $('#surveyPageNo').val(4).change()
 // $('#surveyPageNo').val(5).change()
-// $('#surveyPageNo').val(7).change()
+$('#surveyPageNo').val(7).change()
 
 // ----------------------------------------
 // survey listeners
@@ -140,22 +139,24 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
         NCLBlocks.calcHt(1, 110), _data.conceptsIntro1BlocksB, true)
       // NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro1C',
       //   NCLBlocks.calcHt(1, 110), _data.conceptsIntro1BlocksC, true)
-      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro1D',
-        NCLBlocks.calcHt(1, 110), _data.conceptsIntro1BlocksD, true)
       break
     case 'conceptsIntro2':
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro2B',
         NCLBlocks.calcHt(3, 110), _data.conceptsIntro2BlocksB, true)
       break
     case 'conceptsIntro3':
-      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro3A',
-        NCLBlocks.calcHt(2, 200), _data.conceptsIntro3BlocksA, true)
+      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro1A',
+        NCLBlocks.calcHt(1, 110), _data.conceptsIntro1BlocksA, true)
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro3B',
-        NCLBlocks.calcHt(4, 110), _data.conceptsIntro3BlocksB, true)
+        NCLBlocks.calcHt(1, 110), _data.conceptsIntro3BlocksB, true)
+      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro3C',
+        NCLBlocks.calcHt(4, 110), _data.conceptsIntro3BlocksC, true)
       break
     case 'conceptsIntro4':
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro4A',
-        NCLBlocks.calcHt(5, 110), _data.conceptsIntro4BlocksA, true)
+        NCLBlocks.calcHt(2, 130), _data.conceptsIntro4BlocksA, true)
+      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro4B',
+        NCLBlocks.calcHt(5, 110), _data.conceptsIntro4BlocksB, true)
       break
     case 'conceptsIntro5':
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro5A',
@@ -223,8 +224,6 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       // $('#nclIntro1CodeA').append(_data.nclIntro1CodeA)
       $('#nclIntro1CodeB').append(_data.nclIntro1CodeB)
       // $('#nclIntro1CodeC').append(_data.nclIntro1CodeC)
-      $('#nclIntro1CodeD').append(_data.nclIntro1CodeD)
-      $('#nclIntro1CodeE').append(_data.nclIntro1CodeE)
       SyntaxHighlighter.highlight()
       break
     case 'nclIntro2':
@@ -236,10 +235,13 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       $('#nclIntro3CodeB').append(_data.nclIntro3CodeB)
       $('#nclIntro3CodeC').append(_data.nclIntro3CodeC)
       $('#nclIntro3CodeD').append(_data.nclIntro3CodeD)
+      $('#nclIntro3CodeE').append(_data.nclIntro3CodeE)
       SyntaxHighlighter.highlight()
       break
     case 'nclIntro4':
       $('#nclIntro4CodeA').append(_data.nclIntro4CodeA)
+      $('#nclIntro4CodeB').append(_data.nclIntro4CodeB)
+      $('#nclIntro4CodeC').append(_data.nclIntro4CodeC)
       SyntaxHighlighter.highlight()
       break
     case 'nclIntro5':
@@ -281,10 +283,13 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       $('#htmlIntro3CodeA').append(_data.htmlIntro3CodeA)
       $('#htmlIntro3CodeB').append(_data.htmlIntro3CodeB)
       $('#htmlIntro3CodeC').append(_data.htmlIntro3CodeC)
+      $('#htmlIntro3CodeD').append(_data.htmlIntro3CodeD)
+      $('#htmlIntro3CodeE').append(_data.htmlIntro3CodeE)
       SyntaxHighlighter.highlight()
       break
     case 'htmlIntro4':
       $('#htmlIntro4CodeA').append(_data.htmlIntro4CodeA)
+      $('#htmlIntro4CodeB').append(_data.htmlIntro4CodeB)
       SyntaxHighlighter.highlight()
       break
     case 'htmlIntro5':
