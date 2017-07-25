@@ -133,20 +133,14 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
 
   switch (questionName) {
     case 'conceptsIntro1':
-      // NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro1A',
-      //   NCLBlocks.calcHt(1, 60), _data.conceptsIntro1BlocksA, true)
-      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro1B',
-        NCLBlocks.calcHt(1, 110), _data.conceptsIntro1BlocksB, true)
-      // NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro1C',
-      //   NCLBlocks.calcHt(1, 110), _data.conceptsIntro1BlocksC, true)
-      break
-    case 'conceptsIntro2':
-      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro2B',
-        NCLBlocks.calcHt(3, 110), _data.conceptsIntro2BlocksB, true)
-      break
-    case 'conceptsIntro3':
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro1A',
         NCLBlocks.calcHt(1, 110), _data.conceptsIntro1BlocksA, true)
+      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro2B',
+        NCLBlocks.calcHt(3, 110), _data.conceptsIntro1BlocksB, true)
+      break
+    case 'conceptsIntro3':
+      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro3A',
+        NCLBlocks.calcHt(1, 110), _data.conceptsIntro3BlocksA, true)
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro3B',
         NCLBlocks.calcHt(1, 110), _data.conceptsIntro3BlocksB, true)
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro3C',
@@ -221,13 +215,8 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       _blocksTask4Workspace.addChangeListener(saveblocksTask4Changes)
       break
     case 'nclIntro1':
-      // $('#nclIntro1CodeA').append(_data.nclIntro1CodeA)
+      $('#nclIntro1CodeA').append(_data.nclIntro1CodeA)
       $('#nclIntro1CodeB').append(_data.nclIntro1CodeB)
-      // $('#nclIntro1CodeC').append(_data.nclIntro1CodeC)
-      SyntaxHighlighter.highlight()
-      break
-    case 'nclIntro2':
-      $('#nclIntro2CodeA').append(_data.nclIntro2CodeA)
       SyntaxHighlighter.highlight()
       break
     case 'nclIntro3':
@@ -270,13 +259,6 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
     case 'htmlIntro1':
       $('#htmlIntro1CodeA').append(_data.htmlIntro1CodeA)
       $('#htmlIntro1CodeB').append(_data.htmlIntro1CodeB)
-      $('#htmlIntro1CodeC').append(_data.htmlIntro1CodeC)
-      $('#htmlIntro1CodeD').append(_data.htmlIntro1CodeD)
-      $('#htmlIntro1CodeE').append(_data.htmlIntro1CodeE)
-      SyntaxHighlighter.highlight()
-      break
-    case 'htmlIntro2':
-      $('#htmlIntro2CodeA').append(_data.htmlIntro2CodeA)
       SyntaxHighlighter.highlight()
       break
     case 'htmlIntro3':

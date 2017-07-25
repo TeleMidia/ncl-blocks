@@ -338,14 +338,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>creditos</em> que inicia aos 300 e termina aos 360 segundos.</p>
         </div>
 
-        <div id='conceptsIntro1B'></div><br>
+        <div id='conceptsIntro1A'></div><br>
 
-      `
-    },
-    {
-      type: 'html',
-      name: 'conceptsIntro2',
-      html: `
         <div style="text-align: justify; width: 70%;">
         <p>O conceito de <em>Relacionamento</em> permite definir o comportamento
         das aplicações. Ele é baseado em causalidade e definido por <strong>um
@@ -368,9 +362,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         ordem; e 'SEQ' quando todos as condições são necessárias e na sequência
         estabelecida.</p>
 
-        <p>O relacionamento entre condições e ações é definido juntando um
-        bloco de <em>Relacionamento</em> com blocos de condições e ações  A tabela
-        a seguir mostra exemplos de junções de blocos.</p>
+        <p>O relacionamento entre condições e ações é definido juntando um bloco
+        de <em>Relacionamento</em> com blocos de condições e ações  A tabela a
+        seguir mostra exemplos de junções de blocos.</p>
         
         <table align="center" class="table-bordered table-striped
         table-condensed">
@@ -431,17 +425,6 @@ _data.conceptsIntro1BlocksA = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
       <field name="id">midia_principal</field>
-    </block>
-    <block type="media" id="PnS;4T$~ftTn7U;nWSZb" x="594" y="20">
-      <field name="id">icone</field>
-    </block>
-  </xml>
-`
-
-_data.conceptsIntro1BlocksB = `
-  <xml xmlns="http://www.w3.org/1999/xhtml">
-    <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
-      <field name="id">midia_principal</field>
       <value name="src">
         <block type="video" id="OFge%WW-~~.%rZKqZqym">
           <mutation length="1"></mutation>
@@ -460,22 +443,7 @@ _data.conceptsIntro1BlocksB = `
   </xml>
 `
 
-_data.conceptsIntro1BlocksC = `
-  <xml xmlns="http://www.w3.org/1999/xhtml">
-    <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
-      <field name="id">midia_principal</field>
-      <value name="src">
-        <block type="video" id="OFge%WW-~~.%rZKqZqym">
-          <mutation length="1"></mutation>
-          <field name="id_area0">creditos</field>
-          <field name="begin0">300s</field>
-          <field name="end0">360s</field>
-        </block>
-      </value>
-    </block>
-  </xml>
-`
-_data.conceptsIntro2BlocksB = `
+_data.conceptsIntro1BlocksB = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
       <field name="id">midia_principal</field>
@@ -698,7 +666,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         vídeo?".</p>
         </div>
 
-        <div id='conceptsIntro1A'></div><br>
+        <div id='conceptsIntro3A'></div><br>
 
         <div style="text-align: justify; width: 70%;">
         <p>O conceito <em>Reconhecedor</em> permite reconhecimento de interações
@@ -748,7 +716,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
   ]
 })
 
-_data.conceptsIntro1BlocksA = `
+_data.conceptsIntro3BlocksA = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
     <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
       <field name="id">sinte_voz</field>
@@ -1524,14 +1492,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         de <em>midia_principal</em> possui uma âncora chamada de
         <em>creditos</em> que inicia aos 300 e termina aos 360 segundos.</p>
 
-        <div id='nclIntro1CodeB'></div><br>
-      `
-    },
-    {
-      name: 'nclIntro2',
-      type: 'html',
-      html: `
-        <div style="text-align: justify; width: 70%;">
+        <div id='nclIntro1CodeA'></div><br>
+
         <p>O conceito de <em>Relacionamento</em> é baseado em causalidade e
         definido por <strong>um conjunto de condições e um conjunto de
         ações</strong>. Na NCL esse conceito já implementado pelos elementos
@@ -1598,7 +1560,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         essa <em>icone_reptetir</em> for selecionado o <em>video_principal</em>
         será reiniciado (<em>stop</em> e <em>start</em>).</p>
 
-        <div id='nclIntro2CodeA'></div>
+        <div id='nclIntro1CodeB'></div>
         </div>
       `
     }
@@ -1606,16 +1568,6 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 })
 
 _data.nclIntro1CodeA = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false;"> <![CDATA[
-  <media id="icone">
-  </media>
-  <media id="midia_principal">
-  </media>
-  ]]></script>
-`
-
-_data.nclIntro1CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
   <media id="midia_principal" src="video.mp4">
@@ -1629,16 +1581,7 @@ _data.nclIntro1CodeB = `
   ]]></script>
 `
 
-_data.nclIntro1CodeC = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false;"> <![CDATA[
-  <media id="midia_principal" src="video.mp4">
-    <property name="size" value="100%, 100%"></property>
-    <area id="credits" begin="300s" end="360s"></area>
-  </media>
-  ]]></script>
-`
-_data.nclIntro2CodeA = `
+_data.nclIntro1CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight:[7,8,12,16,20,]">
   <![CDATA[
@@ -2448,14 +2391,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>midia_principal</em> possui uma âncora chamada de
         <em>creditos</em> que inicia aos 300 e termina aos 360 segundos.</p>
 
-        <div id='htmlIntro1CodeB'></div><br>
+        <div id='htmlIntro1CodeA'></div><br>
         </div>
-      `
-    },
-    {
-      name: 'htmlIntro2',
-      type: 'html',
-      html: `
+
         <div style="text-align: justify; width: 70%;">
         <p>O conceito de <em>Relacionamento</em> é baseado em causalidade e
         definido por <strong>um conjunto de condições e um conjunto de
@@ -2522,7 +2460,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         selecionado, o <em>video_principal</em> será reiniciado (<em>stop</em> e
         <em>start</em>).</p>
 
-        <div id='htmlIntro2CodeA'></div>
+        <div id='htmlIntro1CodeB'></div>
         </div>
       `
     }
@@ -2530,14 +2468,6 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 })
 
 _data.htmlIntro1CodeA = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false;"> <![CDATA[
-  <img id="icone"></img>
-  <audio id="midia_principal"></img>
-  ]]></script>
-`
-
-_data.htmlIntro1CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
   <video id="midia_principal" src="video.mp4"
@@ -2550,16 +2480,36 @@ _data.htmlIntro1CodeB = `
   ]]></script>
 `
 
-_data.htmlIntro1CodeC = `
+_data.htmlIntro1CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false;"> <![CDATA[
-  <img id="icone" src="icone.png"
-   style="position: absolute; width: 20%; height: 20%; top: 80%; z-index: 1;">
-  </img>
-  <video id="midia_principal" src="video.mp4" 
-    style="position: absolute; height 100%; width: 100%;">
-    <area id="credits" begin="300s" end="360s"></area>
-  </video>
+  auto-links: false; highlight:[5,9,13,17,21]"><![CDATA[
+  <!DOCTYPE html>
+  <html>
+  <head><script src="synchronism.js"><&#47script></head>
+  <body>
+    <video id="midia_principal" src="video.mp4"
+      style="position: absolute; height 100%; width: 100%;">
+      <area id="credits" begin="300s" end="360s"></area>
+    </video>
+    <img id="icone_repetir" src="icone_repetir.png"
+      style="position: absolute; width: 20%; height: 20%; top: 80%; z-index: 1;">
+    </img>
+    <script>
+      var sync1 = new Synchronism("onBeginStart")
+      sync.bind("onBegin", "body")
+      sync.bind("start", "midia_principal")
+
+      var sync2 = new Synchronism("onBeginStart")
+      sync.bind("onBegin", "midia_principal", "credits")
+      sync.bind("start", "icone_repetir")
+
+      var sync3 = new Synchronism("onSelectionStopStart")
+      sync.bind("onSelection", "icone_repetir")
+      sync.bind("stop", "midia_principal")
+      sync.bind("start", "midia_principal")
+    <&#47script>
+  </body>
+  </html>
   ]]></script>
 `
 
@@ -2711,39 +2661,6 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     }
   ]
 })
-
-_data.htmlIntro2CodeA = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[5,9,13,17,21]"><![CDATA[
-  <!DOCTYPE html>
-  <html>
-  <head><script src="synchronism.js"><&#47script></head>
-  <body>
-    <video id="midia_principal" src="video.mp4"
-      style="position: absolute; height 100%; width: 100%;">
-      <area id="credits" begin="300s" end="360s"></area>
-    </video>
-    <img id="icone_repetir" src="icone_repetir.png"
-      style="position: absolute; width: 20%; height: 20%; top: 80%; z-index: 1;">
-    </img>
-    <script>
-      var sync1 = new Synchronism("onBeginStart")
-      sync.bind("onBegin", "body")
-      sync.bind("start", "midia_principal")
-
-      var sync2 = new Synchronism("onBeginStart")
-      sync.bind("onBegin", "midia_principal", "credits")
-      sync.bind("start", "icone_repetir")
-
-      var sync3 = new Synchronism("onSelectionStopStart")
-      sync.bind("onSelection", "icone_repetir")
-      sync.bind("stop", "midia_principal")
-      sync.bind("start", "midia_principal")
-    <&#47script>
-  </body>
-  </html>
-  ]]></script>
-`
 
 _data.htmlIntro3CodeA = _data.nclIntro3CodeA
 
