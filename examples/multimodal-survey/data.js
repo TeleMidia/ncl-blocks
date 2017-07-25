@@ -1644,7 +1644,7 @@ _data.nclIntro1CodeD = `
   auto-links: false;"> <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <speak xmlns="http://www.w3.org/2001/10/synthesis">
-    <s id="pertunta">você deseja repetir o vídeo?</s>
+    <s id="pergunta">você deseja repetir o vídeo?</s>
   </speak>
   ]]></script>
 `
@@ -1653,7 +1653,7 @@ _data.nclIntro1CodeE = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
   <media id="sinte_voz" src="sinte_voz.ssml">
-    <area label="pertunta"></area> <!-- referência id repetir de sinte_voz.ssml-->
+    <area label="pergunta"></area> <!-- referência id repetir de sinte_voz.ssml-->
   </media>
   ]]></script>
 `
