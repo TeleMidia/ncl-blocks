@@ -2050,7 +2050,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
 _data.nclIntro4CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[14,17,25]">
+  auto-links: false; highlight:[27,29,31,33]">
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <ncl>
@@ -2078,12 +2078,13 @@ _data.nclIntro4CodeA = `
         <bind role="onBegin" component="video_principal" interface="credits"></bind>
         <bind role="start" component="sinte_voz" interface="pergunta"></bind>
         <bind role="start" component="rec_voz"></bind>
+        <bind role="start" component="rec_gesto"></bind>
       </link>
       <link xconnector="conEx#onOrRecognizeStopStart">
         <bind role="onRecognize" component="rec_voz" interface="repete"/>
         <bind role="onRecognize" component="rec_gesto" interface="esquerda"/>
-        <bind role="stop" component="rec_gesto"></bind>
         <bind role="stop" component="rec_voz"></bind>
+        <bind role="stop" component="rec_gesto"></bind>
         <bind role="stop" component="video_principal"/>
         <bind role="start" component="video_principal"/>
       </link>
