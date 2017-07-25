@@ -18,9 +18,9 @@ _data.surveyJSON = {
 }
 var pageIndex
 
-var _agreeChoices = ['Discordo fortemente', 'Discordo bastante', 'Discordo um pouco',
-  'Não concordo nem discordo', 'Concordo um pouco', 'Concordo bastante',
-  'Concordo fortemente']
+var _agreeChoices = ['Discordo fortemente', 'Discordo bastante',
+  'Discordo um pouco', 'Não concordo nem discordo', 'Concordo um pouco',
+  'Concordo', 'Concordo fortemente']
 
 // ----------------------------------------
 // termo page
