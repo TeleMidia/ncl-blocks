@@ -2237,7 +2237,7 @@ _data.nclIntro5CodeB = `
       </link>
       <link xconnector="conEx#onRecognizeStart">
         <bind role="onRecognize" component="rec_voz" interface="repete">
-          <linkParam name="user_id" value="gu_leap_microphone(2)"></linkParam>
+          <bindParam name="user_id" value="gu_leap_microphone(2)"></bindParam>
         </bind>
         <bind role="stop" component="video_principal"></bind>
         <bind role="start" component="video_principal"></bind>
