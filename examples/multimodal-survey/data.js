@@ -37,8 +37,7 @@ _data.surveyJSON.pages.push({
       html: `
         <div style="text-align: justify; width: 70%;">
         <p>O TeleMídia é um grupo de pesquisa da PUC-Rio que desenvolve
-        pesquisas nas áreas de Sistemas Multimídia e, em particular, TV Digital
-        e IPTV.</p>
+        pesquisas em Sistemas Multimídia.</p>
 
         <p>Convidamos a você a participar deste estudo sobre nossa pesquisa
         de <i>Interações multimodais em linguagens multimídia</i>.</p>
@@ -329,35 +328,14 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <p>Na nossa representação de blocos, a <em>Mídia</em> é definida
         juntando um bloco de <em>Mídia</em>, com o campo id preenchido, e um
-        bloco de conteúdo, com as âncoras preenchidas. Exemplos de blocos serão
-        apresentados para ilustrar o conceito.</p>
-
-        <p>Os blocos a seguir definem duas mídias com identificadores
-        <em>midia_principal</em> e <em>icone</em>, mas elas não possuem
-        conteúdo. Por não terem conteúdo, essas <em>&ltmedia></em> não
-        apresentam resultados audiovisuais.</p>
-        </div>
-
-        <div id='conceptsIntro1A'></div><br>
-
-        <div style="text-align: justify; width: 70%;"> 
-        <p>Os blocos a seguir definem as mesmas mídias acima, mas com conteúdos
-        de áudio e imagem, respectivamente. Em especial, a mídia de
-        <em>midia_principal</em> tem definida uma âncora chamada de
+        bloco de conteúdo, com as âncoras preenchidas. Os blocos a seguir
+        definem duas mídias com identificadores <em>midia_principal</em> e
+        <em>icone_repetir</em>, e conteúdos de vídeo e imagem, respectivamente.
+        Em especial, <em>midia_principal</em> possui uma âncora chamada de
         <em>creditos</em> que inicia aos 300 e termina aos 360 segundos.</p>
         </div>
 
         <div id='conceptsIntro1B'></div><br>
-
-        <div style="text-align: justify; width: 70%;">
-        <p>É importante ressaltar que mudanças no conteúdo de uma <em>Mídia</em>
-        não afetam o comportamento da aplicação, desde que a mídia defina os
-        mesmos trechos, pois <em>Sincronismo</em>s são definidos independe do
-        conteúdo. Por exemplo, os blocos a seguir definem a mesma mídia
-        <em>midia_principal</em> mas com o conteúdo de vídeo.</p>
-        </div>
-
-        <div id='conceptsIntro1C'></div><br>
 
         <div style="text-align: justify; width: 70%;">
         <p>Além de mídias como imagens, áudio e vídeos, o conceito
@@ -472,7 +450,7 @@ _data.conceptsIntro1BlocksB = `
     <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
       <field name="id">midia_principal</field>
       <value name="src">
-        <block type="audio" id="OFge%WW-~~.%rZKqZqym">
+        <block type="video" id="OFge%WW-~~.%rZKqZqym">
           <mutation length="1"></mutation>
           <field name="id_area0">creditos</field>
           <field name="begin0">300s</field>
@@ -481,7 +459,7 @@ _data.conceptsIntro1BlocksB = `
       </value>
     </block>
     <block type="media" id="PnS;4T$~ftTn7U;nWSZb" x="594" y="71">
-      <field name="id">icone</field>
+      <field name="id">icone_repetir</field>
       <value name="src">
         <block type="image" id="n8jL;6KJe-2c6B~=pPj("></block>
       </value>
@@ -1524,31 +1502,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Elementos <em>&ltmedia></em> também podem possuir elementos
         <em>&ltproperty></em> para definir características de sua exibição, como
         <em>&ltsize></em> (width e height), <em>&ltposition></em> (top e left)
-        and <em>&ltz-index></em>. Trechos de código serão apresentados a seguir
-        para ilustrar esse conceito em NCL.</p>
-
-        <p>O trecho de código a seguir define duas mídias com identificadores
-        <em>midia_principal</em> e <em>icone</em>, mas elas não possuem
-        conteúdo. Por não terem conteúdo, elas não apresentam resultados
-        audiovisuais.</p>
-
-        <div id='nclIntro1CodeA'></div><br>
-
-        <p>O trecho de código a seguir define as mesmas mídias acima, mas com
-        conteúdos de áudio e imagem, respectivamente. Em especial, a mídia de
-        <em>midia_principal</em> tem definida uma âncora chamada de
+        and <em>&ltz-index></em>. O trecho de código a seguir define duas mídias
+        com identificadores <em>midia_principal</em> e <em>icone_repetir</em>, e
+        com conteúdos de vídeo e imagem, respectivamente. Em especial, a mídia
+        de <em>midia_principal</em> possui uma âncora chamada de
         <em>creditos</em> que inicia aos 300 e termina aos 360 segundos.</p>
 
         <div id='nclIntro1CodeB'></div><br>
-
-        <p>É importante ressaltar que mudanças no conteúdo de uma
-        <em>&ltmedia></em> não afetam o comportamento da aplicação, desde que a
-        mídia defina as mesmas âncoras, pois os sincronismos são definidos
-        baseados nas âncoras e independentes do conteúdo. Por exemplo, o trecho
-        de código a seguir define a mesma mídia <em>midia_principal</em>, mas
-        com o conteúdo de vídeo.</p>
-
-        <div id='nclIntro1CodeC'></div>
 
         <p>Além de mídias como imagens, áudio e vídeos, o elemento
         <em>&ltmedia></em> de nossa NCL deve suportar outras modalidades de
@@ -1657,13 +1617,13 @@ _data.nclIntro1CodeA = `
 _data.nclIntro1CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
+  <media id="midia_principal" src="video.mp4">
+    <area id="credits" begin="300s" end="360s"></area>
+  </media>
   <media id="icone" src="icone.png">
     <property name="size" value="20%, 20%"></property>
     <property name="top" value="80%"></property>
     <property name="zindex" value="1"></property>
-  </media>
-  <media id="midia_principal" src="audio.mp4">
-    <area id="credits" begin="300s" end="360s"></area>
   </media>
   ]]></script>
 `
@@ -2432,8 +2392,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>O conceito de <em>Mídia</em> é definido por <strong>um identificador,
         um conteúdo e âncoras</strong>. Na nossa HTML, ele  é parcialmente
         implementado por elementos como <em>&ltimg></em>, <em>&ltaudio></em>,
-        <em>&ltvideo></em> e <em>&ltobj></em>. O identificador é definido pelo
-        atributo <em>id</em> e o arquivo de mídia do conteúdo é definido
+        <em>&ltvideo></em> e <em>&ltobject></em>. O identificador é definido
+        pelo atributo <em>id</em> e o arquivo de mídia do conteúdo é definido
         atributo <em>src</em>. Para permitir definir âncoras esses elementos são
         estendidos com elementos <em>&ltarea></em>. Uma <em>&ltarea></em> pode
         definir uma porção temporal com os atributos <em>begin</em> e
@@ -2445,27 +2405,12 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         ilustrar esse conceito em HTML.</p>
 
         <p>O trecho de código a seguir define as duas mídias com identificadores
-        <em>midia_principal</em> e <em>icone</em>, mas elas não possuem
-        conteúdo. Por não terem conteúdo, elas não apresentaram resultados
-        audiovisuais.</p>
-
-        <div id='htmlIntro1CodeA'></div><br>
-
-        <p>O trecho de código a seguir define as mesmas mídias acima, mas com
-        conteúdos de áudio e imagem, respectivamente. Em especial, a mídia de
-        <em>midia_principal</em> tem definida uma âncora chamada de
+        <em>midia_principal</em> e <em>icone_repetir</em>, e com
+        conteúdos de vídeo e imagem, respectivamente. Em especial, a mídia de
+        <em>midia_principal</em> possui uma âncora chamada de
         <em>creditos</em> que inicia aos 300 e termina aos 360 segundos.</p>
 
         <div id='htmlIntro1CodeB'></div><br>
-
-        <p>É importante ressaltar que mudanças no conteúdo de uma
-        <em>&ltmedia></em> não afetam o comportamento da aplicação, desde que a
-        mídia defina as mesmas âncoras, pois os sincronismos são definidos
-        baseados nas âncoras e independentes do conteúdo. Por exemplo, o trecho
-        de código a seguir define a mesma mídia <em>midia_principal</em> mas
-        com o conteúdo de vídeo.</p>
-
-        <div id='htmlIntro1CodeC'></div>
 
         <p>Além de mídias como imagens, áudio e vídeos, a nossa HTML estendida
         e suportar outras modalidades de conteúdo como sintetização de voz e  
@@ -2579,12 +2524,13 @@ _data.htmlIntro1CodeA = `
 _data.htmlIntro1CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
+  <video id="midia_principal" src="video.mp4"
+    style="position: absolute; height 100%; width: 100%;">
+    <area id="credits" begin="300s" end="360s"></area>
+  </video>
   <img id="icone" src="icone.png"
      style="position: absolute; width: 20%; height: 20%; top: 80%; z-index: 1;">
   </img>
-  <audio id="midia_principal" src="audio.mp3">
-    <area id="credits" begin="300s" end="360s"></area>
-  </audio>
   ]]></script>
 `
 
@@ -2701,12 +2647,12 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;">
         <p>O conceito <em>Reconhecedor</em> é definido por <strong>um
         identificador, seu conteúdo e âncoras</strong>. Na nossa HTML, ele é
-        implementado pelo elemento <em>&ltobj></em>. O identificador é definido
-        pelo atributo <em>id</em> e a descrição de reconhecimento é definida
-        pelo atributo <em>src</em>. As âncoras são definidas pelo elemento
-        <em>area</em> e podem definir trechos delimitados da descrição com o
-        atributo <em>label</em>. Trechos de código serão apresentados a seguir
-        para ilustrar esse conceito em HTML.</p>
+        implementado pelo elemento <em>&ltobject></em>. O identificador é
+        definido pelo atributo <em>id</em> e a descrição de reconhecimento é
+        definida pelo atributo <em>src</em>. As âncoras são definidas pelo
+        elemento <em>area</em> e podem definir trechos delimitados da descrição
+        com o atributo <em>label</em>. Trechos de código serão apresentados a
+        seguir para ilustrar esse conceito em HTML.</p>
 
         <p>O trecho de código a seguir ilustra o arquivo <em>rec_voz.srgs</em>
         que seguir o formato SRGS (Speech Recognition Grammar Specification)

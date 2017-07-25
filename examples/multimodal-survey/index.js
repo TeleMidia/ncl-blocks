@@ -86,9 +86,9 @@ $('#surveyPageNo').change(function () {
 })
 
 // $('#surveyPageNo').val(1).change()
-$('#surveyPageNo').val(3).change()
+// $('#surveyPageNo').val(3).change()
 // $('#surveyPageNo').val(4).change()
-// $('#surveyPageNo').val(5).change()
+$('#surveyPageNo').val(5).change()
 // $('#surveyPageNo').val(7).change()
 
 // ----------------------------------------
@@ -134,12 +134,12 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
 
   switch (questionName) {
     case 'conceptsIntro1':
-      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro1A',
-        NCLBlocks.calcHt(1, 60), _data.conceptsIntro1BlocksA, true)
+      // NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro1A',
+      //   NCLBlocks.calcHt(1, 60), _data.conceptsIntro1BlocksA, true)
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro1B',
         NCLBlocks.calcHt(1, 110), _data.conceptsIntro1BlocksB, true)
-      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro1C',
-        NCLBlocks.calcHt(1, 110), _data.conceptsIntro1BlocksC, true)
+      // NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro1C',
+      //   NCLBlocks.calcHt(1, 110), _data.conceptsIntro1BlocksC, true)
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro1D',
         NCLBlocks.calcHt(1, 110), _data.conceptsIntro1BlocksD, true)
       break
@@ -220,9 +220,9 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       _blocksTask4Workspace.addChangeListener(saveblocksTask4Changes)
       break
     case 'nclIntro1':
-      $('#nclIntro1CodeA').append(_data.nclIntro1CodeA)
+      // $('#nclIntro1CodeA').append(_data.nclIntro1CodeA)
       $('#nclIntro1CodeB').append(_data.nclIntro1CodeB)
-      $('#nclIntro1CodeC').append(_data.nclIntro1CodeC)
+      // $('#nclIntro1CodeC').append(_data.nclIntro1CodeC)
       $('#nclIntro1CodeD').append(_data.nclIntro1CodeD)
       $('#nclIntro1CodeE').append(_data.nclIntro1CodeE)
       SyntaxHighlighter.highlight()
@@ -232,9 +232,9 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       SyntaxHighlighter.highlight()
       break
     case 'nclIntro3':
-      $('#nclIntro3CodeA').append(_data.nclIntro3CodeA)
+      // $('#nclIntro3CodeA').append(_data.nclIntro3CodeA)
       $('#nclIntro3CodeB').append(_data.nclIntro3CodeB)
-      $('#nclIntro3CodeC').append(_data.nclIntro3CodeC)
+      // $('#nclIntro3CodeC').append(_data.nclIntro3CodeC)
       $('#nclIntro3CodeD').append(_data.nclIntro3CodeD)
       SyntaxHighlighter.highlight()
       break
