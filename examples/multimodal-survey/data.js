@@ -277,27 +277,18 @@ _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'html',
   html: `
     <div style="text-align: justify; width: 70%;"> 
-    <p>Em nossa pesquisa, argumentamos que as linguagens multimídia atuais
-    não suportam adequadamente interações multimodais. Essas linguagem podem
-    ser consideradas "output-oriented", pois têm maior foco na exibição de
-    conteúdos de mídia, como imagens, vídeo e áudios.</p>
-
     <p>Em nossa pesquisa propomos quatro conceitos que são necessários para
     uma linguagem multimídia suportar interações multimodais. Mais
     precisamente, esses conceitos são os de <em>Mídia, Reconhecedor,
     Sincronismo</em> e <em>Grupo de Usuários</em>.</p>
    
-    <p>Para evitar possíveis dificuldades dada a sintaxe das linguagens,
+    <p>Para evitar possíveis dificuldades com a sintaxe das linguagens,
     apresentaremos esses conceitos utilizando uma abordagem de
-    <strong>desenvolvimento de aplicações através de blocos</strong>.</p>
-
-    <p>Esse tipo de abordagem é bastante utilizado para o ensino de
-    programação ou para ferramentas de geração de código. Em especial,
-    esse tipo de desenvolvimento foi popularizado por ferramentas como o
-    <strong>MIT Scratch</strong> e <strong>MIT App</strong>
-    Inventor</strong>. O primeiro é utilizado para criar aplicações web,
-    especialmente jogos, e o segundo utilizado para criar aplicações móveis.
-    Ambos são ilustrados a seguir.</p>
+    <strong>desenvolvimento de aplicações através de blocos</strong>. Esse tipo
+    de abordagem é bastante utilizado para o ensino de programação ou para
+    ferramentas de geração de código. Em especial, esse tipo de desenvolvimento
+    foi popularizado por ferramentas como o <strong>MIT Scratch</strong> e
+    <strong>MIT App</strong> Inventor</strong> (ilustrados a seguir).</p>
 
     <div class='text-center'>
       <img class='img-thumbnail' style='height: 270px'
@@ -329,16 +320,14 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'conceptsIntro1',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Primeiro, vamos detalhar <em>Mídia</em>. Ele permite definir o uso de
-        conteúdo audiovisual.</p>
+        <p>O conceito de <em>Mídia</em> permite definir o uso de conteúdo
+        audiovisual. Ela é definida por <strong>um identificador, um conteúdo e
+        âncoras</strong>. O conteúdo consiste em um arquivo de mídia, como
+        imagem jpeg, vídeo mp4, áudio mp3, entre outros. As âncoras são porções
+        do conteúdo e podem ser trechos temporais (e.g. entre 300s e 360s) ou
+        trechos delimitados do conteúdo.</p>
 
-        <p>Uma <em>Mídia</em> é definida por <strong>um identificador, um
-        conteúdo e âncoras</strong>. O conteúdo consiste em um arquivo de mídia,
-        como imagem jpeg, vídeo mp4, áudio mp3, entre outros. As âncoras são
-        porções do conteúdo e podem ser trechos temporais (e.g. entre 300s e
-        360s) ou trechos delimitados do conteúdo.</p>
-
-        <p>Em nossa representação de blocos, a <em>Mídia</em> é definida
+        <p>Na nossa representação de blocos, a <em>Mídia</em> é definida
         juntando um bloco de <em>Mídia</em>, com o campo id preenchido, e um
         bloco de conteúdo, com as âncoras preenchidas. Exemplos de blocos serão
         apresentados para ilustrar o conceito.</p>
@@ -388,27 +377,21 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'conceptsIntro2',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Agora vamos detalhar o conceito de <em>Sincronismo</em>. Ele
-        permite definir o comportamento das aplicações.</p>
+        <p>O conceito de <em>Sincronismo</em> permite definir o comportamento
+        das aplicações. Ele é baseado em causalidade e definido por <strong>um
+        conjunto de condições e um conjunto de ações</strong>. As ações são
+        executadas em sequência quando as condições são satisfeitas.</p>
 
-        <p>O <em>Sincronismo</em> é baseado em causalidade e definido por
-        <strong>um conjunto de condições e um conjunto de ações</strong>. As
-        ações são executadas em sequência quando as condições são
-        satisfeitas.</p>
+        <p>Na nossa representação de blocos, o <em>Sincronismo</em> é juntato um
+        um bloco <em>Sincronismo</em> com blocos de condições e blocos de ações.
+        Blocos de ações podem ser de iniciar ("inicie") ou parar ("pare") uma
+        <em>Mídia</em> ou <em>Reconhecedor</em>. Já as condições podem ser
+        simples ou compostas. Blocos de condições simples podem ser de início
+        ("ao começar") ou fim ("ao terminar") de uma mídia ou de sua âncora,
+        seleção de mídia pelo usuário ("ao selecionar") ou reconhecimento de uma
+        interação multimodal ("ao reconhecer").<p>
 
-        <p>Em nossa representação de blocos, o <em>Sincronismo</em> é
-        implementado por um bloco de mesmo nome.</p>
-
-        <p>Os blocos de ações podem ser de iniciar ("inicie") ou parar ("pare")
-        uma <em>Mídia</em> ou <em>Reconhecedor</em>. Já as condições podem ser
-        simples ou compostas. 
-        
-        <p>Os blocos de condições simples podem ser de início ("ao começar") ou
-        fim ("ao terminar") de uma mídia ou de sua âncora, seleção de mídia pelo
-        usuário ("ao selecionar") ou reconhecimento de uma interação multimodal
-        ("ao reconhecer").<p>
-
-        <p>Os blocos de condições compostas combinam ações simples utilizando
+        <p>Blocos de condições compostas combinam ações simples utilizando
         um dos seguintes operadores: 'OR' quando apenas uma das condições é
         necessária; 'AND' quando todas as condições são necessárias em qualquer
         ordem; e 'SEQ' quando todos as condições são necessárias e na sequência
@@ -750,16 +733,14 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'conceptsIntro3',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Agora vamos detalhar o conceito <em>Reconhecedor</em>. Ele permite
-        o uso de reconhecimento de interações multimodais realizadas pelo
-        usuário, como voz e gestos.</p>
-
-        <p>O <em>Reconhecedor</em> é definido por <strong>um identificador, seu
-        conteúdo e âncoras</strong>. Entretanto, diferente de <em>Mídia</em>, o
-        conteúdo de um <em>Reconhecedor</em> deve ser uma descrição de
-        reconhecimento. As âncoras são porções delimitadas da descrição.
-        Por exemplo, uma descrição de reconhecimento de voz deve ter âncoras que
-        devem as frases a serem reconhecidas.</p>
+        <p>O conceito <em>Reconhecedor</em> permite reconhecimento de interações
+        multimodais realizadas por usuários, como voz e gestos. Ele é definido
+        por <strong>um identificador, seu conteúdo e âncoras</strong>.
+        Entretanto, diferente de <em>Mídia</em>, o conteúdo de um
+        <em>Reconhecedor</em> deve ser uma descrição de reconhecimento. As
+        âncoras são porções delimitadas da descrição. Por exemplo, uma descrição
+        de reconhecimento de voz deve ter âncoras que devem as frases a serem
+        reconhecidas.</p>
 
         <p>Na nossa representação de blocos, o <em>Reconhecedor</em> é definido
         juntando um bloco de <em>Reconhecedor</em> com o campo id preenchido, e
@@ -1232,12 +1213,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'conceptsIntro5',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Por fim, vamos detalhar <em>Grupo de usuários</em>. Ele permite
-        identificar unicamente interações de cada usuário. Por exemplo,
-        o comando de voz apenas de um determinado usuário</p>
-
-        <p><em>Grupo de Usuários</em> é definido por <strong>um identificador,
-        número máximo de participantes e quais dispositivos estes
+        <p>O conceito de <em>Grupo de usuários</em> permite identificar
+        unicamente interações de cada usuário. Por exemplo, o comando de voz
+        apenas de um determinado usuário. Ele é definido por <strong>um
+        identificador, número máximo de participantes e quais dispositivos estes
         utilizam</strong>. Mais precisamente, esses dispositivos definem o que
         um usuário necessita possuir para participar do grupo.</p>
 
@@ -1534,18 +1513,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Primeiro, vamos detalhar o conceito de <em>Mídia</em>. Ele permite
-        definir o uso de conteúdo audiovisual.</p>
-
-        <p>Uma <em>Mídia</em> é definida por <strong>um identificador, um
-        conteúdo e âncoras</strong>.</p>
-
-        <p>Na NCL, o conceito de <em>Mídia</em> já é implementado pelo elemento
-        <em>&ltmedia></em>. O identificador é definido pelo atributo <em>id</em>
-        e o arquivo de mídia do conteúdo é definido pelo atributo <em>src</em>.
-        As âncoras são definidas pelo elemento <em>area</em> e podem definir
-        porções temporais com os atributos <em>begin</em> e <em>end</em> ou
-        trechos delimitados com o atributo <em>label</em>.</p>
+        <p>O conceito de <em>Mídia</em> é definida por <strong>um identificador,
+        um conteúdo e âncoras</strong>. Na nossa NCL, ele já é implementado pelo
+        elemento <em>&ltmedia></em>. O identificador é definido pelo atributo
+        <em>id</em> e o arquivo de mídia do conteúdo é definido pelo atributo
+        <em>src</em>. As âncoras são definidas pelo elemento <em>area</em> e
+        podem definir porções temporais com os atributos <em>begin</em> e
+        <em>end</em> ou trechos delimitados com o atributo <em>label</em>.</p>
 
         <p>Elementos <em>&ltmedia></em> também podem possuir elementos
         <em>&ltproperty></em> para definir características de sua exibição, como
@@ -1597,33 +1571,26 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Agora vamos detalhar o conceito de <em>Sincronismo</em>. Ele permite
-        definir o comportamento das aplicações.</p>
+        <p>O conceito de <em>Sincronismo</em> é baseado em causalidade e
+        definido por <strong>um conjunto de condições e um conjunto de
+        ações</strong>. Na NCL esse conceito já implementado pelos elementos
+        <em>&ltport></em> e <em>&ltlink></em>. Os elementos <em>&ltport></em>
+        indicam quais elementos  de <em>&ltmedia></em> são iniciados quando a
+        aplicação é iniciada.</p>
 
-        <p>O <em>Sincronismo</em> é baseado em causalidade e definido por
-        <strong>um conjunto de condições e um conjunto de ações</strong>. As
-        ações são executadas em sequência quando as condições são
-        satisfeitas.</p>
+        <p>No <em>&ltlink></em> as ações podem ser de iniciar ("start") ou parar
+        ("stop") uma <em>Mídia</em> ou <em>Reconhecedor</em>. Já as condições
+        podem ser simples ou compostas. As condições simples em um
+        <em>&ltlink></em> podem ser de início ("onBegin") ou fim ("onEnd") de
+        uma mídia ou de sua âncora, seleção de mídia pelo usuário
+        ("onSelection") ou reconhecimento de uma interação multimodal
+        ("onRecognition").<p>
 
-        <p>Na NCL esse conceito já implementado pelos elementos
-        <em>&ltport></em> e <em>&ltlink></em>. Em particular, elementos
-        <em>&ltport></em> indicam quais elementos  de <em>&ltmedia></em> são
-        iniciados quando a aplicação é iniciada.</p>
-
-        <p>As ações em um <em>&ltlink></em> podem ser de iniciar ("start") ou
-        parar ("stop") uma <em>Mídia</em> ou <em>Reconhecedor</em>. Já as
-        condições podem ser simples ou compostas. 
-        
-        <p>As condições simples em um <em>&ltlink></em> podem ser de início
-        ("onBegin") ou fim ("onEnd") de uma mídia ou de sua âncora,
-        seleção de mídia pelo usuário ("onSelection") ou reconhecimento de uma
-        interação multimodal ("onRecognition").<p>
-
-        <p>Em nossa NCL estendida, as condições compostas em um
-        <em>&ltlink></em> combinam condições simples utilizando um dos seguintes
-        operadores: 'OR' quando apenas uma das condições é necessária; 'AND'
-        quando todas condições são necessárias em qualquer ordem; e 'SEQ' quando
-        todas as condições são necessárias e na sequência estabelecida.</p>
+        <p>Em nossa NCL, as condições compostas em um <em>&ltlink></em> combinam
+        condições simples utilizando um dos seguintes operadores: 'OR' quando
+        apenas uma das condições é necessária; 'AND' quando todas condições são
+        necessárias em qualquer ordem; e 'SEQ' quando todas as condições são
+        necessárias e na sequência estabelecida.</p>
 
         <p>O relacionamento entre condições e ações é definido pelo connector no
         atributdo <em>xconnector</em> do <em>&ltlink></em>. A tabela a seguir
@@ -1859,22 +1826,14 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Agora vamos detalhar o conceito <em>Reconhecedor</em> em NCL. Ele
-        permite o uso de reconhecimento de interações multimodais realizadas pelo
-        usuário, como voz e gestos.</p>
-        
-        <p>O <em>Reconhecedor</em> é definido por <strong>um identificador, seu
-        conteúdo e âncoras</strong>. Entretanto, diferente de <em>Mídia</em>, o
-        conteúdo de um <em>Reconhecedor</em> deve ser uma descrição de
+        <p>O conceito de <em>Reconhecedor</em> é definido por <strong>um identificador, seu
+        conteúdo e âncoras</strong>. Na nossa NCL, ele é implementado pelo
+        elemento <em>&ltinput></em>. O identificador é definido pelo atributo
+        <em>id</em> e a descrição de reconhecimento é definida pelo atributo
+        <em>src</em>. As âncoras são definidas pelo elemento <em>area</em> e
+        podem definir trechos delimitados da descrição com o atributo
+        <em>label</em>. Trechos de código ilustram exemplos de descrições de
         reconhecimento.</p>
-        
-        <p>Na nossa NCL estendida, o conceito de <em>Reconhecedor</em> é
-        implementado pelo elemento <em>&ltinput></em>. O identificador é
-        definido pelo atributo <em>id</em> e a descrição de reconhecimento é
-        definida pelo atributo <em>src</em>. As âncoras são definidas pelo
-        elemento <em>area</em> e podem definir trechos delimitados da descrição
-        com o atributo <em>label</em>. Trechos de código ilustram exemplos de
-        descrições de reconhecimento.</p>
 
         <p>O trecho de código a seguir ilustra o arquivo <em>rec_voz.srgs</em>
         que seguir o formato SRGS (Speech Recognition Grammar Specification)
@@ -1887,7 +1846,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         que segue o formato GML(Gesture Markup Language) para reconhecimento de
         gestos de mão. Ele possui dois gestos com os identificadores
         <em>swipe_esquerda</em> e <em>swipe_direita</em>, que definem gestos de
-        mão para esquerda e para direita, respectivamente</p>
+        mão para esquerda e para direita, respectivamente.</p>
 
         <div id='nclIntro3CodeB'></div><br>
 
@@ -2206,23 +2165,16 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Agora vamos detalhar o elemento <em>Grupo de Usuários</em> em NCL.
-        Ele permite identificar unicamente interações de cada usuário. Por
-        exemplo, o comando de voz apenas de um determinado usuário</p>
-
-        <p><em>Grupo de Usuários</em> é definido <strong>por um identificador,
-        número máximo de participantes e quais dispositivos estes
-        utilizam</strong>. Mais precisamente, esses dispositivos definem o que
-        um usuário necessita possuir para participar do grupo.</p>
-        
-        <p>Na nossa NCL estendida, o conceito de <em>Grupo de Usuários</em> é
-        implementado pelo elemento <em>&ltuserClass></em> dentro do
-        <em>&lthead></em>. O identificador é definido pelo atributo <em>id</em>
-        e os dispositivos são definidos por um arquivo de descrição definido em
-        <em>src</em>. Para essa descrição propomos um descrição  no formato
-        SPARQL. O trecho de código a seguir apresenta o arquivo de descrição de
-        usuários <em>gu_leap_microphone.sparql</em>. Essa descrição define que
-        cada usuário do grupo deve ter um microfone e um leapmotion.</p>
+        <p>O conceito de <em>Grupo de Usuários</em> é definido <strong>por um
+        identificador, número máximo de participantes e quais dispositivos estes
+        utilizam</strong>. Na nossa NCL, ele é implementado pelo elemento
+        <em>&ltuserClass></em> dentro do <em>&lthead></em>. O identificador é
+        definido pelo atributo <em>id</em> e os dispositivos são definidos por
+        um arquivo de descrição definido em <em>src</em>. Para essa descrição
+        propomos um descrição  no formato SPARQL. O trecho de código a seguir
+        apresenta o arquivo de descrição de usuários
+        <em>gu_leap_microphone.sparql</em>. Essa descrição define que cada
+        usuário do grupo deve ter um microfone e um leapmotion.</p>
 
         <div id='nclIntro5CodeA'></div><br>
 
@@ -2477,14 +2429,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Primeiro, vamos detalhar o conceito de <em>Mídia</em>. Ele permite
-        definir o uso de conteúdo audiovisual.</p>
-
-        <p>Uma <em>Mídia</em> é definida por <strong>um identificador, um
-        conteúdo e âncoras</strong>.</p>
-
-        <p>Em nossa HTML estendida, o conceito de <em>Mídia</em> é parcialmente
-        implementado por elementos como <em>&ltimg></em>, <em>&ltaudio></em>, 
+        <p>O conceito de <em>Mídia</em> é definido por <strong>um identificador,
+        um conteúdo e âncoras</strong>. Na nossa HTML, ele  é parcialmente
+        implementado por elementos como <em>&ltimg></em>, <em>&ltaudio></em>,
         <em>&ltvideo></em> e <em>&ltobj></em>. O identificador é definido pelo
         atributo <em>id</em> e o arquivo de mídia do conteúdo é definido
         atributo <em>src</em>. Para permitir definir âncoras esses elementos são
@@ -2521,10 +2468,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div id='htmlIntro1CodeC'></div>
 
         <p>Além de mídias como imagens, áudio e vídeos, a nossa HTML estendida
-        deve suportar outras modalidades de conteúdo como sintetização de voz e
+        e suportar outras modalidades de conteúdo como sintetização de voz e  
         avatares humanoides. Por exemplo, os trechos de código a seguir ilustram
         o uso de sintetização de voz em nossa HTML.</p>
-
 
         <p>Além de mídias como imagens, áudio e vídeos, o elemento
         <em>&ltmedia></em> de nossa HTML deve suportar outras modalidades de
@@ -2550,21 +2496,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Agora vamos detalhar o conceito de <em>Sincronismo</em>. Ele
-        permite definir o comportamento das aplicações.</p>
-
-        <p>O <em>Sincronismo</em> é baseado em causalidade e definido por
-        <strong>um conjunto de condições e um conjunto de ações</strong>. As
-        ações são executadas em sequência quando as condições são
-        satisfeitas.</p>
-
-        <p>Em nossa HTML estendida esse conceito é implementado pelo elemento
+        <p>O conceito de <em>Sincronismo</em> é baseado em causalidade e
+        definido por <strong>um conjunto de condições e um conjunto de
+        ações</strong>. Na nossa HTML, ele é implementado pelo elemento
         <em>&ltscript></em>, com um código JavaScript que utiliza o objeto
-        <em>Synchronism</em>.</p>
-
-        <p>As ações podem ser de iniciar ("start") ou parar ("stop") uma
-        <em>Mídia</em> ou <em>Reconhecedor</em>. Já as condições podem ser
-        simples ou compostas. 
+        <em>Synchronism</em>. <p>As ações podem ser de iniciar ("start") ou
+        parar ("stop") uma <em>Mídia</em> ou <em>Reconhecedor</em>. Já as
+        condições podem ser simples ou compostas. 
         
         <p>As condições simples em um objeto <em>Synchronism</em> podem ser de
         início ("onBegin") ou fim ("onEnd") de uma mídia ou de sua âncora,
@@ -2761,16 +2699,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Agora vamos detalhar o conceito <em>Reconhecedor</em> em HTML. Ele
-        permite o uso de reconhecimento de interações multimodais realizadas
-        pelo usuário, como voz e gestos.</p>
-
-        <p>O <em>Reconhecedor</em> é definido por <strong>um identificador, seu
-        conteúdo e âncoras</strong>. Entretanto, diferente de <em>Mídia</em>, o
-        conteúdo de um <em>Reconhecedor</em> deve ser uma descrição de
-        reconhecimento.</p>
-        
-        <p>Na nossa HTML estendida, o conceito de <em>Reconhecedor</em> é
+        <p>O conceito <em>Reconhecedor</em> é definido por <strong>um
+        identificador, seu conteúdo e âncoras</strong>. Na nossa HTML, ele é
         implementado pelo elemento <em>&ltobj></em>. O identificador é definido
         pelo atributo <em>id</em> e a descrição de reconhecimento é definida
         pelo atributo <em>src</em>. As âncoras são definidas pelo elemento
@@ -2789,7 +2719,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         que segue o formato GML(Gesture Markup Language) para reconhecimento de
         gestos de mão. Ele possui dois gestos com os identificadores
         <em>swipe_esquerda</em> e <em>swipe_direita</em>, que definem gestos de
-        mão para esquerda e para direita, respectivamente</p>
+        mão para esquerda e para direita, respectivamente.</p>
 
         <div id='htmlIntro3CodeB'></div><br>
 
@@ -3092,22 +3022,15 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Agora vamos detalhar o elemento <em>Grupo de Usuários</em> em HTML.
-        Ele permite identificar unicamente interações de cada usuário. Por
-        exemplo, o comando de voz apenas de um determinado usuário</p>
-        
-        <p><em>Grupo de Usuários</em> é definido <strong>por um identificador,
-        número máximo de participantes e quais dispositivos estes
-        utilizam</strong>. Mais precisamente, esses dispositivos definem o que
-        um usuário necessita possuir para participar do grupo.</p>
-
-        <p>Na nossa HTML estendida, o conceito de <em>Grupo de Usuários</em> é
-        implementado por elemento JavaScript que utilize um objeto
-        <em>&ltUserGroup></em>. Para essa descrição propomos usar um descrição
-        no formato SPARQL. Essa descrição é utilizada como parâmetro na criação
-        do objeto <em>&ltUserGroup></em>. O trecho a seguir apresenta um codigo
-        JavaScript que cria um objeto <em>&ltUserGroup></em> em que cada usuário
-        do grupo deve ter um microfone e um leapmotion.</p>
+        <p> conceito de <em>Grupo de Usuários</em> é definido <strong>por um
+        identificador, número máximo de participantes e quais dispositivos estes
+        utilizam</strong>. Na nossa HTML, ele é implementado por elemento
+        JavaScript que utilize um objeto <em>&ltUserGroup></em>. Para essa
+        descrição propomos usar um descrição no formato SPARQL. Essa descrição é
+        utilizada como parâmetro na criação do objeto <em>&ltUserGroup></em>. O
+        trecho a seguir apresenta um codigo JavaScript que cria um objeto
+        <em>&ltUserGroup></em> em que cada usuário do grupo deve ter um
+        microfone e um leapmotion.</p>
 
         <div id='htmlIntro5CodeA'></div><br>
 
@@ -3277,7 +3200,7 @@ _data.surveyJSON.pages.push({
       choices: _agreeChoices
     },
     {
-      type: 'radiogroup',
+      e: 'radiogroup',
       isRequired: true,
       name: 'htmlFeedbackQuestion8',
       title: `De modo geral, a HTML estendida **melhora** o desenvolvimento de
