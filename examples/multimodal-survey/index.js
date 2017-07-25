@@ -87,8 +87,8 @@ $('#surveyPageNo').change(function () {
 
 // $('#surveyPageNo').val(3).change()
 // $('#surveyPageNo').val(4).change()
-$('#surveyPageNo').val(5).change()
-// $('#surveyPageNo').val(7).change()
+// $('#surveyPageNo').val(5).change()
+$('#surveyPageNo').val(7).change()
 
 // ----------------------------------------
 // survey listeners
@@ -280,16 +280,19 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       $('#htmlIntro3CodeA').append(_data.htmlIntro3CodeA)
       $('#htmlIntro3CodeB').append(_data.htmlIntro3CodeB)
       $('#htmlIntro3CodeC').append(_data.htmlIntro3CodeC)
-      $('#htmlIntro3CodeD').append(_data.htmlIntro3CodeD)
       SyntaxHighlighter.highlight()
       break
     case 'htmlIntro4':
       $('#htmlIntro4CodeA').append(_data.htmlIntro4CodeA)
-      $('#htmlIntro4CodeB').append(_data.htmlIntro4CodeB)
+      SyntaxHighlighter.highlight()
+      break
+    case 'htmlIntro5':
+      $('#htmlIntro5CodeA').append(_data.htmlIntro5CodeA)
+      $('#htmlIntro5CodeB').append(_data.htmlIntro5CodeB)
       SyntaxHighlighter.highlight()
       break
     case 'htmlTask1':
-      $('#' + questionId).append(_data.htmlTask1Code)
+      $('#htmlTask1CodeA').append(_data.htmlTask1CodeA)
       SyntaxHighlighter.highlight()
       break
     case 'htmlTask2':

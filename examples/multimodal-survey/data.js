@@ -2460,67 +2460,73 @@ pageIndex = _data.surveyJSON.pages.push({
   elements: []
 }) - 1
 
+_data.surveyJSON.pages[pageIndex].elements.push({
+  type: 'html',
+  html: `
+    <div style="text-align: justify; width: 70%;">
+    <p>A linguagem HTML é utilizada para criar conteúdo multimídia em
+    sistemas web. <strong>Nesta seção, não vamos ensinar a linguagem
+    HTML</strong>, mas vamos apresentar como os conceitos da seção anterior
+    são instanciados na HTML para esta oferecer suporte a interações
+    multimodais.</p>
+    
+    <p>A tabela seguir apresenta como propomos instanciar os conceitos de
+    nossa pesquisa na versão atual da HTML (5.0). O conceito de
+    <em>Mídia</em> é parcialmente implementado por elementos como
+    <em>&ltimg></em>, <em>&ltvideo></em> e <em>&ltaudio></em>, pois estes
+    não possuem nosso conceito de âncora. O conceito de <em>Sincronismo</em>
+    é parcialmente implementado pelo elemento <em>script</em>, pois estes
+    permitem definir comportamentos na aplicação, como interações de usuário
+    por apontador. Por fim os conceitos de <em>Reconhecedor</em> e <em>Grupo
+    de usuários</em> não são implementados.</p>
+
+    <table align="center" class="table-bordered table-striped
+    table-condensed">
+      <tr>
+        <th>Conceito</th>
+        <th>HTML atual</th>
+        <th>Como propomos</th>
+      </tr>
+      <tr>
+        <td><em>&ltmedia></em></td>
+        <td><em>&ltimg></em>, <em>&ltvideo></em>, <em>&ltaudio></em>
+        </td>
+        <td>estender esses elementos com <em>&ltarea></em></td>
+      </tr>
+      <tr>
+        <td><em>Sincronismo</em></td>
+        <td><em>&ltscript></em></td>
+        <td><em>&ltscript></em> com o objeto JavaScript
+        <em>Synchronism</em></td>
+      </tr>
+      <tr>
+        <td><em>Reconhecedor</em></td>
+        <td><em>não presente</em></td>
+        <td>adicionar elemento <em>&ltinput></em></td>
+      </tr>
+      <tr>
+        <td><em>Grupo de Usuários</em></td>
+        <td>não presente</td></td>
+        <td>adicionar elemento <em>&ltuserClass></em></td>
+      </tr>
+    </table>
+    <br>
+    <p>Vamos agora detalhar esses conceitos e perdir que você realize
+    algumas tarefas. <strong>Ressaltamos que essas tarefas NÃO se destinam a
+    avaliar seus conhecimentos, mas sim capturar evidências de nossa
+    pesquisa.</strong>.</p>
+    </div>
+  `
+})
+
 // ----------------------------------------
-// html page - intro
+// html page - media and link
 // ----------------------------------------
 
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
-  title: 'Proposta de conceitos multimodais em HTML',
+  title: 'Mídia e Sincronismo em HTML',
   elements: [
-    {
-      type: 'html',
-      html: `
-        <div style="text-align: justify; width: 70%;">
-        <p>A linguagem HTML é utilizada para criar conteúdo multimídia em
-        sistemas web. <strong>Nesta seção, não vamos ensinar a linguagem
-        HTML</strong>, mas vamos apresentar como os conceitos da seção anterior
-        são instanciados na HTML para esta oferecer suporte a interações
-        multimodais.</p>
-        
-        <p>A tabela seguir apresenta como propomos instanciar os conceitos de
-        nossa pesquisa na versão atual da HTML (5.0). O conceito de
-        <em>Mídia</em> é parcialmente implementado por elementos como
-        <em>&ltimg></em>, <em>&ltvideo></em> e <em>&ltaudio></em>, pois estes
-        não possuem nosso conceito de âncora. O conceito de <em>Sincronismo</em>
-        é parcialmente implementado pelo elemento <em>script</em>, pois estes
-        permitem definir comportamentos na aplicação, como interações de usuário
-        por apontador. Por fim os conceitos de <em>Reconhecedor</em> e <em>Grupo
-        de usuários</em> não são implementados.</p>
-
-        <table align="center" class="table-bordered table-striped
-        table-condensed">
-          <tr>
-            <th>Conceito</th>
-            <th>HTML atual</th>
-            <th>Como propomos</th>
-          </tr>
-          <tr>
-            <td><em>&ltmedia></em></td>
-            <td><em>&ltimg></em>, <em>&ltvideo></em>, <em>&ltaudio></em>
-            </td>
-            <td>estender esses elementos com <em>&ltarea></em></td>
-          </tr>
-          <tr>
-            <td><em>Sincronismo</em></td>
-            <td><em>&ltscript></em></td>
-            <td><em>&ltscript></em> com o objeto JavaScript
-            <em>Synchronism</em></td>
-          </tr>
-          <tr>
-            <td><em>Reconhecedor</em></td>
-            <td><em>não presente</em></td>
-            <td>adicionar elemento <em>&ltinput></em></td>
-          </tr>
-          <tr>
-            <td><em>Grupo de Usuários</em></td>
-            <td>não presente</td></td>
-            <td>adicionar elemento <em>&ltuserClass></em></td>
-          </tr>
-        </table>
-        </div>
-      `
-    },
     {
       name: 'htmlIntro1',
       type: 'html',
@@ -2672,15 +2678,142 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div id='htmlIntro2CodeA'></div>
         </div>
       `
-    },
+    }
+  ]
+})
+
+_data.htmlIntro1CodeA = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false;"> <![CDATA[
+  <img id="icone"></img>
+  <audio id="midia_principal"></img>
+  ]]></script>
+`
+
+_data.htmlIntro1CodeB = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false;"> <![CDATA[
+  <img id="icone" src="icone.png"
+     style="position: absolute; width: 20%; height: 20%; top: 80%; z-index: 1;">
+  </img>
+  <audio id="midia_principal" src="audio.mp3">
+    <area id="credits" begin="300s" end="360s"></area>
+  </audio>
+  ]]></script>
+`
+
+_data.htmlIntro1CodeC = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false;"> <![CDATA[
+  <img id="icone" src="icone.png"
+   style="position: absolute; width: 20%; height: 20%; top: 80%; z-index: 1;">
+  </img>
+  <video id="midia_principal" src="video.mp4" 
+    style="position: absolute; height 100%; width: 100%;">
+    <area id="credits" begin="300s" end="360s"></area>
+  </video>
+  ]]></script>
+`
+
+_data.htmlIntro1CodeD = _data.nclIntro1CodeD
+
+_data.htmlIntro1CodeE = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false;"> <![CDATA[
+  <object id="sinte_voz" src="sinte_voz.ssml">
+    <area label="repetir"></area>
+  </object>
+  ]]></script>
+`
+
+// ----------------------------------------
+// html page - media and link - task
+// ----------------------------------------
+
+_data.surveyJSON.pages[pageIndex].elements.push(
+  {
+    type: 'html',
+    name: 'htmlTask1',
+    html: `
+      <p>Tarefa 1: Por favor, analise com atenção o trecho de código HTML a
+      seguir.</p>
+      <div id='htmlTask1CodeA'></div>
+    `
+  },
+  {
+    type: 'comment',
+    isRequired: true,
+    name: 'htmlTask1Question',
+    rows: '9',
+    title: 'Qual é o comportamento da aplicação?'
+  }
+)
+
+_data.htmlTask1CodeA = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false;"> <![CDATA[
+  <html>
+  <head><script src="synchronism.js"><&#47script></head>
+  <body>
+    <video id="video_inicial" src="video_inicial.mp4"
+      style="position: absolute; height 100%; width: 100%;">
+      <area id="credits" begin="300s" end="360s"><&#47area>
+    </video>
+    <video id="video_centro" src="video_centro.mp4"
+      style="position: absolute; height 100%; width: 100%;">
+      <area id="credits" begin="300s" end="360s"><&#47area>
+    </video>
+    <video id="video_praia" src="video_praia.mp4"
+      style="position: absolute; height 100%; width: 100%;">
+      <area id="credits" begin="300s" end="360s"><&#47area>
+    </video>
+    <img id="icone_centro" src="icone_centro.png"
+      style="position: absolute; width: 20%; height: 20%; top: 80%; z-index: 1;">
+    </img>
+    <img id="icone_praia" src="icone_praia.png"
+      style="position: absolute; width: 20%; height: 20%; top: 80%; z-index: 1;">
+    </img>
+    <script>
+      var sync1 = new Synchronism("onBeginStart")
+      sync.bind("onBegin", "body")
+      sync.bind("start", "video_inicial")
+
+      var sync2 = new Synchronism("onBeginStart")
+      sync.bind("onBegin", "video_inicial", "credits")
+      sync.bind("start", "icone_centro")
+      sync.bind("start", "icone_praia")
+
+      var sync3 = new Synchronism("onSelectionStopStart")
+      sync.bind("onSelection", "icone_centro")
+      sync.bind("stop", "video_inicial")
+      sync.bind("start", "video_centro")
+
+      var sync3 = new Synchronism("onSelectionStopStart")
+      sync.bind("onSelection", "icone_praia")
+      sync.bind("stop", "video_inicial")
+      sync.bind("start", "video_praia")
+    <&#47script>
+  </body>
+  </html>
+  ]]></script>
+`
+
+// ----------------------------------------
+// html page - recognition
+// ----------------------------------------
+
+_data.surveyJSON.pages[pageIndex].elements.push({
+  type: 'panel',
+  title: 'Reconhecedores em HTML',
+  elements: [
     {
       name: 'htmlIntro3',
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
         <p>Agora vamos detalhar o conceito <em>Reconhecedor</em> em HTML. Ele
-        permite o uso de reconhecimento de interações multimodais realizadas pelo
-        usuário, como voz e gestos.</p>
+        permite o uso de reconhecimento de interações multimodais realizadas
+        pelo usuário, como voz e gestos.</p>
 
         <p>O <em>Reconhecedor</em> é definido por <strong>um identificador, seu
         conteúdo e âncoras</strong>. Entretanto, diferente de <em>Mídia</em>, o
@@ -2751,87 +2884,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div id='htmlIntro3CodeD'></div><br>
         </div>
       `
-    },
-    {
-      name: 'htmlIntro4',
-      type: 'html',
-      html: `
-        <div style="text-align: justify; width: 70%;">
-        <p>Agora vamos detalhar o elemento <em>Grupo de Usuários</em> em HTML.
-        Ele permite identificar unicamente interações de cada usuário. Por
-        exemplo, o comando de voz apenas de um determinado usuário</p>
-        
-        <p><em>Grupo de Usuários</em> é definido <strong>por um identificador,
-        número máximo de participantes e quais dispositivos estes
-        utilizam</strong>. Mais precisamente, esses dispositivos definem o que
-        um usuário necessita possuir para participar do grupo.</p>
-
-        <p>Na nossa HTML estendida, o conceito de <em>Grupo de Usuários</em> é
-        implementado por elemento JavaScript que utilize um objeto
-        <em>&ltUserGroup></em>. Para essa descrição propomos usar um descrição
-        no formato SPARQL. Essa descrição é utilizada como parâmetro na criação
-        do objeto <em>&ltUserGroup></em>. O trecho a seguir apresenta um codigo
-        JavaScript que cria um objeto <em>&ltUserGroup></em> em que cada usuário
-        do grupo deve ter um microfone e um leapmotion.</p>
-
-        <div id='htmlIntro4CodeA'></div><br>
-
-        <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em HTML, o
-        código a seguir é uma nova versão da aplicação que reinicia um vídeo
-        dada uma interação de voz (modificações em destaque). Nessa versão, o
-        vídeo é reiniciado apenas quando o segundo usuário falar "repita
-        vídeo".</p>
-
-        <div id='htmlIntro4CodeB'></div>
-        </div>
-      `
     }
   ]
 })
-
-_data.htmlIntro1CodeA = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false;"> <![CDATA[
-  <img id="icone"></img>
-  <audio id="midia_principal"></img>
-  ]]></script>
-`
-
-_data.htmlIntro1CodeB = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false;"> <![CDATA[
-  <img id="icone" src="icone.png"
-     style="position: absolute; width: 20%; height: 20%; top: 80%; z-index: 1;">
-  </img>
-  <audio id="midia_principal" src="audio.mp3">
-    <area id="credits" begin="300s" end="360s"></area>
-  </audio>
-  ]]></script>
-`
-
-_data.htmlIntro1CodeC = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false;"> <![CDATA[
-  <img id="icone" src="icone.png"
-   style="position: absolute; width: 20%; height: 20%; top: 80%; z-index: 1;">
-  </img>
-  <video id="midia_principal" src="video.mp4" 
-    style="position: absolute; height 100%; width: 100%;">
-    <area id="credits" begin="300s" end="360s"></area>
-  </video>
-  ]]></script>
-`
-
-_data.htmlIntro1CodeD = _data.nclIntro1CodeD
-
-_data.htmlIntro1CodeE = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false;"> <![CDATA[
-  <object id="sinte_voz" src="sinte_voz.ssml">
-    <area label="repetir"></area>
-  </object>
-  ]]></script>
-`
 
 _data.htmlIntro2CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
@@ -2905,152 +2960,15 @@ _data.htmlIntro3CodeC = `
   </html>
   ]]></script>
 `
-
-_data.htmlIntro3CodeD = `
- <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[15,23,29]"><![CDATA[
-  <!DOCTYPE html>
-  <html>
-  <head><script src="synchronism.js"><&#47script></head>
-  <body>
-    <video id="midia_principal" src="video.mp4"
-      style="position: absolute; height 100%; width: 100%;">
-      <area id="credits" begin="300s" end="360s"><&#47area>
-    </video>
-    <object id="sinte_voz" src="sinte_voz.ssml">
-      <area label="pergunta"><&#47area>
-    </object>
-    <object id="rec_voz" src="rec_voz.srgs">
-      <area label="repete"><&#47area>
-    </object>
-    <object id="rec_gesto" src="rec_gesto.gml">
-      <area label="esquerda"><&#47area>
-    </object>
-    <script>
-      var sync1 = new Synchronism("onBeginStart")
-      sync.bind("onBegin", "body")
-      sync.bind("start", "midia_principal")
-
-      var sync2 = new Synchronism("onBeginStart")
-      sync.bind("onBegin", "midia_principal", "credits")
-      sync.bind("start", "sinte_voz")
-      sync.bind("start", "rec_voz")
-      sync.bind("start", "rec_gesto")
-
-      var sync3 = new Synchronism("onOrRecognizeStopStart")
-      sync.bind("onRecognize", "rec_voz", "repete")
-      sync.bind("onRecognize", "rec_gesto", "esquerda")
-      sync.bind("stop", "rec_voz")
-      sync.bind("stop", "rec_gesto")
-      sync.bind("stop", "midia_principal")
-      sync.bind("start", "midia_principal")
-
-    <&#47script>
-  </body>
-  </html>
-  ]]></script>
-`
-
-_data.htmlIntro4CodeA = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[7,8]"> <![CDATA[
-    var sparql =
-      \`PREFIX foaf: <http://xmlns.com/foaf/0.1>
-      PREFIX prf: <http://www.wapforum.org/profiles/UAPROF/ccppschema-20010430>
-      SELECT ?person
-      WHERE {
-        ?person prf:component ?component.
-        ?component prf: name ?name FILTER regex(?name, "Leap Motion")
-        ?name FILTER regex(?name, "microfone")
-      }\`
-    var gu_leap_microphone = new UserGroup(sparql, 2)
-  ]]></script>
-`
-
-_data.htmlIntro4CodeB = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[16,25,33,35]">
-  <![CDATA[
-  <?xml version="1.0" encoding="ISO-8859-1"?>
-  <html>
-  <head><script src="synchronism.js"><&#47script></head>
-  <body>
-    <video id="midia_principal" src="video.mp4"
-      style="position: absolute; height 100%; width: 100%;">
-      <area id="credits" begin="300s" end="360s"><&#47area>
-    </video>
-    <object id="sinte_voz" src="sinte_voz.ssml">
-      <area label="pergunta"><&#47area>
-    </object>
-    <object id="rec_voz" src="rec_voz.srgs">
-      <area label="repete"><&#47area>
-    </object>
-    <script>
-      var sparql = 
-        \`PREFIX foaf: <http://xmlns.com/foaf/0.1>
-        PREFIX prf: <http://www.wapforum.org/profiles/UAPROF/ccppschema-20010430>
-        SELECT ?person
-        WHERE {
-          ?person prf:component ?component.
-          ?component prf: name ?name FILTER regex(?name, "Leap Motion")
-          ?name FILTER regex(?name, "microfone")
-        }\`
-      var gu_leap_microphone = new UserGroup(sparql, 2)
-
-      var sync1 = new Synchronism("onBeginStart")
-      sync.bind("onBegin", "body")
-      sync.bind("start", "midia_principal")
-
-      var sync2 = new Synchronism("onBeginStart")
-      sync.bind("onBegin", "midia_principal", "credits")
-      sync.bind("start", "sinte_voz")
-
-      var sync3 = new Synchronism("onRecognizeStopStart")
-      sync.bind("onRecognize", "rec_voz", "repete", gu_leap_microphone, 2)
-      sync.bind("stop", "midia_principal")
-      sync.bind("start", "midia_principal")
-    <&#47script>
-  </body>
-  </html>
-  ]]></script>
-`
-
 // ----------------------------------------
-// html page - questions
+// html page - recognition - task
 // ----------------------------------------
 
-_data.surveyJSON.pages[pageIndex].elements.push({
-  type: 'panel',
-  title: 'Aplicação dos conceitos',
-  elements: [
-    {
-      type: 'html',
-      html: `
-        <div style="text-align: justify; width: 70%;">
-        <p>Agora pedimos que você realize as quatro tarefas a seguir. Duas
-        tarefas consistem em interpretar códigos e outras duas em editar
-        códigos.</p>
-        </div>
-      `
-    },
-    {
-      type: 'html',
-      name: 'htmlTask1',
-      html: `
-        <p>Tarefa 1: Por favor, analise com atenção o trecho de código HTML a seguir.</p>
-      `
-    },
-    {
-      type: 'comment',
-      isRequired: true,
-      name: 'htmlTask1Question',
-      rows: '9',
-      title: 'Qual é o comportamento da aplicação?'
-    },
-    {
-      type: 'html',
-      name: 'htmlTask2',
-      html: `
+_data.surveyJSON.pages[pageIndex].elements.push(
+  {
+    type: 'html',
+    name: 'htmlTask2',
+    html: `
         <div style="text-align: justify; width: 70%;">
         Tarefa 2: Considere as descrições sinte_voz.ssml e rec_voz.srgs,
         respectivamente, a seguir.<br><br>
@@ -3066,87 +2984,15 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div id='htmlTask2CodeC'></div>
         </div>
       `
-    },
-    {
-      type: 'comment',
-      isRequired: true,
-      name: 'htmlTask2Question',
-      rows: '9',
-      title: 'Qual é o novo comportamento da aplicação?'
-    },
-    {
-      type: 'comment',
-      name: 'htmlTask3Question',
-      rows: '47',
-      title: `Tarefa 3: Agora pedimos que edite o código HTML da Tarefa 2
-        (copiado  a seguir) para que seja possível a interação por voz
-        <strong>ou</strong> (operador OR) interação por gestos. Na interação por
-        gesto, você pode referenciar o arquivo de descrição
-        <em>rec_gestos.gml</em> apresentado nesta seção e considere que gesto de
-        mão para esquerda indica centro e gesto de mão para direita indica
-        praia.
-      `
-    },
-    {
-      type: 'comment',
-      name: 'htmlTask4Question',
-      rows: '47',
-      title: ` Tarefa 4: Agora pedimos que edite novamente o trecho de código
-        HTML da Tarefa 2 (copiado a seguir) para que apenas o segundo usuário,
-        de um grupo de 3 usuários com microfone, possa realizar a interação por
-        voz.`
-    }
-  ]
-})
-
-_data.htmlTask1Code = `
-  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false;"> <![CDATA[
-  <html>
-  <head><script src="synchronism.js"><&#47script></head>
-  <body>
-    <video id="video_inicial" src="video_inicial.mp4"
-      style="position: absolute; height 100%; width: 100%;">
-      <area id="credits" begin="300s" end="360s"><&#47area>
-    </video>
-    <video id="video_centro" src="video_centro.mp4"
-      style="position: absolute; height 100%; width: 100%;">
-      <area id="credits" begin="300s" end="360s"><&#47area>
-    </video>
-    <video id="video_praia" src="video_praia.mp4"
-      style="position: absolute; height 100%; width: 100%;">
-      <area id="credits" begin="300s" end="360s"><&#47area>
-    </video>
-    <img id="icone_centro" src="icone_centro.png"
-      style="position: absolute; width: 20%; height: 20%; top: 80%; z-index: 1;">
-    </img>
-    <img id="icone_praia" src="icone_praia.png"
-      style="position: absolute; width: 20%; height: 20%; top: 80%; z-index: 1;">
-    </img>
-    <script>
-      var sync1 = new Synchronism("onBeginStart")
-      sync.bind("onBegin", "body")
-      sync.bind("start", "video_inicial")
-
-      var sync2 = new Synchronism("onBeginStart")
-      sync.bind("onBegin", "video_inicial", "credits")
-      sync.bind("start", "icone_centro")
-      sync.bind("start", "icone_praia")
-
-      var sync3 = new Synchronism("onSelectionStopStart")
-      sync.bind("onSelection", "icone_centro")
-      sync.bind("stop", "video_inicial")
-      sync.bind("start", "video_centro")
-
-      var sync3 = new Synchronism("onSelectionStopStart")
-      sync.bind("onSelection", "icone_praia")
-      sync.bind("stop", "video_inicial")
-      sync.bind("start", "video_praia")
-    <&#47script>
-  </body>
-  </html>
-  ]]></script>
-`
+  },
+  {
+    type: 'comment',
+    isRequired: true,
+    name: 'htmlTask2Question',
+    rows: '9',
+    title: 'Qual é o novo comportamento da aplicação?'
+  }
+)
 
 _data.htmlTask2CodeCOnly = `
   <html>
@@ -3198,6 +3044,229 @@ _data.htmlTask2CodeC = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[` + _data.htmlTask2CodeCOnly + `]]></script>
 `
+
+// ----------------------------------------
+// html page - recognition combination
+// ----------------------------------------
+
+_data.surveyJSON.pages[pageIndex].elements.push({
+  type: 'panel',
+  title: 'Combinação de Reconhecedores em HTML',
+  elements: [
+    {
+      name: 'htmlIntro4',
+      type: 'html',
+      html: `
+        <div style="text-align: justify; width: 70%;">
+        <p>Um dos principais benefícios de interfaces multimodais é o uso
+        diferentes interações, ou seja, as interações de usuários podem ser
+        realizadas por diferentes modalidades. Em nossos, conceitos essa
+        combinação de modalidades de interação pode ser feita utilizando uma
+        condição composta. Usar um operador OR indica que qualquer uma das
+        interações é necessária. Já usar operador AND indica que todas as
+        interações são necessárias em qualquer ordem. E por fim usar o operador
+        SEQ significa que as interações tem que ser feitas em sequência.</p> 
+
+        <p>Os blocos a seguir modificam a aplicação acima. Mas nessa
+        versão a mídia <em>midia_principal</em> é repetida quando usuário
+        interage através de voz ou (operador OR) através de gesto.</p>
+
+        <div id='htmlIntro4CodeA'></div><br>
+        </div>
+      `
+    }
+  ]
+})
+
+_data.htmlIntro4CodeA = `
+ <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false; highlight:[15,23,29]"><![CDATA[
+  <!DOCTYPE html>
+  <html>
+  <head><script src="synchronism.js"><&#47script></head>
+  <body>
+    <video id="midia_principal" src="video.mp4"
+      style="position: absolute; height 100%; width: 100%;">
+      <area id="credits" begin="300s" end="360s"><&#47area>
+    </video>
+    <object id="sinte_voz" src="sinte_voz.ssml">
+      <area label="pergunta"><&#47area>
+    </object>
+    <object id="rec_voz" src="rec_voz.srgs">
+      <area label="repete"><&#47area>
+    </object>
+    <object id="rec_gesto" src="rec_gesto.gml">
+      <area label="esquerda"><&#47area>
+    </object>
+    <script>
+      var sync1 = new Synchronism("onBeginStart")
+      sync.bind("onBegin", "body")
+      sync.bind("start", "midia_principal")
+
+      var sync2 = new Synchronism("onBeginStart")
+      sync.bind("onBegin", "midia_principal", "credits")
+      sync.bind("start", "sinte_voz")
+      sync.bind("start", "rec_voz")
+      sync.bind("start", "rec_gesto")
+
+      var sync3 = new Synchronism("onOrRecognizeStopStart")
+      sync.bind("onRecognize", "rec_voz", "repete")
+      sync.bind("onRecognize", "rec_gesto", "esquerda")
+      sync.bind("stop", "rec_voz")
+      sync.bind("stop", "rec_gesto")
+      sync.bind("stop", "midia_principal")
+      sync.bind("start", "midia_principal")
+
+    <&#47script>
+  </body>
+  </html>
+  ]]></script>
+`
+
+// ----------------------------------------
+// html page - recognition combination - task
+// ----------------------------------------
+
+_data.surveyJSON.pages[pageIndex].elements.push(
+  {
+    type: 'comment',
+    name: 'htmlTask3Question',
+    rows: '47',
+    title: `Tarefa 3: Agora pedimos que edite o código HTML da Tarefa 2
+        (copiado  a seguir) para que seja possível a interação por voz
+        <strong>ou</strong> (operador OR) interação por gestos. Na interação por
+        gesto, você pode referenciar o arquivo de descrição
+        <em>rec_gestos.gml</em> apresentado nesta seção e considere que gesto de
+        mão para esquerda indica centro e gesto de mão para direita indica
+        praia.
+      `
+  }
+)
+
+// ----------------------------------------
+// html page - user
+// ----------------------------------------
+
+_data.surveyJSON.pages[pageIndex].elements.push({
+  type: 'panel',
+  title: 'Grupo de Usuários em HTML',
+  elements: [
+    {
+      name: 'htmlIntro5',
+      type: 'html',
+      html: `
+        <div style="text-align: justify; width: 70%;">
+        <p>Agora vamos detalhar o elemento <em>Grupo de Usuários</em> em HTML.
+        Ele permite identificar unicamente interações de cada usuário. Por
+        exemplo, o comando de voz apenas de um determinado usuário</p>
+        
+        <p><em>Grupo de Usuários</em> é definido <strong>por um identificador,
+        número máximo de participantes e quais dispositivos estes
+        utilizam</strong>. Mais precisamente, esses dispositivos definem o que
+        um usuário necessita possuir para participar do grupo.</p>
+
+        <p>Na nossa HTML estendida, o conceito de <em>Grupo de Usuários</em> é
+        implementado por elemento JavaScript que utilize um objeto
+        <em>&ltUserGroup></em>. Para essa descrição propomos usar um descrição
+        no formato SPARQL. Essa descrição é utilizada como parâmetro na criação
+        do objeto <em>&ltUserGroup></em>. O trecho a seguir apresenta um codigo
+        JavaScript que cria um objeto <em>&ltUserGroup></em> em que cada usuário
+        do grupo deve ter um microfone e um leapmotion.</p>
+
+        <div id='htmlIntro5CodeA'></div><br>
+
+        <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em HTML, o
+        código a seguir é uma nova versão da aplicação que reinicia um vídeo
+        dada uma interação de voz (modificações em destaque). Nessa versão, o
+        vídeo é reiniciado apenas quando o segundo usuário falar "repita
+        vídeo".</p>
+
+        <div id='htmlIntro5CodeB'></div>
+        </div>
+      `
+    }
+  ]
+})
+
+_data.htmlIntro5CodeA = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false; highlight:[7,8]"> <![CDATA[
+    var sparql =
+      \`PREFIX foaf: <http://xmlns.com/foaf/0.1>
+      PREFIX prf: <http://www.wapforum.org/profiles/UAPROF/ccppschema-20010430>
+      SELECT ?person
+      WHERE {
+        ?person prf:component ?component.
+        ?component prf: name ?name FILTER regex(?name, "Leap Motion")
+        ?name FILTER regex(?name, "microfone")
+      }\`
+    var gu_leap_microphone = new UserGroup(sparql, 2)
+  ]]></script>
+`
+
+_data.htmlIntro5CodeB = `
+  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false; highlight:[16,25,33,35]">
+  <![CDATA[
+  <?xml version="1.0" encoding="ISO-8859-1"?>
+  <html>
+  <head><script src="synchronism.js"><&#47script></head>
+  <body>
+    <video id="midia_principal" src="video.mp4"
+      style="position: absolute; height 100%; width: 100%;">
+      <area id="credits" begin="300s" end="360s"><&#47area>
+    </video>
+    <object id="sinte_voz" src="sinte_voz.ssml">
+      <area label="pergunta"><&#47area>
+    </object>
+    <object id="rec_voz" src="rec_voz.srgs">
+      <area label="repete"><&#47area>
+    </object>
+    <script>
+      var sparql = 
+        \`PREFIX foaf: <http://xmlns.com/foaf/0.1>
+        PREFIX prf: <http://www.wapforum.org/profiles/UAPROF/ccppschema-20010430>
+        SELECT ?person
+        WHERE {
+          ?person prf:component ?component.
+          ?component prf: name ?name FILTER regex(?name, "Leap Motion")
+          ?name FILTER regex(?name, "microfone")
+        }\`
+      var gu_leap_microphone = new UserGroup(sparql, 2)
+
+      var sync1 = new Synchronism("onBeginStart")
+      sync.bind("onBegin", "body")
+      sync.bind("start", "midia_principal")
+
+      var sync2 = new Synchronism("onBeginStart")
+      sync.bind("onBegin", "midia_principal", "credits")
+      sync.bind("start", "sinte_voz")
+
+      var sync3 = new Synchronism("onRecognizeStopStart")
+      sync.bind("onRecognize", "rec_voz", "repete", gu_leap_microphone, 2)
+      sync.bind("stop", "midia_principal")
+      sync.bind("start", "midia_principal")
+    <&#47script>
+  </body>
+  </html>
+  ]]></script>
+`
+
+// ----------------------------------------
+// html page - user - task
+// ----------------------------------------
+
+_data.surveyJSON.pages[pageIndex].elements.push(
+  {
+    type: 'comment',
+    name: 'htmlTask4Question',
+    rows: '47',
+    title: ` Tarefa 4: Agora pedimos que edite novamente o trecho de código
+        HTML da Tarefa 2 (copiado a seguir) para que apenas o segundo usuário,
+        de um grupo de 3 usuários com microfone, possa realizar a interação por
+        voz.`
+  }
+)
 
 // ----------------------------------------
 // html feedback page
