@@ -315,7 +315,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
-  title: 'Mídia e Relacionamento',
+  title: 'Parte 1',
   elements: [
     {
       type: 'html',
@@ -708,7 +708,7 @@ _data.blocksTask1Xml = `
 
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
-  title: 'Reconhecedor',
+  title: 'Parte 2',
   elements: [
     {
       type: 'html',
@@ -1014,7 +1014,7 @@ _data.blocksTask2Xml = `
 
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
-  title: 'Combinação de Reconhecedores',
+  title: 'Parte 3',
   elements: [
     {
       type: 'html',
@@ -1188,7 +1188,7 @@ _data.surveyJSON.pages[pageIndex].elements.push(
 
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
-  title: 'Grupo de Usuários',
+  title: 'Parte 4',
   elements: [
     {
       type: 'html',
@@ -1488,7 +1488,7 @@ _data.surveyJSON.pages[pageIndex].elements.push(
 
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
-  title: 'Mídia e Relacionamento em NCL',
+  title: 'Parte 1',
   elements: [
     {
       name: 'nclIntro1',
@@ -1783,7 +1783,7 @@ _data.nclTask1Code = `
 
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
-  title: 'Reconhecedor em NCL',
+  title: 'Parte 2',
   elements: [
     {
       name: 'nclIntro3',
@@ -2024,7 +2024,7 @@ _data.nclTask2CodeC = `
 
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
-  title: 'Combinação de Reconhecedores em NCL',
+  title: 'Parte 3',
   elements: [
     {
       name: 'nclIntro4',
@@ -2123,7 +2123,7 @@ _data.surveyJSON.pages[pageIndex].elements.push(
 
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
-  title: 'Grupo de Usuários em NCL',
+  title: 'Parte 4',
   elements: [
     {
       name: 'nclIntro5',
@@ -2213,7 +2213,7 @@ _data.nclIntro5CodeB = `
 `
 
 // ----------------------------------------
-// ncl page - task
+// ncl page - user - task
 // ----------------------------------------
 
 _data.surveyJSON.pages[pageIndex].elements.push(
@@ -2387,7 +2387,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
-  title: 'Mídia e Relacionamento em HTML',
+  title: 'Parte 1',
   elements: [
     {
       name: 'htmlIntro1',
@@ -2643,7 +2643,7 @@ _data.htmlTask1CodeA = `
 
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
-  title: 'Reconhecedores em HTML',
+  title: 'Parte 2',
   elements: [
     {
       name: 'htmlIntro3',
@@ -2868,7 +2868,7 @@ _data.htmlTask2CodeC = `
 
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
-  title: 'Combinação de Reconhecedores em HTML',
+  title: 'Parte 3',
   elements: [
     {
       name: 'htmlIntro4',
@@ -2966,7 +2966,7 @@ _data.surveyJSON.pages[pageIndex].elements.push(
 
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
-  title: 'Grupo de Usuários em HTML',
+  title: 'Parte 4',
   elements: [
     {
       name: 'htmlIntro5',
