@@ -1257,79 +1257,79 @@ _data.conceptsIntro5BlocksA = `
 
 _data.conceptsIntro5BlocksB = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
-    <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
-      <field name="id">midia_principal</field>
-      <value name="src">
-        <block type="video" id="OFge%WW-~~.%rZKqZqym">
-          <mutation length="1"></mutation>
-          <field name="id_area0">creditos</field>
-          <field name="begin0">300s</field>
-          <field name="end0">360s</field>
-        </block>
-      </value>
-    </block>
-    <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="669" y="22">
-      <field name="id">rec_voz</field>
-      <value name="src">
-        <block type="srgs" id="N5Lu5_J\`hn-e3lm60 |^3">
-          <mutation length="1"></mutation>
-          <field name="id_area0">repetir</field>
-          <field name="label0">repita vídeo</field>
-        </block>
-      </value>
-    </block>
-    <block type="media" id="ifhmRRJ%o^5/3j{LucQj" x="22" y="178">
-      <field name="id">sinte_voz</field>
-      <value name="src">
-        <block type="ssml" id="6d)v}%=\`HL1[M8cPHzuK">
-          <mutation length="1"></mutation>
-          <field name="id_area0">pergunta</field>
-          <field name="label0">você deseja repetir o vídeo?</field>
-        </block>
-      </value>
-    </block>
-    <block type="user" id="IPnvWeecZqr2WM|RGxm|" x="673" y="179">
-      <mutation length="1"></mutation>
-      <field name="id">gu_voz</field>
-      <field name="usermax">2</field>
-      <value name="element_0">
-        <block type="microfone" id="yU[{24F}.5IJtyI;VB5k"></block>
-      </value>
-    </block>
-    <block type="port" id="+p-MtE:D*clWz(7oX7Hg" x="22" y="342">
-      <field name="id">midia_principal</field>
-    </block>
-    <block type="link" id="%6ew%0di,O*v%qS%d\`(\`" x="24" y="446">
-      <value name="conditions">
-        <block type="onbegin" id="(H8xxhXk6.y#]q%\`UM^D">
-          <field name="id">creditos</field>
-        </block>
-      </value>
-      <statement name="actions">
-        <block type="start" id="UEqL{b=Ws2G#w}+xMV%m">
-          <field name="id">rec_voz</field>
-        </block>
-      </statement>
-    </block>
-    <block type="link" id="%6sP%0di,O*v%qS%d\`(\`" x="669" y="433">
-      <value name="conditions">
-        <block type="onrecognizeuser" id="y/zz?q?8ebd@?9llBV[0">
-          <field name="id">repetir</field>
-          <field name="user_id">gu_gestos(2)</field>
-        </block>
-      </value>
-      <statement name="actions">
-        <block type="stop" id="xx.sU]l9id:W4@6M~nOY">
-          <field name="id">midia_principal</field>
-          <next>
-            <block type="start" id=".Pt;)N?s.:xGz;dDp@+W">
-              <field name="id">midia_principal</field>
-            </block>
-          </next>
-        </block>
-      </statement>
-    </block>
-  </xml>
+  <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
+    <field name="id">midia_principal</field>
+    <value name="src">
+      <block type="video" id="OFge%WW-~~.%rZKqZqym">
+        <mutation length="1"></mutation>
+        <field name="id_area0">creditos</field>
+        <field name="begin0">300s</field>
+        <field name="end0">360s</field>
+      </block>
+    </value>
+  </block>
+  <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="669" y="22">
+    <field name="id">rec_voz</field>
+    <value name="src">
+      <block type="srgs" id="N5Lu5_J\`hn-e3lm60 |^3">
+        <mutation length="1"></mutation>
+        <field name="id_area0">repetir</field>
+        <field name="label0">repita vídeo</field>
+      </block>
+    </value>
+  </block>
+  <block type="media" id="ifhmRRJ%o^5/3j{LucQj" x="22" y="178">
+    <field name="id">sinte_voz</field>
+    <value name="src">
+      <block type="ssml" id="6d)v}%=\`HL1[M8cPHzuK">
+        <mutation length="1"></mutation>
+        <field name="id_area0">pergunta</field>
+        <field name="label0">você deseja repetir o vídeo?</field>
+      </block>
+    </value>
+  </block>
+  <block type="user" id="IPnvWeecZqr2WM|RGxm|" x="673" y="179">
+    <mutation length="1"></mutation>
+    <field name="id">gu_voz</field>
+    <field name="usermax">2</field>
+    <value name="element_0">
+      <block type="headset" id="4b.K20J]W:sVZy{ZYgH5"></block>
+    </value>
+  </block>
+  <block type="port" id="+p-MtE:D*clWz(7oX7Hg" x="22" y="342">
+    <field name="id">midia_principal</field>
+  </block>
+  <block type="link" id="%6ew%0di,O*v%qS%d\`(\`" x="24" y="446">
+    <value name="conditions">
+      <block type="onbegin" id="(H8xxhXk6.y#]q%\`UM^D">
+        <field name="id">creditos</field>
+      </block>
+    </value>
+    <statement name="actions">
+      <block type="start" id="UEqL{b=Ws2G#w}+xMV%m">
+        <field name="id">rec_voz</field>
+      </block>
+    </statement>
+  </block>
+  <block type="link" id="%6sP%0di,O*v%qS%d\`(\`" x="669" y="433">
+    <value name="conditions">
+      <block type="onrecognizeuser" id="y/zz?q?8ebd@?9llBV[0">
+        <field name="id">repetir</field>
+        <field name="user_id">gu_gestos(2)</field>
+      </block>
+    </value>
+    <statement name="actions">
+      <block type="stop" id="xx.sU]l9id:W4@6M~nOY">
+        <field name="id">midia_principal</field>
+        <next>
+          <block type="start" id=".Pt;)N?s.:xGz;dDp@+W">
+            <field name="id">midia_principal</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
 `
 
 // ----------------------------------------
