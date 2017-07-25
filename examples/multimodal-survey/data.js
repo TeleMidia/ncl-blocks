@@ -3222,23 +3222,23 @@ _data.surveyJSON.pages.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Chegamos ao fim de nosso estudo. Por favor, se desejar, deixe
-        comentários adicionais sobre os pontos a seguir.</p>
+        <p>Chegamos ao fim de nosso estudo. Se desejar, deixe comentários
+        adicionais sobre os pontos a seguir.</p>
         </div>
       `
     },
     {
       type: 'comment',
+      name: 'commentsFinal',
       rows: '9',
-      title: `Fale sobre **que tipos de aplicações** você gostaria
-        de desenvolver com os conceitos apresentados neste estudo.`
+      title: `Estamos dispostos a ouvir sugestões para melhorar os conceitos ou nossa instaciação. Se tiver sugestões, por favor comente.`
     },
     {
       type: 'comment',
-      name: 'commentsFinal',
       rows: '9',
-      title: `Fale sobre **sugestões** para melhorar os conceitos ou a
-        instaciação.`
+      title: `Você consegue pensar em aplicação interessantes que você poderia
+        desenvolver os conceitos apresentados neste estudo? Se sim, por favor
+        comente.`
     }
   ]
 })
