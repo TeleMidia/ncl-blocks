@@ -24,6 +24,11 @@ var _agreeChoices = [
   'Concordo fortemente'
 ]
 
+// var _switchRuleNCL = '{profileNCL1} >= {profileHTML1}'
+var _switchRuleNCL = ''
+// var _switchRuleHTML = '{profileHTML1} > {profileNCL1}'
+var _switchRuleHTML = ''
+
 // ----------------------------------------
 // termo page
 // ----------------------------------------
@@ -211,19 +216,19 @@ _data.surveyJSON.pages.push({
     },
     {
       type: 'radiogroup',
+      visibleIf: '{profileNCL1} > 0',
       isRequired: true,
       name: 'profileNCL2',
       title: 'Quantas aplicações NCL você desenvolveu?',
-      visibleIf: '{profileNCL1} > 0',
       choices: ['0', '1-2', '3-4', '5-6', '7-8', '8 ou mais']
     },
     {
       type: 'radiogroup',
+      visibleIf: '{profileNCL1} > 0',
       isRequired: true,
       name: 'profileNCL3',
       title: `De que maneira a sintaxe da NCL influencia o
        desenvolvimento de aplicações?`,
-      visibleIf: '{profileNCL1} > 0',
       choices: ['Não se aplica', 'Atrapalha muito', 'Atrapalha bastante', 'Atrapalha pouco', 'Indiferente', 'Ajuda pouco', 'Ajuda bastante', 'Ajuda muito']
     },
     {
@@ -239,19 +244,19 @@ _data.surveyJSON.pages.push({
     },
     {
       type: 'radiogroup',
+      visibleIf: '{profileHTML1} > 0',
       isRequired: true,
       name: 'profileHTML2',
       title: 'Quantas aplicações HTML/JavaScript você desenvolveu?',
-      visibleIf: '{profileHTML1} > 0',
       choices: ['0', '1-2', '3-4', '5-6', '7-8', '8 ou mais']
     },
     {
       type: 'radiogroup',
+      visibleIf: '{profileHTML1} > 0',
       isRequired: true,
       name: 'profileHTML3',
       title: `O quanto o desenvolvimento em HTML/JavaScript requer
       o uso de bibliotecas de manipulação de DOM, como jQuery ou Prototype?`,
-      visibleIf: '{profileHTML1} > 0',
       choices: ['Não sei', 'Nunca', 'Quase nunca', 'Indiferente', 'Quase sempre ', 'Sempre']
     }
   ]
@@ -1412,7 +1417,7 @@ _data.surveyJSON.pages.push({
 
 pageIndex = _data.surveyJSON.pages.push({
   name: 'ncl',
-  // visibleIf: '{profileNCL1} >= {profileHTML1}',
+  visibleIf: _switchRuleNCL,
   elements: []
 }) - 1
 
@@ -2229,7 +2234,7 @@ _data.surveyJSON.pages[pageIndex].elements.push(
 
 _data.surveyJSON.pages.push({
   name: 'nclFeedback',
-  // visibleIf: '{profileNCL1} >= {profileHTML1}',
+  visibleIf: _switchRuleNCL,
   elements: [
     {
       type: 'html',
@@ -2313,7 +2318,7 @@ _data.surveyJSON.pages.push({
 
 pageIndex = _data.surveyJSON.pages.push({
   name: 'html',
-  // visibleIf: '{profileHTML1} > {profileNCL1}',
+  visibleIf: _switchRuleHTML,
   elements: []
 }) - 1
 
@@ -3079,7 +3084,7 @@ _data.surveyJSON.pages[pageIndex].elements.push(
 
 _data.surveyJSON.pages.push({
   name: 'htmlFeedback',
-  // visibleIf: '{profileNCL1} > {profileHTML1}',
+  visibleIf: _switchRuleHTML,
   elements: [
     {
       type: 'html',
