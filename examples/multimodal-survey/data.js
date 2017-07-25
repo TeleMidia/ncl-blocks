@@ -2827,7 +2827,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>swipe_direita</em>, que definem gestos de mão para esquerda e para
         direita, respectivamente.</p>
 
-        <div id='htmlIntro4CodeA'></div><br>
+        <div id='htmlIntro4CodeA'></div>
+        <div id='htmlIntro4CodeB'></div><br>
 
         Em nossa HTML, a combinação de modalidades de interação pode ser feita
         utilizando uma condição composta. Usar um operador OR indica que
@@ -2840,7 +2841,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         versão a mídia <em>midia_principal</em> é repetida quando usuário
         interage através de voz ou (operador OR) através de gesto.</p>
 
-        <div id='htmlIntro4CodeB'></div><br>
+        <div id='htmlIntro4CodeC'></div><br>
         </div>
       `
     }
@@ -2849,6 +2850,14 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 _data.htmlIntro4CodeA = _data.nclIntro4CodeA
 
 _data.htmlIntro4CodeB = `
+ <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
+  auto-links: false; highlight:[15,23,29]"><![CDATA[
+  <object id="rec_gesto" src="rec_gesto.gml">
+    <area label="esquerda"><&#47area> <!-- referência id esquerda de rec_gesto.gml-->
+  </object>
+  ]]></script>
+`
+_data.htmlIntro4CodeC = `
  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight:[15,23,29]"><![CDATA[
   <!DOCTYPE html>

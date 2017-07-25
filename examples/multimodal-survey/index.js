@@ -272,6 +272,7 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
     case 'htmlIntro4':
       $('#htmlIntro4CodeA').append(_data.htmlIntro4CodeA)
       $('#htmlIntro4CodeB').append(_data.htmlIntro4CodeB)
+      $('#htmlIntro4CodeC').append(_data.htmlIntro4CodeC)
       SyntaxHighlighter.highlight()
       break
     case 'htmlIntro5':
