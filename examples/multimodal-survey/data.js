@@ -653,6 +653,10 @@ _data.conceptsIntro2BlocksB = `
   </xml>
 `
 
+// ----------------------------------------
+// concepts page - midia and link - task
+// ----------------------------------------
+
 _data.surveyJSON.pages[pageIndex].elements.push(
   {
     type: 'html',
@@ -957,6 +961,10 @@ _data.conceptsIntro3BlocksB = `
   </xml>
 `
 
+// ----------------------------------------
+// concepts page - recognition - task
+// ----------------------------------------
+
 _data.surveyJSON.pages[pageIndex].elements.push(
   {
     type: 'html',
@@ -1237,6 +1245,10 @@ _data.conceptsIntro4BlocksA = `
   </xml>
 `
 
+// ----------------------------------------
+// concepts page - recognition combination - task
+// ----------------------------------------
+
 _data.surveyJSON.pages[pageIndex].elements.push(
   {
     type: 'html',
@@ -1398,6 +1410,10 @@ _data.conceptsIntro5BlocksB = `
     </block>
   </xml>
 `
+
+// ----------------------------------------
+// concepts page - user - task
+// ----------------------------------------
 
 _data.surveyJSON.pages[pageIndex].elements.push(
   {
@@ -1724,27 +1740,6 @@ _data.surveyJSON.pages[pageIndex].elements.push({
   ]
 })
 
-_data.surveyJSON.pages[pageIndex].elements.push(
-  {
-    type: 'html',
-    name: 'nclTask1',
-    html: `
-        <div style="text-align: justify; width: 70%;">
-        <p>Tarefa 1: Por favor, analise com atenção o trecho de código NCL a
-        seguir.</p>
-        <div id='nclTask1Code'></div>
-        </div>
-      `
-  },
-  {
-    type: 'comment',
-    isRequired: true,
-    name: 'nclTask1Question',
-    rows: '9',
-    title: 'Qual é o comportamento da aplicação?'
-  }
-)
-
 _data.nclIntro1CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
@@ -1831,6 +1826,31 @@ _data.nclIntro2CodeA = `
   ]]></script>
 
 `
+
+// ----------------------------------------
+// ncl page - midia and link - task
+// ----------------------------------------
+
+_data.surveyJSON.pages[pageIndex].elements.push(
+  {
+    type: 'html',
+    name: 'nclTask1',
+    html: `
+        <div style="text-align: justify; width: 70%;">
+        <p>Tarefa 1: Por favor, analise com atenção o trecho de código NCL a
+        seguir.</p>
+        <div id='nclTask1Code'></div>
+        </div>
+      `
+  },
+  {
+    type: 'comment',
+    isRequired: true,
+    name: 'nclTask1Question',
+    rows: '9',
+    title: 'Qual é o comportamento da aplicação?'
+  }
+)
 
 _data.nclTask1Code = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
@@ -1964,36 +1984,6 @@ _data.surveyJSON.pages[pageIndex].elements.push({
   ]
 })
 
-_data.surveyJSON.pages[pageIndex].elements.push(
-  {
-    type: 'html',
-    name: 'nclTask2',
-    html: `
-    <div style="text-align: justify; width: 70%;">
-    Tarefa 2: Considere as descrições sinte_voz_videos.ssml e
-    rec_voz_videos.srgs a seguir.<br><br>
-
-    <div id='nclTask2CodeA'></div>
-    <div id='nclTask2CodeB'></div>
-
-    <p>A aplicação NCL da Tarefa 1 foi modificada para permitir interações
-    multimodais utilizando as duas descrições acima. Uma versão modificada
-    da Tarefa 1 é apresentada a seguir com as modificações destacadas. Por
-    favor, analise com atenção.</p>
-
-    <div id='nclTask2CodeC'></div>
-    </div>
-    `
-  },
-  {
-    type: 'comment',
-    isRequired: true,
-    name: 'nclTask2Question',
-    rows: '9',
-    title: 'Qual é o novo comportamento da aplicação?'
-  }
-)
-
 _data.nclIntro3CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight: [3]"> <![CDATA[
@@ -2079,6 +2069,40 @@ _data.nclIntro3CodeC = `
   </ncl>
   ]]></script>
 `
+
+// ----------------------------------------
+// ncl page - recognition - task
+// ----------------------------------------
+
+_data.surveyJSON.pages[pageIndex].elements.push(
+  {
+    type: 'html',
+    name: 'nclTask2',
+    html: `
+    <div style="text-align: justify; width: 70%;">
+    Tarefa 2: Considere as descrições sinte_voz_videos.ssml e
+    rec_voz_videos.srgs a seguir.<br><br>
+
+    <div id='nclTask2CodeA'></div>
+    <div id='nclTask2CodeB'></div>
+
+    <p>A aplicação NCL da Tarefa 1 foi modificada para permitir interações
+    multimodais utilizando as duas descrições acima. Uma versão modificada
+    da Tarefa 1 é apresentada a seguir com as modificações destacadas. Por
+    favor, analise com atenção.</p>
+
+    <div id='nclTask2CodeC'></div>
+    </div>
+    `
+  },
+  {
+    type: 'comment',
+    isRequired: true,
+    name: 'nclTask2Question',
+    rows: '9',
+    title: 'Qual é o novo comportamento da aplicação?'
+  }
+)
 
 _data.nclTask2CodeAOnly = `
   <?xml version="1.0" encoding="ISO-8859-1"?>
@@ -2191,23 +2215,6 @@ _data.surveyJSON.pages[pageIndex].elements.push({
   ]
 })
 
-_data.surveyJSON.pages[pageIndex].elements.push(
-  {
-    type: 'comment',
-    isRequired: true,
-    name: 'nclTask3Question',
-    rows: '47',
-    title: `Tarefa 3: Agora pedimos que edite o código NCL da Tarefa 2
-      (copiado  a seguir) para que seja possível a interação por voz
-      <strong>ou</strong> (operador OR) interação por gestos. Na interação por
-      gesto,você pode referenciar o arquivo de descrição
-      <em>rec_gestos.gml</em> apresentado nesta seção e considere que gesto de
-      mão para esquerda indica centro e gesto de mão para direita indica
-      praia.
-    `
-  }
-)
-
 _data.nclIntro4CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight:[14,17,25]">
@@ -2251,6 +2258,27 @@ _data.nclIntro4CodeA = `
   </ncl>
   ]]></script>
 `
+
+// ----------------------------------------
+// ncl page - recognition combination - task
+// ----------------------------------------
+
+_data.surveyJSON.pages[pageIndex].elements.push(
+  {
+    type: 'comment',
+    isRequired: true,
+    name: 'nclTask3Question',
+    rows: '47',
+    title: `Tarefa 3: Agora pedimos que edite o código NCL da Tarefa 2
+      (copiado  a seguir) para que seja possível a interação por voz
+      <strong>ou</strong> (operador OR) interação por gestos. Na interação por
+      gesto,você pode referenciar o arquivo de descrição
+      <em>rec_gestos.gml</em> apresentado nesta seção e considere que gesto de
+      mão para esquerda indica centro e gesto de mão para direita indica
+      praia.
+    `
+  }
+)
 
 // ----------------------------------------
 // ncl page - user
@@ -2297,18 +2325,6 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     }
   ]
 })
-
-_data.surveyJSON.pages[pageIndex].elements.push(
-  {
-    type: 'comment',
-    name: 'nclTask4Question',
-    rows: '47',
-    title: ` Tarefa 4: Agora pedimos que edite novamente o trecho de código
-    NCL da Tarefa 2 (copiado a seguir) para que apenas o segundo usuário, de
-    um grupo de 3 usuários com microfone, possa realizar a interação por
-    voz.`
-  }
-)
 
 _data.nclIntro5CodeA = `
   <script type="syntaxhighlighter" class="brush: plain; toolbar: false;
@@ -2365,6 +2381,22 @@ _data.nclIntro5CodeB = `
   </ncl>
   ]]></script>
 `
+
+// ----------------------------------------
+// ncl page - task
+// ----------------------------------------
+
+_data.surveyJSON.pages[pageIndex].elements.push(
+  {
+    type: 'comment',
+    name: 'nclTask4Question',
+    rows: '47',
+    title: ` Tarefa 4: Agora pedimos que edite novamente o trecho de código
+    NCL da Tarefa 2 (copiado a seguir) para que apenas o segundo usuário, de
+    um grupo de 3 usuários com microfone, possa realizar a interação por
+    voz.`
+  }
+)
 
 // ----------------------------------------
 // ncl feedback page
@@ -2735,9 +2767,11 @@ _data.surveyJSON.pages[pageIndex].elements.push(
     type: 'html',
     name: 'htmlTask1',
     html: `
+      <div style="text-align: justify; width: 70%;">
       <p>Tarefa 1: Por favor, analise com atenção o trecho de código HTML a
       seguir.</p>
       <div id='htmlTask1CodeA'></div>
+      </div>
     `
   },
   {
