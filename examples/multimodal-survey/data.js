@@ -328,52 +328,60 @@ pageIndex = _data.surveyJSON.pages.push({
 }) - 1
 
 // ----------------------------------------
-// concepts page - intro section
+// concepts page - intro
+// ----------------------------------------
+
+_data.surveyJSON.pages[pageIndex].elements.push({
+  type: 'html',
+  html: `
+    <div style="text-align: justify; width: 70%;"> 
+    <p>Em nossa pesquisa, argumentamos que as linguagens multimídia atuais
+    não suportam adequadamente interações multimodais. Essas linguagem podem
+    ser consideradas "output-oriented", pois têm maior foco na exibição de
+    conteúdos de mídia, como imagens, vídeo e áudios.</p>
+
+    <p>Em nossa pesquisa propomos quatro conceitos que são necessários para
+    uma linguagem multimídia suportar interações multimodais. Mais
+    precisamente, esses conceitos são os de <em>Mídia, Reconhecedor,
+    Sincronismo</em> e <em>Grupo de Usuários</em>.</p>
+   
+    <p>Para evitar possíveis dificuldades dada a sintaxe das linguagens,
+    apresentaremos esses conceitos utilizando uma abordagem de
+    <strong>desenvolvimento de aplicações através de blocos</strong>.</p>
+
+    <p>Esse tipo de abordagem é bastante utilizado para o ensino de
+    programação ou para ferramentas de geração de código. Em especial,
+    esse tipo de desenvolvimento foi popularizado por ferramentas como o
+    <strong>MIT Scratch</strong> e <strong>MIT App</strong>
+    Inventor</strong>. O primeiro é utilizado para criar aplicações web,
+    especialmente jogos, e o segundo utilizado para criar aplicações móveis.
+    Ambos são ilustrados a seguir.</p>
+
+    <div class='text-center'>
+      <img class='img-thumbnail' style='height: 270px'
+      src='assets/scratch.jpg'>
+      <span style="margin-left:10px"></span>
+      <img class='img-thumbnail' style='height: 270px'
+      src='assets/appinventor.jpg'>
+    </div>
+    <br>
+
+    <p>Vamos agora detalhar esses conceitos e perdir que você realize tarefas
+    para podermos capturar evidências de nossa pesquisa. <strong>Ressaltamos que
+    essas tarefas NÃO se destinam a avaliar seus conhecimentos, mas sim capturar
+    evidências de nossa pesquisa.</strong>.</p>
+    </div>
+   `
+})
+
+// ----------------------------------------
+// concepts page - midia and link
 // ----------------------------------------
 
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
-  title: 'Proposta de conceitos',
-  innerIndent: 1,
+  title: 'Mídia e Sincronismo',
   elements: [
-    {
-      type: 'html',
-      html: `
-        <div style="text-align: justify; width: 70%;"> 
-        <p>Em nossa pesquisa, argumentamos que as linguagens multimídia atuais
-        não suportam adequadamente interações multimodais. Essas linguagem podem
-        ser consideradas "output-oriented", pois têm maior foco na exibição de
-        conteúdos de mídia, como imagens, vídeo e áudios.</p>
-
-        <p>Em nossa pesquisa propomos quatro conceitos que são necessários para
-        uma linguagem multimídia suportar interações multimodais. Mais
-        precisamente, esses conceitos são os de <em>Mídia, Reconhecedor,
-        Sincronismo</em> e <em>Grupo de Usuários</em>.</p>
-
-        <p>Vamos detalhar agora esses conceitos para capturar evidências de
-        nossa pesquisa. Para evitar possíveis dificuldades dada a sintaxe das
-        linguagens, apresentaremos esses conceitos utilizando uma abordagem de
-        <strong>desenvolvimento de aplicações através de blocos</strong>.</p>
-
-        <p>Esse tipo de abordagem é bastante utilizado para o ensino de
-        programação ou para ferramentas de geração de código. Em especial,
-        esse tipo de desenvolvimento foi popularizado por ferramentas como o
-        <strong>MIT Scratch</strong> e <strong>MIT App</strong>
-        Inventor</strong>. O primeiro é utilizado para criar aplicações web,
-        especialmente jogos, e o segundo utilizado para criar aplicações móveis.
-        Ambos são ilustrados a seguir.</p>
-
-        <div class='text-center'>
-          <img class='img-thumbnail' style='height: 270px'
-          src='assets/scratch.jpg'>
-          <span style="margin-left:10px"></span>
-          <img class='img-thumbnail' style='height: 270px'
-          src='assets/appinventor.jpg'>
-        </div>
-        <br>
-        </div>
-      `
-    },
     {
       type: 'html',
       name: 'conceptsIntro1',
@@ -519,110 +527,6 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <div id='conceptsIntro2B'></div>
       `
-    },
-    {
-      type: 'html',
-      name: 'conceptsIntro3',
-      html: `
-        <div style="text-align: justify; width: 70%;">
-        <p>Agora vamos detalhar o conceito <em>Reconhecedor</em>. Ele permite
-        o uso de reconhecimento de interações multimodais realizadas pelo
-        usuário, como voz e gestos.</p>
-
-        <p>O <em>Reconhecedor</em> é definido por <strong>um identificador, seu
-        conteúdo e âncoras</strong>. Entretanto, diferente de <em>Mídia</em>, o
-        conteúdo de um <em>Reconhecedor</em> deve ser uma descrição de
-        reconhecimento. As âncoras são porções delimitadas da descrição.
-        Por exemplo, uma descrição de reconhecimento de voz deve ter âncoras que
-        devem as frases a serem reconhecidas.</p>
-
-        <p>Na nossa representação de blocos, o <em>Reconhecedor</em> é definido
-        juntando um bloco de <em>Reconhecedor</em> com o campo id preenchido, e
-        um bloco de conteúdo com as âncoras preenchidas. Exemplos de blocos
-        serão apresentados para ilustrar o conceito.</p>
-
-        <p>Os blocos a seguir definem os reconhecedores <em>rec_voz</em> e
-        <em>rec_gestos</em>. O <em>rec_voz</em> tem um reconhecimento de voz
-        como conteúdo. Essa descrição tem o trecho <em>repetir</em> que
-        reconhece o comando de voz "repita vídeo". Já <em>rec_gestos</em> tem
-        uma descrição de reconhecimento de gestos como conteúdo. Esse conteúdo
-        utiliza dois trechos, esquerda e direita, para definir gestos de mão
-        nessas direções.</p> </div>
-
-        <div id='conceptsIntro3A'></div><br>
-
-        <div style="text-align: justify; width: 70%;">
-        <p>Para ilustrar o uso desse conceito em uma aplicação, os
-        blocos a seguir definem uma nova versão da aplicação que reinicia um
-        vídeo dada uma interação. Mas nessa versão, ao invés de selecionar, o
-        vídeo é reiniciado ao usuário falar "repita vídeo".</p>
-
-        <p>Essa aplicação utiliza duas <em>Mídia</em> (<em>midia_principal</em>
-        e <em>sinte_voz</em>) e um <em>Reconhecedor</em> (<em>rec_voz</em>).
-        
-        <p>Para o comportamento, a aplicação utiliza três <em>Sincronismo</em>s.
-        O primeiro <em>Sincronismo</em> define que <em>midia_principal</em> é
-        iniciada com a aplicação. O segundo <em>Sincronismo</em> define que
-        quando a <em>midia_principal</em> alcançar o seu trecho de
-        <em>creditos</em> (300s), a frase da âncora <em>pergunta</em> é
-        sintetizada e o <em>Reconhecedor</em> <em>rec_voz</em> inicia o
-        reconhecimento. O último <em>Sincronismo</em> define que quando for
-        reconhecida a âncora <em>repetir</em>,
-        <em>midia_principal</em> deve ser reiniciada (terminada e iniciada).</p>
-        </div>
-
-        <div id='conceptsIntro3B'></div><br>
-
-        <div style="text-align: justify; width: 70%;"> 
-        <p>Um dos principais benefícios de interfaces multimodais é o uso
-        diferentes interações, ou seja, as interações de usuários podem ser
-        realizadas por diferentes modalidades. Em nossos conceitos essa
-        combinação de modalidades de interação pode ser feita utilizando uma
-        condição composta. Usar um operador OR indica que qualquer uma das
-        interações é necessária. Já usar o operador AND indica que todas as
-        interações são necessárias em qualquer ordem. E por fim usar o operador
-        SEQ significa que as interações têm que ser feitas em sequência.</p> 
-
-        <p>Os blocos a seguir modificam a aplicação acima. Mas nessa
-        versão a mídia <em>midia_principal</em> é repetida quando usuário
-        interage através de  voz ou (operador OR) através de gesto.</p>
-        </div>
-
-        <div id='conceptsIntro3c'></div><br>
-      `
-    },
-    {
-      type: 'html',
-      name: 'conceptsIntro4',
-      html: `
-        <div style="text-align: justify; width: 70%;">
-        <p>Por fim, vamos detalhar <em>Grupo de usuários</em>. Ele permite
-        identificar unicamente interações de cada usuário. Por exemplo,
-        o comando de voz apenas de um determinado usuário</p>
-
-        <p><em>Grupo de Usuários</em> é definido por <strong>um identificador,
-        número máximo de participantes e quais dispositivos estes
-        utilizam</strong>. Mais precisamente, esses dispositivos definem o que
-        um usuário necessita possuir para participar do grupo.</p>
-
-        <p>Na nossa representação de blocos, o <em>Grupo de Usuários</em> é
-        definida juntando um bloco de <em>Grupo de Usuários</em> com campo id
-        preenchido e blocos de dispositivos. Por exemplo, os blocos a seguir
-        definem um grupo de usuário <em>gu_gestos</em> que pode ter até 3
-        membros, cada qual com seu reconhecedor de gestos (e.g. LeapMotion).</p>
-        </div>
-
-        <div id='conceptsIntro4A'></div><br>
-
-        <div style="text-align: justify; width: 70%;"> 
-        <p>Para ilustrar o uso de um <em>Grupo de Usuários</em>, os blocos a
-        seguir são uma nova versão da aplicação que reinicia um vídeo dada uma
-        interação por voz. Nessa versão, o vídeo será reiniciado apenas quando o
-        segundo usuário falar "repita vídeo".</p>
-        </div>
-
-        <div id='conceptsIntro4B'></div>
-      `
     }
   ]
 })
@@ -749,395 +653,19 @@ _data.conceptsIntro2BlocksB = `
   </xml>
 `
 
-_data.conceptsIntro3BlocksA = `
-  <xml xmlns="http://www.w3.org/1999/xhtml">
-    <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="20" y="20">
-      <field name="id">rec_voz</field>
-      <value name="src">
-        <block type="srgs" id="N5Lu5_J\`hn-e3lm60 |^3">
-          <mutation length="1"></mutation>
-          <field name="id_area0">repetir</field>
-          <field name="label0">repita vídeo</field>
-        </block>
-      </value>
-    </block>
-    <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="20" y="180">
-      <field name="id">rec_gesto</field>
-      <value name="src">
-        <block type="hand_gesture" id="N5Lu5_J\`hn-e3lm60 |^3">
-          <mutation length="2">
-          </mutation>
-          <field name="id_area0">esquerda</field>
-          <field name="label0">esquerda</field>
-          <field name="id_area1">direita</field>
-          <field name="label1">direita</field>
-        </block>
-      </value>
-    </block>
-  </xml>
-`
-
-_data.conceptsIntro3BlocksB = `
-<xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
-    <field name="id">midia_principal</field>
-    <value name="src">
-      <block type="video" id="OFge%WW-~~.%rZKqZqym">
-        <mutation length="1"></mutation>
-        <field name="id_area0">creditos</field>
-        <field name="begin0">300s</field>
-        <field name="end0">360s</field>
-      </block>
-    </value>
-  </block>
-  <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="661" y="21">
-    <field name="id">rec_voz</field>
-    <value name="src">
-      <block type="srgs" id="N5Lu5_J\`hn-e3lm60 |^3">
-        <mutation length="1"></mutation>
-        <field name="id_area0">repetir</field>
-        <field name="label0">repita vídeo</field>
-      </block>
-    </value>
-  </block>
-  <block type="media" id="v(3}oRBymiPD}7m@(iT*" x="20" y="177">
-    <field name="id">sinte_voz</field>
-    <value name="src">
-      <block type="ssml" id="OIfl%BPi_3-\`+z5^x\`FD">
-        <mutation length="1"></mutation>
-        <field name="id_area0">pergunta</field>
-        <field name="label0">você deseja repetir o vídeo?</field>
-      </block>
-    </value>
-  </block>
-  <block type="port" id="+p-MtE:D*clWz(7oX7Hg" x="663" y="240">
-    <field name="id">midia_principal</field>
-  </block>
-  <block type="link" id="%6ew%0di,O*v%qS%d\`(\`" x="20" y="347">
-    <value name="conditions">
-      <block type="onbegin" id="(H8xxhXk6.y#]q%\`UM^D">
-        <field name="id">creditos</field>
-      </block>
-    </value>
-    <statement name="actions">
-      <block type="start" id="}9[3akS_o4Z)PoiFYV7v">
-        <field name="id">pergunta</field>
-        <next>
-          <block type="start" id="UEqL{b=Ws2G#w}+xMV%m">
-            <field name="id">rec_voz</field>
-          </block>
-        </next>
-      </block>
-    </statement>
-  </block>
-  <block type="link" id="%6sP%0di,O*v%qS%d\`(\`" x="662" y="357">
-    <value name="conditions">
-      <block type="onrecognize" id="(H8dBhXk6.y#]q%\`UM^D">
-        <field name="id">repetir</field>
-      </block>
-    </value>
-    <statement name="actions">
-      <block type="stop" id="O6Xl3j%N[Dl)iB+j;|!]">
-        <field name="id">midia_principal</field>
-        <next>
-          <block type="start" id=".Pt;)N?s.:xGz;dDp@+W">
-            <field name="id">midia_principal</field>
-          </block>
-        </next>
-      </block>
-    </statement>
-  </block>
-</xml>
-`
-
-_data.conceptsIntro3BlocksC = `
-<xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
-    <field name="id">midia_principal</field>
-    <value name="src">
-      <block type="video" id="OFge%WW-~~.%rZKqZqym">
-        <mutation length="1"></mutation>
-        <field name="id_area0">creditos</field>
-        <field name="begin0">300s</field>
-        <field name="end0">360s</field>
-      </block>
-    </value>
-  </block>
-  <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="661" y="21">
-    <field name="id">rec_voz</field>
-    <value name="src">
-      <block type="srgs" id="N5Lu5_J\`hn-e3lm60 |^3">
-        <mutation length="1"></mutation>
-        <field name="id_area0">repetir</field>
-        <field name="label0">repita vídeo</field>
-      </block>
-    </value>
-  </block>
-  <block type="input" id=".9jD5o=BhpsFB80:]=BB" x="660" y="167">
-    <field name="id">rec_gesto</field>
-    <value name="src">
-      <block type="hand_gesture" id="}JcogVLf/Y7(1Pp@lK6,">
-        <mutation length="1"></mutation>
-        <field name="id_area0">esquerta</field>
-        <field name="label0">esquerda</field>
-      </block>
-    </value>
-  </block>
-  <block type="media" id="v(3}oRBymiPD}7m@(iT*" x="19" y="226">
-    <field name="id">sinte_voz</field>
-    <value name="src">
-      <block type="ssml" id="OIfl%BPi_3-\`+z5^x\`FD">
-        <mutation length="1"></mutation>
-        <field name="id_area0">pergunta</field>
-        <field name="label0">você deseja repetir o vídeo?</field>
-      </block>
-    </value>
-  </block>
-  <block type="port" id="+p-MtE:D*clWz(7oX7Hg" x="27" y="390">
-    <field name="id">midia_principal</field>
-  </block>
-  <block type="link" id="%6sP%0di,O*v%qS%d\`(\`" x="660" y="385">
-    <value name="conditions">
-      <block type="compoundcondition" id="#sWuH)YfLm?005GvLQaK">
-        <mutation length="2"></mutation>
-        <field name="operator">or</field>
-        <value name="element_0">
-          <block type="onrecognize" id="(H8dBhXk6.y#]q%\`UM^D">
-            <field name="id">repetir</field>
-          </block>
-        </value>
-        <value name="element_1">
-          <block type="onrecognize" id="_9w{*LI=9Gvs8$EK20Qt">
-            <field name="id">esquerta</field>
-          </block>
-        </value>
-      </block>
-    </value>
-    <statement name="actions">
-      <block type="stop" id="[gymipNN4gU6mk#uyh#l">
-        <field name="id">pergunta</field>
-        <next>
-          <block type="stop" id="Q=dtDW}ox*A]D{[#H}iD">
-            <field name="id">rec_gesto</field>
-            <next>
-              <block type="stop" id="O6Xl3j%N[Dl)iB+j;|!]">
-                <field name="id">midia_principal</field>
-                <next>
-                  <block type="start" id=".Pt;)N?s.:xGz;dDp@+W">
-                    <field name="id">midia_principal</field>
-                  </block>
-                </next>
-              </block>
-            </next>
-          </block>
-        </next>
-      </block>
-    </statement>
-  </block>
-  <block type="link" id="%6ew%0di,O*v%qS%d\`(\`" x="32" y="487">
-    <value name="conditions">
-      <block type="onbegin" id="(H8xxhXk6.y#]q%\`UM^D">
-        <field name="id">creditos</field>
-      </block>
-    </value>
-    <statement name="actions">
-      <block type="start" id="}9[3akS_o4Z)PoiFYV7v">
-        <field name="id">pergunta</field>
-        <next>
-          <block type="start" id="UEqL{b=Ws2G#w}+xMV%m">
-            <field name="id">rec_voz</field>
-            <next>
-              <block type="start" id=":k;*7!h^DLlpa^ls9[re">
-                <field name="id">rec_gesto</field>
-              </block>
-            </next>
-          </block>
-        </next>
-      </block>
-    </statement>
-  </block>
-</xml>
-`
-_data.conceptsIntro4BlocksA = `
-  <xml xmlns="http://www.w3.org/1999/xhtml">
-    <block type="user" id="IPnvWeecZqr2WM|RGxm|" x="20" y="20">
-      <mutation length="1"></mutation>
-      <field name="id"></field>
-      <field name="id">gu_gestos</field>
-      <value name="element_0">
-        <block type="hand_gesture_sensor" id="yU[{24F}.5IJtyI;VB5k"></block>
-      </value>
-    </block>
-  </xml>
-`
-
-_data.conceptsIntro4BlocksB = `
-<xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
-    <field name="id">midia_principal</field>
-    <value name="src">
-      <block type="video" id="OFge%WW-~~.%rZKqZqym">
-        <mutation length="1"></mutation>
-        <field name="id_area0">creditos</field>
-        <field name="begin0">300s</field>
-        <field name="end0">360s</field>
-      </block>
-    </value>
-  </block>
-  <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="669" y="22">
-    <field name="id">rec_voz</field>
-    <value name="src">
-      <block type="srgs" id="N5Lu5_J\`hn-e3lm60 |^3">
-        <mutation length="1"></mutation>
-        <field name="id_area0">repetir</field>
-        <field name="label0">repita vídeo</field>
-      </block>
-    </value>
-  </block>
-  <block type="media" id="ifhmRRJ%o^5/3j{LucQj" x="22" y="178">
-    <field name="id">sinte_voz</field>
-    <value name="src">
-      <block type="ssml" id="6d)v}%=\`HL1[M8cPHzuK">
-        <mutation length="1"></mutation>
-        <field name="id_area0">pergunta</field>
-        <field name="label0">você deseja repetir o vídeo?</field>
-      </block>
-    </value>
-  </block>
-  <block type="user" id="IPnvWeecZqr2WM|RGxm|" x="673" y="179">
-    <mutation length="1"></mutation>
-    <field name="id">gu_voz</field>
-    <field name="usermax">2</field>
-    <value name="element_0">
-      <block type="microfone" id="yU[{24F}.5IJtyI;VB5k"></block>
-    </value>
-  </block>
-  <block type="port" id="+p-MtE:D*clWz(7oX7Hg" x="22" y="342">
-    <field name="id">midia_principal</field>
-  </block>
-  <block type="link" id="%6ew%0di,O*v%qS%d\`(\`" x="24" y="446">
-    <value name="conditions">
-      <block type="onbegin" id="(H8xxhXk6.y#]q%\`UM^D">
-        <field name="id">creditos</field>
-      </block>
-    </value>
-    <statement name="actions">
-      <block type="start" id="UEqL{b=Ws2G#w}+xMV%m">
-        <field name="id">rec_voz</field>
-      </block>
-    </statement>
-  </block>
-  <block type="link" id="%6sP%0di,O*v%qS%d\`(\`" x="669" y="433">
-    <value name="conditions">
-      <block type="onrecognizeuser" id="y/zz?q?8ebd@?9llBV[0">
-        <field name="id">repetir</field>
-        <field name="user_id">gu_gestos(2)</field>
-      </block>
-    </value>
-    <statement name="actions">
-      <block type="stop" id="xx.sU]l9id:W4@6M~nOY">
-        <field name="id">midia_principal</field>
-        <next>
-          <block type="start" id=".Pt;)N?s.:xGz;dDp@+W">
-            <field name="id">midia_principal</field>
-          </block>
-        </next>
-      </block>
-    </statement>
-  </block>
-</xml>
-`
-
-// ----------------------------------------
-// concepts page - questions section
-// ----------------------------------------
-
-_data.surveyJSON.pages[pageIndex].elements.push({
-  type: 'panel',
-  title: 'Aplicação dos conceitos',
-  innerIndent: 1,
-  elements: [
-    {
-      type: 'html',
-      html: `
-        <div style="text-align: justify; width: 70%;">
-        <p>Agora pedimos que você realize as quatro tarefas a seguir. Duas
-        tarefas consistem em interpretar aplicações e duas em modificar
-        aplicações.</p>
-
-      </p><strong>Ressaltamos que essas tarefas NÃO se destinam a avaliar
-        seus conhecimentos, mas sim capturar evidências de nossa
-        pesquisa.</strong>.</p>
-        <div>
-      `
-    },
-    {
-      type: 'html',
-      name: 'conceptsTask1',
-      html: 'Tarefa 1: Por favor, analise com atenção os blocos a seguir.<br>'
-    },
-    {
-      type: 'comment',
-      isRequired: true,
-      name: 'conceptsTask1Question',
-      title: 'Qual é o comportamento da aplicação que corresponde aos blocos acima?'
-    },
-    {
-      type: 'html',
-      name: 'conceptsTask2',
-      html: 'Tarefa 2: Os blocos a seguir são uma versão modificada da Tarefa 1. Por favor, analise. <br><br>'
-    },
-    {
-      type: 'comment',
-      isRequired: true,
-      name: 'conceptsTask2Question',
-      title: 'Qual é o novo comportamento da aplicação?'
-    },
-    {
-      type: 'html',
-      name: 'conceptsTask3',
-      html: ` Tarefa 3: Agora pedimos que edite os blocos da Tarefa 2 (copiados
-        a seguir) para que seja possível a interação por voz <strong>ou</strong>
-        (operador OR) interação por gestos. Na interação por gesto, considere
-        que gesto de mão para esquerda indica centro e gesto de mão para direita
-        indica praia. <br><br>
-      `
-    },
-    {
-      type: 'comment',
-      name: 'conceptsTask3Changes',
-      // visible: true
-      visible: false
-    },
-    {
-      type: 'comment',
-      name: 'conceptsTask3Result',
-      // visible: true
-      visible: false
-    },
-    {
-      type: 'html',
-      name: 'conceptsTask4',
-      html: `
-        Tarefa 4: Agora pedimos que edite novamente os blocos da Tarefa 2
-        (copiados a seguir) para que apenas o segundo usuário, de um grupo de 3
-        usuários com microfone, possa realizar a interação por voz. <br><br>
-      `
-    },
-    {
-      type: 'text',
-      name: 'conceptsTask4Changes',
-      // visible: true
-      visible: false
-    },
-    {
-      type: 'text',
-      name: 'conceptsTask4Result',
-      // visible: true
-      visible: false
-    }
-  ]
-})
+_data.surveyJSON.pages[pageIndex].elements.push(
+  {
+    type: 'html',
+    name: 'conceptsTask1',
+    html: 'Tarefa 1: Por favor, analise com atenção os blocos a seguir.<br>'
+  },
+  {
+    type: 'comment',
+    isRequired: true,
+    name: 'conceptsTask1Question',
+    title: 'Qual é o comportamento da aplicação que corresponde aos blocos acima?'
+  }
+)
 
 _data.blocksTask1Xml = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
@@ -1263,129 +791,640 @@ _data.blocksTask1Xml = `
   </xml>
 `
 
-_data.blocksTask2Xml = `
-<xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="media" id="DACXRk{ds*},dxviHR(c" x="20" y="20">
-    <field name="id">video_principal</field>
-    <value name="src">
-      <block type="video" id="CG[^N,5)TV)0_N#+|cgE">
-        <mutation length="1"></mutation>
-        <field name="id_area0">creditos</field>
-        <field name="begin0">300s</field>
-        <field name="end0">360s</field>
-      </block>
-    </value>
-  </block>
-  <block type="media" id="J0=3=8AB$lViiF[SYu#!" x="597" y="22">
-    <field name="id">video_centro</field>
-    <value name="src">
-      <block type="video" id="]70x,I^+Yv!UsVCeeY()">
-        <mutation length="1"></mutation>
-        <field name="id_area0"></field>
-        <field name="begin0"></field>
-        <field name="end0"></field>
-      </block>
-    </value>
-  </block>
-  <block type="media" id="IawJU?Sm-z4If\`ixT^_p" x="20" y="164">
-    <field name="id">video_praia</field>
-    <value name="src">
-      <block type="video" id="S$1N4E3U+*W_\`=95FUu)">
-        <mutation length="1"></mutation>
-        <field name="id_area0"></field>
-        <field name="begin0"></field>
-        <field name="end0"></field>
-      </block>
-    </value>
-  </block>
-  <block type="media" id="B8oGN+K#=wjfeQi4K~WX" x="595" y="167">
-    <field name="id">sinte_voz</field>
-    <value name="src">
-      <block type="ssml" id="Oj6ycjV}(wESn+h/UL/Z">
-        <mutation length="1"></mutation>
-        <field name="id_area0">pergunta</field>
-        <field name="label0">fale o vídeo que deseja ver, centro ou praia?</field>
-      </block>
-    </value>
-  </block>
-  <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="23" y="318">
-    <field name="id">rec_voz</field>
-    <value name="src">
-      <block type="srgs" id="N5Lu5_J\`hn-e3lm60 |^3">
-        <mutation length="2"></mutation>
-        <field name="id_area0">voz_centro</field>
-        <field name="label0">centro</field>
-        <field name="id_area1">voz_praia</field>
-        <field name="label1">praia</field>
-      </block>
-    </value>
-  </block>
-  <block type="link" id="BLK@~VH8\`;o!;uMR.^tZ" x="595" y="453">
-    <value name="conditions">
-      <block type="onbegin" id="(H8dBhXk6.y#]q%\`UM^D">
-        <field name="id">creditos</field>
-      </block>
-    </value>
-    <statement name="actions">
-      <block type="start" id="_:Wp~afWoH$U.E}}=?5]">
-        <field name="id">pergunta</field>
-        <next>
-          <block type="start" id="q$s76Wl6nUee_vRx9F(3">
-            <field name="id">rec_voz</field>
-          </block>
-        </next>
-      </block>
-    </statement>
-  </block>
-  <block type="port" id="+ p - MtE:D * clWz(7oX7Hg" x="27" y="502">
-    <field name="id">video_principal</field>
-  </block>
-  <block type="link" id="M)^!XeQ3fwhKEwGTcoGK" x="30" y="606">
-    <value name="conditions">
-      <block type="onrecognize" id="IokIu//km+7L0Y@Nioi[">
-        <field name="id">voz_centro</field>
-      </block>
-    </value>
-    <statement name="actions">
-      <block type="stop" id="4(:vxHKc1ivMD9TqKrTd">
-        <field name="id">video_principal</field>
-        <next>
-          <block type="stop" id="xz194KXLw:HdJABl^)[9">
-            <field name="id">rec_voz</field>
-            <next>
-              <block type="start" id="Wo67TbqF5]_pN(b1R3D_">
-                <field name="id">video_centro</field>
-              </block>
-            </next>
-          </block>
-        </next>
-      </block>
-    </statement>
-  </block>
-  <block type="link" id="4^IYT6%+lHD0%*,oZz:%" x="597" y="616">
-    <value name="conditions">
-      <block type="onrecognize" id="[SfTF*!(*0N7]Hv9.tNh">
-        <field name="id">voz_praia</field>
-      </block>
-    </value>
-    <statement name="actions">
-      <block type="stop" id="qh{EZTXTYXj5QRw:x+l#">
-        <field name="id">video_principal</field>
-        <next>
-          <block type="stop" id="1UR0{9!iy~vJx~m2prd4">
-            <field name="id">rec_voz</field>
-            <next>
-              <block type="start" id="BZ#wUT/p=J}}s(q}Us7Z">
-                <field name="id">video_praia</field>
-              </block>
-            </next>
-          </block>
-        </next>
-      </block>
-    </statement>
-  </block>
-</xml>
+// ----------------------------------------
+// concepts page - recognition
+// ----------------------------------------
+
+_data.surveyJSON.pages[pageIndex].elements.push({
+  type: 'panel',
+  title: 'Reconhecedor',
+  elements: [
+    {
+      type: 'html',
+      name: 'conceptsIntro3',
+      html: `
+        <div style="text-align: justify; width: 70%;">
+        <p>Agora vamos detalhar o conceito <em>Reconhecedor</em>. Ele permite
+        o uso de reconhecimento de interações multimodais realizadas pelo
+        usuário, como voz e gestos.</p>
+
+        <p>O <em>Reconhecedor</em> é definido por <strong>um identificador, seu
+        conteúdo e âncoras</strong>. Entretanto, diferente de <em>Mídia</em>, o
+        conteúdo de um <em>Reconhecedor</em> deve ser uma descrição de
+        reconhecimento. As âncoras são porções delimitadas da descrição.
+        Por exemplo, uma descrição de reconhecimento de voz deve ter âncoras que
+        devem as frases a serem reconhecidas.</p>
+
+        <p>Na nossa representação de blocos, o <em>Reconhecedor</em> é definido
+        juntando um bloco de <em>Reconhecedor</em> com o campo id preenchido, e
+        um bloco de conteúdo com as âncoras preenchidas. Exemplos de blocos
+        serão apresentados para ilustrar o conceito.</p>
+
+        <p>Os blocos a seguir definem os reconhecedores <em>rec_voz</em> e
+        <em>rec_gestos</em>. O <em>rec_voz</em> tem um reconhecimento de voz
+        como conteúdo. Essa descrição tem o trecho <em>repetir</em> que
+        reconhece o comando de voz "repita vídeo". Já <em>rec_gestos</em> tem
+        uma descrição de reconhecimento de gestos como conteúdo. Esse conteúdo
+        utiliza dois trechos, esquerda e direita, para definir gestos de mão
+        nessas direções.</p> </div>
+
+        <div id='conceptsIntro3A'></div><br>
+
+        <div style="text-align: justify; width: 70%;">
+        <p>Para ilustrar o uso desse conceito em uma aplicação, os
+        blocos a seguir definem uma nova versão da aplicação que reinicia um
+        vídeo dada uma interação. Mas nessa versão, ao invés de selecionar, o
+        vídeo é reiniciado ao usuário falar "repita vídeo".</p>
+
+        <p>Essa aplicação utiliza duas <em>Mídia</em> (<em>midia_principal</em>
+        e <em>sinte_voz</em>) e um <em>Reconhecedor</em> (<em>rec_voz</em>).
+        
+        <p>Para o comportamento, a aplicação utiliza três <em>Sincronismo</em>s.
+        O primeiro <em>Sincronismo</em> define que <em>midia_principal</em> é
+        iniciada com a aplicação. O segundo <em>Sincronismo</em> define que
+        quando a <em>midia_principal</em> alcançar o seu trecho de
+        <em>creditos</em> (300s), a frase da âncora <em>pergunta</em> é
+        sintetizada e o <em>Reconhecedor</em> <em>rec_voz</em> inicia o
+        reconhecimento. O último <em>Sincronismo</em> define que quando for
+        reconhecida a âncora <em>repetir</em>,
+        <em>midia_principal</em> deve ser reiniciada (terminada e iniciada).</p>
+        </div>
+
+        <div id='conceptsIntro3B'></div><br>
+      `
+    }
+  ]
+})
+
+_data.conceptsIntro3BlocksA = `
+  <xml xmlns="http://www.w3.org/1999/xhtml">
+    <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="20" y="20">
+      <field name="id">rec_voz</field>
+      <value name="src">
+        <block type="srgs" id="N5Lu5_J\`hn-e3lm60 |^3">
+          <mutation length="1"></mutation>
+          <field name="id_area0">repetir</field>
+          <field name="label0">repita vídeo</field>
+        </block>
+      </value>
+    </block>
+    <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="20" y="180">
+      <field name="id">rec_gesto</field>
+      <value name="src">
+        <block type="hand_gesture" id="N5Lu5_J\`hn-e3lm60 |^3">
+          <mutation length="2">
+          </mutation>
+          <field name="id_area0">esquerda</field>
+          <field name="label0">esquerda</field>
+          <field name="id_area1">direita</field>
+          <field name="label1">direita</field>
+        </block>
+      </value>
+    </block>
+  </xml>
 `
+
+_data.conceptsIntro3BlocksB = `
+  <xml xmlns="http://www.w3.org/1999/xhtml">
+    <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
+      <field name="id">midia_principal</field>
+      <value name="src">
+        <block type="video" id="OFge%WW-~~.%rZKqZqym">
+          <mutation length="1"></mutation>
+          <field name="id_area0">creditos</field>
+          <field name="begin0">300s</field>
+          <field name="end0">360s</field>
+        </block>
+      </value>
+    </block>
+    <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="661" y="21">
+      <field name="id">rec_voz</field>
+      <value name="src">
+        <block type="srgs" id="N5Lu5_J\`hn-e3lm60 |^3">
+          <mutation length="1"></mutation>
+          <field name="id_area0">repetir</field>
+          <field name="label0">repita vídeo</field>
+        </block>
+      </value>
+    </block>
+    <block type="media" id="v(3}oRBymiPD}7m@(iT*" x="20" y="177">
+      <field name="id">sinte_voz</field>
+      <value name="src">
+        <block type="ssml" id="OIfl%BPi_3-\`+z5^x\`FD">
+          <mutation length="1"></mutation>
+          <field name="id_area0">pergunta</field>
+          <field name="label0">você deseja repetir o vídeo?</field>
+        </block>
+      </value>
+    </block>
+    <block type="port" id="+p-MtE:D*clWz(7oX7Hg" x="663" y="240">
+      <field name="id">midia_principal</field>
+    </block>
+    <block type="link" id="%6ew%0di,O*v%qS%d\`(\`" x="20" y="347">
+      <value name="conditions">
+        <block type="onbegin" id="(H8xxhXk6.y#]q%\`UM^D">
+          <field name="id">creditos</field>
+        </block>
+      </value>
+      <statement name="actions">
+        <block type="start" id="}9[3akS_o4Z)PoiFYV7v">
+          <field name="id">pergunta</field>
+          <next>
+            <block type="start" id="UEqL{b=Ws2G#w}+xMV%m">
+              <field name="id">rec_voz</field>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+    <block type="link" id="%6sP%0di,O*v%qS%d\`(\`" x="662" y="357">
+      <value name="conditions">
+        <block type="onrecognize" id="(H8dBhXk6.y#]q%\`UM^D">
+          <field name="id">repetir</field>
+        </block>
+      </value>
+      <statement name="actions">
+        <block type="stop" id="O6Xl3j%N[Dl)iB+j;|!]">
+          <field name="id">midia_principal</field>
+          <next>
+            <block type="start" id=".Pt;)N?s.:xGz;dDp@+W">
+              <field name="id">midia_principal</field>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+  </xml>
+`
+
+_data.surveyJSON.pages[pageIndex].elements.push(
+  {
+    type: 'html',
+    name: 'conceptsTask2',
+    html: 'Tarefa 2: Os blocos a seguir são uma versão modificada da Tarefa 1. Por favor, analise. <br><br>'
+  },
+  {
+    type: 'comment',
+    isRequired: true,
+    name: 'conceptsTask2Question',
+    title: 'Qual é o novo comportamento da aplicação?'
+  }
+)
+
+_data.blocksTask2Xml = `
+  <xml xmlns="http://www.w3.org/1999/xhtml">
+    <block type="media" id="DACXRk{ds*},dxviHR(c" x="20" y="20">
+      <field name="id">video_principal</field>
+      <value name="src">
+        <block type="video" id="CG[^N,5)TV)0_N#+|cgE">
+          <mutation length="1"></mutation>
+          <field name="id_area0">creditos</field>
+          <field name="begin0">300s</field>
+          <field name="end0">360s</field>
+        </block>
+      </value>
+    </block>
+    <block type="media" id="J0=3=8AB$lViiF[SYu#!" x="597" y="22">
+      <field name="id">video_centro</field>
+      <value name="src">
+        <block type="video" id="]70x,I^+Yv!UsVCeeY()">
+          <mutation length="1"></mutation>
+          <field name="id_area0"></field>
+          <field name="begin0"></field>
+          <field name="end0"></field>
+        </block>
+      </value>
+    </block>
+    <block type="media" id="IawJU?Sm-z4If\`ixT^_p" x="20" y="164">
+      <field name="id">video_praia</field>
+      <value name="src">
+        <block type="video" id="S$1N4E3U+*W_\`=95FUu)">
+          <mutation length="1"></mutation>
+          <field name="id_area0"></field>
+          <field name="begin0"></field>
+          <field name="end0"></field>
+        </block>
+      </value>
+    </block>
+    <block type="media" id="B8oGN+K#=wjfeQi4K~WX" x="595" y="167">
+      <field name="id">sinte_voz</field>
+      <value name="src">
+        <block type="ssml" id="Oj6ycjV}(wESn+h/UL/Z">
+          <mutation length="1"></mutation>
+          <field name="id_area0">pergunta</field>
+          <field name="label0">fale o vídeo que deseja ver, centro ou praia?</field>
+        </block>
+      </value>
+    </block>
+    <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="23" y="318">
+      <field name="id">rec_voz</field>
+      <value name="src">
+        <block type="srgs" id="N5Lu5_J\`hn-e3lm60 |^3">
+          <mutation length="2"></mutation>
+          <field name="id_area0">voz_centro</field>
+          <field name="label0">centro</field>
+          <field name="id_area1">voz_praia</field>
+          <field name="label1">praia</field>
+        </block>
+      </value>
+    </block>
+    <block type="link" id="BLK@~VH8\`;o!;uMR.^tZ" x="595" y="453">
+      <value name="conditions">
+        <block type="onbegin" id="(H8dBhXk6.y#]q%\`UM^D">
+          <field name="id">creditos</field>
+        </block>
+      </value>
+      <statement name="actions">
+        <block type="start" id="_:Wp~afWoH$U.E}}=?5]">
+          <field name="id">pergunta</field>
+          <next>
+            <block type="start" id="q$s76Wl6nUee_vRx9F(3">
+              <field name="id">rec_voz</field>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+    <block type="port" id="+ p - MtE:D * clWz(7oX7Hg" x="27" y="502">
+      <field name="id">video_principal</field>
+    </block>
+    <block type="link" id="M)^!XeQ3fwhKEwGTcoGK" x="30" y="606">
+      <value name="conditions">
+        <block type="onrecognize" id="IokIu//km+7L0Y@Nioi[">
+          <field name="id">voz_centro</field>
+        </block>
+      </value>
+      <statement name="actions">
+        <block type="stop" id="4(:vxHKc1ivMD9TqKrTd">
+          <field name="id">video_principal</field>
+          <next>
+            <block type="stop" id="xz194KXLw:HdJABl^)[9">
+              <field name="id">rec_voz</field>
+              <next>
+                <block type="start" id="Wo67TbqF5]_pN(b1R3D_">
+                  <field name="id">video_centro</field>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+    <block type="link" id="4^IYT6%+lHD0%*,oZz:%" x="597" y="616">
+      <value name="conditions">
+        <block type="onrecognize" id="[SfTF*!(*0N7]Hv9.tNh">
+          <field name="id">voz_praia</field>
+        </block>
+      </value>
+      <statement name="actions">
+        <block type="stop" id="qh{EZTXTYXj5QRw:x+l#">
+          <field name="id">video_principal</field>
+          <next>
+            <block type="stop" id="1UR0{9!iy~vJx~m2prd4">
+              <field name="id">rec_voz</field>
+              <next>
+                <block type="start" id="BZ#wUT/p=J}}s(q}Us7Z">
+                  <field name="id">video_praia</field>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+  </xml>
+`
+
+// ----------------------------------------
+// concepts page - recognition combination
+// ----------------------------------------
+
+_data.surveyJSON.pages[pageIndex].elements.push({
+  type: 'panel',
+  title: 'Combinação de Reconhecedores',
+  elements: [
+    {
+      type: 'html',
+      name: 'conceptsIntro4',
+      html: `
+        <div style="text-align: justify; width: 70%;"> 
+        <p>Um dos principais benefícios de interfaces multimodais é o uso
+        diferentes interações, ou seja, as interações de usuários podem ser
+        realizadas por diferentes modalidades. Em nossos conceitos essa
+        combinação de modalidades de interação pode ser feita utilizando uma
+        condição composta. Usar um operador OR indica que qualquer uma das
+        interações é necessária. Já usar o operador AND indica que todas as
+        interações são necessárias em qualquer ordem. E por fim usar o operador
+        SEQ significa que as interações têm que ser feitas em sequência.</p> 
+
+        <p>Os blocos a seguir modificam a aplicação acima. Mas nessa
+        versão a mídia <em>midia_principal</em> é repetida quando usuário
+        interage através de  voz ou (operador OR) através de gesto.</p>
+        </div>
+
+        <div id='conceptsIntro4A'></div><br>
+      `
+    }
+  ]
+})
+
+_data.conceptsIntro4BlocksA = `
+  <xml xmlns="http://www.w3.org/1999/xhtml">
+    <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
+      <field name="id">midia_principal</field>
+      <value name="src">
+        <block type="video" id="OFge%WW-~~.%rZKqZqym">
+          <mutation length="1"></mutation>
+          <field name="id_area0">creditos</field>
+          <field name="begin0">300s</field>
+          <field name="end0">360s</field>
+        </block>
+      </value>
+    </block>
+    <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="661" y="21">
+      <field name="id">rec_voz</field>
+      <value name="src">
+        <block type="srgs" id="N5Lu5_J\`hn-e3lm60 |^3">
+          <mutation length="1"></mutation>
+          <field name="id_area0">repetir</field>
+          <field name="label0">repita vídeo</field>
+        </block>
+      </value>
+    </block>
+    <block type="input" id=".9jD5o=BhpsFB80:]=BB" x="660" y="167">
+      <field name="id">rec_gesto</field>
+      <value name="src">
+        <block type="hand_gesture" id="}JcogVLf/Y7(1Pp@lK6,">
+          <mutation length="1"></mutation>
+          <field name="id_area0">esquerta</field>
+          <field name="label0">esquerda</field>
+        </block>
+      </value>
+    </block>
+    <block type="media" id="v(3}oRBymiPD}7m@(iT*" x="19" y="226">
+      <field name="id">sinte_voz</field>
+      <value name="src">
+        <block type="ssml" id="OIfl%BPi_3-\`+z5^x\`FD">
+          <mutation length="1"></mutation>
+          <field name="id_area0">pergunta</field>
+          <field name="label0">você deseja repetir o vídeo?</field>
+        </block>
+      </value>
+    </block>
+    <block type="port" id="+p-MtE:D*clWz(7oX7Hg" x="27" y="390">
+      <field name="id">midia_principal</field>
+    </block>
+    <block type="link" id="%6sP%0di,O*v%qS%d\`(\`" x="660" y="385">
+      <value name="conditions">
+        <block type="compoundcondition" id="#sWuH)YfLm?005GvLQaK">
+          <mutation length="2"></mutation>
+          <field name="operator">or</field>
+          <value name="element_0">
+            <block type="onrecognize" id="(H8dBhXk6.y#]q%\`UM^D">
+              <field name="id">repetir</field>
+            </block>
+          </value>
+          <value name="element_1">
+            <block type="onrecognize" id="_9w{*LI=9Gvs8$EK20Qt">
+              <field name="id">esquerta</field>
+            </block>
+          </value>
+        </block>
+      </value>
+      <statement name="actions">
+        <block type="stop" id="[gymipNN4gU6mk#uyh#l">
+          <field name="id">pergunta</field>
+          <next>
+            <block type="stop" id="Q=dtDW}ox*A]D{[#H}iD">
+              <field name="id">rec_gesto</field>
+              <next>
+                <block type="stop" id="O6Xl3j%N[Dl)iB+j;|!]">
+                  <field name="id">midia_principal</field>
+                  <next>
+                    <block type="start" id=".Pt;)N?s.:xGz;dDp@+W">
+                      <field name="id">midia_principal</field>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+    <block type="link" id="%6ew%0di,O*v%qS%d\`(\`" x="32" y="487">
+      <value name="conditions">
+        <block type="onbegin" id="(H8xxhXk6.y#]q%\`UM^D">
+          <field name="id">creditos</field>
+        </block>
+      </value>
+      <statement name="actions">
+        <block type="start" id="}9[3akS_o4Z)PoiFYV7v">
+          <field name="id">pergunta</field>
+          <next>
+            <block type="start" id="UEqL{b=Ws2G#w}+xMV%m">
+              <field name="id">rec_voz</field>
+              <next>
+                <block type="start" id=":k;*7!h^DLlpa^ls9[re">
+                  <field name="id">rec_gesto</field>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+  </xml>
+`
+
+_data.surveyJSON.pages[pageIndex].elements.push(
+  {
+    type: 'html',
+    name: 'conceptsTask3',
+    html: ` 
+        <div style="text-align: justify; width: 70%;">
+        Tarefa 3: Agora pedimos que edite os blocos da Tarefa 2 (copiados a
+        seguir) para que seja possível a interação por voz <strong>ou</strong>
+        (operador OR) interação por gestos. Na interação por gesto, considere
+        que gesto de mão para esquerda indica centro e gesto de mão para direita
+        indica praia.<br><br>
+        <div>
+      `
+  },
+  {
+    type: 'comment',
+    name: 'conceptsTask3Changes',
+    // visible: true
+    visible: false
+  },
+  {
+    type: 'comment',
+    name: 'conceptsTask3Result',
+    // visible: true
+    visible: false
+  }
+)
+
+// ----------------------------------------
+// concepts page - user
+// ----------------------------------------
+
+_data.surveyJSON.pages[pageIndex].elements.push({
+  type: 'panel',
+  title: 'Grupo de Usuários',
+  elements: [
+    {
+      type: 'html',
+      name: 'conceptsIntro5',
+      html: `
+        <div style="text-align: justify; width: 70%;">
+        <p>Por fim, vamos detalhar <em>Grupo de usuários</em>. Ele permite
+        identificar unicamente interações de cada usuário. Por exemplo,
+        o comando de voz apenas de um determinado usuário</p>
+
+        <p><em>Grupo de Usuários</em> é definido por <strong>um identificador,
+        número máximo de participantes e quais dispositivos estes
+        utilizam</strong>. Mais precisamente, esses dispositivos definem o que
+        um usuário necessita possuir para participar do grupo.</p>
+
+        <p>Na nossa representação de blocos, o <em>Grupo de Usuários</em> é
+        definida juntando um bloco de <em>Grupo de Usuários</em> com campo id
+        preenchido e blocos de dispositivos. Por exemplo, os blocos a seguir
+        definem um grupo de usuário <em>gu_gestos</em> que pode ter até 3
+        membros, cada qual com seu reconhecedor de gestos (e.g. LeapMotion).</p>
+        </div>
+
+        <div id='conceptsIntro5A'></div><br>
+
+        <div style="text-align: justify; width: 70%;"> 
+        <p>Para ilustrar o uso de um <em>Grupo de Usuários</em>, os blocos a
+        seguir são uma nova versão da aplicação que reinicia um vídeo dada uma
+        interação por voz. Nessa versão, o vídeo será reiniciado apenas quando o
+        segundo usuário falar "repita vídeo".</p>
+        </div>
+
+        <div id='conceptsIntro5B'></div>
+      `
+    }
+  ]
+})
+
+_data.conceptsIntro5BlocksA = `
+  <xml xmlns="http://www.w3.org/1999/xhtml">
+    <block type="user" id="IPnvWeecZqr2WM|RGxm|" x="20" y="20">
+      <mutation length="1"></mutation>
+      <field name="id"></field>
+      <field name="id">gu_gestos</field>
+      <value name="element_0">
+        <block type="hand_gesture_sensor" id="yU[{24F}.5IJtyI;VB5k"></block>
+      </value>
+    </block>
+  </xml>
+`
+
+_data.conceptsIntro5BlocksB = `
+  <xml xmlns="http://www.w3.org/1999/xhtml">
+    <block type="media" id="s]~V8B!V%oD-X^+]Jpjq" x="20" y="20">
+      <field name="id">midia_principal</field>
+      <value name="src">
+        <block type="video" id="OFge%WW-~~.%rZKqZqym">
+          <mutation length="1"></mutation>
+          <field name="id_area0">creditos</field>
+          <field name="begin0">300s</field>
+          <field name="end0">360s</field>
+        </block>
+      </value>
+    </block>
+    <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="669" y="22">
+      <field name="id">rec_voz</field>
+      <value name="src">
+        <block type="srgs" id="N5Lu5_J\`hn-e3lm60 |^3">
+          <mutation length="1"></mutation>
+          <field name="id_area0">repetir</field>
+          <field name="label0">repita vídeo</field>
+        </block>
+      </value>
+    </block>
+    <block type="media" id="ifhmRRJ%o^5/3j{LucQj" x="22" y="178">
+      <field name="id">sinte_voz</field>
+      <value name="src">
+        <block type="ssml" id="6d)v}%=\`HL1[M8cPHzuK">
+          <mutation length="1"></mutation>
+          <field name="id_area0">pergunta</field>
+          <field name="label0">você deseja repetir o vídeo?</field>
+        </block>
+      </value>
+    </block>
+    <block type="user" id="IPnvWeecZqr2WM|RGxm|" x="673" y="179">
+      <mutation length="1"></mutation>
+      <field name="id">gu_voz</field>
+      <field name="usermax">2</field>
+      <value name="element_0">
+        <block type="microfone" id="yU[{24F}.5IJtyI;VB5k"></block>
+      </value>
+    </block>
+    <block type="port" id="+p-MtE:D*clWz(7oX7Hg" x="22" y="342">
+      <field name="id">midia_principal</field>
+    </block>
+    <block type="link" id="%6ew%0di,O*v%qS%d\`(\`" x="24" y="446">
+      <value name="conditions">
+        <block type="onbegin" id="(H8xxhXk6.y#]q%\`UM^D">
+          <field name="id">creditos</field>
+        </block>
+      </value>
+      <statement name="actions">
+        <block type="start" id="UEqL{b=Ws2G#w}+xMV%m">
+          <field name="id">rec_voz</field>
+        </block>
+      </statement>
+    </block>
+    <block type="link" id="%6sP%0di,O*v%qS%d\`(\`" x="669" y="433">
+      <value name="conditions">
+        <block type="onrecognizeuser" id="y/zz?q?8ebd@?9llBV[0">
+          <field name="id">repetir</field>
+          <field name="user_id">gu_gestos(2)</field>
+        </block>
+      </value>
+      <statement name="actions">
+        <block type="stop" id="xx.sU]l9id:W4@6M~nOY">
+          <field name="id">midia_principal</field>
+          <next>
+            <block type="start" id=".Pt;)N?s.:xGz;dDp@+W">
+              <field name="id">midia_principal</field>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+  </xml>
+`
+
+_data.surveyJSON.pages[pageIndex].elements.push(
+  {
+    type: 'html',
+    name: 'conceptsTask4',
+    html: `
+        <div style="text-align: justify; width: 70%;"> 
+        Tarefa 4: Agora pedimos que edite novamente os blocos da Tarefa 2
+        (copiados a seguir) para que apenas o segundo usuário, de um grupo de 3
+        usuários com microfone, possa realizar a interação por voz.<br><br>
+        <div>
+
+      `
+  },
+  {
+    type: 'text',
+    name: 'conceptsTask4Changes',
+    // visible: true
+    visible: false
+  },
+  {
+    type: 'text',
+    name: 'conceptsTask4Result',
+    // visible: true
+    visible: false
+  }
+)
 
 // ----------------------------------------
 // concepts feedback page
@@ -1470,7 +1509,6 @@ pageIndex = _data.surveyJSON.pages.push({
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
   title: 'Proposta de conceitos multimodais em NCL',
-  innerIndent: 1,
   elements: [
     {
       type: 'html',
@@ -2063,7 +2101,6 @@ _data.nclIntro4CodeB = `
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
   title: 'Aplicação dos conceitos',
-  innerIndent: 1,
   elements: [
     {
       type: 'html',
@@ -2381,7 +2418,6 @@ pageIndex = _data.surveyJSON.pages.push({
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
   title: 'Proposta de conceitos multimodais em HTML',
-  innerIndent: 1,
   elements: [
     {
       type: 'html',
@@ -2937,7 +2973,6 @@ _data.htmlIntro4CodeB = `
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
   title: 'Aplicação dos conceitos',
-  innerIndent: 1,
   elements: [
     {
       type: 'html',

@@ -85,7 +85,7 @@ $('#surveyPageNo').change(function () {
   _survey.currentPageNo = this.value
 })
 
-// $('#surveyPageNo').val(3).change()
+$('#surveyPageNo').val(3).change()
 // $('#surveyPageNo').val(4).change()
 // $('#surveyPageNo').val(5).change()
 // $('#surveyPageNo').val(7).change()
@@ -151,14 +151,16 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
         NCLBlocks.calcHt(2, 200), _data.conceptsIntro3BlocksA, true)
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro3B',
         NCLBlocks.calcHt(4, 110), _data.conceptsIntro3BlocksB, true)
-      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro3c',
-        NCLBlocks.calcHt(5, 110), _data.conceptsIntro3BlocksC, true)
       break
     case 'conceptsIntro4':
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro4A',
-        NCLBlocks.calcHt(1, 130), _data.conceptsIntro4BlocksA, true)
-      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro4B',
-        NCLBlocks.calcHt(4, 130), _data.conceptsIntro4BlocksB, true)
+        NCLBlocks.calcHt(5, 110), _data.conceptsIntro4BlocksA, true)
+      break
+    case 'conceptsIntro5':
+      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro5A',
+        NCLBlocks.calcHt(1, 130), _data.conceptsIntro5BlocksA, true)
+      NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro5B',
+        NCLBlocks.calcHt(4, 130), _data.conceptsIntro5BlocksB, true)
       break
     case 'conceptsTask1':
       NCLBlocks.injectInDiv(_pathToBlockly, questionId,
