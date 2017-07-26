@@ -2267,7 +2267,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <td>Relacionamento</td>
         <td><i>&ltscript></i></td>
         <td><i>&ltscript></i> com o objeto JavaScript
-        <i>Relantionship</i></td>
+        <i>Relationship</i></td>
       </tr>
       <tr>
         <td>Reconhecedor</td>
@@ -2328,33 +2328,33 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         definido por <strong>um conjunto de condições e um conjunto de
         ações</strong>. Na nossa HTML, ele é implementado pelo elemento
         <i>&ltscript></i>, com um código JavaScript que utiliza o objeto
-        <i>Relantionship</i>.</p>
+        <i>Relationship</i>.</p>
         
         <p>As ações podem ser de iniciar ("start") ou parar ("stop") uma Mídia
         ou Reconhecedor. Já as condições podem ser simples ou compostas. As
-        condições simples em um objeto <i>Relantionship</i> podem ser de início
+        condições simples em um objeto <i>Relationship</i> podem ser de início
         ("onBegin") ou fim ("onEnd") de uma mídia ou de sua âncora, seleção de
         mídia pelo usuário ("onSelection") ou reconhecimento de uma interação
         multimodal ("onRecognition").<p>
 
         <p>O relacionamento entre condições e ações é definido pelo parâmetro de
-        criação do objeto <i>Relantionship</i>. Por exemplo, um uma parâmetro
+        criação do objeto <i>Relationship</i>. Por exemplo, um uma parâmetro
         "onBeginStart" define uma condição "onBegin" e ações de "start".
         Já um connector <i>onSelectionStopStart</i> define uma condição
         "onSelection" e ações de "stop" e "start". A associação de elementos
         Mídia ou Reconhecedo com as condições e ações de um objeto
-        <i>Relantionship</i> é definida pelo método <i>bind</i>.</p>
+        <i>Relationship</i> é definida pelo método <i>bind</i>.</p>
 
         <p>Para ilustrar o uso desses conceitos, o trecho de código a seguir
         define uma aplicação que apresenta um vídeo e um ícone durante os
         créditos do vídeo. Se o usuário selecionar o ícone, o vídeo é
         reiniciado. Ele utiliza um <i>img</i>, um <i>video</i> e um
-        <i>script</i> que define três objetos <i>Relantionship</i>. O
-        primeiro <i>Relantionship</i> define que o elemento
+        <i>script</i> que define três objetos <i>Relationship</i>. O
+        primeiro <i>Relationship</i> define que o elemento
         <i>midia_principal</i> inicia com a aplicação. O segundo
-        <i>Relantionship</i> define que quando o <i>video_principal</i>
+        <i>Relationship</i> define que quando o <i>video_principal</i>
         alcançar o seu trecho de <i>creditos<i>, a imagem <i>icone_repetir</i> é
-        iniciada. O <i>Relantionship</i> terceiro define que quando
+        iniciada. O <i>Relationship</i> terceiro define que quando
         <i>icone_repetir</i> for selecionado, o <i>video_principal</i> será
         reiniciado (<i>stop</i> e <i>start</i>).</p>
 
@@ -2383,7 +2383,7 @@ _data.htmlIntro1CodeB = `
   auto-links: false; highlight:[5,9,13,17,21]"><![CDATA[
   <!DOCTYPE html>
   <html>
-  <head><script src="relantionship.js"><&#47script></head>
+  <head><script src="relationship.js"><&#47script></head>
   <body>
     <video id="midia_principal" src="video.mp4"
       style="position: absolute; height 100%; width: 100%;">
@@ -2393,15 +2393,15 @@ _data.htmlIntro1CodeB = `
       style="position: absolute; width: 20%; height: 20%; top: 80%; z-index: 1;">
     </img>
     <script>
-      var r1 = new Relantionship("onBeginStart")
+      var r1 = new Relationship("onBeginStart")
       r1.bind("onBegin", "body")
       r1.bind("start", "midia_principal")
 
-      var r2 = new Relantionship("onBeginStart")
+      var r2 = new Relationship("onBeginStart")
       r2.bind("onBegin", "midia_principal", "creditos")
       r2.bind("start", "icone_repetir")
 
-      var r3 = new Relantionship("onSelectionStopStart")
+      var r3 = new Relationship("onSelectionStopStart")
       r3.bind("onSelection", "icone_repetir")
       r3.bind("stop", "midia_principal")
       r3.bind("start", "midia_principal")
@@ -2440,7 +2440,7 @@ _data.htmlTask1CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
   <html>
-  <head><script src="relantionship.js"><&#47script></head>
+  <head><script src="relationship.js"><&#47script></head>
   <body>
     <video id="video_inicial" src="video_inicial.mp4"
       style="position: absolute; height 100%; width: 100%;">
@@ -2461,21 +2461,21 @@ _data.htmlTask1CodeA = `
       style="position: absolute; width: 20%; height: 20%; top: 80%; z-index: 1;">
     </img>
     <script>
-      var r1 = new Relantionship("onBeginStart")
+      var r1 = new Relationship("onBeginStart")
       r1.bind("onBegin", "body")
       r1.bind("start", "video_inicial")
 
-      var r2 = new Relantionship("onBeginStart")
+      var r2 = new Relationship("onBeginStart")
       r2.bind("onBegin", "video_inicial", "creditos")
       r2.bind("start", "icone_centro")
       r2.bind("start", "icone_praia")
 
-      var r3 = new Relantionship("onSelectionStopStart")
+      var r3 = new Relationship("onSelectionStopStart")
       r3.bind("onSelection", "icone_centro")
       r3.bind("stop", "video_inicial")
       r3.bind("start", "video_centro")
 
-      var r4 = new Relantionship("onSelectionStopStart")
+      var r4 = new Relationship("onSelectionStopStart")
       r4.bind("onSelection", "icone_praia")
       r4.bind("stop", "video_inicial")
       r4.bind("start", "video_praia")
@@ -2543,12 +2543,12 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <i>sinte_voz.srgs</i> e <i>rec_voz.srgs</i> (apresentados
         acima).</p>
 
-        <p>Dois objetos <i>Relantionship</i> do elemento <i>&ltscript></i>
-        foram modificados. O primeiro <i>Relantionship</i> modificado define
+        <p>Dois objetos <i>Relationship</i> do elemento <i>&ltscript></i>
+        foram modificados. O primeiro <i>Relationship</i> modificado define
         que quando o <i>video_principal</i> alcançar a sua porção de
         <i>creditos</i> (300s), a frase da âncora <i>pergunta</i> é
         sintetizada e o reconhecedor <i>rec</i> inicia seu reconhecimento. O
-        segundo <i>Relantionship</i> modificado define que quando for
+        segundo <i>Relationship</i> modificado define que quando for
         reconhecida a âncora <i>repete</i>, a <i>midia_principal</i> seja
         reiniciada (terminada e iniciada).</p>
 
@@ -2586,7 +2586,7 @@ _data.htmlIntro2CodeE = `
   auto-links: false; highlight:[9,12,20,25]"><![CDATA[
   <!DOCTYPE html>
   <html>
-  <head><script src="relantionship.js"><&#47script></head>
+  <head><script src="relationship.js"><&#47script></head>
   <body>
     <video id="midia_principal" src="video.mp4"
       style="position: absolute; height 100%; width: 100%;">
@@ -2599,16 +2599,16 @@ _data.htmlIntro2CodeE = `
       <area label="repete"><&#47area> <!-- referência id repete de rec_voz.srgs-->
     </object>
     <script>
-      var r1 = new Relantionship("onBeginStart")
+      var r1 = new Relationship("onBeginStart")
       r1.bind("onBegin", "body")
       r1.bind("start", "midia_principal")
 
-      var r2 = new Relantionship("onBeginStart")
+      var r2 = new Relationship("onBeginStart")
       r2.bind("onBegin", "midia_principal", "creditos")
       r2.bind("start", "sinte_voz")
       r2.bind("start", "rec_voz")
 
-      var r3 = new Relantionship("onRecognizeStopStart")
+      var r3 = new Relationship("onRecognizeStopStart")
       r3.bind("onRecognize", "rec_voz", "repete")
       r3.bind("stop", "midia_principal")
       r3.bind("start", "midia_principal")
@@ -2654,7 +2654,7 @@ _data.surveyJSON.pages[pageIndex].elements.push(
 
 _data.htmlTask2CodeCOnly = `
   <html>
-  <head><script src="relantionship.js"><&#47script></head>
+  <head><script src="relationship.js"><&#47script></head>
   <body>
     <video id="video_inicial" src="video_inicial.mp4"
       style="position: absolute; height 100%; width: 100%;">
@@ -2675,21 +2675,21 @@ _data.htmlTask2CodeCOnly = `
       <area label="repete"></repete>
     </object>
     <script>
-      var r1 = new Relantionship("onBeginStart")
+      var r1 = new Relationship("onBeginStart")
       r1.bind("onBegin", "body")
       r1.bind("start", "video_inicial")
 
-      var r2 = new Relantionship("onBeginStart")
+      var r2 = new Relationship("onBeginStart")
       r2.bind("onBegin", "video_inicial", "creditos")
       r2.bind("start", "sinte_voz", "pergunta")
       r2.bind("start", "rec_voz")
 
-      var r3 = new Relantionship("onRecognizeStopStart")
+      var r3 = new Relationship("onRecognizeStopStart")
       r2.bind("onRecognize", "rec_voz", "centro")
       r2.bind("stop", "video_inicial")
       r2.bind("start", "video_centro")
 
-      var r4 = new Relantionship("onRecognizeStopStart")
+      var r4 = new Relationship("onRecognizeStopStart")
       r4.bind("onRecognize", "rec_voz", "praia")
       r4.bind("stop", "video_inicial")
       r4.bind("start", "video_praia")
@@ -2732,7 +2732,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <p>Em nossa HTML, a combinação de modalidades de interação pode ser
         feita utilizando uma condição composta. Essas condições compostas
-        condições são definidas por um objeto <i>Relantionship</i> utilizando
+        condições são definidas por um objeto <i>Relationship</i> utilizando
         um dos seguintes operadores: 'OR' quando apenas uma das condições é
         necessária; 'AND' quando todas as condições são necessárias em qualquer
         ordem; e 'SEQ' quando todas as condições são necessárias e na sequência
@@ -2765,7 +2765,7 @@ _data.htmlIntro3CodeC = `
   auto-links: false; highlight:[15,16,17,27,29,30,31,32,33,34,35]"><![CDATA[
   <!DOCTYPE html>
   <html>
-  <head><script src="relantionship.js"><&#47script></head>
+  <head><script src="relationship.js"><&#47script></head>
   <body>
     <video id="midia_principal" src="video.mp4"
       style="position: absolute; height 100%; width: 100%;">
@@ -2781,17 +2781,17 @@ _data.htmlIntro3CodeC = `
       <area label="esquerda"><&#47area> <!-- referência id esquerda de rec_gesto.gml-->
     </object>
     <script>
-      var r1 = new Relantionship("onBeginStart")
+      var r1 = new Relationship("onBeginStart")
       r1.bind("onBegin", "body")
       r1.bind("start", "midia_principal")
 
-      var r2 = new Relantionship("onBeginStart")
+      var r2 = new Relationship("onBeginStart")
       r2.bind("onBegin", "midia_principal", "creditos")
       r2.bind("start", "sinte_voz")
       r2.bind("start", "rec_voz")
       r2.bind("start", "rec_gesto")
 
-      var r3 = new Relantionship("onOrRecognizeStopStart")
+      var r3 = new Relationship("onOrRecognizeStopStart")
       r3.bind("onRecognize", "rec_voz", "repete")
       r3.bind("onRecognize", "rec_gesto", "esquerda")
       r3.bind("stop", "rec_voz")
@@ -2887,7 +2887,7 @@ _data.htmlIntro4CodeB = `
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <html>
-  <head><script src="relantionship.js"><&#47script></head>
+  <head><script src="relationship.js"><&#47script></head>
   <body>
     <video id="midia_principal" src="video.mp4"
       style="position: absolute; height 100%; width: 100%;">
@@ -2911,15 +2911,15 @@ _data.htmlIntro4CodeB = `
         }\`
       var gu_leap_microphone = new UserGroup(sparql, 2)
 
-      var r1 = new Relantionship("onBeginStart")
+      var r1 = new Relationship("onBeginStart")
       r1.bind("onBegin", "body")
       r1.bind("start", "midia_principal")
 
-      var r2 = new Relantionship("onBeginStart")
+      var r2 = new Relationship("onBeginStart")
       r2.bind("onBegin", "midia_principal", "creditos")
       r2.bind("start", "sinte_voz")
 
-      var r3 = new Relantionship("onRecognizeStopStart")
+      var r3 = new Relationship("onRecognizeStopStart")
       r3.bind("onRecognize", "rec_voz", "repete", gu_leap_microphone, 2)
       r3.bind("stop", "midia_principal")
       r3.bind("start", "midia_principal")
