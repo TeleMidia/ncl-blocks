@@ -1466,11 +1466,11 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <p>O relacionamento entre condições e ações é definido pelo connector no
         atributdo <i>xconnector</i> do <i>&ltlink></i>. Por exemplo, um
-        connector <i>onBeginStar</i> define uma condição "onBegin" e ações de
-        "start". Já um connector <i>onSelectionStopStart</i>define uma
+        connector "onBeginStart" define uma condição "onBegin" e ações de
+        "start". Já um connector <i>onSelectionStopStart</i> define uma
         condição "onSelection" e ações de "stop" e "start". A associação de
-        elementos <i>&ltmedia></i> ou <i>&ltinput></i> em um
-        <i>&ltlink></i> é definida pelo elemento <i>&ltbind></i> do
+        elementos <i>&ltmedia></i> ou <i>&ltinput></i> com as condições e ações
+        de um <i>&ltlink></i> é definida pelo elemento <i>&ltbind></i> do
         <i>&ltlink></i>.</p>
         
         <p>Para ilustrar o uso desses conceitos, o trecho de código a segui
@@ -1481,10 +1481,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         dois elementos <i>&ltlink></i>. O <i>&ltport></i> define que o
         elemento <i>midia_principal</i> inicia com a aplicação. O primeiro
         <i>&ltlink></i> define que quando o <i>video_principal</i> alcançar
-        o seu trecho de créditos a imagem <i>icone_repetir</i> é iniciada. O
-        segundo <i>&ltlink></i> define que quando essa <i>icone_reptetir</i>
-        for selecionado o <i>video_principal</i> será reiniciado
-        (<i>stop</i> e <i>start</i>).</p>
+        o seu trecho de <i>creditos <i>a imagem <i>icone_repetir</i> é iniciada.
+        O segundo <i>&ltlink></i> define que quando essa <i>icone_reptetir</i>
+        for selecionado o <i>video_principal</i> será reiniciado (<i>stop</i> e
+        <i>start</i>).</p>
 
         <div id='nclIntro1CodeB'></div>
         </div>
@@ -1497,7 +1497,7 @@ _data.nclIntro1CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
   <media id="midia_principal" src="video.mp4">
-    <area id="credits" begin="300s" end="360s"></area>
+    <area id="creditos" begin="300s" end="360s"></area>
   </media>
   <media id="icone" src="icone.png">
     <property name="size" value="20%, 20%"></property>
@@ -1520,14 +1520,14 @@ _data.nclIntro1CodeB = `
       <port component="video_principal"></port>
       <media id="video_principal" src="video.mp4">
         <property name="size" value="100%, 100%"></property>
-        <area id="credits" begin="300s" end="360s"></area>
+        <area id="creditos" begin="300s" end="360s"></area>
       </media>
       <media id="icone_repetir" src="icone_repetir.png">
         <property name="size" value="20%, 20%"></property>
         <property name="zindex" value="1"></property>
       </media>
       <link xconnector="conEx#onBeginStart">
-        <bind role="onBegin" component="video_principal" interface="credits"></bind>
+        <bind role="onBegin" component="video_principal" interface="creditos"></bind>
         <bind role="start" component="icone_repetir"></bind>
       </link>
       <link xconnector="conEx#onSelectionStopStart">
@@ -1581,7 +1581,7 @@ _data.nclTask1Code = `
       <port component="video_inicial"></port>
       <media id="video_inicial" src="video_inicial.mp4">
         <property name="size" value="100%, 100%"></property>
-        <area id="credits" begin="300s" end="360s"></area>
+        <area id="creditos" begin="300s" end="360s"></area>
       </media>
       <media id="video_centro" src="centro.mp4">
         <property name="size" value="100%, 100%"></property>
@@ -1751,7 +1751,7 @@ _data.nclIntro2CodeE = `
       <port component="video_principal"></port>
       <media id="video_principal" src="video.mp4">
         <property name="size" value="100%, 100%"></property>
-        <area id="credits" begin="300s" end="360s"></area>
+        <area id="creditos" begin="300s" end="360s"></area>
       </media>
       <media id="sinte_voz" src="sinte_voz.ssml">
         <area label="pergunta"></area> <!-- referência id pergunta de sinte_voz.ssml-->
@@ -1760,7 +1760,7 @@ _data.nclIntro2CodeE = `
         <area label="repete"></repete>  <!-- referência id repete de rec_voz.srgs-->
       </input>
       <link xconnector="conEx#onBeginStart">
-        <bind role="onBegin" component="video_principal" interface="credits"></bind>
+        <bind role="onBegin" component="video_principal" interface="creditos"></bind>
         <bind role="start" component="sinte_voz" interface="pergunta"></bind>
         <bind role="start" component="rec_voz"></bind>
       </link>
@@ -1972,7 +1972,7 @@ _data.nclIntro3CodeC = `
       <port component="video_principal"></port>
       <media id="video_principal" src="video.mp4">
         <property name="size" value="100%, 100%"></property>
-        <area id="credits" begin="300s" end="360s"></area>
+        <area id="creditos" begin="300s" end="360s"></area>
       </media>
       <media id="sinte_voz" src="sinte_voz.ssml">
         <area label="pergunta"></area> <!-- referência id pergunta de sinte_voz.ssml-->
@@ -1984,7 +1984,7 @@ _data.nclIntro3CodeC = `
         <area label="esquerda"></repete> <!-- referência id esquerda de rec_gesto.gml-->
       </input>
       <link xconnector="conEx#onBeginStart">
-        <bind role="onBegin" component="video_principal" interface="credits"></bind>
+        <bind role="onBegin" component="video_principal" interface="creditos"></bind>
         <bind role="start" component="sinte_voz" interface="pergunta"></bind>
         <bind role="start" component="rec_voz"></bind>
         <bind role="start" component="rec_gesto"></bind>
@@ -2095,7 +2095,7 @@ _data.nclIntro4CodeB = `
       <port component="video_principal"></port>
       <media id="video_principal" src="video.mp4">
         <property name="size" value="100%, 100%"></property>
-        <area id="credits" begin="300s" end="360s"></area>
+        <area id="creditos" begin="300s" end="360s"></area>
       </media>
       <media id="sinte_voz" src="sinte_voz.srgs">
         <area label="pergunta"></area> <!-- referência id pergunta de sinte_voz.srgs-->
@@ -2104,7 +2104,7 @@ _data.nclIntro4CodeB = `
         <area label="repete"></area> <!-- referência id repete de rec_voz.srgs-->
       </input>
       <link xconnector="conEx#onBeginStart">
-        <bind role="onBegin" component="video_principal" interface="credits"></bind>
+        <bind role="onBegin" component="video_principal" interface="creditos"></bind>
         <bind role="start" component="sinte_voz" interface="pergunta"></bind>
         <bind role="start" component="rec_voz"></bind>
       </link>
@@ -2328,22 +2328,22 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         definido por <strong>um conjunto de condições e um conjunto de
         ações</strong>. Na nossa HTML, ele é implementado pelo elemento
         <i>&ltscript></i>, com um código JavaScript que utiliza o objeto
-        <i>Relantionship</i>. <p>As ações podem ser de iniciar ("start") ou
-        parar ("stop") uma Mídia ou Reconhecedor. Já as
-        condições podem ser simples ou compostas.  As condições simples em um
-        objeto <i>Relantionship</i> podem ser de início ("onBegin") ou fim
-        ("onEnd") de uma mídia ou de sua âncora, seleção de mídia pelo usuário
-        ("onSelection") ou reconhecimento de uma interação multimodal
-        ("onRecognition").<p>
-
-        <p>O relacionamento entre condições e ações é definido pelo parametro de
-        criação do objeto <i>Relantionship</i>. Por exemplo, um uma parametro
-        <i>onBeginStar</i> define uma condição "onBegin" e ações de "start".
-        Já um connector <i>onSelectionStopStart</i>define uma condição
-        "onSelection" e ações de "stop" e "start". A associação de elementos
-        <i>&ltmedia></i> ou <i>&ltinput></i> o <i>&ltlink></i> esta
-        interessado é definida pelo método <i>bind</i> de objeto
         <i>Relantionship</i>.</p>
+        
+        <p>As ações podem ser de iniciar ("start") ou parar ("stop") uma Mídia
+        ou Reconhecedor. Já as condições podem ser simples ou compostas. As
+        condições simples em um objeto <i>Relantionship</i> podem ser de início
+        ("onBegin") ou fim ("onEnd") de uma mídia ou de sua âncora, seleção de
+        mídia pelo usuário ("onSelection") ou reconhecimento de uma interação
+        multimodal ("onRecognition").<p>
+
+        <p>O relacionamento entre condições e ações é definido pelo parâmetro de
+        criação do objeto <i>Relantionship</i>. Por exemplo, um uma parâmetro
+        "onBeginStart" define uma condição "onBegin" e ações de "start".
+        Já um connector <i>onSelectionStopStart</i> define uma condição
+        "onSelection" e ações de "stop" e "start". A associação de elementos
+        Mídia ou Reconhecedo com as condições e ações de um objeto
+        <i>Relantionship</i> é definida pelo método <i>bind</i>.</p>
 
         <p>Para ilustrar o uso desses conceitos, o trecho de código a seguir
         define uma aplicação que apresenta um vídeo e um ícone durante os
@@ -2353,7 +2353,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         primeiro <i>Relantionship</i> define que o elemento
         <i>midia_principal</i> inicia com a aplicação. O segundo
         <i>Relantionship</i> define que quando o <i>video_principal</i>
-        alcançar o seu trecho de créditos, a imagem <i>icone_repetir</i> é
+        alcançar o seu trecho de <i>creditos<i>, a imagem <i>icone_repetir</i> é
         iniciada. O <i>Relantionship</i> terceiro define que quando
         <i>icone_repetir</i> for selecionado, o <i>video_principal</i> será
         reiniciado (<i>stop</i> e <i>start</i>).</p>
@@ -2370,7 +2370,7 @@ _data.htmlIntro1CodeA = `
   auto-links: false;"> <![CDATA[
   <video id="midia_principal" src="video.mp4"
     style="position: absolute; height 100%; width: 100%;">
-    <area id="credits" begin="300s" end="360s"></area>
+    <area id="creditos" begin="300s" end="360s"></area>
   </video>
   <img id="icone" src="icone.png"
      style="position: absolute; width: 20%; height: 20%; top: 80%; z-index: 1;">
@@ -2387,24 +2387,24 @@ _data.htmlIntro1CodeB = `
   <body>
     <video id="midia_principal" src="video.mp4"
       style="position: absolute; height 100%; width: 100%;">
-      <area id="credits" begin="300s" end="360s"></area>
+      <area id="creditos" begin="300s" end="360s"></area>
     </video>
     <img id="icone_repetir" src="icone_repetir.png"
       style="position: absolute; width: 20%; height: 20%; top: 80%; z-index: 1;">
     </img>
     <script>
-      var sync1 = new Relantionship("onBeginStart")
-      sync.bind("onBegin", "body")
-      sync.bind("start", "midia_principal")
+      var r1 = new Relantionship("onBeginStart")
+      r1.bind("onBegin", "body")
+      r1.bind("start", "midia_principal")
 
-      var sync2 = new Relantionship("onBeginStart")
-      sync.bind("onBegin", "midia_principal", "credits")
-      sync.bind("start", "icone_repetir")
+      var r2 = new Relantionship("onBeginStart")
+      r2.bind("onBegin", "midia_principal", "creditos")
+      r2.bind("start", "icone_repetir")
 
-      var sync3 = new Relantionship("onSelectionStopStart")
-      sync.bind("onSelection", "icone_repetir")
-      sync.bind("stop", "midia_principal")
-      sync.bind("start", "midia_principal")
+      var r3 = new Relantionship("onSelectionStopStart")
+      r3.bind("onSelection", "icone_repetir")
+      r3.bind("stop", "midia_principal")
+      r3.bind("start", "midia_principal")
     <&#47script>
   </body>
   </html>
@@ -2444,15 +2444,15 @@ _data.htmlTask1CodeA = `
   <body>
     <video id="video_inicial" src="video_inicial.mp4"
       style="position: absolute; height 100%; width: 100%;">
-      <area id="credits" begin="300s" end="360s"><&#47area>
+      <area id="creditos" begin="300s" end="360s"><&#47area>
     </video>
     <video id="video_centro" src="video_centro.mp4"
       style="position: absolute; height 100%; width: 100%;">
-      <area id="credits" begin="300s" end="360s"><&#47area>
+      <area id="creditos" begin="300s" end="360s"><&#47area>
     </video>
     <video id="video_praia" src="video_praia.mp4"
       style="position: absolute; height 100%; width: 100%;">
-      <area id="credits" begin="300s" end="360s"><&#47area>
+      <area id="creditos" begin="300s" end="360s"><&#47area>
     </video>
     <img id="icone_centro" src="icone_centro.png"
       style="position: absolute; width: 20%; height: 20%; top: 80%; z-index: 1;">
@@ -2461,24 +2461,24 @@ _data.htmlTask1CodeA = `
       style="position: absolute; width: 20%; height: 20%; top: 80%; z-index: 1;">
     </img>
     <script>
-      var sync1 = new Relantionship("onBeginStart")
-      sync.bind("onBegin", "body")
-      sync.bind("start", "video_inicial")
+      var r1 = new Relantionship("onBeginStart")
+      r1.bind("onBegin", "body")
+      r1.bind("start", "video_inicial")
 
-      var sync2 = new Relantionship("onBeginStart")
-      sync.bind("onBegin", "video_inicial", "credits")
-      sync.bind("start", "icone_centro")
-      sync.bind("start", "icone_praia")
+      var r2 = new Relantionship("onBeginStart")
+      r2.bind("onBegin", "video_inicial", "creditos")
+      r2.bind("start", "icone_centro")
+      r2.bind("start", "icone_praia")
 
-      var sync3 = new Relantionship("onSelectionStopStart")
-      sync.bind("onSelection", "icone_centro")
-      sync.bind("stop", "video_inicial")
-      sync.bind("start", "video_centro")
+      var r3 = new Relantionship("onSelectionStopStart")
+      r3.bind("onSelection", "icone_centro")
+      r3.bind("stop", "video_inicial")
+      r3.bind("start", "video_centro")
 
-      var sync3 = new Relantionship("onSelectionStopStart")
-      sync.bind("onSelection", "icone_praia")
-      sync.bind("stop", "video_inicial")
-      sync.bind("start", "video_praia")
+      var r4 = new Relantionship("onSelectionStopStart")
+      r4.bind("onSelection", "icone_praia")
+      r4.bind("stop", "video_inicial")
+      r4.bind("start", "video_praia")
     <&#47script>
   </body>
   </html>
@@ -2590,7 +2590,7 @@ _data.htmlIntro2CodeE = `
   <body>
     <video id="midia_principal" src="video.mp4"
       style="position: absolute; height 100%; width: 100%;">
-      <area id="credits" begin="300s" end="360s"><&#47area>
+      <area id="creditos" begin="300s" end="360s"><&#47area>
     </video>
     <object id="sinte_voz" src="sinte_voz.ssml">
       <area label="pergunta"><&#47area> <!-- referência id pergunta de sinte_voz.ssml-->
@@ -2599,19 +2599,19 @@ _data.htmlIntro2CodeE = `
       <area label="repete"><&#47area> <!-- referência id repete de rec_voz.srgs-->
     </object>
     <script>
-      var sync1 = new Relantionship("onBeginStart")
-      sync.bind("onBegin", "body")
-      sync.bind("start", "midia_principal")
+      var r1 = new Relantionship("onBeginStart")
+      r1.bind("onBegin", "body")
+      r1.bind("start", "midia_principal")
 
-      var sync2 = new Relantionship("onBeginStart")
-      sync.bind("onBegin", "midia_principal", "credits")
-      sync.bind("start", "sinte_voz")
-      sync.bind("start", "rec_voz")
+      var r2 = new Relantionship("onBeginStart")
+      r2.bind("onBegin", "midia_principal", "creditos")
+      r2.bind("start", "sinte_voz")
+      r2.bind("start", "rec_voz")
 
-      var sync3 = new Relantionship("onRecognizeStopStart")
-      sync.bind("onRecognize", "rec_voz", "repete")
-      sync.bind("stop", "midia_principal")
-      sync.bind("start", "midia_principal")
+      var r3 = new Relantionship("onRecognizeStopStart")
+      r3.bind("onRecognize", "rec_voz", "repete")
+      r3.bind("stop", "midia_principal")
+      r3.bind("start", "midia_principal")
 
     <&#47script>
   </body>
@@ -2658,15 +2658,15 @@ _data.htmlTask2CodeCOnly = `
   <body>
     <video id="video_inicial" src="video_inicial.mp4"
       style="position: absolute; height 100%; width: 100%;">
-      <area id="credits" begin="300s" end="360s"></area>
+      <area id="creditos" begin="300s" end="360s"></area>
     </video>
     <video id="video_centro" src="video_centro.mp4"
       style="position: absolute; height 100%; width: 100%;">
-      <area id="credits" begin="300s" end="360s"></area>
+      <area id="creditos" begin="300s" end="360s"></area>
     </video>
     <video id="video_praia" src="video_praia.mp4"
       style="position: absolute; height 100%; width: 100%;">
-      <area id="credits" begin="300s" end="360s"></area>
+      <area id="creditos" begin="300s" end="360s"></area>
     </video>
     <object id="sinte_voz" src="sinte_voz.ssml">
       <area label="pergunta"></area> 
@@ -2675,24 +2675,24 @@ _data.htmlTask2CodeCOnly = `
       <area label="repete"></repete>
     </object>
     <script>
-      var sync1 = new Relantionship("onBeginStart")
-      sync.bind("onBegin", "body")
-      sync.bind("start", "video_inicial")
+      var r1 = new Relantionship("onBeginStart")
+      r1.bind("onBegin", "body")
+      r1.bind("start", "video_inicial")
 
-      var sync2 = new Relantionship("onBeginStart")
-      sync.bind("onBegin", "video_inicial", "credits")
-      sync.bind("start", "sinte_voz", "pergunta")
-      sync.bind("start", "rec_voz")
+      var r2 = new Relantionship("onBeginStart")
+      r2.bind("onBegin", "video_inicial", "creditos")
+      r2.bind("start", "sinte_voz", "pergunta")
+      r2.bind("start", "rec_voz")
 
-      var sync3 = new Relantionship("onRecognizeStopStart")
-      sync.bind("onRecognize", "rec_voz", "centro")
-      sync.bind("stop", "video_inicial")
-      sync.bind("start", "video_centro")
+      var r3 = new Relantionship("onRecognizeStopStart")
+      r2.bind("onRecognize", "rec_voz", "centro")
+      r2.bind("stop", "video_inicial")
+      r2.bind("start", "video_centro")
 
-      var sync3 = new Relantionship("onRecognizeStopStart")
-      sync.bind("onRecognize", "rec_voz", "praia")
-      sync.bind("stop", "video_inicial")
-      sync.bind("start", "video_praia")
+      var r4 = new Relantionship("onRecognizeStopStart")
+      r4.bind("onRecognize", "rec_voz", "praia")
+      r4.bind("stop", "video_inicial")
+      r4.bind("start", "video_praia")
     <&#47script>
   </body>
   </html>
@@ -2769,7 +2769,7 @@ _data.htmlIntro3CodeC = `
   <body>
     <video id="midia_principal" src="video.mp4"
       style="position: absolute; height 100%; width: 100%;">
-      <area id="credits" begin="300s" end="360s"><&#47area>
+      <area id="creditos" begin="300s" end="360s"><&#47area>
     </video>
     <object id="sinte_voz" src="sinte_voz.ssml">
       <area label="pergunta"><&#47area> <!-- referência id pergunta de sinte_voz.ssml-->
@@ -2781,23 +2781,23 @@ _data.htmlIntro3CodeC = `
       <area label="esquerda"><&#47area> <!-- referência id esquerda de rec_gesto.gml-->
     </object>
     <script>
-      var sync1 = new Relantionship("onBeginStart")
-      sync.bind("onBegin", "body")
-      sync.bind("start", "midia_principal")
+      var r1 = new Relantionship("onBeginStart")
+      r1.bind("onBegin", "body")
+      r1.bind("start", "midia_principal")
 
-      var sync2 = new Relantionship("onBeginStart")
-      sync.bind("onBegin", "midia_principal", "credits")
-      sync.bind("start", "sinte_voz")
-      sync.bind("start", "rec_voz")
-      sync.bind("start", "rec_gesto")
+      var r2 = new Relantionship("onBeginStart")
+      r2.bind("onBegin", "midia_principal", "creditos")
+      r2.bind("start", "sinte_voz")
+      r2.bind("start", "rec_voz")
+      r2.bind("start", "rec_gesto")
 
-      var sync3 = new Relantionship("onOrRecognizeStopStart")
-      sync.bind("onRecognize", "rec_voz", "repete")
-      sync.bind("onRecognize", "rec_gesto", "esquerda")
-      sync.bind("stop", "rec_voz")
-      sync.bind("stop", "rec_gesto")
-      sync.bind("stop", "midia_principal")
-      sync.bind("start", "midia_principal")
+      var r3 = new Relantionship("onOrRecognizeStopStart")
+      r3.bind("onRecognize", "rec_voz", "repete")
+      r3.bind("onRecognize", "rec_gesto", "esquerda")
+      r3.bind("stop", "rec_voz")
+      r3.bind("stop", "rec_gesto")
+      r3.bind("stop", "midia_principal")
+      r3.bind("start", "midia_principal")
 
     <&#47script>
   </body>
@@ -2891,7 +2891,7 @@ _data.htmlIntro4CodeB = `
   <body>
     <video id="midia_principal" src="video.mp4"
       style="position: absolute; height 100%; width: 100%;">
-      <area id="credits" begin="300s" end="360s"><&#47area>
+      <area id="creditos" begin="300s" end="360s"><&#47area>
     </video>
     <object id="sinte_voz" src="sinte_voz.ssml">
       <area label="pergunta"><&#47area>  <!-- referência id sinte_voz de sinte_voz.ssml-->
@@ -2911,18 +2911,18 @@ _data.htmlIntro4CodeB = `
         }\`
       var gu_leap_microphone = new UserGroup(sparql, 2)
 
-      var sync1 = new Relantionship("onBeginStart")
-      sync.bind("onBegin", "body")
-      sync.bind("start", "midia_principal")
+      var r1 = new Relantionship("onBeginStart")
+      r1.bind("onBegin", "body")
+      r1.bind("start", "midia_principal")
 
-      var sync2 = new Relantionship("onBeginStart")
-      sync.bind("onBegin", "midia_principal", "credits")
-      sync.bind("start", "sinte_voz")
+      var r2 = new Relantionship("onBeginStart")
+      r2.bind("onBegin", "midia_principal", "creditos")
+      r2.bind("start", "sinte_voz")
 
-      var sync3 = new Relantionship("onRecognizeStopStart")
-      sync.bind("onRecognize", "rec_voz", "repete", gu_leap_microphone, 2)
-      sync.bind("stop", "midia_principal")
-      sync.bind("start", "midia_principal")
+      var r3 = new Relantionship("onRecognizeStopStart")
+      r3.bind("onRecognize", "rec_voz", "repete", gu_leap_microphone, 2)
+      r3.bind("stop", "midia_principal")
+      r3.bind("start", "midia_principal")
     <&#47script>
   </body>
   </html>
