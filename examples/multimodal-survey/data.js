@@ -2259,7 +2259,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <td><em>Relacionamento</em></td>
         <td><em>&ltscript></em></td>
         <td><em>&ltscript></em> com o objeto JavaScript
-        <em>Synchronism</em></td>
+        <em>Relantionship</em></td>
       </tr>
       <tr>
         <td><em>Reconhecedor</em></td>
@@ -2323,24 +2323,24 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         definido por <strong>um conjunto de condições e um conjunto de
         ações</strong>. Na nossa HTML, ele é implementado pelo elemento
         <em>&ltscript></em>, com um código JavaScript que utiliza o objeto
-        <em>Synchronism</em>. <p>As ações podem ser de iniciar ("start") ou
+        <em>Relantionship</em>. <p>As ações podem ser de iniciar ("start") ou
         parar ("stop") uma <em>Mídia</em> ou <em>Reconhecedor</em>. Já as
         condições podem ser simples ou compostas. 
         
-        <p>As condições simples em um objeto <em>Synchronism</em> podem ser de
+        <p>As condições simples em um objeto <em>Relantionship</em> podem ser de
         início ("onBegin") ou fim ("onEnd") de uma mídia ou de sua âncora,
         seleção de mídia pelo usuário ("onSelection") ou reconhecimento de uma
         interação multimodal ("onRecognition").<p>
 
-        <p>Condições compostas em um objeto <em>Synchronism</em> combinam ações
+        <p>Condições compostas em um objeto <em>Relantionship</em> combinam ações
         simples utilizando um dos seguintes operadores: 'OR' quando apenas uma
         das condições é necessária; 'AND' quando todas as condições são
         necessárias em qualquer ordem; e 'SEQ' quando todas as condições são
         necessárias e na sequência estabelecida.</p>
 
         <p>O relacionamento entre condições e ações é definida pelo objeto
-        <em>Synchronism</em>. A tabela a seguir apresenta exemplos de parâmetros do
-        construtor do objeto <em>Synchronism</em>.</p>
+        <em>Relantionship</em>. A tabela a seguir apresenta exemplos de parâmetros do
+        construtor do objeto <em>Relantionship</em>.</p>
         
         <table align="center" class="table-bordered table-striped
         table-condensed">
@@ -2369,14 +2369,14 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <p>A associação de elementos <em>&ltmedia></em> ou <em>&ltinput></em> o
         <em>&ltlink></em> esta interessado é definida pelo método <em>bind</em>
-        de objeto <em>Synchronism</em>.</p>
+        de objeto <em>Relantionship</em>.</p>
 
         <p>Para ilustrar o uso desse conceito em uma aplicação HTML, o trecho de
         código a seguir define uma aplicação que apresenta um vídeo e um ícone
         durante os créditos do vídeo. Se o usuário selecionar o ícone, o vídeo é
         reiniciado.</p>
 
-        <p>O trecho de código utiliza três objetos <em>Synchronism</em>. O
+        <p>O trecho de código utiliza três objetos <em>Relantionship</em>. O
         primeiro define que o elemento <em>midia_principal</em> inicia com a
         aplicação. O segundo define que quando o <em>video_principal</em>
         alcançar o seu trecho de créditos, a imagem <em>icone_repetir</em> é
@@ -2409,7 +2409,7 @@ _data.htmlIntro1CodeB = `
   auto-links: false; highlight:[5,9,13,17,21]"><![CDATA[
   <!DOCTYPE html>
   <html>
-  <head><script src="synchronism.js"><&#47script></head>
+  <head><script src="Relantionship.js"><&#47script></head>
   <body>
     <video id="midia_principal" src="video.mp4"
       style="position: absolute; height 100%; width: 100%;">
@@ -2419,15 +2419,15 @@ _data.htmlIntro1CodeB = `
       style="position: absolute; width: 20%; height: 20%; top: 80%; z-index: 1;">
     </img>
     <script>
-      var sync1 = new Synchronism("onBeginStart")
+      var sync1 = new Relantionship("onBeginStart")
       sync.bind("onBegin", "body")
       sync.bind("start", "midia_principal")
 
-      var sync2 = new Synchronism("onBeginStart")
+      var sync2 = new Relantionship("onBeginStart")
       sync.bind("onBegin", "midia_principal", "credits")
       sync.bind("start", "icone_repetir")
 
-      var sync3 = new Synchronism("onSelectionStopStart")
+      var sync3 = new Relantionship("onSelectionStopStart")
       sync.bind("onSelection", "icone_repetir")
       sync.bind("stop", "midia_principal")
       sync.bind("start", "midia_principal")
@@ -2466,7 +2466,7 @@ _data.htmlTask1CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
   <html>
-  <head><script src="synchronism.js"><&#47script></head>
+  <head><script src="Relantionship.js"><&#47script></head>
   <body>
     <video id="video_inicial" src="video_inicial.mp4"
       style="position: absolute; height 100%; width: 100%;">
@@ -2487,21 +2487,21 @@ _data.htmlTask1CodeA = `
       style="position: absolute; width: 20%; height: 20%; top: 80%; z-index: 1;">
     </img>
     <script>
-      var sync1 = new Synchronism("onBeginStart")
+      var sync1 = new Relantionship("onBeginStart")
       sync.bind("onBegin", "body")
       sync.bind("start", "video_inicial")
 
-      var sync2 = new Synchronism("onBeginStart")
+      var sync2 = new Relantionship("onBeginStart")
       sync.bind("onBegin", "video_inicial", "credits")
       sync.bind("start", "icone_centro")
       sync.bind("start", "icone_praia")
 
-      var sync3 = new Synchronism("onSelectionStopStart")
+      var sync3 = new Relantionship("onSelectionStopStart")
       sync.bind("onSelection", "icone_centro")
       sync.bind("stop", "video_inicial")
       sync.bind("start", "video_centro")
 
-      var sync3 = new Synchronism("onSelectionStopStart")
+      var sync3 = new Relantionship("onSelectionStopStart")
       sync.bind("onSelection", "icone_praia")
       sync.bind("stop", "video_inicial")
       sync.bind("start", "video_praia")
@@ -2568,13 +2568,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>rec_voz.srgs</em> (apresentados a cima). 
         
         <p>Para o comportamento, a aplicação utiliza um <em>&ltscript></em> com
-        três objetos <em>Synchronism</em>. O primeiro <em>Synchronism</em>
+        três objetos <em>Relantionship</em>. O primeiro <em>Relantionship</em>
         define que <em>midia_principal</em> é iniciada com a aplicação. O
-        segundo <em>Synchronism</em> define que quando o
+        segundo <em>Relantionship</em> define que quando o
         <em>video_principal</em> alcançar a sua porção de <em>creditos</em>
         (300s), a frase da âncora <em>pergunta</em> é sintetizada e o
         reconhecedor <em>rec</em> inicia seu reconhecimento. O último
-        <em>Synchronism</em> define que o <em>video_principal</em> deve ser
+        <em>Relantionship</em> define que o <em>video_principal</em> deve ser
         reiniciado (<em>stop</em> e <em>start</em>) quando for reconhecido o
         trecho <em>repete</em>.</p>
 
@@ -2612,7 +2612,7 @@ _data.htmlIntro2CodeE = `
   auto-links: false; highlight:[9,12,20,25]"><![CDATA[
   <!DOCTYPE html>
   <html>
-  <head><script src="synchronism.js"><&#47script></head>
+  <head><script src="Relantionship.js"><&#47script></head>
   <body>
     <video id="midia_principal" src="video.mp4"
       style="position: absolute; height 100%; width: 100%;">
@@ -2625,16 +2625,16 @@ _data.htmlIntro2CodeE = `
       <area label="repete"><&#47area> <!-- referência id repete de rec_voz.srgs-->
     </object>
     <script>
-      var sync1 = new Synchronism("onBeginStart")
+      var sync1 = new Relantionship("onBeginStart")
       sync.bind("onBegin", "body")
       sync.bind("start", "midia_principal")
 
-      var sync2 = new Synchronism("onBeginStart")
+      var sync2 = new Relantionship("onBeginStart")
       sync.bind("onBegin", "midia_principal", "credits")
       sync.bind("start", "sinte_voz")
       sync.bind("start", "rec_voz")
 
-      var sync3 = new Synchronism("onRecognizeStopStart")
+      var sync3 = new Relantionship("onRecognizeStopStart")
       sync.bind("onRecognize", "rec_voz", "repete")
       sync.bind("stop", "midia_principal")
       sync.bind("start", "midia_principal")
@@ -2680,7 +2680,7 @@ _data.surveyJSON.pages[pageIndex].elements.push(
 
 _data.htmlTask2CodeCOnly = `
   <html>
-  <head><script src="synchronism.js"><&#47script></head>
+  <head><script src="Relantionship.js"><&#47script></head>
   <body>
     <video id="video_inicial" src="video_inicial.mp4"
       style="position: absolute; height 100%; width: 100%;">
@@ -2701,21 +2701,21 @@ _data.htmlTask2CodeCOnly = `
       <area label="repete"></repete>
     </object>
     <script>
-      var sync1 = new Synchronism("onBeginStart")
+      var sync1 = new Relantionship("onBeginStart")
       sync.bind("onBegin", "body")
       sync.bind("start", "video_inicial")
 
-      var sync2 = new Synchronism("onBeginStart")
+      var sync2 = new Relantionship("onBeginStart")
       sync.bind("onBegin", "video_inicial", "credits")
       sync.bind("start", "sinte_voz", "pergunta")
       sync.bind("start", "rec_voz")
 
-      var sync3 = new Synchronism("onRecognizeStopStart")
+      var sync3 = new Relantionship("onRecognizeStopStart")
       sync.bind("onRecognize", "rec_voz", "centro")
       sync.bind("stop", "video_inicial")
       sync.bind("start", "video_centro")
 
-      var sync3 = new Synchronism("onRecognizeStopStart")
+      var sync3 = new Relantionship("onRecognizeStopStart")
       sync.bind("onRecognize", "rec_voz", "praia")
       sync.bind("stop", "video_inicial")
       sync.bind("start", "video_praia")
@@ -2786,7 +2786,7 @@ _data.htmlIntro3CodeC = `
   auto-links: false; highlight:[15,23,29]"><![CDATA[
   <!DOCTYPE html>
   <html>
-  <head><script src="synchronism.js"><&#47script></head>
+  <head><script src="Relantionship.js"><&#47script></head>
   <body>
     <video id="midia_principal" src="video.mp4"
       style="position: absolute; height 100%; width: 100%;">
@@ -2802,17 +2802,17 @@ _data.htmlIntro3CodeC = `
       <area label="esquerda"><&#47area> <!-- referência id esquerda de rec_gesto.gml-->
     </object>
     <script>
-      var sync1 = new Synchronism("onBeginStart")
+      var sync1 = new Relantionship("onBeginStart")
       sync.bind("onBegin", "body")
       sync.bind("start", "midia_principal")
 
-      var sync2 = new Synchronism("onBeginStart")
+      var sync2 = new Relantionship("onBeginStart")
       sync.bind("onBegin", "midia_principal", "credits")
       sync.bind("start", "sinte_voz")
       sync.bind("start", "rec_voz")
       sync.bind("start", "rec_gesto")
 
-      var sync3 = new Synchronism("onOrRecognizeStopStart")
+      var sync3 = new Relantionship("onOrRecognizeStopStart")
       sync.bind("onRecognize", "rec_voz", "repete")
       sync.bind("onRecognize", "rec_gesto", "esquerda")
       sync.bind("stop", "rec_voz")
@@ -2906,7 +2906,7 @@ _data.htmlIntro4CodeB = `
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <html>
-  <head><script src="synchronism.js"><&#47script></head>
+  <head><script src="Relantionship.js"><&#47script></head>
   <body>
     <video id="midia_principal" src="video.mp4"
       style="position: absolute; height 100%; width: 100%;">
@@ -2930,15 +2930,15 @@ _data.htmlIntro4CodeB = `
         }\`
       var gu_leap_microphone = new UserGroup(sparql, 2)
 
-      var sync1 = new Synchronism("onBeginStart")
+      var sync1 = new Relantionship("onBeginStart")
       sync.bind("onBegin", "body")
       sync.bind("start", "midia_principal")
 
-      var sync2 = new Synchronism("onBeginStart")
+      var sync2 = new Relantionship("onBeginStart")
       sync.bind("onBegin", "midia_principal", "credits")
       sync.bind("start", "sinte_voz")
 
-      var sync3 = new Synchronism("onRecognizeStopStart")
+      var sync3 = new Relantionship("onRecognizeStopStart")
       sync.bind("onRecognize", "rec_voz", "repete", gu_leap_microphone, 2)
       sync.bind("stop", "midia_principal")
       sync.bind("start", "midia_principal")
