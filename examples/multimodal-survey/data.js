@@ -1468,7 +1468,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         "start". Já um connector <em>onSelectionStopStart</em>define uma
         condição "onSelection" e ações de "stop" e "start". A associação de
         elementos <em>&ltmedia></em> ou <em>&ltinput></em> em um
-        <em>&ltlink></em> é definida pelo elemento <em>&ltbind></em>.</p>
+        <em>&ltlink></em> é definida pelo elemento <em>&ltbind></em> do
+        <em>&ltlink></em>.</p>
         
         <p>Para ilustrar o uso desses conceitos, o trecho de código a segui
         define uma aplicação que apresenta um vídeo e um ícone durante os
@@ -1477,11 +1478,11 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         (<em>video_principal</em> e <em>icone_repetir</em>), <em>&ltport></em> e
         dois elementos <em>&ltlink></em>. O <em>&ltport></em> define que o
         elemento <em>midia_principal</em> inicia com a aplicação. O primeiro
-        define que quando o <em>video_principal</em> alcançar o seu trecho de
-        créditos a imagem <em>icone_repetir</em> é iniciada. O segundo define
-        que quando essa <em>icone_reptetir</em> for selecionado o
-        <em>video_principal</em> será reiniciado (<em>stop</em> e
-        <em>start</em>).</p>
+        <em>&ltlink></em> define que quando o <em>video_principal</em> alcançar
+        o seu trecho de créditos a imagem <em>icone_repetir</em> é iniciada. O
+        segundo <em>&ltlink></em> define que quando essa <em>icone_reptetir</em>
+        for selecionado o <em>video_principal</em> será reiniciado
+        (<em>stop</em> e <em>start</em>).</p>
 
         <div id='nclIntro1CodeB'></div>
         </div>
@@ -1635,15 +1636,16 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;">
         <p>Além de mídias como imagens, áudio e vídeos, o elemento
         <em>&ltmedia></em> de nossa NCL deve suportar outras modalidades de
-        conteúdo, como a sintetização de voz. Os trechos de código a seguir
-        ilustram o uso de sintetização de voz em nossa NCL. O primeiro apresenta
-        o arquivo <em>sinte_voz.ssml</em> que segue o formato SSML (Speech
-        Synthesis Markup Language) para sintetização de voz. Ele possui uma
-        frase com o identificador "pergunta" que sintetizada "você deseja
-        repetir o vídeo?". O segundo define uma <em>&ltmedia></em> com
-        identificador <em>sinte_voz</em>, que tem como conteúdo o arquivo
-        <em>sinte_voz.ssml</em>. Essa <em>&ltmedia></em> possui uma âncora que
-        indica a frase a ser sintetizada.</p>
+        conteúdo, como interações por voz. </p>
+
+        <p>Os trechos de código a seguir ilustram o uso de sintetização de voz
+        em nossa NCL. O primeiro apresenta o arquivo <em>sinte_voz.ssml</em> que
+        segue o formato SSML (Speech Synthesis Markup Language) para
+        sintetização de voz. Ele possui uma frase com o identificador "pergunta"
+        que sintetizada "você deseja repetir o vídeo?". O segundo define uma
+        <em>&ltmedia></em> com identificador <em>sinte_voz</em>, que tem como
+        conteúdo o arquivo <em>sinte_voz.ssml</em>. Essa <em>&ltmedia></em>
+        possui uma âncora que indica a frase a ser sintetizada.</p>
 
         <div id='nclIntro2CodeA'></div>
         <div id='nclIntro2CodeB'></div>
@@ -1654,7 +1656,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         definido pelo atributo <em>id</em> e a descrição de reconhecimento é
         definida pelo atributo <em>src</em>. As âncoras são definidas pelo
         elemento <em>area</em> e podem definir trechos delimitados da descrição
-        com o atributo <em>label</em>. </p>
+        com o atributo <em>label</em>.</p>
 
         <p>Para ilustrar o uso de <em>Reconhecedor</em>, os trechos de código a
         seguir ilustram o uso de sintetização de voz em nossa NCL. O primeiro
@@ -1669,18 +1671,21 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div id='nclIntro2CodeC'></div>
         <div id='nclIntro2CodeD'></div><br>
 
-        <p>Para ilustrar o uso desses interações por voz, o trecho de código a
-        seguir apresenta uma nova versão da aplicação que reinicia um vídeo dada
-        uma interação (modificações em destaque). Nessa versão, ao invés de
-        selecionar, o vídeo é reiniciado ao usuário falar "repita vídeo". A
-        diferença esta no uso dos elementos <em>sinte_voz</em> e
-        <em>rec_voz</em> para interação por voz, que os arquivos
-        <em>sinte_voz.srgs</em> e <em>rec_voz.srgs</em> (apresentados acima). Já
-        o primeiro <em>&ltlink></em> foi motificado para quando o
+        <p>Para ilustrar o uso de interação por voz, o trecho de código a seguir
+        apresenta uma nova versão da aplicação (modificações em destaque) que
+        reinicia um vídeo dada uma interação por seleção. Nessa versão, ao invés
+        de selecionar, o vídeo é reiniciado ao usuário falar "repita vídeo". A
+        primeira diferença diferença esta no uso dos elementos
+        <em>sinte_voz</em> e <em>rec_voz</em> para interação por voz, que os
+        arquivos <em>sinte_voz.srgs</em> e <em>rec_voz.srgs</em> (apresentados
+        acima). </p>
+
+        <p>Dois elementos <em>&ltlink></em> foram modificados. O primeiro
+        <em>&ltlink></em> motificado define que  quando o
         <em>video_principal</em> alcançar a sua porção <em>creditos</em> (300s),
         a frase da âncora <em>pergunta</em> é sintetizada e o reconhecedor
-        <em>rec_voz</em> inicia seu reconhecimento. Por fim, o segundo
-        <em>&ltlink></em> modificado para que quando for reconhecida a âncora
+        <em>rec_voz</em> inicia seu reconhecimento. Já o segundo
+        <em>&ltlink></em> modificado define que quando for reconhecida a âncora
         <em>repete</em>, a <em>midia_principal</em> seja reiniciada (terminada e
         iniciada).</p>
 
@@ -1894,12 +1899,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         <div style="text-align: justify; width: 70%;"> <p>Um dos principais
         benefícios de interfaces multimodais é permitiro interações dos usuários
-        podem ser realizadas por diferentes modalidades. O trecho de código a
-        seguir ilustra o arquivo <em>rec_gestos.gml</em> que segue o formato
-        GML(Gesture Markup Language) para reconhecimento de gestos de mão. Ele
-        possui dois gestos com os identificadores <em>swipe_esquerda</em> e
-        <em>swipe_direita</em>, que definem gestos de mão para esquerda e para
-        direita, respectivamente.</p>
+        podem ser realizadas por diferentes modalidades. </p>
+        
+        <p>O trecho de código a seguir ilustra o arquivo <em>rec_gestos.gml</em>
+        que segue o formato GML (Gesture Markup Language) para reconhecimento de
+        gestos de mão. Ele possui dois gestos com os identificadores
+        <em>swipe_esquerda</em> e <em>swipe_direita</em>, que definem gestos de
+        mão para esquerda e para direita, respectivamente.</p>
 
         <div id='nclIntro3CodeA'></div>
         <div id='nclIntro3CodeB'></div><br>
@@ -1912,10 +1918,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         todas as condições são necessárias e na sequência estabelecida.</p>
         
         <p>Para ilustrar o uso de combinação de modalidades, o trecho de código
-        a seguir apresenta uma nova versão da aplicação que reinicia um vídeo
-        dada uma interação (modificações em destaque). Nessa versão, ao invés de
-        selecionar, o vídeo é reiniciado ao usuário falar "repita vídeo" ou
-        (operador 'OR') fazer um gesto de mão para esquerda..
+        a seguir apresenta uma nova versão (modificações em destaque) da
+        aplicação que reinicia um vídeo dada uma interação por voz. Nessa
+        versão, ao invés de selecionar, o vídeo é reiniciado ao usuário falar
+        "repita vídeo" ou (operador 'OR') fazer um gesto de mão para esquerda.
         
         <div id='nclIntro3CodeC'></div><br>
         </div>
@@ -1930,10 +1936,10 @@ _data.nclIntro3CodeA = `
   <?xml version="1.0" encoding="UTF-8"?>
   <GestureMarkupLanguage>
     <Gesture id="swipe_esquerda" type="swipe">
-      ...
+      ..
     </Gesture>
     <Gesture id="swipe_direta" type="swipe">
-      ...
+      ..
     </Gesture>
   </GestureMarkupLanguage>
   ]]></script>
@@ -2034,7 +2040,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>&ltuserClass></em> dentro do <em>&lthead></em>. O identificador é
         definido pelo atributo <em>id</em> e os dispositivos são definidos por
         um arquivo de descrição definido em <em>src</em>. Para essa descrição
-        propomos um descrição  no formato SPARQL. O trecho de código a seguir
+        propomos um descrição no formato SPARQL. O trecho de código a seguir
         apresenta o arquivo de descrição de usuários
         <em>gu_leap_microphone.sparql</em>. Essa descrição define que cada
         usuário do grupo deve ter um microfone e um leapmotion.</p>
@@ -2043,11 +2049,11 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em NCL, o trecho
         de código a seguir apresenta uma nova versão da aplicação que reinicia
-        um vídeo dada uma interação por voz (modificações em destaque). Mas
-        nessa versão, ao invés de clicar, o vídeo será reiniciado apenas quando
-        segundo usuário falar "repita vídeo". Esse grupo é definido tem um
-        maximo de 2 ususários e com os dispositivos descirtos no arquivo
-        <em>gu_leap_microphone.sparql</em>(apresentado acima).</p>
+        um vídeo dada uma interação por voz (modificações em destaque). Nessa
+        versão, o vídeo será reiniciado apenas quando segundo usuário falar
+        "repita vídeo". Esse grupo é definido com um maximo de 2 ususários e com
+        os dispositivos descritos no arquivo <em>gu_leap_microphone.sparql</em>
+        (apresentado acima).</p>
 
         <div id='nclIntro4CodeB'></div>
         </div>
@@ -2295,7 +2301,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         <div style="text-align: justify; width: 70%;">
         <p>O conceito de <em>Mídia</em> é definido por <strong>um identificador,
-        um conteúdo e âncoras</strong>. Na nossa HTML, ele  é parcialmente
+        um conteúdo e âncoras</strong>. Na nossa HTML, ele é parcialmente
         implementado por elementos como <em>&ltimg></em>, <em>&ltaudio></em>,
         <em>&ltvideo></em> e <em>&ltobject></em>. O identificador é definido
         pelo atributo <em>id</em> e o arquivo de mídia do conteúdo é definido
@@ -2307,82 +2313,48 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Elementos <em>Mídia</em> também podem possuir propriedades para
         definir características de sua exibição definidas no atributo
         <em>&ltstyle></em>. Trechos de código serão apresentados a seguir para
-        ilustrar esse conceito em HTML.</p>
-
-        <p>O trecho de código a seguir define as duas mídias com identificadores
-        <em>midia_principal</em> e <em>icone_repetir</em>, e com
-        conteúdos de vídeo e imagem, respectivamente. Em especial, a mídia de
-        <em>midia_principal</em> possui uma âncora chamada de
-        <em>creditos</em> que inicia aos 300 e termina aos 360 segundos.</p>
+        ilustrar esse conceito em HTML. O trecho de código a seguir define as
+        duas mídias com identificadores <em>midia_principal</em> e
+        <em>icone_repetir</em>, e com conteúdos de vídeo e imagem,
+        respectivamente. Em especial, a mídia de <em>midia_principal</em> possui
+        uma âncora chamada de <em>creditos</em> que inicia aos 300 e termina aos
+        360 segundos.</p>
 
         <div id='htmlIntro1CodeA'></div><br>
-        </div>
 
-        <div style="text-align: justify; width: 70%;">
         <p>O conceito de <em>Relacionamento</em> é baseado em causalidade e
         definido por <strong>um conjunto de condições e um conjunto de
         ações</strong>. Na nossa HTML, ele é implementado pelo elemento
         <em>&ltscript></em>, com um código JavaScript que utiliza o objeto
         <em>Relantionship</em>. <p>As ações podem ser de iniciar ("start") ou
         parar ("stop") uma <em>Mídia</em> ou <em>Reconhecedor</em>. Já as
-        condições podem ser simples ou compostas. 
-        
-        <p>As condições simples em um objeto <em>Relantionship</em> podem ser de
-        início ("onBegin") ou fim ("onEnd") de uma mídia ou de sua âncora,
-        seleção de mídia pelo usuário ("onSelection") ou reconhecimento de uma
-        interação multimodal ("onRecognition").<p>
+        condições podem ser simples ou compostas.  As condições simples em um
+        objeto <em>Relantionship</em> podem ser de início ("onBegin") ou fim
+        ("onEnd") de uma mídia ou de sua âncora, seleção de mídia pelo usuário
+        ("onSelection") ou reconhecimento de uma interação multimodal
+        ("onRecognition").<p>
 
-        <p>Condições compostas em um objeto <em>Relantionship</em> combinam ações
-        simples utilizando um dos seguintes operadores: 'OR' quando apenas uma
-        das condições é necessária; 'AND' quando todas as condições são
-        necessárias em qualquer ordem; e 'SEQ' quando todas as condições são
-        necessárias e na sequência estabelecida.</p>
+        <p>O relacionamento entre condições e ações é definido pelo parametro de
+        criação do objeto <em>Relantionship</em>. Por exemplo, um uma parametro
+        <em>onBeginStar</em> define uma condição "onBegin" e ações de "start".
+        Já um connector <em>onSelectionStopStart</em>define uma condição
+        "onSelection" e ações de "stop" e "start". A associação de elementos
+        <em>&ltmedia></em> ou <em>&ltinput></em> o <em>&ltlink></em> esta
+        interessado é definida pelo método <em>bind</em> de objeto
+        <em>Relantionship</em>.</p>
 
-        <p>O relacionamento entre condições e ações é definida pelo objeto
-        <em>Relantionship</em>. A tabela a seguir apresenta exemplos de parâmetros do
-        construtor do objeto <em>Relantionship</em>.</p>
-        
-        <table align="center" class="table-bordered table-striped
-        table-condensed">
-          <tr>
-            <th>nome</th>
-            <th>define</th>
-          </tr>
-          <tr>
-            <td><em>onBeginStart</td>
-            <td>condição "onBegin" e ações de "start"</td>
-          </tr>
-          <tr>
-            <td><em>onSelectionStopStart</em></td>
-            <td>condição "onSelection" e ações de "stop" e "start" </td>
-          </tr>
-          <tr>
-            <td><em>onRecognizeStopStart</em></td>
-            <td>condição "onRecognize" e ações de "stop" e "start" </td>
-          </tr>
-          <tr>
-            <td><em>onOrRecognizeStopStart</em></td> 
-            <td>condições "onRecognize" combinados com operador "OR", ações de
-            "stop" e "start" </td>
-          </tr>
-        </table><br>
-
-        <p>A associação de elementos <em>&ltmedia></em> ou <em>&ltinput></em> o
-        <em>&ltlink></em> esta interessado é definida pelo método <em>bind</em>
-        de objeto <em>Relantionship</em>.</p>
-
-        <p>Para ilustrar o uso desse conceito em uma aplicação HTML, o trecho de
-        código a seguir define uma aplicação que apresenta um vídeo e um ícone
-        durante os créditos do vídeo. Se o usuário selecionar o ícone, o vídeo é
-        reiniciado.</p>
-
-        <p>O trecho de código utiliza três objetos <em>Relantionship</em>. O
-        primeiro define que o elemento <em>midia_principal</em> inicia com a
-        aplicação. O segundo define que quando o <em>video_principal</em>
+        <p>Para ilustrar o uso desses conceitos, o trecho de código a seguir
+        define uma aplicação que apresenta um vídeo e um ícone durante os
+        créditos do vídeo. Se o usuário selecionar o ícone, o vídeo é
+        reiniciado. Ele utiliza um <em>img</em>, um <em>video</em> e um
+        <em>script</em> que define três objetos <em>Relantionship</em>. O
+        primeiro <em>Relantionship</em> define que o elemento
+        <em>midia_principal</em> inicia com a aplicação. O segundo
+        <em>Relantionship</em> define que quando o <em>video_principal</em>
         alcançar o seu trecho de créditos, a imagem <em>icone_repetir</em> é
-        iniciada. O terceiro define que quando <em>icone_repetir</em> for
-        selecionado, o <em>video_principal</em> será reiniciado (<em>stop</em> e
-        <em>start</em>).</p>
+        iniciada. O <em>Relantionship</em> terceiro define que quando
+        <em>icone_repetir</em> for selecionado, o <em>video_principal</em> será
+        reiniciado (<em>stop</em> e <em>start</em>).</p>
 
         <div id='htmlIntro1CodeB'></div>
         </div>
@@ -2409,7 +2381,7 @@ _data.htmlIntro1CodeB = `
   auto-links: false; highlight:[5,9,13,17,21]"><![CDATA[
   <!DOCTYPE html>
   <html>
-  <head><script src="Relantionship.js"><&#47script></head>
+  <head><script src="relantionship.js"><&#47script></head>
   <body>
     <video id="midia_principal" src="video.mp4"
       style="position: absolute; height 100%; width: 100%;">
@@ -2466,7 +2438,7 @@ _data.htmlTask1CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
   <html>
-  <head><script src="Relantionship.js"><&#47script></head>
+  <head><script src="relantionship.js"><&#47script></head>
   <body>
     <video id="video_inicial" src="video_inicial.mp4"
       style="position: absolute; height 100%; width: 100%;">
@@ -2524,22 +2496,22 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Além de mídias como imagens, áudio e vídeos, o elemento
-        <em>&ltmedia></em> de nossa HTML deve suportar outras modalidades de
-        conteúdo, como a sintetização de voz. Os trechos de código a seguir
-        ilustram o uso de sintetização de voz em nossa HTML. O primeiro
-        apresenta o arquivo <em>sinte_voz.ssml</em> que segue o formato SSML
-        (Speech Synthesis Markup Language) para sintetização de voz. Ele possui
-        uma frase com o identificador "pergunta" que sintetizada "você deseja
-        repetir o vídeo?". O segundo define uma <em>&ltmedia></em> com
-        identificador <em>sinte_voz</em>, que tem como conteúdo o arquivo
-        <em>sinte_voz.ssml</em>. Essa <em>&ltmedia></em> possui uma âncora que
-        indica a frase a ser sintetizada.</p>
+        <p>Além de mídias como imagens, áudio e vídeos, nossa HTML deve suportar
+        outras modalidades de conteúdo, interações por voz. </p>
+
+        <p>Os trechos de código a seguir ilustram o uso de sintetização de voz
+        em nossa HTML. O primeiro apresenta o arquivo <em>sinte_voz.ssml</em>
+        que segue o formato SSML (Speech Synthesis Markup Language) para
+        sintetização de voz. Ele possui uma frase com o identificador "pergunta"
+        que sintetizada "você deseja repetir o vídeo?". O segundo define uma
+        <em>&ltmedia></em> com identificador <em>sinte_voz</em>, que tem como
+        conteúdo o arquivo <em>sinte_voz.ssml</em>. Essa <em>&ltmedia></em>
+        possui uma âncora que indica a frase a ser sintetizada.</p>
 
         <div id='htmlIntro2CodeA'></div>
         <div id='htmlIntro2CodeB'></div>
 
-        <p>O conceito <em>Reconhecedor</em> é definido por <strong>um
+        <p>O conceito de <em>Reconhecedor</em> é definido por <strong>um
         identificador, seu conteúdo e âncoras</strong>. Na nossa HTML, ele é
         implementado pelo elemento <em>&ltobject></em>. O identificador é
         definido pelo atributo <em>id</em> e a descrição de reconhecimento é
@@ -2547,36 +2519,36 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         elemento <em>area</em> e podem definir trechos delimitados da descrição
         com o atributo <em>label</em>.</p>
 
-        <p>O trecho de código a seguir ilustra o arquivo <em>rec_voz.srgs</em>
-        que seguir o formato SRGS (Speech Recognition Grammar Specification)
-        reconhecimento de voz. Ele possui uma frase com o identificador
-        <em>repete</em> que define o reconhecimento de voz "repita vídeo".</p>
+        <p>Para ilustrar o uso de <em>Reconhecedor</em>, os trechos de código a
+        seguir ilustram o uso de sintetização de voz em nossa HTML. O primeiro
+        trecho ilustra o arquivo <em>rec_voz.srgs</em> que segui o formato SRGS
+        (Speech Recognition Grammar Specification) reconhecimento de voz. Ele
+        possui uma frase com o identificador <em>repete</em> que define o
+        reconhecimento de voz "repita vídeo". O segundo define um
+        <em>&ltobject></em> com identificador <em>rec_voz</em>, que tem como
+        conteúdo o arquivo <em>rec_voz.srgs</em>. Esse <em>&ltobject></em>
+        possui uma âncora que indica a frase a ser reconhecida.</p>
 
         <div id='htmlIntro2CodeC'></div>
         <div id='htmlIntro2CodeD'></div><br>
 
-        <p>Para ilustrar o uso desse conceito em uma aplicação HTML, o trecho de
-        código a seguir apresenta uma nova versão da aplicação que reinicia um
-        vídeo dada uma interação (modificações em destaque). Nessa versão,
-        ao invés de selecionar, o vídeo é reiniciado ao usuário falar "repita
-        vídeo".</p>
+        <p>Para ilustrar o uso de interação por voz, o trecho de código a seguir
+        apresenta uma nova versão da aplicação (modificações em destaque) que
+        reinicia um vídeo dada uma interação por seleção. Nessa versão, ao invés
+        de selecionar, o vídeo é reiniciado ao usuário falar "repita vídeo". A
+        primeira diferença esta no uso dos elementos <em>sinte_voz</em> e
+        <em>rec_voz</em> para interação por voz, que os arquivos
+        <em>sinte_voz.srgs</em> e <em>rec_voz.srgs</em> (apresentados
+        acima).</p>
 
-        <p>Essa aplicação utiliza dois elementos de mídia
-        (<em>video_principal</em> e <em>sinte_voz</em>) e um de reconhecimento
-        (<em>rec_voz</em>). Os elementos <em>sinte_voz</em> e <em>rec_voz</em>
-        usam respectivamente os arquivos <em>sinte_voz.srgs</em> e
-        <em>rec_voz.srgs</em> (apresentados a cima). 
-        
-        <p>Para o comportamento, a aplicação utiliza um <em>&ltscript></em> com
-        três objetos <em>Relantionship</em>. O primeiro <em>Relantionship</em>
-        define que <em>midia_principal</em> é iniciada com a aplicação. O
-        segundo <em>Relantionship</em> define que quando o
-        <em>video_principal</em> alcançar a sua porção de <em>creditos</em>
-        (300s), a frase da âncora <em>pergunta</em> é sintetizada e o
-        reconhecedor <em>rec</em> inicia seu reconhecimento. O último
-        <em>Relantionship</em> define que o <em>video_principal</em> deve ser
-        reiniciado (<em>stop</em> e <em>start</em>) quando for reconhecido o
-        trecho <em>repete</em>.</p>
+        <p>Dois objetos <em>Relantionship</em> do elemento <em>&ltscript></em>
+        foram modificados. O primeiro <em>Relantionship</em> modificado define
+        que quando o <em>video_principal</em> alcançar a sua porção de
+        <em>creditos</em> (300s), a frase da âncora <em>pergunta</em> é
+        sintetizada e o reconhecedor <em>rec</em> inicia seu reconhecimento. O
+        segundo <em>Relantionship</em> modificado define que quando for
+        reconhecida a âncora <em>repete</em>, a <em>midia_principal</em> seja
+        reiniciada (terminada e iniciada).</p>
 
         <div id='htmlIntro2CodeE'></div>
 
@@ -2612,7 +2584,7 @@ _data.htmlIntro2CodeE = `
   auto-links: false; highlight:[9,12,20,25]"><![CDATA[
   <!DOCTYPE html>
   <html>
-  <head><script src="Relantionship.js"><&#47script></head>
+  <head><script src="relantionship.js"><&#47script></head>
   <body>
     <video id="midia_principal" src="video.mp4"
       style="position: absolute; height 100%; width: 100%;">
@@ -2680,7 +2652,7 @@ _data.surveyJSON.pages[pageIndex].elements.push(
 
 _data.htmlTask2CodeCOnly = `
   <html>
-  <head><script src="Relantionship.js"><&#47script></head>
+  <head><script src="relantionship.js"><&#47script></head>
   <body>
     <video id="video_inicial" src="video_inicial.mp4"
       style="position: absolute; height 100%; width: 100%;">
@@ -2744,26 +2716,31 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;">
         <p>Um dos principais benefícios de interfaces multimodais é o uso
         diferentes interações, ou seja, as interações de usuários podem ser
-        realizadas por diferentes modalidades. O trecho de código a seguir
-        ilustra o arquivo <em>rec_gestos.gml</em> que segue o formato
-        GML(Gesture Markup Language) para reconhecimento de gestos de mão. Ele
-        possui dois gestos com os identificadores <em>swipe_esquerda</em> e
-        <em>swipe_direita</em>, que definem gestos de mão para esquerda e para
-        direita, respectivamente.</p>
+        realizadas por diferentes modalidades. </p>
+        
+        <p> O trecho de código a seguir ilustra o arquivo
+        <em>rec_gestos.gml</em> que segue o formato GML (Gesture Markup
+        Language) para reconhecimento de gestos de mão. Ele possui dois gestos
+        com os identificadores <em>swipe_esquerda</em> e <em>swipe_direita</em>,
+        que definem gestos de mão para esquerda e para direita,
+        respectivamente.</p>
 
         <div id='htmlIntro3CodeA'></div>
         <div id='htmlIntro3CodeB'></div><br>
 
-        Em nossa HTML, a combinação de modalidades de interação pode ser feita
-        utilizando uma condição composta. Usar um operador OR indica que
-        qualquer uma das interações é necessária. Já usar operador AND indica
-        que todas as interações são necessárias em qualquer ordem. E por fim
-        usar o operador SEQ significa que as interações tem que ser feitas em
-        sequência.</p> 
+        <p>Em nossa HTML, a combinação de modalidades de interação pode ser
+        feita utilizando uma condição composta. Essas condições compostas
+        condições são definidas por um objeto <em>Relantionship</em> utilizando
+        um dos seguintes operadores: 'OR' quando apenas uma das condições é
+        necessária; 'AND' quando todas as condições são necessárias em qualquer
+        ordem; e 'SEQ' quando todas as condições são necessárias e na sequência
+        estabelecida.</p>
 
-        <p>Os blocos a seguir modificam a aplicação acima. Mas nessa
-        versão a mídia <em>midia_principal</em> é repetida quando usuário
-        interage através de voz ou (operador OR) através de gesto.</p>
+        <p>Para ilustrar o uso de combinação de modalidades, o trecho de código
+        a seguir apresenta uma nova versão (modificações em destaque) da
+        aplicação que reinicia um vídeo dada uma interação por voz. Nessa
+        versão, ao invés de selecionar, o vídeo é reiniciado ao usuário falar
+        "repita vídeo" ou (operador 'OR') fazer um gesto de mão para esquerda.
 
         <div id='htmlIntro3CodeC'></div><br>
         </div>
@@ -2775,7 +2752,7 @@ _data.htmlIntro3CodeA = _data.nclIntro3CodeA
 
 _data.htmlIntro3CodeB = `
  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[15,23,29]"><![CDATA[
+  auto-links: false"><![CDATA[
   <object id="rec_gesto" src="rec_gesto.gml">
     <area label="esquerda"><&#47area> <!-- referência id esquerda de rec_gesto.gml-->
   </object>
@@ -2783,10 +2760,10 @@ _data.htmlIntro3CodeB = `
 `
 _data.htmlIntro3CodeC = `
  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[15,23,29]"><![CDATA[
+  auto-links: false; highlight:[15,16,17,27,29,30,31,32,33,34,35]"><![CDATA[
   <!DOCTYPE html>
   <html>
-  <head><script src="Relantionship.js"><&#47script></head>
+  <head><script src="relantionship.js"><&#47script></head>
   <body>
     <video id="midia_principal" src="video.mp4"
       style="position: absolute; height 100%; width: 100%;">
@@ -2865,17 +2842,19 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         JavaScript que utilize um objeto <em>&ltUserGroup></em>. Para essa
         descrição propomos usar um descrição no formato SPARQL. Essa descrição é
         utilizada como parâmetro na criação do objeto <em>&ltUserGroup></em>. O
-        trecho a seguir apresenta um codigo JavaScript que cria um objeto
-        <em>&ltUserGroup></em> em que cada usuário do grupo deve ter um
-        microfone e um leapmotion.</p>
+        trecho de código a seguir apresenta o arquivo de descrição de usuários
+        <em>gu_leap_microphone.sparql</em>. Essa descrição define que cada
+        usuário do grupo deve ter um microfone e um leapmotion.</p>
 
         <div id='htmlIntro4CodeA'></div><br>
 
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em HTML, o
-        código a seguir é uma nova versão da aplicação que reinicia um vídeo
-        dada uma interação de voz (modificações em destaque). Nessa versão, o
-        vídeo é reiniciado apenas quando o segundo usuário falar "repita
-        vídeo".</p>
+        trecho de código a seguir apresenta uma nova versão da aplicação que
+        reinicia um vídeo dada uma interação por voz (modificações em destaque).
+        Nessa versão, o vídeo será reiniciado apenas quando segundo usuário
+        falar "repita vídeo". Esse grupo é definido com um maximo de 2 ususários
+        e com os dispositivos descritos no arquivo
+        <em>gu_leap_microphone.sparql</em> (apresentado acima).</p>
 
         <div id='htmlIntro4CodeB'></div>
         </div>
@@ -2886,7 +2865,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
 _data.htmlIntro4CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[7,8]"> <![CDATA[
+  auto-links: false]"> <![CDATA[
     var sparql =
       \`PREFIX foaf: <http://xmlns.com/foaf/0.1>
       PREFIX prf: <http://www.wapforum.org/profiles/UAPROF/ccppschema-20010430>
@@ -2902,11 +2881,11 @@ _data.htmlIntro4CodeA = `
 
 _data.htmlIntro4CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[16,25,33,35]">
+  auto-links: false; highlight:[16,17,18,19,20,21,22,23,24,25,33,35,36]">
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <html>
-  <head><script src="Relantionship.js"><&#47script></head>
+  <head><script src="relantionship.js"><&#47script></head>
   <body>
     <video id="midia_principal" src="video.mp4"
       style="position: absolute; height 100%; width: 100%;">
