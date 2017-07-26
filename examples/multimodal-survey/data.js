@@ -354,64 +354,20 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         simples ou compostas. Blocos de condições simples podem ser de início
         ("ao começar") ou fim ("ao terminar") de uma mídia ou de sua âncora,
         seleção de mídia pelo usuário ("ao selecionar") ou reconhecimento de uma
-        interação multimodal ("ao reconhecer").<p>
+        interação multimodal ("ao reconhecer")</p>
 
-        <p>Blocos de condições compostas combinam ações simples utilizando
-        um dos seguintes operadores: 'OR' quando apenas uma das condições é
-        necessária; 'AND' quando todas as condições são necessárias em qualquer
-        ordem; e 'SEQ' quando todos as condições são necessárias e na sequência
-        estabelecida.</p>
-
-        <p>O relacionamento entre condições e ações é definido juntando um bloco
-        de <em>Relacionamento</em> com blocos de condições e ações  A tabela a
-        seguir mostra exemplos de junções de blocos.</p>
-        
-        <table align="center" class="table-bordered table-striped
-        table-condensed">
-          <tr>
-            <th>blocos</th>
-            <th>define</th>
-          </tr>
-          <tr>
-            <td><img class='img-thumbnail' style='height: 150px'
-          src='assets/concepts-sample-1.png'></td>
-            <td>condição "ao começar" e ações de "inicie"</td>
-          </tr>
-          <tr>
-            <td><img class='img-thumbnail' style='height: 150px'
-          src='assets/concepts-sample-2.png'></td>
-            <td>condição "ao selecionar" e ações de "pare" e "inicie" </td>
-          </tr>
-          <tr>
-            <td><img class='img-thumbnail' style='height: 150px'
-          src='assets/concepts-sample-3.png'></td>
-            <td>condição "ao reconhecer" e ações de "pare" e "inicie" </td>
-          </tr>
-          <tr>
-            <td><img class='img-thumbnail' style='height: 200px'
-                src='assets/concepts-sample-4.png'></td> 
-            <td>condições "ao reconhecer" combinadas com operador "OR", ações de
-            "pare" e "inicie"
-            </td>
-          </tr>
-        </table><br>
-
-        <p>Para ilustrar o uso desse conceito em uma aplicação, os
-        blocos a seguir definem uma aplicação que apresenta um vídeo e um ícone
-        durante os créditos do vídeo. Se o usuário selecionar o ícone, o vídeo é
-        reiniciado.</p>
-
-        <p>Essa aplicação utiliza duas <em>Mídia</em> (<em>midia_principal</em>
-        e <em>icone_repetir</em>).
-
-        <p>Para o comportamento, essa aplicação utiliza três
-        <em>Relacionamento</em>. O primeiro <em>Relacionamento</em> define
+        <p>Para ilustrar o uso desses conceitos, os blocos a seguir definem uma
+        aplicação que apresenta um vídeo e um ícone, durante os créditos desse
+        vídeo. Se o usuário selecionar o ícone, o vídeo é reiniciado. Essa
+        aplicação utiliza duas <em>Mídia</em> (<em>midia_principal</em> e
+        <em>icone_repetir</em>) e três <em>Relacionamento</em> para para definir
+        o sincronismo. O primeiro <em>Relacionamento</em> define
         <em>midia_principal</em> inicia junto com a aplicação. O segundo
         <em>Relacionamento</em> define que quando a <em>midia_principal</em>
         alcançar o seu trecho de <em>credito</em> a mídia <em>icone_repetir</em>
-        deve ser iniciada. O terceiro <em>Relacionamento</em> define que quando a
-        mídia <em>icone_repetir</em> for selecionada, a <em>midia_principal</em>
-        deve ser reiniciada (terminada e iniciada)</p>
+        deve ser iniciada. O terceiro <em>Relacionamento</em> define que quando
+        a mídia <em>icone_repetir</em> for selecionada, a
+        <em>midia_principal</em> deve ser reiniciada (terminada e iniciada)</p>
 
         </div>
 
@@ -680,25 +636,21 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <p>Na nossa representação de blocos, o <em>Reconhecedor</em> é definido
         juntando um bloco de <em>Reconhecedor</em> com o campo id preenchido, e
-        um bloco de conteúdo com as âncoras preenchidas. Exemplos de blocos
-        serão apresentados para ilustrar o conceito.</p>
-
-        <p>Os blocos a seguir definem o reconhecedor <em>rec_voz</em>, que
-        tem um reconhecimento de voz como conteúdo. Essa descrição tem o trecho
-        <em>repetir</em> que reconhece o comando de voz "repita vídeo". 
+        um bloco de conteúdo com as âncoras preenchidas. Os blocos a seguir
+        definem o reconhecedor <em>rec_voz</em>, que tem um reconhecimento de
+        voz como conteúdo. Essa descrição tem o trecho <em>repetir</em> que
+        reconhece o comando de voz "repita vídeo". 
         </div>
 
         <div id='conceptsIntro2B'></div><br>
 
-        <p>Para ilustrar o uso desse conceito em uma aplicação, os
-        blocos a seguir definem uma nova versão da aplicação que reinicia um
-        vídeo dada uma interação. Mas nessa versão, ao invés de selecionar, o
-        vídeo é reiniciado ao usuário falar "repita vídeo".</p>
-
-        <p>Essa aplicação utiliza duas <em>Mídia</em> (<em>midia_principal</em>
-        e <em>sinte_voz</em>) e um <em>Reconhecedor</em> (<em>rec_voz</em>).
-        
-        <p>Para o comportamento, a aplicação utiliza três
+        <div style="text-align: justify; width: 70%;">
+        <p>Para ilustrar o uso desses conceitos, os blocos a seguir definem uma
+        nova versão da aplicação que reinicia um vídeo dada uma interação. Mas
+        nessa versão, ao invés de selecionar, o vídeo é reiniciado ao usuário
+        falar "repita vídeo". Essa aplicação utiliza duas <em>Mídia</em>
+        (<em>midia_principal</em> e <em>sinte_voz</em>), um
+        <em>Reconhecedor</em> (<em>rec_voz</em>) e três
         <em>Relacionamento</em>s. O primeiro <em>Relacionamento</em> define que
         <em>midia_principal</em> é iniciada com a aplicação. O segundo
         <em>Relacionamento</em> define que quando a <em>midia_principal</em>
@@ -707,7 +659,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>rec_voz</em> inicia o reconhecimento. O último
         <em>Relacionamento</em> define que quando for reconhecida a âncora
         <em>repetir</em>, <em>midia_principal</em> deve ser reiniciada
-        (terminada e iniciada).</p>
+        (terminada e iniciada).</p> 
         </div>
 
         <div id='conceptsIntro2C'></div><br>
@@ -980,21 +932,22 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         
         <p>Os blocos a seguir definem o reconhecedor <em>rec_voz</em>
         <em>rec_gestos</em>, que tem uma descrição de reconhecimento de gestos
-        como conteúdo. Esse conteúd o utiliza dois trechos, esquerda e direita,
+        como conteúdo. Esse conteúdo utiliza dois âncoras (esquerda e direita)
         para definir gestos de mão nessas direções.</p>
 
         <div id='conceptsIntro3A'></div><br>
 
         <p>Em nossa representação de blocos, a combinação de modalidades de
-        interação pode ser feita utilizando uma condição composta. Usar um
-        operador OR indica que qualquer uma das interações é necessária. Já usar
-        o operador AND indica que todas as interações são necessárias em
-        qualquer ordem. E por fim usar o operador SEQ significa que as
-        interações têm que ser feitas em sequência.</p> 
+        interação pode ser feita utilizando uma condição composta. A combinação
+        de condições compostas podem utilizar os seguintes operadores: 'OR'
+        quando apenas uma das condições é necessária; 'AND' quando todas as
+        condições são necessárias em qualquer ordem; e 'SEQ' quando todos as
+        condições são necessárias e na sequência estabelecida.</p>
 
-        <p>Os blocos a seguir modificam a aplicação acima. Mas nessa
-        versão a mídia <em>midia_principal</em> é repetida quando usuário
-        interage através de  voz ou (operador OR) através de gesto.</p>
+        <p>Os blocos adefinem uma nova versão da aplicação que reinicia um vídeo
+        dada uma interação. Mas nessa versão a mídia <em>midia_principal</em> é
+        repetida quando usuário interage através de voz ou (operador OR) através
+        de gesto.</p>
         </div>
 
         <div id='conceptsIntro3B'></div><br>
@@ -1194,7 +1147,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;"> 
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em>, os blocos a
         seguir são uma nova versão da aplicação que reinicia um vídeo dada uma
-        interação por voz. Nessa versão, o vídeo será reiniciado apenas quando o
+        interação por voz. Nessa versão o vídeo será reiniciado apenas quando o
         segundo usuário falar "repita vídeo".</p>
         </div>
 
@@ -1517,7 +1470,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <p>O relacionamento entre condições e ações é definido pelo connector no
         atributdo <em>xconnector</em> do <em>&ltlink></em>. A tabela a seguir
-        mostra exemplos de connectores.</p>
+        apresenta exemplos de connectores.</p>
         
         <table align="center" class="table-bordered table-striped
         table-condensed">
@@ -2415,7 +2368,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         necessárias e na sequência estabelecida.</p>
 
         <p>O relacionamento entre condições e ações é definida pelo objeto
-        <em>Synchronism</em>. A tabela a seguir mostra exemplos de parâmetros do
+        <em>Synchronism</em>. A tabela a seguir apresenta exemplos de parâmetros do
         construtor do objeto <em>Synchronism</em>.</p>
         
         <table align="center" class="table-bordered table-striped
