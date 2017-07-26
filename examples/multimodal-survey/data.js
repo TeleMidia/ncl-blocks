@@ -1460,58 +1460,28 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <em>&ltlink></em> podem ser de início ("onBegin") ou fim ("onEnd") de
         uma mídia ou de sua âncora, seleção de mídia pelo usuário
         ("onSelection") ou reconhecimento de uma interação multimodal
-        ("onRecognition").<p>
-
-        <p>Em nossa NCL, as condições compostas em um <em>&ltlink></em> combinam
-        condições simples utilizando um dos seguintes operadores: 'OR' quando
-        apenas uma das condições é necessária; 'AND' quando todas condições são
-        necessárias em qualquer ordem; e 'SEQ' quando todas as condições são
-        necessárias e na sequência estabelecida.</p>
+        ("onRecognition").</p>
 
         <p>O relacionamento entre condições e ações é definido pelo connector no
-        atributdo <em>xconnector</em> do <em>&ltlink></em>. A tabela a seguir
-        apresenta exemplos de connectores.</p>
+        atributdo <em>xconnector</em> do <em>&ltlink></em>. Por exemplo, um
+        connector <em>onBeginStar</em> define uma condição "onBegin" e ações de
+        "start". Já um connector <em>onSelectionStopStart</em>define uma
+        condição "onSelection" e ações de "stop" e "start". A associação de
+        elementos <em>&ltmedia></em> ou <em>&ltinput></em> em um
+        <em>&ltlink></em> é definida pelo elemento <em>&ltbind></em>.</p>
         
-        <table align="center" class="table-bordered table-striped
-        table-condensed">
-          <tr>
-            <th>nome</th>
-            <th>define</th>
-          </tr>
-          <tr>
-            <td><em>onBeginStart</td>
-            <td>condição "onBegin" e ações de "start"</td>
-          </tr>
-          <tr>
-            <td><em>onSelectionStopStart</em></td>
-            <td>condição "onSelection" e ações de "stop" e "start" </td>
-          </tr>
-          <tr>
-            <td><em>onRecognizeStopStart</em></td>
-            <td>condição "onRecognize" e ações de "stop" e "start" </td>
-          </tr>
-          <tr>
-            <td><em>onOrRecognizeStopStart</em></td> 
-            <td>condições "onRecognize" combinados com operador "OR", ações de
-            "stop" e "start" </td>
-          </tr>
-        </table><br>
-
-        <p>A associação de elementos <em>&ltmedia></em> ou <em>&ltinput></em> em
-        um <em>&ltlink></em> é definida pelo elemento <em>&ltbind></em>.</p>
-        
-        <p>Para ilustrar o uso desse conceito em uma aplicação NCL, o trecho de
-        código a segui define uma aplicação que apresenta um vídeo e um ícone
-        durante os créditos do vídeo. Se o usuário selecionar o ícone, o vídeo é
-        reiniciado.</p>
-
-        <p>O trecho de código utiliza um elemento <em>&ltport></em> e dois
-        elementos <em>&ltlink></em>. O <em>&ltport></em> define que o elemento
-        <em>midia_principal</em> inicia com a aplicação. O primeiro define que
-        quando o <em>video_principal</em> alcançar o seu trecho de créditos a
-        imagem <em>icone_repetir</em> é iniciada. O segundo define que quando
-        essa <em>icone_reptetir</em> for selecionado o <em>video_principal</em>
-        será reiniciado (<em>stop</em> e <em>start</em>).</p>
+        <p>Para ilustrar o uso desses conceitos, o trecho de código a segui
+        define uma aplicação que apresenta um vídeo e um ícone durante os
+        créditos do vídeo. Se o usuário selecionar o ícone, o vídeo é
+        reiniciado. Ele utiliza duas <em>&ltmedia></em>
+        (<em>video_principal</em> e <em>icone_repetir</em>), <em>&ltport></em> e
+        dois elementos <em>&ltlink></em>. O <em>&ltport></em> define que o
+        elemento <em>midia_principal</em> inicia com a aplicação. O primeiro
+        define que quando o <em>video_principal</em> alcançar o seu trecho de
+        créditos a imagem <em>icone_repetir</em> é iniciada. O segundo define
+        que quando essa <em>icone_reptetir</em> for selecionado o
+        <em>video_principal</em> será reiniciado (<em>stop</em> e
+        <em>start</em>).</p>
 
         <div id='nclIntro1CodeB'></div>
         </div>
@@ -1536,7 +1506,7 @@ _data.nclIntro1CodeA = `
 
 _data.nclIntro1CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[7,8,12,16,20,]">
+  auto-links: false">
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <ncl>
@@ -1686,35 +1656,33 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         elemento <em>area</em> e podem definir trechos delimitados da descrição
         com o atributo <em>label</em>. </p>
 
-        <p>O trecho de código a seguir ilustra o arquivo <em>rec_voz.srgs</em>
-        que seguir o formato SRGS (Speech Recognition Grammar Specification)
-        reconhecimento de voz. Ele possui uma frase com o identificador
-        <em>repete</em> que define o reconhecimento de voz "repita vídeo".</p>
+        <p>Para ilustrar o uso de <em>Reconhecedor</em>, os trechos de código a
+        seguir ilustram o uso de sintetização de voz em nossa NCL. O primeiro
+        trecho ilustra o arquivo <em>rec_voz.srgs</em> que segui o formato SRGS
+        (Speech Recognition Grammar Specification) reconhecimento de voz. Ele
+        possui uma frase com o identificador <em>repete</em> que define o
+        reconhecimento de voz "repita vídeo". O segundo define um
+        <em>&ltinput></em> com identificador <em>rec_voz</em>, que tem como
+        conteúdo o arquivo <em>rec_voz.srgs</em>. Esse <em>&ltinput></em> possui
+        uma âncora que indica a frase a ser reconhecida.</p>
 
         <div id='nclIntro2CodeC'></div>
         <div id='nclIntro2CodeD'></div><br>
 
-        <p>Para ilustrar o uso desse conceito em uma aplicação NCL, o trecho de
-        código a seguir apresenta uma nova versão da aplicação que reinicia um
-        vídeo dada uma interação (modificações em destaque). Nessa versão, ao
-        invés de selecionar, o vídeo é reiniciado ao usuário falar "repita
-        vídeo".</p>
-
-        <p>Essa aplicação utiliza dois elementos de
-        <em>&ltmedia></em> (<em>video_principal</em> e <em>sinte_voz</em>) e um
-        <em>&ltinput></em> (<em>rec_voz</em>). Os elementos <em>sinte_voz</em> e
-        <em>rec_voz</em> usam respectivamente os arquivos
-        <em>sinte_voz.srgs</em> e <em>rec_voz.srgs</em> (apresentados acima). 
-        
-        <p>Para o comportamento, a aplicação utiliza um elemento
-        <em>&ltport></em> e dois <em>&ltlink></em>. O <em>&ltport></em>
-        define que o <em>video_principal</em> é iniciado com aplicação. O
-        primeiro <em>&ltlink></em> define que quando o <em>video_principal</em>
-        alcançar a sua porção <em>creditos</em> (300s), a frase da âncora
-        <em>pergunta</em> é sintetizada e o reconhecedor <em>rec_voz</em> inicia
-        seu reconhecimento. O segundo <em>&ltlink></em> define que quando for
-        reconhecida a âncora <em>repete</em>, a <em>midia_principal</em> deve
-        ser reiniciada (terminada e iniciada).</p>
+        <p>Para ilustrar o uso desses interações por voz, o trecho de código a
+        seguir apresenta uma nova versão da aplicação que reinicia um vídeo dada
+        uma interação (modificações em destaque). Nessa versão, ao invés de
+        selecionar, o vídeo é reiniciado ao usuário falar "repita vídeo". A
+        diferença esta no uso dos elementos <em>sinte_voz</em> e
+        <em>rec_voz</em> para interação por voz, que os arquivos
+        <em>sinte_voz.srgs</em> e <em>rec_voz.srgs</em> (apresentados acima). Já
+        o primeiro <em>&ltlink></em> foi motificado para quando o
+        <em>video_principal</em> alcançar a sua porção <em>creditos</em> (300s),
+        a frase da âncora <em>pergunta</em> é sintetizada e o reconhecedor
+        <em>rec_voz</em> inicia seu reconhecimento. Por fim, o segundo
+        <em>&ltlink></em> modificado para que quando for reconhecida a âncora
+        <em>repete</em>, a <em>midia_principal</em> seja reiniciada (terminada e
+        iniciada).</p>
 
         <div id='nclIntro2CodeE'></div>
 
@@ -1744,7 +1712,7 @@ _data.nclIntro2CodeB = `
 
 _data.nclIntro2CodeC = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight: [3]"> <![CDATA[
+  auto-links: false"> <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <grammar xmlns="http://www.w3.org/2001/06/grammar">
     <rule id="repete">repita vídeo</rule>
@@ -1763,7 +1731,7 @@ _data.nclIntro2CodeD = `
 `
 _data.nclIntro2CodeE = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[14,17,25]">
+  auto-links: false; highlight:[14,15,16,17,18,19,22,23,25,26,27,28,29,30]">
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <ncl>
@@ -1908,7 +1876,7 @@ _data.nclTask2CCodeOnly = `
 
 _data.nclTask2CodeC = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight: [19,22,28,29,31,37]">
+  auto-links: false; highlight: [19,20,21,22,23,24,25,28,29,31,32,33,34,35,36,37,38,39,40,41]">
   <![CDATA[` + _data.nclTask2CCodeOnly + ` ]]></script>
 `
 
@@ -1924,11 +1892,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'nclIntro3',
       type: 'html',
       html: `
-        <div style="text-align: justify; width: 70%;">
-        <p>Um dos principais benefícios de interfaces multimodais é o uso
-        diferentes interações. Ou seja, as interações de usuários podem ser
-        realizadas por diferentes modalidades. O trecho de código a seguir
-        ilustra o arquivo <em>rec_gestos.gml</em> que segue o formato
+        <div style="text-align: justify; width: 70%;"> <p>Um dos principais
+        benefícios de interfaces multimodais é permitiro interações dos usuários
+        podem ser realizadas por diferentes modalidades. O trecho de código a
+        seguir ilustra o arquivo <em>rec_gestos.gml</em> que segue o formato
         GML(Gesture Markup Language) para reconhecimento de gestos de mão. Ele
         possui dois gestos com os identificadores <em>swipe_esquerda</em> e
         <em>swipe_direita</em>, que definem gestos de mão para esquerda e para
@@ -1937,17 +1904,19 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div id='nclIntro3CodeA'></div>
         <div id='nclIntro3CodeB'></div><br>
         
-        <p> Em nossa NCL, conceitos essa combinação de modalidades de interação
-        pode ser feita utilizando uma condição composta. Usar um operador 'OR'
-        indica que qualquer uma das interações é necessária. Já usar operador
-        'AND' indica que todas as interações são necessárias em qualquer ordem.
-        E por fim usar o operador 'SEQ' significa que as interações tem que ser
-        feitas em sequência.</p> 
-
-        <p>Os blocos a seguir modificam a aplicação acima. Mas nessa
-        versão a mídia <em>midia_principal</em> é repetida quando usuário
-        interage através de voz ou (operador 'OR') através de gesto.</p>
-
+        <p> Em nossa NCL, a combinação de modalidades de interação pode ser
+        defiida utilizando uma condição composta. Uma condição composta em um
+        <em>&ltlink></em> combina condições simples utilizando um dos seguintes
+        operadores: 'OR' quando apenas uma das condições é necessária; 'AND'
+        quando todas condições são necessárias em qualquer ordem; e 'SEQ' quando
+        todas as condições são necessárias e na sequência estabelecida.</p>
+        
+        <p>Para ilustrar o uso de combinação de modalidades, o trecho de código
+        a seguir apresenta uma nova versão da aplicação que reinicia um vídeo
+        dada uma interação (modificações em destaque). Nessa versão, ao invés de
+        selecionar, o vídeo é reiniciado ao usuário falar "repita vídeo" ou
+        (operador 'OR') fazer um gesto de mão para esquerda..
+        
         <div id='nclIntro3CodeC'></div><br>
         </div>
       `
@@ -1957,7 +1926,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
 _data.nclIntro3CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight: [3,6]"> <![CDATA[
+  auto-links: false"> <![CDATA[
   <?xml version="1.0" encoding="UTF-8"?>
   <GestureMarkupLanguage>
     <Gesture id="swipe_esquerda" type="swipe">
@@ -1982,7 +1951,7 @@ _data.nclIntro3CodeB = `
 `
 _data.nclIntro3CodeC = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[27,29,31,33]">
+  auto-links: false; highlight:[20,21,22,27,29,30,31,32,33,34,35,36]">
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <ncl>
@@ -2075,8 +2044,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em NCL, o trecho
         de código a seguir apresenta uma nova versão da aplicação que reinicia
         um vídeo dada uma interação por voz (modificações em destaque). Mas
-        nessa versão, ao invés de clicar, o vídeo será reiniciado ao segundo
-        usuário do usuário falar "repita vídeo".</p>
+        nessa versão, ao invés de clicar, o vídeo será reiniciado apenas quando
+        segundo usuário falar "repita vídeo". Esse grupo é definido tem um
+        maximo de 2 ususários e com os dispositivos descirtos no arquivo
+        <em>gu_leap_microphone.sparql</em>(apresentado acima).</p>
 
         <div id='nclIntro4CodeB'></div>
         </div>
@@ -2087,7 +2058,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
 _data.nclIntro4CodeA = `
   <script type="syntaxhighlighter" class="brush: plain; toolbar: false;
-  auto-links: false; highlight:[6,7]"> <![CDATA[
+  auto-links: false"> <![CDATA[
   PREFIX foaf: <http://xmlns.com/foaf/0.1/>
   PREFIX prf: <http://www.wapforum.org/profiles/UAPROF/ccppschema-20010430>
   SELECT ?person
@@ -2100,7 +2071,7 @@ _data.nclIntro4CodeA = `
 `
 _data.nclIntro4CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[8,9,31]"> <![CDATA[
+  auto-links: false; highlight:[7,8,9,10,31]"> <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <ncl>
     <head>
