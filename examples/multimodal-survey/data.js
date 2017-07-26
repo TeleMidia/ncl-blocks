@@ -311,7 +311,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     seus conhecimentos, mas sim capturar evidências de nossa
     pesquisa.</strong></p>
     </div>
-   `
+  `
 })
 
 // ----------------------------------------
@@ -320,7 +320,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
-  title: 'Parte 1',
+  title: 'Conceitos 1.1',
   elements: [
     {
       type: 'html',
@@ -469,17 +469,23 @@ _data.conceptsIntro1BlocksB = `
 
 _data.surveyJSON.pages[pageIndex].elements.push(
   {
-    type: 'html',
-    name: 'conceptsTask1',
-    html: 'Tarefa 1: Por favor, analise com atenção os blocos a seguir.<br>'
-  },
-  {
-    type: 'comment',
-    isRequired: true,
-    name: 'conceptsTask1Question',
-    title: 'Qual é o comportamento da aplicação que corresponde aos blocos acima?'
-  }
-)
+    type: 'panel',
+    title: 'Tarefa 1.1',
+    elements: [
+      {
+        type: 'html',
+        name: 'conceptsTask1',
+        html: `Tarefa 1.1: Por favor, analise com atenção os blocos a
+          seguir.<br>`
+      },
+      {
+        type: 'comment',
+        isRequired: true,
+        name: 'conceptsTask1Question',
+        title: 'Qual é o comportamento da aplicação que corresponde aos blocos acima?'
+      }
+    ]
+  })
 
 _data.blocksTask1Xml = `
  <xml xmlns="http://www.w3.org/1999/xhtml">
@@ -611,7 +617,7 @@ _data.blocksTask1Xml = `
 
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
-  title: 'Parte 2',
+  title: 'Conceitos 1.2',
   elements: [
     {
       type: 'html',
@@ -777,19 +783,24 @@ _data.conceptsIntro2BlocksC = `
 // concepts page - recognition - task
 // ----------------------------------------
 
-_data.surveyJSON.pages[pageIndex].elements.push(
-  {
-    type: 'html',
-    name: 'conceptsTask2',
-    html: 'Tarefa 2: Os blocos a seguir são uma versão modificada da Tarefa 1. Por favor, analise. <br><br>'
-  },
-  {
-    type: 'comment',
-    isRequired: true,
-    name: 'conceptsTask2Question',
-    title: 'Qual é o novo comportamento da aplicação?'
-  }
-)
+_data.surveyJSON.pages[pageIndex].elements.push({
+  type: 'panel',
+  title: 'Tarefa 1.2',
+  elements: [
+    {
+      type: 'html',
+      name: 'conceptsTask2',
+      html: `Tarefa 1.2: Os blocos a seguir são uma versão modificada da Tarefa 
+      Por favor, analise. <br><br>`
+    },
+    {
+      type: 'comment',
+      isRequired: true,
+      name: 'conceptsTask2Question',
+      title: 'Qual é o novo comportamento da aplicação?'
+    }
+  ]
+})
 
 _data.blocksTask2Xml = `
   <xml xmlns="http://www.w3.org/1999/xhtml">
@@ -921,7 +932,7 @@ _data.blocksTask2Xml = `
 
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
-  title: 'Parte 3',
+  title: 'Conceitos 1.3',
   elements: [
     {
       type: 'html',
@@ -1089,33 +1100,37 @@ _data.conceptsIntro3BlocksB = `
 // concepts page - recognition combination - task
 // ----------------------------------------
 
-_data.surveyJSON.pages[pageIndex].elements.push(
-  {
-    type: 'html',
-    name: 'conceptsTask3',
-    html: ` 
+_data.surveyJSON.pages[pageIndex].elements.push({
+  type: 'panel',
+  title: 'Tarefa 1.3',
+  elements: [
+    {
+      type: 'html',
+      name: 'conceptsTask3',
+      html: ` 
         <div style="text-align: justify; width: 70%;">
-        Tarefa 3: Agora pedimos que edite os blocos da Tarefa 2 (copiados a
+        Tarefa 1.3: Agora pedimos que edite os blocos da Tarefa 1.2 (copiados a
         seguir) para que seja possível a interação por voz <strong>ou</strong>
         (operador OR) interação por gestos. Na interação por gesto, considere
         que o gesto de deslizar mão para esquerda indica centro e gesto de
         deslizar mão para direita indica praia.<br><br>
         <div>
       `
-  },
-  {
-    type: 'comment',
-    name: 'conceptsTask3Changes',
-    // visible: true
-    visible: false
-  },
-  {
-    type: 'comment',
-    name: 'conceptsTask3Result',
-    // visible: true
-    visible: false
-  }
-)
+    },
+    {
+      type: 'comment',
+      name: 'conceptsTask3Changes',
+      // visible: true
+      visible: false
+    },
+    {
+      type: 'comment',
+      name: 'conceptsTask3Result',
+      // visible: true
+      visible: false
+    }
+  ]
+})
 
 // ----------------------------------------
 // concepts page - user
@@ -1123,7 +1138,7 @@ _data.surveyJSON.pages[pageIndex].elements.push(
 
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
-  title: 'Parte 4',
+  title: 'Conceitos 1.4',
   elements: [
     {
       type: 'html',
@@ -1253,32 +1268,35 @@ _data.conceptsIntro4BlocksB = `
 // concepts page - user - task
 // ----------------------------------------
 
-_data.surveyJSON.pages[pageIndex].elements.push(
-  {
-    type: 'html',
-    name: 'conceptsTask4',
-    html: `
-        <div style="text-align: justify; width: 70%;"> 
-        Tarefa 4: Agora pedimos que edite novamente os blocos da Tarefa 2
-        (copiados a seguir) para que apenas o segundo usuário, de um grupo de 3
-        usuários com microfone, possa realizar a interação por voz.<br><br>
-        <div>
-
-      `
-  },
-  {
-    type: 'text',
-    name: 'conceptsTask4Changes',
-    // visible: true
-    visible: false
-  },
-  {
-    type: 'text',
-    name: 'conceptsTask4Result',
-    // visible: true
-    visible: false
-  }
-)
+_data.surveyJSON.pages[pageIndex].elements.push({
+  type: 'panel',
+  title: 'Tarefa 1.4',
+  elements: [
+    {
+      type: 'html',
+      name: 'conceptsTask4',
+      html: `
+      <div style="text-align: justify; width: 70%;"> 
+      Tarefa 1.4: Agora pedimos que edite novamente os blocos da Tarefa 1.2
+      (copiados a seguir) para que apenas o segundo usuário, de um grupo de 3
+      usuários com microfone, possa realizar a interação por voz.<br><br>
+      <div>
+    `
+    },
+    {
+      type: 'text',
+      name: 'conceptsTask4Changes',
+      // visible: true
+      visible: false
+    },
+    {
+      type: 'text',
+      name: 'conceptsTask4Result',
+      // visible: true
+      visible: false
+    }
+  ]
+})
 
 // ----------------------------------------
 // concepts feedback page
@@ -1414,8 +1432,7 @@ _data.surveyJSON.pages[pageIndex].elements.push(
       pesquisa.</strong></p>
       </div>
     `
-  }
-)
+  })
 
 // ----------------------------------------
 // ncl page - midia and link
@@ -1423,7 +1440,7 @@ _data.surveyJSON.pages[pageIndex].elements.push(
 
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
-  title: 'Parte 1',
+  title: 'Conceitos 2.1',
   elements: [
     {
       name: 'nclIntro1',
@@ -1545,26 +1562,30 @@ _data.nclIntro1CodeB = `
 // ncl page - midia and link - task
 // ----------------------------------------
 
-_data.surveyJSON.pages[pageIndex].elements.push(
-  {
-    type: 'html',
-    name: 'nclTask1',
-    html: `
+_data.surveyJSON.pages[pageIndex].elements.push({
+  type: 'panel',
+  title: 'Tarefa 2.1',
+  elements: [
+    {
+      type: 'html',
+      name: 'nclTask1',
+      html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Tarefa 1: Por favor, analise com atenção o trecho de código NCL a
+        <p>Tarefa 2.1: Por favor, analise com atenção o trecho de código NCL a
         seguir.</p>
         <div id='nclTask1Code'></div>
         </div>
       `
-  },
-  {
-    type: 'comment',
-    isRequired: true,
-    name: 'nclTask1Question',
-    rows: '9',
-    title: 'Qual é o comportamento da aplicação?'
-  }
-)
+    },
+    {
+      type: 'comment',
+      isRequired: true,
+      name: 'nclTask1Question',
+      rows: '9',
+      title: 'Qual é o comportamento da aplicação?'
+    }
+  ]
+})
 
 _data.nclTask1Code = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
@@ -1629,7 +1650,7 @@ _data.nclTask1Code = `
 
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
-  title: 'Parte 2',
+  title: 'Conceitos 2.2',
   elements: [
     {
       name: 'nclIntro2',
@@ -1779,35 +1800,39 @@ _data.nclIntro2CodeE = `
 // ncl page - recognition - task
 // ----------------------------------------
 
-_data.surveyJSON.pages[pageIndex].elements.push(
-  {
-    type: 'html',
-    name: 'nclTask2',
-    html: `
-    <div style="text-align: justify; width: 70%;">
-    Tarefa 2: Considere as descrições sinte_voz_videos.ssml e
-    rec_voz_videos.srgs a seguir.<br><br>
+_data.surveyJSON.pages[pageIndex].elements.push({
+  type: 'panel',
+  title: 'Tarefa 2.2',
+  elements: [
+    {
+      type: 'html',
+      name: 'nclTask2',
+      html: `
+      <div style="text-align: justify; width: 70%;">
+      Tarefa 2: Considere as descrições sinte_voz_videos.ssml e
+      rec_voz_videos.srgs a seguir.<br><br>
 
-    <div id='nclTask2CodeA'></div>
-    <div id='nclTask2CodeB'></div>
+      <div id='nclTask2CodeA'></div>
+      <div id='nclTask2CodeB'></div>
 
-    <p>A aplicação NCL da Tarefa 1 foi modificada para permitir interações
-    multimodais utilizando as duas descrições acima. Uma versão modificada
-    da Tarefa 1 é apresentada a seguir com as modificações destacadas. Por
-    favor, analise com atenção.</p>
+      <p>A aplicação NCL da Tarefa 1 foi modificada para permitir interações
+      multimodais utilizando as duas descrições acima. Uma versão modificada
+      da Tarefa 1 é apresentada a seguir com as modificações destacadas. Por
+      favor, analise com atenção.</p>
 
-    <div id='nclTask2CodeC'></div>
-    </div>
+      <div id='nclTask2CodeC'></div>
+      </div>
     `
-  },
-  {
-    type: 'comment',
-    isRequired: true,
-    name: 'nclTask2Question',
-    rows: '9',
-    title: 'Qual é o novo comportamento da aplicação?'
-  }
-)
+    },
+    {
+      type: 'comment',
+      isRequired: true,
+      name: 'nclTask2Question',
+      rows: '9',
+      title: 'Qual é o novo comportamento da aplicação?'
+    }
+  ]
+})
 
 _data.nclTask2CodeAOnly = `
   <?xml version="1.0" encoding="ISO-8859-1"?>
@@ -1893,7 +1918,7 @@ _data.nclTask2CodeC = `
 
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
-  title: 'Parte 3',
+  title: 'Conceitos 2.3',
   elements: [
     {
       name: 'nclIntro3',
@@ -2007,21 +2032,25 @@ _data.nclIntro3CodeC = `
 // ncl page - recognition combination - task
 // ----------------------------------------
 
-_data.surveyJSON.pages[pageIndex].elements.push(
-  {
-    type: 'comment',
-    isRequired: true,
-    name: 'nclTask3Question',
-    rows: '47',
-    title: `Tarefa 3: Agora pedimos que edite o código NCL da Tarefa 2
+_data.surveyJSON.pages[pageIndex].elements.push({
+  type: 'panel',
+  title: 'Tarefa 2.3',
+  elements: [
+    {
+      type: 'comment',
+      isRequired: true,
+      name: 'nclTask3Question',
+      rows: '47',
+      title: `Tarefa 2.3: Agora pedimos que edite o código NCL da Tarefa 2.2
       (copiado a seguir) para que seja possível a interação por voz
       <strong>ou</strong> (operador OR) interação por gestos. Na interação por
       gesto,você pode referenciar o arquivo de descrição <i>rec_gestos.gml</i>
       apresentado nesta seção e considere que gesto de mão para esquerda indica
       centro e gesto de deslizar mão para direita indica praia.
     `
-  }
-)
+    }
+  ]
+})
 
 // ----------------------------------------
 // ncl page - user
@@ -2029,7 +2058,7 @@ _data.surveyJSON.pages[pageIndex].elements.push(
 
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
-  title: 'Parte 4',
+  title: 'Conceitos 2.4',
   elements: [
     {
       name: 'nclIntro4',
@@ -2124,17 +2153,18 @@ _data.nclIntro4CodeB = `
 // ncl page - user - task
 // ----------------------------------------
 
-_data.surveyJSON.pages[pageIndex].elements.push(
-  {
-    type: 'comment',
-    name: 'nclTask4Question',
-    rows: '47',
-    title: ` Tarefa 4: Agora pedimos que edite novamente o trecho de código
-    NCL da Tarefa 2 (copiado a seguir) para que apenas o segundo usuário, de
-    um grupo de 3 usuários com microfone, possa realizar a interação por
-    voz.`
-  }
-)
+_data.surveyJSON.pages[pageIndex].elements.push({
+  type: 'panel',
+  title: 'Tarefa 2.4',
+  elements: [
+    {
+      type: 'comment',
+      name: 'nclTask4Question',
+      rows: '47',
+      title: 'Tarefa 2.4: Agora pedimos que edite novamente o trecho de código NCL da Tarefa 2.2 (copiado a seguir) para que apenas o segundo usuário, de um grupo de 3 usuários com microfone, possa realizar a interação por voz.'
+    }
+  ]
+})
 
 // ----------------------------------------
 // ncl feedback page
@@ -2295,7 +2325,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
-  title: 'Parte 1',
+  title: 'Conceitos 2.1',
   elements: [
     {
       name: 'htmlIntro1',
@@ -2415,26 +2445,30 @@ _data.htmlIntro1CodeB = `
 // html page - media and link - task
 // ----------------------------------------
 
-_data.surveyJSON.pages[pageIndex].elements.push(
-  {
-    type: 'html',
-    name: 'htmlTask1',
-    html: `
+_data.surveyJSON.pages[pageIndex].elements.push({
+  type: 'panel',
+  title: 'Tarefa 2.1',
+  elements: [
+    {
+      type: 'html',
+      name: 'htmlTask1',
+      html: `
       <div style="text-align: justify; width: 70%;">
-      <p>Tarefa 1: Por favor, analise com atenção o trecho de código HTML a
+      <p>Tarefa 2.1: Por favor, analise com atenção o trecho de código HTML a
       seguir.</p>
       <div id='htmlTask1CodeA'></div>
       </div>
     `
-  },
-  {
-    type: 'comment',
-    isRequired: true,
-    name: 'htmlTask1Question',
-    rows: '9',
-    title: 'Qual é o comportamento da aplicação?'
-  }
-)
+    },
+    {
+      type: 'comment',
+      isRequired: true,
+      name: 'htmlTask1Question',
+      rows: '9',
+      title: 'Qual é o comportamento da aplicação?'
+    }
+  ]
+})
 
 _data.htmlTask1CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
@@ -2491,7 +2525,7 @@ _data.htmlTask1CodeA = `
 
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
-  title: 'Parte 2',
+  title: 'Conceitos 2.2',
   elements: [
     {
       name: 'htmlIntro2',
@@ -2622,35 +2656,39 @@ _data.htmlIntro2CodeE = `
 // html page - recognition - task
 // ----------------------------------------
 
-_data.surveyJSON.pages[pageIndex].elements.push(
-  {
-    type: 'html',
-    name: 'htmlTask2',
-    html: `
-        <div style="text-align: justify; width: 70%;">
-        Tarefa 2: Considere as descrições sinte_voz.ssml e rec_voz.srgs,
-        respectivamente, a seguir.<br><br>
+_data.surveyJSON.pages[pageIndex].elements.push({
+  type: 'panel',
+  title: 'Tarefa 2.2',
+  elements: [
+    {
+      type: 'html',
+      name: 'htmlTask2',
+      html: `
+      <div style="text-align: justify; width: 70%;">
+      Tarefa 2: Considere as descrições sinte_voz.ssml e rec_voz.srgs,
+      respectivamente, a seguir.<br><br>
 
-        <div id='htmlTask2CodeA'></div>
-        <div id='htmlTask2CodeB'></div>
+      <div id='htmlTask2CodeA'></div>
+      <div id='htmlTask2CodeB'></div>
 
-        <p>A aplicação HTML da Tarefa 1 foi modificada para permitir interações
-        multimodais utilizando as duas descrições acima. O novo trecho de código
-        é apresentado a seguir com as modificações destacadas. Por favor,
-        analise com atenção.</p>
+      <p>A aplicação HTML da Tarefa 1 foi modificada para permitir interações
+      multimodais utilizando as duas descrições acima. O novo trecho de código
+      é apresentado a seguir com as modificações destacadas. Por favor,
+      analise com atenção.</p>
 
-        <div id='htmlTask2CodeC'></div>
-        </div>
-      `
-  },
-  {
-    type: 'comment',
-    isRequired: true,
-    name: 'htmlTask2Question',
-    rows: '9',
-    title: 'Qual é o novo comportamento da aplicação?'
-  }
-)
+      <div id='htmlTask2CodeC'></div>
+      </div>
+    `
+    },
+    {
+      type: 'comment',
+      isRequired: true,
+      name: 'htmlTask2Question',
+      rows: '9',
+      title: 'Qual é o novo comportamento da aplicação?'
+    }
+  ]
+})
 
 _data.htmlTask2CodeCOnly = `
   <html>
@@ -2709,7 +2747,7 @@ _data.htmlTask2CodeC = `
 
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
-  title: 'Parte 3',
+  title: 'Conceitos 2.3',
   elements: [
     {
       name: 'htmlIntro3',
@@ -2810,12 +2848,15 @@ _data.htmlIntro3CodeC = `
 // html page - recognition combination - task
 // ----------------------------------------
 
-_data.surveyJSON.pages[pageIndex].elements.push(
-  {
-    type: 'comment',
-    name: 'htmlTask3Question',
-    rows: '47',
-    title: `Tarefa 3: Agora pedimos que edite o código HTML da Tarefa 2
+_data.surveyJSON.pages[pageIndex].elements.push({
+  type: 'panel',
+  title: 'Tarefa 2.3',
+  elements: [
+    {
+      type: 'comment',
+      name: 'htmlTask3Question',
+      rows: '47',
+      title: `Tarefa 2.3: Agora pedimos que edite o código HTML da Tarefa 2.2
         (copiado a seguir) para que seja possível a interação por voz
         <strong>ou</strong> (operador OR) interação por gestos. Na interação por
         gesto, você pode referenciar o arquivo de descrição
@@ -2823,8 +2864,9 @@ _data.surveyJSON.pages[pageIndex].elements.push(
         mão para esquerda indica centro e gesto de deslizar mão para direita
         indica praia.
       `
-  }
-)
+    }
+  ]
+})
 
 // ----------------------------------------
 // html page - user
@@ -2832,7 +2874,7 @@ _data.surveyJSON.pages[pageIndex].elements.push(
 
 _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
-  title: 'Parte 4',
+  title: 'Conceitos 2.4',
   elements: [
     {
       name: 'htmlIntro4',
@@ -2934,17 +2976,17 @@ _data.htmlIntro4CodeB = `
 // html page - user - task
 // ----------------------------------------
 
-_data.surveyJSON.pages[pageIndex].elements.push(
-  {
-    type: 'comment',
-    name: 'htmlTask4Question',
-    rows: '47',
-    title: ` Tarefa 4: Agora pedimos que edite novamente o trecho de código
-        HTML da Tarefa 2 (copiado a seguir) para que apenas o segundo usuário,
-        de um grupo de 3 usuários com microfone, possa realizar a interação por
-        voz.`
-  }
-)
+_data.surveyJSON.pages[pageIndex].elements.push({
+  type: 'panel',
+  title: 'Tarefa 2.4',
+  elements: [
+    {
+      type: 'comment',
+      name: 'htmlTask4Question',
+      rows: '47',
+      title: 'Tarefa 2.4: Agora pedimos que edite novamente o trecho de código HTML da Tarefa 2.2 (copiado a seguir) para que apenas o segundo usuário,de um grupo de 3 usuários com microfone, possa realizar a interação por voz.'
+    }]
+})
 
 // ----------------------------------------
 // html feedback page
