@@ -1098,8 +1098,8 @@ _data.surveyJSON.pages[pageIndex].elements.push(
         Tarefa 3: Agora pedimos que edite os blocos da Tarefa 2 (copiados a
         seguir) para que seja possível a interação por voz <strong>ou</strong>
         (operador OR) interação por gestos. Na interação por gesto, considere
-        que o gesto de mão para esquerda indica centro e gesto de mão para
-        direita indica praia.<br><br>
+        que o gesto de deslizar mão para esquerda indica centro e gesto de
+        deslizar mão para direita indica praia.<br><br>
         <div>
       `
   },
@@ -1923,7 +1923,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         a seguir apresenta uma nova versão (modificações em destaque) da
         aplicação que reinicia um vídeo dada uma interação por voz. Nessa
         versão, ao invés de selecionar, o vídeo é reiniciado ao usuário falar
-        "repita vídeo" ou (operador 'OR') fazer um gesto de mão para esquerda.
+        "repita vídeo" ou (operador 'OR') fazer um gesto de deslizar mão para
+        esquerda.
         
         <div id='nclIntro3CodeC'></div><br>
         </div>
@@ -2013,12 +2014,11 @@ _data.surveyJSON.pages[pageIndex].elements.push(
     name: 'nclTask3Question',
     rows: '47',
     title: `Tarefa 3: Agora pedimos que edite o código NCL da Tarefa 2
-      (copiado  a seguir) para que seja possível a interação por voz
+      (copiado a seguir) para que seja possível a interação por voz
       <strong>ou</strong> (operador OR) interação por gestos. Na interação por
-      gesto,você pode referenciar o arquivo de descrição
-      <i>rec_gestos.gml</i> apresentado nesta seção e considere que gesto de
-      mão para esquerda indica centro e gesto de mão para direita indica
-      praia.
+      gesto,você pode referenciar o arquivo de descrição <i>rec_gestos.gml</i>
+      apresentado nesta seção e considere que gesto de mão para esquerda indica
+      centro e gesto de deslizar mão para direita indica praia.
     `
   }
 )
@@ -2742,7 +2742,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         a seguir apresenta uma nova versão (modificações em destaque) da
         aplicação que reinicia um vídeo dada uma interação por voz. Nessa
         versão, ao invés de selecionar, o vídeo é reiniciado ao usuário falar
-        "repita vídeo" ou (operador 'OR') fazer um gesto de mão para esquerda.
+        "repita vídeo" ou (operador 'OR') fazer um gesto de deslizar mão para
+        esquerda.
 
         <div id='htmlIntro3CodeC'></div><br>
         </div>
@@ -2815,12 +2816,12 @@ _data.surveyJSON.pages[pageIndex].elements.push(
     name: 'htmlTask3Question',
     rows: '47',
     title: `Tarefa 3: Agora pedimos que edite o código HTML da Tarefa 2
-        (copiado  a seguir) para que seja possível a interação por voz
+        (copiado a seguir) para que seja possível a interação por voz
         <strong>ou</strong> (operador OR) interação por gestos. Na interação por
         gesto, você pode referenciar o arquivo de descrição
         <i>rec_gestos.gml</i> apresentado nesta seção e considere que gesto de
-        mão para esquerda indica centro e gesto de mão para direita indica
-        praia.
+        mão para esquerda indica centro e gesto de deslizar mão para direita
+        indica praia.
       `
   }
 )
