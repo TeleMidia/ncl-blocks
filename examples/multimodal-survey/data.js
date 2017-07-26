@@ -47,11 +47,12 @@ _data.surveyJSON.pages.push({
         <p>Convidamos a você a participar deste estudo sobre nossa pesquisa
         de <i>Interações multimodais em linguagens multimídia</i>.</p>
 
-        <p>Para prosseguirmos, pedimos seu consentimento para realizarmos
-        este estudo e informamos que:</p>
+        <p>Para prosseguirmos, pedimos seu consentimento participar deste estudo
+        e informamos que:</p>
         <ul>
-        <li>Os dados coletados destinam-se estritamente a atividades de pesquisa
-        e somente os pesquisadores do TeleMídia têm acesso.</li>
+        <li>Todos os dados coletados destinam-se estritamente a atividades de
+        pesquisa e somente os pesquisadores do TeleMídia terão acesso à esses
+        dados.</li>
         <li>A divulgação dos resultados de nossa pesquisa em foros científicos
         pauta-se no respeito à privacidade, e o anonimato dos
         participantes.</li>
@@ -64,11 +65,10 @@ _data.surveyJSON.pages.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        OBS: Este estudo é feito em uma única página web. Caso deseje
-        navegar entre as seções do estudo, <strong>NÃO</strong> utilize
-        os botões de navegação do seu browser, e sim use os botões
-        <em>voltar</em> e <em>prosseguir</em> no final de cada seção do
-        estudo.
+        OBS: Este estudo é feito em uma única página web. Caso deseje navegar
+        entre as seções do estudo, <strong>NÃO</strong> utilize os botões de
+        navegação do seu browser, e sim os botões de <i>voltar</i> e
+        <i>prosseguir</i> no final de cada seção do estudo.
         </div>
       `
     }
@@ -81,23 +81,39 @@ _data.surveyJSON.pages.push({
 
 _data.surveyJSON.pages.push({
   name: 'intro',
-  title: 'Introdução a linguagens multimídia com interações multimodais',
+  title: 'Introdução à linguagens multimídia com interações multimodais',
   elements: [
     {
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Vamos nesta seção introduzir o conceito de <strong>linguagens
-        multimídia com interações multimodais</strong>, proposto em nossa
+        <p>Nesta seção introduzimos o conceito de <strong>linguagens
+        multimídia com interações multimodais</strong> proposto em nossa
         pesquisa.</p>
 
-        <p>Recentes avanços em tecnologias de reconhecimento e dispositivos de
-        interação permitiram criar <strong>interfaces multimodais</strong>. Esse
-        tipo de interface utiliza formas de comunicação mais naturais da
-        linguagem e comportamento humano, como fala e gestos. Ilustrados a
-        seguir, citamos o uso de microfones para reconhecimento de voz, e
-        dispositivos como LeapMotion e Microsoft Kinect para reconhecimento de
-        gestos.
+        <p>Uma <strong>aplicação multimídia interativa</strong> define como um
+        sistema multimídia deve realizar o sincronismo de mídias (discretas e
+        contínuas) e reagir às interações de usuário. O criador desse tipo de
+        aplicação é usualmente chamado de autor e utiliza uma linguagem
+        multimídia para desenvolver sua aplicação. Exemplos de linguagens
+        multimídia atuais são a NCL (Nested Context Language) e a HTML
+        (HyperText Markup Language). Já uma linguagem multimídia com
+        interações multimodais é aquela que permite o autor não apenas
+        definir mídias e o sincronismo entre elas, mas também pode definir
+        <strong>interações multimodais com os usuários</strong>.</p>
+
+
+        <p><strong>Interfaces multimodais </strong>são aquelas que
+        caracterizadas pelo uso (possivelmente simultâneo) de múltiplas
+        modalidades dos sentidos humanos e que podem combinar entrada (e.g.
+        reconhecimento de gestos do usuário) e saída (e.g. sintetização de voz).
+        Comparado com as tecnologias atuais de mouse, teclado e displays, as
+        tecnologias de interface multimodais permitem o desenvolvimento de
+        interfaces com computadores formas de comunicação mais naturais para o
+        ser da linguagem e comportamento humano, e.g. interfaces por meio de
+        fala como fala e gestos. Ilustrados a seguir, citamos o uso de
+        microfones para reconhecimento de voz, e dispositivos como LeapMotion e
+        Microsoft Kinect para reconhecimento de gestos. </p>
 
         <div class='text-center'>
           <img class='img-thumbnail' style='height: 100px'
@@ -107,21 +123,10 @@ _data.surveyJSON.pages.push({
         </div>
         <br>
 
-        <p>Uma aplicação multimídia interativa define como um sistema multimídia
-        deve realizar o sincronismo de mídias (discretas e contínuas) e reagir
-        às interações de usuário. O criador desse tipo de aplicação é usualmente
-        chamado de autor e utiliza uma <strong>linguagem multimídia</strong>
-        para desenvolver sua aplicação. Exemplos de linguagens multimídia atuais
-        são a NCL (Nested Context Language) e a HTML (HyperText Markup
-        Language). Já uma <strong>linguagem multimídia com interações
-        multimodais</strong> é aquela que permite o autor não apenas definir
-        mídias e o sincronismo entre elas, mas também pode definir interações
-        multimodais com os usuários. </p>
-
         <p>A figura a seguir ilustra a criação e execução de uma aplicação
         multimídia com interações multimodais. Na criação, a principal diferença
         é que o autor define não apenas as mídias e o sincronismos entres elas,
-        mas também, defini as interações multimodais utilizando descrições
+        mas também, as interações multimodais utilizando descrições
         multimodais. Por exemplo, ele pode utilizar uma descrição de
         reconhecimento de voz e um de reconhecimento de gestos. Já na execução,
         a principal diferença é que o sistema utiliza <strong>dispositivos de
@@ -280,9 +285,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
   html: `
     <div style="text-align: justify; width: 70%;"> 
     <p>Em nossa pesquisa propomos quatro conceitos que são necessários para
-    uma linguagem multimídia suportar interações multimodais. Mais
-    precisamente, esses conceitos são os de <em>Mídia, Reconhecedor,
-    Relacionamento</em> e <em>Grupo de Usuários</em>.</p>
+    uma linguagem multimídia suportar interações multimodais, são eles:
+    Mídia, Reconhecedor, Relacionamento e Grupo de
+    Usuários.</p>
    
     <p>Para evitar possíveis dificuldades com a sintaxe das linguagens,
     apresentaremos esses conceitos utilizando uma abordagem de
@@ -301,7 +306,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     </div>
     <br>
 
-    <p>Vamos agora detalhar esses conceitos e perdir que você realize algumas
+    <p>Vamos agora detalhar esses conceitos e pedir que você realize algumas
     tarefas. <strong>Ressaltamos que essas tarefas NÃO se destinam a avaliar
     seus conhecimentos, mas sim capturar evidências de nossa
     pesquisa.</strong></p>
@@ -322,52 +327,52 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'conceptsIntro1',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>O conceito de <em>Mídia</em> permite definir o uso de conteúdo
-        audiovisual. Ela é definida por <strong>um identificador, um conteúdo e
-        âncoras</strong>. O conteúdo consiste em um arquivo de mídia, como
-        imagem jpeg, vídeo mp4, áudio mp3, entre outros. As âncoras são porções
-        do conteúdo e podem ser trechos temporais (e.g. entre 300s e 360s) ou
-        trechos delimitados do conteúdo.</p>
+        <p>O conceito de Mídia permite definir o uso de conteúdo
+        audiovisual. Uma Mídia  é definida por <strong>um
+        identificador, um conteúdo e âncoras</strong>. O conteúdo consiste em um
+        arquivo de mídia, como imagem jpeg, vídeo mp4, áudio mp3, entre outros.
+        As âncoras são porções do conteúdo e podem ser trechos temporais (e.g.
+        entre 300s e 360s) ou trechos delimitados do conteúdo.</p>
 
-        <p>Na nossa representação de blocos, a <em>Mídia</em> é definida
-        juntando um bloco de <em>Mídia</em>, com o campo id preenchido, e um
+        <p>Na nossa representação de blocos, uma Mídia é definida
+        juntando um bloco de Mídia, com o campo id preenchido, e um
         bloco de conteúdo, com as âncoras preenchidas. Os blocos a seguir
-        definem duas mídias com identificadores <em>midia_principal</em> e
-        <em>icone_repetir</em>, e conteúdos de vídeo e imagem, respectivamente.
-        Em especial, <em>midia_principal</em> possui uma âncora chamada de
-        <em>creditos</em> que inicia aos 300 e termina aos 360 segundos.</p>
+        definem duas mídias com identificadores <i>midia_principal</i> e
+        <i>icone_repetir</i>, e conteúdos de vídeo e imagem, respectivamente.
+        Em especial, <i>midia_principal</i> possui uma âncora chamada de
+        <i>creditos</i> que inicia aos 300 e termina aos 360 segundos.</p>
         </div>
 
         <div id='conceptsIntro1A'></div><br>
 
         <div style="text-align: justify; width: 70%;">
-        <p>O conceito de <em>Relacionamento</em> permite definir o comportamento
-        das aplicações. Ele é baseado em causalidade e definido por <strong>um
-        conjunto de condições e um conjunto de ações</strong>. As ações são
-        executadas em sequência quando as condições são satisfeitas.</p>
+        <p>O conceito de Relacionamento permite definir o comportamento
+        das aplicações por meio de relações causais. Um Relacionamento
+        é definido por <strong>um conjunto de condições e um conjunto de
+        ações</strong>. As ações são executadas em sequência quando as condições
+        são satisfeitas.</p>
 
-        <p>Na nossa representação de blocos, o conceito de
-        <em>Relacionamento</em> é criado juntado um bloco de
-        <em>Relacionamento</em> com blocos de condições e blocos de ações.
-        Blocos de ações podem ser de iniciar ("inicie") ou parar ("pare") uma
-        <em>Mídia</em> ou <em>Reconhecedor</em>. Já as condições podem ser
-        simples ou compostas. Blocos de condições simples podem ser de início
-        ("ao começar") ou fim ("ao terminar") de uma mídia ou de sua âncora,
-        seleção de mídia pelo usuário ("ao selecionar") ou reconhecimento de uma
+        <p>Na nossa representação de blocos, um Relacionamento é criado juntado
+        um bloco de Relacionamento com blocos de Condições e blocos de Ações.
+        Blocos de Ações podem ser de iniciar ("inicie") ou parar ("pare") a
+        execução de uma Mídia ou Reconhecedor. Já as condições podem ser simples
+        ou compostas. Blocos de Condições simples podem ser de início ("ao
+        começar") ou fim ("ao terminar") de uma mídia ou de sua âncora, seleção
+        de mídia pelo usuário ("ao selecionar") ou reconhecimento de uma
         interação multimodal ("ao reconhecer")</p>
 
         <p>Para ilustrar o uso desses conceitos, os blocos a seguir definem uma
         aplicação que apresenta um vídeo e um ícone, durante os créditos desse
         vídeo. Se o usuário selecionar o ícone, o vídeo é reiniciado. Essa
-        aplicação utiliza duas <em>Mídia</em> (<em>midia_principal</em> e
-        <em>icone_repetir</em>) e três <em>Relacionamento</em> para para definir
-        o sincronismo. O primeiro <em>Relacionamento</em> define
-        <em>midia_principal</em> inicia junto com a aplicação. O segundo
-        <em>Relacionamento</em> define que quando a <em>midia_principal</em>
-        alcançar o seu trecho de <em>credito</em> a mídia <em>icone_repetir</em>
-        deve ser iniciada. O terceiro <em>Relacionamento</em> define que quando
-        a mídia <em>icone_repetir</em> for selecionada, a
-        <em>midia_principal</em> deve ser reiniciada (terminada e iniciada)</p>
+        aplicação utiliza duas Mídia (<i>midia_principal</i> e
+        <i>icone_repetir</i>) e três Relacionamentos para definir o
+        comportamento da aplicação. O primeiro Relacionamento define que
+        a <i>midia_principal</i> inicia junto com a aplicação. O segundo
+        Relacionamento define que quando a <i>midia_principal</i> alcançar o seu
+        trecho de <i>creditos</i> a mídia <i>icone_repetir</i> deve ser
+        iniciada. O terceiro Relacionamento define que quando a mídia
+        <i>icone_repetir</i> for selecionada, a <i>midia_principal</i> deve ser
+        reiniciada (terminada e iniciada)</p>
 
         </div>
 
@@ -613,53 +618,50 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'conceptsIntro2',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Além de mídias como imagens, áudio e vídeos, o conceito
-        <em>Mídia</em> abrange também outras modalidades conteúdo como voz
-        sintetizada. Os blocos a seguir definem a <em>Mídia</em> com
-        identificador <em>sinte_voz</em>, que tem como conteúdo um texto para
-        sintetização de voz. Esse conteúdo de sintetização possui o trecho
-        <em>pergunta</em> que sintetiza a frase "você deseja repetir o
-        vídeo?".</p>
+        <p>Além de mídias como imagens, áudios e vídeos, o conceito de Mídia
+        abrange também outras modalidades de conteúdo, e.g. voz sintetizada. Os
+        blocos a seguir definem uma Mídia com identificador <i>sinte_voz</i>,
+        que tem como conteúdo um arquivo de texto para sintetização de voz. Esse
+        conteúdo de sintetização possui o trecho <i>pergunta</i> que sintetiza a
+        frase "você deseja repetir o vídeo?".</p>
         </div>
 
         <div id='conceptsIntro2A'></div><br>
 
         <div style="text-align: justify; width: 70%;">
-        <p>O conceito <em>Reconhecedor</em> permite reconhecimento de interações
+        <p>Um Reconhecedor permite o reconhecimento de interações
         multimodais realizadas por usuários, como voz e gestos. Ele é definido
         por <strong>um identificador, seu conteúdo e âncoras</strong>.
-        Entretanto, diferente de <em>Mídia</em>, o conteúdo de um
-        <em>Reconhecedor</em> deve ser uma descrição de reconhecimento. As
-        âncoras são porções delimitadas da descrição. Por exemplo, uma descrição
-        de reconhecimento de voz deve ter âncoras que devem as frases a serem
-        reconhecidas.</p>
+        Entretanto, diferente de Mídia, o conteúdo de um
+        Reconhecedor deve ser uma descrição de reconhecimento. As
+        âncoras são porções delimitadas dessa descrição. Por exemplo, uma
+        descrição de reconhecimento de voz deve ter âncoras que devem as frases
+        a serem reconhecidas.</p>
 
-        <p>Na nossa representação de blocos, o <em>Reconhecedor</em> é definido
-        juntando um bloco de <em>Reconhecedor</em> com o campo id preenchido, e
+        <p>Na nossa representação de blocos, o Reconhecedor é definido
+        juntando-se um bloco de Reconhecedor com o campo id preenchido, e
         um bloco de conteúdo com as âncoras preenchidas. Os blocos a seguir
-        definem o reconhecedor <em>rec_voz</em>, que tem um reconhecimento de
-        voz como conteúdo. Essa descrição tem o trecho <em>repetir</em> que
+        definem o reconhecedor <i>rec_voz</i>, que tem um reconhecimento de
+        voz como conteúdo. Essa descrição tem o trecho <i>repetir</i> que
         reconhece o comando de voz "repita vídeo". 
         </div>
 
         <div id='conceptsIntro2B'></div><br>
 
-        <div style="text-align: justify; width: 70%;">
+        <div style="text-align: justify; width: 70%;"> 
         <p>Para ilustrar o uso desses conceitos, os blocos a seguir definem uma
         nova versão da aplicação que reinicia um vídeo dada uma interação. Mas
-        nessa versão, ao invés de selecionar, o vídeo é reiniciado ao usuário
-        falar "repita vídeo". Essa aplicação utiliza duas <em>Mídia</em>
-        (<em>midia_principal</em> e <em>sinte_voz</em>), um
-        <em>Reconhecedor</em> (<em>rec_voz</em>) e três
-        <em>Relacionamento</em>s. O primeiro <em>Relacionamento</em> define que
-        <em>midia_principal</em> é iniciada com a aplicação. O segundo
-        <em>Relacionamento</em> define que quando a <em>midia_principal</em>
-        alcançar o seu trecho de <em>creditos</em> (300s), a frase da âncora
-        <em>pergunta</em> é sintetizada e o <em>Reconhecedor</em>
-        <em>rec_voz</em> inicia o reconhecimento. O último
-        <em>Relacionamento</em> define que quando for reconhecida a âncora
-        <em>repetir</em>, <em>midia_principal</em> deve ser reiniciada
-        (terminada e iniciada).</p> 
+        nessa versão, ao invés de selecionar com um dispostivo apontador, o
+        vídeo é reiniciado ao usuário falar "repita vídeo". Essa aplicação
+        utiliza duas Mídia (<i>midia_principal</i> e <i>sinte_voz</i>), um
+        Reconhecedor (<i>rec_voz</i>) e três Relacionamentos. O primeiro
+        Relacionamento define que a <i>midia_principal</i> é iniciada quando a
+        aplicação iniciar. O segundo Relacionamento define que quando a
+        <i>midia_principal</i> alcançar o seu trecho de <i>creditos</i> (300s),
+        a frase da âncora <i>pergunta</i> é sintetizada e o Reconhecedor
+        <i>rec_voz</i> inicia o reconhecimento. O último Relacionamento define
+        que quando for reconhecida a âncora <i>repetir</i>, a
+        <i>midia_principal</i> deve ser reiniciada (terminada e iniciada).</p> 
         </div>
 
         <div id='conceptsIntro2C'></div><br>
@@ -930,10 +932,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         diferentes interações, ou seja, as interações de usuários podem ser
         realizadas por diferentes modalidades. </p>
         
-        <p>Os blocos a seguir definem o reconhecedor <em>rec_voz</em>
-        <em>rec_gestos</em>, que tem uma descrição de reconhecimento de gestos
-        como conteúdo. Esse conteúdo utiliza dois âncoras (esquerda e direita)
-        para definir gestos de mão nessas direções.</p>
+        <p>Os blocos a seguir definem o reconhecedor <i>rec_voz</i>
+        <i>rec_gestos</i>, que tem uma descrição de reconhecimento de gestos
+        como conteúdo. Esse conteúdo utiliza duas âncoras (<i>esquerda</i> e
+        <i>direita</i>) para definir gestos de mão nessas direções.</p>
 
         <div id='conceptsIntro3A'></div><br>
 
@@ -944,10 +946,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         condições são necessárias em qualquer ordem; e 'SEQ' quando todos as
         condições são necessárias e na sequência estabelecida.</p>
 
-        <p>Os blocos adefinem uma nova versão da aplicação que reinicia um vídeo
-        dada uma interação. Mas nessa versão a mídia <em>midia_principal</em> é
-        repetida quando usuário interage através de voz ou (operador OR) através
-        de gesto.</p>
+        <p>Os blocos a seguir definem uma nova versão da aplicação que reinicia
+        um vídeo dada uma interação. Mas nessa versão a mídia
+        <i>midia_principal</i> é repetida quando usuário interage através de voz
+        ou (operador OR) através de gesto.</p>
         </div>
 
         <div id='conceptsIntro3B'></div><br>
@@ -1096,8 +1098,8 @@ _data.surveyJSON.pages[pageIndex].elements.push(
         Tarefa 3: Agora pedimos que edite os blocos da Tarefa 2 (copiados a
         seguir) para que seja possível a interação por voz <strong>ou</strong>
         (operador OR) interação por gestos. Na interação por gesto, considere
-        que gesto de mão para esquerda indica centro e gesto de mão para direita
-        indica praia.<br><br>
+        que o gesto de mão para esquerda indica centro e gesto de mão para
+        direita indica praia.<br><br>
         <div>
       `
   },
@@ -1128,24 +1130,24 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'conceptsIntro4',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>O conceito de <em>Grupo de usuários</em> permite identificar
+        <p>O conceito de Grupo de usuários permite identificar
         unicamente interações de cada usuário. Por exemplo, o comando de voz
         apenas de um determinado usuário. Ele é definido por <strong>um
         identificador, número máximo de participantes e quais dispositivos estes
         utilizam</strong>. Mais precisamente, esses dispositivos definem o que
         um usuário necessita possuir para participar do grupo.</p>
 
-        <p>Na nossa representação de blocos, o <em>Grupo de Usuários</em> é
-        definida juntando um bloco de <em>Grupo de Usuários</em> com campo id
+        <p>Na nossa representação de blocos, o Grupo de Usuários é
+        definida juntando um bloco de Grupo de Usuários com campo id
         preenchido e blocos de dispositivos. Por exemplo, os blocos a seguir
-        definem um grupo de usuário <em>gu_gestos</em> que pode ter até 3
+        definem um grupo de usuário <i>gu_gestos</i> que pode ter até 3
         membros, cada qual com seu reconhecedor de gestos (e.g. LeapMotion).</p>
         </div>
 
         <div id='conceptsIntro4A'></div><br>
 
         <div style="text-align: justify; width: 70%;"> 
-        <p>Para ilustrar o uso de um <em>Grupo de Usuários</em>, os blocos a
+        <p>Para ilustrar o uso de um Grupo de Usuários, os blocos a
         seguir são uma nova versão da aplicação que reinicia um vídeo dada uma
         interação por voz. Nessa versão o vídeo será reiniciado apenas quando o
         segundo usuário falar "repita vídeo".</p>
@@ -1290,8 +1292,8 @@ _data.surveyJSON.pages.push({
       html: `
         <div style="text-align: justify; width: 70%;">
         <p>Por favor, opine sobre os pontos a seguir. Eles visam capturar
-        evidências sobre os conceitos que apresentamos (<em>Mídia, Reconhecedor,
-        Relacionamento</em> e <em>Grupo de Usuários</em>).</p>
+        evidências sobre os conceitos que apresentamos (<i>Mídia, Reconhecedor,
+        Relacionamento</i> e Grupo de Usuários).</p>
         </div>
       `
     },
@@ -1369,12 +1371,12 @@ _data.surveyJSON.pages[pageIndex].elements.push(
       conceitos da seção anterior são instanciados na NCL para esta oferecer
       suporte a interações multimodais.</p>
       
-      <p>A tabela seguir apresenta como propomos instanciação dos conceitos de
-      nossa pesquisa na versão atual da NCL (3.1). O conceito de
-      <em>Mídia</em> é implementado pelo elemento <em>&ltmedia></em>. O
-      conceito de <em>Relacionamento</em> é implementado pelo elemento
-      <em>&ltlink></em>. Por fim os conceitos de <em>Reconhecedor</em> e
-      <em>Grupo de usuários</em> não são implementados.</p></p>
+      <p>A tabela a seguir apresenta nossa proposta de instanciação dos
+      conceitos discutitos anteriormente na versão atual da NCL (3.1). O
+      conceito de Mídia é implementado pelo elemento <i>&ltmedia></i>. O
+      conceito de Relacionamento é implementado pelo elemento <i>&ltlink></i>.
+      Por fim os conceitos de Reconhecedor e Grupo de usuários não são
+      implementados.</p></p>
 
       <table align="center" class="table-bordered table-striped
       table-condensed">
@@ -1384,29 +1386,29 @@ _data.surveyJSON.pages[pageIndex].elements.push(
           <th>Como propomos</th>
         </tr>
         <tr>
-          <td><em>Mídia</em></td>
-          <td><em>&ltmedia></em></td>
+          <td>Mídia</td>
+          <td><i>&ltmedia></i></td>
           <td>manter</td>
         </tr>
         <tr>
-          <td><em>Relacionamento</em></td>
-          <td><em>&ltport> e <em>&ltlink></em></td>
+          <td>Relacionamento</td>
+          <td><i>&ltport> e <i>&ltlink></i></td>
           <td>manter</td>
         </tr>
         <tr>
-          <td><em>Reconhecedor</em></td>
-          <td><em>não presente</em></td>
-          <td>adicionar elemento <em>&ltinput></em></td>
+          <td>Reconhecedor</td>
+          <td><i>não presente</i></td>
+          <td>adicionar elemento <i>&ltinput></i></td>
         </tr>
         <tr>
-          <td><em>Grupo de Usuários</em></td>
+          <td>Grupo de Usuários</td>
           <td>não presente</td></td>
-          <td>adicionar elemento <em>&ltuserClass></em></td>
+          <td>adicionar elemento <i>&ltuserClass></i></td>
         </tr>
       </table>
       <br>
 
-      <p>Vamos agora detalhar esses conceitos e perdir que você realize algumas
+      <p>Vamos agora detalhar esses conceitos e pedir que você realize algumas
       tarefas. <strong>Ressaltamos que essas tarefas NÃO se destinam a avaliar
       seus conhecimentos, mas sim capturar evidências de nossa
       pesquisa.</strong></p>
@@ -1428,61 +1430,61 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>O conceito de <em>Mídia</em> é definida por <strong>um identificador,
+        <p>O conceito de Mídia é definida por <strong>um identificador,
         um conteúdo e âncoras</strong>. Na nossa NCL, ele já é implementado pelo
-        elemento <em>&ltmedia></em>. O identificador é definido pelo atributo
-        <em>id</em> e o arquivo de mídia do conteúdo é definido pelo atributo
-        <em>src</em>. As âncoras são definidas pelo elemento <em>area</em> e
-        podem definir porções temporais com os atributos <em>begin</em> e
-        <em>end</em> ou trechos delimitados com o atributo <em>label</em>.</p>
+        elemento <i>&ltmedia></i>. O identificador é definido pelo atributo
+        <i>id</i> e o arquivo de mídia do conteúdo é definido pelo atributo
+        <i>src</i>. As âncoras são definidas pelo elemento <i>area</i> e
+        podem definir porções temporais com os atributos <i>begin</i> e
+        <i>end</i> ou trechos delimitados com o atributo <i>label</i>.</p>
 
-        <p>Elementos <em>&ltmedia></em> também podem possuir elementos
-        <em>&ltproperty></em> para definir características de sua exibição, como
-        <em>&ltsize></em> (width e height), <em>&ltposition></em> (top e left)
-        and <em>&ltz-index></em>. O trecho de código a seguir define duas mídias
-        com identificadores <em>midia_principal</em> e <em>icone_repetir</em>, e
+        <p>Elementos <i>&ltmedia></i> também podem possuir elementos
+        <i>&ltproperty></i> para definir características de sua exibição, como
+        <i>&ltsize></i> (width e height), <i>&ltposition></i> (top e left)
+        and <i>&ltz-index></i>. O trecho de código a seguir define duas mídias
+        com identificadores <i>midia_principal</i> e <i>icone_repetir</i>, e
         com conteúdos de vídeo e imagem, respectivamente. Em especial, a mídia
-        de <em>midia_principal</em> possui uma âncora chamada de
-        <em>creditos</em> que inicia aos 300 e termina aos 360 segundos.</p>
+        de <i>midia_principal</i> possui uma âncora chamada de
+        <i>creditos</i> que inicia aos 300 e termina aos 360 segundos.</p>
 
         <div id='nclIntro1CodeA'></div><br>
 
-        <p>O conceito de <em>Relacionamento</em> é baseado em causalidade e
+        <p>O conceito de Relacionamento é baseado em causalidade e
         definido por <strong>um conjunto de condições e um conjunto de
         ações</strong>. Na NCL esse conceito já implementado pelos elementos
-        <em>&ltport></em> e <em>&ltlink></em>. Os elementos <em>&ltport></em>
-        indicam quais elementos  de <em>&ltmedia></em> são iniciados quando a
+        <i>&ltport></i> e <i>&ltlink></i>. Os elementos <i>&ltport></i>
+        indicam quais elementos  de <i>&ltmedia></i> são iniciados quando a
         aplicação é iniciada.</p>
 
-        <p>No <em>&ltlink></em> as ações podem ser de iniciar ("start") ou parar
-        ("stop") uma <em>Mídia</em> ou <em>Reconhecedor</em>. Já as condições
+        <p>No <i>&ltlink></i> as ações podem ser de iniciar ("start") ou parar
+        ("stop") uma Mídia ou Reconhecedor. Já as condições
         podem ser simples ou compostas. As condições simples em um
-        <em>&ltlink></em> podem ser de início ("onBegin") ou fim ("onEnd") de
+        <i>&ltlink></i> podem ser de início ("onBegin") ou fim ("onEnd") de
         uma mídia ou de sua âncora, seleção de mídia pelo usuário
         ("onSelection") ou reconhecimento de uma interação multimodal
         ("onRecognition").</p>
 
         <p>O relacionamento entre condições e ações é definido pelo connector no
-        atributdo <em>xconnector</em> do <em>&ltlink></em>. Por exemplo, um
-        connector <em>onBeginStar</em> define uma condição "onBegin" e ações de
-        "start". Já um connector <em>onSelectionStopStart</em>define uma
+        atributdo <i>xconnector</i> do <i>&ltlink></i>. Por exemplo, um
+        connector <i>onBeginStar</i> define uma condição "onBegin" e ações de
+        "start". Já um connector <i>onSelectionStopStart</i>define uma
         condição "onSelection" e ações de "stop" e "start". A associação de
-        elementos <em>&ltmedia></em> ou <em>&ltinput></em> em um
-        <em>&ltlink></em> é definida pelo elemento <em>&ltbind></em> do
-        <em>&ltlink></em>.</p>
+        elementos <i>&ltmedia></i> ou <i>&ltinput></i> em um
+        <i>&ltlink></i> é definida pelo elemento <i>&ltbind></i> do
+        <i>&ltlink></i>.</p>
         
         <p>Para ilustrar o uso desses conceitos, o trecho de código a segui
         define uma aplicação que apresenta um vídeo e um ícone durante os
         créditos do vídeo. Se o usuário selecionar o ícone, o vídeo é
-        reiniciado. Ele utiliza duas <em>&ltmedia></em>
-        (<em>video_principal</em> e <em>icone_repetir</em>), <em>&ltport></em> e
-        dois elementos <em>&ltlink></em>. O <em>&ltport></em> define que o
-        elemento <em>midia_principal</em> inicia com a aplicação. O primeiro
-        <em>&ltlink></em> define que quando o <em>video_principal</em> alcançar
-        o seu trecho de créditos a imagem <em>icone_repetir</em> é iniciada. O
-        segundo <em>&ltlink></em> define que quando essa <em>icone_reptetir</em>
-        for selecionado o <em>video_principal</em> será reiniciado
-        (<em>stop</em> e <em>start</em>).</p>
+        reiniciado. Ele utiliza duas <i>&ltmedia></i>
+        (<i>video_principal</i> e <i>icone_repetir</i>), <i>&ltport></i> e
+        dois elementos <i>&ltlink></i>. O <i>&ltport></i> define que o
+        elemento <i>midia_principal</i> inicia com a aplicação. O primeiro
+        <i>&ltlink></i> define que quando o <i>video_principal</i> alcançar
+        o seu trecho de créditos a imagem <i>icone_repetir</i> é iniciada. O
+        segundo <i>&ltlink></i> define que quando essa <i>icone_reptetir</i>
+        for selecionado o <i>video_principal</i> será reiniciado
+        (<i>stop</i> e <i>start</i>).</p>
 
         <div id='nclIntro1CodeB'></div>
         </div>
@@ -1635,37 +1637,37 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         <div style="text-align: justify; width: 70%;">
         <p>Além de mídias como imagens, áudio e vídeos, o elemento
-        <em>&ltmedia></em> de nossa NCL deve suportar outras modalidades de
+        <i>&ltmedia></i> de nossa NCL deve suportar outras modalidades de
         conteúdo, como interações por voz. </p>
 
         <p>Os trechos de código a seguir ilustram o uso de sintetização de voz
-        em nossa NCL. O primeiro apresenta o arquivo <em>sinte_voz.ssml</em> que
+        em nossa NCL. O primeiro apresenta o arquivo <i>sinte_voz.ssml</i> que
         segue o formato SSML (Speech Synthesis Markup Language) para
         sintetização de voz. Ele possui uma frase com o identificador "pergunta"
         que sintetizada "você deseja repetir o vídeo?". O segundo define uma
-        <em>&ltmedia></em> com identificador <em>sinte_voz</em>, que tem como
-        conteúdo o arquivo <em>sinte_voz.ssml</em>. Essa <em>&ltmedia></em>
+        <i>&ltmedia></i> com identificador <i>sinte_voz</i>, que tem como
+        conteúdo o arquivo <i>sinte_voz.ssml</i>. Essa <i>&ltmedia></i>
         possui uma âncora que indica a frase a ser sintetizada.</p>
 
         <div id='nclIntro2CodeA'></div>
         <div id='nclIntro2CodeB'></div>
 
-        <p>O conceito de <em>Reconhecedor</em> é definido por <strong>um
+        <p>O conceito de Reconhecedor é definido por <strong>um
         identificador, seu conteúdo e âncoras</strong>. Na nossa NCL, ele é
-        implementado pelo elemento <em>&ltinput></em>. O identificador é
-        definido pelo atributo <em>id</em> e a descrição de reconhecimento é
-        definida pelo atributo <em>src</em>. As âncoras são definidas pelo
-        elemento <em>area</em> e podem definir trechos delimitados da descrição
-        com o atributo <em>label</em>.</p>
+        implementado pelo elemento <i>&ltinput></i>. O identificador é
+        definido pelo atributo <i>id</i> e a descrição de reconhecimento é
+        definida pelo atributo <i>src</i>. As âncoras são definidas pelo
+        elemento <i>area</i> e podem definir trechos delimitados da descrição
+        com o atributo <i>label</i>.</p>
 
-        <p>Para ilustrar o uso de <em>Reconhecedor</em>, os trechos de código a
+        <p>Para ilustrar o uso de Reconhecedor, os trechos de código a
         seguir ilustram o uso de sintetização de voz em nossa NCL. O primeiro
-        trecho ilustra o arquivo <em>rec_voz.srgs</em> que segue o formato SRGS
+        trecho ilustra o arquivo <i>rec_voz.srgs</i> que segue o formato SRGS
         (Speech Recognition Grammar Specification) reconhecimento de voz. Ele
-        possui uma frase com o identificador <em>repete</em> que define o
+        possui uma frase com o identificador <i>repete</i> que define o
         reconhecimento de voz "repita vídeo". O segundo define um
-        <em>&ltinput></em> com identificador <em>rec_voz</em>, que tem como
-        conteúdo o arquivo <em>rec_voz.srgs</em>. Esse <em>&ltinput></em> possui
+        <i>&ltinput></i> com identificador <i>rec_voz</i>, que tem como
+        conteúdo o arquivo <i>rec_voz.srgs</i>. Esse <i>&ltinput></i> possui
         uma âncora que indica a frase a ser reconhecida.</p>
 
         <div id='nclIntro2CodeC'></div>
@@ -1676,17 +1678,17 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         reinicia um vídeo dada uma interação por seleção. Nessa versão, ao invés
         de selecionar, o vídeo é reiniciado ao usuário falar "repita vídeo". A
         primeira diferença diferença esta no uso dos elementos
-        <em>sinte_voz</em> e <em>rec_voz</em> para interação por voz, que os
-        arquivos <em>sinte_voz.srgs</em> e <em>rec_voz.srgs</em> (apresentados
+        <i>sinte_voz</i> e <i>rec_voz</i> para interação por voz, que os
+        arquivos <i>sinte_voz.srgs</i> e <i>rec_voz.srgs</i> (apresentados
         acima). </p>
 
-        <p>Dois elementos <em>&ltlink></em> foram modificados. O primeiro
-        <em>&ltlink></em> modificado define que  quando o
-        <em>video_principal</em> alcançar a sua porção <em>creditos</em> (300s),
-        a frase da âncora <em>pergunta</em> é sintetizada e o reconhecedor
-        <em>rec_voz</em> inicia seu reconhecimento. Já o segundo
-        <em>&ltlink></em> modificado define que quando for reconhecida a âncora
-        <em>repete</em>, a <em>midia_principal</em> seja reiniciada (terminada e
+        <p>Dois elementos <i>&ltlink></i> foram modificados. O primeiro
+        <i>&ltlink></i> modificado define que  quando o
+        <i>video_principal</i> alcançar a sua porção <i>creditos</i> (300s),
+        a frase da âncora <i>pergunta</i> é sintetizada e o reconhecedor
+        <i>rec_voz</i> inicia seu reconhecimento. Já o segundo
+        <i>&ltlink></i> modificado define que quando for reconhecida a âncora
+        <i>repete</i>, a <i>midia_principal</i> seja reiniciada (terminada e
         iniciada).</p>
 
         <div id='nclIntro2CodeE'></div>
@@ -1901,10 +1903,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         benefícios de interfaces multimodais é permitiro interações dos usuários
         podem ser realizadas por diferentes modalidades. </p>
         
-        <p>O trecho de código a seguir ilustra o arquivo <em>rec_gestos.gml</em>
+        <p>O trecho de código a seguir ilustra o arquivo <i>rec_gestos.gml</i>
         que segue o formato GML (Gesture Markup Language) para reconhecimento de
         gestos de mão. Ele possui dois gestos com os identificadores
-        <em>swipe_esquerda</em> e <em>swipe_direita</em>, que definem gestos de
+        <i>swipe_esquerda</i> e <i>swipe_direita</i>, que definem gestos de
         mão para esquerda e para direita, respectivamente.</p>
 
         <div id='nclIntro3CodeA'></div>
@@ -1912,7 +1914,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         
         <p> Em nossa NCL, a combinação de modalidades de interação pode ser
         defiida utilizando uma condição composta. Uma condição composta em um
-        <em>&ltlink></em> combina condições simples utilizando um dos seguintes
+        <i>&ltlink></i> combina condições simples utilizando um dos seguintes
         operadores: 'OR' quando apenas uma das condições é necessária; 'AND'
         quando todas condições são necessárias em qualquer ordem; e 'SEQ' quando
         todas as condições são necessárias e na sequência estabelecida.</p>
@@ -2014,7 +2016,7 @@ _data.surveyJSON.pages[pageIndex].elements.push(
       (copiado  a seguir) para que seja possível a interação por voz
       <strong>ou</strong> (operador OR) interação por gestos. Na interação por
       gesto,você pode referenciar o arquivo de descrição
-      <em>rec_gestos.gml</em> apresentado nesta seção e considere que gesto de
+      <i>rec_gestos.gml</i> apresentado nesta seção e considere que gesto de
       mão para esquerda indica centro e gesto de mão para direita indica
       praia.
     `
@@ -2034,25 +2036,25 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>O conceito de <em>Grupo de Usuários</em> é definido <strong>por um
+        <p>O conceito de Grupo de Usuários é definido <strong>por um
         identificador, número máximo de participantes e quais dispositivos estes
         utilizam</strong>. Na nossa NCL, ele é implementado pelo elemento
-        <em>&ltuserClass></em> dentro do <em>&lthead></em>. O identificador é
-        definido pelo atributo <em>id</em> e os dispositivos são definidos por
-        um arquivo de descrição definido em <em>src</em>. Para essa descrição
+        <i>&ltuserClass></i> dentro do <i>&lthead></i>. O identificador é
+        definido pelo atributo <i>id</i> e os dispositivos são definidos por
+        um arquivo de descrição definido em <i>src</i>. Para essa descrição
         propomos um descrição no formato SPARQL. O trecho de código a seguir
         apresenta o arquivo de descrição de usuários
-        <em>gu_leap_microphone.sparql</em>. Essa descrição define que cada
+        <i>gu_leap_microphone.sparql</i>. Essa descrição define que cada
         usuário do grupo deve ter um microfone e um leapmotion.</p>
 
         <div id='nclIntro4CodeA'></div><br>
 
-        <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em NCL, o trecho
+        <p>Para ilustrar o uso de um Grupo de Usuários em NCL, o trecho
         de código a seguir apresenta uma nova versão da aplicação que reinicia
         um vídeo dada uma interação por voz (modificações em destaque). Nessa
         versão, o vídeo será reiniciado apenas quando segundo usuário falar
         "repita vídeo". Esse grupo é definido com um maximo de 2 ususários e com
-        os dispositivos descritos no arquivo <em>gu_leap_microphone.sparql</em>
+        os dispositivos descritos no arquivo <i>gu_leap_microphone.sparql</i>
         (apresentado acima).</p>
 
         <div id='nclIntro4CodeB'></div>
@@ -2148,8 +2150,8 @@ _data.surveyJSON.pages.push({
         <div style="text-align: justify; width: 70%;">
         <p>Por favor, opine sobre os pontos a seguir. Eles visam capturar
         evidências de como os conceitos apresentados na seção
-        anterior(<em>Mídia, Reconhecedor, Relacionamento</em> e <em>Grupo de
-        Usuários</em>) estão instanciados na NCL para suportar interações
+        erior(<i>Mídieconhecedor, Relacionamento</i> e Grupo de
+        Usuários) estão instanciados na NCL para suportar interações
         multimodais.</p>
         </div>
       `
@@ -2240,13 +2242,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     
     <p>A tabela seguir apresenta como propomos instanciar os conceitos de
     nossa pesquisa na versão atual da HTML (5.0). O conceito de
-    <em>Mídia</em> é parcialmente implementado por elementos como
-    <em>&ltimg></em>, <em>&ltvideo></em> e <em>&ltaudio></em>, pois estes
-    não possuem nosso conceito de âncora. O conceito de <em>Relacionamento</em>
-    é parcialmente implementado pelo elemento <em>script</em>, pois estes
+    Mídia é parcialmente implementado por elementos como
+    <i>&ltimg></i>, <i>&ltvideo></i> e <i>&ltaudio></i>, pois estes
+    não possuem nosso conceito de âncora. O conceito de Relacionamento
+    é parcialmente implementado pelo elemento <i>script</i>, pois estes
     permitem definir comportamentos na aplicação, como interações de usuário
-    por apontador. Por fim os conceitos de <em>Reconhecedor</em> e <em>Grupo
-    de usuários</em> não são implementados.</p>
+    por apontador. Por fim os conceitos de Reconhecedor e Grupo
+    de usuários não são implementados.</p>
 
     <table align="center" class="table-bordered table-striped
     table-condensed">
@@ -2256,32 +2258,32 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <th>Como propomos</th>
       </tr>
       <tr>
-        <td><em>&ltmedia></em></td>
-        <td><em>&ltimg></em>, <em>&ltvideo></em>, <em>&ltaudio></em>
+        <td><i>&ltmedia></i></td>
+        <td><i>&ltimg></i>, <i>&ltvideo></i>, <i>&ltaudio></i>
         </td>
-        <td>estender esses elementos com <em>&ltarea></em></td>
+        <td>estender esses elementos com <i>&ltarea></i></td>
       </tr>
       <tr>
-        <td><em>Relacionamento</em></td>
-        <td><em>&ltscript></em></td>
-        <td><em>&ltscript></em> com o objeto JavaScript
-        <em>Relantionship</em></td>
+        <td>Relacionamento</td>
+        <td><i>&ltscript></i></td>
+        <td><i>&ltscript></i> com o objeto JavaScript
+        <i>Relantionship</i></td>
       </tr>
       <tr>
-        <td><em>Reconhecedor</em></td>
-        <td><em>não presente</em></td>
-        <td>adicionar elemento <em>&ltinput></em></td>
+        <td>Reconhecedor</td>
+        <td><i>não presente</i></td>
+        <td>adicionar elemento <i>&ltinput></i></td>
       </tr>
       <tr>
-        <td><em>Grupo de Usuários</em></td>
+        <td>Grupo de Usuários</td>
         <td>não presente</td></td>
-        <td>adicionar elemento <em>&ltuserClass></em></td>
+        <td>adicionar elemento <i>&ltuserClass></i></td>
       </tr>
     </table>
     <br>
-    <p>Vamos agora detalhar esses conceitos e perdir que você realize
-    algumas tarefas. <strong>Ressaltamos que essas tarefas NÃO se destinam a
-    avaliar seus conhecimentos, mas sim capturar evidências de nossa
+    <p>Vamos agora detalhar esses conceitos e pedir que você realize algumas
+    tarefas. <strong>Ressaltamos que essas tarefas NÃO se destinam a avaliar
+    seus conhecimentos, mas sim capturar evidências de nossa
     pesquisa.</strong>.</p>
     </div>
   `
@@ -2300,61 +2302,61 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>O conceito de <em>Mídia</em> é definido por <strong>um identificador,
+        <p>O conceito de Mídia é definido por <strong>um identificador,
         um conteúdo e âncoras</strong>. Na nossa HTML, ele é parcialmente
-        implementado por elementos como <em>&ltimg></em>, <em>&ltaudio></em>,
-        <em>&ltvideo></em> e <em>&ltobject></em>. O identificador é definido
-        pelo atributo <em>id</em> e o arquivo de mídia do conteúdo é definido
-        atributo <em>src</em>. Para permitir definir âncoras esses elementos são
-        estendidos com elementos <em>&ltarea></em>. Uma <em>&ltarea></em> pode
-        definir uma porção temporal com os atributos <em>begin</em> e
-        <em>end</em> ou um trecho delimitado com o atributo <em>label</em>.</p>
+        implementado por elementos como <i>&ltimg></i>, <i>&ltaudio></i>,
+        <i>&ltvideo></i> e <i>&ltobject></i>. O identificador é definido
+        pelo atributo <i>id</i> e o arquivo de mídia do conteúdo é definido
+        atributo <i>src</i>. Para permitir definir âncoras esses elementos são
+        estendidos com elementos <i>&ltarea></i>. Uma <i>&ltarea></i> pode
+        definir uma porção temporal com os atributos <i>begin</i> e
+        <i>end</i> ou um trecho delimitado com o atributo <i>label</i>.</p>
 
-        <p>Elementos <em>Mídia</em> também podem possuir propriedades para
+        <p>Elementos Mídia também podem possuir propriedades para
         definir características de sua exibição definidas no atributo
-        <em>&ltstyle></em>. Trechos de código serão apresentados a seguir para
+        <i>&ltstyle></i>. Trechos de código serão apresentados a seguir para
         ilustrar esse conceito em HTML. O trecho de código a seguir define as
-        duas mídias com identificadores <em>midia_principal</em> e
-        <em>icone_repetir</em>, e com conteúdos de vídeo e imagem,
-        respectivamente. Em especial, a mídia de <em>midia_principal</em> possui
-        uma âncora chamada de <em>creditos</em> que inicia aos 300 e termina aos
+        duas mídias com identificadores <i>midia_principal</i> e
+        <i>icone_repetir</i>, e com conteúdos de vídeo e imagem,
+        respectivamente. Em especial, a mídia de <i>midia_principal</i> possui
+        uma âncora chamada de <i>creditos</i> que inicia aos 300 e termina aos
         360 segundos.</p>
 
         <div id='htmlIntro1CodeA'></div><br>
 
-        <p>O conceito de <em>Relacionamento</em> é baseado em causalidade e
+        <p>O conceito de Relacionamento é baseado em causalidade e
         definido por <strong>um conjunto de condições e um conjunto de
         ações</strong>. Na nossa HTML, ele é implementado pelo elemento
-        <em>&ltscript></em>, com um código JavaScript que utiliza o objeto
-        <em>Relantionship</em>. <p>As ações podem ser de iniciar ("start") ou
-        parar ("stop") uma <em>Mídia</em> ou <em>Reconhecedor</em>. Já as
+        <i>&ltscript></i>, com um código JavaScript que utiliza o objeto
+        <i>Relantionship</i>. <p>As ações podem ser de iniciar ("start") ou
+        parar ("stop") uma Mídia ou Reconhecedor. Já as
         condições podem ser simples ou compostas.  As condições simples em um
-        objeto <em>Relantionship</em> podem ser de início ("onBegin") ou fim
+        objeto <i>Relantionship</i> podem ser de início ("onBegin") ou fim
         ("onEnd") de uma mídia ou de sua âncora, seleção de mídia pelo usuário
         ("onSelection") ou reconhecimento de uma interação multimodal
         ("onRecognition").<p>
 
         <p>O relacionamento entre condições e ações é definido pelo parametro de
-        criação do objeto <em>Relantionship</em>. Por exemplo, um uma parametro
-        <em>onBeginStar</em> define uma condição "onBegin" e ações de "start".
-        Já um connector <em>onSelectionStopStart</em>define uma condição
+        criação do objeto <i>Relantionship</i>. Por exemplo, um uma parametro
+        <i>onBeginStar</i> define uma condição "onBegin" e ações de "start".
+        Já um connector <i>onSelectionStopStart</i>define uma condição
         "onSelection" e ações de "stop" e "start". A associação de elementos
-        <em>&ltmedia></em> ou <em>&ltinput></em> o <em>&ltlink></em> esta
-        interessado é definida pelo método <em>bind</em> de objeto
-        <em>Relantionship</em>.</p>
+        <i>&ltmedia></i> ou <i>&ltinput></i> o <i>&ltlink></i> esta
+        interessado é definida pelo método <i>bind</i> de objeto
+        <i>Relantionship</i>.</p>
 
         <p>Para ilustrar o uso desses conceitos, o trecho de código a seguir
         define uma aplicação que apresenta um vídeo e um ícone durante os
         créditos do vídeo. Se o usuário selecionar o ícone, o vídeo é
-        reiniciado. Ele utiliza um <em>img</em>, um <em>video</em> e um
-        <em>script</em> que define três objetos <em>Relantionship</em>. O
-        primeiro <em>Relantionship</em> define que o elemento
-        <em>midia_principal</em> inicia com a aplicação. O segundo
-        <em>Relantionship</em> define que quando o <em>video_principal</em>
-        alcançar o seu trecho de créditos, a imagem <em>icone_repetir</em> é
-        iniciada. O <em>Relantionship</em> terceiro define que quando
-        <em>icone_repetir</em> for selecionado, o <em>video_principal</em> será
-        reiniciado (<em>stop</em> e <em>start</em>).</p>
+        reiniciado. Ele utiliza um <i>img</i>, um <i>video</i> e um
+        <i>script</i> que define três objetos <i>Relantionship</i>. O
+        primeiro <i>Relantionship</i> define que o elemento
+        <i>midia_principal</i> inicia com a aplicação. O segundo
+        <i>Relantionship</i> define que quando o <i>video_principal</i>
+        alcançar o seu trecho de créditos, a imagem <i>icone_repetir</i> é
+        iniciada. O <i>Relantionship</i> terceiro define que quando
+        <i>icone_repetir</i> for selecionado, o <i>video_principal</i> será
+        reiniciado (<i>stop</i> e <i>start</i>).</p>
 
         <div id='htmlIntro1CodeB'></div>
         </div>
@@ -2500,33 +2502,33 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         outras modalidades de conteúdo, interações por voz. </p>
 
         <p>Os trechos de código a seguir ilustram o uso de sintetização de voz
-        em nossa HTML. O primeiro apresenta o arquivo <em>sinte_voz.ssml</em>
+        em nossa HTML. O primeiro apresenta o arquivo <i>sinte_voz.ssml</i>
         que segue o formato SSML (Speech Synthesis Markup Language) para
         sintetização de voz. Ele possui uma frase com o identificador "pergunta"
         que sintetizada "você deseja repetir o vídeo?". O segundo define uma
-        <em>&ltmedia></em> com identificador <em>sinte_voz</em>, que tem como
-        conteúdo o arquivo <em>sinte_voz.ssml</em>. Essa <em>&ltmedia></em>
+        <i>&ltmedia></i> com identificador <i>sinte_voz</i>, que tem como
+        conteúdo o arquivo <i>sinte_voz.ssml</i>. Essa <i>&ltmedia></i>
         possui uma âncora que indica a frase a ser sintetizada.</p>
 
         <div id='htmlIntro2CodeA'></div>
         <div id='htmlIntro2CodeB'></div>
 
-        <p>O conceito de <em>Reconhecedor</em> é definido por <strong>um
+        <p>O conceito de Reconhecedor é definido por <strong>um
         identificador, seu conteúdo e âncoras</strong>. Na nossa HTML, ele é
-        implementado pelo elemento <em>&ltobject></em>. O identificador é
-        definido pelo atributo <em>id</em> e a descrição de reconhecimento é
-        definida pelo atributo <em>src</em>. As âncoras são definidas pelo
-        elemento <em>area</em> e podem definir trechos delimitados da descrição
-        com o atributo <em>label</em>.</p>
+        implementado pelo elemento <i>&ltobject></i>. O identificador é
+        definido pelo atributo <i>id</i> e a descrição de reconhecimento é
+        definida pelo atributo <i>src</i>. As âncoras são definidas pelo
+        elemento <i>area</i> e podem definir trechos delimitados da descrição
+        com o atributo <i>label</i>.</p>
 
-        <p>Para ilustrar o uso de <em>Reconhecedor</em>, os trechos de código a
+        <p>Para ilustrar o uso de Reconhecedor, os trechos de código a
         seguir ilustram o uso de sintetização de voz em nossa HTML. O primeiro
-        trecho ilustra o arquivo <em>rec_voz.srgs</em> que segue o formato SRGS
+        trecho ilustra o arquivo <i>rec_voz.srgs</i> que segue o formato SRGS
         (Speech Recognition Grammar Specification) reconhecimento de voz. Ele
-        possui uma frase com o identificador <em>repete</em> que define o
+        possui uma frase com o identificador <i>repete</i> que define o
         reconhecimento de voz "repita vídeo". O segundo define um
-        <em>&ltobject></em> com identificador <em>rec_voz</em>, que tem como
-        conteúdo o arquivo <em>rec_voz.srgs</em>. Esse <em>&ltobject></em>
+        <i>&ltobject></i> com identificador <i>rec_voz</i>, que tem como
+        conteúdo o arquivo <i>rec_voz.srgs</i>. Esse <i>&ltobject></i>
         possui uma âncora que indica a frase a ser reconhecida.</p>
 
         <div id='htmlIntro2CodeC'></div>
@@ -2536,18 +2538,18 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         apresenta uma nova versão da aplicação (modificações em destaque) que
         reinicia um vídeo dada uma interação por seleção. Nessa versão, ao invés
         de selecionar, o vídeo é reiniciado ao usuário falar "repita vídeo". A
-        primeira diferença esta no uso dos elementos <em>sinte_voz</em> e
-        <em>rec_voz</em> para interação por voz, que os arquivos
-        <em>sinte_voz.srgs</em> e <em>rec_voz.srgs</em> (apresentados
+        primeira diferença esta no uso dos elementos <i>sinte_voz</i> e
+        <i>rec_voz</i> para interação por voz, que os arquivos
+        <i>sinte_voz.srgs</i> e <i>rec_voz.srgs</i> (apresentados
         acima).</p>
 
-        <p>Dois objetos <em>Relantionship</em> do elemento <em>&ltscript></em>
-        foram modificados. O primeiro <em>Relantionship</em> modificado define
-        que quando o <em>video_principal</em> alcançar a sua porção de
-        <em>creditos</em> (300s), a frase da âncora <em>pergunta</em> é
-        sintetizada e o reconhecedor <em>rec</em> inicia seu reconhecimento. O
-        segundo <em>Relantionship</em> modificado define que quando for
-        reconhecida a âncora <em>repete</em>, a <em>midia_principal</em> seja
+        <p>Dois objetos <i>Relantionship</i> do elemento <i>&ltscript></i>
+        foram modificados. O primeiro <i>Relantionship</i> modificado define
+        que quando o <i>video_principal</i> alcançar a sua porção de
+        <i>creditos</i> (300s), a frase da âncora <i>pergunta</i> é
+        sintetizada e o reconhecedor <i>rec</i> inicia seu reconhecimento. O
+        segundo <i>Relantionship</i> modificado define que quando for
+        reconhecida a âncora <i>repete</i>, a <i>midia_principal</i> seja
         reiniciada (terminada e iniciada).</p>
 
         <div id='htmlIntro2CodeE'></div>
@@ -2719,9 +2721,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         realizadas por diferentes modalidades. </p>
         
         <p> O trecho de código a seguir ilustra o arquivo
-        <em>rec_gestos.gml</em> que segue o formato GML (Gesture Markup
+        <i>rec_gestos.gml</i> que segue o formato GML (Gesture Markup
         Language) para reconhecimento de gestos de mão. Ele possui dois gestos
-        com os identificadores <em>swipe_esquerda</em> e <em>swipe_direita</em>,
+        com os identificadores <i>swipe_esquerda</i> e <i>swipe_direita</i>,
         que definem gestos de mão para esquerda e para direita,
         respectivamente.</p>
 
@@ -2730,7 +2732,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <p>Em nossa HTML, a combinação de modalidades de interação pode ser
         feita utilizando uma condição composta. Essas condições compostas
-        condições são definidas por um objeto <em>Relantionship</em> utilizando
+        condições são definidas por um objeto <i>Relantionship</i> utilizando
         um dos seguintes operadores: 'OR' quando apenas uma das condições é
         necessária; 'AND' quando todas as condições são necessárias em qualquer
         ordem; e 'SEQ' quando todas as condições são necessárias e na sequência
@@ -2816,7 +2818,7 @@ _data.surveyJSON.pages[pageIndex].elements.push(
         (copiado  a seguir) para que seja possível a interação por voz
         <strong>ou</strong> (operador OR) interação por gestos. Na interação por
         gesto, você pode referenciar o arquivo de descrição
-        <em>rec_gestos.gml</em> apresentado nesta seção e considere que gesto de
+        <i>rec_gestos.gml</i> apresentado nesta seção e considere que gesto de
         mão para esquerda indica centro e gesto de mão para direita indica
         praia.
       `
@@ -2836,25 +2838,25 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p> conceito de <em>Grupo de Usuários</em> é definido <strong>por um
+        <p> conceito de Grupo de Usuários é definido <strong>por um
         identificador, número máximo de participantes e quais dispositivos estes
         utilizam</strong>. Na nossa HTML, ele é implementado por elemento
-        JavaScript que utilize um objeto <em>&ltUserGroup></em>. Para essa
+        JavaScript que utilize um objeto <i>&ltUserGroup></i>. Para essa
         descrição propomos usar um descrição no formato SPARQL. Essa descrição é
-        utilizada como parâmetro na criação do objeto <em>&ltUserGroup></em>. O
+        utilizada como parâmetro na criação do objeto <i>&ltUserGroup></i>. O
         trecho de código a seguir apresenta o arquivo de descrição de usuários
-        <em>gu_leap_microphone.sparql</em>. Essa descrição define que cada
+        <i>gu_leap_microphone.sparql</i>. Essa descrição define que cada
         usuário do grupo deve ter um microfone e um leapmotion.</p>
 
         <div id='htmlIntro4CodeA'></div><br>
 
-        <p>Para ilustrar o uso de um <em>Grupo de Usuários</em> em HTML, o
+        <p>Para ilustrar o uso de um Grupo de Usuários em HTML, o
         trecho de código a seguir apresenta uma nova versão da aplicação que
         reinicia um vídeo dada uma interação por voz (modificações em destaque).
         Nessa versão, o vídeo será reiniciado apenas quando segundo usuário
         falar "repita vídeo". Esse grupo é definido com um maximo de 2 ususários
         e com os dispositivos descritos no arquivo
-        <em>gu_leap_microphone.sparql</em> (apresentado acima).</p>
+        <i>gu_leap_microphone.sparql</i> (apresentado acima).</p>
 
         <div id='htmlIntro4CodeB'></div>
         </div>
@@ -2957,7 +2959,7 @@ _data.surveyJSON.pages.push({
         <div style="text-align: justify; width: 70%;">
         <p>Por favor, opine sobre os pontos a seguir. Eles visam capturar
         evidências de como os conceitos apresentados na seção anterior
-        (<em>Mídia, Reconhecedor, Relacionamento</em> e <em>Grupo de Usuários</em>)
+        >Mídia, Reconhecedor, Relacionameni> e Grupo de Usuários)
         estão instanciados na HTML para suportar interações multimodais.</p>
         </div>
       `
