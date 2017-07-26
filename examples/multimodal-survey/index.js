@@ -86,9 +86,9 @@ $('#surveyPageNo').change(function () {
 })
 
 // $('#surveyPageNo').val(1).change()
-// $('#surveyPageNo').val(3).change()
+$('#surveyPageNo').val(3).change()
 // $('#surveyPageNo').val(5).change()
-$('#surveyPageNo').val(7).change()
+// $('#surveyPageNo').val(7).change()
 
 // ----------------------------------------
 // survey listeners
@@ -144,7 +144,7 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro2B',
         NCLBlocks.calcHt(1, 110), _data.conceptsIntro2BlocksB, true)
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro2C',
-        NCLBlocks.calcHt(4, 110), _data.conceptsIntro2BlocksC, true)
+        NCLBlocks.calcHt(3, 130), _data.conceptsIntro2BlocksC, true)
       break
     case 'conceptsIntro3':
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro3A',
@@ -160,7 +160,7 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       break
     case 'conceptsTask1':
       NCLBlocks.injectInDiv(_pathToBlockly, questionId,
-        NCLBlocks.calcHt(5, 145), _data.blocksTask1Xml, true)
+        NCLBlocks.calcHt(4, 135), _data.blocksTask1Xml, true)
       break
     case 'conceptsTask2':
       NCLBlocks.injectInDiv(_pathToBlockly, questionId,
