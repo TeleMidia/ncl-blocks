@@ -50,14 +50,25 @@ function uuidv4 () {
   })
 }
 var _userId = uuidv4()
+var _postId = '51d57b85-3813-4a08-801b-4b7e077c1660'
+var _trySend = 3
 
-console.log(_userId)
-
-function sendDataToServer (survey) {
-  survey.sendResult('51d57b85-3813-4a08-801b-4b7e077c1660', _userId)
+function onSendResult (survey, options) {
+  if (!options.success && _trySend-- > 0) {
+    setInterval(function () {
+      console.log('sendResult try again')
+      survey.sendResult(_postId, _userId)
+    }, 2000)
+  }
 }
+function onComplete (survey) {
+  console.log('onComplete')
+  survey.sendResult(_postId, _userId)
+}
+
 function onPartialSend (survey) {
-  survey.sendResult('51d57b85-3813-4a08-801b-4b7e077c1660', _userId)
+  console.log('onPartialSend')
+  survey.sendResult(_postId, _userId)
 }
 
 $('#surveyContainer').Survey({
@@ -67,7 +78,8 @@ $('#surveyContainer').Survey({
   onCurrentPageChanged: onCurrentPageChanged,
   onAfterRenderQuestion: onRenderQuestion,
   onPartialSend: onPartialSend,
-  onComplete: sendDataToServer
+  onComplete: onComplete,
+  onSendResult: onSendResult
 })
 
 // ----------------------------------------
