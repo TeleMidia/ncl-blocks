@@ -75,7 +75,6 @@ $('#surveyContainer').Survey({
   model: _survey,
   css: _surveyCss,
   onServerValidateQuestions: onValidateQuestions,
-  onCurrentPageChanged: onCurrentPageChanged,
   onAfterRenderQuestion: onRenderQuestion,
   onPartialSend: onPartialSend,
   onComplete: onComplete,
@@ -151,10 +150,6 @@ function onValidateQuestions (survey, options) {
     }
   }
   options.complete()
-}
-
-function onCurrentPageChanged (targetSurvey, data) {
-  window.scrollTo(0, 0)
 }
 
 function onRenderQuestion (targetSurvey, questionAndHtml) {
