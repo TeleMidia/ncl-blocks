@@ -61,8 +61,16 @@ function onSendResult (survey, options) {
     }, 2000)
   }
 }
+
+function onAfterRenderSurvey (survey) {
+  survey.getQuestionByName('timeBegin').value = new Date()
+  console.log(survey.getQuestionByName('timeBegin').value)
+}
+
 function onComplete (survey) {
   console.log('onComplete')
+  survey.getQuestionByName('timeEnd').value = new Date()
+  console.log(survey.getQuestionByName('timeEnd').value)
   survey.sendResult(_postId, _userId)
 }
 
@@ -76,6 +84,7 @@ $('#surveyContainer').Survey({
   css: _surveyCss,
   onServerValidateQuestions: onValidateQuestions,
   onAfterRenderQuestion: onRenderQuestion,
+  onAfterRenderSurvey: onAfterRenderSurvey,
   onPartialSend: onPartialSend,
   onComplete: onComplete,
   onSendResult: onSendResult

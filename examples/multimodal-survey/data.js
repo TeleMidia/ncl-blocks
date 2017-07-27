@@ -161,6 +161,16 @@ _data.surveyJSON.pages.push({
   elements: [
     {
       type: 'text',
+      visible: false,
+      name: 'timeBegin'
+    },
+    {
+      type: 'text',
+      visible: false,
+      name: 'timeEnd'
+    },
+    {
+      type: 'text',
       isRequired: true,
       name: 'profileName',
       title: 'Qual seu nome?'
