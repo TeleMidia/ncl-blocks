@@ -356,10 +356,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         um bloco de Relacionamento com blocos de Condições e blocos de Ações.
         Blocos de Ações podem ser de iniciar ("inicie") ou parar ("pare") a
         execução de uma Mídia ou Reconhecedor. Já as condições podem ser simples
-        ou compostas. Blocos de Condições simples podem ser de início ("ao
-        começar") ou fim ("ao terminar") de uma mídia ou de sua âncora, seleção
-        de mídia pelo usuário ("ao selecionar") ou reconhecimento de uma
-        interação multimodal ("ao reconhecer")</p>
+        ou compostas. Blocos de Condições simples podem ser de início ("for
+        iniciado") ou fim ("for terminado") de uma mídia ou de sua âncora,
+        seleção de mídia pelo usuário ("for selecionado") ou reconhecimento de
+        uma interação multimodal ("for reconhecido")</p>
 
         <p>Para ilustrar o uso desses conceitos, os blocos a seguir definem uma
         aplicação que apresenta um vídeo e um ícone, durante os créditos desse
