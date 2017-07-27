@@ -475,8 +475,7 @@ _data.surveyJSON.pages[pageIndex].elements.push(
       {
         type: 'html',
         name: 'conceptsTask1',
-        html: `Tarefa 1.1: Por favor, analise com atenção os blocos a
-          seguir.<br>`
+        html: `Por favor, analise com atenção os blocos a seguir.<br>`
       },
       {
         type: 'comment',
@@ -791,8 +790,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
     {
       type: 'html',
       name: 'conceptsTask2',
-      html: `Tarefa 1.2: Os blocos a seguir são uma versão modificada da Tarefa
-      1.1. Por favor, analise com atenção. <br><br>`
+      html: `Os blocos a seguir são uma versão modificada da Tarefa 1.1. Por
+      favor, analise com atenção. <br><br>`
     },
     {
       type: 'comment',
@@ -1110,7 +1109,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'conceptsTask3',
       html: ` 
         <div style="text-align: justify; width: 70%;">
-        Tarefa 1.3: Agora pedimos que edite os blocos da Tarefa 1.2 (copiados a
+        Agora pedimos que edite os blocos da Tarefa 1.2 (copiados a
         seguir) para que seja possível a interação por voz <strong>ou</strong>
         (operador OR) interação por gestos. Na interação por gesto, considere
         que o gesto de deslizar mão para esquerda indica centro e gesto de
@@ -1278,9 +1277,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'conceptsTask4',
       html: `
       <div style="text-align: justify; width: 70%;"> 
-      Tarefa 1.4: Agora pedimos que edite novamente os blocos da Tarefa 1.2
-      (copiados a seguir) para que apenas o segundo usuário, de um grupo de 3
-      usuários com microfone, possa realizar a interação por voz.<br><br>
+      Agora pedimos que edite novamente os blocos da Tarefa 1.2 (copiados a
+      seguir) para que apenas o segundo usuário, de um grupo de 3 usuários com
+      microfone, possa realizar a interação por voz.<br><br>
       <div>
     `
     },
@@ -1572,8 +1571,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'nclTask1',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Tarefa 2.1: Por favor, analise com atenção o trecho de código NCL a
-        seguir.</p>
+        <p>Por favor, analise com atenção o trecho de código NCL a seguir.</p>
         <div id='nclTask1Code'></div>
         </div>
       `
@@ -1811,8 +1809,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'nclTask2',
       html: `
       <div style="text-align: justify; width: 70%;">
-      Tarefa 2: Considere as descrições sinte_voz_videos.ssml e
-      rec_voz_videos.srgs a seguir.<br><br>
+      Considere as descrições sinte_voz_videos.ssml e rec_voz_videos.srgs a
+      seguir.<br><br>
 
       <div id='nclTask2CodeA'></div>
       <div id='nclTask2CodeB'></div>
@@ -2042,7 +2040,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       isRequired: true,
       name: 'nclTask3Question',
       rows: '47',
-      title: `Tarefa 2.3: Agora pedimos que edite o código NCL da Tarefa 2.2
+      title: `Agora pedimos que edite o código NCL da Tarefa 2.2
       (copiado a seguir) para que seja possível a interação por voz
       <strong>ou</strong> (operador OR) interação por gestos. Na interação por
       gesto,você pode referenciar o arquivo de descrição <i>rec_gestos.gml</i>
@@ -2163,7 +2161,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'comment',
       name: 'nclTask4Question',
       rows: '47',
-      title: 'Tarefa 2.4: Agora pedimos que edite novamente o trecho de código NCL da Tarefa 2.2 (copiado a seguir) para que apenas o segundo usuário, de um grupo de 3 usuários com microfone, possa realizar a interação por voz.'
+      title: 'Agora pedimos que edite novamente o trecho de código NCL da Tarefa 2.2 (copiado a seguir) para que apenas o segundo usuário, de um grupo de 3 usuários com microfone, possa realizar a interação por voz.'
     }
   ]
 })
@@ -2456,8 +2454,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'htmlTask1',
       html: `
       <div style="text-align: justify; width: 70%;">
-      <p>Tarefa 2.1: Por favor, analise com atenção o trecho de código HTML a
-      seguir.</p>
+      <p>Por favor, analise com atenção o trecho de código HTML a seguir.</p>
       <div id='htmlTask1CodeA'></div>
       </div>
     `
@@ -2669,8 +2666,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'htmlTask2',
       html: `
       <div style="text-align: justify; width: 70%;">
-      Tarefa 2: Considere as descrições sinte_voz.ssml e rec_voz.srgs,
-      respectivamente, a seguir.<br><br>
+      Considere as descrições sinte_voz.ssml e rec_voz.srgs, respectivamente, a
+      seguir.<br><br>
 
       <div id='htmlTask2CodeA'></div>
       <div id='htmlTask2CodeB'></div>
@@ -2859,7 +2856,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'comment',
       name: 'htmlTask3Question',
       rows: '47',
-      title: `Tarefa 2.3: Agora pedimos que edite o código HTML da Tarefa 2.2
+      title: `Agora pedimos que edite o código HTML da Tarefa 2.2
         (copiado a seguir) para que seja possível a interação por voz
         <strong>ou</strong> (operador OR) interação por gestos. Na interação por
         gesto, você pode referenciar o arquivo de descrição
@@ -2987,7 +2984,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'comment',
       name: 'htmlTask4Question',
       rows: '47',
-      title: 'Tarefa 2.4: Agora pedimos que edite novamente o trecho de código HTML da Tarefa 2.2 (copiado a seguir) para que apenas o segundo usuário,de um grupo de 3 usuários com microfone, possa realizar a interação por voz.'
+      title: 'Agora pedimos que edite novamente o trecho de código HTML da Tarefa 2.2 (copiado a seguir) para que apenas o segundo usuário,de um grupo de 3 usuários com microfone, possa realizar a interação por voz.'
     }]
 })
 
