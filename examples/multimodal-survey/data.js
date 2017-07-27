@@ -24,10 +24,10 @@ var _agreeChoices = [
   'Concordo fortemente'
 ]
 
-// var _switchRuleNCL = '{profileNCL1} >= {profileHTML1}'
-var _switchRuleNCL = ''
-// var _switchRuleHTML = '{profileHTML1} > {profileNCL1}'
-var _switchRuleHTML = ''
+var _switchRuleNCL = '{profileNCL1} >= {profileHTML1}'
+// var _switchRuleNCL = ''
+var _switchRuleHTML = '{profileHTML1} > {profileNCL1}'
+// var _switchRuleHTML = ''
 
 // ----------------------------------------
 // termo page
@@ -135,10 +135,10 @@ _data.surveyJSON.pages.push({
         frames), e apontador e tecla para capturar interações dos usuários.</p>
 
         <div class='text-center'>
-          <img class='img-thumbnail' style='height: 400px'
+          <img class='img-thumbnail' style='height: 380px'
           src='assets/overview1.png'>
-          <span style="margin-left:10px"></span>
-          <img class='img-thumbnail' style='height: 400px'
+          <span style="margin-left:5px"></span>
+          <img class='img-thumbnail' style='height: 380px'
           src='assets/overview2.png'>
         </div>
         <br>
