@@ -959,7 +959,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Os blocos a seguir definem uma nova versão da aplicação da parte
         Conceitos 1.2 que reinicia um vídeo dada uma interação por voz. Nessa
         versão falar "repita vídeo" ou (operador 'OR') fazer quando gesto de
-        deslizar mão para esquerda.</p>
+        deslizar a mão para esquerda.</p>
         </div>
 
         <div id='conceptsIntro3B'></div><br>
@@ -1108,11 +1108,11 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'conceptsTask3',
       html: ` 
         <div style="text-align: justify; width: 70%;">
-        Agora pedimos que edite os blocos da Tarefa 1.2 (copiados a
+        Agora pedimos que você edite os blocos da Tarefa 1.2 (copiados a
         seguir) para que seja possível a interação por voz <strong>ou</strong>
         (operador OR) interação por gestos. Na interação por gesto, considere
-        que o gesto de deslizar mão para esquerda indica centro e gesto de
-        deslizar mão para direita indica praia.<br><br>
+        que o gesto de deslizar a mão para esquerda indica centro e gesto de
+        deslizar a mão para direita indica praia.<br><br>
         <div>
       `
     },
@@ -1165,7 +1165,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         da aplicação da parte Conceitos 1.2 que reinicia um vídeo dada uma
         interação por voz. Nessa versão o vídeo será reiniciado apenas quando o
         segundo usuário de um grupo falar "repita vídeo". Esse grupo é definido
-        com um maximo de 2 ususários com microfone.</p>
+        com um máximo de 2 usuários com microfone.</p>
         </div>
 
         <div id='conceptsIntro4B'></div>
@@ -1277,7 +1277,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'conceptsTask4',
       html: `
       <div style="text-align: justify; width: 70%;"> 
-      Agora pedimos que edite novamente os blocos da Tarefa 1.2 (copiados a
+      Agora pedimos que você edite novamente os blocos da Tarefa 1.2 (copiados a
       seguir) para que apenas o segundo usuário, de um grupo de 3 usuários com
       microfone, possa realizar a interação por voz.<br><br>
       <div>
@@ -1681,8 +1681,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         elemento <i>area</i> e podem definir trechos delimitados da descrição
         com o atributo <i>label</i>.</p>
 
-        <p>Para ilustrar o uso de Reconhecedor, os trechos de código a seguir
-        ilustram o uso de sintetização de voz na NCL estendida. O primeiro
+        <p>Para ilustrar o uso de um Reconhecedor, os trechos de código a seguir
+        ilustram o uso de reconhecimento de voz na NCL estendida. O primeiro
         trecho ilustra o arquivo <i>rec_voz.srgs</i> que segue o formato SRGS
         (Speech Recognition Grammar Specification) reconhecimento de voz. Ele
         possui uma frase com o identificador <i>repete</i> que define o
@@ -1697,20 +1697,20 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Para ilustrar o uso de interação por voz, o trecho de código a seguir
         apresenta uma nova versão (modificações em destaque) da aplicação da
         parte Conceitos 2.1 que reinicia um vídeo dada uma interação por
-        seleção. Nessa versão, em vez de selecionar o ícode, o vídeo é
+        seleção. Nessa versão, em vez de selecionar o ícone, o vídeo é
         reiniciado quando usuário falar "repita vídeo". A primeira diferença
-        diferença esta no uso dos elementos <i>sinte_voz</i> e <i>rec_voz</i>
-        para interação por voz, que os arquivos <i>sinte_voz.srgs</i> e
+        está no uso dos elementos <i>sinte_voz</i> e <i>rec_voz</i> para
+        interação por voz, que utilizam os arquivos <i>sinte_voz.srgs</i> e
         <i>rec_voz.srgs</i> (apresentados acima).</p>
 
-        <p>Dois elementos <i>&ltlink></i> foram modificados. O primeiro
-        <i>&ltlink></i> modificado define que  quando o
-        <i>video_principal</i> alcançar a sua porção <i>creditos</i> (300s),
-        a frase da âncora <i>pergunta</i> é sintetizada e o reconhecedor
-        <i>rec_voz</i> inicia seu reconhecimento. Já o segundo
-        <i>&ltlink></i> modificado define que quando for reconhecida a âncora
-        <i>repete</i>, a <i>midia_principal</i> seja reiniciada (terminada e
-        iniciada).</p>
+        <p>Dois elementos <i>&ltlink></i> também foram modificados. O primeiro
+        <i>&ltlink></i> modificado define que quando o <i>video_principal</i>
+        alcançar o trecho de <i>creditos</i> (300s), a frase da âncora
+        <i>pergunta</i> é sintetizada e o reconhecedor <i>rec_voz</i> é ativado
+        (a partir desse momento, ele poderá reconhecer interações de voz). Já o
+        segundo <i>&ltlink></i> modificado define que quando for reconhecida a
+        âncora <i>repete</i>, a <i>midia_principal</i> será reiniciada
+        (terminada e iniciada).</p>
 
         <div id='nclIntro2CodeE'></div>
 
@@ -1923,9 +1923,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'nclIntro3',
       type: 'html',
       html: `
-        <div style="text-align: justify; width: 70%;"> <p>Um dos principais
-        benefícios de interfaces multimodais é permitiro interações dos usuários
-        podem ser realizadas por diferentes modalidades.</p>
+        <div style="text-align: justify; width: 70%;"> 
+        <p>Um dos principais benefícios de interfaces multimodais é permitir que
+        as interações dos usuários possam ser realizadas por diferentes
+        modalidades.</p>
         
         <p>O trecho de código a seguir ilustra o arquivo <i>rec_gestos.gml</i>
         que segue o formato GML (Gesture Markup Language) para reconhecimento de
@@ -1936,17 +1937,18 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div id='nclIntro3CodeA'></div>
         <div id='nclIntro3CodeB'></div><br>
         
-        <p> na NCL estendida, a combinação de modalidades de interação pode ser
+        <p>Na NCL estendida, a combinação de modalidades de interação pode ser
         defiida utilizando uma condição composta. Uma condição composta em um
         <i>&ltlink></i> combina condições simples utilizando um dos seguintes
         operadores: 'OR' quando apenas uma das condições é necessária; 'AND'
         quando todas condições são necessárias em qualquer ordem; e 'SEQ' quando
-        todas as condições são necessárias e na sequência estabelecida.</p>
+        todas as condições são necessárias e devem acontecer na sequência
+        estabelecida.</p>
         
         <p>Para ilustrar o uso de combinação de modalidades, o trecho de código
         a seguir apresenta uma uma nova versão (modificações em destaque) da
         aplicação da parte Conceitos 2.2 que reinicia um vídeo dada uma
-        interação por voz. Nessa versão o vídeo é reiniciado quando usuário
+        interação por voz. Nessa versão, o vídeo é reiniciado quando usuário
         falar "repita vídeo" ou (operador 'OR') fazer quando gesto de deslizar
         mão para esquerda.</p>
         
@@ -2039,13 +2041,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       isRequired: true,
       name: 'nclTask3Question',
       rows: '47',
-      title: `Agora pedimos que edite o código NCL da Tarefa 2.2
-      (copiado a seguir) para que seja possível a interação por voz
-      <strong>ou</strong> (operador OR) interação por gestos. Na interação por
-      gesto,você pode referenciar o arquivo de descrição <i>rec_gestos.gml</i>
-      apresentado nesta seção e considere que gesto de mão para esquerda indica
-      centro e gesto de deslizar mão para direita indica praia.
-    `
+      title: ' Agora pedimos que você edite o código NCL da Tarefa 2.2 (copiado a seguir) para que seja possível a interação por voz <strong>ou</strong> (operador OR) interação por gestos. Na interação por gesto, você pode referenciar o arquivo de descrição <i>rec_gestos.gml</i>, apresentado em Conceitos 2.3, e considere que gesto de deslizar a mão para esquerda indica centro e gesto de deslizar a mão para direita indica praia.'
     }
   ]
 })
@@ -2062,17 +2058,16 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'nclIntro4',
       type: 'html',
       html: `
-        <div style="text-align: justify; width: 70%;">
-        <p>O conceito de Grupo de Usuários é definido <strong>por um
-        identificador, número máximo de participantes e quais dispositivos estes
-        utilizam</strong>. Na NCL, ele é implementado pelo elemento
-        <i>&ltuserClass></i> dentro do <i>&lthead></i>. O identificador é
-        definido pelo atributo <i>id</i> e os dispositivos são definidos por
-        um arquivo de descrição definido em <i>src</i>. Para essa descrição
-        propomos um descrição no formato SPARQL. O trecho de código a seguir
-        apresenta o arquivo de descrição de usuários
-        <i>gu_leap_microphone.sparql</i>. Essa descrição define que cada
-        usuário do grupo deve ter um microfone e um leapmotion.</p>
+        <div style="text-align: justify; width: 70%;"> <p>O conceito de Grupo de
+        Usuários é definido <strong>por um identificador, número máximo de
+        participantes e quais dispositivos estes utilizam</strong>. Na NCL, o
+        Grupo de Usuários é implementado pelo elemento <i>&ltuserClass></i>,
+        filho do elemento <i>&lthead></i>. O identificador é definido pelo
+        atributo <i>id</i> e os dispositivos são definidos por um arquivo de
+        descrição no formato SPARQL. O trecho de código a seguir apresenta o
+        arquivo de descrição de usuários <i>gu_leap_microphone.sparql</i>. Essa
+        descrição define que cada usuário do grupo deve ter um microfone e um
+        lLeapMotion.</p>
 
         <div id='nclIntro4CodeA'></div><br>
 
@@ -2081,7 +2076,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         aplicação da parte Conceitos 2.2 que reinicia um vídeo dada uma
         interação por voz. Nessa versão, o vídeo será reiniciado apenas quando
         segundo usuário falar "repita vídeo". Esse grupo é definido com um
-        maximo de 2 ususários e com os dispositivos descritos no arquivo
+        máximo de 2 usuários e com os dispositivos descritos no arquivo
         <i>gu_leap_microphone.sparql</i> (apresentado acima).</p>
 
         <div id='nclIntro4CodeB'></div>
@@ -2159,7 +2154,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'comment',
       name: 'nclTask4Question',
       rows: '47',
-      title: 'Agora pedimos que edite novamente o trecho de código NCL da Tarefa 2.2 (copiado a seguir) para que apenas o segundo usuário, de um grupo de 3 usuários com microfone, possa realizar a interação por voz.'
+      title: 'Agora pedimos que você edite novamente o trecho de código NCL da Tarefa 2.2 (copiado a seguir) para que apenas o segundo usuário, de um grupo de 3 usuários com microfone, possa realizar a interação por voz.'
     }
   ]
 })
@@ -2554,8 +2549,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         elemento <i>area</i> e podem definir trechos delimitados da descrição
         com o atributo <i>label</i>.</p>
 
-        <p>Para ilustrar o uso de Reconhecedor, os trechos de código a seguir
-        ilustram o uso de sintetização de voz na HTML estendida. O primeiro
+        <p>Para ilustrar o uso de um Reconhecedor, os trechos de código a seguir
+        ilustram o uso de reconhecimento de voz na HTML estendida. O primeiro
         trecho ilustra o arquivo <i>rec_voz.srgs</i> que segue o formato SRGS
         (Speech Recognition Grammar Specification) reconhecimento de voz. Ele
         possui uma frase com o identificador <i>repete</i> que define o
@@ -2572,18 +2567,18 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         parte Conceitos 2.1 que reinicia um vídeo dada uma interação por
         seleção. Nessa versão, em vez de selecionar o ícone, o vídeo é
         reiniciado quando usuário falar "repita vídeo". A primeira diferença
-        esta no uso dos elementos <i>sinte_voz</i> e <i>rec_voz</i> para
-        interação por voz, que os arquivos <i>sinte_voz.srgs</i> e
+        está no uso dos elementos <i>sinte_voz</i> e <i>rec_voz</i> para
+        interação por voz, que utilizam os arquivos <i>sinte_voz.srgs</i> e
         <i>rec_voz.srgs</i> (apresentados acima).</p>
 
-        <p>Dois objetos <i>Relationship</i> do elemento <i>&ltscript></i>
-        foram modificados. O primeiro <i>Relationship</i> modificado define
-        que quando o <i>video_principal</i> alcançar a sua porção de
-        <i>creditos</i> (300s), a frase da âncora <i>pergunta</i> é
-        sintetizada e o reconhecedor <i>rec</i> inicia seu reconhecimento. O
-        segundo <i>Relationship</i> modificado define que quando for
-        reconhecida a âncora <i>repete</i>, a <i>midia_principal</i> seja
-        reiniciada (terminada e iniciada).</p>
+        <p>Dois objetos <i>Relationship</i> do elemento <i>&ltscript></i> também
+        foram modificados. O primeiro <i>Relationship</i> modificado define que
+        quando o <i>video_principal</i> alcançar o trecho de <i>creditos</i>
+        (300s), a frase da âncora <i>pergunta</i> é sintetizada e o reconhecedor
+        <i>rec</i> é ativado (a partir desse momento, ele poderá reconhecer
+        interações de voz). O segundo <i>Relationship</i> modificado define que
+        quando for reconhecida a âncora <i>repete</i>, a <i>midia_principal</i>
+        será reiniciada (terminada e iniciada).</p>
 
         <div id='htmlIntro2CodeE'></div>
 
@@ -2752,32 +2747,31 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>Um dos principais benefícios de interfaces multimodais é o uso
-        diferentes interações, ou seja, as interações de usuários podem ser
-        realizadas por diferentes modalidades.</p>
+        <p>Um dos principais benefícios de interfaces multimodais é permitir que
+        as interações dos usuários possam ser realizadas por diferentes
+        modalidades.</p>
         
-        <p> O trecho de código a seguir ilustra o arquivo
-        <i>rec_gestos.gml</i> que segue o formato GML (Gesture Markup
-        Language) para reconhecimento de gestos de mão. Ele possui dois gestos
-        com os identificadores <i>swipe_esquerda</i> e <i>swipe_direita</i>,
-        que definem gestos de mão para esquerda e para direita,
-        respectivamente.</p>
+        <p> O trecho de código a seguir ilustra o arquivo <i>rec_gestos.gml</i>
+        que segue o formato GML (Gesture Markup Language) para reconhecimento de
+        gestos de mão. Ele possui dois gestos com os identificadores
+        <i>swipe_esquerda</i> e <i>swipe_direita</i>, que definem gestos de mão
+        para esquerda e para direita, respectivamente.</p>
 
         <div id='htmlIntro3CodeA'></div>
         <div id='htmlIntro3CodeB'></div><br>
 
-        <p>na HTML estendida, a combinação de modalidades de interação pode ser
+        <p>Na HTML estendida, a combinação de modalidades de interação pode ser
         feita utilizando uma condição composta. Essas condições compostas
         condições são definidas por um objeto <i>Relationship</i> utilizando
         um dos seguintes operadores: 'OR' quando apenas uma das condições é
         necessária; 'AND' quando todas as condições são necessárias em qualquer
-        ordem; e 'SEQ' quando todas as condições são necessárias e na sequência
-        estabelecida.</p>
+        ordem; e 'SEQ' quando todas as condições são necessárias e devem
+        acontecer na sequência estabelecida.</p>
 
         <p>Para ilustrar o uso de combinação de modalidades, o trecho de código
         a seguir apresenta uma nova versão (modificações em destaque) da
         aplicação da parte Conceitos 2.2 que reinicia um vídeo dada uma
-        interação por voz. Nessa versão o vídeo é reiniciado quando usuário
+        interação por voz. Nessa versão, o vídeo é reiniciado quando usuário
         falar "repita vídeo" ou (operador 'OR') fazer quando gesto de deslizar
         mão para esquerda.
 
@@ -2854,14 +2848,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'comment',
       name: 'htmlTask3Question',
       rows: '47',
-      title: `Agora pedimos que edite o código HTML da Tarefa 2.2
-        (copiado a seguir) para que seja possível a interação por voz
-        <strong>ou</strong> (operador OR) interação por gestos. Na interação por
-        gesto, você pode referenciar o arquivo de descrição
-        <i>rec_gestos.gml</i> apresentado nesta seção e considere que gesto de
-        mão para esquerda indica centro e gesto de deslizar mão para direita
-        indica praia.
-      `
+      title: 'Agora pedimos que você edite o código HTML da Tarefa 2.2 (copiado a seguir) para que seja possível a interação por voz <strong>ou</strong> (operador OR) interação por gestos. Na interação por gesto, você pode referenciar o arquivo de descrição <i>rec_gestos.gml</i>, apresentado em Conceitos 2.3, e considere que gesto de deslizar a mão para esquerda indica centro e gesto de deslizar a mão para direita indica praia.'
     }
   ]
 })
@@ -2879,24 +2866,24 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p> conceito de Grupo de Usuários é definido <strong>por um
+        <p>O conceito de Grupo de Usuários é definido <strong>por um
         identificador, número máximo de participantes e quais dispositivos estes
-        utilizam</strong>. Na HTML estendida, ele é implementado por elemento
-        JavaScript que utilize um objeto <i>&ltUserGroup></i>. Para essa
-        descrição propomos usar um descrição no formato SPARQL. Essa descrição é
-        utilizada como parâmetro na criação do objeto <i>&ltUserGroup></i>. O
+        utilizam</strong>. Na HTML estendida, o Grupo de Usuários é implementado
+        por elemento JavaScript que utilize um objeto <i>&ltUserGroup></i>. Os
+        dispositivos são definidos por um arquivo de descrição no formato SPARQL
+        definido como parâmetro na criação do objeto <i>&ltUserGroup></i>. O
         trecho de código a seguir apresenta o arquivo de descrição de usuários
-        <i>gu_leap_microphone.sparql</i>. Essa descrição define que cada
-        usuário do grupo deve ter um microfone e um leapmotion.</p>
+        <i>gu_leap_microphone.sparql</i>. Essa descrição define que cada usuário
+        do grupo deve ter um microfone e um leapmotion.</p>
 
         <div id='htmlIntro4CodeA'></div><br>
 
         <p>Para ilustrar o uso de um Grupo de Usuários em HTML, o trecho de
         código a seguir apresenta uma uma nova versão (modificações em destaque)
-        da aplicação da parte Conceitos 2.1 que reinicia um vídeo dada uma
+        da aplicação da parte Conceitos 2.2 que reinicia um vídeo dada uma
         interação por voz. Nessa versão, o vídeo será reiniciado apenas quando
         segundo usuário falar "repita vídeo". Esse grupo é definido com um
-        maximo de 2 ususários e com os dispositivos descritos no arquivo
+        máximo de 2 usuários e com os dispositivos descritos no arquivo
         <i>gu_leap_microphone.sparql</i> (apresentado acima).</p>
 
         <div id='htmlIntro4CodeB'></div>
@@ -2982,7 +2969,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'comment',
       name: 'htmlTask4Question',
       rows: '47',
-      title: 'Agora pedimos que edite novamente o trecho de código HTML da Tarefa 2.2 (copiado a seguir) para que apenas o segundo usuário,de um grupo de 3 usuários com microfone, possa realizar a interação por voz.'
+      title: 'Agora pedimos que você edite novamente o trecho de código HTML da Tarefa 2.2 (copiado a seguir) para que apenas o segundo usuário,de um grupo de 3 usuários com microfone, possa realizar a interação por voz.'
     }]
 })
 

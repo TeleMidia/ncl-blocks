@@ -726,7 +726,7 @@ UserMaxFieldNumber.prototype.updateIds = function (text) {
   if (diff > 0) {
     if (userId) {
       for (i = parseInt(this.previous) + 1; i <= text; i++) {
-        this.idArray.push([userId + '.' + i, userId + '.' + i])
+        this.idArray.push([userId + '(' + i + ')', userId + '(' + i + ')'])
       }
     }
   } else {
