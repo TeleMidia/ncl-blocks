@@ -656,18 +656,17 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div style="text-align: justify; width: 70%;"> 
         <p>Para ilustrar o uso desses conceitos, os blocos a seguir definem uma
         nova versão da aplicação da parte Conceitos 1.1  reinicia um vídeo dada
-        uma interação. Mas nessa versão, ao invés de selecionar com um
-        dispostivo apontador, o vídeo é reiniciado ao usuário falar "repita
-        vídeo". Essa aplicação utiliza duas Mídia (<i>midia_principal</i> e
-        <i>sinte_voz</i>), um Reconhecedor (<i>rec_voz</i>) e três
-        Relacionamentos. O primeiro Relacionamento define que a
-        <i>midia_principal</i> é iniciada quando a aplicação iniciar. O segundo
-        Relacionamento define que quando a <i>midia_principal</i> alcançar o seu
-        trecho de <i>creditos</i> (300s), a frase da âncora <i>pergunta</i> é
-        sintetizada e o Reconhecedor <i>rec_voz</i> inicia o reconhecimento. O
-        último Relacionamento define que quando for reconhecida a âncora
-        <i>repetir</i>, a <i>midia_principal</i> deve ser reiniciada (terminada
-        e iniciada).</p> 
+        uma interação. Nessa versão, em vez de selecionar o ícone, o vídeo é
+        reiniciado quando usuário falar "quando vídeo". Essa aplicação utiliza
+        duas Mídia (<i>midia_principal</i> e <i>sinte_voz</i>), um Reconhecedor
+        (<i>rec_voz</i>) e três Relacionamentos. O primeiro Relacionamento
+        define que a <i>midia_principal</i> é iniciada quando a aplicação
+        iniciar. O segundo Relacionamento define que quando a
+        <i>midia_principal</i> alcançar o seu trecho de <i>creditos</i> (300s),
+        a frase da âncora <i>pergunta</i> é sintetizada e o Reconhecedor
+        <i>rec_voz</i> inicia o reconhecimento. O último Relacionamento define
+        que quando for reconhecida a âncora <i>repetir</i>, a
+        <i>midia_principal</i> deve ser reiniciada (terminada e iniciada).</p>
         </div>
 
         <div id='conceptsIntro2C'></div><br>
@@ -958,9 +957,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         condições são necessárias e na sequência estabelecida.</p>
 
         <p>Os blocos a seguir definem uma nova versão da aplicação da parte
-        Conceitos 1.2 que reinicia um vídeo dada uma interação. Mas nessa versão
-        a mídia <i>midia_principal</i> é repetida quando usuário interage
-        através de voz ou (operador OR) através de gesto.</p>
+        Conceitos 1.2 que reinicia um vídeo dada uma interação por voz. Nessa
+        versão falar "repita vídeo" ou (operador 'OR') fazer quando gesto de
+        deslizar mão para esquerda.</p>
         </div>
 
         <div id='conceptsIntro3B'></div><br>
@@ -1165,7 +1164,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         um Grupo de Usuários, os blocos a seguir são uma nova versão
         da aplicação da parte Conceitos 1.2 que reinicia um vídeo dada uma
         interação por voz. Nessa versão o vídeo será reiniciado apenas quando o
-        segundo usuário falar "repita vídeo".</p>
+        segundo usuário de um grupo falar "repita vídeo". Esse grupo é definido
+        com um maximo de 2 ususários com microfone.</p>
         </div>
 
         <div id='conceptsIntro4B'></div>
@@ -1665,7 +1665,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <i>sinte_voz.ssml</i> que segue o formato SSML (Speech Synthesis Markup
         Language) para sintetização de voz. Ele possui um elemento <i>&lts></i>
         com o identificador "pergunta" que sintetizada a frase: "você deseja
-        repetir o vídeo?". O segundo trecho de código define uma
+        repetir o vídeo?". O segundo trecho de código define um elemento
         <i>&ltmedia></i> com identificador <i>sinte_voz</i>, que tem como
         conteúdo o arquivo <i>sinte_voz.ssml</i>. Essa <i>&ltmedia></i> possui
         uma âncora que indica a frase a ser sintetizada.</p>
@@ -1697,11 +1697,11 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Para ilustrar o uso de interação por voz, o trecho de código a seguir
         apresenta uma nova versão (modificações em destaque) da aplicação da
         parte Conceitos 2.1 que reinicia um vídeo dada uma interação por
-        seleção. Nessa versão, ao invés de selecionar, o vídeo é reiniciado ao
-        usuário falar "repita vídeo". A primeira diferença diferença esta no uso
-        dos elementos <i>sinte_voz</i> e <i>rec_voz</i> para interação por voz,
-        que os arquivos <i>sinte_voz.srgs</i> e <i>rec_voz.srgs</i>
-        (apresentados acima).</p>
+        seleção. Nessa versão, em vez de selecionar o ícode, o vídeo é
+        reiniciado quando usuário falar "repita vídeo". A primeira diferença
+        diferença esta no uso dos elementos <i>sinte_voz</i> e <i>rec_voz</i>
+        para interação por voz, que os arquivos <i>sinte_voz.srgs</i> e
+        <i>rec_voz.srgs</i> (apresentados acima).</p>
 
         <p>Dois elementos <i>&ltlink></i> foram modificados. O primeiro
         <i>&ltlink></i> modificado define que  quando o
@@ -1946,12 +1946,11 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Para ilustrar o uso de combinação de modalidades, o trecho de código
         a seguir apresenta uma uma nova versão (modificações em destaque) da
         aplicação da parte Conceitos 2.2 que reinicia um vídeo dada uma
-        interação por voz. Nessa versão, ao invés de selecionar, o vídeo é
-        reiniciado ao usuário falar "repita vídeo" ou (operador 'OR') fazer um
-        gesto de deslizar mão para esquerda.
+        interação por voz. Nessa versão o vídeo é reiniciado quando usuário
+        falar "repita vídeo" ou (operador 'OR') fazer quando gesto de deslizar
+        mão para esquerda.</p>
         
-        <div id='nclIntro3CodeC'></div><br>
-        </div>
+        <div id='nclIntro3CodeC'></div><br> </div>
       `
     }
   ]
@@ -2083,8 +2082,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         interação por voz. Nessa versão, o vídeo será reiniciado apenas quando
         segundo usuário falar "repita vídeo". Esse grupo é definido com um
         maximo de 2 ususários e com os dispositivos descritos no arquivo
-        <i>gu_leap_microphone.sparql</i>
-        (apresentado acima).</p>
+        <i>gu_leap_microphone.sparql</i> (apresentado acima).</p>
 
         <div id='nclIntro4CodeB'></div>
         </div>
@@ -2572,11 +2570,11 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Para ilustrar o uso de interação por voz, o trecho de código a seguir
         apresenta uma nova versão (modificações em destaque) da aplicação da
         parte Conceitos 2.1 que reinicia um vídeo dada uma interação por
-        seleção. Nessa versão, ao invés de selecionar, o vídeo é reiniciado ao
-        usuário falar "repita vídeo". A primeira diferença esta no uso dos
-        elementos <i>sinte_voz</i> e <i>rec_voz</i> para interação por voz, que
-        os arquivos <i>sinte_voz.srgs</i> e <i>rec_voz.srgs</i> (apresentados
-        acima).</p>
+        seleção. Nessa versão, em vez de selecionar o ícone, o vídeo é
+        reiniciado quando usuário falar "repita vídeo". A primeira diferença
+        esta no uso dos elementos <i>sinte_voz</i> e <i>rec_voz</i> para
+        interação por voz, que os arquivos <i>sinte_voz.srgs</i> e
+        <i>rec_voz.srgs</i> (apresentados acima).</p>
 
         <p>Dois objetos <i>Relationship</i> do elemento <i>&ltscript></i>
         foram modificados. O primeiro <i>Relationship</i> modificado define
@@ -2779,11 +2777,11 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Para ilustrar o uso de combinação de modalidades, o trecho de código
         a seguir apresenta uma nova versão (modificações em destaque) da
         aplicação da parte Conceitos 2.2 que reinicia um vídeo dada uma
-        interação por voz. Nessa versão, ao invés de selecionar, o vídeo é
-        reiniciado ao usuário falar "repita vídeo" ou (operador 'OR') fazer um
-        gesto de deslizar mão para esquerda.
+        interação por voz. Nessa versão o vídeo é reiniciado quando usuário
+        falar "repita vídeo" ou (operador 'OR') fazer quando gesto de deslizar
+        mão para esquerda.
 
-        <div id='htmlIntro3CodeC'></div><br>
+        <div id='htmlIntro3CodeC'></div><br> 
         </div>
       `
     }
