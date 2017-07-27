@@ -217,8 +217,7 @@ _data.surveyJSON.pages.push({
       isRequired: true,
       name: 'profileBlocks',
       title: `Você já utilizou alguma ferramenta programação por blocos, como Scratch ou MIT AppInventor?`,
-      choices: ['Nunca', 'Quase nunca', 'Indiferente', 'Quase sempre ',
-        'Sempre']
+      choices: ['Sim', 'Não']
     },
     {
       type: 'radiogroup',
