@@ -162,7 +162,7 @@ _data.surveyJSON.pages.push({
     {
       type: 'text',
       isRequired: true,
-      name: 'name',
+      name: 'profileName',
       title: 'Qual seu nome?'
     },
     // {
@@ -184,7 +184,7 @@ _data.surveyJSON.pages.push({
     {
       type: 'radiogroup',
       isRequired: true,
-      name: 'profileApps',
+      name: 'profileMultimediaApps',
       title: `Quantas aplicações multimídia interativas você já desenvolveu (independente de tecnologia ou linguagem de programação)?`,
       choices: ['0', '1-2', '3-4', '5-6', '7-8', '8 ou mais']
     },
@@ -197,7 +197,7 @@ _data.surveyJSON.pages.push({
     },
     {
       type: 'comment',
-      name: 'profileNCL2',
+      name: 'profileMultimodalAppsTypes',
       title: `Quais modalidades de interação você utilizou em suas aplicações multimodais?`,
       visibleIf: '{profileMultimodalApps} == Sim',
       choices: ['0', '1-2', '3-4', '5-6', '7-8', '8 ou mais']
