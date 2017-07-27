@@ -51,12 +51,12 @@ function uuidv4 () {
 }
 var _userId = uuidv4()
 var _postId = '51d57b85-3813-4a08-801b-4b7e077c1660'
-var _trySend = 3
+var _sendTries = 3
 
 function onSendResult (survey, options) {
-  if (!options.success && _trySend-- > 0) {
-    setInterval(function () {
-      console.log('sendResult try again')
+  if (!options.success && _sendTries-- > 0) {
+    setTimeout(function () {
+      console.log('sendResult')
       survey.sendResult(_postId, _userId)
     }, 2000)
   }
