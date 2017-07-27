@@ -18,9 +18,9 @@ var _surveyCss = {
   'footer': 'panel-footer text-center ',
   'pageTitle': 'h3 text-center bg-info page-header',
   // row
-  'row': '',
+  'row': 'panel-body panel panel-default',
   'question': {
-    root: 'h4 panel-body panel panel-default',
+    root: 'h4',
     title: 'h4 breadcrumb'
   },
   'error': {
@@ -43,12 +43,17 @@ var _blocksTask4WorkspaceEdited = false
 // survey create
 // ----------------------------------------
 
+function sendDataToServer (survey) {
+  survey.sendResult('51d57b85-3813-4a08-801b-4b7e077c1660')
+}
+
 $('#surveyContainer').Survey({
   model: _survey,
   css: _surveyCss,
   onServerValidateQuestions: onValidateQuestions,
   onCurrentPageChanged: onCurrentPageChanged,
-  onAfterRenderQuestion: onRenderQuestion
+  onAfterRenderQuestion: onRenderQuestion,
+  onComplete: sendDataToServer
 })
 
 // ----------------------------------------
