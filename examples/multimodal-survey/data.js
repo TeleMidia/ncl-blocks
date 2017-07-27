@@ -14,10 +14,12 @@ _data.surveyJSON = {
   showProgressBar: 'top',
   showQuestionNumbers: 'off',
   // surveyPostId: '51d57b85-3813-4a08-801b-4b7e077c1660',
+  sendResultOnPageNext: true,
   pages: []
 }
-var pageIndex
+_data.surveyJSON.sendResultOnPageNext = true
 
+var pageIndex
 var _agreeChoices = [
   'Discordo fortemente', 'Discordo bastante', 'Discordo um pouco',
   'Não concordo nem discordo', 'Concordo um pouco', 'Concordo',

@@ -43,8 +43,21 @@ var _blocksTask4WorkspaceEdited = false
 // survey create
 // ----------------------------------------
 
+function uuidv4 () {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+    var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8)
+    return v.toString(16)
+  })
+}
+var _userId = uuidv4()
+
+console.log(_userId)
+
 function sendDataToServer (survey) {
-  survey.sendResult('51d57b85-3813-4a08-801b-4b7e077c1660')
+  survey.sendResult('51d57b85-3813-4a08-801b-4b7e077c1660', _userId)
+}
+function onPartialSend (survey) {
+  survey.sendResult('51d57b85-3813-4a08-801b-4b7e077c1660', _userId)
 }
 
 $('#surveyContainer').Survey({
@@ -53,6 +66,7 @@ $('#surveyContainer').Survey({
   onServerValidateQuestions: onValidateQuestions,
   onCurrentPageChanged: onCurrentPageChanged,
   onAfterRenderQuestion: onRenderQuestion,
+  onPartialSend: onPartialSend,
   onComplete: sendDataToServer
 })
 
@@ -93,7 +107,7 @@ $('#surveyPageNo').change(function () {
 // $('#surveyPageNo').val(1).change()
 // $('#surveyPageNo').val(3).change()
 // $('#surveyPageNo').val(5).change()
-$('#surveyPageNo').val(7).change()
+// $('#surveyPageNo').val(7).change()
 
 // ----------------------------------------
 // survey listeners
