@@ -26,10 +26,10 @@ var _agreeChoices = [
   'Concordo fortemente'
 ]
 
-var _switchRuleNCL = '{profileNCL1} >= {profileHTML1}'
-// var _switchRuleNCL = ''
-var _switchRuleHTML = '{profileHTML1} > {profileNCL1}'
-// var _switchRuleHTML = ''
+// var _switchRuleNCL = '{profileNCL1} >= {profileHTML1}'
+// var _switchRuleHTML = '{profileHTML1} > {profileNCL1}'
+var _switchRuleNCL = ''
+var _switchRuleHTML = ''
 
 // ----------------------------------------
 // termo page
@@ -431,9 +431,9 @@ _data.conceptsIntro1BlocksB = `
   <block type="port" id="+p-MtE:D*clWz(7oX7Hg" x="609" y="21">
     <field name="id">midia_principal</field>
   </block>
-  <block type="link" id="%6ew%0di,O*v%qS%d\`(\`" x="612" y="110">
+  <block type="link" id="%6ew%0di,O*v%qS%dx(x" x="612" y="110">
     <value name="conditions">
-      <block type="onbegin" id="(H8xxhXk6.y#]q%\`UM^D">
+      <block type="onbegin" id="(H8xxhXk6.y#]q%xUM^D">
         <field name="id">creditos</field>
       </block>
     </value>
@@ -449,9 +449,9 @@ _data.conceptsIntro1BlocksB = `
       <block type="image" id="n8jL;6KJe-2c6B~=pPj("></block>
     </value>
   </block>
-  <block type="link" id="%6sP%0di,O*v%qS%d\`(\`" x="614" y="239">
+  <block type="link" id="%6sP%0di,O*v%qS%dx(x" x="614" y="239">
     <value name="conditions">
-      <block type="onselection" id="(H8dBhXk6.y#]q%\`UM^D">
+      <block type="onselection" id="(H8dBhXk6.y#]q%xUM^D">
         <field name="id">icone_repetir</field>
       </block>
     </value>
@@ -513,9 +513,9 @@ _data.blocksTask1Xml = `
   <block type="port" id="+p-MtE:D*clWz(7oX7Hg" x="609" y="14">
     <field name="id">video_principal</field>
   </block>
-  <block type="link" id="%6sP%0di,O*v%qS%d\`(\`" x="609" y="99">
+  <block type="link" id="%6sP%0di,O*v%qS%dx(x" x="609" y="99">
     <value name="conditions">
-      <block type="onbegin" id="(H8dBhXk6.y#]q%\`UM^D">
+      <block type="onbegin" id="(H8dBhXk6.y#]q%xUM^D">
         <field name="id">creditos</field>
       </block>
     </value>
@@ -568,10 +568,10 @@ _data.blocksTask1Xml = `
       </block>
     </statement>
   </block>
-  <block type="media" id="IawJU?Sm-z4If\`ixT^_p" x="20" y="301">
+  <block type="media" id="IawJU?Sm-z4IfxixT^_p" x="20" y="301">
     <field name="id">video_praia</field>
     <value name="src">
-      <block type="video" id="S$1N4E3U+*W_\`=95FUu)">
+      <block type="video" id="S$1N4E3U+*W_x=95FUu)">
         <mutation length="1"></mutation>
         <field name="id_area0"></field>
         <field name="begin0"></field>
@@ -585,9 +585,9 @@ _data.blocksTask1Xml = `
       <block type="image" id="fQF^b?g4I,]ah26x]In~"></block>
     </value>
   </block>
-  <block type="link" id="BLK@~VH8\`;o!;uMR.^tZ" x="613" y="455">
+  <block type="link" id="BLK@~VH8x;o!;uMR.^tZ" x="613" y="455">
     <value name="conditions">
-      <block type="onselection" id="O]aL:r0KkCvhs#W\`[}El">
+      <block type="onselection" id="O]aL:r0KkCvhs#Wx[}El">
         <field name="id">icone_praia</field>
       </block>
     </value>
@@ -706,7 +706,7 @@ _data.conceptsIntro2BlocksB = `
     <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="20" y="20">
       <field name="id">rec_voz</field>
       <value name="src">
-        <block type="srgs" id="N5Lu5_J\`hn-e3lm60 |^3">
+        <block type="srgs" id="N5Lu5_Jxhn-e3lm60 |^3">
           <mutation length="1"></mutation>
           <field name="id_area0">repetir</field>
           <field name="label0">repita vídeo</field>
@@ -735,16 +735,16 @@ _data.conceptsIntro2BlocksC = `
   <block type="media" id="v(3}oRBymiPD}7m@(iT*" x="20" y="167">
     <field name="id">sinte_voz</field>
     <value name="src">
-      <block type="ssml" id="OIfl%BPi_3-\`+z5^x\`FD">
+      <block type="ssml" id="OIfl%BPi_3-x+z5^xxFD">
         <mutation length="1"></mutation>
         <field name="id_area0">pergunta</field>
         <field name="label0">você deseja repetir o vídeo?</field>
       </block>
     </value>
   </block>
-  <block type="link" id="%6ew%0di,O*v%qS%d\`(\`" x="672" y="161">
+  <block type="link" id="%6ew%0di,O*v%qS%dx(x" x="672" y="161">
     <value name="conditions">
-      <block type="onbegin" id="(H8xxhXk6.y#]q%\`UM^D">
+      <block type="onbegin" id="(H8xxhXk6.y#]q%xUM^D">
         <field name="id">creditos</field>
       </block>
     </value>
@@ -762,16 +762,16 @@ _data.conceptsIntro2BlocksC = `
   <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="22" y="317">
     <field name="id">rec_voz</field>
     <value name="src">
-      <block type="srgs" id="N5Lu5_J\`hn-e3lm60 |^3">
+      <block type="srgs" id="N5Lu5_Jxhn-e3lm60 |^3">
         <mutation length="1"></mutation>
         <field name="id_area0">repetir</field>
         <field name="label0">repita vídeo</field>
       </block>
     </value>
   </block>
-  <block type="link" id="%6sP%0di,O*v%qS%d\`(\`" x="672" y="319">
+  <block type="link" id="%6sP%0di,O*v%qS%dx(x" x="672" y="319">
     <value name="conditions">
-      <block type="onrecognize" id="(H8dBhXk6.y#]q%\`UM^D">
+      <block type="onrecognize" id="(H8dBhXk6.y#]q%xUM^D">
         <field name="id">repetir</field>
       </block>
     </value>
@@ -828,10 +828,10 @@ _data.blocksTask2Xml = `
   <block type="port" id="+ p - MtE:D * clWz(7oX7Hg" x="603" y="46">
     <field name="id">video_principal</field>
   </block>
-  <block type="media" id="IawJU?Sm-z4If\`ixT^_p" x="20" y="164">
+  <block type="media" id="IawJU?Sm-z4IfxixT^_p" x="20" y="164">
     <field name="id">video_praia</field>
     <value name="src">
-      <block type="video" id="S$1N4E3U+*W_\`=95FUu)">
+      <block type="video" id="S$1N4E3U+*W_x=95FUu)">
         <mutation length="1"></mutation>
         <field name="id_area0"></field>
         <field name="begin0"></field>
@@ -839,9 +839,9 @@ _data.blocksTask2Xml = `
       </block>
     </value>
   </block>
-  <block type="link" id="BLK@~VH8\`;o!;uMR.^tZ" x="606" y="140">
+  <block type="link" id="BLK@~VH8x;o!;uMR.^tZ" x="606" y="140">
     <value name="conditions">
-      <block type="onbegin" id="(H8dBhXk6.y#]q%\`UM^D">
+      <block type="onbegin" id="(H8dBhXk6.y#]q%xUM^D">
         <field name="id">creditos</field>
       </block>
     </value>
@@ -892,7 +892,7 @@ _data.blocksTask2Xml = `
   <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="28" y="459">
     <field name="id">rec_voz</field>
     <value name="src">
-      <block type="srgs" id="N5Lu5_J\`hn-e3lm60 |^3">
+      <block type="srgs" id="N5Lu5_Jxhn-e3lm60 |^3">
         <mutation length="2"></mutation>
         <field name="id_area0">voz_centro</field>
         <field name="label0">centro</field>
@@ -984,7 +984,7 @@ _data.conceptsIntro3BlocksA = `
     <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="20" y="20">
       <field name="id">rec_gesto</field>
       <value name="src">
-        <block type="hand_gesture" id="N5Lu5_J\`hn-e3lm60 |^3">
+        <block type="hand_gesture" id="N5Lu5_Jxhn-e3lm60 |^3">
           <mutation length="2">
           </mutation>
           <field name="id_area0">esquerda</field>
@@ -1016,16 +1016,16 @@ _data.conceptsIntro3BlocksB = `
   <block type="media" id="v(3}oRBymiPD}7m@(iT*" x="24" y="171">
     <field name="id">sinte_voz</field>
     <value name="src">
-      <block type="ssml" id="OIfl%BPi_3-\`+z5^x\`FD">
+      <block type="ssml" id="OIfl%BPi_3-x+z5^xxFD">
         <mutation length="1"></mutation>
         <field name="id_area0">pergunta</field>
         <field name="label0">você deseja repetir o vídeo?</field>
       </block>
     </value>
   </block>
-  <block type="link" id="%6ew%0di,O*v%qS%d\`(\`" x="683" y="181">
+  <block type="link" id="%6ew%0di,O*v%qS%dx(x" x="683" y="181">
     <value name="conditions">
-      <block type="onbegin" id="(H8xxhXk6.y#]q%\`UM^D">
+      <block type="onbegin" id="(H8xxhXk6.y#]q%xUM^D">
         <field name="id">creditos</field>
       </block>
     </value>
@@ -1048,20 +1048,20 @@ _data.conceptsIntro3BlocksB = `
   <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="27" y="315">
     <field name="id">rec_voz</field>
     <value name="src">
-      <block type="srgs" id="N5Lu5_J\`hn-e3lm60 |^3">
+      <block type="srgs" id="N5Lu5_Jxhn-e3lm60 |^3">
         <mutation length="1"></mutation>
         <field name="id_area0">repetir</field>
         <field name="label0">repita vídeo</field>
       </block>
     </value>
   </block>
-  <block type="link" id="%6sP%0di,O*v%qS%d\`(\`" x="681" y="393">
+  <block type="link" id="%6sP%0di,O*v%qS%dx(x" x="681" y="393">
     <value name="conditions">
       <block type="compoundcondition" id="#sWuH)YfLm?005GvLQaK">
         <mutation length="2"></mutation>
         <field name="operator">or</field>
         <value name="element_0">
-          <block type="onrecognize" id="(H8dBhXk6.y#]q%\`UM^D">
+          <block type="onrecognize" id="(H8dBhXk6.y#]q%xUM^D">
             <field name="id">repetir</field>
           </block>
         </value>
@@ -1217,16 +1217,16 @@ _data.conceptsIntro4BlocksB = `
   <block type="media" id="ifhmRRJ%o^5/3j{LucQj" x="21" y="165">
     <field name="id">sinte_voz</field>
     <value name="src">
-      <block type="ssml" id="6d)v}%=\`HL1[M8cPHzuK">
+      <block type="ssml" id="6d)v}%=xHL1[M8cPHzuK">
         <mutation length="1"></mutation>
         <field name="id_area0">pergunta</field>
         <field name="label0">você deseja repetir o vídeo?</field>
       </block>
     </value>
   </block>
-  <block type="link" id="%6ew%0di,O*v%qS%d\`(\`" x="680" y="185">
+  <block type="link" id="%6ew%0di,O*v%qS%dx(x" x="680" y="185">
     <value name="conditions">
-      <block type="onbegin" id="(H8xxhXk6.y#]q%\`UM^D">
+      <block type="onbegin" id="(H8xxhXk6.y#]q%xUM^D">
         <field name="id">creditos</field>
       </block>
     </value>
@@ -1239,14 +1239,14 @@ _data.conceptsIntro4BlocksB = `
   <block type="input" id="ajd0c?1i@etzB;UdMIC*" x="20" y="309">
     <field name="id">rec_voz</field>
     <value name="src">
-      <block type="srgs" id="N5Lu5_J\`hn-e3lm60 |^3">
+      <block type="srgs" id="N5Lu5_Jxhn-e3lm60 |^3">
         <mutation length="1"></mutation>
         <field name="id_area0">repetir</field>
         <field name="label0">repita vídeo</field>
       </block>
     </value>
   </block>
-  <block type="link" id="%6sP%0di,O*v%qS%d\`(\`" x="680" y="322">
+  <block type="link" id="%6sP%0di,O*v%qS%dx(x" x="680" y="322">
     <value name="conditions">
       <block type="onrecognizeuser" id="y/zz?q?8ebd@?9llBV[0">
         <field name="id">repetir</field>
@@ -1633,19 +1633,19 @@ _data.nclTask1Code = `
       <link xconnector="conEx#onBeginStart">
         <bind role="onBegin" component="video_inicial" interface="creditos">
         <bind role="start" component="icone_centro"></bind></bind>
-        <bind role="start" component="icone_praia" />
+        <bind role="start" component="icone_praia"></bind>
       </link>
       <link xconnector="onSelectionStopStart">
         <bind role="onSelection" component="icone_centro"></bind>
         <bind role="stop" component="icone_centro"></bind>
-        <bind role="stop" component="icone_praia" />
+        <bind role="stop" component="icone_praia"></bind>
         <bind role="stop" component="video_inicial"></bind>
         <bind role="start" component="video_centro"></bind>
       </link>
       <link xconnector="onSelectionStopStart">
-        <bind role="onSelection" component="icone_praia" />
+        <bind role="onSelection" component="icone_praia"></bind>
         <bind role="stop" component="icone_centro"></bind>
-        <bind role="stop" component="icone_praia" />
+        <bind role="stop" component="icone_praia"></bind>
         <bind role="stop" component="video_inicial"></bind>
         <bind role="start" component="video_praia"></bind>
       </link>
@@ -2418,7 +2418,7 @@ _data.htmlIntro1CodeB = `
   <!DOCTYPE html>
   <html>
   <head><script src="relationship.js"><&#47script></head>
-  <body>
+  <body id="body">
     <video id="midia_principal" src="video.mp4"
       style="position: absolute; height 100%; width: 100%;">
       <area id="creditos" begin="300s" end="360s"></area>
@@ -2426,20 +2426,19 @@ _data.htmlIntro1CodeB = `
     <img id="icone_repetir" src="icone_repetir.png"
       style="position: absolute; width: 20%; height: 20%; top: 80%; z-index: 1;">
     </img>
-    <script>
-      var r1 = new Relationship("onBeginStart")
-      r1.bind("onBegin", "body")
-      r1.bind("start", "midia_principal")
-
-      var r2 = new Relationship("onBeginStart")
-      r2.bind("onBegin", "midia_principal", "creditos")
-      r2.bind("start", "icone_repetir")
-
-      var r3 = new Relationship("onSelectionStopStart")
-      r3.bind("onSelection", "icone_repetir")
-      r3.bind("stop", "midia_principal")
-      r3.bind("start", "midia_principal")
-    <&#47script>
+    <relationship>
+      <onBegin interface="body"/>
+      <start interface="midia_principal"/>
+    </relationship>
+    <relationship>
+      <onBegin interface="midia_principal#creditos"/>
+      <start interface="icone"/>
+    </relationship>
+    <relationship>
+      <onBegin interface="icone"/>
+      <stop interface="midia_principal"/>
+      <start interface="midia_principal"/>
+    </relationship>
   </body>
   </html>
   ]]></script>
@@ -2998,7 +2997,7 @@ _data.surveyJSON.pages.push({
         <div style="text-align: justify; width: 70%;">
         <p>Por favor, opine sobre os pontos a seguir. Eles visam capturar
         evidências de como os conceitos apresentados na seção anterior
-        >Mídia, Reconhecedor, Relacionameni> e Grupo de Usuários)
+        (Mídia, Reconhecedor, Relacionamento e Grupo de Usuários)
         estão instanciados na HTML para suportar interações multimodais.</p>
         </div>
       `
