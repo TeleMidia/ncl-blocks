@@ -1541,12 +1541,12 @@ _data.nclIntro1CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
   <media id="midia_principal" src="video.mp4">
-    <area id="creditos" begin="300s" end="360s"></area>
+    <area id="creditos" begin="300s" end="360s"/>
   </media>
   <media id="icone" src="icone.png">
-    <property name="size" value="20%, 20%"></property>
-    <property name="top" value="80%"></property>
-    <property name="zindex" value="1"></property>
+    <property name="size" value="20%, 20%"/>
+    <property name="top" value="80%"/>
+    <property name="zindex" value="1"/>
   </media>
   ]]></script>
 `
@@ -1561,23 +1561,23 @@ _data.nclIntro1CodeB = `
       <importBase documentURI="causalConnBase.ncl" alias="conEx"></importBase>
     </connectorBase>
     <body>
-      <port component="video_principal"></port>
+      <port component="video_principal"/>
       <media id="video_principal" src="video.mp4">
-        <property name="size" value="100%, 100%"></property>
-        <area id="creditos" begin="300s" end="360s"></area>
+        <property name="size" value="100%, 100%"/>
+        <area id="creditos" begin="300s" end="360s"/>
       </media>
       <media id="icone_repetir" src="icone_repetir.png">
-        <property name="size" value="20%, 20%"></property>
-        <property name="zindex" value="1"></property>
+        <property name="size" value="20%, 20%"/>
+        <property name="zindex" value="1"/>
       </media>
       <link xconnector="conEx#onBeginStart">
-        <bind role="onBegin" component="video_principal" interface="creditos"></bind>
-        <bind role="start" component="icone_repetir"></bind>
+        <bind role="onBegin" component="video_principal" interface="creditos"/>
+        <bind role="start" component="icone_repetir"/>
       </link>
       <link xconnector="conEx#onSelectionStopStart">
-        <bind role="onSelection" component="icone_repetir"></bind>
-        <bind role="stop" component="video_principal"></bind>
-        <bind role="start" component="video_principal"></bind>
+        <bind role="onSelection" component="icone_repetir"/>
+        <bind role="stop" component="video_principal"/>
+        <bind role="start" component="video_principal"/>
       </link>
     </body>
   </ncl>
@@ -1625,45 +1625,45 @@ _data.nclTask1Code = `
       </connectorBase>
     </head>
     <body>
-      <port component="video_inicial"></port>
+      <port component="video_inicial"/>
       <media id="video_inicial" src="video_inicial.mp4">
-        <property name="size" value="100%, 100%"></property>
-        <area id="creditos" begin="300s" end="360s"></area>
+        <property name="size" value="100%, 100%"/>
+        <area id="creditos" begin="300s" end="360s"/>
       </media>
       <media id="video_centro" src="centro.mp4">
-        <property name="size" value="100%, 100%"></property>
+        <property name="size" value="100%, 100%"/>
       </media>
       <media id="video_praia" src="praia.mp4">
-        <property name="size" value="100%, 100%"></property>
+        <property name="size" value="100%, 100%"/>
       </media>
       <media id="icone_centro" src="icone_centro.png">
-        <property name="top" value="80%"></property>
-        <property name="size" value="20%, 20%"></property>
-        <property name="zindex" value="1"></property>
+        <property name="top" value="80%"/>
+        <property name="size" value="20%, 20%"/>
+        <property name="zindex" value="1"/>
       </media>
       <media id="icone_praia" src="icone_praia.png">
-        <property name="location" value="80%, 80%"></property>
-        <property name="size" value="20%, 20%"></property>
-        <property name="zindex" value="1"></property>
+        <property name="location" value="80%, 80%"/>
+        <property name="size" value="20%, 20%"/>
+        <property name="zindex" value="1"/>
       </media>
       <link xconnector="conEx#onBeginStart">
         <bind role="onBegin" component="video_inicial" interface="creditos">
-        <bind role="start" component="icone_centro"></bind></bind>
-        <bind role="start" component="icone_praia"></bind>
+        <bind role="start" component="icone_centro"//>
+        <bind role="start" component="icone_praia"/>
       </link>
       <link xconnector="onSelectionStopStart">
-        <bind role="onSelection" component="icone_centro"></bind>
-        <bind role="stop" component="icone_centro"></bind>
-        <bind role="stop" component="icone_praia"></bind>
-        <bind role="stop" component="video_inicial"></bind>
-        <bind role="start" component="video_centro"></bind>
+        <bind role="onSelection" component="icone_centro"/>
+        <bind role="stop" component="icone_centro"/>
+        <bind role="stop" component="icone_praia"/>
+        <bind role="stop" component="video_inicial"/>
+        <bind role="start" component="video_centro"/>
       </link>
       <link xconnector="onSelectionStopStart">
-        <bind role="onSelection" component="icone_praia"></bind>
-        <bind role="stop" component="icone_centro"></bind>
-        <bind role="stop" component="icone_praia"></bind>
-        <bind role="stop" component="video_inicial"></bind>
-        <bind role="start" component="video_praia"></bind>
+        <bind role="onSelection" component="icone_praia"/>
+        <bind role="stop" component="icone_centro"/>
+        <bind role="stop" component="icone_praia"/>
+        <bind role="stop" component="video_inicial"/>
+        <bind role="start" component="video_praia"/>
       </link>
     </body>
   </ncl>
@@ -1760,7 +1760,7 @@ _data.nclIntro2CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
   <media id="sinte_voz" src="sinte_voz.ssml">
-    <area label="pergunta"></area> <!-- referência id repetir de sinte_voz.ssml-->
+    <area label="pergunta"/> <!-- referência id repetir de sinte_voz.ssml-->
   </media>
   ]]></script>
 `
@@ -1796,27 +1796,27 @@ _data.nclIntro2CodeE = `
       </connectorBase>
     </head>
     <body>
-      <port component="video_principal"></port>
+      <port component="video_principal"/>
       <media id="video_principal" src="video.mp4">
-        <property name="size" value="100%, 100%"></property>
-        <area id="creditos" begin="300s" end="360s"></area>
+        <property name="size" value="100%, 100%"/>
+        <area id="creditos" begin="300s" end="360s"/>
       </media>
       <media id="sinte_voz" src="sinte_voz.ssml">
-        <area label="pergunta"></area> <!-- referência id pergunta de sinte_voz.ssml-->
+        <area label="pergunta"/> <!-- referência id pergunta de sinte_voz.ssml-->
       </media>
       <input id="rec_voz" src="rec_voz.srgs">
-        <area label="repete"></repete>  <!-- referência id repete de rec_voz.srgs-->
+        <area label="repete"/>  <!-- referência id repete de rec_voz.srgs-->
       </input>
       <link xconnector="conEx#onBeginStart">
-        <bind role="onBegin" component="video_principal" interface="creditos"></bind>
-        <bind role="start" component="sinte_voz" interface="pergunta"></bind>
-        <bind role="start" component="rec_voz"></bind>
+        <bind role="onBegin" component="video_principal" interface="creditos"/>
+        <bind role="start" component="sinte_voz" interface="pergunta"/>
+        <bind role="start" component="rec_voz"/>
       </link>
       <link xconnector="conEx#onRecognizeStopStart">
         <bind role="onRecognize" component="rec_voz" interface="repete"/>
-        <bind role="stop" component="rec_voz"></bind>
-        <bind role="stop" component="video_principal"/>
-        <bind role="start" component="video_principal"/>
+        <bind role="stop" component="rec_voz"/>
+        <bind role="stop" component="video_principal">
+        <bind role="start" component="video_principal">
       </link>
     </body>
   </ncl>
@@ -1894,39 +1894,39 @@ _data.nclTask2CCodeOnly = `
       </connectorBase>
     </head>
     <body>
-      <port component="video_inicial"></port>
+      <port component="video_inicial"/>
       <media id="video_inicial" src="video_inicial.mp4">
-        <property name="size" value="100%, 100%"></property>
+        <property name="size" value="100%, 100%"/>
       </media>
       <media id="video_centro" src="centro.mp4">
-        <property name="size" value="100%, 100%"></property>
+        <property name="size" value="100%, 100%"/>
       </media>
       <media id="video_praia" src="praia.mp4">
-        <property name="size" value="100%, 100%"></property>
+        <property name="size" value="100%, 100%"/>
       </media>
       <media id="sinte_voz_videos" src="sinte_voz_videos.ssml">
-        <area label="pergunta"></area>
+        <area label="pergunta"/>
       </media>
       <input id="rec_voz_videos" src="rec_voz_videos.sgrs">
-        <area label="centro"></area>
-        <area label="praia"></area>
+        <area label="centro"/>
+        <area label="praia"/>
       </input>
       <link xconnector="conEx#onBeginStart">
-        <bind role="onBegin" component="video_inicial" interface="creditos"></area>
-        <bind role="start" component="sinte_voz_videos" interface="pergunta"></bind>
-        <bind role="start" component="rec_voz"></bind>
+        <bind role="onBegin" component="video_inicial" interface="creditos"/>
+        <bind role="start" component="sinte_voz_videos" interface="pergunta"/>
+        <bind role="start" component="rec_voz"/>
       </link>
       <link xconnector="onRecognizeStopStart">
-        <bind role="onRecognize" component="rec_voz" interface="centro"></bind>
-        <bind role="stop" component="rec_voz"></bind>
-        <bind role="stop" component="video_inicial"></bind>
-        <bind role="start" component="video_centro"></bind>
+        <bind role="onRecognize" component="rec_voz" interface="centro"/>
+        <bind role="stop" component="rec_voz"/>
+        <bind role="stop" component="video_inicial"/>
+        <bind role="start" component="video_centro"/>
       </link>
       <link xconnector="onRecognizeStopStart">
-        <bind role="onRecognize" component="rec_voz_videos" interface="praia"></bind>
-        <bind role="stop" component="rec_voz_videos"></area>
-        <bind role="stop" component="video_inicial"></bind>
-        <bind role="start" component="video_praia"></bind>
+        <bind role="onRecognize" component="rec_voz_videos" interface="praia"/>
+        <bind role="stop" component="rec_voz_videos"/>
+        <bind role="stop" component="video_inicial"/>
+        <bind role="start" component="video_praia"/>
       </link>
     </body>
   </ncl>
@@ -2022,13 +2022,13 @@ _data.nclIntro3CodeC = `
       </connectorBase>
     </head>
     <body>
-      <port component="video_principal"></port>
+      <port component="video_principal"/>
       <media id="video_principal" src="video.mp4">
-        <property name="size" value="100%, 100%"></property>
-        <area id="creditos" begin="300s" end="360s"></area>
+        <property name="size" value="100%, 100%"/>
+        <area id="creditos" begin="300s" end="360s"/>
       </media>
       <media id="sinte_voz" src="sinte_voz.ssml">
-        <area label="pergunta"></area> <!-- referência id pergunta de sinte_voz.ssml-->
+        <area label="pergunta"/> <!-- referência id pergunta de sinte_voz.ssml-->
       </media>
       <input id="rec_voz" src="rec_voz.srgs">
         <area label="repete"></repete> <!-- referência id repete de rec_voz.srgs-->
@@ -2037,18 +2037,18 @@ _data.nclIntro3CodeC = `
         <area label="esquerda"></repete> <!-- referência id esquerda de rec_gesto.gml-->
       </input>
       <link xconnector="conEx#onBeginStart">
-        <bind role="onBegin" component="video_principal" interface="creditos"></bind>
-        <bind role="start" component="sinte_voz" interface="pergunta"></bind>
-        <bind role="start" component="rec_voz"></bind>
-        <bind role="start" component="rec_gesto"></bind>
+        <bind role="onBegin" component="video_principal" interface="creditos"/>
+        <bind role="start" component="sinte_voz" interface="pergunta"/>
+        <bind role="start" component="rec_voz"/>
+        <bind role="start" component="rec_gesto"/>
       </link>
       <link xconnector="conEx#onOrRecognizeStopStart">
-        <bind role="onRecognize" component="rec_voz" interface="repete"/>
-        <bind role="onRecognize" component="rec_gesto" interface="esquerda"/>
-        <bind role="stop" component="rec_voz"></bind>
-        <bind role="stop" component="rec_gesto"></bind>
-        <bind role="stop" component="video_principal"/>
-        <bind role="start" component="video_principal"/>
+        <bind role="onRecognize" component="rec_voz" interface="repete">
+        <bind role="onRecognize" component="rec_gesto" interface="esquerda">
+        <bind role="stop" component="rec_voz"/>
+        <bind role="stop" component="rec_gesto"/>
+        <bind role="stop" component="video_principal">
+        <bind role="start" component="video_principal">
       </link>
     </body>
   </ncl>
@@ -2116,7 +2116,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 _data.nclIntro4CodeA = `
   <script type="syntaxhighlighter" class="brush: plain; toolbar: false;
   auto-links: false"> <![CDATA[
-  PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+  PREFIX foaf: <http://xmlns.com/foaf/0.1>
   PREFIX prf: <http://www.wapforum.org/profiles/UAPROF/ccppschema-20010430>
   SELECT ?person
   WHERE {
@@ -2141,28 +2141,28 @@ _data.nclIntro4CodeB = `
       </userBase>
     </head>
     <body>
-      <port component="video_principal"></port>
+      <port component="video_principal"/>
       <media id="video_principal" src="video.mp4">
-        <property name="size" value="100%, 100%"></property>
-        <area id="creditos" begin="300s" end="360s"></area>
+        <property name="size" value="100%, 100%"/>
+        <area id="creditos" begin="300s" end="360s"/>
       </media>
       <media id="sinte_voz" src="sinte_voz.srgs">
-        <area label="pergunta"></area> <!-- referência id pergunta de sinte_voz.srgs-->
+        <area label="pergunta"/> <!-- referência id pergunta de sinte_voz.srgs-->
       </media>
       <input id="rec_voz" src="rec_voz.srgs">
-        <area label="repete"></area> <!-- referência id repete de rec_voz.srgs-->
+        <area label="repete"/> <!-- referência id repete de rec_voz.srgs-->
       </input>
       <link xconnector="conEx#onBeginStart">
-        <bind role="onBegin" component="video_principal" interface="creditos"></bind>
-        <bind role="start" component="sinte_voz" interface="pergunta"></bind>
-        <bind role="start" component="rec_voz"></bind>
+        <bind role="onBegin" component="video_principal" interface="creditos"/>
+        <bind role="start" component="sinte_voz" interface="pergunta"/>
+        <bind role="start" component="rec_voz"/>
       </link>
       <link xconnector="conEx#onRecognizeStart">
         <bind role="onRecognize" component="rec_voz" interface="repete">
           <bindParam name="user_id" value="gu_leap_microphone(2)"></bindParam>
         </bind>
-        <bind role="stop" component="video_principal"></bind>
-        <bind role="start" component="video_principal"></bind>
+        <bind role="stop" component="video_principal"/>
+        <bind role="start" component="video_principal"/>
       </link>
     </body>
   </ncl>
@@ -2364,7 +2364,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>O conceito de Mídia é definido por <strong>um identificador,
         um conteúdo e âncoras</strong>. Na HTML, ele é parcialmente
         implementado por elementos como <i>&ltimg></i>, <i>&ltaudio></i>,
-        <i>&ltvideo></i> e <i>&ltobject></i>. O identificador é definido
+        <i>&ltvideo></i> e <i>&ltmm-media></i>. O identificador é definido
         pelo atributo <i>id</i> e o arquivo de mídia do conteúdo é definido
         atributo <i>src</i>. Para permitir definir âncoras esses elementos são
         estendidos com elementos <i>&ltarea></i>. Uma <i>&ltarea></i> pode
@@ -2429,11 +2429,10 @@ _data.htmlIntro1CodeA = `
   auto-links: false;"> <![CDATA[
   <video id="midia_principal" src="video.mp4"
     style="position: absolute; height 100%; width: 100%;">
-    <area id="creditos" begin="300s" end="360s"></area>
+    <mm-area id="creditos" begin="300s" end="360s">
   </video>
   <img id="icone" src="icone.png"
      style="position: absolute; width: 20%; height: 20%; top: 80%; z-index: 1;">
-  </img>
   ]]></script>
 `
 
@@ -2442,28 +2441,29 @@ _data.htmlIntro1CodeB = `
   auto-links: false; highlight:[5,9,13,17,21]"><![CDATA[
   <!DOCTYPE html>
   <html>
-  <head><script src="relationship.js"><&#47script></head>
-  <body id="body">
+  <head><script src="multimodal.js"><&#47script></head>
+  <body>
+  <mm-scene id="scene">
     <video id="midia_principal" src="video.mp4"
       style="position: absolute; height 100%; width: 100%;">
-      <area id="creditos" begin="300s" end="360s"></area>
+      <mm-area id="creditos" begin="300s" end="360s">
     </video>
     <img id="icone_repetir" src="icone_repetir.png"
       style="position: absolute; width: 20%; height: 20%; top: 80%; z-index: 1;">
-    </img>
-    <relationship>
-      <onBegin interface="body"/>
-      <start interface="midia_principal"/>
-    </relationship>
-    <relationship>
-      <onBegin interface="midia_principal#creditos"/>
-      <start interface="icone"/>
-    </relationship>
-    <relationship>
-      <onBegin interface="icone"/>
-      <stop interface="midia_principal"/>
-      <start interface="midia_principal"/>
-    </relationship>
+    <mm-link xconnector="onBeginStart">
+      <onBegin interface="scene">
+      <start interface="midia_principal">
+    </mm-link>
+    <mm-link xconnector="onBeginStart">
+      <onBegin interface="midia_principal#creditos">
+      <start interface="icone">
+    </mm-link>
+    <mm-link xconnector="onSelectionStopStart">
+      <onSelection interface="icone">
+      <stop interface="midia_principal">
+      <start interface="midia_principal">
+    </mm-link>
+  </mm-scene>
   </body>
   </html>
   ]]></script>
@@ -2501,46 +2501,39 @@ _data.htmlTask1CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
   <html>
-  <head><script src="relationship.js"><&#47script></head>
-  <body>
+  <head><script src="multimodal.js"><&#47script></head>
+  <mm-scene>
     <video id="video_inicial" src="video_inicial.mp4"
       style="position: absolute; height 100%; width: 100%;">
-      <area id="creditos" begin="300s" end="360s"><&#47area>
+      <mm-area id="creditos" begin="300s" end="360s">
     </video>
     <video id="video_centro" src="video_centro.mp4"
       style="position: absolute; height 100%; width: 100%;">
-      <area id="creditos" begin="300s" end="360s"><&#47area>
+      <mm-area id="creditos" begin="300s" end="360s">
     </video>
     <video id="video_praia" src="video_praia.mp4"
       style="position: absolute; height 100%; width: 100%;">
-      <area id="creditos" begin="300s" end="360s"><&#47area>
+      <mm-area id="creditos" begin="300s" end="360s">
     </video>
     <img id="icone_centro" src="icone_centro.png"
       style="position: absolute; width: 20%; height: 20%; top: 80%; z-index: 1;">
-    </img>
     <img id="icone_praia" src="icone_praia.png"
       style="position: absolute; width: 20%; height: 20%; top: 80%; z-index: 1;">
-    </img>
-    <script>
-      var r1 = new Relationship("onBeginStart")
-      r1.bind("onBegin", "body")
-      r1.bind("start", "video_inicial")
-
-      var r2 = new Relationship("onBeginStart")
-      r2.bind("onBegin", "video_inicial", "creditos")
-      r2.bind("start", "icone_centro")
-      r2.bind("start", "icone_praia")
-
-      var r3 = new Relationship("onSelectionStopStart")
-      r3.bind("onSelection", "icone_centro")
-      r3.bind("stop", "video_inicial")
-      r3.bind("start", "video_centro")
-
-      var r4 = new Relationship("onSelectionStopStart")
-      r4.bind("onSelection", "icone_praia")
-      r4.bind("stop", "video_inicial")
-      r4.bind("start", "video_praia")
-    <&#47script>
+    <mm-link xconnector="onBeginStart">
+      <onBegin interface="scene">
+      <start interface="video_inicial">
+    </mm-link>
+    <mm-link xconnector="onBeginStart">
+      <onBegin interface="video_inicial#creditos">
+      <start interface="icone_centro">
+      <start interface="icone_praia">
+    </mm-link>
+    <mm-link xconnector="onSelectionStopStart">
+      <onBegin interface="icone">
+      <stop interface="video_inicial">
+      <start interface="video_inicial">
+    </mm-link>
+  </mm-scene>
   </body>
   </html>
   ]]></script>
@@ -2569,8 +2562,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         Language) para sintetização de voz. Ele possui um elemento <i>&lts></i>
         com identificador "pergunta" que sintetizada a frase: "você deseja
         repetir o vídeo?". O segundo trecho de código define uma
-        <i>&ltobject></i> com identificador <i>sinte_voz</i>, que tem como
-        conteúdo o arquivo <i>sinte_voz.ssml</i>. Esse <i>&ltobject></i> possui
+        <i>&ltmm-media></i> com identificador <i>sinte_voz</i>, que tem como
+        conteúdo o arquivo <i>sinte_voz.ssml</i>. Esse <i>&ltmm-media></i> possui
         uma âncora que indica a frase a ser sintetizada.</p>
 
         <div id='htmlIntro2CodeA'></div>
@@ -2578,7 +2571,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <p>O conceito de Reconhecedor é definido por <strong>um
         identificador, seu conteúdo e âncoras</strong>. Na HTML estendida, ele é
-        implementado pelo elemento <i>&ltobject></i>. O identificador é
+        implementado pelo elemento <i>&ltmm-media></i>. O identificador é
         definido pelo atributo <i>id</i> e a descrição de reconhecimento é
         definida pelo atributo <i>src</i>. As âncoras são definidas pelo
         elemento <i>area</i> e podem definir trechos delimitados da descrição
@@ -2590,8 +2583,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         (Speech Recognition Grammar Specification) reconhecimento de voz. Ele
         possui uma frase com o identificador <i>repete</i> que define o
         reconhecimento de voz "repita vídeo". O segundo define um
-        <i>&ltobject></i> com identificador <i>rec_voz</i>, que tem como
-        conteúdo o arquivo <i>rec_voz.srgs</i>. Esse <i>&ltobject></i> possui
+        <i>&ltmm-media></i> com identificador <i>rec_voz</i>, que tem como
+        conteúdo o arquivo <i>rec_voz.srgs</i>. Esse <i>&ltmm-media></i> possui
         uma âncora que indica a frase a ser reconhecida.</p>
 
         <div id='htmlIntro2CodeC'></div>
@@ -2628,9 +2621,9 @@ _data.htmlIntro2CodeA = _data.nclIntro2CodeA
 _data.htmlIntro2CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
-  <object id="sinte_voz" src="sinte_voz.ssml">
-    <area label="pergunta"></area> <!-- referência id pergunta de sinte_voz.ssml-->
-  </object>
+  <mm-media id="sinte_voz" src="sinte_voz.ssml">
+    <mm-area label="pergunta"> <!-- referência id pergunta de sinte_voz.ssml-->
+  </mm-media>
   ]]></script>
 `
 
@@ -2638,10 +2631,9 @@ _data.htmlIntro2CodeC = _data.nclIntro2CodeC
 _data.htmlIntro2CodeD = `
  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false; highlight:[9,12,20,25]"><![CDATA[
-  <!DOCTYPE html>
-  <object id="rec_voz" src="rec_voz.srgs">
-    <area label="repete"><&#47area> <!-- referência id repete de rec_voz.srgs-->
-  </object>
+  <mm-input id="rec_voz" src="rec_voz.srgs">
+    <mm-area label="repete"> <!-- referência id repete de rec_voz.srgs-->
+  </mm-input>
   ]]></script>
 `
 _data.htmlIntro2CodeE = `
@@ -2649,34 +2641,34 @@ _data.htmlIntro2CodeE = `
   auto-links: false; highlight:[9,12,20,25]"><![CDATA[
   <!DOCTYPE html>
   <html>
-  <head><script src="relationship.js"><&#47script></head>
+  <head><script src="multimodal.js"><&#47script></head>
   <body>
-    <video id="midia_principal" src="video.mp4"
-      style="position: absolute; height 100%; width: 100%;">
-      <area id="creditos" begin="300s" end="360s"><&#47area>
-    </video>
-    <object id="sinte_voz" src="sinte_voz.ssml">
-      <area label="pergunta"><&#47area> <!-- referência id pergunta de sinte_voz.ssml-->
-    </object>
-    <object id="rec_voz" src="rec_voz.srgs">
-      <area label="repete"><&#47area> <!-- referência id repete de rec_voz.srgs-->
-    </object>
-    <script>
-      var r1 = new Relationship("onBeginStart")
-      r1.bind("onBegin", "body")
-      r1.bind("start", "midia_principal")
-
-      var r2 = new Relationship("onBeginStart")
-      r2.bind("onBegin", "midia_principal", "creditos")
-      r2.bind("start", "sinte_voz")
-      r2.bind("start", "rec_voz")
-
-      var r3 = new Relationship("onRecognizeStopStart")
-      r3.bind("onRecognize", "rec_voz", "repete")
-      r3.bind("stop", "midia_principal")
-      r3.bind("start", "midia_principal")
-
-    <&#47script>
+    <mm-scene>
+      <video id="midia_principal" src="video.mp4"
+        style="position: absolute; height 100%; width: 100%;">
+        <mm-area id="creditos" begin="300s" end="360s">
+      </video>
+      <mm-media id="sinte_voz" src="sinte_voz.ssml">
+        <mm-area label="pergunta"> <!-- referência id pergunta de sinte_voz.ssml-->
+      </mm-media>
+      <mm-input id="rec_voz" src="rec_voz.srgs">
+        <mm-area label="repete"> <!-- referência id repete de rec_voz.srgs-->
+      </mm-input>
+      <mm-link xconnector="onBeginStart">
+        <onBegin interface="scene">
+        <start interface="midia_principal">
+      </mm-link>
+      <mm-link xconnector="onBeginStart">
+        <onBegin interface="midia_principal#creditos">
+        <start interface="sinte_voz">
+        <start interface="rec_voz">
+      </mm-link>
+      <mm-link xconnector="onRecognizeStopStart">
+        <onBegin onRecognize="rec_voz#repete">
+        <stop interface="midia_principal">
+        <start interface="midia_principal">
+      </mm-link>
+    </mm-scene>
   </body>
   </html>
   ]]></script>
@@ -2720,46 +2712,47 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
 _data.htmlTask2CodeCOnly = `
   <html>
-  <head><script src="relationship.js"><&#47script></head>
+  <head><script src="multimodal.js"><&#47script></head>
   <body>
-    <video id="video_inicial" src="video_inicial.mp4"
-      style="position: absolute; height 100%; width: 100%;">
-      <area id="creditos" begin="300s" end="360s"></area>
-    </video>
-    <video id="video_centro" src="video_centro.mp4"
-      style="position: absolute; height 100%; width: 100%;">
-      <area id="creditos" begin="300s" end="360s"></area>
-    </video>
-    <video id="video_praia" src="video_praia.mp4"
-      style="position: absolute; height 100%; width: 100%;">
-      <area id="creditos" begin="300s" end="360s"></area>
-    </video>
-    <object id="sinte_voz" src="sinte_voz.ssml">
-      <area label="pergunta"></area> 
-    </object>
-    <object id="rec_voz" src="rec_voz.srgs">
-      <area label="repete"></repete>
-    </object>
-    <script>
-      var r1 = new Relationship("onBeginStart")
-      r1.bind("onBegin", "body")
-      r1.bind("start", "video_inicial")
-
-      var r2 = new Relationship("onBeginStart")
-      r2.bind("onBegin", "video_inicial", "creditos")
-      r2.bind("start", "sinte_voz", "pergunta")
-      r2.bind("start", "rec_voz")
-
-      var r3 = new Relationship("onRecognizeStopStart")
-      r2.bind("onRecognize", "rec_voz", "centro")
-      r2.bind("stop", "video_inicial")
-      r2.bind("start", "video_centro")
-
-      var r4 = new Relationship("onRecognizeStopStart")
-      r4.bind("onRecognize", "rec_voz", "praia")
-      r4.bind("stop", "video_inicial")
-      r4.bind("start", "video_praia")
-    <&#47script>
+    <mm-scene>
+      <video id="video_inicial" src="video_inicial.mp4"
+        style="position: absolute; height 100%; width: 100%;">
+        <mm-area id="creditos" begin="300s" end="360s">
+      </video>
+      <video id="video_centro" src="video_centro.mp4"
+        style="position: absolute; height 100%; width: 100%;">
+        <mm-area id="creditos" begin="300s" end="360s">
+      </video>
+      <video id="video_praia" src="video_praia.mp4"
+        style="position: absolute; height 100%; width: 100%;">
+        <mm-area id="creditos" begin="300s" end="360s">
+      </video>
+      <mm-media id="sinte_voz" src="sinte_voz.ssml">
+        <mm-area label="pergunta"> 
+      </mm-media>
+      <mm-input id="rec_voz" src="rec_voz.srgs">
+        <mm-area label="repete"></repete>
+      </mm-input>
+      <mm-link xconnector="onBeginStart">
+        <onBegin interface="scene">
+        <start interface="video_inicial">
+      </mm-link>
+      <mm-link xconnector="onBeginStart">
+        <onBegin interface="video_inicial#creditos">
+        <start interface="sinte_voz">
+        <start interface="rec_voz">
+      </mm-link>
+      <mm-link xconnector="onRecognizeStopStart">
+        <onBegin onRecognize="rec_voz#centro">
+        <stop interface="video_inicial">
+        <start interface="video_centro">
+      </mm-link>
+      <mm-link xconnector="onRecognizeStopStart">
+        <onBegin onRecognize="rec_voz#praia">
+        <stop interface="video_inicial">
+        <start interface="video_praia">
+      </mm-link>
+    </mm-scene>
   </body>
   </html>
 `
@@ -2821,9 +2814,9 @@ _data.htmlIntro3CodeA = _data.nclIntro3CodeA
 _data.htmlIntro3CodeB = `
  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false"><![CDATA[
-  <object id="rec_gesto" src="rec_gesto.gml">
-    <area label="esquerda"><&#47area> <!-- referência id esquerda de rec_gesto.gml-->
-  </object>
+  <mm-input id="rec_gesto" src="rec_gesto.gml">
+    <mm-area label="esquerda"> <!-- referência id esquerda de rec_gesto.gml-->
+  </mm-input>
   ]]></script>
 `
 _data.htmlIntro3CodeC = `
@@ -2831,41 +2824,39 @@ _data.htmlIntro3CodeC = `
   auto-links: false; highlight:[15,16,17,27,29,30,31,32,33,34,35]"><![CDATA[
   <!DOCTYPE html>
   <html>
-  <head><script src="relationship.js"><&#47script></head>
+  <head><script src="multimodal.js"><&#47script></head>
   <body>
-    <video id="midia_principal" src="video.mp4"
-      style="position: absolute; height 100%; width: 100%;">
-      <area id="creditos" begin="300s" end="360s"><&#47area>
-    </video>
-    <object id="sinte_voz" src="sinte_voz.ssml">
-      <area label="pergunta"><&#47area> <!-- referência id pergunta de sinte_voz.ssml-->
-    </object>
-    <object id="rec_voz" src="rec_voz.srgs">
-      <area label="repete"><&#47area> <!-- referência id repete de rec_voz.srgs-->
-    </object>
-    <object id="rec_gesto" src="rec_gesto.gml">
-      <area label="esquerda"><&#47area> <!-- referência id esquerda de rec_gesto.gml-->
-    </object>
-    <script>
-      var r1 = new Relationship("onBeginStart")
-      r1.bind("onBegin", "body")
-      r1.bind("start", "midia_principal")
-
-      var r2 = new Relationship("onBeginStart")
-      r2.bind("onBegin", "midia_principal", "creditos")
-      r2.bind("start", "sinte_voz")
-      r2.bind("start", "rec_voz")
-      r2.bind("start", "rec_gesto")
-
-      var r3 = new Relationship("onOrRecognizeStopStart")
-      r3.bind("onRecognize", "rec_voz", "repete")
-      r3.bind("onRecognize", "rec_gesto", "esquerda")
-      r3.bind("stop", "rec_voz")
-      r3.bind("stop", "rec_gesto")
-      r3.bind("stop", "midia_principal")
-      r3.bind("start", "midia_principal")
-
-    <&#47script>
+    <mm-scene>
+      <video id="midia_principal" src="video.mp4"
+        style="position: absolute; height 100%; width: 100%;">
+        <mm-area id="creditos" begin="300s" end="360s">
+      </video>
+      <mm-media id="sinte_voz" src="sinte_voz.ssml">
+        <mm-area label="pergunta"> <!-- referência id pergunta de sinte_voz.ssml-->
+      </mm-media>
+      <mm-input id="rec_voz" src="rec_voz.srgs">
+        <mm-area label="repete"> <!-- referência id repete de rec_voz.srgs-->
+      </mm-input>
+      <mm-input id="rec_gesto" src="rec_gesto.gml">
+        <mm-area label="esquerda"> <!-- referência id esquerda de rec_gesto.gml-->
+      </mm-input>
+     <mm-link xconnector="onBeginStart">
+        <onBegin interface="scene">
+        <start interface="midia_principal">
+      </mm-link>
+      <mm-link xconnector="onBeginStart">
+        <onBegin interface="midia_principal#creditos">
+        <start interface="sinte_voz">
+        <start interface="rec_voz">
+        <start interface="rec_gesto">
+      </mm-link>
+      <mm-link xconnector="onOrRecognizeStopStart">
+        <onBegin onRecognize="rec_voz#praia">
+        <onBegin onRecognize="rec_gesto#esquerda">
+        <stop interface="midia_principal">
+        <start interface="midia_principal">
+      </mm-link>
+    </mm-scene>
   </body>
   </html>
   ]]></script>
@@ -2950,43 +2941,34 @@ _data.htmlIntro4CodeB = `
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <html>
-  <head><script src="relationship.js"><&#47script></head>
+  <head><script src="multimodal.js"><&#47script></head>
   <body>
-    <video id="midia_principal" src="video.mp4"
-      style="position: absolute; height 100%; width: 100%;">
-      <area id="creditos" begin="300s" end="360s"><&#47area>
-    </video>
-    <object id="sinte_voz" src="sinte_voz.ssml">
-      <area label="pergunta"><&#47area>  <!-- referência id sinte_voz de sinte_voz.ssml-->
-    </object>
-    <object id="rec_voz" src="rec_voz.srgs">
-      <area label="repete"><&#47area> <!-- referência id repete de rec_voz.srgs-->
-    </object>
-    <script>
-      var sparql = 
-        \`PREFIX foaf: <http://xmlns.com/foaf/0.1>
-        PREFIX prf: <http://www.wapforum.org/profiles/UAPROF/ccppschema-20010430>
-        SELECT ?person
-        WHERE {
-          ?person prf:component ?component.
-          ?component prf: name ?name FILTER regex(?name, "Leap Motion")
-          ?name FILTER regex(?name, "microfone")
-        }\`
-      var gu_leap_microphone = new UserGroup(sparql, 2)
-
-      var r1 = new Relationship("onBeginStart")
-      r1.bind("onBegin", "body")
-      r1.bind("start", "midia_principal")
-
-      var r2 = new Relationship("onBeginStart")
-      r2.bind("onBegin", "midia_principal", "creditos")
-      r2.bind("start", "sinte_voz")
-
-      var r3 = new Relationship("onRecognizeStopStart")
-      r3.bind("onRecognize", "rec_voz", "repete", gu_leap_microphone, 2)
-      r3.bind("stop", "midia_principal")
-      r3.bind("start", "midia_principal")
-    <&#47script>
+    <mm-scene>
+      <video id="midia_principal" src="video.mp4"
+        style="position: absolute; height 100%; width: 100%;">
+        <m-area id="creditos" begin="300s" end="360s">
+      </video>
+      <mm-media id="sinte_voz" src="sinte_voz.ssml">
+        <mm-area label="pergunta">  <!-- referência id sinte_voz de sinte_voz.ssml-->
+      </mm-media>
+      <mm-input id="rec_voz" src="rec_voz.srgs">
+        <mm-area label="repete"> <!-- referência id repete de rec_voz.srgs-->
+      </mm-input>
+      <mm-userClass src="gu_leap_microphone.sparql" max="2">
+      <mm-link xconnector="onBeginStart">
+        <onBegin interface="scene">
+        <start interface="midia_principal">
+      </mm-link>
+      <mm-link xconnector="onBeginStart">
+        <onBegin interface="midia_principal#creditos">
+        <start interface="sinte_voz">
+      </link>
+      <mm-link xconnector="onRecognizeStopStart">
+        <onBegin onRecognize="rec_voz#repete" user_id="gu_leap_microphone(2)">
+        <stop interface="midia_principal">
+        <start interface="midia_principal">
+      </mm-link>
+    </mm-scene>
   </body>
   </html>
   ]]></script>
