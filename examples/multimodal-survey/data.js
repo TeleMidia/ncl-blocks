@@ -40,6 +40,11 @@ _data.surveyJSON.pages.push({
   title: 'Termo de consentimento livre e esclarecido',
   elements: [
     {
+      type: 'text',
+      visible: false,
+      name: 'timeBeginSurvey'
+    },
+    {
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
@@ -85,6 +90,11 @@ _data.surveyJSON.pages.push({
   name: 'intro',
   title: 'Introdução à linguagens multimídia com interações multimodais',
   elements: [
+    {
+      type: 'text',
+      visible: false,
+      name: 'timeBeginIntro'
+    },
     {
       type: 'html',
       html: `
@@ -156,18 +166,13 @@ _data.surveyJSON.pages.push({
 // ----------------------------------------
 
 _data.surveyJSON.pages.push({
-  name: 'perfil',
+  name: 'profile',
   title: 'Dados do participante',
   elements: [
     {
       type: 'text',
       visible: false,
-      name: 'timeBegin'
-    },
-    {
-      type: 'text',
-      visible: false,
-      name: 'timeEnd'
+      name: 'timeBeginProfile'
     },
     {
       type: 'text',
@@ -175,13 +180,6 @@ _data.surveyJSON.pages.push({
       name: 'profileName',
       title: 'Qual seu nome?'
     },
-    // {
-    //   type: 'text',
-    //   isRequired: true,
-    //   name: 'email',
-    //   title: 'Qual seu e-mail de contato?',
-    //   validators: [{ type: 'email' }]
-    // },
     {
       type: 'radiogroup',
       isRequired: true,
@@ -284,7 +282,11 @@ _data.surveyJSON.pages.push({
 
 pageIndex = _data.surveyJSON.pages.push({
   name: 'concepts',
-  elements: []
+  elements: [{
+    type: 'text',
+    visible: false,
+    name: 'timeConcepts'
+  }]
 }) - 1
 
 // ----------------------------------------
@@ -333,6 +335,11 @@ _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'panel',
   title: 'Conceitos 1.1',
   elements: [
+    {
+      type: 'text',
+      visible: false,
+      name: 'timeBeginConcepts'
+    },
     {
       type: 'html',
       name: 'conceptsIntro1',
@@ -1317,6 +1324,11 @@ _data.surveyJSON.pages.push({
   name: 'conceptsFeedback',
   elements: [
     {
+      type: 'text',
+      visible: false,
+      name: 'timeBeginConceptsFeedback'
+    },
+    {
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
@@ -1382,7 +1394,11 @@ _data.surveyJSON.pages.push({
 pageIndex = _data.surveyJSON.pages.push({
   name: 'ncl',
   visibleIf: _switchRuleNCL,
-  elements: []
+  elements: [{
+    type: 'text',
+    visible: false,
+    name: 'timeBeginNCL'
+  }]
 }) - 1
 
 // ----------------------------------------
@@ -2179,6 +2195,11 @@ _data.surveyJSON.pages.push({
   visibleIf: _switchRuleNCL,
   elements: [
     {
+      type: 'text',
+      visible: false,
+      name: 'timeBeginNCLFeedback'
+    },
+    {
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
@@ -2261,7 +2282,11 @@ _data.surveyJSON.pages.push({
 pageIndex = _data.surveyJSON.pages.push({
   name: 'html',
   visibleIf: _switchRuleHTML,
-  elements: []
+  elements: [{
+    type: 'text',
+    visible: false,
+    name: 'timeBeginHTML'
+  }]
 }) - 1
 
 _data.surveyJSON.pages[pageIndex].elements.push({
@@ -2992,6 +3017,11 @@ _data.surveyJSON.pages.push({
   visibleIf: _switchRuleHTML,
   elements: [
     {
+      type: 'text',
+      visible: false,
+      name: 'timeBeginHTMLFeedback'
+    },
+    {
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
@@ -3074,6 +3104,16 @@ _data.surveyJSON.pages.push({
   name: 'comments',
   title: 'Comentários adicionais',
   elements: [
+    {
+      type: 'text',
+      visible: false,
+      name: 'timeBeginComments'
+    },
+    {
+      type: 'text',
+      visible: false,
+      name: 'timeEndSurvey'
+    },
     {
       type: 'html',
       html: `

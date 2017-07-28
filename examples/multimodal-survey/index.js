@@ -46,6 +46,7 @@ var _blocksTask4WorkspaceEdited = false
 var _postId = '51d57b85-3813-4a08-801b-4b7e077c1660'
 var _userId = Blockly.utils.genUid()
 console.log(_userId)
+var _pagesVisited = { intro: false, profile: false, concepts: false, conceptsFeedback: false, ncl: false, nclFeedback: false, html: false, htmlFeedback: false, comments: false }
 
 function onSendResult (survey, options) {
   if (!options.success) {
@@ -56,15 +57,46 @@ function onSendResult (survey, options) {
   }
 }
 
+function onCurrentPageChanged (survey, options) {
+  if (options.newCurrentPage.name === 'intro' && !_pagesVisited.intro) {
+    _pagesVisited.intro = true
+    survey.getQuestionByName('timeBeginIntro').value = new Date()
+  } else if (options.newCurrentPage.name === 'profile' && !_pagesVisited.profile) {
+    _pagesVisited.profile = true
+    survey.getQuestionByName('timeBeginProfile').value = new Date()
+  } else if (options.newCurrentPage.name === 'concepts' && !_pagesVisited.concepts) {
+    _pagesVisited.concepts = true
+    survey.getQuestionByName('timeBeginConcepts').value = new Date()
+  } else if (options.newCurrentPage.name === 'conceptsFeedback' && !_pagesVisited.conceptsFeedback) {
+    _pagesVisited.conceptsFeedback = true
+    survey.getQuestionByName('timeBeginConceptsFeedback').value = new Date()
+  } else if (options.newCurrentPage.name === 'ncl' && !_pagesVisited.ncl) {
+    _pagesVisited.ncl = true
+    survey.getQuestionByName('timeBeginNCL').value = new Date()
+  } else if (options.newCurrentPage.name === 'nclFeedback' && !_pagesVisited.nclFeedback) {
+    _pagesVisited.nclFeedback = true
+    survey.getQuestionByName('timeBeginNCLFeedback').value = new Date()
+  } else if (options.newCurrentPage.name === 'html' && !_pagesVisited.html) {
+    _pagesVisited.html = true
+    survey.getQuestionByName('timeBeginHTML').value = new Date()
+  } else if (options.newCurrentPage.name === 'htmlFeedback' && !_pagesVisited.htmlFeedback) {
+    _pagesVisited.htmlFeedback = true
+    survey.getQuestionByName('timeBeginHTMLFeedback').value = new Date()
+  } else if (options.newCurrentPage.name === 'comments' && !_pagesVisited.comments) {
+    _pagesVisited.comments = true
+    survey.getQuestionByName('timeBeginComments').value = new Date()
+  }
+}
+
 function onAfterRenderSurvey (survey) {
-  survey.getQuestionByName('timeBegin').value = new Date()
-  console.log(survey.getQuestionByName('timeBegin').value)
+  survey.getQuestionByName('timeBeginSurvey').value = new Date()
+  console.log(survey.getQuestionByName('timeBeginSurvey').value)
 }
 
 function onComplete (survey) {
   console.log('onComplete')
-  survey.getQuestionByName('timeEnd').value = new Date()
-  console.log(survey.getQuestionByName('timeEnd').value)
+  survey.getQuestionByName('timeEndSurvey').value = new Date()
+  console.log(survey.getQuestionByName('timeEndSurvey').value)
   survey.sendResult(_postId, _userId)
 }
 
@@ -80,6 +112,7 @@ $('#surveyContainer').Survey({
   onAfterRenderQuestion: onRenderQuestion,
   onAfterRenderSurvey: onAfterRenderSurvey,
   onPartialSend: onPartialSend,
+  onCurrentPageChanged: onCurrentPageChanged,
   onComplete: onComplete,
   onSendResult: onSendResult
 })
@@ -369,7 +402,7 @@ function saveblocksTask4Changes (event) {
   }
   jsonToSave.changes.push(jsonFromEvent)
   _survey.getQuestionByName('conceptsTask4Changes').value =
-  JSON.stringify(jsonToSave)
+    JSON.stringify(jsonToSave)
 
   // save blocksTask4 result
   var xml = Blockly.Xml.workspaceToDom(_blocksTask4Workspace)
