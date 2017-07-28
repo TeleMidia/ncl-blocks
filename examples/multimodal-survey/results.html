@@ -27,6 +27,7 @@
     href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     crossorigin="anonymous">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+
   </script>
 </head>
 
@@ -74,8 +75,9 @@
     // ----------------------------------------
     // wget dxsurvey.com/api/MySurveys/getSurveyResults/59bd2657-93ac-492c-8dd5-134a10ebd69a?accessKey=d72526e70b814a3d8f918b60b94dafe4 -O result.json
     var _resultsData
-
-    $.get('http://dxsurvey.com/api/MySurveys/getSurveyResults/59bd2657-93ac-492c-8dd5-134a10ebd69a?accessKey=d72526e70b814a3d8f918b60b94dafe4', function (data) {
+    var _surveyId = 'b66deceb-16a6-42b8-bcab-0159a0d74e17'
+    var _acesskey = 'd72526e70b814a3d8f918b60b94dafe4'
+    $.get('http://dxsurvey.com/api/MySurveys/getSurveyResults/' + _surveyId + '?accessKey=' + _acesskey, function (data) {
       _resultsData = data.Data
       for (var i in _resultsData) {
         $('#resultIndex').append($('<option>').attr('value', i).html(i))
