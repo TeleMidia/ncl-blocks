@@ -969,14 +969,14 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <p>Em nossa representação de blocos, a combinação de modalidades de
         interação pode ser feita utilizando uma condição composta. A combinação
-        de condições compostas podem utilizar os seguintes operadores: 'OR'
-        quando apenas uma das condições é necessária; 'AND' quando todas as
-        condições são necessárias em qualquer ordem; e 'SEQ' quando todos as
+        de condições compostas podem utilizar os seguintes operadores: "or"
+        quando apenas uma das condições é necessária; 'and' quando todas as
+        condições são necessárias em qualquer ordem; e 'seq' quando todos as
         condições são necessárias e na sequência estabelecida.</p>
 
         <p>Os blocos a seguir definem uma nova versão da aplicação da parte
         Conceitos 1.2 que reinicia um vídeo dada uma interação por voz. Nessa
-        versão falar "repita vídeo" ou (operador 'OR') fazer quando gesto de
+        versão falar "repita vídeo" ou (operador "or") fazer quando gesto de
         deslizar a mão para esquerda.</p>
         </div>
 
@@ -1493,12 +1493,12 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <div id='nclIntro1CodeA'></div><br>
 
-        <p>O conceito de Relacionamento é baseado em causalidade e
+        <p><p>O conceito de Relacionamento permite definir o comportamento
+        das aplicações por meio de relações causais. Um Relacionamento é
         definido por <strong>um conjunto de condições e um conjunto de
         ações</strong>. Na NCL esse conceito já é implementado pelos elementos
-        <i>&ltport></i> e <i>&ltlink></i>. Os elementos <i>&ltport></i>
-        indicam quais <i>&ltmedia></i>s são iniciadas quando a
-        aplicação é iniciada.</p>
+        <i>&ltport></i> e <i>&ltlink></i>. Os elementos <i>&ltport></i> indicam
+        quais <i>&ltmedia></i>s são iniciadas quando a aplicação é iniciada.</p>
 
         <p>No <i>&ltlink></i> as ações podem ser de iniciar ("start") ou parar
         ("stop") uma Mídia ou Reconhecedor. Já as condições
@@ -1508,7 +1508,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         ("onSelection") ou reconhecimento de uma interação multimodal
         ("onRecognition").</p>
 
-        <p>O relacionamento entre condições e ações é definido pelo connector no
+        <p>A relação entre condições e ações é definido pelo connector no
         atributdo <i>xconnector</i> do <i>&ltlink></i>. Por exemplo, um
         connector "onBeginStart" define uma condição "onBegin" e ações de
         "start". Já um connector <i>onSelectionStopStart</i> define uma
@@ -1914,11 +1914,11 @@ _data.nclTask2CCodeOnly = `
       <link xconnector="conEx#onBeginStart">
         <bind role="onBegin" component="video_inicial" interface="creditos"/>
         <bind role="start" component="sinte_voz_videos" interface="pergunta"/>
-        <bind role="start" component="rec_voz"/>
+        <bind role="start" component="rec_voz_videos"/>
       </link>
       <link xconnector="onRecognizeStopStart">
         <bind role="onRecognize" component="rec_voz" interface="centro"/>
-        <bind role="stop" component="rec_voz"/>
+        <bind role="stop" component="rec_voz_videos"/>
         <bind role="stop" component="video_inicial"/>
         <bind role="start" component="video_centro"/>
       </link>
@@ -1934,7 +1934,7 @@ _data.nclTask2CCodeOnly = `
 
 _data.nclTask2CodeC = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight: [19,20,21,22,23,24,25,28,29,31,32,33,34,35,36,37,38,39,40,41]">
+  auto-links: false; highlight: [19,20,21,22,23,24,25,28,29,31,32,33,37,38,39]">
   <![CDATA[` + _data.nclTask2CCodeOnly + ` ]]></script>
 `
 
@@ -1967,8 +1967,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Na NCL estendida, a combinação de modalidades de interação pode ser
         defiida utilizando uma condição composta. Uma condição composta em um
         <i>&ltlink></i> combina condições simples utilizando um dos seguintes
-        operadores: 'OR' quando apenas uma das condições é necessária; 'AND'
-        quando todas condições são necessárias em qualquer ordem; e 'SEQ' quando
+        operadores: 'or' quando apenas uma das condições é necessária; 'and'
+        quando todas condições são necessárias em qualquer ordem; e 'seq' quando
         todas as condições são necessárias e devem acontecer na sequência
         estabelecida.</p>
         
@@ -1976,8 +1976,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         a seguir apresenta uma uma nova versão (modificações em destaque) da
         aplicação da parte Conceitos 2.2 que reinicia um vídeo dada uma
         interação por voz. Nessa versão, o vídeo é reiniciado quando usuário
-        falar "repita vídeo" ou (operador 'OR') fazer quando gesto de deslizar
-        mão para esquerda.</p>
+        falar "repita vídeo" ou (operador "or") quando fizer um gesto de
+        deslizar mão para esquerda.</p>
         
         <div id='nclIntro3CodeC'></div><br> </div>
       `
@@ -2293,21 +2293,20 @@ _data.surveyJSON.pages[pageIndex].elements.push({
   type: 'html',
   html: `
     <div style="text-align: justify; width: 70%;">
-    <p>A linguagem HTML é utilizada para criar conteúdo multimídia em
-    sistemas web. <strong>Nesta seção, não vamos ensinar a linguagem
-    HTML</strong>, mas vamos apresentar como os conceitos da seção anterior
-    são instanciados na HTML para esta oferecer suporte a interações
-    multimodais.</p>
+    <p>A linguagem HTML é utilizada para criar conteúdo multimídia em sistemas
+    web. <strong>Nesta seção, não vamos ensinar a linguagem HTML</strong>, mas
+    vamos apresentar como os conceitos da seção anterior são instanciados na
+    HTML para esta oferecer suporte a interações multimodais.</p>
     
-    <p>A tabela seguir apresenta como propomos instanciar os conceitos de
-    nossa pesquisa na versão atual da HTML (5.0). O conceito de
-    Mídia é parcialmente implementado por elementos como
-    <i>&ltimg></i>, <i>&ltvideo></i> e <i>&ltaudio></i>, pois estes
-    não possuem nosso conceito de âncora. O conceito de Relacionamento
-    é parcialmente implementado pelo elemento <i>script</i>, pois estes
-    permitem definir comportamentos na aplicação, como interações de usuário
-    por apontador. Por fim os conceitos de Reconhecedor e Grupo
-    de usuários não são implementados.</p>
+    <p>Nossos conceitos são instanciados na HTML dentro de uma <i>custom tag</i>
+    chamada <i>&ltmm-scene></i>, que contem alguns elementos da HTML e outros
+    novos. O conceito de Mídia é implementado por elementos existentes como
+    <i>&ltimg></i>, <i>&ltvideo></i> e <i>&ltaudio></i>, mas esntedidos com o
+    nosso conceito de âncora. O conceito de Relacionamento é implementado por
+    <i>&ltmm-link></i>. Em especial, o <i>&ltmm-link></i> para pertir diferentes
+    tipos de relacionamentos entre Mídias e Reconhecedores. Por fim os conceitos
+    de Reconhecedor e Grupo de usuários não são implementados na HTML, e
+    proposmos <i>&ltmm-input> e <i>&ltmm-userClass>, respectivamente.</p>
 
     <table align="center" class="table-bordered table-striped
     table-condensed">
@@ -2320,30 +2319,29 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <td><i>&ltmedia></i></td>
         <td><i>&ltimg></i>, <i>&ltvideo></i>, <i>&ltaudio></i>
         </td>
-        <td>estender esses elementos com <i>&ltarea></i></td>
+        <td> estender esses elementos com <i>&ltmm-area> e adicionar elemento <i>&ltmm-media></i></td>
       </tr>
       <tr>
         <td>Relacionamento</td>
         <td><i>&ltscript></i></td>
-        <td><i>&ltscript></i> com o objeto JavaScript
-        <i>Relationship</i></td>
+        <td>adicionar elemento <i>&ltmm-link></i></td>
       </tr>
       <tr>
         <td>Reconhecedor</td>
         <td><i>não presente</i></td>
-        <td>adicionar elemento <i>&ltinput></i></td>
+        <td>adicionar elemento <i>&ltmm-input></i></td>
       </tr>
       <tr>
         <td>Grupo de Usuários</td>
         <td>não presente</td></td>
-        <td>adicionar elemento <i>&ltuserClass></i></td>
+        <td>adicionar elemento <i>&ltmm-userClass></i></td>
       </tr>
     </table>
     <br>
     <p>Vamos agora detalhar esses conceitos e pedir que você realize algumas
     tarefas. <strong>Ressaltamos que essas tarefas NÃO se destinam a avaliar
     seus conhecimentos, mas sim capturar evidências de nossa
-    pesquisa.</strong>.</p>
+    pesquisa</strong>.</p>
     </div>
   `
 })
@@ -2361,20 +2359,20 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
-        <p>O conceito de Mídia é definido por <strong>um identificador,
-        um conteúdo e âncoras</strong>. Na HTML, ele é parcialmente
-        implementado por elementos como <i>&ltimg></i>, <i>&ltaudio></i>,
-        <i>&ltvideo></i> e <i>&ltmm-media></i>. O identificador é definido
-        pelo atributo <i>id</i> e o arquivo de mídia do conteúdo é definido
-        atributo <i>src</i>. Para permitir definir âncoras esses elementos são
-        estendidos com elementos <i>&ltarea></i>. Uma <i>&ltarea></i> pode
-        definir uma porção temporal com os atributos <i>begin</i> e
-        <i>end</i> ou um trecho delimitado com o atributo <i>label</i>.</p>
+        <p>O conceito de Mídia é definido por <strong>um identificador, um
+        conteúdo e âncoras</strong>. Na HTML estendida, ele é implementado por
+        elementos como <i>&ltimg></i>, <i>&ltaudio></i>, <i>&ltvideo></i>, para
+        respectivamente imagem, video e audio, e um novo elemento
+        <i>&ltmm-media></i> para outras modalidades. O identificador é definido
+        pelo atributo <i>id</i> e o arquivo de mídia do conteúdo é definido pelo
+        atributo <i>src</i>. Para permitir definir âncoras esses elementos
+        podem possuir elementos <i>&ltarea></i>. Uma <i>&ltmm-area></i> pode
+        definir uma porção temporal com os atributos <i>begin</i> e <i>end</i>
+        ou um trecho delimitado com o atributo <i>label</i>.</p>
 
         <p>Elementos Mídia também podem possuir propriedades para
         definir características de sua exibição definidas no atributo
-        <i>&ltstyle></i>. Trechos de código serão apresentados a seguir para
-        ilustrar esse conceito em HTML. O trecho de código a seguir define as
+        <i>&ltstyle></i>. O trecho de código a seguir define
         duas mídias com identificadores <i>midia_principal</i> e
         <i>icone_repetir</i>, e com conteúdos de vídeo e imagem,
         respectivamente. Em especial, a mídia de <i>midia_principal</i> possui
@@ -2383,39 +2381,40 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <div id='htmlIntro1CodeA'></div><br>
 
-        <p>O conceito de Relacionamento é baseado em causalidade e
-        definido por <strong>um conjunto de condições e um conjunto de
-        ações</strong>. Na HTML estendida, ele é implementado pelo elemento
-        <i>&ltscript></i>, com um código JavaScript que utiliza o objeto
-        <i>Relationship</i>.</p>
+        <p><p>O conceito de Relacionamento permite definir o comportamento das
+        aplicações por meio de relações causais. Um Relacionamento é definido
+        por <strong>um conjunto de condições e um conjunto de ações</strong>. Na
+        HTML estendida, ele é implementado pelo elemento <i>&ltmm-link></i>.</p>
         
         <p>As ações podem ser de iniciar ("start") ou parar ("stop") uma Mídia
         ou Reconhecedor. Já as condições podem ser simples ou compostas. As
-        condições simples em um objeto <i>Relationship</i> podem ser de início
+        condições simples em um objeto <i>&ltmm-link></i> podem ser de início
         ("onBegin") ou fim ("onEnd") de uma mídia ou de sua âncora, seleção de
         mídia pelo usuário ("onSelection") ou reconhecimento de uma interação
         multimodal ("onRecognition").<p>
 
-        <p>O relacionamento entre condições e ações é definido pelo parâmetro de
-        criação do objeto <i>Relationship</i>. Por exemplo, um uma parâmetro
-        "onBeginStart" define uma condição "onBegin" e ações de "start".
-        Já um connector <i>onSelectionStopStart</i> define uma condição
-        "onSelection" e ações de "stop" e "start". A associação de elementos
-        Mídia ou Reconhecedo com as condições e ações de um objeto
-        <i>Relationship</i> é definida pelo método <i>bind</i>.</p>
+        <p>A relação entre condições e ações é definido pelo atributo
+        <i>xconnector</i> do <i>&ltmm-link></i>. Por exemplo, um
+        <i>xconnector</i> com valor "onBeginStart" define uma condição "onBegin"
+        e ações de "start". Já um connector <i>onSelectionStopStart</i> define
+        uma condição "onSelection" e ações de "stop" e "start". A associação de
+        elementos Mídia ou Reconhecedo com as condições e ações de um objeto
+        <i>&ltmm-link></i> são definidas por elementos filhos com o nome das
+        condições ou ações: <i>&ltmm-onBegin></i>, <i>&ltmm-start></i>,
+        <i>&ltmm-stop></i>.</p>
 
         <p>Para ilustrar o uso desses conceitos, o trecho de código a seguir
         define uma aplicação que apresenta um vídeo e um ícone durante os
         créditos do vídeo. Se o usuário selecionar o ícone, o vídeo é
         reiniciado. Ele utiliza dois <i>img</i>, um <i>video</i> e um
-        <i>script</i> que define três objetos <i>Relationship</i>. O
-        primeiro <i>Relationship</i> define que o elemento
-        <i>midia_principal</i> inicia com a aplicação. O segundo
-        <i>Relationship</i> define que quando o <i>video_principal</i>
-        alcançar o seu trecho de <i>creditos<i>, a imagem <i>icone_repetir</i> é
-        iniciada. O <i>Relationship</i> terceiro define que quando
-        <i>icone_repetir</i> for selecionado, o <i>video_principal</i> será
-        reiniciado (<i>stop</i> e <i>start</i>).</p>
+        <i>script</i> que define três objetos <i>&ltmm-link></i>. O primeiro
+        <i>&ltmm-link></i> define que o elemento <i>midia_principal</i> inicia
+        com a aplicação. O segundo <i>&ltmm-link></i> define que quando o
+        <i>video_principal</i> alcançar o seu trecho de <i>creditos<i>, a imagem
+        <i>icone_repetir</i> é iniciada. O <i>&ltmm-link></i> terceiro define
+        que quando <i>icone_repetir</i> for selecionado, o
+        <i>video_principal</i> será reiniciado (<i><i>&ltmm-stop></i></i> e
+        <i><i>&ltmm-start></i></i>).</p>
 
         <div id='htmlIntro1CodeB'></div>
         </div>
@@ -2432,13 +2431,13 @@ _data.htmlIntro1CodeA = `
     <mm-area id="creditos" begin="300s" end="360s">
   </video>
   <img id="icone" src="icone.png"
-     style="position: absolute; width: 20%; height: 20%; top: 80%; z-index: 1;">
+     style="position: absolute; width: 20%; height: 20%; left: 80%; z-index: 1;">
   ]]></script>
 `
 
 _data.htmlIntro1CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[5,9,13,17,21]"><![CDATA[
+  auto-links: false"><![CDATA[
   <!DOCTYPE html>
   <html>
   <head><script src="multimodal.js"><&#47script></head>
@@ -2449,19 +2448,19 @@ _data.htmlIntro1CodeB = `
       <mm-area id="creditos" begin="300s" end="360s">
     </video>
     <img id="icone_repetir" src="icone_repetir.png"
-      style="position: absolute; width: 20%; height: 20%; top: 80%; z-index: 1;">
+      style="position: absolute; width: 20%; height: 20%; z-index: 1;">
     <mm-link xconnector="onBeginStart">
-      <onBegin interface="scene">
-      <start interface="midia_principal">
+      <mm-onBegin interface="scene">
+      <mm-start interface="midia_principal">
     </mm-link>
     <mm-link xconnector="onBeginStart">
-      <onBegin interface="midia_principal#creditos">
-      <start interface="icone">
+      <mm-onBegin interface="midia_principal#creditos">
+      <mm-start interface="icone">
     </mm-link>
     <mm-link xconnector="onSelectionStopStart">
-      <onSelection interface="icone">
-      <stop interface="midia_principal">
-      <start interface="midia_principal">
+      <mm-onSelection interface="icone">
+      <mm-stop interface="midia_principal">
+      <mm-start interface="midia_principal">
     </mm-link>
   </mm-scene>
   </body>
@@ -2502,7 +2501,7 @@ _data.htmlTask1CodeA = `
   auto-links: false;"> <![CDATA[
   <html>
   <head><script src="multimodal.js"><&#47script></head>
-  <mm-scene>
+  <mm-scene id="scene">
     <video id="video_inicial" src="video_inicial.mp4"
       style="position: absolute; height 100%; width: 100%;">
       <mm-area id="creditos" begin="300s" end="360s">
@@ -2516,22 +2515,22 @@ _data.htmlTask1CodeA = `
       <mm-area id="creditos" begin="300s" end="360s">
     </video>
     <img id="icone_centro" src="icone_centro.png"
-      style="position: absolute; width: 20%; height: 20%; top: 80%; z-index: 1;">
+      style="position: absolute; width: 20%; height: 20%; z-index: 1;">
     <img id="icone_praia" src="icone_praia.png"
-      style="position: absolute; width: 20%; height: 20%; top: 80%; z-index: 1;">
+      style="position: absolute; width: 20%; height: 20%; left: 80%; z-index: 1;">
     <mm-link xconnector="onBeginStart">
-      <onBegin interface="scene">
-      <start interface="video_inicial">
+      <mm-onBegin interface="scene">
+      <mm-start interface="video_inicial">
     </mm-link>
     <mm-link xconnector="onBeginStart">
-      <onBegin interface="video_inicial#creditos">
-      <start interface="icone_centro">
-      <start interface="icone_praia">
+      <mm-onBegin interface="video_inicial#creditos">
+      <mm-start interface="icone_centro">
+      <mm-start interface="icone_praia">
     </mm-link>
     <mm-link xconnector="onSelectionStopStart">
-      <onBegin interface="icone">
-      <stop interface="video_inicial">
-      <start interface="video_inicial">
+      <mm-onBegin interface="icone">
+      <mm-stop interface="video_inicial">
+      <mm-start interface="video_inicial">
     </mm-link>
   </mm-scene>
   </body>
@@ -2551,10 +2550,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'htmlIntro2',
       type: 'html',
       html: `
-        <div style="text-align: justify; width: 70%;">
+        <div style="text-align: justify; width: 70%;"> 
         <p>Além de mídias como imagens, áudios e vídeos, a HTML estendida também
-        deve suportar outras modalidades de conteúdo, como interações por voz.
-        </p>
+        deve suportar outras modalidades de conteúdo, como interações por voz,
+        através do elemento <i>&ltmm-media></i> </p>
 
         <p>Os trechos de código a seguir ilustram o uso de sintetização de voz
         na HTML estendida. O primeiro trecho de código apresenta o arquivo
@@ -2563,19 +2562,19 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         com identificador "pergunta" que sintetizada a frase: "você deseja
         repetir o vídeo?". O segundo trecho de código define uma
         <i>&ltmm-media></i> com identificador <i>sinte_voz</i>, que tem como
-        conteúdo o arquivo <i>sinte_voz.ssml</i>. Esse <i>&ltmm-media></i> possui
-        uma âncora que indica a frase a ser sintetizada.</p>
+        conteúdo o arquivo <i>sinte_voz.ssml</i>. Esse <i>&ltmm-media></i>
+        possui uma âncora que indica a frase a ser sintetizada.</p>
 
         <div id='htmlIntro2CodeA'></div>
         <div id='htmlIntro2CodeB'></div>
 
-        <p>O conceito de Reconhecedor é definido por <strong>um
-        identificador, seu conteúdo e âncoras</strong>. Na HTML estendida, ele é
-        implementado pelo elemento <i>&ltmm-media></i>. O identificador é
-        definido pelo atributo <i>id</i> e a descrição de reconhecimento é
-        definida pelo atributo <i>src</i>. As âncoras são definidas pelo
-        elemento <i>area</i> e podem definir trechos delimitados da descrição
-        com o atributo <i>label</i>.</p>
+        <p>O conceito de Reconhecedor é definido por <strong>um identificador,
+        seu conteúdo e âncoras</strong>. Na HTML estendida, ele é implementado
+        pelo elemento <i>&ltmm-input></i>. O identificador é definido pelo
+        atributo <i>id</i> e a descrição de reconhecimento é definida pelo
+        atributo <i>src</i>. As âncoras são definidas pelo elemento <i>area</i>
+        e podem definir trechos delimitados da descrição com o atributo
+        <i>label</i>.</p>
 
         <p>Para ilustrar o uso de um Reconhecedor, os trechos de código a seguir
         ilustram o uso de reconhecimento de voz na HTML estendida. O primeiro
@@ -2583,8 +2582,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         (Speech Recognition Grammar Specification) reconhecimento de voz. Ele
         possui uma frase com o identificador <i>repete</i> que define o
         reconhecimento de voz "repita vídeo". O segundo define um
-        <i>&ltmm-media></i> com identificador <i>rec_voz</i>, que tem como
-        conteúdo o arquivo <i>rec_voz.srgs</i>. Esse <i>&ltmm-media></i> possui
+        <i>&ltmm-input></i> com identificador <i>rec_voz</i>, que tem como
+        conteúdo o arquivo <i>rec_voz.srgs</i>. Esse <i>&ltmm-input></i> possui
         uma âncora que indica a frase a ser reconhecida.</p>
 
         <div id='htmlIntro2CodeC'></div>
@@ -2599,14 +2598,14 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         interação por voz, que utilizam os arquivos <i>sinte_voz.srgs</i> e
         <i>rec_voz.srgs</i> (apresentados acima).</p>
 
-        <p>Dois objetos <i>Relationship</i> do elemento <i>&ltscript></i> também
-        foram modificados. O primeiro <i>Relationship</i> modificado define que
-        quando o <i>video_principal</i> alcançar o trecho de <i>creditos</i>
-        (300s), a frase da âncora <i>pergunta</i> é sintetizada e o reconhecedor
-        <i>rec</i> é ativado (a partir desse momento, ele poderá reconhecer
-        interações de voz). O segundo <i>Relationship</i> modificado define que
-        quando for reconhecida a âncora <i>repete</i>, a <i>midia_principal</i>
-        será reiniciada (terminada e iniciada).</p>
+        <p>Dois elementos <i>&ltmm-link></i> do elemento <i>&ltscript></i>
+        também foram modificados. O primeiro <i>&ltmm-link></i> modificado
+        define que quando o <i>video_principal</i> alcançar o trecho de
+        <i>creditos</i> (300s), a frase da âncora <i>pergunta</i> é sintetizada
+        e o reconhecedor <i>rec</i> é ativado (a partir desse momento, ele
+        poderá reconhecer interações de voz). O segundo <i>&ltmm-link></i>
+        modificado define que quando for reconhecida a âncora <i>repete</i>, a
+        <i>midia_principal</i> será reiniciada (terminada e iniciada).</p>
 
         <div id='htmlIntro2CodeE'></div>
 
@@ -2630,7 +2629,7 @@ _data.htmlIntro2CodeB = `
 _data.htmlIntro2CodeC = _data.nclIntro2CodeC
 _data.htmlIntro2CodeD = `
  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[9,12,20,25]"><![CDATA[
+  auto-links: false"><![CDATA[
   <mm-input id="rec_voz" src="rec_voz.srgs">
     <mm-area label="repete"> <!-- referência id repete de rec_voz.srgs-->
   </mm-input>
@@ -2638,12 +2637,12 @@ _data.htmlIntro2CodeD = `
 `
 _data.htmlIntro2CodeE = `
  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[9,12,20,25]"><![CDATA[
+  auto-links: false; highlight:[10,11,12,13,14,15,25,26]"><![CDATA[
   <!DOCTYPE html>
   <html>
   <head><script src="multimodal.js"><&#47script></head>
   <body>
-    <mm-scene>
+    <mm-scene id="scene">
       <video id="midia_principal" src="video.mp4"
         style="position: absolute; height 100%; width: 100%;">
         <mm-area id="creditos" begin="300s" end="360s">
@@ -2655,18 +2654,18 @@ _data.htmlIntro2CodeE = `
         <mm-area label="repete"> <!-- referência id repete de rec_voz.srgs-->
       </mm-input>
       <mm-link xconnector="onBeginStart">
-        <onBegin interface="scene">
-        <start interface="midia_principal">
+        <mm-onBegin interface="scene">
+        <mm-start interface="midia_principal">
       </mm-link>
       <mm-link xconnector="onBeginStart">
-        <onBegin interface="midia_principal#creditos">
-        <start interface="sinte_voz">
-        <start interface="rec_voz">
+        <mm-onBegin interface="midia_principal#creditos">
+        <mm-start interface="sinte_voz">
+        <mm-start interface="rec_voz">
       </mm-link>
       <mm-link xconnector="onRecognizeStopStart">
-        <onBegin onRecognize="rec_voz#repete">
-        <stop interface="midia_principal">
-        <start interface="midia_principal">
+        <mm-onRecognize interface="rec_voz#repete">
+        <mm-stop interface="midia_principal">
+        <mm-start interface="midia_principal">
       </mm-link>
     </mm-scene>
   </body>
@@ -2714,7 +2713,7 @@ _data.htmlTask2CodeCOnly = `
   <html>
   <head><script src="multimodal.js"><&#47script></head>
   <body>
-    <mm-scene>
+    <mm-scene id="scene">
       <video id="video_inicial" src="video_inicial.mp4"
         style="position: absolute; height 100%; width: 100%;">
         <mm-area id="creditos" begin="300s" end="360s">
@@ -2734,23 +2733,23 @@ _data.htmlTask2CodeCOnly = `
         <mm-area label="repete"></repete>
       </mm-input>
       <mm-link xconnector="onBeginStart">
-        <onBegin interface="scene">
-        <start interface="video_inicial">
+        <mm-onBegin interface="scene">
+        <mm-start interface="video_inicial">
       </mm-link>
       <mm-link xconnector="onBeginStart">
-        <onBegin interface="video_inicial#creditos">
-        <start interface="sinte_voz">
-        <start interface="rec_voz">
+        <mm-onBegin interface="video_inicial#creditos">
+        <mm-start interface="sinte_voz">
+        <mm-start interface="rec_voz">
       </mm-link>
       <mm-link xconnector="onRecognizeStopStart">
-        <onBegin onRecognize="rec_voz#centro">
-        <stop interface="video_inicial">
-        <start interface="video_centro">
+        <mm-onRecognize interface="rec_voz#centro">
+        <mm-stop interface="video_inicial">
+        <mm-start interface="video_centro">
       </mm-link>
       <mm-link xconnector="onRecognizeStopStart">
-        <onBegin onRecognize="rec_voz#praia">
-        <stop interface="video_inicial">
-        <start interface="video_praia">
+        <mm-onRecognize interface="rec_voz#praia">
+        <mm-stop interface="video_inicial">
+        <mm-start interface="video_praia">
       </mm-link>
     </mm-scene>
   </body>
@@ -2759,7 +2758,7 @@ _data.htmlTask2CodeCOnly = `
 
 _data.htmlTask2CodeC = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false;"> <![CDATA[` + _data.htmlTask2CodeCOnly + `]]></script>
+  auto-links: false; highlight:[17,18,19,20,21,22,30] "> <![CDATA[` + _data.htmlTask2CodeCOnly + `]]></script>
 `
 
 // ----------------------------------------
@@ -2789,19 +2788,19 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div id='htmlIntro3CodeB'></div><br>
 
         <p>Na HTML estendida, a combinação de modalidades de interação pode ser
-        feita utilizando uma condição composta. Essas condições compostas
-        condições são definidas por um objeto <i>Relationship</i> utilizando
-        um dos seguintes operadores: 'OR' quando apenas uma das condições é
-        necessária; 'AND' quando todas as condições são necessárias em qualquer
-        ordem; e 'SEQ' quando todas as condições são necessárias e devem
-        acontecer na sequência estabelecida.</p>
+        feita utilizando uma condição composta. Essas condições compostas são
+        definidas pelo parametro <i>&ltxconnector></i> do <i>&ltmm-link></i>
+        utilizando um dos seguintes operadores: 'or' quando apenas uma das
+        condições é necessária; 'and' quando todas as condições são necessárias
+        em qualquer ordem; e 'seq' quando todas as condições são necessárias e
+        devem acontecer na sequência estabelecida.</p>
 
         <p>Para ilustrar o uso de combinação de modalidades, o trecho de código
         a seguir apresenta uma nova versão (modificações em destaque) da
         aplicação da parte Conceitos 2.2 que reinicia um vídeo dada uma
         interação por voz. Nessa versão, o vídeo é reiniciado quando usuário
-        falar "repita vídeo" ou (operador 'OR') fazer quando gesto de deslizar
-        mão para esquerda.
+        falar "repita vídeo" ou (operador "or") quando fizer um gesto de
+        deslizar mão para esquerda.
 
         <div id='htmlIntro3CodeC'></div><br> 
         </div>
@@ -2826,7 +2825,7 @@ _data.htmlIntro3CodeC = `
   <html>
   <head><script src="multimodal.js"><&#47script></head>
   <body>
-    <mm-scene>
+    <mm-scene id="scene">
       <video id="midia_principal" src="video.mp4"
         style="position: absolute; height 100%; width: 100%;">
         <mm-area id="creditos" begin="300s" end="360s">
@@ -2841,20 +2840,20 @@ _data.htmlIntro3CodeC = `
         <mm-area label="esquerda"> <!-- referência id esquerda de rec_gesto.gml-->
       </mm-input>
      <mm-link xconnector="onBeginStart">
-        <onBegin interface="scene">
-        <start interface="midia_principal">
+        <mm-onBegin interface="scene">
+        <mm-start interface="midia_principal">
       </mm-link>
       <mm-link xconnector="onBeginStart">
-        <onBegin interface="midia_principal#creditos">
-        <start interface="sinte_voz">
-        <start interface="rec_voz">
-        <start interface="rec_gesto">
+        <mm-onBegin interface="midia_principal#creditos">
+        <mm-start interface="sinte_voz">
+        <mm-start interface="rec_voz">
+        <mm-start interface="rec_gesto">
       </mm-link>
       <mm-link xconnector="onOrRecognizeStopStart">
-        <onBegin onRecognize="rec_voz#praia">
-        <onBegin onRecognize="rec_gesto#esquerda">
-        <stop interface="midia_principal">
-        <start interface="midia_principal">
+        <mm-onRecognize interface="rec_voz#praia">
+        <mm-onRecognize interface="rec_gesto#esquerda">
+        <mm-stop interface="midia_principal">
+        <mm-start interface="midia_principal">
       </mm-link>
     </mm-scene>
   </body>
@@ -2895,12 +2894,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>O conceito de Grupo de Usuários é definido <strong>por um
         identificador, número máximo de participantes e quais dispositivos estes
         utilizam</strong>. Na HTML estendida, o Grupo de Usuários é implementado
-        por elemento JavaScript que utilize um objeto <i>&ltUserGroup></i>. Os
-        dispositivos são definidos por um arquivo de descrição no formato SPARQL
-        definido como parâmetro na criação do objeto <i>&ltUserGroup></i>. O
-        trecho de código a seguir apresenta o arquivo de descrição de usuários
-        <i>gu_leap_microphone.sparql</i>. Essa descrição define que cada usuário
-        do grupo deve ter um microfone e um leapmotion.</p>
+        por elemento JavaScript que utilize um objeto <i>&ltmm-userClass></i>.
+        Os dispositivos são definidos por um arquivo de descrição no formato
+        SPARQL definido como parâmetro na criação do objeto
+        <i>&ltmm-userClass></i>. O trecho de código a seguir apresenta o arquivo
+        de descrição de usuários <i>gu_leap_microphone.sparql</i>. Essa
+        descrição define que cada usuário do grupo deve ter um microfone e um
+        leapmotion.</p>
 
         <div id='htmlIntro4CodeA'></div><br>
 
@@ -2943,10 +2943,10 @@ _data.htmlIntro4CodeB = `
   <html>
   <head><script src="multimodal.js"><&#47script></head>
   <body>
-    <mm-scene>
+    <mm-scene id="scene">
       <video id="midia_principal" src="video.mp4"
         style="position: absolute; height 100%; width: 100%;">
-        <m-area id="creditos" begin="300s" end="360s">
+        <mm-area id="creditos" begin="300s" end="360s">
       </video>
       <mm-media id="sinte_voz" src="sinte_voz.ssml">
         <mm-area label="pergunta">  <!-- referência id sinte_voz de sinte_voz.ssml-->
@@ -2956,17 +2956,17 @@ _data.htmlIntro4CodeB = `
       </mm-input>
       <mm-userClass src="gu_leap_microphone.sparql" max="2">
       <mm-link xconnector="onBeginStart">
-        <onBegin interface="scene">
-        <start interface="midia_principal">
+        <mm-onBegin interface="scene">
+        <mm-start interface="midia_principal">
       </mm-link>
       <mm-link xconnector="onBeginStart">
-        <onBegin interface="midia_principal#creditos">
-        <start interface="sinte_voz">
+        <mm-onBegin interface="midia_principal#creditos">
+        <mm-start interface="sinte_voz">
       </link>
       <mm-link xconnector="onRecognizeStopStart">
-        <onBegin onRecognize="rec_voz#repete" user_id="gu_leap_microphone(2)">
-        <stop interface="midia_principal">
-        <start interface="midia_principal">
+        <mm-onRecognize interface="rec_voz#repete" user_id="gu_leap_microphone(2)">
+        <mm-stop interface="midia_principal">
+        <mm-start interface="midia_principal">
       </mm-link>
     </mm-scene>
   </body>
