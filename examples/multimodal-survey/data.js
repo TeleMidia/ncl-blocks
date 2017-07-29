@@ -1510,13 +1510,13 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         ("onSelection") ou reconhecimento de uma interação multimodal
         ("onRecognition").</p>
 
-        <p>A relação entre condições e ações é definido pelo connector no
-        atributdo <i>xconnector</i> do <i>&ltlink></i>. Por exemplo, um
-        connector "onBeginStart" define uma condição "onBegin" e ações de
-        "start". Já um connector <i>onSelectionStopStart</i> define uma
-        condição "onSelection" e ações de "stop" e "start". A associação de
-        elementos <i>&ltmedia></i> ou <i>&ltinput></i> com as condições e ações
-        de um <i>&ltlink></i> é definida pelo elemento <i>&ltbind></i> do
+        <p>A relação entre condições e ações é definido pelo atributdo
+        <i>xconnector</i> do <i>&ltlink></i>. Por exemplo, um <i>xconnector</i>
+        "onBeginStart" define uma condição "onBegin" e ações de "start". Já um
+        <i>xconnector</i> <i>onSelectionStopStart</i> define uma condição
+        "onSelection" e ações de "stop" e "start". A associação de elementos
+        <i>&ltmedia></i> ou <i>&ltinput></i> com as condições e ações de um
+        <i>&ltlink></i> é definida pelo elemento <i>&ltbind></i> do
         <i>&ltlink></i>.</p>
         
         <p>Para ilustrar o uso desses conceitos, o trecho de código a segui
@@ -2412,11 +2412,11 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>A relação entre condições e ações é definido pelo atributo
         <i>xconnector</i> do <i>&ltmm-link></i>. Por exemplo, um
         <i>xconnector</i> com valor "onBeginStart" define uma condição "onBegin"
-        e ações de "start". Já um connector <i>onSelectionStopStart</i> define
-        uma condição "onSelection" e ações de "stop" e "start". A associação de
-        elementos Mídia ou Reconhecedo com as condições e ações de um objeto
-        <i>&ltmm-link></i> são definidas por elementos filhos com o nome das
-        condições ou ações: <i>&ltmm-onBegin></i>, <i>&ltmm-start></i>,
+        e ações de "start". Já um <i>xconnector</i>  <i>onSelectionStopStart</i>
+        define uma condição "onSelection" e ações de "stop" e "start". A
+        associação de elementos Mídia ou Reconhecedo com as condições e ações de
+        um objeto <i>&ltmm-link></i> são definidas por elementos filhos com o
+        nome das condições ou ações: <i>&ltmm-onBegin></i>, <i>&ltmm-start></i>,
         <i>&ltmm-stop></i>.</p>
 
         <p>Para ilustrar o uso desses conceitos, o trecho de código a seguir
