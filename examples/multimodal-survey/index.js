@@ -18,7 +18,7 @@ var _surveyCss = {
   'footer': 'panel-footer text-center ',
   'pageTitle': 'h3 text-center bg-info page-header',
   // row
-  'row': 'h4 panel-body panel panel-default',
+  'row': 'panel-body panel panel-default',
   'question': {
     root: '',
     title: 'h4 breadcrumb'
