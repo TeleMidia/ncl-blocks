@@ -361,7 +361,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <i>creditos</i> que inicia aos 300 e termina aos 360 segundos.</p>
         </div>
 
-        <div id='conceptsIntro1A'></div><br>
+        <div id='conceptsIntro1A'></div>
 
         <div style="text-align: justify; width: 70%;">
         <p>O conceito de Relacionamento permite definir o comportamento
@@ -649,7 +649,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         frase "você deseja repetir o vídeo?".</p>
         </div>
 
-        <div id='conceptsIntro2A'></div><br>
+        <div id='conceptsIntro2A'></div>
 
         <div style="text-align: justify; width: 70%;">
         <p>Um Reconhecedor permite o reconhecimento de interações
@@ -669,7 +669,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         reconhece o comando de voz "repita vídeo". 
         </div>
 
-        <div id='conceptsIntro2B'></div><br>
+        <div id='conceptsIntro2B'></div>
 
         <div style="text-align: justify; width: 70%;"> 
         <p>Para ilustrar o uso desses conceitos, os blocos a seguir definem uma
@@ -687,7 +687,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <i>midia_principal</i> deve ser reiniciada (terminada e iniciada).</p>
         </div>
 
-        <div id='conceptsIntro2C'></div><br>
+        <div id='conceptsIntro2C'></div>
       `
     }
   ]
@@ -965,7 +965,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         como conteúdo. Esse conteúdo utiliza duas âncoras (<i>esquerda</i> e
         <i>direita</i>) para definir gestos de mão nessas direções.</p>
 
-        <div id='conceptsIntro3A'></div><br>
+        <div id='conceptsIntro3A'></div>
 
         <p>Em nossa representação de blocos, a combinação de modalidades de
         interação pode ser feita utilizando uma condição composta. A combinação
@@ -980,7 +980,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         deslizar a mão para esquerda.</p>
         </div>
 
-        <div id='conceptsIntro3B'></div><br>
+        <div id='conceptsIntro3B'></div>
       `
     }
   ]
@@ -1176,7 +1176,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         membros, cada qual com seu reconhecedor de gestos (e.g. LeapMotion).</p>
         </div>
 
-        <div id='conceptsIntro4A'></div><br>
+        <div id='conceptsIntro4A'></div>
 
         <div style="text-align: justify; width: 70%;"> <p>Para ilustrar o uso de
         um Grupo de Usuários, os blocos a seguir são uma nova versão
@@ -1492,7 +1492,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <i>creditos</i> que inicia aos 300 e termina aos 360 segundos.</p>
         </div>
 
-        <div id='nclIntro1CodeA'></div><br>
+        <div id='nclIntro1CodeA'></div>
 
         <div style="text-align: justify; width: 70%;">
         <p><p>O conceito de Relacionamento permite definir o comportamento
@@ -1726,7 +1726,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         </div>
 
         <div id='nclIntro2CodeC'></div>
-        <div id='nclIntro2CodeD'></div><br>
+        <div id='nclIntro2CodeD'></div>
 
         <div style="text-align: justify; width: 70%;">
         <p>Para ilustrar o uso de interação por voz, o trecho de código a seguir
@@ -1972,7 +1972,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         </div>
 
         <div id='nclIntro3CodeA'></div>
-        <div id='nclIntro3CodeB'></div><br>
+        <div id='nclIntro3CodeB'></div>
         
         <div style="text-align: justify; width: 70%;"> 
         <p>Na NCL estendida, a combinação de modalidades de interação pode ser
@@ -1991,7 +1991,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         deslizar mão para esquerda.</p>
         </div>
         
-        <div id='nclIntro3CodeC'></div><br> </div>
+        <div id='nclIntro3CodeC'></div> </div>
       `
     }
   ]
@@ -2109,7 +2109,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         do grupo deve ter um microfone e um lLeapMotion.</p>
         </div>
 
-        <div id='nclIntro4CodeA'></div><br>
+        <div id='nclIntro4CodeA'></div>
 
         <div style="text-align: justify; width: 70%;"> 
         <p>Para ilustrar o uso de um Grupo de Usuários em NCL, o trecho de
@@ -2394,7 +2394,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         360 segundos.</p>
         </div>
 
-        <div id='htmlIntro1CodeA'></div><br>
+        <div id='htmlIntro1CodeA'></div>
 
         <div style="text-align: justify; width: 70%;">
         <p><p>O conceito de Relacionamento permite definir o comportamento das
@@ -2498,8 +2498,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
       <div style="text-align: justify; width: 70%;">
       <p>Por favor, analise com atenção o trecho de código HTML a seguir.</p>
-      <div id='htmlTask1CodeA'></div>
       </div>
+      <div id='htmlTask1CodeA'></div>
     `
     },
     {
@@ -2606,7 +2606,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         </div>
 
         <div id='htmlIntro2CodeC'></div>
-        <div id='htmlIntro2CodeD'></div><br>
+        <div id='htmlIntro2CodeD'></div>
 
         <div style="text-align: justify; width: 70%;"> 
         <p>Para ilustrar o uso de interação por voz, o trecho de código a seguir
@@ -2807,7 +2807,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         </div>
 
         <div id='htmlIntro3CodeA'></div>
-        <div id='htmlIntro3CodeB'></div><br>
+        <div id='htmlIntro3CodeB'></div>
 
         <div style="text-align: justify; width: 70%;">
         <p>Na HTML estendida, a combinação de modalidades de interação pode ser
@@ -2826,7 +2826,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         deslizar mão para esquerda.
         </div>
 
-        <div id='htmlIntro3CodeC'></div><br> 
+        <div id='htmlIntro3CodeC'></div> 
       `
     }
   ]
@@ -2926,7 +2926,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         leapmotion.</p>
         </div>
 
-        <div id='htmlIntro4CodeA'></div><br>
+        <div id='htmlIntro4CodeA'></div>
 
         <div style="text-align: justify; width: 70%;">
         <p>Para ilustrar o uso de um Grupo de Usuários em HTML, o trecho de
