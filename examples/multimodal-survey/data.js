@@ -1490,9 +1490,11 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         com conteúdos de vídeo e imagem, respectivamente. Em especial, a mídia
         de <i>midia_principal</i> possui uma âncora chamada de
         <i>creditos</i> que inicia aos 300 e termina aos 360 segundos.</p>
+        </div>
 
         <div id='nclIntro1CodeA'></div><br>
 
+        <div style="text-align: justify; width: 70%;">
         <p><p>O conceito de Relacionamento permite definir o comportamento
         das aplicações por meio de relações causais. Um Relacionamento é
         definido por <strong>um conjunto de condições e um conjunto de
@@ -1529,9 +1531,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         segundo <i>&ltlink></i> define que quando essa <i>icone_reptetir</i> for
         selecionado o <i>video_principal</i> será reiniciado (<i>stop</i> e
         <i>start</i>).</p>
+        </div>
 
         <div id='nclIntro1CodeB'></div>
-        </div>
       `
     }
   ]
@@ -1686,7 +1688,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Além de mídias como imagens, áudios e vídeos, o elemento
         <i>&ltmedia></i> da NCL estendida também deve suportar outras
         modalidades de conteúdo, como interações por voz.</p>
+        </div>
 
+        <div style="text-align: justify; width: 70%;">
         <p>Os trechos de código a seguir ilustram o uso de sintetização de voz
         na NCL estendida. O primeiro trecho de código apresenta o arquivo
         <i>sinte_voz.ssml</i> que segue o formato SSML (Speech Synthesis Markup
@@ -1696,10 +1700,12 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <i>&ltmedia></i> com identificador <i>sinte_voz</i>, que tem como
         conteúdo o arquivo <i>sinte_voz.ssml</i>. Essa <i>&ltmedia></i> possui
         uma âncora que indica a frase a ser sintetizada.</p>
+        </div>
 
         <div id='nclIntro2CodeA'></div>
         <div id='nclIntro2CodeB'></div>
 
+        <div style="text-align: justify; width: 70%;">
         <p>O conceito de Reconhecedor é definido por <strong>um
         identificador, seu conteúdo e âncoras</strong>. Na NCL estendida, ele é
         implementado pelo elemento <i>&ltinput></i>. O identificador é
@@ -1717,10 +1723,12 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <i>&ltinput></i> com identificador <i>rec_voz</i>, que tem como conteúdo
         o arquivo <i>rec_voz.srgs</i>. Esse <i>&ltinput></i> possui uma âncora
         que indica a frase a ser reconhecida.</p>
+        </div>
 
         <div id='nclIntro2CodeC'></div>
         <div id='nclIntro2CodeD'></div><br>
 
+        <div style="text-align: justify; width: 70%;">
         <p>Para ilustrar o uso de interação por voz, o trecho de código a seguir
         apresenta uma nova versão (modificações em destaque) da aplicação da
         parte Conceitos 2.1 que reinicia um vídeo dada uma interação por
@@ -1738,10 +1746,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         segundo <i>&ltlink></i> modificado define que quando for reconhecida a
         âncora <i>repete</i>, a <i>midia_principal</i> será reiniciada
         (terminada e iniciada).</p>
+        </div>
 
         <div id='nclIntro2CodeE'></div>
-
-        </div>
       `
     }
   ]
@@ -1838,16 +1845,18 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       <div style="text-align: justify; width: 70%;">
       Considere as descrições sinte_voz_videos.ssml e rec_voz_videos.srgs a
       seguir.<br><br>
+      </div>
 
       <div id='nclTask2CodeA'></div>
       <div id='nclTask2CodeB'></div>
 
+      <div style="text-align: justify; width: 70%;">
       <p>O código NCL a seguir é uma versão modificada da Tarefa 2.1 para
       permitir interações multimodais utilizando as duas descrições acima. Por
       favor, analise atenção.</p>
+      </div>
 
       <div id='nclTask2CodeC'></div>
-      </div>
     `
     },
     {
@@ -1960,10 +1969,12 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         gestos de mão. Ele possui dois gestos com os identificadores
         <i>swipe_esquerda</i> e <i>swipe_direita</i>, que definem gestos de
         mão para esquerda e para direita, respectivamente.</p>
+        </div>
 
         <div id='nclIntro3CodeA'></div>
         <div id='nclIntro3CodeB'></div><br>
         
+        <div style="text-align: justify; width: 70%;"> 
         <p>Na NCL estendida, a combinação de modalidades de interação pode ser
         defiida utilizando uma condição composta. Uma condição composta em um
         <i>&ltlink></i> combina condições simples utilizando um dos seguintes
@@ -1978,6 +1989,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         interação por voz. Nessa versão, o vídeo é reiniciado quando usuário
         falar "repita vídeo" ou (operador "or") quando fizer um gesto de
         deslizar mão para esquerda.</p>
+        </div>
         
         <div id='nclIntro3CodeC'></div><br> </div>
       `
@@ -2085,19 +2097,21 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'nclIntro4',
       type: 'html',
       html: `
-        <div style="text-align: justify; width: 70%;"> <p>O conceito de Grupo de
-        Usuários é definido <strong>por um identificador, número máximo de
-        participantes e quais dispositivos estes utilizam</strong>. Na NCL, o
-        Grupo de Usuários é implementado pelo elemento <i>&ltuserClass></i>,
-        filho do elemento <i>&lthead></i>. O identificador é definido pelo
-        atributo <i>id</i> e os dispositivos são definidos por um arquivo de
-        descrição no formato SPARQL. O trecho de código a seguir apresenta o
-        arquivo de descrição de usuários <i>gu_leap_microphone.sparql</i>. Essa
-        descrição define que cada usuário do grupo deve ter um microfone e um
-        lLeapMotion.</p>
+        <div style="text-align: justify; width: 70%;"> 
+        <p>O conceito de Grupo de Usuários é definido <strong>por um
+        identificador, número máximo de participantes e quais dispositivos estes
+        utilizam</strong>. Na NCL, o Grupo de Usuários é implementado pelo
+        elemento <i>&ltuserClass></i>, filho do elemento <i>&lthead></i>. O
+        identificador é definido pelo atributo <i>id</i> e os dispositivos são
+        definidos por um arquivo de descrição no formato SPARQL. O trecho de
+        código a seguir apresenta o arquivo de descrição de usuários
+        <i>gu_leap_microphone.sparql</i>. Essa descrição define que cada usuário
+        do grupo deve ter um microfone e um lLeapMotion.</p>
+        </div>
 
         <div id='nclIntro4CodeA'></div><br>
 
+        <div style="text-align: justify; width: 70%;"> 
         <p>Para ilustrar o uso de um Grupo de Usuários em NCL, o trecho de
         código a seguir apresenta uma nova versão (modificações em destaque) da
         aplicação da parte Conceitos 2.2 que reinicia um vídeo dada uma
@@ -2105,9 +2119,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         segundo usuário falar "repita vídeo". Esse grupo é definido com um
         máximo de 2 usuários e com os dispositivos descritos no arquivo
         <i>gu_leap_microphone.sparql</i> (apresentado acima).</p>
+        </div>
 
         <div id='nclIntro4CodeB'></div>
-        </div>
       `
     }
   ]
@@ -2316,10 +2330,10 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <th>Como propomos</th>
       </tr>
       <tr>
-        <td><i>&ltmedia></i></td>
+        <td>Mídia</i></td>
         <td><i>&ltimg></i>, <i>&ltvideo></i>, <i>&ltaudio></i>
         </td>
-        <td> estender esses elementos com <i>&ltmm-area> e adicionar elemento <i>&ltmm-media></i></td>
+        <td> estender esses elementos com <i>&ltmm-area> e adicionar <i>&ltmm-media></i></td>
       </tr>
       <tr>
         <td>Relacionamento</td>
@@ -2378,9 +2392,11 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         respectivamente. Em especial, a mídia de <i>midia_principal</i> possui
         uma âncora chamada de <i>creditos</i> que inicia aos 300 e termina aos
         360 segundos.</p>
+        </div>
 
         <div id='htmlIntro1CodeA'></div><br>
 
+        <div style="text-align: justify; width: 70%;">
         <p><p>O conceito de Relacionamento permite definir o comportamento das
         aplicações por meio de relações causais. Um Relacionamento é definido
         por <strong>um conjunto de condições e um conjunto de ações</strong>. Na
@@ -2415,9 +2431,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         que quando <i>icone_repetir</i> for selecionado, o
         <i>video_principal</i> será reiniciado (<i><i>&ltmm-stop></i></i> e
         <i><i>&ltmm-start></i></i>).</p>
+        </div>
 
         <div id='htmlIntro1CodeB'></div>
-        </div>
       `
     }
   ]
@@ -2564,10 +2580,12 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <i>&ltmm-media></i> com identificador <i>sinte_voz</i>, que tem como
         conteúdo o arquivo <i>sinte_voz.ssml</i>. Esse <i>&ltmm-media></i>
         possui uma âncora que indica a frase a ser sintetizada.</p>
+        </div>
 
         <div id='htmlIntro2CodeA'></div>
         <div id='htmlIntro2CodeB'></div>
 
+        <div style="text-align: justify; width: 70%;"> 
         <p>O conceito de Reconhecedor é definido por <strong>um identificador,
         seu conteúdo e âncoras</strong>. Na HTML estendida, ele é implementado
         pelo elemento <i>&ltmm-input></i>. O identificador é definido pelo
@@ -2585,10 +2603,12 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <i>&ltmm-input></i> com identificador <i>rec_voz</i>, que tem como
         conteúdo o arquivo <i>rec_voz.srgs</i>. Esse <i>&ltmm-input></i> possui
         uma âncora que indica a frase a ser reconhecida.</p>
+        </div>
 
         <div id='htmlIntro2CodeC'></div>
         <div id='htmlIntro2CodeD'></div><br>
 
+        <div style="text-align: justify; width: 70%;"> 
         <p>Para ilustrar o uso de interação por voz, o trecho de código a seguir
         apresenta uma nova versão (modificações em destaque) da aplicação da
         parte Conceitos 2.1 que reinicia um vídeo dada uma interação por
@@ -2606,10 +2626,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         poderá reconhecer interações de voz). O segundo <i>&ltmm-link></i>
         modificado define que quando for reconhecida a âncora <i>repete</i>, a
         <i>midia_principal</i> será reiniciada (terminada e iniciada).</p>
+        </div>
 
         <div id='htmlIntro2CodeE'></div>
-
-        </div>
       `
     }
   ]
@@ -2687,16 +2706,18 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       <div style="text-align: justify; width: 70%;">
       Considere as descrições sinte_voz.ssml e rec_voz.srgs, respectivamente, a
       seguir.<br><br>
+      </div>
 
       <div id='htmlTask2CodeA'></div>
       <div id='htmlTask2CodeB'></div>
 
+      <div style="text-align: justify; width: 70%;">
       <p>O código HTML a seguir é uma versão modificada da Tarefa 2.1 para
       permitir interações multimodais utilizando as duas descrições acima. Por
       favor, analise atenção.</p>
+      </div>
 
       <div id='htmlTask2CodeC'></div>
-      </div>
     `
     },
     {
@@ -2783,10 +2804,12 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         gestos de mão. Ele possui dois gestos com os identificadores
         <i>swipe_esquerda</i> e <i>swipe_direita</i>, que definem gestos de mão
         para esquerda e para direita, respectivamente.</p>
+        </div>
 
         <div id='htmlIntro3CodeA'></div>
         <div id='htmlIntro3CodeB'></div><br>
 
+        <div style="text-align: justify; width: 70%;">
         <p>Na HTML estendida, a combinação de modalidades de interação pode ser
         feita utilizando uma condição composta. Essas condições compostas são
         definidas pelo parametro <i>&ltxconnector></i> do <i>&ltmm-link></i>
@@ -2801,9 +2824,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         interação por voz. Nessa versão, o vídeo é reiniciado quando usuário
         falar "repita vídeo" ou (operador "or") quando fizer um gesto de
         deslizar mão para esquerda.
+        </div>
 
         <div id='htmlIntro3CodeC'></div><br> 
-        </div>
       `
     }
   ]
@@ -2901,9 +2924,11 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         de descrição de usuários <i>gu_leap_microphone.sparql</i>. Essa
         descrição define que cada usuário do grupo deve ter um microfone e um
         leapmotion.</p>
+        </div>
 
         <div id='htmlIntro4CodeA'></div><br>
 
+        <div style="text-align: justify; width: 70%;">
         <p>Para ilustrar o uso de um Grupo de Usuários em HTML, o trecho de
         código a seguir apresenta uma uma nova versão (modificações em destaque)
         da aplicação da parte Conceitos 2.2 que reinicia um vídeo dada uma
@@ -2911,9 +2936,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         segundo usuário falar "repita vídeo". Esse grupo é definido com um
         máximo de 2 usuários e com os dispositivos descritos no arquivo
         <i>gu_leap_microphone.sparql</i> (apresentado acima).</p>
+        </div>
 
         <div id='htmlIntro4CodeB'></div>
-        </div>
       `
     }
   ]
