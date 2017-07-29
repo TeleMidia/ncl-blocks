@@ -64,9 +64,14 @@ _data.surveyJSON.pages.push({
         pauta-se no respeito à privacidade, e o anonimato dos
         participantes.</li>
         </ul>
-        <p>Caso esteja de acordo, prossiga.</p>
         </div>
       `
+    },
+    {
+      type: 'text',
+      isRequired: true,
+      name: 'profileName',
+      title: 'Caso esteja de acordo informe seu nome e prossiga.'
     },
     {
       type: 'html',
@@ -173,12 +178,6 @@ _data.surveyJSON.pages.push({
       type: 'text',
       visible: false,
       name: 'timeBeginProfile'
-    },
-    {
-      type: 'text',
-      isRequired: true,
-      name: 'profileName',
-      title: 'Qual seu nome?'
     },
     {
       type: 'radiogroup',

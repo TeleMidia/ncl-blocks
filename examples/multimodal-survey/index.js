@@ -76,12 +76,17 @@ function onCurrentPageChanged (survey, options) {
   } else if (options.newCurrentPage.name === 'ncl' && !_pagesVisited.ncl) {
     _pagesVisited.ncl = true
     survey.getQuestionByName('timeBeginNCL').value = new Date()
+    _survey.getQuestionByName('nclTask3Question').value = _data.nclTask2CCodeOnly
+    _survey.getQuestionByName('nclTask4Question').value = _data.nclTask2CCodeOnly
   } else if (options.newCurrentPage.name === 'nclFeedback' && !_pagesVisited.nclFeedback) {
     _pagesVisited.nclFeedback = true
     survey.getQuestionByName('timeBeginNCLFeedback').value = new Date()
   } else if (options.newCurrentPage.name === 'html' && !_pagesVisited.html) {
     _pagesVisited.html = true
     survey.getQuestionByName('timeBeginHTML').value = new Date()
+    var code = _data.htmlTask2CodeCOnly.replace(/<&#47/, '</').replace('<&#47script>', '</script>')
+    _survey.getQuestionByName('htmlTask3Question').value = code
+    _survey.getQuestionByName('htmlTask4Question').value = code
   } else if (options.newCurrentPage.name === 'htmlFeedback' && !_pagesVisited.htmlFeedback) {
     _pagesVisited.htmlFeedback = true
     survey.getQuestionByName('timeBeginHTMLFeedback').value = new Date()
@@ -156,7 +161,7 @@ $('#surveyPageNo').change(function () {
 
 // $('#surveyPageNo').val(1).change()
 // $('#surveyPageNo').val(3).change()
-$('#surveyPageNo').val(5).change()
+// $('#surveyPageNo').val(5).change()
 // $('#surveyPageNo').val(7).change()
 
 // ----------------------------------------
@@ -313,14 +318,6 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       $('#nclTask2CodeC').append(_data.nclTask2CodeC)
       SyntaxHighlighter.highlight()
       break
-    case 'nclTask3Question':
-      _survey.getQuestionByName('nclTask3Question').value =
-        _data.nclTask2CCodeOnly
-      break
-    case 'nclTask4Question':
-      _survey.getQuestionByName('nclTask4Question').value =
-        _data.nclTask2CCodeOnly
-      break
     case 'htmlIntro1':
       $('#htmlIntro1CodeA').append(_data.htmlIntro1CodeA)
       $('#htmlIntro1CodeB').append(_data.htmlIntro1CodeB)
@@ -354,16 +351,6 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       $('#htmlTask2CodeB').append(_data.nclTask2CodeB)
       $('#htmlTask2CodeC').append(_data.htmlTask2CodeC)
       SyntaxHighlighter.highlight()
-      break
-    case 'htmlTask3Question':
-      var re = /<&#47/
-      _survey.getQuestionByName('htmlTask3Question').value =
-        _data.htmlTask2CodeCOnly.replace(re, '</').replace('<&#47script>', '</script>')
-      break
-    case 'htmlTask4Question':
-      re = /<&#47/
-      _survey.getQuestionByName('htmlTask4Question').value =
-        _data.htmlTask2CodeCOnly.replace(re, '</').replace('<&#47script>', '</script>')
       break
   }
 }
