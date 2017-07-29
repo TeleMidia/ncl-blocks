@@ -51,7 +51,7 @@ _data.surveyJSON.pages.push({
         <p>O TeleMídia é um grupo de pesquisa da PUC-Rio que desenvolve
         pesquisas em Sistemas Multimídia.</p>
 
-        <p>Convidamos a você a participar deste estudo sobre nossa pesquisa
+        <p>Convidamos você a participar deste estudo sobre nossa pesquisa
         de <i>Interações multimodais em linguagens multimídia</i>.</p>
 
         <p>Para prosseguirmos, pedimos seu consentimento participar deste estudo
@@ -115,17 +115,17 @@ _data.surveyJSON.pages.push({
         <strong>interações multimodais com os usuários</strong>.</p>
 
 
-        <p><strong>Interfaces multimodais </strong>são aquelas que
-        caracterizadas pelo uso (possivelmente simultâneo) de múltiplas
-        modalidades dos sentidos humanos e que podem combinar entrada (e.g.
-        reconhecimento de gestos do usuário) e saída (e.g. sintetização de voz).
-        Comparado com as tecnologias atuais de mouse, teclado e displays, as
-        tecnologias de interface multimodais permitem o desenvolvimento de
-        interfaces com computadores formas de comunicação mais naturais para o
-        ser da linguagem e comportamento humano, e.g. interfaces por meio de
-        fala como fala e gestos. Ilustrados a seguir, citamos o uso de
-        microfones para reconhecimento de voz, e dispositivos como LeapMotion e
-        Microsoft Kinect para reconhecimento de gestos.</p>
+        <p><strong>Interfaces multimodais </strong>são aquelas caracterizadas
+        pelo uso (possivelmente simultâneo) de múltiplas modalidades dos
+        sentidos humanos e que podem combinar entrada (e.g. reconhecimento de
+        gestos do usuário) e saída (e.g. sintetização de voz). Comparado com as
+        tecnologias atuais de mouse, teclado e displays, as tecnologias de
+        interface multimodais permitem o desenvolvimento de interfaces com
+        formas de comunicação mais naturais para a linguagem e comportamento
+        humano, e.g. interfaces por meio de fala como fala e gestos. Ilustrados
+        a seguir, citamos o uso de microfones para reconhecimento de voz, e
+        dispositivos como LeapMotion e Microsoft Kinect para reconhecimento de
+        gestos.</p>
 
         <div class='text-center'>
           <img class='img-thumbnail' style='height: 100px'
@@ -382,7 +382,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Para ilustrar o uso desses conceitos, os blocos a seguir definem uma
         aplicação que apresenta um vídeo e um ícone, durante os créditos desse
         vídeo. Se o usuário selecionar o ícone, o vídeo é reiniciado. Essa
-        aplicação utiliza duas Mídia (<i>midia_principal</i> e
+        aplicação utiliza duas Mídias (<i>midia_principal</i> e
         <i>icone_repetir</i>) e três Relacionamentos para definir o
         comportamento da aplicação. O primeiro Relacionamento define que
         a <i>midia_principal</i> inicia junto com a aplicação. O segundo
@@ -658,8 +658,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         Entretanto, diferente de Mídia, o conteúdo de um
         Reconhecedor deve ser uma descrição de reconhecimento. As
         âncoras são porções delimitadas dessa descrição. Por exemplo, uma
-        descrição de reconhecimento de voz deve ter âncoras que devem as frases
-        a serem reconhecidas.</p>
+        descrição de reconhecimento de voz deve ter âncoras que definem frases a
+        serem reconhecidas.</p>
 
         <p>Na nossa representação de blocos, o Reconhecedor é definido
         juntando-se um bloco de Reconhecedor com o campo id preenchido, e
@@ -673,9 +673,9 @@ _data.surveyJSON.pages[pageIndex].elements.push({
 
         <div style="text-align: justify; width: 70%;"> 
         <p>Para ilustrar o uso desses conceitos, os blocos a seguir definem uma
-        nova versão da aplicação da parte Conceitos 1.1  reinicia um vídeo dada
-        uma interação. Nessa versão, em vez de selecionar o ícone, o vídeo é
-        reiniciado quando usuário falar "quando vídeo". Essa aplicação utiliza
+        nova versão da aplicação da parte Conceitos 1.1 que reinicia um vídeo
+        dada uma interação. Nessa versão, em vez de selecionar o ícone, o vídeo
+        é reiniciado quando usuário falar "repita vídeo". Essa aplicação utiliza
         duas Mídia (<i>midia_principal</i> e <i>sinte_voz</i>), um Reconhecedor
         (<i>rec_voz</i>) e três Relacionamentos. O primeiro Relacionamento
         define que a <i>midia_principal</i> é iniciada quando a aplicação
@@ -1545,7 +1545,7 @@ _data.nclIntro1CodeA = `
   <media id="midia_principal" src="video.mp4">
     <area id="creditos" begin="300s" end="360s"/>
   </media>
-  <media id="icone" src="icone.png">
+  <media id="icone_repetir" src="icone.png">
     <property name="size" value="20%, 20%"/>
     <property name="top" value="80%"/>
     <property name="zindex" value="1"/>
@@ -2446,7 +2446,7 @@ _data.htmlIntro1CodeA = `
     style="position: absolute; height 100%; width: 100%;">
     <mm-area id="creditos" begin="300s" end="360s">
   </video>
-  <img id="icone" src="icone.png"
+  <img id="icone_repetir" src="icone.png"
      style="position: absolute; width: 20%; height: 20%; left: 80%; z-index: 1;">
   ]]></script>
 `
@@ -2471,10 +2471,10 @@ _data.htmlIntro1CodeB = `
     </mm-link>
     <mm-link xconnector="onBeginStart">
       <mm-onBegin interface="midia_principal#creditos">
-      <mm-start interface="icone">
+      <mm-start interface="icone_repetir">
     </mm-link>
     <mm-link xconnector="onSelectionStopStart">
-      <mm-onSelection interface="icone">
+      <mm-onSelection interface="icone_repetir">
       <mm-stop interface="midia_principal">
       <mm-start interface="midia_principal">
     </mm-link>
@@ -2544,7 +2544,7 @@ _data.htmlTask1CodeA = `
       <mm-start interface="icone_praia">
     </mm-link>
     <mm-link xconnector="onSelectionStopStart">
-      <mm-onBegin interface="icone">
+      <mm-onBegin interface="icone_repetir">
       <mm-stop interface="video_inicial">
       <mm-start interface="video_inicial">
     </mm-link>
