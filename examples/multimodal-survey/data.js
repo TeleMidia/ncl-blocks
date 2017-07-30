@@ -958,14 +958,16 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Um dos principais benefícios de interfaces multimodais é o uso
         diferentes interações, ou seja, as interações de usuários podem ser
         realizadas por diferentes modalidades.</p>
-        
+
         <p>Os blocos a seguir definem o reconhecedor <i>rec_voz</i>
         <i>rec_gestos</i>, que tem uma descrição de reconhecimento de gestos
         como conteúdo. Esse conteúdo utiliza duas âncoras (<i>esquerda</i> e
         <i>direita</i>) para definir gestos de mão nessas direções.</p>
+        </div>
 
         <div id='conceptsIntro3A'></div>
 
+        <div style="text-align: justify; width: 70%;"> 
         <p>Em nossa representação de blocos, a combinação de modalidades de
         interação pode ser feita utilizando uma condição composta. A combinação
         de condições compostas podem utilizar os seguintes operadores: "or"
