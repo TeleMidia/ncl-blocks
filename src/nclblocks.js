@@ -296,12 +296,14 @@ var _updateMediaIcons = true
  * @param {string} parendDivId div to inject into
  * @param {string} height hight of injected the workspace
  * @param {string=} workspaceXml initial blocks in the workspace
- * @param {string=} isStatic worpsace withouth toolbox and read only
+ * @param {string=} isReadOnly worpsace withouth toolbox and read only
+ * @param {string=} isResizible enable zoom and scrooll bars
  * @param {string=} toolboxOptions configure toolbox
  */
 
 NCLBlocks.injectInDiv = function (pathToBlockly, parendDivId, height,
-  workspaceXml = '', isStatic = false, toolboxOptions = []) {
+  workspaceXml = '', isReadOnly = false, isResizible = true, toolboxOptions =
+  []) {
   var injectDivName = 'blockly_' + parendDivId
   var workspace
 
@@ -337,24 +339,16 @@ NCLBlocks.injectInDiv = function (pathToBlockly, parendDivId, height,
   window.addEventListener('resize', onresize, false)
 
   // inject
-  if (isStatic) {
-    workspace = Blockly.inject(injectDivName, {
-      media: Blockly.pathToBlockly + 'media/',
-      toolbox: false,
-      zoom: { controls: false },
-      scrollbars: false,
-      readOnly: true,
-      sounds: true
-    })
-  } else {
-    workspace = Blockly.inject(injectDivName, {
-      media: Blockly.pathToBlockly + 'media/',
-      toolbox: NCLBlocks.getDefaultToolboxXML(toolboxOptions),
-      zoom: { controls: true },
-      scrollbars: true,
-      sounds: true
-    })
-  }
+  console.log(toolboxOptions.length)
+  workspace = Blockly.inject(injectDivName, {
+    media: Blockly.pathToBlockly + 'media/',
+    toolbox: toolboxOptions.length ? NCLBlocks.getDefaultToolboxXML(toolboxOptions) : false,
+    zoom: { controls: isResizible },
+    scrollbars: isResizible,
+    readOnly: isReadOnly,
+    sounds: true
+  })
+
   if (NCLBlocks.USE_BODY) {
     workspaceXml = NCLBlocks.START_WORKSPACE_WITH_BODY
   }

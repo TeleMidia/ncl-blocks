@@ -242,7 +242,7 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
         result = JSON.parse(_survey.getQuestionByName('conceptsTask3Changes').value)
         _survey.getQuestionByName('conceptsTask3Changes').value = ''
         _blocksTask3Workspace = NCLBlocks.injectInDiv(_pathToBlockly,
-          questionId, NCLBlocks.calcHt(7, 130), '', false, ['excludeResumePauseSet'])
+          questionId, NCLBlocks.calcHt(7, 130), '', false, true, ['excludeResumePauseSet'])
         for (i in result.changes) {
           event = Blockly.Events.fromJson(result.changes[i],
             _blocksTask3Workspace)
@@ -252,7 +252,7 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
         // first inject
         _blocksTask3Workspace = NCLBlocks.injectInDiv(_pathToBlockly,
           questionId, NCLBlocks.calcHt(7, 130), _data.blocksTask2Xml,
-          false, ['excludeResumePauseSet'])
+          false, true, ['excludeResumePauseSet'])
         setNotEdited = function () {
           _blocksTask3WorkspaceEdited = false
         }
@@ -266,7 +266,7 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
         result = JSON.parse(_survey.getQuestionByName('conceptsTask4Changes').value)
         _survey.getQuestionByName('conceptsTask4Changes').value = ''
         _blocksTask4Workspace = NCLBlocks.injectInDiv(_pathToBlockly,
-          questionId, NCLBlocks.calcHt(7, 130), '', false, ['excludeResumePauseSet'])
+          questionId, NCLBlocks.calcHt(7, 130), '', false, true, ['excludeResumePauseSet'])
         for (i in result.changes) {
           event = Blockly.Events.fromJson(result.changes[i],
             _blocksTask4Workspace)
@@ -276,7 +276,7 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
         // first inject
         _blocksTask4Workspace = NCLBlocks.injectInDiv(_pathToBlockly,
           questionId, NCLBlocks.calcHt(7, 130), _data.blocksTask2Xml,
-          false, ['excludeResumePauseSet'])
+          false, true, ['excludeResumePauseSet'])
         setNotEdited = function () {
           _blocksTask4WorkspaceEdited = false
         }
