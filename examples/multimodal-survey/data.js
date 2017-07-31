@@ -45,6 +45,11 @@ _data.surveyJSON.pages.push({
       name: 'timeBeginSurvey'
     },
     {
+      type: 'text',
+      visible: false,
+      name: 'userId'
+    },
+    {
       type: 'html',
       html: `
         <div style="text-align: justify; width: 70%;">
@@ -2274,7 +2279,7 @@ _data.surveyJSON.pages.push({
     {
       type: 'radiogroup',
       isRequired: true,
-      name: 'htmlFeedbackQuestion7',
+      name: 'nclFeedbackQuestion7',
       title: `Os conceitos apresentados na seção anterior estão **claramente
         instanciados** na NCL estendida.`,
       choices: _agreeChoices
@@ -2282,7 +2287,7 @@ _data.surveyJSON.pages.push({
     {
       type: 'radiogroup',
       isRequired: true,
-      name: 'htmlFeedbackQuestion8',
+      name: 'nclFeedbackQuestion8',
       title: `De modo geral, a NCL estendida **melhora** o desenvolvimento de
       aplicações multimodal em comparação com a NCL atual.`,
       choices: _agreeChoices

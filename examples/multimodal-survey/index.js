@@ -63,35 +63,45 @@ function onSendResult (survey, options) {
 function onCurrentPageChanged (survey, options) {
   if (options.newCurrentPage.name === 'intro' && !_pagesVisited.intro) {
     _pagesVisited.intro = true
+    console.log('intro')
+    survey.getQuestionByName('userId').value = _userId
     survey.getQuestionByName('timeBeginIntro').value = new Date()
   } else if (options.newCurrentPage.name === 'profile' && !_pagesVisited.profile) {
     _pagesVisited.profile = true
+    console.log('profile')
     survey.getQuestionByName('timeBeginProfile').value = new Date()
   } else if (options.newCurrentPage.name === 'concepts' && !_pagesVisited.concepts) {
     _pagesVisited.concepts = true
+    console.log('concepts')
     survey.getQuestionByName('timeBeginConcepts').value = new Date()
   } else if (options.newCurrentPage.name === 'conceptsFeedback' && !_pagesVisited.conceptsFeedback) {
     _pagesVisited.conceptsFeedback = true
+    console.log('conceptsFeedBack')
     survey.getQuestionByName('timeBeginConceptsFeedback').value = new Date()
   } else if (options.newCurrentPage.name === 'ncl' && !_pagesVisited.ncl) {
     _pagesVisited.ncl = true
+    console.log('ncl')
     survey.getQuestionByName('timeBeginNCL').value = new Date()
     _survey.getQuestionByName('nclTask3Question').value = _data.nclTask2CCodeOnly
     _survey.getQuestionByName('nclTask4Question').value = _data.nclTask2CCodeOnly
   } else if (options.newCurrentPage.name === 'nclFeedback' && !_pagesVisited.nclFeedback) {
     _pagesVisited.nclFeedback = true
+    console.log('nclFeedback')
     survey.getQuestionByName('timeBeginNCLFeedback').value = new Date()
   } else if (options.newCurrentPage.name === 'html' && !_pagesVisited.html) {
     _pagesVisited.html = true
+    console.log('html')
     survey.getQuestionByName('timeBeginHTML').value = new Date()
     var code = _data.htmlTask2CodeCOnly.replace(/<&#47/, '</').replace('<&#47script>', '</script>')
     _survey.getQuestionByName('htmlTask3Question').value = code
     _survey.getQuestionByName('htmlTask4Question').value = code
   } else if (options.newCurrentPage.name === 'htmlFeedback' && !_pagesVisited.htmlFeedback) {
     _pagesVisited.htmlFeedback = true
+    console.log('htmlFeedback')
     survey.getQuestionByName('timeBeginHTMLFeedback').value = new Date()
   } else if (options.newCurrentPage.name === 'comments' && !_pagesVisited.comments) {
     _pagesVisited.comments = true
+    console.log('comments')
     survey.getQuestionByName('timeBeginComments').value = new Date()
   }
 }
