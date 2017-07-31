@@ -79,9 +79,11 @@
     var _acesskey = 'd72526e70b814a3d8f918b60b94dafe4'
     $.get('http://dxsurvey.com/api/MySurveys/getSurveyResults/' + _surveyId + '?accessKey=' + _acesskey, function (data) {
       _resultsData = data.Data
+      var lastUserId
       console.log(_resultsData)
       for (var i in _resultsData) {
-        if (_resultsData[i]['conceptsTask3Result']) {
+        if (_resultsData[i]['conceptsTask3Result'] && _resultsData[i]['userId'] !== lastUserId) {
+          lastUserId = _resultsData[i]['userId']
           $('#resultIndex').append($('<option>').attr('value', i).html(i))
         }
       }
