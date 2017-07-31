@@ -339,7 +339,6 @@ NCLBlocks.injectInDiv = function (pathToBlockly, parendDivId, height,
   window.addEventListener('resize', onresize, false)
 
   // inject
-  console.log(toolboxOptions.length)
   workspace = Blockly.inject(injectDivName, {
     media: Blockly.pathToBlockly + 'media/',
     toolbox: toolboxOptions.length ? NCLBlocks.getDefaultToolboxXML(toolboxOptions) : false,
