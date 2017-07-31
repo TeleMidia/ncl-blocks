@@ -65,55 +65,55 @@ function onCurrentPageChanged (survey, options) {
     _pagesVisited.intro = true
     console.log('intro')
     survey.getQuestionByName('userId').value = _userId
-    survey.getQuestionByName('timeBeginIntro').value = new Date()
+    survey.getQuestionByName('timeBeginIntro').value = Date().toLocaleString()
   } else if (options.newCurrentPage.name === 'profile' && !_pagesVisited.profile) {
     _pagesVisited.profile = true
     console.log('profile')
-    survey.getQuestionByName('timeBeginProfile').value = new Date()
+    survey.getQuestionByName('timeBeginProfile').value = Date().toLocaleString()
   } else if (options.newCurrentPage.name === 'concepts' && !_pagesVisited.concepts) {
     _pagesVisited.concepts = true
     console.log('concepts')
-    survey.getQuestionByName('timeBeginConcepts').value = new Date()
+    survey.getQuestionByName('timeBeginConcepts').value = Date().toLocaleString()
   } else if (options.newCurrentPage.name === 'conceptsFeedback' && !_pagesVisited.conceptsFeedback) {
     _pagesVisited.conceptsFeedback = true
     console.log('conceptsFeedBack')
-    survey.getQuestionByName('timeBeginConceptsFeedback').value = new Date()
+    survey.getQuestionByName('timeBeginConceptsFeedback').value = Date().toLocaleString()
   } else if (options.newCurrentPage.name === 'ncl' && !_pagesVisited.ncl) {
     _pagesVisited.ncl = true
     console.log('ncl')
-    survey.getQuestionByName('timeBeginNCL').value = new Date()
+    survey.getQuestionByName('timeBeginNCL').value = Date().toLocaleString()
     _survey.getQuestionByName('nclTask3Question').value = _data.nclTask2CCodeOnly
     _survey.getQuestionByName('nclTask4Question').value = _data.nclTask2CCodeOnly
   } else if (options.newCurrentPage.name === 'nclFeedback' && !_pagesVisited.nclFeedback) {
     _pagesVisited.nclFeedback = true
     console.log('nclFeedback')
-    survey.getQuestionByName('timeBeginNCLFeedback').value = new Date()
+    survey.getQuestionByName('timeBeginNCLFeedback').value = Date().toLocaleString()
   } else if (options.newCurrentPage.name === 'html' && !_pagesVisited.html) {
     _pagesVisited.html = true
     console.log('html')
-    survey.getQuestionByName('timeBeginHTML').value = new Date()
+    survey.getQuestionByName('timeBeginHTML').value = Date().toLocaleString()
     var code = _data.htmlTask2CodeCOnly.replace(/<&#47/, '</').replace('<&#47script>', '</script>')
     _survey.getQuestionByName('htmlTask3Question').value = code
     _survey.getQuestionByName('htmlTask4Question').value = code
   } else if (options.newCurrentPage.name === 'htmlFeedback' && !_pagesVisited.htmlFeedback) {
     _pagesVisited.htmlFeedback = true
     console.log('htmlFeedback')
-    survey.getQuestionByName('timeBeginHTMLFeedback').value = new Date()
+    survey.getQuestionByName('timeBeginHTMLFeedback').value = Date().toLocaleString()
   } else if (options.newCurrentPage.name === 'comments' && !_pagesVisited.comments) {
     _pagesVisited.comments = true
     console.log('comments')
-    survey.getQuestionByName('timeBeginComments').value = new Date()
+    survey.getQuestionByName('timeBeginComments').value = Date().toLocaleString()
   }
 }
 
 function onAfterRenderSurvey (survey) {
-  survey.getQuestionByName('timeBeginSurvey').value = new Date()
+  survey.getQuestionByName('timeBeginSurvey').value = Date().toLocaleString()
   console.log(survey.getQuestionByName('timeBeginSurvey').value)
 }
 
 function onComplete (survey) {
   console.log('onComplete')
-  survey.getQuestionByName('timeEndSurvey').value = new Date()
+  survey.getQuestionByName('timeEndSurvey').value = Date().toLocaleString()
   console.log(survey.getQuestionByName('timeEndSurvey').value)
   survey.sendResult(_postId, _userId)
 }
@@ -371,7 +371,7 @@ function saveblocksTask3Changes (event) {
   // save change
   var savedJsonStr = _survey.getQuestionByName('conceptsTask3Changes').value
   var jsonFromEvent = event.toJson()
-  jsonFromEvent.time = new Date()
+  jsonFromEvent.time = Date().toLocaleString()
   var jsonToSave
   if (savedJsonStr == null) {
     jsonToSave = { 'changes': [] }
@@ -393,7 +393,7 @@ function saveblocksTask4Changes (event) {
   // save change
   var savedJsonStr = _survey.getQuestionByName('conceptsTask4Changes').value
   var jsonFromEvent = event.toJson()
-  jsonFromEvent.time = new Date()
+  jsonFromEvent.time = Date().toLocaleString()
   var jsonToSave
   if (savedJsonStr == null) {
     jsonToSave = { 'changes': [] }
