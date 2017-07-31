@@ -64,33 +64,40 @@ function onCurrentPageChanged (survey, options) {
   if (options.newCurrentPage.name === 'intro' && !_pagesVisited.intro) {
     _pagesVisited.intro = true
     console.log('intro')
+    window.scroll(0, 0)
     survey.getQuestionByName('userId').value = _userId
     survey.getQuestionByName('timeBeginIntro').value = Date().toLocaleString()
   } else if (options.newCurrentPage.name === 'profile' && !_pagesVisited.profile) {
     _pagesVisited.profile = true
     console.log('profile')
+    window.scroll(0, 0)
     survey.getQuestionByName('timeBeginProfile').value = Date().toLocaleString()
   } else if (options.newCurrentPage.name === 'concepts' && !_pagesVisited.concepts) {
     _pagesVisited.concepts = true
     console.log('concepts')
+    window.scroll(0, 0)
     survey.getQuestionByName('timeBeginConcepts').value = Date().toLocaleString()
   } else if (options.newCurrentPage.name === 'conceptsFeedback' && !_pagesVisited.conceptsFeedback) {
     _pagesVisited.conceptsFeedback = true
     console.log('conceptsFeedBack')
+    window.scroll(0, 0)
     survey.getQuestionByName('timeBeginConceptsFeedback').value = Date().toLocaleString()
   } else if (options.newCurrentPage.name === 'ncl' && !_pagesVisited.ncl) {
     _pagesVisited.ncl = true
     console.log('ncl')
+    window.scroll(0, 0)
     survey.getQuestionByName('timeBeginNCL').value = Date().toLocaleString()
     _survey.getQuestionByName('nclTask3Question').value = _data.nclTask2CCodeOnly
     _survey.getQuestionByName('nclTask4Question').value = _data.nclTask2CCodeOnly
   } else if (options.newCurrentPage.name === 'nclFeedback' && !_pagesVisited.nclFeedback) {
     _pagesVisited.nclFeedback = true
     console.log('nclFeedback')
+    window.scroll(0, 0)
     survey.getQuestionByName('timeBeginNCLFeedback').value = Date().toLocaleString()
   } else if (options.newCurrentPage.name === 'html' && !_pagesVisited.html) {
     _pagesVisited.html = true
     console.log('html')
+    window.scroll(0, 0)
     survey.getQuestionByName('timeBeginHTML').value = Date().toLocaleString()
     var code = _data.htmlTask2CodeCOnly.replace(/<&#47/, '</').replace('<&#47script>', '</script>')
     _survey.getQuestionByName('htmlTask3Question').value = code
@@ -98,10 +105,12 @@ function onCurrentPageChanged (survey, options) {
   } else if (options.newCurrentPage.name === 'htmlFeedback' && !_pagesVisited.htmlFeedback) {
     _pagesVisited.htmlFeedback = true
     console.log('htmlFeedback')
+    window.scroll(0, 0)
     survey.getQuestionByName('timeBeginHTMLFeedback').value = Date().toLocaleString()
   } else if (options.newCurrentPage.name === 'comments' && !_pagesVisited.comments) {
     _pagesVisited.comments = true
     console.log('comments')
+    window.scroll(0, 0)
     survey.getQuestionByName('timeBeginComments').value = Date().toLocaleString()
   }
 }
