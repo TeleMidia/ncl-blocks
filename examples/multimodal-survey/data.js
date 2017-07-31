@@ -205,21 +205,20 @@ _data.surveyJSON.pages.push({
       isRequired: true,
       name: 'profileMultimodalApps',
       title: `Você já desenvolveu alguma aplicação com interações multimodais?`,
-      choices: ['Sim', 'Não']
+      choices: ['Não', 'Sim']
     },
     {
       type: 'comment',
       name: 'profileMultimodalAppsTypes',
       title: `Quais modalidades de interação você utilizou em suas aplicações multimodais?`,
-      visibleIf: '{profileMultimodalApps} == Sim',
-      choices: ['0', '1-2', '3-4', '5-6', '7-8', '8 ou mais']
+      visibleIf: '{profileMultimodalApps} == Sim'
     },
     {
       type: 'radiogroup',
       isRequired: true,
       name: 'profileBlocks',
       title: `Você já utilizou alguma ferramenta programação por blocos, como Scratch ou MIT AppInventor?`,
-      choices: ['Sim', 'Não']
+      choices: ['Não', 'Sim']
     },
     {
       type: 'radiogroup',
@@ -3094,7 +3093,7 @@ _data.surveyJSON.pages.push({
       choices: _agreeChoices
     },
     {
-      e: 'radiogroup',
+      type: 'radiogroup',
       isRequired: true,
       name: 'htmlFeedbackQuestion8',
       title: `De modo geral, a HTML estendida **melhora** o desenvolvimento de
