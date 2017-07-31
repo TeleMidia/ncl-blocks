@@ -1177,7 +1177,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Na nossa representação de blocos, o Grupo de Usuários é
         definida juntando um bloco de Grupo de Usuários com campo id
         preenchido e blocos de dispositivos. Por exemplo, os blocos a seguir
-        definem um grupo de usuário <i>gu_gestos</i> que pode ter até 3
+        definem um grupo de usuário <i>gu_gestos</i> que pode ter até 2
         membros, cada qual com seu reconhecedor de gestos (e.g. LeapMotion).</p>
         </div>
 
@@ -1244,7 +1244,12 @@ _data.conceptsIntro4BlocksB = `
     </value>
     <statement name="actions">
       <block type="start" id="6FqGPGqFLk21rh0j6Yxt">
-        <field name="id">rec_voz</field>
+        <field name="id">pergunta</field>
+        <next>
+          <block type="start" id="EM5Cje6cgyRsKxxjlKUU">
+            <field name="id">rec_voz</field>
+          </block>
+        </next>
       </block>
     </statement>
   </block>
