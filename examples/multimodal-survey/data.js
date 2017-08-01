@@ -3137,13 +3137,14 @@ _data.surveyJSON.pages.push({
     },
     {
       type: 'comment',
-      name: 'commentsFinal',
+      name: 'commentsSuggestions',
       rows: '9',
       title: `Estamos dispostos a ouvir sugestões para melhorar os conceitos ou nossa instanciação. Se tiver sugestões, por favor comente.`
     },
     {
       type: 'comment',
       rows: '9',
+      name: 'commentsIdeas',
       title: `Você consegue pensar em aplicação interessantes que você poderia
         desenvolver os conceitos apresentados neste estudo? Se sim, por favor
         comente.`
