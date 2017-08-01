@@ -124,6 +124,13 @@ function onComplete (survey) {
   console.log('onComplete')
   survey.getQuestionByName('timeEndSurvey').value = Date().toLocaleString()
   console.log(survey.getQuestionByName('timeEndSurvey').value)
+  var json = JSON.stringify(survey.data)
+  var blob = new Blob([json], { type: 'application/json' })
+  var url = URL.createObjectURL(blob)
+
+  var a = document.getElementById('a')
+  a.download = 'backup.json'
+  a.href = url
   survey.sendResult(_postId, _userId)
 }
 
