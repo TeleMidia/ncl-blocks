@@ -9,7 +9,7 @@
     "env": {
       "browser": true
     },
-    "extends": "standard", 
+    "extends": "standard",
     "plugins": [
       "html",
       "import"
@@ -24,5 +24,8 @@
       "showdown": true,
       "SyntaxHighlighter": true
     }
+  },
+  "devDependencies": {
+    "xmlhttprequest": "^1.8.0"
   }
 }
