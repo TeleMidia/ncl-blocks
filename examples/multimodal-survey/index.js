@@ -197,8 +197,10 @@ function onComplete (survey) {
   var url = URL.createObjectURL(blob)
 
   var a = document.getElementById('a')
-  a.download = 'backup.json'
-  a.href = url
+  if (a) {
+    a.download = 'backup.json'
+    a.href = url
+  }
   sendResult()
 }
 
