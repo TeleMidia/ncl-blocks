@@ -1538,7 +1538,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <i>midia_principal</i> inicia com a aplicação. O primeiro
         <i>&ltlink></i> define que quando o <i>video_principal</i> alcançar o
         seu trecho de <i>creditos <i>a imagem <i>icone_repetir</i> é iniciada. O
-        segundo <i>&ltlink></i> define que quando essa <i>icone_reptetir</i> for
+        segundo <i>&ltlink></i> define que quando esse <i>icone_repetir</i> for
         selecionado o <i>video_principal</i> será reiniciado (<i>stop</i> e
         <i>start</i>).</p>
         </div>
