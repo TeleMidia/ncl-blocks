@@ -1,5 +1,5 @@
 // ----------------------------------------
-// survey data
+// survey config
 // ----------------------------------------
 
 Survey.surveyLocalization.locales['en'] = {
@@ -31,41 +31,109 @@ var _surveyCss = {
   'navigationButton': 'h4 btn btn-primary'
 }
 
-var _msgEmptyBlockTask = 'Por favor, edite os blocos.'
+$('#surveyContainer').Survey({
+  model: _survey,
+  css: _surveyCss,
+  onServerValidateQuestions: onValidateQuestions,
+  onAfterRenderQuestion: onRenderQuestion,
+  onAfterRenderSurvey: onAfterRenderSurvey,
+  onPartialSend: onPartialSend,
+  onCurrentPageChanged: onCurrentPageChanged,
+  onComplete: onComplete
+})
 
+// ----------------------------------------
+// survey config - _userId
+// ----------------------------------------
+
+var _userId = Blockly.utils.genUid()
+console.log(_userId)
+_survey.getQuestionByName('userId').value = _userId
+
+// ----------------------------------------
+// survey config - markdown
+// ----------------------------------------
+
+var converter = new showdown.Converter()
+_survey.onTextMarkdown.add(function (survey, options) {
+  // convert the mardown text to html
+  var str = converter.makeHtml(options.text)
+  // remove root paragraphs <p></p>
+  str = str.substring(3)
+  str = str.substring(0, str.length - 4)
+  // set html
+  options.html = str
+})
+
+// ----------------------------------------
+// survey config - page jump
+// ----------------------------------------
+
+$('#complete-btn').click(function () {
+  _survey.doComplete()
+})
+if ($('#surveyPageNo').length) {
+  for (var i = 0; i < _survey.pages.length; i++) {
+    $('<option />')
+      .attr('value', i)
+      .html(_survey.pages[i].name)
+      .appendTo('#surveyPageNo')
+  }
+}
+$('#surveyPageNo').change(function () {
+  _survey.currentPageNo = this.value
+})
+
+// $('#surveyPageNo').val(1).change()
+// $('#surveyPageNo').val(3).change()
+// $('#surveyPageNo').val(5).change()
+// $('#surveyPageNo').val(7).change()
+
+// ----------------------------------------
+// survey config - gsheets service
+// ----------------------------------------
+
+function sendResult () {
+  var xhr = new XMLHttpRequest()
+  xhr.open('POST', 'https://script.google.com/macros/s/AKfycby6MAbrVMRtBkt9mKqgMz77ciZA9-bikN4xFHKqzeRMZQ1W-dVN/exec')
+  var dataStringify = JSON.stringify(_survey.data)
+  xhr.responseType = 'text'
+  xhr.onload = function () {
+    if (xhr.readyState === xhr.DONE) {
+      if (xhr.status === 200) {
+        console.log('return ok')
+        // console.log(xhr.responseText)
+      }
+    }
+  }
+  xhr.eroor = function () {
+    console.log('error')
+  }
+  xhr.send(dataStringify)
+}
+
+// ----------------------------------------
+// survey listeners variables
+// ----------------------------------------
+
+var _msgEmptyBlockTask = 'Por favor, edite os blocos.'
 var _pathToBlockly = '../../src/'
 var _blocksTask3Workspace
 var _blocksTask3WorkspaceEdited = false
 var _blocksTask4Workspace
 var _blocksTask4WorkspaceEdited = false
-
-// ----------------------------------------
-// survey create
-// ----------------------------------------
-
-// multimodal
-// var _postId = '51d57b85-3813-4a08-801b-4b7e077c1660'
-// mm
-var _postId = 'c35503cf-4020-49a9-bb58-46e38cac0725'
-var _userId = Blockly.utils.genUid()
-console.log(_userId)
 var _pagesVisited = { intro: false, profile: false, concepts: false, conceptsFeedback: false, ncl: false, nclFeedback: false, html: false, htmlFeedback: false, comments: false }
 
-function onSendResult (survey, options) {
-  if (!options.success) {
-    setTimeout(function () {
-      console.log('sendResult')
-      survey.sendResult(_postId, _userId)
-    }, 2000)
-  }
-}
+// ----------------------------------------
+// survey listeners
+// ----------------------------------------
 
 function onCurrentPageChanged (survey, options) {
   if (options.newCurrentPage.name === 'intro' && !_pagesVisited.intro) {
     _pagesVisited.intro = true
     console.log('intro')
     window.scroll(0, 0)
-    survey.getQuestionByName('userId').value = _userId
+    console.log(survey.getQuestionByName('userId').value)
     survey.getQuestionByName('timeBeginIntro').value = Date().toLocaleString()
   } else if (options.newCurrentPage.name === 'profile' && !_pagesVisited.profile) {
     _pagesVisited.profile = true
@@ -131,68 +199,13 @@ function onComplete (survey) {
   var a = document.getElementById('a')
   a.download = 'backup.json'
   a.href = url
-  survey.sendResult(_postId, _userId)
+  sendResult()
 }
 
 function onPartialSend (survey) {
   console.log('onPartialSend')
-  survey.sendResult(_postId, _userId)
+  sendResult()
 }
-
-$('#surveyContainer').Survey({
-  model: _survey,
-  css: _surveyCss,
-  onServerValidateQuestions: onValidateQuestions,
-  onAfterRenderQuestion: onRenderQuestion,
-  onAfterRenderSurvey: onAfterRenderSurvey,
-  onPartialSend: onPartialSend,
-  onCurrentPageChanged: onCurrentPageChanged,
-  onComplete: onComplete,
-  onSendResult: onSendResult
-})
-
-// ----------------------------------------
-// survey markdown
-// ----------------------------------------
-
-var converter = new showdown.Converter()
-_survey.onTextMarkdown.add(function (survey, options) {
-  // convert the mardown text to html
-  var str = converter.makeHtml(options.text)
-  // remove root paragraphs <p></p>
-  str = str.substring(3)
-  str = str.substring(0, str.length - 4)
-  // set html
-  options.html = str
-})
-
-// ----------------------------------------
-// survey page jump
-// ----------------------------------------
-
-$('#complete-btn').click(function () {
-  _survey.doComplete()
-})
-if ($('#surveyPageNo').length) {
-  for (var i = 0; i < _survey.pages.length; i++) {
-    $('<option />')
-      .attr('value', i)
-      .html(_survey.pages[i].name)
-      .appendTo('#surveyPageNo')
-  }
-}
-$('#surveyPageNo').change(function () {
-  _survey.currentPageNo = this.value
-})
-
-// $('#surveyPageNo').val(1).change()
-// $('#surveyPageNo').val(3).change()
-// $('#surveyPageNo').val(5).change()
-// $('#surveyPageNo').val(7).change()
-
-// ----------------------------------------
-// survey listeners
-// ----------------------------------------
 
 function insertRequiredErrorInBlocks (blockDivId) {
   var blockDivSelector = '#blockly_' + blockDivId
