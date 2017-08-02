@@ -73,17 +73,12 @@
     // ----------------------------------------
     // request
     // ----------------------------------------
-    // wget dxsurvey.com/api/MySurveys/getSurveyResults/59bd2657-93ac-492c-8dd5-134a10ebd69a?accessKey=d72526e70b814a3d8f918b60b94dafe4 -O result.json
     var _resultsData
-    var _surveyId = 'b66deceb-16a6-42b8-bcab-0159a0d74e17'
-    var _acesskey = 'd72526e70b814a3d8f918b60b94dafe4'
-    $.get('http://dxsurvey.com/api/MySurveys/getSurveyResults/' + _surveyId + '?accessKey=' + _acesskey, function (data) {
-      _resultsData = data.Data
-      var lastUserId
-      console.log(_resultsData)
+    $.get('https://script.google.com/macros/s/AKfycby6MAbrVMRtBkt9mKqgMz77ciZA9-bikN4xFHKqzeRMZQ1W-dVN/exec?json', function (data) {
+      console.log(data)
+      _resultsData = data
       for (var i in _resultsData) {
-        if (_resultsData[i]['conceptsTask3Result'] && _resultsData[i]['userId'] !== lastUserId) {
-          lastUserId = _resultsData[i]['userId']
+        if (_resultsData[i]['conceptsTask3Result']) {
           $('#resultIndex').append($('<option>').attr('value', i).html(i))
         }
       }
