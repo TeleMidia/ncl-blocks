@@ -238,7 +238,7 @@ function onValidateQuestions (survey, options) {
 function onRenderQuestion (targetSurvey, questionAndHtml) {
   var questionId = questionAndHtml.question.idValue
   var questionName = questionAndHtml.question.name
-  var result, i, event, setNotEdited
+  var result, event, setNotEdited
 
   switch (questionName) {
     case 'conceptsIntro1':
@@ -278,50 +278,38 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
     case 'conceptsTask3':
       if (_survey.getQuestionByName('conceptsTask3Changes').value) {
         // after first inject
-        result = JSON.parse(_survey.getQuestionByName('conceptsTask3Changes').value)
-        _survey.getQuestionByName('conceptsTask3Changes').value = ''
+        result = _survey.getQuestionByName('conceptsTask3Result').value
+        console.log(result)
         _blocksTask3Workspace = NCLBlocks.injectInDiv(_pathToBlockly,
-          questionId, NCLBlocks.calcHt(7, 130), '', false, true, ['excludeResumePauseSet'])
-        for (i in result.changes) {
-          event = Blockly.Events.fromJson(result.changes[i],
-            _blocksTask3Workspace)
-          event.run(true)
-        }
+          questionId, NCLBlocks.calcHt(7, 130), result, false, true, ['excludeResumePauseSet'])
+        setTimeout(function () {
+          _blocksTask3Workspace.addChangeListener(saveblocksTask3Changes)
+        }, 500)
       } else {
         // first inject
         _blocksTask3Workspace = NCLBlocks.injectInDiv(_pathToBlockly,
           questionId, NCLBlocks.calcHt(7, 130), _data.blocksTask2Xml,
           false, true, ['excludeResumePauseSet'])
-        setNotEdited = function () {
-          _blocksTask3WorkspaceEdited = false
-        }
-        setTimeout(setNotEdited, 500)
+        _blocksTask3Workspace.addChangeListener(saveblocksTask3Changes)
       }
-      _blocksTask3Workspace.addChangeListener(saveblocksTask3Changes)
       break
     case 'conceptsTask4':
       if (_survey.getQuestionByName('conceptsTask4Changes').value) {
         // after first inject
-        result = JSON.parse(_survey.getQuestionByName('conceptsTask4Changes').value)
-        _survey.getQuestionByName('conceptsTask4Changes').value = ''
+        result = _survey.getQuestionByName('conceptsTask4Result').value
+        console.log(result)
         _blocksTask4Workspace = NCLBlocks.injectInDiv(_pathToBlockly,
-          questionId, NCLBlocks.calcHt(7, 130), '', false, true, ['excludeResumePauseSet'])
-        for (i in result.changes) {
-          event = Blockly.Events.fromJson(result.changes[i],
-            _blocksTask4Workspace)
-          event.run(true)
-        }
+          questionId, NCLBlocks.calcHt(7, 130), result, false, true, ['excludeResumePauseSet'])
+        setTimeout(function () {
+          _blocksTask4Workspace.addChangeListener(saveblocksTask4Changes)
+        }, 500)
       } else {
         // first inject
         _blocksTask4Workspace = NCLBlocks.injectInDiv(_pathToBlockly,
           questionId, NCLBlocks.calcHt(7, 130), _data.blocksTask2Xml,
           false, true, ['excludeResumePauseSet'])
-        setNotEdited = function () {
-          _blocksTask4WorkspaceEdited = false
-        }
-        setTimeout(setNotEdited, 500)
+        _blocksTask4Workspace.addChangeListener(saveblocksTask4Changes)
       }
-      _blocksTask4Workspace.addChangeListener(saveblocksTask4Changes)
       break
     case 'nclIntro1':
       $('#nclIntro1CodeA').append(_data.nclIntro1CodeA)
