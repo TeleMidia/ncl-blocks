@@ -78,7 +78,7 @@
       console.log(data)
       _resultsData = data
       for (var i in _resultsData) {
-        if (_resultsData[i]['conceptsTask3Result']) {
+        if (_resultsData[i]['conceptsTask3Result'] !== 'null') {
           $('#resultIndex').append($('<option>').attr('value', i).html(i))
         }
       }
@@ -128,32 +128,30 @@
     // ----------------------------------------
     // show changes button
     // ----------------------------------------
-    var _runEventFrequency = 200
-    var _runEventIntervalIndex = 0
-    var runEventInterval = function (index) {
-      var result
-      if ($('#conceptTask option:selected').val() === 'conceptsTask3') {
-        result = JSON.parse(_resultsData[index].conceptsTask3Changes)
-      } else if ($('#conceptTask option:selected').val() === 'conceptsTask4') {
-        result = JSON.parse(_resultsData[index].conceptsTask4Changes)
-      }
-      if (_runEventIntervalIndex >= result.changes.length) {
-        clearInterval(runEventInterval)
-        return
-      }
-      var json = result.changes[_runEventIntervalIndex]
-      var event = Blockly.Events.fromJson(json, _workspace)
-      event.run(true)
-      _runEventIntervalIndex++
-    }
-
     $('#showChanges').click(function () {
       if (_resultsData == null) return
       var selected = $('#resultIndex option:selected').val()
       if (selected === '-') return
       _workspace.clear()
       var index = parseInt(selected)
-      _runEventIntervalIndex = 0
+      var _runEventFrequency = 200
+      var _runEventIntervalIndex = 0
+      var runEventInterval = function (index) {
+        var result
+        if ($('#conceptTask option:selected').val() === 'conceptsTask3') {
+          result = JSON.parse(_resultsData[index].conceptsTask3Changes)
+        } else if ($('#conceptTask option:selected').val() === 'conceptsTask4') {
+          result = JSON.parse(_resultsData[index].conceptsTask4Changes)
+        }
+        if (_runEventIntervalIndex >= result.changes.length) {
+          clearInterval(runEventInterval)
+          return
+        }
+        var json = result.changes[_runEventIntervalIndex]
+        var event = Blockly.Events.fromJson(json, _workspace)
+        event.run(true)
+        _runEventIntervalIndex++
+      }
       clearInterval(runEventInterval)
       setInterval(runEventInterval, _runEventFrequency, index)
     })
