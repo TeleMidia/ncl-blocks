@@ -960,7 +960,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         <div style="text-align: justify; width: 70%;"> 
         <p>Um dos principais benefícios de interfaces multimodais é o uso
-        diferentes interações, ou seja, as interações de usuários podem ser
+        de diferentes interações, ou seja, as interações de usuários podem ser
         realizadas por diferentes modalidades.</p>
 
         <p>Os blocos a seguir definem o reconhecedor <i>rec_voz</i>
@@ -1079,7 +1079,7 @@ _data.conceptsIntro3BlocksB = `
         </value>
         <value name="element_1">
           <block type="onrecognize" id="EM5Cje6cEyRsKfDjlKUU">
-            <field name="id">esquerta</field>
+            <field name="id">esquerda</field>
           </block>
         </value>
       </block>
@@ -1110,7 +1110,7 @@ _data.conceptsIntro3BlocksB = `
     <value name="src">
       <block type="hand_gesture" id="wFqGPfeFLk21rh0j6Yxt">
         <mutation length="1"></mutation>
-        <field name="id_area0">esquerta</field>
+        <field name="id_area0">esquerda</field>
         <field name="label0">esquerda</field>
       </block>
     </value>
@@ -1520,7 +1520,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         ("onSelection") ou reconhecimento de uma interação multimodal
         ("onRecognition").</p>
 
-        <p>A relação entre condições e ações é definido pelo atributdo
+        <p>A relação entre condições e ações é definido pelo atribudo
         <i>xconnector</i> do <i>&ltlink></i>. Por exemplo, um <i>xconnector</i>
         "onBeginStart" define uma condição "onBegin" e ações de "start". Já um
         <i>xconnector</i> <i>onSelectionStopStart</i> define uma condição
@@ -1529,7 +1529,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <i>&ltlink></i> é definida pelo elemento <i>&ltbind></i> do
         <i>&ltlink></i>.</p>
         
-        <p>Para ilustrar o uso desses conceitos, o trecho de código a segui
+        <p>Para ilustrar o uso desses conceitos, o trecho de código a seguir
         define uma aplicação que apresenta um vídeo e um ícone durante os
         créditos do vídeo. Se o usuário selecionar o ícone, o vídeo é
         reiniciado. Ele utiliza dois elementos de <i>&ltmedia></i>
@@ -1863,7 +1863,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       <div style="text-align: justify; width: 70%;">
       <p>O código NCL a seguir é uma versão modificada da Tarefa 2.1 para
       permitir interações multimodais utilizando as duas descrições acima. Por
-      favor, analise atenção.</p>
+      favor, analise com atenção.</p>
       </div>
 
       <div id='nclTask2CodeC'></div>
@@ -1986,7 +1986,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         
         <div style="text-align: justify; width: 70%;"> 
         <p>Na NCL estendida, a combinação de modalidades de interação pode ser
-        defiida utilizando uma condição composta. Uma condição composta em um
+        definida utilizando uma condição composta. Uma condição composta em um
         <i>&ltlink></i> combina condições simples utilizando um dos seguintes
         operadores: 'or' quando apenas uma das condições é necessária; 'and'
         quando todas condições são necessárias em qualquer ordem; e 'seq' quando
@@ -2716,7 +2716,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       <div style="text-align: justify; width: 70%;">
       <p>O código HTML a seguir é uma versão modificada da Tarefa 2.1 para
       permitir interações multimodais utilizando as duas descrições acima. Por
-      favor, analise atenção.</p>
+      favor, analise com atenção.</p>
       </div>
 
       <div id='htmlTask2CodeC'></div>
