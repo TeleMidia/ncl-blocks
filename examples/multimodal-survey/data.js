@@ -966,7 +966,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Os blocos a seguir definem o reconhecedor <i>rec_voz</i>
         <i>rec_gestos</i>, que tem uma descrição de reconhecimento de gestos
         como conteúdo. Esse conteúdo utiliza duas âncoras (<i>esquerda</i> e
-        <i>direita</i>) para definir gestos de mão nessas direções.</p>
+        <i>direita</i>) para definir gestos de deslizar mão nessas direções.</p>
         </div>
 
         <div id='conceptsIntro3A'></div>
@@ -1797,7 +1797,7 @@ _data.nclIntro2CodeD = `
   auto-links: false;">
   <![CDATA[
   <input id="rec_voz" src="rec_voz.srgs">
-    <area label="repete"></repete>  <!-- referência id repete de rec_voz.srgs-->
+    <area label="repete"></area>  <!-- referência id repete de rec_voz.srgs-->
   </input>
   ]]></script>
 `
@@ -1977,7 +1977,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>O trecho de código a seguir ilustra o arquivo <i>rec_gestos.gml</i>
         que segue o formato GML (Gesture Markup Language) para reconhecimento de
         gestos de mão. Ele possui dois gestos com os identificadores
-        <i>swipe_esquerda</i> e <i>swipe_direita</i>, que definem gestos de
+        <i>esquerda</i> e <i>direita</i>, que definem gestos de
         mão para esquerda e para direita, respectivamente.</p>
         </div>
 
@@ -2012,10 +2012,10 @@ _data.nclIntro3CodeA = `
   auto-links: false"> <![CDATA[
   <?xml version="1.0" encoding="UTF-8"?>
   <GestureMarkupLanguage>
-    <Gesture id="swipe_esquerda" type="swipe">
+    <Gesture id="esquerda" type="swipe">
       ..
     </Gesture>
-    <Gesture id="swipe_direta" type="swipe">
+    <Gesture id="direta" type="swipe">
       ..
     </Gesture>
   </GestureMarkupLanguage>
@@ -2027,8 +2027,8 @@ _data.nclIntro3CodeB = `
   auto-links: false;">
   <![CDATA[
   <input id="rec_gesto" src="rec_gesto.gml">
-    <area label="esquerda"></repete> <!-- referência id esquerda de rec_gesto.gml-->
-    <area label="direita"></repete> <!-- referência id direita de rec_gesto.gml-->
+    <area label="esquerda"></area> <!-- referência id esquerda de rec_gesto.gml-->
+    <area label="direita"></area> <!-- referência id direita de rec_gesto.gml-->
   </input>
   ]]></script>
 `
@@ -2053,10 +2053,10 @@ _data.nclIntro3CodeC = `
         <area label="pergunta"/> <!-- referência id pergunta de sinte_voz.ssml-->
       </media>
       <input id="rec_voz" src="rec_voz.srgs">
-        <area label="repete"></repete> <!-- referência id repete de rec_voz.srgs-->
+        <area label="repete"></area> <!-- referência id repete de rec_voz.srgs-->
       </input>
       <input id="rec_gesto" src="rec_gesto.gml">
-        <area label="esquerda"></repete> <!-- referência id esquerda de rec_gesto.gml-->
+        <area label="esquerda"></area> <!-- referência id esquerda de rec_gesto.gml-->
       </input>
       <link xconnector="conEx#onBeginStart">
         <bind role="onBegin" component="video_principal" interface="creditos"/>
@@ -2753,7 +2753,7 @@ _data.htmlTask2CodeCOnly = `
         <mm-area label="pergunta"> 
       </mm-media>
       <mm-input id="rec_voz" src="rec_voz.srgs">
-        <mm-area label="repete"></repete>
+        <mm-area label="repete">
       </mm-input>
       <mm-link>
         <mm-onBegin interface="scene">
@@ -2804,7 +2804,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p> O trecho de código a seguir ilustra o arquivo <i>rec_gestos.gml</i>
         que segue o formato GML (Gesture Markup Language) para reconhecimento de
         gestos de mão. Ele possui dois gestos com os identificadores
-        <i>swipe_esquerda</i> e <i>swipe_direita</i>, que definem gestos de mão
+        <i>esquerda</i> e <i>direita</i>, que definem gestos de deslizar mão
         para esquerda e para direita, respectivamente.</p>
         </div>
 
