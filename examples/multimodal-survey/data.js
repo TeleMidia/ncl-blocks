@@ -1086,7 +1086,7 @@ _data.conceptsIntro3BlocksB = `
     </value>
     <statement name="actions">
       <block type="stop" id="6FqGPGeFLk21rh0jxYxt">
-        <field name="id">pergunta</field>
+        <field name="id">rec_voz</field>
         <next>
           <block type="stop" id="wFqGPGeFLk21rh0j6Yxt">
             <field name="id">rec_gesto</field>
