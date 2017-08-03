@@ -39,7 +39,8 @@ $('#surveyContainer').Survey({
   onAfterRenderSurvey: onAfterRenderSurvey,
   onPartialSend: onPartialSend,
   onCurrentPageChanged: onCurrentPageChanged,
-  onComplete: onComplete
+  onComplete: onComplete,
+  onProcessHtml: onProcessHtml
 })
 
 // ----------------------------------------
@@ -93,6 +94,7 @@ $('#surveyPageNo').change(function () {
 // survey config - gsheets service
 // ----------------------------------------
 
+var _sendError = false
 function sendResult () {
   var xhr = new XMLHttpRequest()
   xhr.open('POST', 'https://script.google.com/macros/s/AKfycby6MAbrVMRtBkt9mKqgMz77ciZA9-bikN4xFHKqzeRMZQ1W-dVN/exec')
@@ -106,8 +108,8 @@ function sendResult () {
       }
     }
   }
-  xhr.eroor = function () {
-    console.log('error')
+  xhr.onerror = function () {
+    _sendError = true
   }
   xhr.send(dataStringify)
 }
@@ -188,19 +190,28 @@ function onAfterRenderSurvey (survey) {
   console.log(survey.getQuestionByName('timeBeginSurvey').value)
 }
 
+function addSurveyJsonUrl () {
+  var json = JSON.stringify(_survey.data)
+  // console.log('json=' + json)
+  var blob = new Blob([json], { type: 'application/json' })
+  var url = URL.createObjectURL(blob)
+  var a = document.getElementById('a')
+  if (a) {
+    a.download = 'multimoda-survey' + '-' + _userId + '-' + _survey.getQuestionByName('profileName').value + '.json'
+    a.href = url
+  }
+}
+
+function onProcessHtml (s, o) {
+  if (s.isCompleted && _sendError) {
+    o.html += `<br> <div class='alert alert-danger' role='alert' style='text-align:center;'> Infelizmente, detectamos um problema ao enviar seus dados para nosso servidor. Por favor faça o download de seu resultado <a id='a' onclick='addSurveyJsonUrl()'>aqui</a> e envie para o e-mail alan@telemidia.puc-rio.br.</div>`
+  }
+}
+
 function onComplete (survey) {
   console.log('onComplete')
   survey.getQuestionByName('timeEndSurvey').value = Date().toLocaleString()
   console.log(survey.getQuestionByName('timeEndSurvey').value)
-  var json = JSON.stringify(survey.data)
-  var blob = new Blob([json], { type: 'application/json' })
-  var url = URL.createObjectURL(blob)
-
-  var a = document.getElementById('a')
-  if (a) {
-    a.download = 'backup.json'
-    a.href = url
-  }
   sendResult()
 }
 
@@ -240,7 +251,7 @@ function onValidateQuestions (survey, options) {
 function onRenderQuestion (targetSurvey, questionAndHtml) {
   var questionId = questionAndHtml.question.idValue
   var questionName = questionAndHtml.question.name
-  var result, event, setNotEdited
+  var result
 
   switch (questionName) {
     case 'conceptsIntro1':
@@ -281,7 +292,7 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       if (_survey.getQuestionByName('conceptsTask3Changes').value) {
         // after first inject
         result = _survey.getQuestionByName('conceptsTask3Result').value
-        console.log(result)
+        // console.log(result)
         _blocksTask3Workspace = NCLBlocks.injectInDiv(_pathToBlockly,
           questionId, NCLBlocks.calcHt(7, 130), result, false, true, ['excludeResumePauseSet'])
         setTimeout(function () {
@@ -299,7 +310,7 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       if (_survey.getQuestionByName('conceptsTask4Changes').value) {
         // after first inject
         result = _survey.getQuestionByName('conceptsTask4Result').value
-        console.log(result)
+        // console.log(result)
         _blocksTask4Workspace = NCLBlocks.injectInDiv(_pathToBlockly,
           questionId, NCLBlocks.calcHt(7, 130), result, false, true, ['excludeResumePauseSet'])
         setTimeout(function () {
