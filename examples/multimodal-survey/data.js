@@ -3147,8 +3147,9 @@ _data.surveyJSON.pages.push({
       type: 'comment',
       rows: '9',
       name: 'commentsIdeas',
-      title: `Você consegue pensar em aplicação interessantes que você poderia
-        desenvolver os conceitos apresentados neste estudo? Se sim, por favor
+      title: `Você consegue pensar em aplicações interessantes que você poderia
+        desenvolver com os conceitos apresentados neste estudo? Se sim, por
+        favor
         comente.`
     }
   ]
