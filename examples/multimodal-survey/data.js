@@ -1553,6 +1553,7 @@ _data.nclIntro1CodeA = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
   auto-links: false;"> <![CDATA[
   <media id="midia_principal" src="video.mp4">
+    <property name="size" value="100%, 100%"/>
     <area id="creditos" begin="300s" end="360s"/>
   </media>
   <media id="icone_repetir" src="icone.png">
@@ -1916,6 +1917,7 @@ _data.nclTask2CCodeOnly = `
       <port component="video_inicial"/>
       <media id="video_inicial" src="video_inicial.mp4">
         <property name="size" value="100%, 100%"/>
+        <area id="creditos" begin="300s" end="360s"/>
       </media>
       <media id="video_centro" src="centro.mp4">
         <property name="size" value="100%, 100%"/>
