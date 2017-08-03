@@ -1938,7 +1938,7 @@ _data.nclTask2CCodeOnly = `
         <bind role="start" component="rec_voz_videos"/>
       </link>
       <link>
-        <bind role="onRecognize" component="rec_voz" interface="centro"/>
+        <bind role="onRecognize" component="rec_voz_videos" interface="centro"/>
         <bind role="stop" component="rec_voz_videos"/>
         <bind role="stop" component="video_inicial"/>
         <bind role="start" component="video_centro"/>
