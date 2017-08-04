@@ -1,5 +1,5 @@
 // ----------------------------------------
-// survey config
+// survey session config
 // ----------------------------------------
 
 Survey.surveyLocalization.locales['en'] = {
@@ -9,7 +9,6 @@ Survey.surveyLocalization.locales['en'] = {
 }
 Survey.Survey.cssType = 'bootstrap'
 
-var _survey = new Survey.Model(_data.surveyJSON)
 var _surveyCss = {
   // root
   'root': 'panel panel-default',
@@ -30,6 +29,38 @@ var _surveyCss = {
   },
   'navigationButton': 'h4 btn btn-primary'
 }
+
+var _msgEmptyBlockTask = 'Por favor, edite os blocos.'
+var _pathToBlockly = '../../src/'
+var _pagesVisited = { intro: false, profile: false, concepts: false, conceptsFeedback: false, ncl: false, nclFeedback: false, html: false, htmlFeedback: false, comments: false }
+var _blocksTask3Workspace
+var _blocksTask4Workspace
+
+// ----------------------------------------
+// survey load from cache
+// ----------------------------------------
+
+var _survey = new Survey.Model(_data.surveyJSON)
+var _blocksTask3WorkspaceEdited
+var _blocksTask4WorkspaceEdited
+
+function saveToStorage () {
+  localStorage.setItem('mmsurvey', JSON.stringify(_survey.data))
+  localStorage.setItem('_blocksTask3WorkspaceEdited', _blocksTask3WorkspaceEdited)
+  localStorage.setItem('_blocksTask4WorkspaceEdited', _blocksTask4WorkspaceEdited)
+}
+
+var savedData = JSON.parse(localStorage.getItem('mmsurvey'))
+
+if (savedData) {
+  _survey.data = savedData
+  _blocksTask4WorkspaceEdited = localStorage.getItem('_blocksTask4WorkspaceEdited')
+  _blocksTask3WorkspaceEdited = localStorage.getItem('_blocksTask3WorkspaceEdited')
+}
+
+// ----------------------------------------
+// survey render
+// ----------------------------------------
 
 $('#surveyContainer').Survey({
   model: _survey,
@@ -104,7 +135,6 @@ function sendResult () {
     if (xhr.readyState === xhr.DONE) {
       if (xhr.status === 200) {
         console.log('return ok')
-        // console.log(xhr.responseText)
       }
     }
   }
@@ -113,18 +143,6 @@ function sendResult () {
   }
   xhr.send(dataStringify)
 }
-
-// ----------------------------------------
-// survey listeners variables
-// ----------------------------------------
-
-var _msgEmptyBlockTask = 'Por favor, edite os blocos.'
-var _pathToBlockly = '../../src/'
-var _blocksTask3Workspace
-var _blocksTask3WorkspaceEdited = false
-var _blocksTask4Workspace
-var _blocksTask4WorkspaceEdited = false
-var _pagesVisited = { intro: false, profile: false, concepts: false, conceptsFeedback: false, ncl: false, nclFeedback: false, html: false, htmlFeedback: false, comments: false }
 
 // ----------------------------------------
 // survey listeners
@@ -157,8 +175,12 @@ function onCurrentPageChanged (survey, options) {
     console.log('ncl')
     window.scroll(0, 0)
     survey.getQuestionByName('timeBeginNCL').value = Date().toLocaleString()
-    _survey.getQuestionByName('nclTask3Question').value = _data.nclTask2CCodeOnly
-    _survey.getQuestionByName('nclTask4Question').value = _data.nclTask2CCodeOnly
+    if (!_survey.data.nclTask3Question) {
+      _survey.getQuestionByName('nclTask3Question').value = _data.nclTask2CCodeOnly
+    }
+    if (!_survey.data.nclTask4Question) {
+      _survey.getQuestionByName('nclTask4Question').value = _data.nclTask2CCodeOnly
+    }
   } else if (options.newCurrentPage.name === 'nclFeedback' && !_pagesVisited.nclFeedback) {
     _pagesVisited.nclFeedback = true
     console.log('nclFeedback')
@@ -170,8 +192,12 @@ function onCurrentPageChanged (survey, options) {
     window.scroll(0, 0)
     survey.getQuestionByName('timeBeginHTML').value = Date().toLocaleString()
     var code = _data.htmlTask2CodeCOnly.replace(/<&#47/, '</').replace('<&#47script>', '</script>')
-    _survey.getQuestionByName('htmlTask3Question').value = code
-    _survey.getQuestionByName('htmlTask4Question').value = code
+    if (!_survey.data.htmlTask3Question) {
+      _survey.getQuestionByName('htmlTask3Question').value = code
+    }
+    if (!_survey.data.htmlTask4Question) {
+      _survey.getQuestionByName('htmlTask4Question').value = code
+    }
   } else if (options.newCurrentPage.name === 'htmlFeedback' && !_pagesVisited.htmlFeedback) {
     _pagesVisited.htmlFeedback = true
     console.log('htmlFeedback')
@@ -183,6 +209,7 @@ function onCurrentPageChanged (survey, options) {
     window.scroll(0, 0)
     survey.getQuestionByName('timeBeginComments').value = Date().toLocaleString()
   }
+  saveToStorage()
 }
 
 function onAfterRenderSurvey (survey) {
@@ -192,7 +219,6 @@ function onAfterRenderSurvey (survey) {
 
 function addSurveyJsonUrl () {
   var json = JSON.stringify(_survey.data)
-  // console.log('json=' + json)
   var blob = new Blob([json], { type: 'application/json' })
   var url = URL.createObjectURL(blob)
   var a = document.getElementById('a')
@@ -212,6 +238,7 @@ function onComplete (survey) {
   console.log('onComplete')
   survey.getQuestionByName('timeEndSurvey').value = Date().toLocaleString()
   console.log(survey.getQuestionByName('timeEndSurvey').value)
+  saveToStorage()
   sendResult()
 }
 
@@ -292,7 +319,6 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       if (_survey.getQuestionByName('conceptsTask3Changes').value) {
         // after first inject
         result = _survey.getQuestionByName('conceptsTask3Result').value
-        // console.log(result)
         _blocksTask3Workspace = NCLBlocks.injectInDiv(_pathToBlockly,
           questionId, NCLBlocks.calcHt(7, 130), result, false, true, ['excludeResumePauseSet'])
         setTimeout(function () {
@@ -310,7 +336,6 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       if (_survey.getQuestionByName('conceptsTask4Changes').value) {
         // after first inject
         result = _survey.getQuestionByName('conceptsTask4Result').value
-        // console.log(result)
         _blocksTask4Workspace = NCLBlocks.injectInDiv(_pathToBlockly,
           questionId, NCLBlocks.calcHt(7, 130), result, false, true, ['excludeResumePauseSet'])
         setTimeout(function () {
