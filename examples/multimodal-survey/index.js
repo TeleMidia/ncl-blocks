@@ -37,12 +37,23 @@ var _blocksTask3Workspace
 var _blocksTask4Workspace
 
 // ----------------------------------------
-// survey load from cache
+// survey config - defaut values
 // ----------------------------------------
 
 var _survey = new Survey.Model(_data.surveyJSON)
-var _blocksTask3WorkspaceEdited
-var _blocksTask4WorkspaceEdited
+var _blocksTask3WorkspaceEdited = false
+var _blocksTask4WorkspaceEdited = false
+
+// ----------------------------------------
+// survey config - load values from localStorage
+// ----------------------------------------
+
+var savedData = JSON.parse(localStorage.getItem('mmsurvey'))
+if (savedData) {
+  _survey.data = savedData
+  _blocksTask4WorkspaceEdited = localStorage.getItem('_blocksTask4WorkspaceEdited')
+  _blocksTask3WorkspaceEdited = localStorage.getItem('_blocksTask3WorkspaceEdited')
+}
 
 function saveToStorage () {
   localStorage.setItem('mmsurvey', JSON.stringify(_survey.data))
@@ -50,13 +61,13 @@ function saveToStorage () {
   localStorage.setItem('_blocksTask4WorkspaceEdited', _blocksTask4WorkspaceEdited)
 }
 
-var savedData = JSON.parse(localStorage.getItem('mmsurvey'))
+// ----------------------------------------
+// generate _userId (always a new one)
+// ----------------------------------------
 
-if (savedData) {
-  _survey.data = savedData
-  _blocksTask4WorkspaceEdited = localStorage.getItem('_blocksTask4WorkspaceEdited')
-  _blocksTask3WorkspaceEdited = localStorage.getItem('_blocksTask3WorkspaceEdited')
-}
+var _userId = Blockly.utils.genUid()
+console.log(_userId)
+_survey.getQuestionByName('userId').value = _userId
 
 // ----------------------------------------
 // survey render
@@ -75,15 +86,7 @@ $('#surveyContainer').Survey({
 })
 
 // ----------------------------------------
-// survey config - _userId
-// ----------------------------------------
-
-var _userId = Blockly.utils.genUid()
-console.log(_userId)
-_survey.getQuestionByName('userId').value = _userId
-
-// ----------------------------------------
-// survey config - markdown
+// survey render - markdown converter
 // ----------------------------------------
 
 var converter = new showdown.Converter()
@@ -98,7 +101,7 @@ _survey.onTextMarkdown.add(function (survey, options) {
 })
 
 // ----------------------------------------
-// survey config - page jump
+// survey render - page jump
 // ----------------------------------------
 
 $('#complete-btn').click(function () {
@@ -122,7 +125,7 @@ $('#surveyPageNo').change(function () {
 // $('#surveyPageNo').val(7).change()
 
 // ----------------------------------------
-// survey config - gsheets service
+// survey listeners - gsheets service
 // ----------------------------------------
 
 var _sendError = false
@@ -145,7 +148,7 @@ function sendResult () {
 }
 
 // ----------------------------------------
-// survey listeners
+// survey listeners - functions
 // ----------------------------------------
 
 function onCurrentPageChanged (survey, options) {
@@ -209,7 +212,6 @@ function onCurrentPageChanged (survey, options) {
     window.scroll(0, 0)
     survey.getQuestionByName('timeBeginComments').value = Date().toLocaleString()
   }
-  saveToStorage()
 }
 
 function onAfterRenderSurvey (survey) {
@@ -244,6 +246,7 @@ function onComplete (survey) {
 
 function onPartialSend (survey) {
   console.log('onPartialSend')
+  saveToStorage()
   sendResult()
 }
 
