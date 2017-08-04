@@ -286,23 +286,23 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
   switch (questionName) {
     case 'conceptsIntro1':
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro1A',
-        NCLBlocks.calcHt(1, 110), _data.conceptsIntro1BlocksA, true)
+        NCLBlocks.calcHt(1, 150), _data.conceptsIntro1BlocksA, true)
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro1B',
-        NCLBlocks.calcHt(3, 110), _data.conceptsIntro1BlocksB, true)
+        NCLBlocks.calcHt(3, 140), _data.conceptsIntro1BlocksB, true)
       break
     case 'conceptsIntro2':
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro2A',
-        NCLBlocks.calcHt(1, 110), _data.conceptsIntro2BlocksA, true)
+        NCLBlocks.calcHt(1, 150), _data.conceptsIntro2BlocksA, true)
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro2B',
-        NCLBlocks.calcHt(1, 110), _data.conceptsIntro2BlocksB, true)
+        NCLBlocks.calcHt(1, 150), _data.conceptsIntro2BlocksB, true)
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro2C',
-        NCLBlocks.calcHt(3, 130), _data.conceptsIntro2BlocksC, true)
+        NCLBlocks.calcHt(3, 150), _data.conceptsIntro2BlocksC, true)
       break
     case 'conceptsIntro3':
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro3A',
-        NCLBlocks.calcHt(2, 130), _data.conceptsIntro3BlocksA, true)
+        NCLBlocks.calcHt(2, 150), _data.conceptsIntro3BlocksA, true)
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro3B',
-        NCLBlocks.calcHt(5, 110), _data.conceptsIntro3BlocksB, true)
+        NCLBlocks.calcHt(5, 130), _data.conceptsIntro3BlocksB, true)
       break
     case 'conceptsIntro4':
       NCLBlocks.injectInDiv(_pathToBlockly, 'conceptsIntro4A',
@@ -312,11 +312,11 @@ function onRenderQuestion (targetSurvey, questionAndHtml) {
       break
     case 'conceptsTask1':
       NCLBlocks.injectInDiv(_pathToBlockly, questionId,
-        NCLBlocks.calcHt(4, 135), _data.blocksTask1Xml, true)
+        NCLBlocks.calcHt(4, 150), _data.blocksTask1Xml, true)
       break
     case 'conceptsTask2':
       NCLBlocks.injectInDiv(_pathToBlockly, questionId,
-        NCLBlocks.calcHt(5, 140), _data.blocksTask2Xml, true)
+        NCLBlocks.calcHt(5, 150), _data.blocksTask2Xml, true)
       break
     case 'conceptsTask3':
       if (_survey.getQuestionByName('conceptsTask3Changes').value) {
