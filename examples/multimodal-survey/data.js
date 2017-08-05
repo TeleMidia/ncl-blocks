@@ -1505,7 +1505,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div id='nclIntro1CodeA'></div>
 
         <div style="text-align: justify; width: 70%;">
-        <p><p>O conceito de Relacionamento permite definir o comportamento
+        <p>O conceito de Relacionamento permite definir o comportamento
         das aplicações por meio de relações causais. Um Relacionamento é
         definido por <strong>um conjunto de condições e um conjunto de
         ações</strong>. Na NCL esse conceito já é implementado pelos elementos
@@ -1612,8 +1612,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       html: `
         <div style="text-align: justify; width: 70%;">
         <p>Por favor, analise com atenção o trecho de código NCL a seguir.</p>
-        <div id='nclTask1Code'></div>
         </div>
+        <div id='nclTask1Code'></div>
       `
     },
     {
@@ -1643,10 +1643,10 @@ _data.nclTask1Code = `
         <property name="size" value="100%, 100%"/>
         <area id="creditos" begin="300s" end="360s"/>
       </media>
-      <media id="video_centro" src="centro.mp4">
+      <media id="video_centro" src="video_centro.mp4">
         <property name="size" value="100%, 100%"/>
       </media>
-      <media id="video_praia" src="praia.mp4">
+      <media id="video_praia" src="video_praia.mp4">
         <property name="size" value="100%, 100%"/>
       </media>
       <media id="icone_centro" src="icone_centro.png">
@@ -1661,7 +1661,7 @@ _data.nclTask1Code = `
       </media>
       <link xconnector="conEx#onBeginStart">
         <bind role="onBegin" component="video_inicial" interface="creditos">
-        <bind role="start" component="icone_centro"//>
+        <bind role="start" component="icone_centro"/>
         <bind role="start" component="icone_praia"/>
       </link>
       <link xconnector="onSelectionStopStart">
@@ -1804,7 +1804,7 @@ _data.nclIntro2CodeD = `
 `
 _data.nclIntro2CodeE = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[14,15,16,17,18,19,22,23,25,26,27,28,29,30]">
+  auto-links: false; highlight:[14,15,16,17,18,19,22,23,25,26,27]">
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <ncl>
@@ -1937,13 +1937,13 @@ _data.nclTask2CCodeOnly = `
         <bind role="start" component="sinte_voz_videos" interface="pergunta"/>
         <bind role="start" component="rec_voz_videos"/>
       </link>
-      <link>
+      <link xconnector="conEx#onRecognizeStart">
         <bind role="onRecognize" component="rec_voz_videos" interface="centro"/>
         <bind role="stop" component="rec_voz_videos"/>
         <bind role="stop" component="video_inicial"/>
         <bind role="start" component="video_centro"/>
       </link>
-      <link>
+      <link xconnector="conEx#onRecognizeStart">
         <bind role="onRecognize" component="rec_voz_videos" interface="praia"/>
         <bind role="stop" component="rec_voz_videos"/>
         <bind role="stop" component="video_inicial"/>
@@ -1955,7 +1955,7 @@ _data.nclTask2CCodeOnly = `
 
 _data.nclTask2CodeC = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight: [19,20,21,22,23,24,25,28,29,31,32,33,37,38,39]">
+  auto-links: false; highlight: [20,21,22,23,24,25,26,29,30,33,34,39,40]">
   <![CDATA[` + _data.nclTask2CCodeOnly + ` ]]></script>
 `
 
@@ -2036,7 +2036,7 @@ _data.nclIntro3CodeB = `
 `
 _data.nclIntro3CodeC = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[20,21,22,27,29,30,31,32,33,34,35,36]">
+  auto-links: false; highlight:[20,21,22,27,29,30,31,33]">
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <ncl>
@@ -2409,7 +2409,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <div id='htmlIntro1CodeA'></div>
 
         <div style="text-align: justify; width: 70%;">
-        <p><p>O conceito de Relacionamento permite definir o comportamento das
+        <p>O conceito de Relacionamento permite definir o comportamento das
         aplicações por meio de relações causais. Um Relacionamento é definido
         por <strong>um conjunto de condições e um conjunto de ações</strong>. Na
         HTML estendida, um Relacionamento é implementado pelo elemento
@@ -2420,7 +2420,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         condições simples em um objeto <i>&ltmm-link></i> podem ser de início
         ("onBegin") ou fim ("onEnd") de uma mídia ou de sua âncora, seleção de
         mídia pelo usuário ("onSelection") ou reconhecimento de uma interação
-        multimodal ("onRecognition").<p>
+        multimodal ("onRecognition").</p>
 
         <p>Para ilustrar o uso desses conceitos, o trecho de código a seguir
         define uma aplicação que apresenta um vídeo e um ícone durante os
@@ -2527,11 +2527,9 @@ _data.htmlTask1CodeA = `
     </video>
     <video id="video_centro" src="video_centro.mp4"
       style="position: absolute; height 100%; width: 100%;">
-      <mm-area id="creditos" begin="300s" end="360s">
     </video>
     <video id="video_praia" src="video_praia.mp4"
       style="position: absolute; height 100%; width: 100%;">
-      <mm-area id="creditos" begin="300s" end="360s">
     </video>
     <img id="icone_centro" src="icone_centro.png"
       style="position: absolute; width: 20%; height: 20%; z-index: 1;">
@@ -2547,9 +2545,18 @@ _data.htmlTask1CodeA = `
       <mm-start interface="icone_praia">
     </mm-link>
     <mm-link>
-      <mm-onBegin interface="icone_repetir">
+      <mm-onSelection interface="icone_centro">
       <mm-stop interface="video_inicial">
-      <mm-start interface="video_inicial">
+      <mm-stop interface="icone_centro">
+      <mm-stop interface="icone_praia">
+      <mm-start interface="video_centro">
+    </mm-link>
+    <mm-link>
+      <mm-onSelection interface="icone_praia">
+      <mm-stop interface="video_inicial">
+      <mm-stop interface="icone_centro">
+      <mm-stop interface="icone_praia">
+      <mm-start interface="icone_praia">
     </mm-link>
   </mm-scene>
   </body>
@@ -2660,7 +2667,7 @@ _data.htmlIntro2CodeD = `
 `
 _data.htmlIntro2CodeE = `
  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[10,11,12,13,14,15,25,26]"><![CDATA[
+  auto-links: false; highlight:[10,11,12,13,14,15,22,23,26,27]"><![CDATA[
   <!DOCTYPE html>
   <html>
   <head><script src="multimodal.js"><&#47script></head>
@@ -2687,6 +2694,7 @@ _data.htmlIntro2CodeE = `
       </mm-link>
       <mm-link>
         <mm-onRecognize interface="rec_voz#repete">
+        <mm-stop interface="rec_voz">
         <mm-stop interface="midia_principal">
         <mm-start interface="midia_principal">
       </mm-link>
@@ -2708,8 +2716,8 @@ _data.surveyJSON.pages[pageIndex].elements.push({
       name: 'htmlTask2',
       html: `
       <div style="text-align: justify; width: 70%;">
-      Considere as descrições sinte_voz.ssml e rec_voz.srgs, respectivamente, a
-      seguir.<br><br>
+      Considere as descrições sinte_voz_videos.ssml e rec_voz_videos.srgs,
+      respectivamente, a seguir.<br><br>
       </div>
 
       <div id='htmlTask2CodeA'></div>
@@ -2745,17 +2753,16 @@ _data.htmlTask2CodeCOnly = `
       </video>
       <video id="video_centro" src="video_centro.mp4"
         style="position: absolute; height 100%; width: 100%;">
-        <mm-area id="creditos" begin="300s" end="360s">
       </video>
       <video id="video_praia" src="video_praia.mp4"
         style="position: absolute; height 100%; width: 100%;">
-        <mm-area id="creditos" begin="300s" end="360s">
       </video>
-      <mm-media id="sinte_voz" src="sinte_voz.ssml">
+      <mm-media id="sinte_voz_videos" src="sinte_voz_videos.ssml">
         <mm-area label="pergunta"> 
       </mm-media>
-      <mm-input id="rec_voz" src="rec_voz.srgs">
-        <mm-area label="repete">
+      <mm-input id="rec_voz_videos" src="rec_voz_videos.srgs">
+        <mm-area label="centro">
+        <mm-area label="praia">
       </mm-input>
       <mm-link>
         <mm-onBegin interface="scene">
@@ -2763,16 +2770,18 @@ _data.htmlTask2CodeCOnly = `
       </mm-link>
       <mm-link>
         <mm-onBegin interface="video_inicial#creditos">
-        <mm-start interface="sinte_voz">
-        <mm-start interface="rec_voz">
+        <mm-start interface="sinte_voz_videos#pergunta">
+        <mm-start interface="rec_voz_videos">
       </mm-link>
       <mm-link>
-        <mm-onRecognize interface="rec_voz#centro">
+        <mm-onRecognize interface="rec_voz_videos#centro">
+        <mm-stop interface="rec_voz_videos">
         <mm-stop interface="video_inicial">
         <mm-start interface="video_centro">
       </mm-link>
       <mm-link>
-        <mm-onRecognize interface="rec_voz#praia">
+        <mm-onRecognize interface="rec_voz_videos#praia">
+        <mm-stop interface="rec_voz_videos">
         <mm-stop interface="video_inicial">
         <mm-start interface="video_praia">
       </mm-link>
@@ -2783,7 +2792,7 @@ _data.htmlTask2CodeCOnly = `
 
 _data.htmlTask2CodeC = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[17,18,19,20,21,22,30] "> <![CDATA[` + _data.htmlTask2CodeCOnly + `]]></script>
+  auto-links: false; highlight:[15,16,17,18,19,20,21,28,29,32,33,38,39] "> <![CDATA[` + _data.htmlTask2CodeCOnly + `]]></script>
 `
 
 // ----------------------------------------
@@ -2848,7 +2857,7 @@ _data.htmlIntro3CodeB = `
 `
 _data.htmlIntro3CodeC = `
  <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[15,16,17,27,29,30,31,32,33,34,35]"><![CDATA[
+  auto-links: false; highlight:[15,16,17,27,30,31,32,33,35]"><![CDATA[
   <!DOCTYPE html>
   <html>
   <head><script src="multimodal.js"><&#47script></head>
@@ -2873,15 +2882,17 @@ _data.htmlIntro3CodeC = `
       </mm-link>
       <mm-link>
         <mm-onBegin interface="midia_principal#creditos">
-        <mm-start interface="sinte_voz">
+        <mm-start interface="sinte_voz#pergunta">
         <mm-start interface="rec_voz">
         <mm-start interface="rec_gesto">
       </mm-link>
       <mm-link>
         <mm-compoundCondition operator="or">
-          <mm-onRecognize interface="rec_voz#praia">
+          <mm-onRecognize interface="rec_voz#repete">
           <mm-onRecognize interface="rec_gesto#esquerda">
         </mm-compoundCondition>
+        <mm-stop interface="rec_voz">
+        <mm-stop interface="rec_gesto">
         <mm-stop interface="midia_principal">
         <mm-start interface="midia_principal">
       </mm-link>
@@ -2969,7 +2980,7 @@ _data.htmlIntro4CodeA = `
 
 _data.htmlIntro4CodeB = `
   <script type="syntaxhighlighter" class="brush: xml; toolbar: false;
-  auto-links: false; highlight:[16,17,18,19,20,21,22,23,24,25,33,35,36]">
+  auto-links: false; highlight:[16,27]">
   <![CDATA[
   <?xml version="1.0" encoding="ISO-8859-1"?>
   <html>
@@ -2994,6 +3005,7 @@ _data.htmlIntro4CodeB = `
       <mm-link>
         <mm-onBegin interface="midia_principal#creditos">
         <mm-start interface="sinte_voz">
+        <mm-start interface="rec_voz">
       </link>
       <mm-link>
         <mm-onRecognize interface="rec_voz#repete" user_id="gu_leap_microphone(2)">
