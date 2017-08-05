@@ -137,11 +137,12 @@ function sendResult () {
   xhr.onload = function () {
     if (xhr.readyState === xhr.DONE) {
       if (xhr.status === 200) {
-        console.log('return ok')
+        console.log('send ok')
       }
     }
   }
   xhr.onerror = function () {
+    console.log('send error')
     _sendError = true
   }
   xhr.send(dataStringify)

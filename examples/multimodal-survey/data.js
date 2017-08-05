@@ -2425,15 +2425,15 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Para ilustrar o uso desses conceitos, o trecho de código a seguir
         define uma aplicação que apresenta um vídeo e um ícone durante os
         créditos do vídeo. Se o usuário selecionar o ícone, o vídeo é
-        reiniciado. Ela utiliza dois elementos <i>&limg></i>, um <i>&lvideo></i>
-        e um <i>script</i> que define três objetos <i>&ltmm-link></i>. O
-        primeiro <i>&ltmm-link></i> define que o elemento <i>midia_principal</i>
-        inicia com a aplicação. O segundo <i>&ltmm-link></i> define que quando o
-        <i>video_principal</i> alcançar o seu trecho de <i>creditos<i>, a imagem
-        <i>icone_repetir</i> é iniciada. O terceiro <i>&ltmm-link></i> define
-        que quando o <i>icone_repetir</i> for selecionado, o
-        <i>video_principal</i> será reiniciado (<i><i>&ltmm-stop></i></i> e
-        <i><i>&ltmm-start></i></i>).</p>
+        reiniciado. Ela utiliza dois elementos <i>&ltimg></i>, um
+        <i>&ltvideo></i> e um <i>script</i> que define três objetos
+        <i>&ltmm-link></i>. O primeiro <i>&ltmm-link></i> define que o elemento
+        <i>midia_principal</i> inicia com a aplicação. O segundo
+        <i>&ltmm-link></i> define que quando o <i>video_principal</i> alcançar o
+        seu trecho de <i>creditos<i>, a imagem <i>icone_repetir</i> é iniciada.
+        O terceiro <i>&ltmm-link></i> define que quando o <i>icone_repetir</i>
+        for selecionado, o <i>video_principal</i> será reiniciado
+        (<i><i>&ltmm-stop></i></i> e <i><i>&ltmm-start></i></i>).</p>
         </div>
 
         <div id='htmlIntro1CodeB'></div>
@@ -3006,7 +3006,7 @@ _data.htmlIntro4CodeB = `
         <mm-onBegin interface="midia_principal#creditos">
         <mm-start interface="sinte_voz">
         <mm-start interface="rec_voz">
-      </link>
+      </mm-link>
       <mm-link>
         <mm-onRecognize interface="rec_voz#repete" user_id="gu_leap_microphone(2)">
         <mm-stop interface="midia_principal">
