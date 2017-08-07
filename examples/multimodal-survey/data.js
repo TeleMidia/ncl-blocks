@@ -2556,7 +2556,7 @@ _data.htmlTask1CodeA = `
       <mm-stop interface="video_inicial">
       <mm-stop interface="icone_centro">
       <mm-stop interface="icone_praia">
-      <mm-start interface="icone_praia">
+      <mm-start interface="video_praia">
     </mm-link>
   </mm-scene>
   </body>
