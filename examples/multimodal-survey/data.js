@@ -609,7 +609,7 @@ _data.blocksTask1Xml = `
             <field name="id">icone_centro</field>
             <next>
               <block type="stop" id="wVBCIDjVnK4Fkh7DWtVi">
-                <field name="id">video_praia</field>
+                <field name="id">icone_praia</field>
                 <next>
                   <block type="start" id="wVBCIajVnK4Fkh7DWtVi">
                     <field name="id">video_praia</field>
@@ -2997,7 +2997,7 @@ _data.htmlIntro4CodeB = `
       <mm-input id="rec_voz" src="rec_voz.srgs">
         <mm-area label="repete"> <!-- referência id repete de rec_voz.srgs-->
       </mm-input>
-      <mm-userClass src="gu_leap_microphone.sparql" max="2">
+      <mm-userClass id="gu_leap_microphone" src="gu_leap_microphone.sparql" max="2">
       <mm-link>
         <mm-onBegin interface="scene">
         <mm-start interface="midia_principal">
