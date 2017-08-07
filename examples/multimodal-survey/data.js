@@ -963,7 +963,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         de diferentes interações, ou seja, as interações de usuários podem ser
         realizadas por diferentes modalidades.</p>
 
-        <p>Os blocos a seguir definem o reconhecedor <i>rec_voz</i>
+        <p>Os blocos a seguir definem o reconhecedor 
         <i>rec_gestos</i>, que tem uma descrição de reconhecimento de gestos
         como conteúdo. Esse conteúdo utiliza duas âncoras (<i>esquerda</i> e
         <i>direita</i>) para definir gestos de deslizar mão nessas direções.</p>
@@ -2826,7 +2826,7 @@ _data.surveyJSON.pages[pageIndex].elements.push({
         <p>Na HTML estendida, a combinação de modalidades de interação pode ser
         feita utilizando uma condição composta. Uma condição composta é definida
         pelo elemento <i>&ltmm-compoundCondition></i> e tem condições simples
-        como filhos. A combinação entre as condiões é definida pelo atributo
+        como filhos. A combinação entre as condições é definida pelo atributo
         <i>operator</i> utilizando um dos seguintes valores: 'or' quando apenas
         uma das condições é necessária; 'and' quando todas as condições são
         necessárias em qualquer ordem; e 'seq' quando todas as condições são
