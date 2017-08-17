@@ -33,7 +33,7 @@
 
 <body>
   <div class="center-block text-center">
-    <br> resultIndex=
+    <br> participant=
     <select id="resultIndex"
       type="text"
       value="-"><option value="-">-</option></select> conceptTask=
@@ -79,7 +79,7 @@
       _resultsData = data
       for (var i in _resultsData) {
         if (_resultsData[i]['conceptsTask3Result'] !== 'null') {
-          $('#resultIndex').append($('<option>').attr('value', i).html(i))
+          $('#resultIndex').append($('<option>').attr('value', i).html(_resultsData[i]['profileName']))
         }
       }
     })
@@ -143,7 +143,7 @@
         } else if ($('#conceptTask option:selected').val() === 'conceptsTask4') {
           result = JSON.parse(_resultsData[index].conceptsTask4Changes)
         }
-        if (_runEventIntervalIndex >= result.changes.length) {
+        if (result.changes && _runEventIntervalIndex >= result.changes.length) {
           clearInterval(runEventInterval)
           return
         }
