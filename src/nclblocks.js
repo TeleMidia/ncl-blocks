@@ -67,17 +67,13 @@ NCLBlocks.Msg.CONDITION_SIMPLE = 'condição simples'
 NCLBlocks.Msg.CONDITIONS = 'Relacionamento - condições'
 NCLBlocks.Msg.ONBEGIN = 'for iniciado'
 NCLBlocks.Msg.ONEND = 'for terminado'
-NCLBlocks.Msg.ONPAUSE = 'for pausado'
 NCLBlocks.Msg.ONRESUME = 'for resumido'
+NCLBlocks.Msg.ONPAUSE = 'for pausado'
 NCLBlocks.Msg.ONSELECTION = 'for selecionado'
 NCLBlocks.Msg.ONRECOGNIZE = 'for reconhecido'
-NCLBlocks.Msg.ONRECOGNIZE_FROM_USER = 'for reconhecido dado usuário'
-// NCLBlocks.Msg.COMPOUND_CONDITION_SEQ = 'em sequencia'
-// NCLBlocks.Msg.COMPOUND_CONDITION_AND = 'todos entre'
-// NCLBlocks.Msg.COMPOUND_CONDITION_OR = 'um entre'
-NCLBlocks.Msg.COMPOUND_CONDITION_OR = 'OR'
-NCLBlocks.Msg.COMPOUND_CONDITION_AND = 'AND'
-NCLBlocks.Msg.COMPOUND_CONDITION_SEQ = 'SEQ'
+NCLBlocks.Msg.COMPOUND_CONDITION_SEQ = 'em sequencia'
+NCLBlocks.Msg.COMPOUND_CONDITION_AND = 'todos entre'
+NCLBlocks.Msg.COMPOUND_CONDITION_OR = 'um entre'
 NCLBlocks.Msg.ACTION = 'ação'
 NCLBlocks.Msg.ACTIONS = 'Relacionamento - ações'
 NCLBlocks.Msg.START = 'inicie'
@@ -86,6 +82,35 @@ NCLBlocks.Msg.PAUSE = 'pause'
 NCLBlocks.Msg.RESUME = 'resuma'
 NCLBlocks.Msg.SET = 'atribua'
 NCLBlocks.Msg.SET_TO = 'com valor'
+NCLBlocks.Msg.AND_STR = 'e '
+
+if (NCLBlocks.LANG == 'EN') {
+  NCLBlocks.Msg.AND_STR = 'with '
+  NCLBlocks.Msg.ONRECOGNIZE = 'recognized'
+  NCLBlocks.Msg.SRC = 'content'
+  NCLBlocks.Msg.MEDIA = 'Media'
+  NCLBlocks.Msg.PORT_LABEL = 'when application begins start'
+  NCLBlocks.Msg.INPUT = 'Recongnizer'
+  NCLBlocks.Msg.VIDEO = 'video file'
+  NCLBlocks.Msg.PORTION = 'anchor'
+  NCLBlocks.Msg.ANCHOR_BEGIN = 'begin at '
+  NCLBlocks.Msg.ANCHOR_END = 'and end'
+  NCLBlocks.Msg.SSML_ANCHOR = 'synthesis phrase'
+  NCLBlocks.Msg.SSML = 'speech synthesis description'
+  NCLBlocks.Msg.SRGS = 'voice recognition description'
+  NCLBlocks.Msg.WHEN = 'when'
+  NCLBlocks.Msg.SRGS_ANCHOR = 'recognize voice command'
+  NCLBlocks.Msg.LINK = 'Relantionship'
+  NCLBlocks.Msg.DO = 'do'
+  NCLBlocks.Msg.ONBEGIN = 'begins'
+  NCLBlocks.Msg.ONEND = 'ends'
+  NCLBlocks.Msg.ONRECOGNIZE_FROM_USER = 'for reconhecido dado usuário'
+  NCLBlocks.Msg.COMPOUND_CONDITION_OR = 'OR'
+  NCLBlocks.Msg.COMPOUND_CONDITION_AND = 'AND'
+  NCLBlocks.Msg.COMPOUND_CONDITION_SEQ = 'SEQ'
+  NCLBlocks.Msg.START = 'start'
+  NCLBlocks.Msg.STOP = 'stop'
+}
 
 // ----------------------------------------
 // Icons
@@ -784,7 +809,7 @@ Blockly.Blocks.media = {
       .setCheck(NCLBlocks.USE_CHECK ? NCLBlocks.Types.MEDIA_SRC : null)
       .appendField('id')
       .appendField(new IdFieldText('', NCLBlocks.Types.MEDIA), 'id')
-      .appendField('e ' + NCLBlocks.Msg.SRC)
+      .appendField(NCLBlocks.Msg.AND_STR + NCLBlocks.Msg.SRC)
     this.setInputsInline(false)
   }
 }
@@ -893,7 +918,7 @@ Blockly.Blocks.input = {
       .setCheck(NCLBlocks.USE_CHECK ? NCLBlocks.Types.INPUT_SRC : null)
       .appendField('id')
       .appendField(new IdFieldText('', NCLBlocks.Types.INPUT), 'id')
-      .appendField('e ' + NCLBlocks.Msg.SRC)
+      .appendField(NCLBlocks.Msg.AND_STR + NCLBlocks.Msg.SRC)
   }
 }
 Object.assign(Blockly.Blocks.input, NclBlockMixin)
