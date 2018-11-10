@@ -71,6 +71,7 @@ NCLBlocks.Msg.ONRESUME = 'for resumido'
 NCLBlocks.Msg.ONPAUSE = 'for pausado'
 NCLBlocks.Msg.ONSELECTION = 'for selecionado'
 NCLBlocks.Msg.ONRECOGNIZE = 'for reconhecido'
+NCLBlocks.Msg.ONRECOGNIZE_FROM_USER = 'for reconhecido dado usuário'
 NCLBlocks.Msg.COMPOUND_CONDITION_SEQ = 'em sequencia'
 NCLBlocks.Msg.COMPOUND_CONDITION_AND = 'todos entre'
 NCLBlocks.Msg.COMPOUND_CONDITION_OR = 'um entre'
@@ -84,9 +85,8 @@ NCLBlocks.Msg.SET = 'atribua'
 NCLBlocks.Msg.SET_TO = 'com valor'
 NCLBlocks.Msg.AND_STR = 'e '
 
-if (NCLBlocks.LANG == 'EN') {
+if (NCLBlocks.LANG === 'EN') {
   NCLBlocks.Msg.AND_STR = 'with '
-  NCLBlocks.Msg.ONRECOGNIZE = 'recognized'
   NCLBlocks.Msg.SRC = 'content'
   NCLBlocks.Msg.MEDIA = 'Media'
   NCLBlocks.Msg.PORT_LABEL = 'when application begins start'
@@ -104,7 +104,8 @@ if (NCLBlocks.LANG == 'EN') {
   NCLBlocks.Msg.DO = 'do'
   NCLBlocks.Msg.ONBEGIN = 'begins'
   NCLBlocks.Msg.ONEND = 'ends'
-  NCLBlocks.Msg.ONRECOGNIZE_FROM_USER = 'for reconhecido dado usuário'
+  NCLBlocks.Msg.ONRECOGNIZE = 'recognized'
+  NCLBlocks.Msg.ONRECOGNIZE_FROM_USER = 'recognized from user'
   NCLBlocks.Msg.COMPOUND_CONDITION_OR = 'OR'
   NCLBlocks.Msg.COMPOUND_CONDITION_AND = 'AND'
   NCLBlocks.Msg.COMPOUND_CONDITION_SEQ = 'SEQ'
@@ -835,7 +836,7 @@ Blockly.Blocks.video = {
     this.configureNewInput = function (newInput, index) {
       newInput.appendField(NCLBlocks.Msg.PORTION)
         .appendField(new IdFieldText('', NCLBlocks.Types.MEDIA), 'id_area' +
-        index)
+          index)
         .appendField(NCLBlocks.Msg.ANCHOR_BEGIN)
         .appendField(new Blockly.FieldTextInput(''), 'begin' + index)
         .appendField(NCLBlocks.Msg.ANCHOR_END)
@@ -861,7 +862,7 @@ Blockly.Blocks.audio = {
     this.configureNewInput = function (newInput, index) {
       newInput.appendField(NCLBlocks.Msg.PORTION)
         .appendField(new IdFieldText('', NCLBlocks.Types.MEDIA), 'id_area' +
-        index)
+          index)
         .appendField(NCLBlocks.Msg.ANCHOR_BEGIN)
         .appendField(new Blockly.FieldTextInput(''), 'begin' + index)
         .appendField(NCLBlocks.Msg.ANCHOR_END)
@@ -887,7 +888,7 @@ Blockly.Blocks.ssml = {
     this.configureNewInput = function (newInput, index) {
       newInput.appendField(NCLBlocks.Msg.PORTION)
         .appendField(new IdFieldText('', NCLBlocks.Types.MEDIA), 'id_area' +
-        index)
+          index)
         .appendField(NCLBlocks.Msg.SSML_ANCHOR)
         .appendField(new Blockly.FieldTextInput(''), 'label' + index)
     }
@@ -932,7 +933,7 @@ Blockly.Blocks.srgs = {
     this.configureNewInput = function (newInput, index) {
       newInput.appendField(NCLBlocks.Msg.PORTION)
         .appendField(new IdFieldText('', NCLBlocks.Types.INPUT), 'id_area' +
-        index)
+          index)
         .appendField(NCLBlocks.Msg.SRGS_ANCHOR)
         .appendField(new Blockly.FieldTextInput(''), 'label' + index)
     }
@@ -969,7 +970,7 @@ Blockly.Blocks.hand_gesture = {
         ])
       newInput.appendField(NCLBlocks.Msg.PORTION)
         .appendField(new IdFieldText('', NCLBlocks.Types.INPUT), 'id_area' +
-        index)
+          index)
         .appendField(NCLBlocks.Msg.HAND_GESTURE_ANCHOR)
         .appendField(dropdown, 'label' + index)
     }
@@ -1195,13 +1196,13 @@ Object.assign(Blockly.Blocks.compoundcondition, InputStackMixin)
 
 Blockly.Blocks.start = {
   init:
-  function () {
-    this.initAsAction()
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(NCLBlocks.Icons.START, 15, 15, '*'))
-      .appendField(NCLBlocks.Msg.START)
-      .appendField(new IdFieldDropdown(NCLBlocks.Types.NODE), 'id')
-  }
+    function () {
+      this.initAsAction()
+      this.appendDummyInput()
+        .appendField(new Blockly.FieldImage(NCLBlocks.Icons.START, 15, 15, '*'))
+        .appendField(NCLBlocks.Msg.START)
+        .appendField(new IdFieldDropdown(NCLBlocks.Types.NODE), 'id')
+    }
 }
 Object.assign(Blockly.Blocks.start, NclBlockMixin)
 

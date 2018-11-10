@@ -10,12 +10,11 @@
   <script src="../src/pt-br.js"></script>
   <script src="../src/nclblocks.js"></script>
   <!-- jquery, bootstrap-->
-  <script 
-  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js">
   </script>
-  <link rel="stylesheet" 
-  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
-  crossorigin="anonymous">
+  <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    crossorigin="anonymous">
 </head>
 
 <body>
@@ -23,40 +22,46 @@
     <tr>
       <th class="text-center">blocks
         <br>
-        <button id="clearBlocks" class="btn">clearBlocks</button>
+        <button id="clearBlocks"
+          class="btn">clearBlocks</button>
       </th>
       <th class="text-center">
-        <input type="checkbox" id="autoLoadFromBlocks">autoLoadFromBlocks
-        <input type="checkbox" 
-        id="autoInjectBlocksFromXML">autoInjectBlocksFromXML
+        <input type="checkbox"
+          id="autoLoadFromBlocks">autoLoadFromBlocks
+        <input type="checkbox"
+          id="autoInjectBlocksFromXML">autoInjectBlocksFromXML
         <br>xml load/inject
         <br>
-        <button id="loadXMLfromBlocks" class="btn">loadXMLfromBlocks</button>
-        <button id="injectBlocksFromXML" 
-        class="btn">injectBlocksFromXML</button>
-        <button id="clearXML" class="btn">clearXML</button>
+        <button id="loadXMLfromBlocks"
+          class="btn">loadXMLfromBlocks</button>
+        <button id="injectBlocksFromXML"
+          class="btn">injectBlocksFromXML</button>
+        <button id="clearXML"
+          class="btn">clearXML</button>
         <br> xml edit
         <br>
-        <button id="alignTwoColumnsInXML" 
-        class="btn">alignTwoColumnsInXML</button>
+        <button id="alignTwoColumnsInXML"
+          class="btn">alignTwoColumnsInXML</button>
         <br>
-        <button id="moveUpBlocksInXML" class="btn">moveUpBlocksInXML</button>
+        <button id="moveUpBlocksInXML"
+          class="btn">moveUpBlocksInXML</button>
         <br>
-        <button id="moveLeftBlocksInXML" 
-        class="btn">moveLeftBlocksInXML</button>
-        <button id="moveRightBlocksInXML" 
-        class="btn">moveRightBlocksInXML</button>
+        <button id="moveLeftBlocksInXML"
+          class="btn">moveLeftBlocksInXML</button>
+        <button id="moveRightBlocksInXML"
+          class="btn">moveRightBlocksInXML</button>
         <br>
-        <button id="moveDownBlocksInXML" 
-        class="btn">moveDownBlocksInXML</button>
+        <button id="moveDownBlocksInXML"
+          class="btn">moveDownBlocksInXML</button>
       </th>
     </tr>
     <tr>
-      <td style="width:70%;height:100%;">
+      <td style="width:80%;height:100%;">
         <div id="divToInject"></div>
       </td>
-      <td style="width:30%;height:100%;">
-        <textarea id="xmlcode" style="width:100%;height:100%;"></textarea>
+      <td style="width:10%;height:100%;">
+        <textarea id="xmlcode"
+          style="width:100%;height:100%;"></textarea>
       </td>
     </tr>
   </table>
@@ -64,7 +69,7 @@
     // NCLBlocks.enableBody()
     // NCLBlocks.enableTypeCheck()
     // var _workspace = NCLBlocks.injectInDiv('../src/', 'divToInject', '800px')
-    var _workspace = NCLBlocks.injectInDiv('../src/', 'divToInject', '800px', '', false, true, ['excludeRecognition', 'excludeResumePauseSet'])
+    var _workspace = NCLBlocks.injectInDiv('../src/', 'divToInject', '800px', '', false, true, ['excludeResumePauseSet'])
 
     // ----------------------------------------
     // blocks buttons functions
