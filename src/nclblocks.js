@@ -56,9 +56,10 @@ NCLBlocks.Msg.DO = 'faça'
 NCLBlocks.Msg.USER = 'Grupo de Usuários'
 NCLBlocks.Msg.USERS = 'usuários'
 NCLBlocks.Msg.USERCLASS = 'Grupo de Usuários'
-NCLBlocks.Msg.MAX_USERS = 'máximo de ususários'
+NCLBlocks.Msg.MIN_USERS = 'min'
+NCLBlocks.Msg.MAX_USERS = 'max'
 NCLBlocks.Msg.DEVICE = 'dispositivo'
-NCLBlocks.Msg.WITH_DEVICE = 'utilizam dispositivo'
+NCLBlocks.Msg.WITH_DEVICE = 'utiliza dispositivo'
 NCLBlocks.Msg.DEVICES = 'dispositivos'
 NCLBlocks.Msg.LEAP = 'sensor de gestos de mão'
 NCLBlocks.Msg.MICROFONE = 'microfone'
@@ -85,7 +86,13 @@ NCLBlocks.Msg.SET = 'atribua'
 NCLBlocks.Msg.SET_TO = 'com valor'
 NCLBlocks.Msg.AND_STR = 'e '
 
+NCLBlocks.LANG = 'EN'
+
 if (NCLBlocks.LANG === 'EN') {
+  NCLBlocks.Msg.WITH_DEVICE = 'with device'
+  NCLBlocks.Msg.USERS = 'users'
+  NCLBlocks.Msg.USERCLASS = 'UserClass'
+  NCLBlocks.Msg.LEAP = 'hand gesture sensor'
   NCLBlocks.Msg.AND_STR = 'with '
   NCLBlocks.Msg.SRC = 'content'
   NCLBlocks.Msg.MEDIA = 'Media'
@@ -1007,7 +1014,9 @@ Blockly.Blocks.user = {
     this.appendDummyInput()
       .appendField('id')
       .appendField(new IdFieldText('', NCLBlocks.Types.USER), 'id')
-      .appendField(NCLBlocks.Msg.AND)
+      .appendField(NCLBlocks.Msg.MIN_USERS)
+      .appendField(new UserMaxFieldNumber(), 'usermin')
+      .appendField(NCLBlocks.Msg.MAX_USERS)
       .appendField(new UserMaxFieldNumber(), 'usermax')
       .appendField(NCLBlocks.Msg.USERS)
     // add buttons and initial inputs
