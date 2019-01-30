@@ -1,7 +1,7 @@
 {
-  "name": "NCLBlocks",
+  "name": "nclblocks",
   "description": "NCLBlocks",
-  "repository": "github.com/alanlivio/nclblocks",
+  "repository": "github.com/TeleMidia/nclblocks",
   "version": "0.1",
   "author": "Alan Livio",
   "license": "MIT",

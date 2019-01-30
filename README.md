@@ -2,22 +2,23 @@
 
 ![](http://www.ncl.org.br/sites/ncl.org.br/files/newsflash_logo.png)
 
-A tool, based in Google Blocks, to enable a block-oriented development of NCL applications.
+NCLBlocks is tool based in Google Blocks to enable a block-oriented
+development of NCL applications.
 
-**The project page is <https://github.com/alanlivio/nclblocks>**
+**The project page is <https://github.com/TeleMidia/nclblocks>**
 
 ## preview images
 
 The following blocks define an application that starts a video and, when the
 video reaches its 300s, the user can select a image to repeat the video.
 
-![](https://github.com/alanlivio/nclblocks/raw/master/docs/overview1.png)
+![](https://github.com/TeleMidia/nclblocks/raw/master/docs/overview1.png)
 
 The following blocks define an application that starts a video and, when the
 video reaches its 300s, the user can choose see between two videos by selection
 one of two images.
 
-![](https://github.com/alanlivio/nclblocks/raw/master/docs/overview2.png)
+![](https://github.com/TeleMidia/nclblocks/raw/master/docs/overview2.png)
 
 ## References
 
